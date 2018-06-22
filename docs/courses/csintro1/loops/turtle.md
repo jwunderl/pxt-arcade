@@ -304,7 +304,7 @@ for (let i = 0; i < 6; i++) {
 
 ## What did we learn?
 
-1. Describe how a **repeat loop** makes programming easier in Turtle making the same design without loops.  
+1. Describe how a **repeat loop** makes programming easier in Turtle making the same design without code repetition. USe an example. 
 2. Describe 2 more turtle blocks not discussed and give a hypothesis on how to use them.    
 
 
@@ -319,5 +319,12 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Turtle  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric [TODO review based on number of questions]
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 

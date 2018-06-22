@@ -137,7 +137,7 @@ bigSprite = sprites.create(img`
 ```
 
 
-## Student Task: Build a "rainbow line" sprite that uses every color in the editor
+## Student Task: Build a "rainbow line" sprite that uses every color in the editor [ TODO - Remove? or Change? ]
 
 ![sprite rainbow](\..\static\rainbow.png)
 1. make a blank **32x32** sprite  
@@ -232,7 +232,7 @@ sprite = sprites.create(img`
 Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
 ### ~
 
-### Sprite Rubrics
+### Sprite task rubrics [TODO - no more rainbow line]
 
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
@@ -240,3 +240,9 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 ### Score = \_\_\_\_\_\_ /10 
 
+### What did we learn rubric [TODO review based on number of questions]
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+
+### Score = \_\_\_\_\_\_ /10 
