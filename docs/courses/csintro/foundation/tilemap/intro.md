@@ -297,11 +297,11 @@ scene.setTileMap(img`
 Tile maps allow us to design an area of play that is bigger than the screen. An Area of play with a size that is several screens is common in many "platform" adventure and role-playing games.  Using Tile maps, we will build multi-room and maze games.
 
 In this activity students will build tile maps games with expanded area of play using:
-* ||Scene: set tile map to||
-* ||Scene: set tile to||
+* ||scene:set tile map to||
+* ||scene:set tile to||
   * wall
   * decoration
-* ||Scene: camera follow sprite||
+* ||scene:camera follow sprite||
 
 
 ### ~hint
@@ -316,9 +316,9 @@ The first tile map example is just beyond the bare minimum tile map design, a pl
 # TODO: Create Video 
 
 The basic tile map example uses:  
-* ||Scene: set tile map to||
+* ||scene:set tile map to||
 * Sprite with basic game pad navigation
-* ||Scene: camera follow sprite||
+* ||scene:camera follow sprite||
 
 ## Example: [Simple example 1]
 1. Review the code below
@@ -459,7 +459,7 @@ game.onUpdate(function () {
 
 # TODO: might need a short video here 
 
-||Scene: set tile to|| is a way to easily design obstacles such as walls, water, lava. This is also a fast way to "paint" on detail like a field of flowers, sky with clouds or a fancy flooring.
+||scene:set tile to|| is a way to easily design obstacles such as walls, water, lava. This is also a fast way to "paint" on detail like a field of flowers, sky with clouds or a fancy flooring.
 
 ## Example: Set tile map as design and as obstacle 
 
