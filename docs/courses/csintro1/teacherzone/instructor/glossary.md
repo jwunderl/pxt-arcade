@@ -1,0 +1,44 @@
+# Glossary
+
+- **algorithm** – A set of (often repeated) steps used to solve a problem. The set of steps for doing long division of number is an algorithm.
+- **app** – # TODO:, an a script created from the _blank app_ template and consisting of one or more pages. An app is different than a game in that it is created from a different template, is made up of one or more pages that can be navigated, and includes libraries that make user interaction with text and buttons easy. In general, an app is a computer program often designed for a particular purpose and often designed for mobile devices.
+- **array** – See **collection**.
+- **assign** – To set the value of a **variable**. The symbol for assign in JavaScript is `=`. The following code assigns a value of 5 to the variable x: `x = 5`.
+- **Boolean** – A **variable type** that can be either true or false. A Boolean condition is a condition that evaluates to either true or false.
+- **the cloud** – The group of computers that are accessible via the Internet and are used for remote storage and computation.
+- **cloud computing** – Computing done in **a cloud** of remote computers on the internet.
+- **cloud variable** – a variable whose value is stored in **the cloud**. Also see **replicated variable**.
+- **collection** – Also known as an **array** in other programming languages. A group of objects, all of the same **variable type** , that can be referenced as a single variable. Objects in a collection are referred to as **elements** or items. An individual element can be referenced by its **index**.
+- **computer program** – A set of instructions that a computer can follow. Games in MakeCode Arcade are examples of computer programs. 
+- **concatenate** – To put two strings together to form a single string. For example, the concatenation of `"Hello"` and `"world"` is `'Helloworld"`. A common way to concatenate stings in JavaScript is to use the `+` operator (e.g. `msg = "Hello" + "world"` = )
+- **conditional statement** – Also known as an _if/then_ or _if/then/else_ statement. A programming construct used for making decisions within a program. A conditional statement allows for execution of code based on the evaluation of a condition.
+- **custom function** – A function created by the programmer (as opposed to functions associated with objects). A custom function usually has a specific purpose and can be/is used in multiple places within a program.
+- **debug** – The process of correcting errors within a program. i.e. The process of removing "bugs" from a program.
+- **declare** –  To create a **variable**. Also see **initialize**.
+- **decrypt** – The process of making **encrypted** data readable.
+- **element** – An individual item in a **collection**.
+- **encrypt** – The process of making data unusable to anyone who doesn't understand how to decrypt the data. Encrypting data usually involves using an algorithm, known as the _encryption key_, to map characters to other characters in such a way that the data is only usable if the encryption key is known and used to decrypt the data.
+- **event** – Something that happens outside a program (like a screen tap or mouse click) that the program can respond to.
+- **for loop** – A programming construct that allows for a block of code to be executed a specified number of times.
+- **for each loop** – A programming construct that allows for a block of code to be executed one time for each object in a collection, table, or other data structure with multiple elements. For example, a **for each** loop allows for a block of code to be executed for each element in a collection or for each row in a table.
+- **function** – A self-contained set of instructions for performing a specific task within a **computer program**. Most objects have multiple functions associated with them. For example, the _turtle_ object has a _forward_ function: turtle.forward(100). Also see **custom function** & **method**.
+- **game** – # TODO: a script created using the _blank game_ template, with a player earning points and losing lives based on the logic of the script. A game is different than an **app** in that it is created from a different template and includes libraries for making movement and scoring easy.
+- **genre** – A category of game types.
+- **index** – A numerical value that corresponds to an element in a collection or table. Index values start at zero, so the first element in an array has an index value of 0.
+- **initialize** – To set the value of a **variable** for the first time. In JavaScript, variable **declaration** and initialization usually happen at the same time. The following code declares a variable named x and initializes its value to 5: `x = 5`. When a variable is initialized, its **data type** is also determined. In the example shown, the variable type for x is _number_. i.e. In TypeScript the variable x can only be **assigned** values that are of data type _number_.  In TypeScript we can explicitly declare the variable type `let y: number = 0`  
+- **loop** – See **for loop** or **for each loop**. In general, a programming construct that allows for a block of code to be repeated multiple times.
+- **loop counter** – The variable used in a **for loop** to determine the number of times the loop will execute.
+- **method** - a function that is associated with an object to perform an action such as the return, display or update of a object property value   
+- **object** –A fundamental building block for any **computer program** , designed to hole data and allow for manipulation of that data through **functions** and **properties**.
+- **parameter** – Data passed to a **function**. In the following line of code, 100 is a parameter: turtle.forward(100).
+- **program** – See **computer program**.
+- **replicated variable** – A variable whose value is replicated (i.e. copied or stored) in **the cloud**.
+- **script** – See **computer program**.
+- **sprite** – An **object** that is usually a character in a game. Sprites have **properties** and **methods** ("functions" that the object can perform) that for sprites are often used to control their look and behavior.
+- **sprite sheet** – A single file with multiple images that, when viewed in rapid succession, create an animation.
+- **storyboard** - A visual, frame-by-frame plan for a program or project.  A storyboard often contains sketches and descriptions that tell the story of a game or project.
+- **string** – A sequence of alphanumeric characters and/or symbols. In a **computer program** , a string is indicated by quotation marks (`""`) at the beginning and end of the string. For example, "Hello World!" is a string made up of 12 characters (5 letters, a space, 5 more letters and an exclamation mark). **String** can also be used to refer to the **data type** of a **variable**. If a variable is initialized to a string such as `let x = "Hello World!"`, its variable type is string.  
+- **table** – # TODO: a table is a data structure that contains rows and columns. All data in each column is of the same **variable type** and each row can be referenced by its **index**.
+- **variable** – A container for data.  Every variable has a name that is used to reference the data that it contains. Every variable also has a **variable type**.
+- **data type** – The type of data that a **variable** can contain. Examples of data types are _number_, _string_, and _sprite_. In JavaScript, the variable type for a variable is determined when the variable is **initialized**. In TypeScript the variable type for a variable has been determined, the variable can only contain data of the same type.
+- **variable scope** – The part of a program where a variable can be read. For example, a variable declared in one function is said to be a _local_ variable, and cannot be read from other functions. However, variables can be declared with a _global_ scope, making them readable in all functions of a program.
