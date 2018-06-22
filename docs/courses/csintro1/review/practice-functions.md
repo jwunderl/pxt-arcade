@@ -17,22 +17,22 @@ enum SpriteKind {
 let sprite: Sprite = null
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.say("Teleporting!")
-    pause(__internal.__timePicker(200))
+    pause(200)
     sprite.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.say("Teleporting!")
-    pause(__internal.__timePicker(200))
+    pause(200)
     sprite.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.say("Teleporting!")
-    pause(__internal.__timePicker(200))
+    pause(200)
     sprite.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.say("Teleporting!")
-    pause(__internal.__timePicker(200))
+    pause(200))
     sprite.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
 })
 sprite = sprites.create(img`
@@ -74,7 +74,7 @@ enum SpriteKind {
 let sprite: Sprite = null
 function teleport() {
     sprite.say("Teleporting!")
-    pause(__internal.__timePicker(200))
+    pause(200)
     sprite.x = Math.randomRange(0, scene.screenWidth())
 }
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -129,9 +129,9 @@ enum SpriteKind {
 let sprite: Sprite = null
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.say("Hmm I should switch colors . . .")
-    pause(__internal.__timePicker(1000))
+    pause(1000)
     sprite.say("transforming!!")
-    pause(__internal.__timePicker(2000))
+    pause(2000)
     sprite.setImage(img`
 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
@@ -151,9 +151,9 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
 `)
     sprite.say("How is this one?")
-    pause(__internal.__timePicker(1000))
+    pause(1000)
     sprite.say("transforming!!")
-    pause(__internal.__timePicker(2000))
+    pause(2000)
     sprite.setImage(img`
 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
@@ -173,9 +173,9 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
 `)
     sprite.say("Maybe brown is better")
-    pause(__internal.__timePicker(1000))
+    pause(1000)
     sprite.say("transforming!!")
-    pause(__internal.__timePicker(2000))
+    pause(2000)
     sprite.setImage(img`
 e e e e e e e e e e e e e e e e 
 e e e e e e e e e e e e e e e e 
@@ -195,9 +195,9 @@ e e e e e e e e e e e e e e e e
 e e e e e e e e e e e e e e e e 
 `)
     sprite.say("ehh I don't know")
-    pause(__internal.__timePicker(1000))
+    pause(1000)
     sprite.say("transforming!!")
-    pause(__internal.__timePicker(2000))
+    pause(2000)
     sprite.setImage(img`
 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
@@ -239,9 +239,9 @@ sprite = sprites.create(img`
 `, SpriteKind.Player)
 sprite.x = 8
 sprite.say("Hmm I should switch colors . . .")
-pause(__internal.__timePicker(1000))
+pause(1000)
 sprite.say("transforming!!")
-pause(__internal.__timePicker(2000))
+pause(2000)
 sprite.setImage(img`
 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
@@ -261,9 +261,9 @@ sprite.setImage(img`
 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
 `)
 sprite.say("How is this one?")
-pause(__internal.__timePicker(1000))
+pause(1000)
 sprite.say("transforming!!")
-pause(__internal.__timePicker(2000))
+pause(2000)
 sprite.setImage(img`
 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
@@ -283,9 +283,9 @@ sprite.setImage(img`
 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
 `)
 sprite.say("Maybe brown is better")
-pause(__internal.__timePicker(1000))
+pause(1000)
 sprite.say("transforming!!")
-pause(__internal.__timePicker(2000))
+pause(2000)
 sprite.setImage(img`
 e e e e e e e e e e e e e e e e 
 e e e e e e e e e e e e e e e e 
@@ -305,9 +305,9 @@ e e e e e e e e e e e e e e e e
 e e e e e e e e e e e e e e e e 
 `)
 sprite.say("ehh I don't know")
-pause(__internal.__timePicker(1000))
+pause(1000)
 sprite.say("transforming!!")
-pause(__internal.__timePicker(2000))
+pause(2000)
 sprite.setImage(img`
 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
@@ -338,9 +338,9 @@ enum SpriteKind {
 }
 let sprite: Sprite = null
 function transformMsg() {
-    pause(__internal.__timePicker(1000))
+    pause(1000)
     sprite.say("transforming!!")
-    pause(__internal.__timePicker(2000))
+    pause(2000)
 }
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     colorSwaps()
