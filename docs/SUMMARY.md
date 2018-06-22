@@ -28,7 +28,6 @@
     * [Runner](/examples/runner)
     * [Snake](/examples/snake)
     * [Sorting](/examples/sorting)
-    * [FAKE GAME](/examples/FAKE_GAME)
 
 ## Reference #reference
 
