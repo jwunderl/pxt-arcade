@@ -3,8 +3,8 @@
 ## About
 
 ## Orientation
+* [Orientation to MakeCode](/courses/csintro1/orientation/makecode-orientation)
 * [Birthday Algorithm](/courses/csintro1/orientation/birthday-algorithm)
-* [Orientation to Makecode](/courses/csintro1/orientation/makecode-orientation)
 
 ## Variables
 * [Sprites](/courses/csintro1/variables/sprites)
@@ -15,7 +15,7 @@
 * [Collage](/courses/csintro1/sprites/collage)
 * [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
 
-## Turtle
+## Loops
 * [Turtle](/courses/csintro1/loops/turtle)
 * [Change By](/courses/csintro1/loops/change-by)
 * [Spirals](/courses/csintro1/loops/spiral)
