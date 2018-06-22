@@ -17,7 +17,7 @@
     * [05b](/courses/csintro/foundation/05b-sprite-overlap)
     * [05c](/courses/csintro/foundation/05c-projectiles)
     * [06a](/courses/csintro/foundation/06a-functions)
-    * [06b](/courses/csintro/foundation/06b-loop-event)
+    * [06b](/courses/csintro/foundation/06b-loop-events)
     * [07a](/courses/csintro/foundation/07a-tilemap)
     * [07b](/courses/csintro/foundation/07b-tilemap-collision)
     * [08a](/courses/csintro/foundation/08a-conditionals)
