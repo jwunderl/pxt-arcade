@@ -28,6 +28,7 @@
     * [Runner](/examples/runner)
     * [Snake](/examples/snake)
     * [Sorting](/examples/sorting)
+    * [FAKE GAME](/examples/FAKE_GAME)
 
 ## Reference #reference
 
@@ -50,3 +51,8 @@
     * [Function](/types/function)
     * [Image](/types/image)
     * [Sprite](/types/sprite)
+
+## Courses #courses
+
+* [Courses](/courses)
+    * [CS Intro](/courses/csintro)
