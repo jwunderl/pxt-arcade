@@ -67,7 +67,7 @@ Each of the questions will represent conditional blocks, and depending on which 
 
 2. Next, add in a block to represent the previous question, "Would you like to see dragons?". This block should include the `if / else` block we made from step one. 
 
-3. Expand the conditional from the previous step so that its `else` branch includes the logic for "Would you prefer to be the authority over those around you?". This means you will need to add another `if / else` block asking that question that decides between the two answer you choose, and put it inside the main else branch.
+3. Expand the conditional from the previous step so that the `else` branch includes the logic for "Would you prefer to be the authority over those around you?". This means you will need to add another `if / else` block asking that question that decides between the two answer you choose, and put it inside the main else branch.
 
 4. Get creative! Feel free to add some more questions and fun jobs as possibilities.
 
