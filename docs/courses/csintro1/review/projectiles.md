@@ -124,8 +124,7 @@ game.onUpdate(function () {
     }
     alien.vx = dir * rate
     corgi.horizontalMovement()
-    corgi.verticalMovement(
-    )
+    corgi.verticalMovement()
     corgi.boundCheck()
     corgi.updateSprite()
 })
