@@ -900,7 +900,7 @@ game.onUpdate(function () {
 
 /* 
         TILE MAP CODE SUMMARY EXAMPLE
-  Shows how color wokrs in tile map as "background" solid color or that a color in the tile map can be set to "paint" an image using that can be "wall oof" or "wall on"
+  Shows how color works in tile map as "background" solid color or that a color in the tile map can be set to "paint" an image using that can be "wall oof" or "wall on"
 
   enum SpriteKind {
     Player,
