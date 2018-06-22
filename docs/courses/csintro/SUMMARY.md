@@ -21,6 +21,6 @@
     * [07a](/courses/csintro/foundation/07a-tilemap)
     * [07b](/courses/csintro/foundation/07b-tilemap-collision)
     * [08a](/courses/csintro/foundation/08a-conditionals)
-    * [08b](/courses/csintro/foundation/08b-boolean)
+    * [08b](/courses/csintro/foundation/08b-booleans)
     * [09a](/courses/csintro/foundation/09a-array)
     * [10a](/courses/csintro/foundation/10a-animation)
