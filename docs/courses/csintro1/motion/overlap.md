@@ -287,7 +287,7 @@ we need the solution / end-solution tags so we can remove this for student versi
 ## Rubrics
 
 
-### TODO Rubric
+### Overlap task rubric [TODO]
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
@@ -295,7 +295,17 @@ we need the solution / end-solution tags so we can remove this for student versi
 
 ### Score = \_\_\_\_\_\_ /10 
 
+### What did we learn rubric [TODO review based on number of questions]
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
 
+### Score = \_\_\_\_\_\_ /10 
+
+
+
+
+[TODO - incorporate this solution code]
 ## Steps in building Helicopter landing
 # 1: base level code (TODO: have them work with parts omitted to build up solution to stop at landing pad.)
 ```block

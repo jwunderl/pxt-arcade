@@ -124,7 +124,7 @@ for (let i = 0; i < 50; i++) {
 
 // :end-solution
 
-## What did we learn? [TODO create 2 questions]
+## What did we learn? [TODO create 2+ questions]
 
 1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
 2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
@@ -133,11 +133,15 @@ for (let i = 0; i < 50; i++) {
 
 ## Rubrics
 
-
-### TODO Rubric TODO
+### Spiral Task rubric [TODO]
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Turtle  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
+
+### What did we learn rubric [TODO]
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 

@@ -346,10 +346,17 @@ we need the solution / end-solution tags so we can remove this for student versi
 ## Rubrics
 
 
-### TODO Rubric
+### Projectiles task rubric [TODO]
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | TODO Placeholder Stuff  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric [TODO review based on number of questions]
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 

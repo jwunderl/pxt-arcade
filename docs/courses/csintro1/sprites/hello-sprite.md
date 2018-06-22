@@ -299,7 +299,7 @@ bird.say("Tweet", 1000)
 Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
 ### ~
 
-### Hello Sprite 
+### Hello Sprite task rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
@@ -307,7 +307,7 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 ### Score = \_\_\_\_\_\_ /10 
 
-### Questions
+### What did we learn rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
