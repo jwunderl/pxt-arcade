@@ -45,7 +45,7 @@ mySprite.say(msg)
 ```
 
 ## What did we learn? 
-1. Identify JavaScript code aligns with which each block. Explain.  
+1. Identify and show the JavaScript code that aligns with which each block.  
 2. Identify any JavaScript code that doesn't seem to have any blocks. Hypothesize and Explain.  
 
  
@@ -290,7 +290,7 @@ bird.say("Tweet", 1000)
 ### What did we learn?
 
  3. Discuss the different ways we can display a message in this exercise. List and example.
- 4. Come up with a hypothesis and explain why `console.log()` doesn't convert fully to blocks.
+ 4. Come up with a hypothesis and explain why `console.log()` has a large limit on the length of text. Explain.
 
 
 ## Rubrics
