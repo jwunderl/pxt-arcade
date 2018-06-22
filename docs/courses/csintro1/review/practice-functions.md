@@ -7,9 +7,8 @@ In this demo we'll get practice making functions and get a reminder why using fu
 	- pause/wait 200 ms
 	- set your sprite to random x and y positions (pick something that still has the sprite mostly visible, so not too big or small)
 
-If doing this stuff by yourself seems like good practice, go ahead and start on it. If you get tired of doing tedious things / think you have had enough practice, feel free to load up this code that has step 1 completed.
-
 ```block
+// :solution
 enum SpriteKind {
     Player,
     Enemy
@@ -53,6 +52,7 @@ a a a a 1 1 1 a a a a a 1 a a a
 a a a a a a 1 1 1 1 1 1 1 a a a 
 a a a a a a a a a a a a a a a a 
 `, SpriteKind.Player)
+// :end-solution
 ```
 Wow! It sure was annoying to write out the same code / blocks each time we wanted to do the same thing.  Take a second to consider if our next task was: change it so that each button press now says "I'm teleporting" instead of just "Teleporting!".  We would have to change all 4 different locations of blocks code even though they all are doing the same thing. It would be much nicer if we didn't have to do all that work each single time when they all are doing the same thing. Lets save ourself some headache and group the code into a function instead.
 
