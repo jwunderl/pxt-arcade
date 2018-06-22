@@ -17,9 +17,12 @@ ageSentence = "" + ageSentence + ageInDays
 game.splash("" + ageSentence + " days old")
 ```
 
-2. The first block that is new for us is the 'ask for string with text' block. This will do a couple of things for us : it'll bring up a keyboard on the screen where the user can type an answer, and then the ask block evaluates to a string. You can see that we currently store it in a variable for later use. We also do one more thing here: we convert the string to an int with another block that is labeled parse to integer. This is just so our computer knows that this piece of data is meant to do math operations on it. There'll be more on this later, so don't worry about all the details right now. Just know that if you want to use input from the user as a number to do math with, you have to use the 'parse as integer' block.
+2. The first block that is new for us is the 'ask for string with text' block. This will do a couple of things for us: it'll bring up a keyboard on the screen where the user can type an answer, and then the ask block evaluates to a string. You can see that we currently store it in a variable for later use. We also do one more thing here: we convert the string to an int with another block that is labeled parse to integer. This is just so our computer knows that this piece of data is meant to be a number, rather than a word or phrase. There'll be more on this later, so don't worry about all the details right now. Just know that if you want to use input from the user as a number that you can do math with, you have to use the 'parse as integer' block - and if you want to switch that number back to a string to display, you need to use the || string:join || block.
+
 3. Try to calculate the number of months for someone's age and display it however you want. Splash is probably the easiest, but you could also make a sprite and use says. (Note: it's to just change the existing code, but if you want to get practice with user input and some of the oddities earlier rather than later, try to add it as an additional question.). Hint: There are 365 days in a year and there are 12 months in a year.
+
 4. Try to ask for the number of dogs the player has seen in their lifetime, and then calculate and display the number of dogs they've seen per year. Hint: total number of dogs / total number of years will = the number of dogs per year.
+
 5. Add in whatever other questions with number answers that you want in your survey! Some basic ideas are to compute how many weeks old someone is, or how many cats they've seen per year. Feel free to get creative though; there are plenty of fun statistics out there to compute.
 
 ```block
