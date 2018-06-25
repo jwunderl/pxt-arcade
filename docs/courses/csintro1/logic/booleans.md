@@ -37,7 +37,7 @@ Start with the following Turtle commands:
 3. Save the code for the task (name it [simple name 1]) 
 4. [specific comment - "look for..."]
 
-```blocks  
+```block  
 // simple code here
 ```  
 
@@ -62,8 +62,6 @@ we need the solution / end-solution tags so we can remove this for student versi
 // :end-solution
 ```
 
-
-<<<<<<< HEAD
 ## Concept: [concept 2 -another item form the list]
 
 # TODO: might need a short video here 
@@ -77,7 +75,7 @@ we need the solution / end-solution tags so we can remove this for student versi
 3. Save the code for the task (name it [simple name 1]) 
 4. [specific comment - "look for..."]
 
-```blocks  
+```block  
 // simple code here
 ```  
 
@@ -91,10 +89,8 @@ we need the solution / end-solution tags so we can remove this for student versi
  // Hint to student
 ### ~
 
-```blocks
-=======
 ```block
->>>>>>> 636865bf7b0efb6e04e2012257e3abccaf18c0fe
+
 // :solution
 
 /* example of a full solution that the teacher can use - good to follow on previous solution but not required
