@@ -11,101 +11,59 @@ In this activity student will work with:
 * while true loop 
 
 
-## Concept: [Concept 1 ]
+## Concept: Opening a game
 
-# TODO: Create Video covering (list items above mostly).  Provide high level script outline.
+# TODO: Video showing game being opened, explaining simulation
 
-Start with the following Turtle commands:  
-* Forward *(steps)*  
-* Turn *(degrees)*  
-* Pen Down and Pen Up  
-* Set pen color  
-* Set Position *(x,y)*  
+## Student Task 1: Playing [ TODO: insert some example game here, probably asteroid example ]
+1. Click the "Asteroids" example game under the javascript category
+2. Select "Open Example"
+3. Press left and right on the direction pad to move the space ship, and press a to fire the laser. 
+4. Look at what happens when the laser collides with an asteroid.
 
-## Example: [Simple example 1]
-1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
-
-```block  
-// simple code here
-```  
-
-### ~hint
-**Teacher Note**
-TODO: These notes get removed for students and go to teacher guide so use exact format - think of advice on how the teacher might help un-stick students or reenforce concept.  A question you might pose.  "Ask students: What happens to the old value when we re-assign a new number to the lives? (Answer: it is destroyed and replaced with new assigned value)"  can use markdown lists here.
-### ~
-
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Optional: Try adding [something that they have to infer or that might take a little longer than the simple items above]
-
-```block
-// :solution
-
-/* example of a full solution that the teacher can use
-comments are good!
-we need the solution / end-solution tags so we can remove this for student version
-*/ 
-// :end-solution
-```
+# TODO: Video showing creation of a new project
 
 
-## Concept: [concept 2 -another item form the list]
-
-# TODO: might need a short video here 
-
-[line or two of high level concept]
-
-## Example: simple example 2 
-
-1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
-
-```block  
-// simple code here
-```  
-
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Optional: Try adding [something that they have to infer or that might take a little longer than the simple items above]
-
-### ~hint
- // Hint to student
-### ~
-
-```block
-// :solution
-
-/* example of a full solution that the teacher can use - good to follow on previous solution but not required
-comments are good!
-we need the solution / end-solution tags so we can remove this for student version
-*/
-
-// :end-solution
+## Student Task 2: Starting your own game
+1. Press the "Home" button in the upper left corner to return to the homepage
+2. Press the "New Project" button 
+3. The screen will have two blocks on it to start with - we will focus on the ``||loops:on start||`` block for now, so drag the ``||game:on game update||`` block to the side bar as shown below.
+![Deleting Onstart](/static/courses/csintro1/orientation/delete-on-start.gif)
+4. Drag out a new sprite and have it ``||sprite:say||`` something as shown below
+![Sprite Say](/static/courses/csintro1/orientation/sprite-say.gif)
+5. At the bottom of the screen, select a name to save this game as, and click "Download" to download it.
+![Downloading the game](/static/courses/csintro1/orientation/download.gif)
+6. You will turn in this file today, so be sure to keep track of it!
 
 
-## What did we learn? [create 2 questions]
+## Student Task 3: Importing your game
+To make sure you saved your project properly, we should import it back into MakeCode Arcade!
+1. Press the "Home" button in the upper left corner to return to the homepage.
+2. The "My Projects" section should now include the game you created in the last task. To the right of it, there should be a button labeled "Import" - press that button.
+3. Select "Import File..."
+4. Select the file you saved in task 2.
+5. Your code should now appear in the browser window.
 
-1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
-2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
-3. [Come up with a question of your choice]
+Alternatively, you can simply drag the image that you downloaded onto the page and it will load automatically.
+
+## Student Task 4: Sharing your game
+There is one other common way that we will keep track of our games: by making links to directly access the code.
+1. Press the "Home" button in the upper left corner to return to the homepage.
+2. Select your game from task 2 under "My Projects"
+3. Select the share button in the upper left corner, as shown below. Verify that you want to publish the code, and keep track of the URL it shows - that is a link directly to your code!
+![Sharing the game](/static/courses/csintro1/orientation/sharing.gif)
 
 
-## Rubrics
+## What did we learn?
+1. What did the ``||sprite:say||`` block do when you added it to the game in task 2? 
+2. Compare and contrast the two different ways that we saved our game; what are the benefits of each choice? Which do you think you would use if you wanted to email a game you made to your friend, and why would you make that decision?
+3. Include the image created in task 2
+4. Include the link created in task 4 here
 
-
-### TODO Rubric
+### Rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Turtle  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
+| Explanation | Student created the file for the game, and it can be imported into MakeCode Arcade | Student explained how they would prefer to send a game to their friend |  Student had a reasonable explanation of what the say block did in their code | The link submitted in question 4 works |
 
 ### Score = \_\_\_\_\_\_ /10 
