@@ -15,15 +15,15 @@
 * [Collage](/courses/csintro1/sprites/collage)
 * [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
 
-## Turtle
+## Loops
 * [Turtle](/courses/csintro1/loops/turtle)
 * [Change By](/courses/csintro1/loops/change-by)
 * [Spirals](/courses/csintro1/loops/spiral)
 
 ## Motion
-* [Sprite Motion](/courses/csintro1/motion/sprite-motion)
-* [Overlap](/courses/csintro1/motion/overlap)
-* [Projectiles](/courses/csintro1/motion/projectiles)
+* [Sprite Motion](/courses/csintro1/motion-and-events/sprite-motion)
+* [Overlap](/courses/csintro1/motion-and-events/overlap)
+* [Projectiles](/courses/csintro1/motion-and-events/projectiles)
 
 ## Events
 * [Functions](/courses/csintro1/events/functions)
