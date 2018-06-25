@@ -2,7 +2,7 @@
 
 
 ## Sprite Motion - position  
-# TODO Functions for controlling motion - show Functions
+# TODO video
 update position x,y coordinates
 
 In this activities, the student will use: 
@@ -158,14 +158,14 @@ game.onUpdate(function () {
 ```
 
 # Student Task: Create Velocity Motion (short method)
-1. start with Motion )short method) example above or similar code
-2. change the key pad motion to crating a velocity (item keeps moving at constant "speed")
+1. start with Motion (short method) example above or similar code
+2. change the key pad motion to creating a velocity (item keeps moving at constant "speed")
 3. make the sprite stay in the screen boundary
 4. Challenge: add button events for Stop motion and Center sprite. Also, make a better sprite than a ball!
 
 ```block
-\\ :solution
-\\ https://makecode.com/_33Yb8iL6jV6x
+// :solution
+// https://makecode.com/_33Yb8iL6jV6x
 
 enum SpriteKind {
     Player,
@@ -221,7 +221,8 @@ game.onUpdate(function () {
     ball.vy += controller.dy()
 })
 
-\\ :end-solution
+// :end-solution
+```
 
 ## Example: Image Flip
 
