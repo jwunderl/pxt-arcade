@@ -8,12 +8,11 @@ Motion is change in position.  Just as not moving means position doesn't change.
 In these activities, the student will use: 
 
 * controller events
-* set coordinates
 * increment x and y coordinates
 * increment vx and vy velocity
 * Motion short method
 * stay on screen
-* image flip TODO: work this in https://makecode.com/_CfrafUELVWuh
+* image flip (sprite image)
 
 ## Example 1: increment position left and right 
 1. Review the code below
@@ -466,3 +465,27 @@ sprite = sprites.create(img`
 
 // :end-solution
 ```
+## What did we learn? 
+
+1. Describe how an events can be used to run code using an example.
+2. Describe the difference between changing position and changing velocity.
+3. In using flip, the sprite is **not** flipped.  What is flipped? Explain how you know.  
+
+
+## Rubrics
+
+
+### Motion event tasks rubric
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| motion-event  | completed 3 or more Tasks|  completed all 4 tasks properly | completed all tasks and 1 or more challenges | Completed all tasks and Challenge Code  |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric 
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+
+### Score = \_\_\_\_\_\_ /10 
