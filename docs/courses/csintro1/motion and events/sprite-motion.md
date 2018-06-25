@@ -212,10 +212,10 @@ sprite = sprites.create(img`
 ```
 
 
-## Motion - shorter code method
+## Motion - short dx/dy code method
 We know how motion works now by capturing the key pad events and incrementing (or decrementing) a location coordinate. Now that we understand how it works we can use a shorter method.
 
-## Example 3: motion shorter code method 
+## Example 3: motion short dx/dy code method 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "MotionShortMethod" or "motion Short Method")  
@@ -255,13 +255,15 @@ game.onUpdate(function () {
 
 ```
 
-# Student Task: Create Velocity Motion (short method)
+# Student Task #3: Create Velocity Motion (short method)
 1. start with Motion (short method) example above or similar code
 2. change the key pad motion to creating a velocity (item keeps moving)
 3. make the sprite stay in the screen boundary
 4. Challenge: add button events for Stop motion and Center sprite. Also, make a better sprite than a ball!
 
 ### ~hint
+Use dx/dy the same way as example but update the sprite velocity (vx) instead of position (x).
+
 The "stay in screen" block is is in the sprite menu.  Use a set sprite ghost block and change the dropdown.
 ### ~
 
@@ -325,27 +327,35 @@ game.onUpdate(function () {
 
 // :end-solution
 ```
+
 ## Flip Image 
 Flipping an image creates a left right mirror image when we use flip horizontal. This can be useful in creating a simple 2 frame walking animation.
 
 ## Example 4: Image Flip with button press event
 
+1. Review the code below
+2. Create the sample code and run the code https://makecode.com/_9VDMqeh0P53x 
+3. Save the code for the task (name it "FlipImage")  
+4. note use of 
 ```block
+
+```
+
+```block
+enum SpriteKind {
+    Player,
+    Enemy
+}
 let sprite: Sprite = null
 function fliphorizontal() {
     sprite.image.flipX()
     pause(200)
 }
-scene.setBackgroundColor(9)
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    /*  for (let i = 0; i < 19; i++) {
-      fliphorizontal()
-    }*/
+    // for (let i = 0; i < 19; i++) { fliphorizontal() }
     fliphorizontal()
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-
-})
+scene.setBackgroundColor(6)
 sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . 
@@ -379,207 +389,80 @@ sprite = sprites.create(img`
 . . . . . . . . . . d d d . . . . 7 7 . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . 7 7 . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . d d d . . . . . . . . . . . . . 
-`)
-```
+`, SpriteKind.Player)
 
+```
+# Student Task 4: Image Flip with motion
+1. start with Motion (short method) example above or similar code
+2. Make the image move using the up, down, left, right controller
+3. Use "A" button to flip vertically (upside down and back upright)
+4. Challenge: add the flip as a function.
 
 ```block
 // :solution
-let sprite: Sprite = null
-function fliphorizontal() {
-    sprite.image.flipX()
-    pause(200)
+// https://makecode.com/_hhCFuqYqqPAi
+
+enum SpriteKind {
+    Player,
+    Enemy
 }
-scene.setBackgroundColor(9)
+let sprite: Sprite = null
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    /*  for (let i = 0; i < 19; i++) {
-      fliphorizontal()
-    }*/
     fliphorizontal()
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-
-})
-sprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . . 
-. . . . . . . . . . . 2 2 2 2 2 2 2 . . . . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 
-. . . . . . . . . . 2 2 7 2 2 2 7 2 2 . . . . . . . . . . . . . 
-. . . . . . . . . 2 2 2 2 2 8 2 2 2 2 2 . . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 8 8 2 2 2 . . . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 
-. . . . . . . . . . . 2 2 9 9 2 2 2 . . . . . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 2 2 2 2 2 4 4 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 4 4 2 4 4 4 4 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . a a a . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . a . a . . . . . . . . . . 
-. . . . . . . a a a . 4 4 4 4 4 4 4 . a a a . . . . . . . . . . 
-. . . . . . . a . a . 4 4 4 4 4 4 4 . . . . . . . . . . . . . . 
-. . . . . . . a a a . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . d d d . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . d d d . . . . . . . . . . . . . 
-`)
-
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.y += 3
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x += -3
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    sprite.image.flipY()
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.x += 3
 })
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    sprite.x += -3
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    sprite.y += 3
+})
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.y += -3
 })
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x = 80
-    sprite.y = 64
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.y += -15
-})
-
-// :end-solution
-```
-
-## Challenge
-```block
-// :solution
-let cloud3: Sprite = null
-let cloud2: Sprite = null
-let cloud1: Sprite = null
-let sprite: Sprite = null
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vx += 1
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vx += -1
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vy += 1
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vx = 0
-    sprite.vy = 0
-})
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vy += -1
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x = 80
-    sprite.y = 64
-})
-scene.setBackgroundColor(3)
+function fliphorizontal() {
+    sprite.image.flipX()
+}
+scene.setBackgroundColor(6)
 sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . f f f f . . . . . . 
-. . . . . f f f f . . . . . . . . . f f f f f f f . . . . . . . 
-. . . . . . . f f f f f f f f f f f f f . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . b f . . b b b . . . . . . . . . . . 
-. . . . f . . . . . . . . . b . . b b f f 1 1 . . . . . . . . . 
-. . f f f f f f f f . . . . b b b d f . 1 1 1 1 . . . . . . . . 
-. . . . . f . . . . . . b b b d d d f 1 1 1 1 1 . . . . . . . . 
-. . . . . f . . . b b b d d d d d d f 1 1 1 1 1 b . . . . . . . 
-. . . . . f b b b b d d d d d d d d f f 1 1 f d b . . . . . . . 
-. . . . . b b d d d d d d d d d d d f f f f f d b . . . . . . . 
-. . . . . b d d d d d d d d d d d d f f f f f d b . . . . . . . 
-. . . . . b b d d d d d d d d d d d f f f f f d b . . . . . . . 
-. . . . . . b b d d d d d d b d d d d d d f f d b . . . . . . . 
-. . . . . . . b b d d d d d b b d d d d d d d b b . . . . . . . 
-. . . . . . . . b b b b d b b b d d d d d d b b . . . . . . . . 
-. . . . . . . . . . . f b . . . b b b b b b . . . . . . . . . . 
-. . . . . . . . . . . f . . . . . . . . f . . . . . . . . . . . 
-. . . . . . f . . . . f . . . . . . . . f . . . . . f . . . . . 
-. . . . . . f f f f f f f f f f f f f f f f f f f f . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`)
-cloud1 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . 1 1 1 1 1 2 . . . . . . 
-. . . 1 1 2 2 2 1 1 1 1 1 1 . . 
-. 2 1 1 2 2 2 2 2 2 2 2 2 1 1 . 
-. 1 2 2 2 1 2 2 2 1 1 2 2 2 1 . 
-1 1 2 2 1 1 1 1 1 2 2 2 1 1 1 . 
-1 1 2 2 2 2 2 1 1 2 1 2 1 1 . . 
-. 1 1 1 1 2 2 2 2 2 2 2 1 2 . . 
-. . . . 1 1 2 2 1 1 2 2 1 . . . 
-. . . . . . 2 2 2 1 1 1 1 . . . 
-. . . . . . 1 1 1 1 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`)
-cloud1.x = 20
-cloud1.y = 20
-cloud2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . 1 1 1 1 1 2 . . . . . . 
-. . . 1 1 2 2 2 1 1 1 1 1 1 . . 
-. 2 1 1 2 2 2 2 2 2 2 2 2 1 1 . 
-. 1 2 2 2 1 2 2 2 1 1 2 2 2 1 . 
-1 1 2 2 1 1 1 1 1 2 2 2 1 1 1 . 
-1 1 2 2 2 2 2 1 1 2 1 2 1 1 . . 
-. 1 1 1 1 2 2 2 2 2 2 2 1 2 . . 
-. . . . 1 1 2 2 1 1 2 2 1 . . . 
-. . . . . . 2 2 2 1 1 1 1 . . . 
-. . . . . . 1 1 1 1 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`)
-cloud2.x = 50
-cloud2.y = 50
-cloud3 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . 1 1 1 1 1 2 . . . . . . 
-. . . 1 1 2 2 2 1 1 1 1 1 1 . . 
-. 2 1 1 2 2 2 2 2 2 2 2 2 1 1 . 
-. 1 2 2 2 1 2 2 2 1 1 2 2 2 1 . 
-1 1 2 2 1 1 1 1 1 2 2 2 1 1 1 . 
-1 1 2 2 2 2 2 1 1 2 1 2 1 1 . . 
-. 1 1 1 1 2 2 2 2 2 2 2 1 2 . . 
-. . . . 1 1 2 2 1 1 2 2 1 . . . 
-. . . . . . 2 2 2 1 1 1 1 . . . 
-. . . . . . 1 1 1 1 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`)
-cloud3.x = 100
-cloud3.y = 30
+. . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . . 
+. . . . . . . . . . . 2 2 2 2 2 2 2 . . . . . . . . . . . . . . 
+. . . . . . . . . . 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 
+. . . . . . . . . . 2 2 7 2 2 2 7 2 2 . . . . . . . . . . . . . 
+. . . . . . . . . 2 2 2 2 2 8 2 2 2 2 2 . . . . . . . . . . . . 
+. . . . . . . . . . 2 2 2 2 8 8 2 2 2 . . . . . . . . . . . . . 
+. . . . . . . . . . 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 
+. . . . . . . . . . . 2 2 9 9 2 2 2 . . . . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 2 2 2 2 2 4 4 4 4 4 . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 2 4 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
+. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
+. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
+. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
+. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . a a a . . . . . . . . . . 
+. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . a . a . . . . . . . . . . 
+. . . . . . . a a a . 4 4 4 4 4 4 4 . a a a . . . . . . . . . . 
+. . . . . . . a . a . 4 4 4 4 4 4 4 . . . . . . . . . . . . . . 
+. . . . . . . a a a . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
+. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
+. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
+. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
+. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
+. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
+. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
+. . . . . . . . . . d d d . . . . 7 7 . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . 7 7 . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . d d d . . . . . . . . . . . . . 
+`, SpriteKind.Player)
 
 // :end-solution
 ```
