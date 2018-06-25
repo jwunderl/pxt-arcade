@@ -7,7 +7,7 @@ In this activity student will work with:
 * store the result of an equation in a variable 
 * evaluate equations using variables
 * modify and create variable equations
-* display text with || game: splash|| buy using || text: join ||
+* display text with || game: splash|| by using || text: join ||
 
 
 ## Concept: Using Math Operators with Variables  
@@ -20,7 +20,7 @@ In this activity student will work with:
 2. Create the sample code and run the code
 3. Save the code for the task (name it "equation variable") 
 
-https://makecode.com/_TeL0L56VwWiE
+https://makecode.com/_RdXJ5jMxubqA
 
 ```block  
 let answer = 0
@@ -46,7 +46,7 @@ game.splash("" + answer)
 1. starting with the above example 
 2. Experiment using different numbers in our equation (e.g.  `9 + 2`)
 3. Test at least 3 different equations
-4. Challenge: make longer addition equations so the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using "show long text"?
+4. Challenge: make longer addition equations so the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using "show long text"
 
 ### ~hint
 In order to combine multiple items we will need to add additional Math blocks
@@ -229,12 +229,40 @@ game.splash("" + tempF + " F", "Celsius " + tempC)
 
 // :end-solution
 ```
+
+
+## Student Task 5: Debugging
+1. We decided that we want to have three different variables in our code - a, b, and c. The variable a should be set to 5, b should be set to a + 5, and c should be set to a + 2 * b. This should result in b storing 10, and c storing 25 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
+```block
+// https://makecode.com/_T7FCazKrJUdh
+let c = 0
+let b = 0
+let a = 0
+a = 5
+b = a + 5
+c = (a + 2) * b
+game.splash(c)
+```
+2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any blocks beyond what was necessary for part 1, and explain what went wrong.
+```block
+// :solution
+// https://makecode.com/_Hr52FwWRKR5L
+
+let c = 0
+let b = 0
+let a = 0
+a = 5
+b = a + 5
+c = a + (2 * b)
+game.splash("" + c)
+// :end-solution
+```
+
 ## What did we learn? 
 
 1. In MakeCode JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is not 30.
 2. How is putting operators and numbers into a calculator different than writing in code  (example: 2 + 3 + 4 * 4)?  Explain.
 3. Research and describe 2 other Math Operators using the math menu in MakeCode (hover over values for more information) and/or use other JavaScript resources.
-
 
 ## Rubrics
 
