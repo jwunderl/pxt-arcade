@@ -160,8 +160,7 @@ Answer: "Because one of the choices is transparent and if the background color m
 ### ~  
 
 
-
- ```block
+```block
 // :solution
 
 /* https://makecode.com/_ipr4sK16fcvq */
@@ -220,11 +219,11 @@ sprite = sprites.create(img`
 ## What did we learn?
 
 1. Make a table showing 
-     - Color (use an approximate color name like white , red, pink, ...)  
+     - Color (use an approximate color name like white, red, pink, ...)  
      - Color index (1-15)  
      - Color representation in JavaScript  
 2. Explain what happens to the color index 0 in JavaScript (form a hypothesis)  
-3. Explain why we see only 14 colors at time although there are 16 color indexes (0-15) in the image editor?  
+3. Explain why we see only 14 colors at a time although there are 16 color indexes (0-15) in the image editor?  
 
 ## Rubrics
 
