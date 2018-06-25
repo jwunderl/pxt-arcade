@@ -62,6 +62,10 @@ There is one other common way that we will keep track of our games: by making li
 
 ### Rubric
 
+### ~hint
+Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
+### ~
+
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanation | Student created the file for the game, and it can be imported into MakeCode Arcade | Student explained how they would prefer to send a game to their friend |  Student had a reasonable explanation of what the say block did in their code | The link submitted in question 4 works |
