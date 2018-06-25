@@ -44,7 +44,7 @@ To make sure you saved your project properly, we should import it back into Make
 4. Select the file you saved in task 2.
 5. Your code should now appear in the browser window.
 
-Alternatively, you can simply drag the image that you downloaded onto the page and it will load automatically.
+Alternatively, you can simply drag the image that you downloaded onto the home page and it will load automatically.
 
 ## Student Task 4: Sharing your game
 There is one other common way that we will keep track of our games: by making links to directly access the code.
