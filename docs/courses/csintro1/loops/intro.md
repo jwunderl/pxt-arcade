@@ -230,7 +230,7 @@ We now want to add in a second ghost, that moves towards the bottom right like i
 ### ~hint
 Copy the blocks from the example  
 
-There isn't too much different between the two sprites - we don't even need to make a new loop! We just need to add more things into the **body** of the loop - that is, the code inside the loop itself.
+There isn't too much different between the two sprites - we don't even need to make a new loop! We just need to add more things into the **body** of the loop - that is, the code that is surrounded by the loop.
 ### ~
 
 ```blocks
@@ -282,7 +282,7 @@ for (let i = 0; i < 12; i++) {
     sprite2.x += 5
     pause(50)
     sprite.y += -5
-    sprite2.x += 5
+    sprite2.y += 5
     pause(50)
 }
 // :end-solution

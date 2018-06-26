@@ -21,7 +21,7 @@
 * [Spirals](/courses/csintro1/loops/spiral)
 
 ## Motion and Events
-* [Sprite Motion](/courses/csintro1/motion-and-events/sprite-motion)
+* [Sprite Motion Event](/courses/csintro1/motion-and-events/sprite-motion-event)
 * [Overlap](/courses/csintro1/motion-and-events/overlap)
 * [Projectiles](/courses/csintro1/motion-and-events/projectiles)
 
