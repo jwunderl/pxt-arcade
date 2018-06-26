@@ -16,7 +16,7 @@
 * [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
 
 ## Loops
-* [Turtle](/courses/csintro1/loops/turtle)
+* [Intro](/courses/csintro1/loops/intro)
 * [Change By](/courses/csintro1/loops/change-by)
 * [Spirals](/courses/csintro1/loops/spiral)
 
