@@ -19,6 +19,7 @@ We can start off by trying to solve a small task - slowly move a ghost from the 
 1. Open up [this sample code](https://makecode.com/_bwkaqsVLgf9j)
 2. Run the code - the ghost should scroll off to the bottom right area of the screen, and peek just over the edge.
 3. Review the blocks that caused this to happen - what would you need to add if the screen was made to be twice as big?
+
 ```block  
 enum SpriteKind {
     Player,
@@ -101,8 +102,9 @@ pause(100)
 
 ### ~hint
 **Teacher Note**  
-This task is intentionally tedious - it's likely a good idea to cut them off early after having them start on it and recognize how much is involved in making a relatively small change in this way.
 
+This task is intentionally tedious - it's likely a good idea to cut them off early after having them start on it, as it doesn't take long to recognize how much is involved in making a relatively small change in the current code.
+### ~
 
 ```block
 // :solution
@@ -129,53 +131,53 @@ sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
-sprite.x -= 5
+sprite.x += -5
 pause(50)
-sprite.y -= 5
+sprite.y += -5
 pause(50)
 // :end-solution
 ```
@@ -213,9 +215,9 @@ sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 for (let i = 0; i < 12; i++) {
-    sprite.x -= 5
+    sprite.x += -5
     pause(50)
-    sprite.y -= 5
+    sprite.y += -5
     pause(50)
 }
 
@@ -276,10 +278,10 @@ sprite2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 for (let i = 0; i < 12; i++) {
-    sprite.x -= 5
+    sprite.x += -5
     sprite2.x += 5
     pause(50)
-    sprite.y -= 5
+    sprite.y += -5
     sprite2.x += 5
     pause(50)
 }
