@@ -20,7 +20,7 @@ We can start off by trying to solve a small task - slowly move a ghost from the 
 2. Run the code - the ghost should scroll off to the bottom right area of the screen, and peek just over the edge.
 3. Review the blocks that caused this to happen - what would you need to add if the screen was made to be twice as big?
 
-```block  
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -106,7 +106,7 @@ pause(100)
 This task is intentionally tedious - it's likely a good idea to cut them off early after having them start on it, as it doesn't take long to recognize how much is involved in making a relatively small change in the current code.
 ### ~
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,
@@ -190,7 +190,7 @@ pause(50)
 When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by hand, we can instead using loops to repeat that chunk of code more easily.
 
 ## Example: Moving up and to the left using loops
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -233,7 +233,7 @@ Copy the blocks from the example
 There isn't too much different between the two sprites - we don't even need to make a new loop! We just need to add more things into the **body** of the loop - that is, the code inside the loop itself.
 ### ~
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,
@@ -307,7 +307,6 @@ Angles = 360/number-of-sides
 ## Example: Triangle  
 
 ```block
-
 for (let i = 0; i < 3; i++) {
     turtle.forward(40)
     turtle.turn(120)
