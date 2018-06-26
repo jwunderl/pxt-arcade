@@ -4,16 +4,15 @@ TODO: Play music with conditionals and update life and/or score, button event, d
 Possible targets
 
 In these activities students will work with: 
-* ||Sprites: is facing||
-* ||Sprites: showing animation  ||
-* ||Sprites: overlaps with ||
-* ||Controller: is button pressed||
-* ||Controller: was button pressed||
-* ||Scene: tile color colliding with ||
-* || Logic : and ||
-* || Logic : or ||
-* || Logic : and ||
-* || Logic : not ||
+* ``||sprites:is facing||``
+* ``||sprites:showing animation||``
+* ``||sprites:overlaps with||``
+* ``||controller:is button pressed||``
+* ``||controller:was button pressed||``
+* ``||scene:tile color colliding with||``
+* ``||logic:and||``
+* ``||logic:or||``
+* ``||logic:not||``
 
 # TODO: Create overview Video covering (list items above mostly).  Provide high level script outline.
 
