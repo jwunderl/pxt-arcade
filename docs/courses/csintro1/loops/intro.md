@@ -1,25 +1,19 @@
 # Activity: Turtle Loops
-
+## TODO: Change all this to not include 
 Turtle is a classic Computer Science Program where the programmer controls a turtles motion.  The "turtle" (arrow sprite) can draw the path it takes to create interesting designs.  Many students will have seen Turtle or something similar previously if they have participated in various one hour coding activities.  Turtle is a "game" built in MakeCode Arcade that has it's own Blocks that we can use until we learn how to make our own movement controls.
 
 In Arcade, Turtle is an **extension**. An extension is a "package" of code that can be added to enable some functionality - in this case it adds Turtle Blocks to the top of our Blocks Menu. The Animated Image below the video demonstrates how we enable the turtle blocks with the Turtle extension.
 
 In this activity student will work with: 
 
-* adding a code extension
 * sprite motion
 * repeat loop   
 
 ## Concept: Controlling the turtle's movement
 
-# TODO: Video for Using Turtle extension to draw squares
+# TODO: Video moving a sprite using loops
 
-Start with the following Turtle commands:  
-* Forward *(steps)*  
-* Turn *(degrees)*  
-* Pen Down and Pen Up  
-* Set pen color  
-* Set Position *(x,y)*  
+We can start
 
 ## Example: Drawing a square
 1. go to Advanced Menu,  open extensions and add **Turtle**  
