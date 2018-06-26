@@ -95,7 +95,7 @@ pause(100)
 
 ```  
 
-## Student Task: Move to the upper left corner, and move faster
+## Student Task 1: Move to the upper left corner, and move faster
 1. Load up the blocks from the previous example
 2. Make the sprite move up and to the left instead - to do so, change all movements to be in the opposite direction.
 3. Change the pause between each step to be only 50 ms, instead of 100
@@ -222,7 +222,7 @@ for (let i = 0; i < 12; i++) {
 }
 
 ```
-## Student Task: Add a second sprite using loops
+## Student Task 2: Add a second sprite using loops
 We now want to add in a second ghost, that moves towards the bottom right like in the first example.
 1. Add in a second sprite
 2. Make the second sprite move in the opposite direction of the current sprite, right after the current sprite moves.
@@ -286,12 +286,84 @@ for (let i = 0; i < 12; i++) {
     pause(50)
 }
 // :end-solution
-```  
+```
+
+## Student Task 3: Boomerang
+1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the course of two seconds
+2. Make the boomerang return to it's original location over the course of two seconds using a loop.
+3. Challenge: Use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let boomerang: Sprite = null
+boomerang = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . 4 4 . . . . . . . 
+. . . . . . . 4 5 4 . . . . . . 
+. . . . . . . . 4 5 4 . . . . . 
+. . . . . . . . . 4 5 4 . . . . 
+. . . . . . . . . 4 5 4 . . . . 
+. . . . . . . . 4 5 5 4 . . . . 
+. . . . . . . . 4 5 4 . . . . . 
+. . . . . . . 4 5 4 . . . . . . 
+. . . . . . . . 4 . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+boomerang.x += 5
+pause(200)
+```
+
+```blocks
+// :solution
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let boomerang: Sprite = null
+boomerang = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . 4 4 . . . . . . . 
+. . . . . . . 4 5 4 . . . . . . 
+. . . . . . . . 4 5 4 . . . . . 
+. . . . . . . . . 4 5 4 . . . . 
+. . . . . . . . . 4 5 4 . . . . 
+. . . . . . . . 4 5 5 4 . . . . 
+. . . . . . . . 4 5 4 . . . . . 
+. . . . . . . 4 5 4 . . . . . . 
+. . . . . . . . 4 . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+for (let i = 0; i < 10; i++) {
+    boomerang.x += 5
+    boomerang.image.flipX()
+    pause(200)
+}
+for (let i = 0; i < 10; i++) {
+    boomerang.x += -5
+    boomerang.image.flipX()
+    pause(200)
+}
+// :end-solution
+```
 
 ## What did we learn?
 
-1. Describe how a **repeat loop** makes programming easier by reducing code repetition. Use an example. 
-2. Describe 2 more turtle blocks not discussed and give a hypothesis on how to use them.    
+1. Describe how a ``||loop:repeat||`` block makes programming easier by reducing code repetition. Use an example.
+2. Was it easier or harder to add in a second sprite when with the code inside of the loop that it would have been in the prior (loop-less) version? Why?
+3. Did you use more than one ``||loop:repeat||`` in any of the tasks above? Why might you want to have one loop after another, rather than just combining them into a single loop?
 
 
 ## Rubrics
@@ -300,11 +372,11 @@ for (let i = 0; i < 12; i++) {
 Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
 ### ~
 
-### Turtle Rubric
+### Loops Rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Turtle  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code |
+| Loops tasks 2 and 3  | Successfully added in a second sprite in task 2 that moved in the opposite direction| Student successfully made the boomerang move to the right 50 pixels with a loop | Successfully moved the boomerang back 50 pixels with a loop | Completed Challenge Code, making the boomerang "rotate" |
 
 ### Score = \_\_\_\_\_\_ /10 
 
