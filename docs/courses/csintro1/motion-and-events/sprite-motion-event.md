@@ -52,7 +52,7 @@ sprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Student Task #1: 
+## Student Task #1: increment position Y-axis (up and down)
 1. start with example 1 (motionLR, or your own similar code)
 2. add additional code to control the up down Y-direction motions using the controller 
 3. Challenges: 
@@ -111,7 +111,7 @@ sprite = sprites.create(img`
 ## Sprite Motion Velocity
 Velocity is speed in a particular direction - continuous movement.  In our games we typically track movement in X and Y directions. If we have a positive x velocity we more right and a negative X velocity is moving left.
 
-## Example 2: increment position left and right 
+## Example 2: increment velocity left and right 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "velocityLR" or "velocity left right")  
@@ -152,11 +152,11 @@ sprite = sprites.create(img`
 ```
 
 ## Student Task #2: Increment Velocity Up and Down 
-1. start with example 1 (velocityLR, or your own similar code)
+1. start with example #2 (velocityLR, or your own similar code)
 2. add additional code to control the up down Y-direction velocities using the controller 
 3. Challenges: 
   - add an "A" button event move the sprite to the center of the game screen.  
-  - Add a "B" button event to stop the sprite.
+  - Add a "B" button event to stop the sprite (all velocities = 0).  
 
 ```block
 // :solution
@@ -212,13 +212,13 @@ sprite = sprites.create(img`
 
 
 ## Motion - short dx/dy code method
-We know how motion works now by capturing the key pad events and incrementing (or decrementing) a location coordinate. Now that we understand how it works we can use a shorter method.
+We have created motion by capturing the key pad events and incrementing (or decrementing) a location coordinate or velocity. Now that we have seen how this works for the four directional buttons we can use a shorter method.
 
 ## Example 3: motion short dx/dy code method 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "MotionShortMethod" or "motion Short Method")  
-4. note the dx (left -right buttons) block
+4. note the ``||controller:dx (left-right buttons)||`` and ``||controller:dy (up-down buttons)||`` blocks
 
 ```block
 
@@ -261,7 +261,7 @@ game.onUpdate(function () {
 4. Challenge: add button events for Stop motion and Center sprite. Also, make a better sprite than a ball!
 
 ### ~hint
-Use dx/dy the same way as example but update the sprite velocity (vx) instead of position (x).
+Use controller dx/dy, such as  ``||controller:dx (left-right buttons)||`` the same way as example but update the sprite **velocity x** (vx) instead of **horizontal position** (x).
 
 The "stay in screen" block is is in the sprite menu.  Use a set sprite ghost block and change the dropdown.
 ### ~
