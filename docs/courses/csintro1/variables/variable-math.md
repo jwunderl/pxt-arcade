@@ -22,7 +22,7 @@ In this activity student will work with:
 
 https://makecode.com/_RdXJ5jMxubqA
 
-```block  
+```blocks  
 let answer = 0
 answer = 3 + 5
 game.splash("3 + 5 = " + answer)
@@ -34,7 +34,7 @@ game.splash("3 + 5 = " + answer)
 The join block is used to coerce a number into a sting.  JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash  knows that we are displaying the string representation of our `answer` variable.
 
 If only displaying a number we use an empty string in the join 
-```block
+```blocks
 let answer = 0
 answer = 3 + 5
 game.splash("" + answer)
@@ -53,7 +53,7 @@ In order to combine multiple items we will need to add additional Math blocks
 
 ![animation: adding 3 numbers with blocks](..\Static\add3Numbers.gif)
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_h6vfmy28s34T
 
@@ -74,7 +74,7 @@ game.splash("21+22 = " + answer)
 The splash screen is designed for short sentences.  This limits the length of equation we can display. "Show long text" allows for longer text.
 ### ~  
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_VaeKM9dowVam
 
@@ -106,7 +106,7 @@ In order of operation precedence:
 2. Create the sample code and run the code
 3. press any button to see then second equation on splash message
 
-```block
+```blocks
 let answer = 0
 let firstNumber = 0
 let secondNumber = 0
@@ -130,7 +130,7 @@ Look at the JavaScript.  Parenthesis `( )`are first in order of Operations. With
 ![animation: Parenthesis in math code](..\Static\parenthesisMath.gif)
 ### ~
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_Euh8RJRuzhsf
 
@@ -159,7 +159,7 @@ game.splash("15 * 5 + 3 = " + answer)
 Look at the JavaScript code.  For multiple operator equations it is often easier to code in JavaScript. Note how using parenthesis `( )` changes the equation.
 ### ~
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_eC9Cwk3uXiCr
 
@@ -177,7 +177,7 @@ game.splash("15 * 5 + 9 / 6 = " + answer)
 
 // :end-solution
 
-```block
+```blocks
 // :solution
 // Challenge:https://makecode.com/_WyA12wV0K74p  
 
@@ -213,7 +213,7 @@ game.splash("15*5+9/6-10 = " + answer)
 It can be difficult to structure parenthesis using blocks.  Look at and edit the JavaScript code to create the formula where it looks much more like a math equation, except for **\*** is used for multiplication and **/** is used for division.  Note: evaluate parenthesis first because code follows the the same parenthesis rules as mathematics.
 ### ~
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_A3PHiyg9rTD6
 
@@ -233,7 +233,7 @@ game.splash("" + tempF + " F", "Celsius " + tempC)
 
 ## Student Task 5: Debugging
 1. We decided that we want to have three different variables in our code - a, b, and c. The variable a should be set to 5, b should be set to a + 5, and c should be set to a + 2 * b. This should result in b storing 10, and c storing 25 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
-```block
+```blocks
 // https://makecode.com/_T7FCazKrJUdh
 let c = 0
 let b = 0
@@ -244,7 +244,7 @@ c = (a + 2) * b
 game.splash(c)
 ```
 2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any blocks beyond what was necessary for part 1, and explain what went wrong.
-```block
+```blocks
 // :solution
 // https://makecode.com/_Hr52FwWRKR5L
 

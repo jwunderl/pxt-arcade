@@ -15,7 +15,7 @@ Have you ever wanted to make a computer count eggs for you? No? Well now you can
 6. We have one issue; we can eat eggs that don't exist! Use the `if` block to make sure that we only eat eggs if we have eggs remaining - that is, if `eggCount > 0`. If the player tries to eat an egg that they don't have, use the `else` condition to make it so the sprite says that they don't have any eggs left.
 
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,
@@ -92,7 +92,7 @@ In this practice, you'll be moving a sprite across your screen with `change_by` 
 
 Now test out the code! You should be able to move your sprite down and to the right with the arrow keys.
 
-```block
+```blocks
 // :solution
 
 enum SpriteKind {

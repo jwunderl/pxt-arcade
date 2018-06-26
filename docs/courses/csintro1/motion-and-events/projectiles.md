@@ -33,7 +33,7 @@ Start with the following TODO Placeholder Stuff commands:
 3. Save the code for the task (name it [simple name 1]) 
 4. [specific comment - "look for..."]
 
-```block  
+```blocks  
 
 
 ```  
@@ -49,7 +49,7 @@ TODO: These notes get removed for students and go to teacher guide so use exact 
 3. add [something simple....]
 4. Optional: Try adding [something that they have to infer or that might take a little longer than the simple items above]
 
-```block
+```blocks
 // :solution
 
 enum SpriteKind {
@@ -109,7 +109,7 @@ Projectiles are just sprites with a bit of extra behavior by default; this means
 
 You can even use the projectiles you have made as the source of other projectiles! For example, we can start with the following cloud moving across the screen:
 
-```block
+```blocks
 enum SpriteKind {
     Cloud
 }
@@ -136,7 +136,7 @@ cloud = sprites.createProjectile(img`
 
 There isn't all that much to this code; it spawns a cloud, which slowly moves across the screen. However, what if we want to make the cloud rain? We can do this by adding projectiles that are emitted from the cloud itself!
 
-```block
+```blocks
 enum SpriteKind {
     Cloud,
     Rain
@@ -185,7 +185,7 @@ game.onUpdateInterval(__internal.__timePicker(50), function () {
 
 We can change where the rain drops show up, so that they don't all appear in the same location relative to the cloud:
 
-```block
+```blocks
 https://makecode.com/_MtUYHyHiwdmy
 
 enum SpriteKind {
@@ -238,7 +238,7 @@ game.onUpdateInterval(__internal.__timePicker(50), function () {
 
 And we can even count the raindrops that make it to the bottom of the screen by counting when they're destroyed!
 
-```block
+```blocks
 https://makecode.com/_5Wb33FiqaJeu
 enum SpriteKind {
     Cloud,
@@ -311,7 +311,7 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 3. Save the code for the task (name it [simple name 1]) 
 4. [specific comment - "look for..."]
 
-```block  
+```blocks  
 // simple code here
 ```  
 
@@ -325,7 +325,7 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
  // Hint to student
 ### ~
 
-```block
+```blocks
 // :solution
 
 /* example of a full solution that the teacher can use - good to follow on previous solution but not required

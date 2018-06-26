@@ -10,35 +10,35 @@ In this activity we will introduce collisions and use both collisions and on ove
 * And add sprite images and update sprite images in our game  
 
 
-```block
+```blocks
 // :solution
 
 // :end-solution
 ```
 
 
-```block
+```blocks
 // :solution
 
 // :end-solution
 ```
 
 
-```block
+```blocks
 // :solution
 
 // :end-solution
 ```
 
 
-```block
+```blocks
 // :solution
 
 // :end-solution
 ```
 # TODO: keep programing with functions - make this function code
 
-```block
+```blocks
 // :solution
 /* *********************************************************
 *          Cloud Collision & Overlap Events                *

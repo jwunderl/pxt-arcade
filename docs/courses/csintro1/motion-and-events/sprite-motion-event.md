@@ -19,7 +19,7 @@ In these activities, the student will use:
 2. Create the sample code and run the code
 3. Save the code for the task (name it "motionLR" or "motion left right")  
 
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -59,7 +59,7 @@ sprite = sprites.create(img`
   - add an "A" button event to move the sprite to the center of the game screen.  
   - Add a "B" button event to make the sprite "jump" (move) 15 pixels.
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_LVdiagK4jCxW
 
@@ -116,7 +116,7 @@ Velocity is speed in a particular direction - continuous movement.  In our games
 2. Create the sample code and run the code
 3. Save the code for the task (name it "velocityLR" or "velocity left right")  
 
-```block
+```blocks
 
 enum SpriteKind {
     Player,
@@ -158,7 +158,7 @@ sprite = sprites.create(img`
   - add an "A" button event move the sprite to the center of the game screen.  
   - Add a "B" button event to stop the sprite (all velocities = 0).  
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_gJrFU7eX7iu6
 
@@ -220,7 +220,7 @@ We have created motion by capturing the key pad events and incrementing (or decr
 3. Save the code for the task (name it "MotionShortMethod" or "motion Short Method")  
 4. note the ``||controller:dx (left-right buttons)||`` and ``||controller:dy (up-down buttons)||`` blocks
 
-```block
+```blocks
 
 enum SpriteKind {
     Player,
@@ -266,7 +266,7 @@ Use controller dx/dy, such as  ``||controller:dx (left-right buttons)||`` the sa
 The "stay in screen" block is is in the sprite menu.  Use a set sprite ghost block and change the dropdown.
 ### ~
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_33Yb8iL6jV6x
 
@@ -336,11 +336,11 @@ Flipping an image creates a left right mirror image when we use flip horizontal.
 2. Create the sample code and run the code https://makecode.com/_9VDMqeh0P53x 
 3. Save the code for the task (name it "FlipImage")  
 4. note use of 
-```block
+```blocks
 
 ```
 
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -397,7 +397,7 @@ sprite = sprites.create(img`
 3. Use "A" button to flip vertically (upside down and back upright)
 4. Challenge: add the flip as a function.
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_hhCFuqYqqPAi
 

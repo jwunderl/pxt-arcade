@@ -7,7 +7,7 @@ In this demo we'll get practice making functions and get a reminder why using fu
 	- pause/wait 200 ms
 	- set your sprite to random x and y positions (pick something that still has the sprite mostly visible, so not too big or small)
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,
@@ -65,7 +65,7 @@ Wow! It sure was annoying to write out the same code / blocks each time we wante
 
 4.  
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,
@@ -120,7 +120,7 @@ In this example, we have some not-so-great blocks code for you to improve on. Tr
  You may find it helpful to use more than one function.  Start by looking for bigger amounts of duplicate code and then look for smaller things once you think you've found the bigger pieces. 
 ### ~
 
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy,
@@ -329,7 +329,7 @@ sprite.setImage(img`
 sprite.say("Blue is the best in the end!")
 ```
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,

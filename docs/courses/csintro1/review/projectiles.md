@@ -5,7 +5,7 @@ TODO: Show how to do this
 
 ## Alien Motion
 Make the alien move faster as the score gets higher, and turn around before it hits the edge of the screen. We don't want to let the alien get too fast, so we chose a value to assign to the rate (taking the square root of current score) so that it doesn't become too hard too fast.
-```block
+```blocks
 game.onUpdate(function () {
     rate = Math.sqrt(info.score()) * 3 + 20
     if (alien.x <= 6) {
@@ -20,7 +20,7 @@ game.onUpdate(function () {
 ## Create a projectile
 Make the alien drop arrows toward the ground, with an 8 percent chance to create one every 50 milliseconds.
 
-```block
+```blocks
 game.onUpdateInterval(50, function () {
     if (Math.percentChance(8)) {
         projectile = sprites.createProjectile(img`
@@ -51,7 +51,7 @@ as fast as the alien currently is going, plus a chance to go a bit faster to mix
 We'll also add in the code to change the score on each update, so that the score (and speed
 of the enemies) goes up as time goes on.
 
-```block
+```blocks
 game.onUpdateInterval(50, function () {
     if (Math.percentChance(8)) {
         projectile = sprites.createProjectile(img`
@@ -78,7 +78,7 @@ game.onUpdateInterval(50, function () {
 ```
 
 ## Finished Game
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy,

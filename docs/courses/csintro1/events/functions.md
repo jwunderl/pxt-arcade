@@ -29,7 +29,7 @@ Start with the following TODO !!!!!Placeholder Stuff!!!! review and replace!!! c
 3. Save the code for the task (name it [simple name 1]) 
 4. [specific comment - "look for..."]
 
-```block  
+```blocks  
 // simple code here
 ```  
 
@@ -44,7 +44,7 @@ TODO: These notes get removed for students and go to teacher guide so use exact 
 3. add [something simple....]
 4. Optional: Try adding [something that they have to infer or that might take a little longer than the simple items above]
 
-```block
+```blocks
 let sum = 0
 let d = 0
 let c = 0
@@ -76,7 +76,7 @@ sum = sum + d
 game.splash("Sum =" + sum)
 
 ```
-```block
+```blocks
 // :solution
 
 let d = 0
@@ -108,7 +108,7 @@ add()
 
 // :end-solution
 ```
-```block
+```blocks
 // :solution
 
 let d = 0
@@ -154,7 +154,7 @@ add()
 3. Save the code for the task (name it [simple name 1]) 
 4. [specific comment - "look for..."]
 
-```block  
+```blocks  
 // simple code here
 ```  
 
@@ -168,7 +168,7 @@ add()
  // Hint to student
 ### ~
 
-```block
+```blocks
 // :solution
 
 /* example of a full solution that the teacher can use - good to follow on previous solution but not required

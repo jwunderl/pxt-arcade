@@ -26,7 +26,7 @@ We use SpriteKind to classify our sprites.  We can have sprites that are Player,
 3. Save the code for the task (name it "eatFruit")  
 4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite` 
 
-```block  
+```blocks  
 
 enum SpriteKind {
     Player,
@@ -107,7 +107,7 @@ Use ``||loops:pause||`` before using sprite destroy otherwise the sprite will be
 
 ### ~
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,
@@ -192,7 +192,7 @@ The sprite **ghost on** setting makes the sprite able to pass "through" with oth
 2. Create the sample code and run the code https://makecode.com/_iLyHR6RfYWPq 
 3. Note: find the set ghost on block - switching to ghost off  means "no ghost" properties and the code will run like example 1.
 
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -271,7 +271,7 @@ game.onUpdate(function () {
 5. Add an event for on Overlap of the stationary SpriteKind (e.g. sprite destroy and/or sprite say)
 6. Challenge: Give the moving sprite both X & Y direction mobility. Add additional stationary sprites, with one more new SpriteKind and overlap events for all SpriteKinds (e.g. - SpriteKind of  Player, Enemy, Food)
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_avyVmsVog48o
 
@@ -459,7 +459,7 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 
 ### ~
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_1pX4CTC2U6Dc
 

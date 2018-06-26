@@ -25,7 +25,7 @@ Instead of drawing a symmetric shape, each loop we increase side length and crea
 3. Save the code for the start of the next task (name it "spiral") 
 
 
-```block  
+```blocks  
 
 let step = 0
 step = 0
@@ -47,7 +47,7 @@ for (let i = 0; i < 50; i++) {
 ### ~hint
   - use turtle **set Pen Color** with the colorNumber variable  
 
- ```block
+ ```blocks
  turtle.setPenColor(colorNumber)
  ```
 
@@ -55,7 +55,7 @@ for (let i = 0; i < 50; i++) {
 ### ~
   
 
-```block  
+```blocks  
 // :solution
 
 let colorNumber = 0
@@ -73,7 +73,7 @@ for (let i = 0; i < 50; i++) {
 // :solution
 ```
 
-```block
+```blocks
 
 ## Task: Different Shape Spirals
 

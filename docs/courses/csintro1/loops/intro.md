@@ -288,7 +288,6 @@ for (let i = 0; i < 12; i++) {
 // :end-solution
 ```  
 
-
 ## What did we learn?
 
 1. Describe how a **repeat loop** makes programming easier by reducing code repetition. Use an example. 

@@ -24,7 +24,7 @@ Sprite Objects have a method ``||sprites:say||`` (`say()`) that displays a text 
 2. View the code in JavaScript
 
 
-```block
+```blocks
 enum SpriteKind {
     Player
 }
@@ -72,7 +72,7 @@ console.log("msg sent!")
 
 Consider This!: The code `console.log()` doesn't use **mySprite** as with ``||sprites:say||``. Why?
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_Wr8PUXPeVUT1
 
@@ -109,7 +109,7 @@ console.log("msg sent!")
 There is a pause block under the Loops menu ||Loops:pause(1000)|| that can be used to delay the response of the second sprite. 
 ### ~
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_3vw05FiutJww
 
@@ -181,7 +181,7 @@ world.say(msgWorld, 4000)
 1. Add additional Sprites at different coordinates and use ``||sprites:say||`` messages  
 2. Make larger 32x32 sprites  
 
-```block
+```blocks
 // :solution
 // https://makecode.com/_9TqMJR6WTPzU
 
