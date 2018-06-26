@@ -245,6 +245,44 @@ There is another type of loop that can help in implementing this behavior. The `
 2. Remove the initialization and incrementing of the count variable. Your code should now behave like it did before you made any modifications - drifting up and to the left.
 3. Replace the count variable in all blocks that are changing the position of the sprite to use the index variable from the ``||loops:for index from 0 to 10||`` block.
 
+```
+// :solution
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let sprite: Sprite = null
+sprite = sprites.create(img`
+. . . . . . . . 8 . . . . . . . 
+. . . . . 8 8 8 8 8 8 8 . . . . 
+. . . . 8 8 8 8 8 8 8 9 8 . . . 
+. . . 8 8 8 8 8 8 8 9 9 9 8 . . 
+. . 8 8 8 8 8 8 8 8 8 9 8 8 8 . 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. . 8 8 8 8 8 8 8 8 8 8 8 8 8 . 
+. . . 8 8 8 8 8 8 8 8 8 8 8 . . 
+. . . . 8 8 8 8 8 8 8 8 8 . . . 
+. . . . . 8 8 8 8 8 8 8 . . . . 
+`, SpriteKind.Player)
+for (let index = 0; index <= 10; index++) {
+    pause(200)
+    sprite.x += 5 + index * 5
+    pause(200)
+    sprite.y += 6 + index * 5
+    pause(200)
+    sprite.x += -7 - index * 5
+    pause(200)
+    sprite.y += -8 - index * 5
+}
+// :end-solution
+```
+
 
 
 ## What did we learn? [TODO create 2 questions]
