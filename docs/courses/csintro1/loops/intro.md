@@ -4,7 +4,7 @@ Turtle is a classic Computer Science Program where the programmer controls a tur
 
 In Arcade, Turtle is an **extension**. An extension is a "package" of code that can be added to enable some functionality - in this case it adds Turtle Blocks to the top of our Blocks Menu. The Animated Image below the video demonstrates how we enable the turtle blocks with the Turtle extension.
 
-In this activity student will work with: 
+In this activity students will work with: 
 
 * sprite motion
 * repeat loop   
@@ -92,13 +92,12 @@ sprite.x += 5
 pause(100)
 sprite.y += 5
 pause(100)
-
 ```  
 
 ## Student Task 1: Move to the upper left corner, and move faster
 1. Load up the blocks from the previous example
 2. Make the sprite move up and to the left instead - to do so, change all movements to be in the opposite direction.
-3. Change the pause between each step to be only 50 ms, instead of 100
+3. Change the pause between each step to be only 50 ms, instead of 100 - we decided we want the ghost to be a little bit faster than it was
 
 ### ~hint
 **Teacher Note**  

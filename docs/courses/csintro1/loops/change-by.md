@@ -1,14 +1,14 @@
 # Activity: Button Speed   
 
-Games keep score and there are many ways game code needs to increase (or decrease) a count.  We refer to increasing count as Increment and decreasing count s decrement. We will update our game score by using  **change by**.
+Games keep score and there are many ways game code needs to increase (or decrease) a count.  We refer to increasing count as increment and decreasing count as decrement. We will update our game score by using the  ``||change by||`` block.
 
-In these activities, the student will use increments to increase a score an make spirals: 
-
-* turtle extension  
-* repeat loops  
-* variables with increase by  
-* game update every  
-* info set score  
+In these activities, the student will use increments to increase a score, and move a sprite in a spiral: 
+ 
+* repeat loops
+* for index loops
+* variables with increase by
+* game update every
+* info set score
 * game countdown
 
 ## Concept: Increase By (increment)
@@ -71,15 +71,13 @@ info.startCountdown(5)
 
 > Get students use to modifying the examples by modifying values  
 > - update score increment, update interval and countdown time 
-
-
 ### ~
 
-## Task: Make the game have a cheering coach
+## Student Task 1: Make the game have a cheering coach
 1. start with "Increment with Button A" example 
 2. add a sprite to coach the player
-3. use ||Sprites:say("")|| to give words of encouragement, setting a short display time.
-4. Make ||Sprites:say("")|| so it flashes by placing it in ||Game: on game update(1000)|| 
+3. use ``||sprites:say("")||`` to give words of encouragement, setting a short display time.
+4. Make ``||sprites:say("")||`` so it flashes by placing it in ``||game:on game update(1000)||``
 4. Challenge: Have the sprite coach giving current score and some cheer ("Faster!)
 
 ### ~hint
@@ -146,19 +144,115 @@ sprite = sprites.create(img`
 game.splash("Press \"A\" FAST", "READY, SET, GO!")
 info.startCountdown(10)
 game.onUpdateInterval(2000, function () {
-    sprite.say(info.score()   + " keep going", 500)
+    sprite.say(info.score() + " keep going", 500)
 })
 
 // :end-solution
 ```
 
+## Student Task 2: Move in a spiral
+We want to move the sprite in the following blocks in a spiral - starting with a small square, and moving further and further away as the iterations move on. Right now, though, the sprite just drifts up and to the left. We need to increase the distance that the sprite travels on each iteration so that it moves further and further away in all directions.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let sprite: Sprite = null
+sprite = sprites.create(img`
+. . . . . . . . 8 . . . . . . . 
+. . . . . 8 8 8 8 8 8 8 . . . . 
+. . . . 8 8 8 8 8 8 8 9 8 . . . 
+. . . 8 8 8 8 8 8 8 9 9 9 8 . . 
+. . 8 8 8 8 8 8 8 8 8 9 8 8 8 . 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. . 8 8 8 8 8 8 8 8 8 8 8 8 8 . 
+. . . 8 8 8 8 8 8 8 8 8 8 8 . . 
+. . . . 8 8 8 8 8 8 8 8 8 . . . 
+. . . . . 8 8 8 8 8 8 8 . . . . 
+`, SpriteKind.Player)
+for (let i = 0; i < 10; i++) {
+    pause(200)
+    sprite.x += 5
+    pause(200)
+    sprite.y += 6
+    pause(200)
+    sprite.x += -7
+    pause(200)
+    sprite.y += -8
+}
+```
+1. First, add in a new variable - we'll refer to it as count. Set it at 0 to start.
+2. Use the ``||variables:change by||`` block to increment count by 1 at the end of each iteration of the loop.
+3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable count * 5 in the the movement of the sprite - that might look like
+
+```block
+sprite.x += -7 - count * 5
+```
+
+
+```blocks
+// :solution
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let count = 0
+let sprite: Sprite = null
+sprite = sprites.create(img`
+. . . . . . . . 8 . . . . . . . 
+. . . . . 8 8 8 8 8 8 8 . . . . 
+. . . . 8 8 8 8 8 8 8 9 8 . . . 
+. . . 8 8 8 8 8 8 8 9 9 9 8 . . 
+. . 8 8 8 8 8 8 8 8 8 9 8 8 8 . 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+. . 8 8 8 8 8 8 8 8 8 8 8 8 8 . 
+. . . 8 8 8 8 8 8 8 8 8 8 8 . . 
+. . . . 8 8 8 8 8 8 8 8 8 . . . 
+. . . . . 8 8 8 8 8 8 8 . . . . 
+`, SpriteKind.Player)
+count = 0
+for (let i = 0; i < 10; i++) {
+    pause(200)
+    sprite.x += 5 + count * 5
+    pause(200)
+    sprite.y += 6 + count * 5
+    pause(200)
+    sprite.x += -7 - count * 5
+    pause(200)
+    sprite.y += -8 - count * 5
+    count += 1
+}
+// :end-solution
+```
+
+## Student Task 3: for index loops
+There is another type of loop that can help in implementing this behavior. The ``||loops:for index from 0 to 4||`` loop behaves very similarly to the repeat loop, but gives you access to a variable inside the loop called index. Each iteration this value will be updated - on the first iteration it will be 0, on the second iteration it will be 1, and so on, until it reaches the final iteration - with the default value of 4, this last iteration will have index be 4. This is very similar to how we used the count variable in the last task, so let's clean up that code by switching to this block.
+
+1. Swap the ``||loops:repeat 10 times||`` block in your code for the ``||loops:for index from 0 to 4||`` block. Change the value in the loop block from 4 to 10.
+2. Remove the initialization and incrementing of the count variable. Your code should now behave like it did before you made any modifications - drifting up and to the left.
+3. Replace the count variable in all blocks that are changing the position of the sprite to use the index variable from the ``||loops:for index from 0 to 10||`` block.
+
 
 
 ## What did we learn? [TODO create 2 questions]
 
-1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
-2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
-3. [Come up with a question of your choice]
+1. In task 3, you may have noticed that when you switched from a repeat loop to a for loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that? 
+### ~hint
+Is there a difference between ``||loops repeat 0 times||`` and ``||for index from 0 to 0||``? 
+### ~
 
 
 ## Rubrics
