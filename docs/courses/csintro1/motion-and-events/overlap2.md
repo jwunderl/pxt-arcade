@@ -4,49 +4,74 @@ Since overlap uses SpriteKind for sprites to trigger interactions with each othe
 
 If we want to make several clouds we can have them all interact with a moving object in the same way.
 
-In this activity the student will work with:
-* On Overlap event with a SpriteKind applied to several identical sprites
+In this activity the student will continue to work with:
+* on overlap event with a SpriteKind (e.g. - Cloud) applied to several identical sprites
 * 
 
+
+# Overlaps
+
+# TODO: eric overview video
+
+
+## Concept: SpriteKind Overlap Event "bump" action  
+Having sprites bump rather than pass over each other is a useful behavior for a SpriteKind overlap event. One way to simulate a bump is:
+* move the sprite in the opposite direction after the overlap.  We bump backwards.  The faster we bump the farther we move away from the overlap object.
+  * change x position by (-1)*(x-velocity)
+  * change y position by (-1)*(y-velocity)
+* Stop the sprite (set vx and vy to 0)
+* Shake the stationary object
+  * move 1 pixel 
+  * pause
+  * move back
+
+## Example 1: bump action from overlap event  
+1. Review the code below 
+2. Create the sample code and run the code 
+3. Save the code for the task (name it "copterBump1")  
+4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite` and the how the code creates the bump behavior.
+
 ```blocks
-// :solution
+
+// https://makecode.com/_RHD3yygXAcsR
+
 enum SpriteKind {
     Helicopter,
     Cloud,
-    Rain,
     LandingPad,
     Player,
     Enemy
 }
-let landing: Sprite = null
 let cloud3: Sprite = null
 let cloud2: Sprite = null
 let cloud1: Sprite = null
-let mySprite: Sprite = null
-
+let copter: Sprite = null
+let landing: Sprite = null
 // Control the copter with the + pad
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += 1
+    copter.vx += 1
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += -1
+    copter.vx += -1
+})
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    copter.vy += -1
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    copter.vy += 1
 })
 sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Cloud, function (sprite, otherSprite) {
     sprite.x += -1 * sprite.vx
     sprite.y += -1 * sprite.vy
+    sprite.vx = 0
+    sprite.vy = 0
     otherSprite.y += -1
     pause(100)
     otherSprite.y += 1
 })
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += -1
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += 1
-})
-game.splash("Cloud Collision", "control pad flying")
+game.splash("Cloud Bump", "control pad flying")
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+copter = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -80,6 +105,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Helicopter)
+copter.setFlag(SpriteFlag.StayInScreen, true)
 // Create and place "clouds"  Sprites
 cloud1 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -100,7 +126,7 @@ cloud1 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Cloud)
 cloud1.x = 20
-cloud1.y = 20
+cloud1.y = 30
 cloud2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -120,7 +146,7 @@ cloud2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Cloud)
 cloud2.x = 50
-cloud2.y = 55
+cloud2.y = 65
 cloud3 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -140,20 +166,19 @@ cloud3 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Cloud)
 cloud3.x = 100
-cloud3.y = 30
-// Landing pad drawn on top of 32x32 image placed so
-// top of Landing sprite is at bottom of screen
+cloud3.y = 40
+
 landing = sprites.create(img`
 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
 . . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -177,13 +202,25 @@ landing = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.LandingPad)
-landing.y = 132
+landing.y = 125
 
-// :end-solution
 ```
 
 
-## Concept: SpriteKind applied to several Sprites
+## Student Task: Soft Landing
+There is a landing area at the bottom of the example.  The sprite should not go through the landing but should... land!
+
+1. starting with the above example 
+2. Review the code to make an on overlap event for the helicopter and landing
+3. the overlap event block of code should move the helicopter up 1 pixel and then stop the helicopter motion vx and vy.
+4. Optional: Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, anything) and give the sprite erratic motion after an overlap. 
+
+### ~hint
+Erratic motion can be moving the sprite back and forth several times.  By rapidly reversing velocity or changing position.
+
+``||loops:pause()||`` is good to use between changes in movement.
+
+### ~
 
 # TODO: eric short video here 
 
