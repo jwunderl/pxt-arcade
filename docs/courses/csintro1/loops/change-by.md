@@ -28,7 +28,7 @@ In these activities, the student will use increments to increase a score an make
 
 ### Example: Increment with On Game Update 
 
-```block  
+```blocks  
 
 let count = 0
 game.onUpdateInterval(500, function () {
@@ -39,7 +39,7 @@ game.onUpdateInterval(500, function () {
 ```
 
 ### Example: Increment with Button "A"   
-```block  
+```blocks  
 
 let count = 0
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -49,7 +49,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```  
 ### Example: Increment with Add Countdown   
-```block  
+```blocks  
 
 let count = 0
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -93,13 +93,13 @@ Then "join" the score with a few words of encouragement.
 **Teacher Note**  
 
 > Show students sprite say has a millisecond duration setting  
-```block
+```blocks
 sprite.say("FASTER!", 500)
 ```
 
 ### ~
 
-```block
+```blocks
 // :solution
 
 let sprite: Sprite = null

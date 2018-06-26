@@ -6,7 +6,7 @@ TODO: Conditionals to Play music, update life and/or Score
 Identify what inputs are necessary for the three prompts so that you can win the game!
 
 
-```block
+```blocks
 // https://makecode.com/_Vde5gA2VhPRD
 let one = game.askForString("It was:")
 let two = game.askForString("At location:")
@@ -25,7 +25,7 @@ game.over(boolOne && boolTwo && boolThree || secret)
 ### ~hint
     To capture all the different button presses with only a single event, you'll need to use the block for dealing with times when any button is pressed, and figure out which button was pressed using the "is [any] button pressed" block (and changing the button in the drop down.)
 ### ~
-```block
+```blocks
 // :solution
 // https://makecode.com/_VYtcDCRcTJjJ
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -46,7 +46,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 // :end-solution
 ```
 
-```block
+```blocks
 let count = 0
 let director: Sprite = sprites.create(img`.`)
 
@@ -82,7 +82,7 @@ info.startCountdown(10)
 ### ~
 
 // Expanded Button Press game
-```block
+```blocks
 // :solution
 let count = 0
 let director: Sprite = sprites.create(img`.`)

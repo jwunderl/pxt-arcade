@@ -306,7 +306,7 @@ Angles = 360/number-of-sides
 
 ## Example: Triangle  
 
-```block
+```blocks
 for (let i = 0; i < 3; i++) {
     turtle.forward(40)
     turtle.turn(120)
@@ -315,7 +315,7 @@ for (let i = 0; i < 3; i++) {
 
 ## Example: Pentagon  
 
-```block
+```blocks
 for (let i = 0; i < 5; i++) {
     turtle.forward(25)
     turtle.turn(72)
@@ -323,7 +323,7 @@ for (let i = 0; i < 5; i++) {
 ```
 
 
-```block
+```blocks
 // solution
 turtle.pen(TurtlePenMode.Down)
 turtle.setPenColor(3)
@@ -369,7 +369,7 @@ Challenge
 4. Use **pen up** to move without drawing then **pen down** to start drawing
 
 
-```block
+```blocks
 // :solution
 turtle.pen(TurtlePenMode.Down)
 turtle.setPenColor(3)

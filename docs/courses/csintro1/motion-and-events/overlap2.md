@@ -8,7 +8,7 @@ In this activity the student will work with:
 * On Overlap event with a SpriteKind applied to several identical sprites
 * 
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Helicopter,
@@ -196,7 +196,7 @@ We use SpriteKind to give a "kind" label to Sprites so we can define how a "kind
 3. Save the code for the task (name it [simple name 1]) 
 4. [specific comment - "look for..."]
 
-```block  
+```blocks  
 // simple code here
 ```  
 
@@ -210,7 +210,7 @@ We use SpriteKind to give a "kind" label to Sprites so we can define how a "kind
  // Hint to student
 ### ~
 
-```block
+```blocks
 // :solution
 
 /* example of a full solution that the teacher can use - good to follow on previous solution but not required
@@ -252,7 +252,7 @@ we need the solution / end-solution tags so we can remove this for student versi
 [TODO - incorporate this solution code]
 ## Steps in building Helicopter landing
 # 1: base level code (TODO: have them work with parts omitted to build up solution to stop at landing pad.)
-```block
+```blocks
 // :solution
 /* *********************************************************
 *                    Cloud Collision v1                    *
@@ -433,7 +433,7 @@ landing.y = 140
 ```
 
 # 2: Reduce redundancy using `on created [sprite] of kind [cloud]`
-```block
+```blocks
 // :solution
 
 enum SpriteKind {
@@ -608,7 +608,7 @@ landing.y = 132
 ```
 
 # 3: Make clouds appear in random positions
-```block
+```blocks
 // :solution
 /* *********************************************************
 *                    Cloud Collision v3                    *
@@ -756,7 +756,7 @@ landing.y = 140
 ```
 
 # 4: Add a mountain, and bump when you hit it.
-```block
+```blocks
 // :solution
 /* *********************************************************
 *                    Cloud Collision v4                    *

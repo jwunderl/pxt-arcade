@@ -8,7 +8,7 @@ This example will have us work with user input and joining strings together.
 "You should try making a applescookie sandwich!".  To combine our variables with other text that we're describing, you will have to either use join twice or use splash's option to display two separate messages 
 
 
-```block
+```blocks
 // :solution
 let sandwichName = ""
 let favFood2 = ""
@@ -31,7 +31,7 @@ In this practice example we'll be dealing with user input and practicing combini
 4. After that previous step, we should be able to correctly display what the area code is for a given 10 digit phone number.  But let's add some more functionality: do the same thing we did for the area code to the other parts of the phone number.  Print out what the office number is (the middle 3 digits) and the line number is (the last 4 digits).
 5. Try adding some exclamation marks to the end of your sentences that you are displaying with Splash. Hint: you may find using more variables helpful for readability.
 
-```block
+```blocks
 // :solution
 let lineNumberSentence = ""
 let officeNumberSentence = ""

@@ -14,7 +14,7 @@ In this activity we will use
 
 This Sprite example is larger than the default 16x16 and uses a custom variable name `hotSauce`.  *How can we determine the dimensions of this sprite?*
 
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -61,7 +61,7 @@ hotSauce = sprites.create(img`
 
 This Sprite example uses sprite properties to set the `x` and `y` coordinates on the game screen. *View the Sprite in JavaScript. Note how colors are represented.*
 
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -117,7 +117,7 @@ It can be about a typical day, a hobby, favorite musician or actor, sports, clot
 * **Save** the Collage as a shared Link or download PNG file
 
 
- ```block
+ ```blocks
 //:solution
 // https://makecode.com/_7dtM9RfzKKD4
 

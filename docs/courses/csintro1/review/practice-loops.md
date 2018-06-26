@@ -11,7 +11,7 @@ The next section will describe specific steps for creating the game described ab
 3. Make it so that after each round (surviving the randomized health trials) the score increases by one.
 
 
-```block
+```blocks
 // :solution
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let i = 0; i < 4; i++) {
@@ -40,7 +40,7 @@ As we saw in the fundamentals lesson on loops, one application of loops is to re
 Note: You may have noticed that this exercise seems awfully familiar in result to some things we've used before: vx and vy! It turns out that vx and vy really are equivalent in concept to what we wrote blocks for in this past exercise.  Try playing with the pause time and how much the x and y position change by each loop iteration. You'll find that a very smooth animation can be acheived with the right values for those two parameters.
 
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,
@@ -99,7 +99,7 @@ For this exercise we're not going to use loops to chose movement, but rather loo
 1. On any buttom press, make your sprite appear at a random location.
 2. We know that the sprite needs to appear 3 times total, and we just wrote the code for it to appear randomly once. Let's put the previous code we have into a loop that runs 3 times. 
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,

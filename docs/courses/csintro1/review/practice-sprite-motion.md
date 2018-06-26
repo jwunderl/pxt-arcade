@@ -10,7 +10,7 @@ In the lesson for sprite motion, we used change by blocks a bunch of times to gr
 6. Add more movement to the y velocity directions. Try playing around with what we've already done (setting velocitys, changing velocities by some amount) and some of the still unexplored options like setting and changing acceleration by some amount.
 
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,

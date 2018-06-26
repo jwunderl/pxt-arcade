@@ -26,7 +26,7 @@ Start with the following Turtle commands:
 3. Save the code for the task (name it [simple name 1]) 
 4. [specific comment - "look for..."]
 
-```block  
+```blocks  
 // :solution
 let locations: number[] = []
 let item = 0
@@ -73,7 +73,7 @@ TODO: These notes get removed for students and go to teacher guide so use exact 
 3. add [something simple....]
 4. Optional: Try adding [something that they have to infer or that might take a little longer than the simple items above]
 
-```block
+```blocks
 // :solution
 
 /* example of a full solution that the teacher can use
@@ -97,7 +97,7 @@ we need the solution / end-solution tags so we can remove this for student versi
 3. Save the code for the task (name it [simple name 1]) 
 4. [specific comment - "look for..."]
 
-```block  
+```blocks  
 // simple code here
 ```  
 
@@ -111,7 +111,7 @@ we need the solution / end-solution tags so we can remove this for student versi
  // Hint to student
 ### ~
 
-```block
+```blocks
 // :solution
 
 /* example of a full solution that the teacher can use - good to follow on previous solution but not required

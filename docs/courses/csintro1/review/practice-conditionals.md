@@ -9,7 +9,7 @@
 	- Add some more logic so that if it's the final week (1 to 7 days of school left), the sprite doesn't say any of the countdown stuff, but instead says "FINAL WEEK!! WOOHOO!!". You'll need to add another branch to your current if/else (click the + button bottom of the blue if block to add another branch) to add this behavior in.
 	- Add some more logic (another branch to the if/else) so that if the `remainder of`schoolDaysLeft divided by 7 is = 0, the sprite should say how many weeks there are left instead. (There will be schoolDays / 7 weeks left at that point).
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,
@@ -71,7 +71,7 @@ Each of the questions will represent conditional blocks, and depending on which 
 
 4. Get creative! Feel free to add some more questions and fun jobs as possibilities.
 
-```block
+```blocks
 // :solution
 if (game.ask("Would you like to see dragons?")) {
     if (game.ask("Would you like to fight them?")) {

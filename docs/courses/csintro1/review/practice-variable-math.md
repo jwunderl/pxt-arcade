@@ -6,7 +6,7 @@ This example will get us more experience with math and programming, by getting o
 
 1. Copy and paste the given code into the MakeCode editor. Then try running it!
 
-```block
+```blocks
 let ageInDays = 0
 let ageSentence = ""
 let age = 0
@@ -27,7 +27,7 @@ game.splash("" + ageSentence + " days old")
 
 5. Add in two more questions of your choice that have numeric answers to your survey. Some basic ideas are to compute how many weeks old someone is, or how many cats they've seen per year. Feel free to get creative though; there are plenty of fun statistics out there to compute.
 
-```block
+```blocks
 // :solution
 let dogsPerDay = 0
 let ageInMonths = 0
@@ -61,7 +61,7 @@ There are a lot of useful things you can do with the other Math blocks - in this
 4. After you get the previous part working, you may notice that when you run it a couple of times you get some weird sentences that say you were some negative number off.  If you haven't already, take a second to try and think about when and why this weird result is coming up before moving on.
 5. It turns out that if the actual number was lower than the guess, the result of `actual - guess` will go negative. How are we going to fix this to seem like a more natural sentence? We can use something called absolute value: basically how far a number is from 0 on a number line. (For example, -5 and 5 both have an absolute distance of 5. They're both 5 distance away from 0. Basically a number's absolute value is just the same if the original number is positive, but if it was originally negative, you can take away the negative sign.).  So here instead of just subtracting, use `abs` to find the absolute value of the result to help the sentence make more sense, and also make the game slightly harder to beat.
 
-```block
+```blocks
 // :solution
 let actual = 0
 let guess = 0

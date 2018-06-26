@@ -3,7 +3,7 @@
 1. On every 500 ms game update, make a new projectile with a star sprite.  Set both its x and y velocities to be a random number from range -50 to 50.  
 2. Run it! The stars should come from all 4 corners and have random speeds.
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,
@@ -41,7 +41,7 @@ game.onUpdateInterval(500, function () {
 4. Add a timer so the game last 30 seconds
 
 
-```block
+```blocks
 // :solution
 
 enum SpriteKind {
@@ -156,7 +156,7 @@ Challenge:
 1. Make a target sprite that stays in center of a wall randomly. It should stay there for 1 second (use the 'on game update 1 sec' block) before figuring out the next wall to randomly jump to.  
 2. When projectiles overlap with the target, change the score by one. You will want || Sprites: on sprite of kind  overlaps|| blocks. This means you must make the projectiles of a certain type and your target sprite of another type. Don't forget to destroy the target. 
 
-```block
+```blocks
 // :solution
 enum SpriteKind {
     Player,

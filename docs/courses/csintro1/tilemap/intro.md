@@ -3,7 +3,7 @@
 # TODO: keep programing with functions - make this function code
 
 ## Student Task: Make a Maze 16x32, Challenge 32x48 or larger
-```block
+```blocks
 // :solution
 let sprite: Sprite = null
 scene.setTileMap(img`
@@ -112,7 +112,7 @@ game.onUpdate(function () {
 
 ## Student Task: Given the following tiles, use a tile map to display the words "HELLO WORLD" on the screen
 
-```block
+```blocks
 let sprite: Sprite = null
 scene.setTile(2, img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
@@ -265,7 +265,7 @@ game.onUpdate(function () {
 })
 ```
 
-```block
+```blocks
 // :solution
 scene.setTileMap(img`
 2 3 4 4 5 1 6 5 7 4 8 1 1 1 1 1 
@@ -326,7 +326,7 @@ The basic tile map example uses:
 3. Save the code for the task (name it "first tile map") 
 4. navigate through the tile map with the sprite
 
-```block  
+```blocks  
 
 enum SpriteKind {
     Player,
@@ -384,7 +384,7 @@ game.onUpdate(function () {
 5. navigate the sprite to all rooms without crossing a black lines
 5. Optional: design a 32x32 tile map and make a more interesting sprite
 
-```block
+```blocks
 // :solution
 
 enum SpriteKind {
@@ -469,7 +469,7 @@ game.onUpdate(function () {
 4. save the code for the task (name it "set tile design 1") 
 5. notice that this sprite moves faster
 
-```block  
+```blocks  
 enum SpriteKind {
     Player,
     Enemy
@@ -575,7 +575,7 @@ complete 3 or more of the following
 
 
 
-```block
+```blocks
 // :solution
 
 // Basic Solution
@@ -717,7 +717,7 @@ game.onUpdate(function () {
 // :end-solution
 ```
 
-```block
+```blocks
 // :solution
 
 // Challenge Basic Solution

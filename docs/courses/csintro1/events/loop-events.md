@@ -10,7 +10,7 @@ In these activities, the student will use:
 * on kind overlap
 * Loop to animate sprite movement
 
-```block
+```blocks
 // https://makecode.com/_dzEEJaXJiHmt or https://makecode.com/_aPFcv5JAj0Re in progress transition to Kind (need new kind-s)- removed tilemap
 let rain: Sprite = null
 let mountainside: Sprite = null

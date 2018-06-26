@@ -5,20 +5,20 @@
 
 ## Mini lessons:
 ### make camera follow in only x axis:
-```block
+```blocks
 game.onUpdate(function () {
     scene.centerCameraAt(user.x - scene.screenWidth() / 2, 15)
 })
 ```
 ### Make character bounce up and down a bit for impression of movement:
-```block
+```blocks
 game.onUpdateInterval(500, function () {
     user.y += change
     change = change * -1
 })
 ```
 ### Make shocked / dizzy
-```block
+```blocks
 user.vx = -8
 projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
@@ -45,7 +45,7 @@ projectile.destroy()
 ```
 
 ## Wall collision / stumble:
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy

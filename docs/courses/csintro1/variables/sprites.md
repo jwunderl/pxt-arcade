@@ -19,7 +19,7 @@ In this activity Students are introduced to:
 Sprites are created using the Sprites menu - choosing the set block  
 
 https://makecode.com/_g3CcuWigwKR8 
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -53,7 +53,7 @@ and then using the sprite editor to color pixels for a sprite design.
 Look at the blocks and note that a name for the sprite (`mySprite`) is set to an image for the sprite (it's hot sauce!).
 
 https://makecode.com/_DgmcM1Epmgrm
-```block
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -89,7 +89,7 @@ mySprite = sprites.create(img`
 When using the image editor the pixel dimensions are displayed in the lower right corner. Sizes include 8x8, 16x16, 32x32, and other odd sizes.
 ### ~
 
-```block
+```blocks
 // :solution
 /* https://makecode.com/_arj7ewLpXas6 */   
 
@@ -160,7 +160,7 @@ Answer: "Because one of the choices is transparent and if the background color m
 ### ~  
 
 
-```block
+```blocks
 // :solution
 
 /* https://makecode.com/_ipr4sK16fcvq */
