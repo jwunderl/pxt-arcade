@@ -12,7 +12,6 @@ In these activities students will work with:
 * ``||scene:tile color colliding with||``
 * ``||logic:and||``
 * ``||logic:or||``
-* ``||logic:and||``
 * ``||logic:not||``
 
 # TODO: Create overview Video covering (list items above mostly).  Provide high level script outline.
