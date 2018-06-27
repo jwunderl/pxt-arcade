@@ -1,27 +1,28 @@
-# Activity: Sprite Overlap Events 
+# Activity: Sprite Overlap Events 2
 (Part 2)
-Since overlap uses SpriteKind for sprites to trigger interactions with each other it makes it easy to create one behavior for several items.
+We use SpriteKind to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." In the activity, all "Cloud" SpriteKind's respond with the same act the same when overlapped with  "Helicopter" SpriteKind. 
 
-If we want to make several clouds we can have them all interact with a moving object in the same way.
+Making several clouds with the same SpriteKind of "Cloud," we have them all interact with the Helicopter overlap in the same way.
 
 In this activity the student will continue to work with:
 * on overlap event with a SpriteKind (e.g. - Cloud) applied to several identical sprites
-* 
+* define multiple SpriteKind overlap events and actions
 
 
-# Overlaps
+# Overlaps (2)
 
-# TODO: eric overview video
+# TODO: eric overview video bump
 
 
 ## Concept: SpriteKind Overlap Event "bump" action  
-Having sprites bump rather than pass over each other is a useful behavior for a SpriteKind overlap event. One way to simulate a bump is:
-* move the sprite in the opposite direction after the overlap.  We bump backwards.  The faster we bump the farther we move away from the overlap object.
+Having sprites bump rather than pass over each other is useful game behavior for a SpriteKind overlap event. One way to simulate a bump is:
+* move the sprite in the opposite direction after the overlap (We bump backwards).  The faster we bump, the farther we move away from the overlap object.
+
+* Stop the sprite (set vx and vy to 0)
   * change x position by (-1)*(x-velocity)
   * change y position by (-1)*(y-velocity)
-* Stop the sprite (set vx and vy to 0)
-* Shake the stationary object
-  * move 1 pixel 
+* Shake the stationary object (cloud)
+  * move 1 pixel (any direction)
   * pause
   * move back
 
@@ -207,43 +208,261 @@ landing.y = 125
 ```
 
 
-## Student Task: Soft Landing
-There is a landing area at the bottom of the example.  The copter sprite should not go through the landing, it should land!
+## Student Task #1: Soft Landing
+There is a "T" shaped landing area at the bottom of the example.  The helicopter sprite should not go through the landing, it should land!
 
-1. starting with the above example 
-2. Review the code and then add an on overlap event for the helicopter overlaps with the landing
-3. the block of code in the overlap event should stop the helicopter velocity motion (both vx and vy) and then change the helicopter position **up** 2 pixels.
-4. Challenge: Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, anything) and give the sprite erratic motion after an overlap. 
+1. starting with the above example replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
+2. Review the rest of the code and then add an on overlap event for when the helicopter overlaps with the landing
+3. the block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more.
+4. Challenge: Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, or other) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. 
 
 ### ~hint
-For the landing to change the Y position to move up we have to subtract.
+For the landing:  to change the helicopter Y position to move up we have to change by an negative Y value.
 
-Challenge Tip: Erratic motion can be made by changing the sprite position back and forth several times. Try rapid changes in velocity and/or position.
+Challenge Tip: Erratic motion can be made by changing the sprite position back and forth several times. Try changes in velocity and/or position separated by short pauses.
 
 ``||loops:pause()||`` insertion can be useful between changes in movement.
 
 ### ~
 
-# TODO: eric short video here 
+```blocks
+// :solution
+// https://makecode.com/_9YDDRgemeMyo
 
-We use SpriteKind to give a "kind" label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." In this example all "Cloud" SpriteKind's act the same when overlapped with  "Helicopter" SpriteKind. 
+enum SpriteKind {
+    Helicopter,
+    Cloud,
+    LandingPad,
+    Player,
+    Enemy,
+    Forest
+}
+let landing: Sprite = null
+let cloud3: Sprite = null
+let cloud2: Sprite = null
+let cloud1: Sprite = null
+let tree: Sprite = null
+let copter: Sprite = null
+let otherSprite: Sprite = null
+let sprite: Sprite = null
+sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.LandingPad, function (sprite, otherSprite) {
+    sprite.vx = 0
+    sprite.vy = 0
+    game.splash("Perfect Landing!")
+    sprite.y += -2
+})
+sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Cloud, function (sprite, otherSprite) {
+    sprite.x += -1 * sprite.vx
+    sprite.y += -1 * sprite.vy
+    sprite.vx = 0
+    sprite.vy = 0
+    otherSprite.y += -1
+    pause(100)
+    otherSprite.y += 1
+})
+sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Forest, function (sprite, otherSprite) {
+    sprite.vx = -30
+    sprite.vy = -30
+    sprite.x += -15
+    pause(100)
+    sprite.x += 17
+    pause(200)
+    sprite.y += 12
+    pause(200)
+    sprite.y += -7
+    pause(200)
+    sprite.y += 12
+    pause(200)
+    game.over()
+})
+game.splash("Cloud Bump", "flying with control pad")
+scene.setBackgroundColor(9)
+tree = sprites.create(img`
+. 6 6 . . . . . . . . . 6 6 6 6 . . . . 6 6 7 6 . . . 6 6 . . . 
+6 6 7 6 6 6 6 6 6 6 . 6 6 7 7 7 6 6 6 6 7 6 6 7 6 6 6 7 7 6 7 . 
+7 6 6 7 7 7 7 6 7 6 6 6 7 6 6 7 6 7 7 6 7 7 7 6 7 6 6 7 7 7 7 6 
+6 7 7 6 7 6 7 7 7 7 6 6 7 7 6 7 7 7 7 7 7 6 7 7 7 6 7 7 7 7 7 7 
+6 7 6 7 7 7 7 7 6 7 7 6 7 7 6 7 7 7 7 6 7 7 7 7 6 6 7 7 6 7 7 6 
+6 6 7 7 6 7 7 6 7 6 7 6 6 7 7 7 6 7 6 7 7 7 7 6 6 6 7 7 7 7 7 7 
+. 6 7 6 7 7 6 7 7 7 7 7 6 6 7 7 7 6 7 7 7 6 7 6 6 7 7 7 6 7 7 7 
+. 6 6 7 6 7 7 7 6 7 6 7 . 6 7 7 6 7 7 7 6 6 7 7 7 6 7 7 7 7 6 6 
+. 6 6 6 6 7 6 7 7 7 7 7 . 6 6 7 7 7 7 7 7 7 7 7 . 6 7 7 7 6 7 7 
+. . . . 6 . 7 7 7 . . . . . 6 6 e e e e 7 7 6 . . 6 6 7 7 7 7 6 
+. . . . . . . e e . . . . . . . e e c e . . . . . . 6 6 6 7 6 . 
+. . . . . . . . e e e . . . . e e c e e . . e e e e e 6 e . . . 
+. . . . . . . . e e e e e . . e e c e e e e e e e e e e e . . . 
+. . . . . . . . . e e e e e e e c c e e e e e e e e e . . . . . 
+. . . . . . . . . . e e e e e e c e e e e e e e e . . . . . . . 
+. . . . . . . . . . . e e c e e c e e e e e . . . . . . . . . . 
+. . . . . . . . . . . . e c e e c e e . . . . . . . . . . . . . 
+. . . . . . . . . . . . e c e e c e . . . . . . . . . . . . . . 
+. . . . . . . . . . . . e c e e c e . . . . . . . . . . . . . . 
+. . . . . . . . . . . e e c e c c . . . . . . . . . . . . . . . 
+. . . . . . . . . . . e e c e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . . e e c e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . . e e c e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . . e c c e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . . e c e e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . . e c e e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . . e c e e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . e e c e e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . e e c e e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . e e c e e c e . . . . . . . . . . . . . . . 
+. . . . . . . . . . e e c e e e e . . . . . . . . . . . . . . . 
+. . . . . . . . . . e e e e e e e e . . . . . . . . . . . . . . 
+`, SpriteKind.Forest)
+tree.setPosition(140, 104)
+copter = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . f f f f . . . . . . 
+. . . . . f f f f . . . . . . . . . f f f f f f f . . . . . . . 
+. . . . . . . f f f f f f f f f f f f f . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . e f . . e e e . . . . . . . . . . . 
+. . . . f . . . . . . . . . e . . e e f f 1 1 . . . . . . . . . 
+. . f f f f f f f f . . . . e e e 2 f . 1 1 1 1 . . . . . . . . 
+. . . . . f . . . . . . e e e 2 2 2 f 1 1 1 1 1 . . . . . . . . 
+. . . . . f . . . e e e 2 2 2 2 2 2 f 1 1 1 1 1 e . . . . . . . 
+. . . . . f e e e e 2 2 2 2 2 2 2 2 f f 1 1 f 2 e . . . . . . . 
+. . . . . e e 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . . 
+. . . . . e 2 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . . 
+. . . . . e e 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . . 
+. . . . . . e e 2 2 2 2 2 2 e 2 2 2 2 2 2 f f 2 e . . . . . . . 
+. . . . . . . e e 2 2 2 2 2 e e 2 2 2 2 2 2 2 e e . . . . . . . 
+. . . . . . . . e e e e 2 e e e 2 2 2 2 2 2 e e . . . . . . . . 
+. . . . . . . . . . . f e . . . e e e e e e . . . . . . . . . . 
+. . . . . . . . . . . f . . . . . . . . f . . . . . . . . . . . 
+. . . . . . f . . . . f . . . . . . . . f . . . . . f . . . . . 
+. . . . . . f f f f f f f f f f f f f f f f f f f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Helicopter)
+copter.setFlag(SpriteFlag.StayInScreen, true)
+// Create and place "clouds"  Sprites
+cloud1 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 1 1 1 1 1 8 . . . . . . 
+. . . 1 1 8 8 8 1 1 1 1 1 1 . . 
+. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 . 
+. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 . 
+1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 . 
+1 1 8 8 8 8 8 1 1 8 1 8 1 1 . . 
+. 1 1 1 1 8 8 8 8 8 8 8 1 8 . . 
+. . . . 1 1 8 8 1 1 8 8 1 . . . 
+. . . . . . 8 8 8 1 1 1 1 . . . 
+. . . . . . 1 1 1 1 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Cloud)
+cloud1.x = 20
+cloud1.y = 30
+cloud2 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 1 1 1 1 1 8 . . . . . . 
+. . . 1 1 8 8 8 1 1 1 1 1 1 . . 
+. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 . 
+. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 . 
+1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 . 
+1 1 8 8 8 8 8 1 1 8 1 8 1 1 . . 
+. 1 1 1 1 8 8 8 8 8 8 8 1 8 . . 
+. . . . 1 1 8 8 1 1 8 8 1 . . . 
+. . . . . . 8 8 8 1 1 1 1 . . . 
+. . . . . . 1 1 1 1 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Cloud)
+cloud2.x = 50
+cloud2.y = 65
+cloud3 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 1 1 1 1 1 8 . . . . . . 
+. . . 1 1 8 8 8 1 1 1 1 1 1 . . 
+. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 . 
+. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 . 
+1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 . 
+1 1 8 8 8 8 8 1 1 8 1 8 1 1 . . 
+. 1 1 1 1 8 8 8 8 8 8 8 1 8 . . 
+. . . . 1 1 8 8 1 1 8 8 1 . . . 
+. . . . . . 8 8 8 1 1 1 1 . . . 
+. . . . . . 1 1 1 1 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Cloud)
+cloud3.x = 100
+cloud3.y = 40
+landing = sprites.create(img`
+5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
+5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.LandingPad)
+landing.y = 125
+game.onUpdate(function () {
+    copter.vx += controller.dx()
+    copter.vy += controller.dy(0)
+})
 
-## Example: simple example 2 
 
-1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
+// :end-solution
+```
 
-```blocks  
-// simple code here
-```  
 
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Optional: Try adding [something that they have to infer or that might take a little longer than the simple items above]
+
+
+
+## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
+1. starting with example or task #1 
+2. add a new sprite that looks nothing like a cloud (hat, tree, etc.)
+3. make sure the new sprite has SpriteKind of "Cloud"  
+4. position the new sprite so it is not touching any other sprite
+5. Challenge: Add another Sprite that looks identical to the previous new sprite but give it a SpriteKind other than "Cloud" and make sure it has a unique overlap event action (e.g. - might say something new) 
+6. Test the overlaps on the new sprite(s)
 
 ### ~hint
  // Hint to student
