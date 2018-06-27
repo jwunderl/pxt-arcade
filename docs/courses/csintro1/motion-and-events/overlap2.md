@@ -208,17 +208,19 @@ landing.y = 125
 
 
 ## Student Task: Soft Landing
-There is a landing area at the bottom of the example.  The sprite should not go through the landing but should... land!
+There is a landing area at the bottom of the example.  The copter sprite should not go through the landing, it should land!
 
 1. starting with the above example 
-2. Review the code to make an on overlap event for the helicopter and landing
-3. the overlap event block of code should move the helicopter up 1 pixel and then stop the helicopter motion vx and vy.
-4. Optional: Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, anything) and give the sprite erratic motion after an overlap. 
+2. Review the code and then add an on overlap event for the helicopter overlaps with the landing
+3. the block of code in the overlap event should stop the helicopter velocity motion (both vx and vy) and then change the helicopter position **up** 2 pixels.
+4. Challenge: Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, anything) and give the sprite erratic motion after an overlap. 
 
 ### ~hint
-Erratic motion can be moving the sprite back and forth several times.  By rapidly reversing velocity or changing position.
+For the landing to change the Y position to move up we have to subtract.
 
-``||loops:pause()||`` is good to use between changes in movement.
+Challenge Tip: Erratic motion can be made by changing the sprite position back and forth several times. Try rapid changes in velocity and/or position.
+
+``||loops:pause()||`` insertion can be useful between changes in movement.
 
 ### ~
 

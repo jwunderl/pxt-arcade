@@ -292,6 +292,12 @@ for (let i = 0; i < 12; i++) {
 2. Make the boomerang return to it's original location over the course of two seconds using a loop.
 3. Challenge: Use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies
 
+### ~hint
+
+flips will occur very quickly unless a ``||loops:pause()||`` is used
+
+### ~
+
 ```blocks
 enum SpriteKind {
     Player,
