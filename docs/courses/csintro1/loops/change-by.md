@@ -62,7 +62,6 @@ info.startCountdown(5)
 
 ```
 
-
 ### ~hint
 **Teacher Note**  
 
@@ -71,6 +70,7 @@ info.startCountdown(5)
 
 > Get students use to modifying the examples by modifying values  
 > - update score increment, update interval and countdown time 
+> - making the examples add 2 or 3 to the count on each button press, and identifying how that changes the results.
 ### ~
 
 ## Student Task 1: Make the game have a cheering coach
@@ -283,30 +283,29 @@ for (let index = 0; index <= 10; index++) {
 // :end-solution
 ```
 
-
-
 ## What did we learn? [TODO create 2 questions]
 
-1. In task 3, you may have noticed that when you switched from a repeat loop to a for loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that? 
+1. In task 3, you may have noticed that when you switched from a repeat loop to a for loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that?
+2. When might you want to choose to use a ``||loops:repeat||``  loop over a ``||loops:for index||`` loop?
 ### ~hint
-Is there a difference between ``||loops repeat 0 times||`` and ``||for index from 0 to 0||``? 
+Is there a difference between how many times ``||loops repeat 0 times||`` and ``||for index from 0 to 0||`` will run? 
 ### ~
 
 
 ## Rubrics
 
 
-### Change by task rubric [TODO]
+### Change by task rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Turtle  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
+| Loops  | Made the "coach" using the say block |  Used count to successfully complete task 2 | Transitioned to a 'for index from 0 to 10' loop in task 3 | Completed Challenge Code in Task 1 |
 
 ### Score = \_\_\_\_\_\_ /10 
 
 ### What did we learn rubric [TODO review based on number of questions]
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+| Explanation | answered at least 1 questions fully or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
