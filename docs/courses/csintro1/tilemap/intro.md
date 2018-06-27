@@ -382,7 +382,7 @@ game.onUpdate(function () {
 3. design additional rooms using black for walls and other colors for the rooms
 4. make a pathway open to all of the room
 5. navigate the sprite to all rooms without crossing a black lines
-5. Optional: design a 32x32 tile map and make a more interesting sprite
+5. Challenge: design a 32x32 tile map and make a more interesting sprite
 
 ```blocks
 // :solution

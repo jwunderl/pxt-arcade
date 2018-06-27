@@ -42,7 +42,7 @@ TODO: These notes get removed for students and go to teacher guide so use exact 
 1. starting with the [simple example 1] example 
 2. add [something simple....]
 3. add [something simple....]
-4. Optional: Try adding [something that they have to infer or that might take a little longer than the simple items above]
+4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
 
 ```blocks
 let sum = 0
@@ -162,7 +162,7 @@ add()
 1. starting with the [simple example 1] example 
 2. add [something simple....]
 3. add [something simple....]
-4. Optional: Try adding [something that they have to infer or that might take a little longer than the simple items above]
+4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
 
 ### ~hint
  // Hint to student
