@@ -18,7 +18,6 @@
 ## Loops
 * [Intro](/courses/csintro1/loops/intro)
 * [Change By](/courses/csintro1/loops/change-by)
-* [Spirals](/courses/csintro1/loops/spiral)
 
 ## Motion and Events
 * [Sprite Motion Event](/courses/csintro1/motion-and-events/sprite-motion-event)
