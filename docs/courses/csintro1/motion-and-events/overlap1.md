@@ -1,4 +1,4 @@
-# Activity: Sprite Overlap Events 1
+# Activity: Sprite Overlap & Events 1
 (Part 1)  
 Once the spites are moving, the next step is to detect when sprites interact with other objects. Overlap is a primary way sprites trigger interactions with each other.
 
