@@ -1,4 +1,4 @@
-# Activity: Sprite Overlap Events 2
+# Activity: Sprite Overlap & Events 2
 (Part 2)
 We use SpriteKind to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." In the activity, all "Cloud" SpriteKind's respond with the same act the same when overlapped with  "Helicopter" SpriteKind. 
 
@@ -7,9 +7,12 @@ Making several clouds with the same SpriteKind of "Cloud," we have them all inte
 In this activity the student will continue to work with:
 * on overlap event with a SpriteKind (e.g. - Cloud) applied to several identical sprites
 * define multiple SpriteKind overlap events and actions
+* spawn a SpriteKind
+* ``||sprites:on created||`` event setting image and position when specific SpriteKind is spawned
+  * ``||sprites:set image to||``
+  * ``||math:pick random||`` 
 
-
-# Overlaps (2)
+# Overlaps & Events (part 2)
 
 # TODO: eric overview video bump
 
@@ -31,6 +34,35 @@ Having sprites bump rather than pass over each other is useful game behavior for
 2. Create the sample code and run the code 
 3. Save the code for the task (name it "copterBump1")  
 4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite` and the how the code creates the bump behavior.
+
+### ~hint
+**Teacher Note**
+The code to make a bump can be difficult to grasp for students.  Break it down for them step by step.  
+
+Start with the behavior.  The faster the velocity the farther the bump in the opposite direction. 
+* The code uses (velocity)*(-1) to change the position. 
+* changes x position in pixels by using the negative of the velocity in the x direction.
+
+Give an example.  A car going 10 meters/second bumps -10 centimeters.
+
+Ask: what if going -100 meters/second?  [Answer] bumps +100 centimeters
+
+This is the code that bumps the helicopter
+```block
+    sprite.x += -1 * sprite.vx
+    sprite.y += -1 * sprite.vy
+    sprite.vx = 0
+    sprite.vy = 0
+```
+
+and this code shakes the cloud by moving it 1 pixel and then back
+
+```block
+    otherSprite.y += -1
+    pause(100)
+    otherSprite.y += 1
+```
+### ~
 
 ```blocks
 
@@ -208,13 +240,26 @@ landing.y = 125
 ```
 
 
-## Student Task #1: Soft Landing
+## Student Task #1a: Soft Landing
 There is a "T" shaped landing area at the bottom of the example.  The helicopter sprite should not go through the landing, it should land!
 
 1. starting with the above example replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
 2. Review the rest of the code and then add an on overlap event for when the helicopter overlaps with the landing
 3. the block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more.
 4. Challenge: Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, or other) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. 
+
+### ~hint
+**Teacher Note**
+Continue to quiz students throughout the course on how to use the short method to give a sprite motion using ``||controller:dx (left-right buttons)||``  type controller block.
+
+```block
+game.onUpdate(function () {
+    copter.vx += controller.dx()
+    copter.vy += controller.dy()
+})
+```
+
+### ~
 
 ### ~hint
 For the landing:  to change the helicopter Y position to move up we have to change by an negative Y value.
@@ -456,17 +501,21 @@ game.onUpdate(function () {
 
 
 
-## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
+## Student Task #1b: Add a new unique sprite with SpriteKind of "Cloud" 
 1. starting with example or task #1 
-2. add a new sprite that looks nothing like a cloud (hat, tree, etc.)
+2. add a new sprite that looks nothing like a cloud (e.g.- hat, tree, etc.)
 3. make sure the new sprite has SpriteKind of "Cloud"  
 4. position the new sprite so it is not touching any other sprite
 5. Challenge: Add another Sprite that looks identical to the previous new sprite but give it a SpriteKind other than "Cloud" and make sure it has a unique overlap event action (e.g. - might say something new) 
-6. Test the overlaps on the new sprite(s)
+6. **Test the overlaps on the new sprite(s)**
 
 ### ~hint
- // Hint to student
+**Teacher Note**
+Continue to reinforce to students that SpriteKind controls overlap events. Any and all sprites with the same SpriteKind designation will behave the same when used in an overlap event.  So for a SpriteKind of "Cloud" - regardless if using an image of a "cloud" or a "shoe" or a single pixel "dot" will result in the same code block being run for an overlap event.  In our example it results in the "bump" simulation code.
+
 ### ~
+
+
 
 ```blocks
 // :solution
@@ -943,47 +992,77 @@ landing.y = 140
 // :end-solution
 ```
 
-# 2: Reduce redundancy using `on created [sprite] of kind [cloud]`
+## Concept: Random Clouds - on created event with spawn SpriteKind 
+
+# TODO: short video eric
+
+## Example 2: random clouds
+
+on created event to set image and location after a SpriteKind is spawned
+
+1. Review the code below 
+2. Create the sample code and run the code 
+3. Save the code for the task (name it "spawnCloud")  
+4. Carefully examine the ``||sprites:spawn kind||``  block and ``||sprites:on created () of kind ()||`` event
+
 ```blocks
-// :solution
 
 enum SpriteKind {
     Helicopter,
     Cloud,
-    Rain,
-    LandingPad,
     Player,
     Enemy
 }
-let landing: Sprite = null
-let cloud3: Sprite = null
 let cloud2: Sprite = null
 let cloud1: Sprite = null
-let mySprite: Sprite = null
-
-// Control the copter with the + pad
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += 1
+let agent: Sprite = null
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    agent.vy += -1
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    agent.vy += 1
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += -1
+    agent.vx += -1
+})
+// Control the copter with the + pad
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    agent.vx += 1
+})
+sprites.onCreated(SpriteKind.Cloud, function (newCloud) {
+    newCloud.setImage(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 1 1 1 1 1 8 . . . . . . 
+. . . 1 1 8 8 8 1 1 1 1 1 1 . . 
+. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 . 
+. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 . 
+1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 . 
+1 1 8 8 8 8 8 1 1 8 1 8 1 1 . . 
+. 1 1 1 1 8 8 8 8 8 8 8 1 8 . . 
+. . . . 1 1 8 8 1 1 8 8 1 . . . 
+. . . . . . 8 8 8 1 1 1 1 . . . 
+. . . . . . 1 1 1 1 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`)
+    newCloud.x = Math.randomRange(16, screen.width - 16)
+    newCloud.y = Math.randomRange(20, screen.height - 75)
 })
 sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Cloud, function (sprite, otherSprite) {
     sprite.x += -1 * sprite.vx
     sprite.y += -1 * sprite.vy
+    sprite.vx = 0
+    sprite.vy = 0
     otherSprite.y += -1
     pause(100)
     otherSprite.y += 1
 })
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += -1
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += 1
-})
-game.splash("Cloud Collision", "control pad flying")
+game.splash("Generated Clouds", "on Sprite created")
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+agent = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -1018,297 +1097,51 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Helicopter)
 // Create and place "clouds"  Sprites
-cloud1 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . 1 1 1 1 1 8 . . . . . . 
-. . . 1 1 8 8 8 1 1 1 1 1 1 . . 
-. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 . 
-. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 . 
-1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 . 
-1 1 8 8 8 8 8 1 1 8 1 8 1 1 . . 
-. 1 1 1 1 8 8 8 8 8 8 8 1 8 . . 
-. . . . 1 1 8 8 1 1 8 8 1 . . . 
-. . . . . . 8 8 8 1 1 1 1 . . . 
-. . . . . . 1 1 1 1 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Cloud)
-cloud1.x = 20
-cloud1.y = 20
-cloud2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . 1 1 1 1 1 8 . . . . . . 
-. . . 1 1 8 8 8 1 1 1 1 1 1 . . 
-. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 . 
-. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 . 
-1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 . 
-1 1 8 8 8 8 8 1 1 8 1 8 1 1 . . 
-. 1 1 1 1 8 8 8 8 8 8 8 1 8 . . 
-. . . . 1 1 8 8 1 1 8 8 1 . . . 
-. . . . . . 8 8 8 1 1 1 1 . . . 
-. . . . . . 1 1 1 1 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Cloud)
-cloud2.x = 50
-cloud2.y = 55
-cloud3 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . 1 1 1 1 1 8 . . . . . . 
-. . . 1 1 8 8 8 1 1 1 1 1 1 . . 
-. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 . 
-. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 . 
-1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 . 
-1 1 8 8 8 8 8 1 1 8 1 8 1 1 . . 
-. 1 1 1 1 8 8 8 8 8 8 8 1 8 . . 
-. . . . 1 1 8 8 1 1 8 8 1 . . . 
-. . . . . . 8 8 8 1 1 1 1 . . . 
-. . . . . . 1 1 1 1 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Cloud)
-cloud3.x = 100
-cloud3.y = 30
+sprites.create(null, SpriteKind.Cloud)
+sprites.create(null, SpriteKind.Cloud)
 
-landing = sprites.create(img`
-5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
-5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
-. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.LandingPad)
-landing.y = 132
-
-// :end-solution
 ```
 
-# 3: Make clouds appear in random positions
+## Student Task #2: More Random Clouds
+The ``||sprites:on created () of kind ()||`` event allows us to become efficient with our code by running our cloud set up.  Now we will create clouds adding only new spawn blocks.
+
+1. start with example #2 
+2. Review the code and find spawn blocks
+3. add 2 more spawn blocks
+4. Challenge: spawn a new SpriteKind (perhaps a bird, butterfly, other small item) and add the image and position using a new ``||sprites:on created () of kind ()||`` event block. In the block code use ``||sprites:set ghost (on)||`` to be sure the sprite will not interact with the Helicopter because you should create at least 10 in random positions all over the screen.
+
+### ~hint
+**Teacher Note**
+Students can use any variable within ``||sprites:on created () of kind ()||`` event block since it is used only in that block.  This is not a main concept for this lesson or for unit 1. 
+
+For now we say the variable is used for a short time in the event and then goes away.  We will address local scope in later Arcade Intro CS units.
+
 ```blocks
 // :solution
-/* *********************************************************
-*                    Cloud Collision v3                    *
-*         https://makecode.com/_iL9fRvg2XEYd               *
-*  Introduces  Sprites onOverlap, ghost flag, increase by, *
-*  velocity, game.splash                                   *
-*                                                          *
-***********************************************************/
+// https://makecode.com/_V638VzC3LJP0
+
 enum SpriteKind {
     Helicopter,
     Cloud,
-    Rain,
-    LandingPad
-}
-let rain: Sprite = null
-let cloud3: Sprite = null
-let cloud2: Sprite = null
-let cloud1: Sprite = null
-let sprite: Sprite = null
-sprites.onCreated(SpriteKind.Cloud, function (sprite) {
-    sprite.setImage(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . 1 1 1 1 1 8 . . . . . . 
-. . . 1 1 8 8 8 1 1 1 1 1 1 . . 
-. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 . 
-. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 . 
-1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 . 
-1 1 8 8 8 8 8 1 1 8 1 8 1 1 . . 
-. 1 1 1 1 8 8 8 8 8 8 8 1 8 . . 
-. . . . 1 1 8 8 1 1 8 8 1 . . . 
-. . . . . . 8 8 8 1 1 1 1 . . . 
-. . . . . . 1 1 1 1 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`)
-    sprite.x = Math.randomRange(0, screen.width - 16)
-    sprite.y = Math.randomRange(0, screen.height - 16)
-})
-// Control the copter with the + pad
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += 1
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += -1
-})
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += -1
-})
-sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.LandingPad, function (sprite, otherSprite) {
-    sprite.vx = 0
-    sprite.vy = 0
-    game.splash("Perfect Landing!")
-    sprite.y += 2
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += 1
-})
-
-let mySprite: Sprite = null
-let landing: Sprite = null
-// display game play
-game.splash("Cloud Collision")
-scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . f f f f . . . . . . 
-. . . . . f f f f . . . . . . . . . f f f f f f f . . . . . . . 
-. . . . . . . f f f f f f f f f f f f f . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . e f . . e e e . . . . . . . . . . . 
-. . . . f . . . . . . . . . e . . e e f f 1 1 . . . . . . . . . 
-. . f f f f f f f f . . . . e e e 2 f . 1 1 1 1 . . . . . . . . 
-. . . . . f . . . . . . e e e 2 2 2 f 1 1 1 1 1 . . . . . . . . 
-. . . . . f . . . e e e 2 2 2 2 2 2 f 1 1 1 1 1 e . . . . . . . 
-. . . . . f e e e e 2 2 2 2 2 2 2 2 f f 1 1 f 2 e . . . . . . . 
-. . . . . e e 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . . 
-. . . . . e 2 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . . 
-. . . . . e e 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . . 
-. . . . . . e e 2 2 2 2 2 2 e 2 2 2 2 2 2 f f 2 e . . . . . . . 
-. . . . . . . e e 2 2 2 2 2 e e 2 2 2 2 2 2 2 e e . . . . . . . 
-. . . . . . . . e e e e 2 e e e 2 2 2 2 2 2 e e . . . . . . . . 
-. . . . . . . . . . . f e . . . e e e e e e . . . . . . . . . . 
-. . . . . . . . . . . f . . . . . . . . f . . . . . . . . . . . 
-. . . . . . f . . . . f . . . . . . . . f . . . . . f . . . . . 
-. . . . . . f f f f f f f f f f f f f f f f f f f f . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Helicopter)
-// Create and place "clouds"  Sprites
-cloud1 = sprites.create(null, SpriteKind.Cloud)
-cloud2 = sprites.create(null, SpriteKind.Cloud)
-cloud3 = sprites.create(null, SpriteKind.Cloud)
-
-// Landing pad drawn on top of 32x32 image placed so
-// top of Landing sprite is at bottom of screen
-landing = sprites.create(img`
-5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
-5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
-. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.LandingPad)
-landing.y = 140
-
-// :end-solution
-```
-
-# 4: Add a mountain, and bump when you hit it.
-```blocks
-// :solution
-/* *********************************************************
-*                    Cloud Collision v4                    *
-*         https://makecode.com/_Kdw15gdgYWz3               *
-*  Introduces  Sprites onOverlap, ghost flag, increase by, *
-*  velocity, game.splash                                   *
-*                                                          *
-***********************************************************/
-enum SpriteKind {
-    Helicopter,
-    Cloud,
-    Rain,
-    LandingPad,
-    Mountain,
     Player,
     Enemy
 }
-let mountain: Sprite = null
-let landing: Sprite = null
-let rain: Sprite = null
-let cloud3: Sprite = null
-let cloud2: Sprite = null
-let cloud1: Sprite = null
-let mySprite: Sprite = null
-let otherSprite: Sprite = null
-let sprite: Sprite = null
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += 1
-})
+let agent: Sprite = null
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += -1
+    agent.vy += -1
 })
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    agent.vy += 1
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    agent.vx += -1
+})
+// Control the copter with the + pad
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += 1
+    agent.vx += 1
 })
-sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Mountain, function (sprite, otherSprite) {
-    sprite.vx = 0 - sprite.vx
-    sprite.vy = 0 - sprite.vy
-})
-sprites.onCreated(SpriteKind.Cloud, function (sprite) {
-    sprite.setImage(img`
+sprites.onCreated(SpriteKind.Cloud, function (newCloud) {
+    newCloud.setImage(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . 1 1 1 1 1 8 . . . . . . 
@@ -1326,23 +1159,22 @@ sprites.onCreated(SpriteKind.Cloud, function (sprite) {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `)
-    sprite.x = Math.randomRange(0, screen.width - 16)
-    sprite.y = Math.randomRange(0, screen.height - 16)
+    newCloud.x = Math.randomRange(16, screen.width - 16)
+    newCloud.y = Math.randomRange(20, screen.height - 75)
 })
-sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.LandingPad, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Cloud, function (sprite, otherSprite) {
+    sprite.x += -1 * sprite.vx
+    sprite.y += -1 * sprite.vy
     sprite.vx = 0
     sprite.vy = 0
-    game.splash("Perfect Landing!")
-    sprite.y += 2
+    otherSprite.y += -1
+    pause(100)
+    otherSprite.y += 1
 })
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += -1
-})
-otherSprite = null
-// display game play
-game.splash("Cloud Collision")
+
+game.splash("Generated Clouds", "on Sprite created")
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+agent = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -1377,82 +1209,32 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Helicopter)
 // Create and place "clouds"  Sprites
-cloud1 = sprites.create(null, SpriteKind.Cloud)
-cloud2 = sprites.create(null, SpriteKind.Cloud)
-cloud3 = sprites.create(null, SpriteKind.Cloud)
-
-// Landing pad drawn on top of 32x32 image placed so
-// top of Landing sprite is at bottom of screen
-landing = sprites.create(img`
-5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
-5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 5 8 
-. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.LandingPad)
-landing.y = 140
-mountain = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . e 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . e d 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . e d d 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . e d e e 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . d d e e e 
-. . . . . . . . . . . . . . . . . . . . . . . . . . e d d e e e 
-. . . . . . . . . . . . . . . . . . . . . . . . . e d e e e e e 
-. . . . . . . . . . . . . . . . . . . . . . . . e d d e d e e e 
-. . . . . . . . . . . . . . . . . . . . . . . e e d e e d e e e 
-. . . . . . . . . . . . . . . . . . . . . . e e e e e e d e e e 
-. . . . . . . . . . . . . . . . . . . . . e e e e e e d e e e e 
-. . . . . . . . . . . . . . . . . . . . e e e e e e e d e e e e 
-. . . . . . . . . . . . . . . . . . . e e e e e e e e d e e e e 
-. . . . . . . . . . . . . . . . . . d e e e e e e e e d e e e e 
-. . . . . . . . . . . . . . . . . d e e e e e e e e e d e e e e 
-. . . . . . . . . . . . . . . . d e e e e e e e e e e d e e e e 
-. . . . . . . . . . . . . . . d e e e e e e e e e e e e e e e e 
-. . . . . . . . . . . . . . d e e e e e e e e e 7 e e e e e e e 
-. . . . . . . . . . . . . d e e e e e e e 7 7 7 7 e e e e 7 e e 
-. . . . . . . . . . . . d e e e e e e e 7 7 7 7 7 e e e e 7 e e 
-. . . . . . . . . . . d e e e e e e 7 7 7 7 7 e 7 e e e 7 7 e e 
-. . . . . . . . . . d e e e e e e e 7 7 7 7 e e 7 e e e 7 e e e 
-. . . . . . . . . 7 e e e e e e e 7 7 7 7 7 e e e e e 7 7 7 e e 
-. . . . . . . . 7 7 e e e e e e 7 7 7 7 e e e 7 e e e 7 7 7 e e 
-. . . . . . . 7 7 e e e e e e 7 7 7 7 e e e 7 e e e 7 7 7 7 e e 
-. . . . . . 7 7 e e e e e e e 7 7 7 e e e 7 e e e 7 7 7 7 e e e 
-. . . . . 7 7 e e e e e e e e 7 e e e e 7 7 e e 7 7 7 e e e e e 
-. . . . 7 7 7 7 7 7 7 7 7 7 7 7 e e e 7 e 7 e e e e e e e e e e 
-. . . 7 7 e e e e e e e e e e e e e e 7 7 7 e e e e e e e e e e 
-. . 7 7 e e e e e e e e e e e e e e e e e e e e e e e e e e e e 
-. 7 7 e e e e e 7 7 7 7 7 7 7 e e e e e e e e e e e e e e e e e 
-7 7 7 7 e 7 e 7 7 e e e e e e e e e e e e e e e e e e e e e e e 
-`, SpriteKind.Mountain)
-mountain.setPosition(scene.screenWidth() - mountain.width / 2, scene.screenHeight() - mountain.height / 2)
+sprites.create(null, SpriteKind.Cloud)
+sprites.create(null, SpriteKind.Cloud)
 
 // :end-solution
 ```
+## What did we learn? 
+
+1. Explain why in creating a "bump" effect negative X and Y velocities are used to change the X and Y positions?
+2. Describe how a SpriteKind label is used in "spawning" a sprite using ``||sprites:spawn sprite kind||``  block
+
+
+
+## Rubrics
+
+
+### Overlap task rubric
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Overlap & Events 2 | fully competed 1a + b tasks|  fully completed all 3 tasks | Completed all 3 tasks and at least 1 Challenge | Completed all tasks and Challenge Code  |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with original example, drawing or analogy |
+
+### Score = \_\_\_\_\_\_ /10 
