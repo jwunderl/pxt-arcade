@@ -12,7 +12,7 @@ In this activity Students are introduced to:
 * Color codes in image editor, Blocks and JavaScript  
 
 
-# Concept: Set mySprite to an image using the image editor
+# Concept: Set a Sprite variable to an image using the image editor
 
 # TODO: Video demo example Making a sprite, image editor (pixels), creating a share link and downloading a png code file.
 
@@ -24,9 +24,9 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let mySprite: Sprite = null
+let actor: Sprite = null
 
-mySprite = sprites.create(img`
+actor = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -50,7 +50,7 @@ and then using the sprite editor to color pixels for a sprite design.
 
 ## Example: Sprite
 
-Look at the blocks and note that a name for the sprite (`mySprite`) is set to an image for the sprite (it's hot sauce!).
+Look at the blocks and note that a name for the sprite (`actor`) is set to an image for the sprite (it's hot sauce!).
 
 https://makecode.com/_DgmcM1Epmgrm
 ```blocks
@@ -58,10 +58,10 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let mySprite: Sprite = null
+let actor: Sprite = null
 let sprite = 0
 sprite = null
-mySprite = sprites.create(img`
+actor = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . 2 . . . . . . . 
 . . . . . . . 7 7 7 . . . . . . 
