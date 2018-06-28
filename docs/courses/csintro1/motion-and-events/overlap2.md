@@ -1107,8 +1107,12 @@ The ``||sprites:on created () of kind ()||`` event allows us to become efficient
 
 1. start with example #2 
 2. Review the code and find spawn blocks
-3. add 2 more spawn blocks
-4. Challenge: spawn a new SpriteKind (perhaps a bird, butterfly, other small item) and add the image and position using a new ``||sprites:on created () of kind ()||`` event block. In the block code use ``||sprites:set ghost (on)||`` to be sure the sprite will not interact with the Helicopter because you should create at least 10 in random positions all over the screen.
+3. add 2 more spawn blocks for clouds
+4. Spawn a new SpriteKind: 
+  - spawn a small image, perhaps a bird, butterfly, other small item
+  - add the image and random position using a new ``||sprites:on created () of kind ()||`` event block. 
+  - spawn at least five of the new sprites (in random positions)
+5. Challenge: create an event for the Helicopter overlap with the new SpriteKind that has an action that gives the New SpriteKind a fast velocity so will fly off the screen after overlap.
 
 ### ~hint
 **Teacher Note**
@@ -1118,27 +1122,46 @@ For now we say the variable is used for a short time in the event and then goes 
 
 ```blocks
 // :solution
-// https://makecode.com/_V638VzC3LJP0
+// https://makecode.com/_R42TmEbgjT8R
 
 enum SpriteKind {
     Helicopter,
     Cloud,
+    Bird,
     Player,
     Enemy
 }
 let agent: Sprite = null
+let otherSprite: Sprite = null
+let sprite: Sprite = null
+sprites.onCreated(SpriteKind.Bird, function (newBird) {
+    newBird.setImage(img`
+. . . . . 6 . . 
+. . . . 6 6 . . 
+. . . 6 6 . . 6 
+5 6 6 6 6 6 6 . 
+. . . 6 6 . . 6 
+. . . . 6 6 . . 
+. . . . . 6 . . 
+. . . . . . . . 
+`)
+    newBird.x = Math.randomRange(10, screen.width - 10)
+    newBird.y = Math.randomRange(10, screen.height - 10)
+})
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.vy += -1
 })
+sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Cloud, function (sprite, otherSprite) {
+    sprite.x += -1 * sprite.vx
+    sprite.y += -1 * sprite.vy
+    sprite.vx = 0
+    sprite.vy = 0
+    otherSprite.y += -1
+    pause(100)
+    otherSprite.y += 1
+})
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.vy += 1
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vx += -1
-})
-// Control the copter with the + pad
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vx += 1
 })
 sprites.onCreated(SpriteKind.Cloud, function (newCloud) {
     newCloud.setImage(img`
@@ -1162,16 +1185,16 @@ sprites.onCreated(SpriteKind.Cloud, function (newCloud) {
     newCloud.x = Math.randomRange(16, screen.width - 16)
     newCloud.y = Math.randomRange(20, screen.height - 75)
 })
-sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Cloud, function (sprite, otherSprite) {
-    sprite.x += -1 * sprite.vx
-    sprite.y += -1 * sprite.vy
-    sprite.vx = 0
-    sprite.vy = 0
-    otherSprite.y += -1
-    pause(100)
-    otherSprite.y += 1
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    agent.vx += -1
 })
-
+// Control the copter with the + pad
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    agent.vx += 1
+})
+sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Bird, function (sprite, otherSprite) {
+    otherSprite.vy = -75
+})
 game.splash("Generated Clouds", "on Sprite created")
 scene.setBackgroundColor(9)
 agent = sprites.create(img`
@@ -1211,6 +1234,13 @@ agent = sprites.create(img`
 // Create and place "clouds"  Sprites
 sprites.create(null, SpriteKind.Cloud)
 sprites.create(null, SpriteKind.Cloud)
+sprites.create(null, SpriteKind.Cloud)
+sprites.create(null, SpriteKind.Cloud)
+sprites.create(null, SpriteKind.Bird)
+sprites.create(null, SpriteKind.Bird)
+sprites.create(null, SpriteKind.Bird)
+sprites.create(null, SpriteKind.Bird)
+sprites.create(null, SpriteKind.Bird)
 
 // :end-solution
 ```
