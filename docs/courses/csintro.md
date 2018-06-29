@@ -18,6 +18,7 @@
 ## Loops
 * [Intro](/courses/csintro1/loops/intro)
 * [Change By](/courses/csintro1/loops/change-by)
+* TODO: Add one more section here maybe? Projectiles in next section is possibly a good candidate to shift up here.
 
 ## Motion and Events
 * [Sprite Motion Event](/courses/csintro1/motion-and-events/sprite-motion-event)

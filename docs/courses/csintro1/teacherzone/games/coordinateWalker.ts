@@ -1,3 +1,5 @@
+// TODO: Remove this? 
+
 enum SpriteKind {
     Player,
     Enemy
@@ -14,9 +16,7 @@ game.onUpdate(function () {
     if (controller.A.isPressed()) {
         // display integer part of coordinates as a string
         game.splash("" + Math.trunc(player1.x) + "", "X")
-        pause(1000)
         game.splash("" + Math.trunc(player1.y) + "", "Y")
-        pause(1000)
     }
     // Move sprite bigger number is faster for
     // controller.dx(15)

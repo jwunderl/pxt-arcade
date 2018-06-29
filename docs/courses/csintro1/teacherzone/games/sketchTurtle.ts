@@ -1,18 +1,16 @@
+// https://makecode.com/_RbjFx62EdhHt
+
 enum SpriteKind {
     Player,
-    Enemy,
-    dot
+    Enemy
 }
 let aTurtle: Sprite = null
+let prevX = 0
 let prevY = 0
 let color = 0
-let previous = 0
 let myImage: Image = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    color = (color + 1) % 15
-    if (color == 0) {
-        color = 1
-    }
+    color = color % 14 + 1
 })
 myImage = img`
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
@@ -156,18 +154,15 @@ f 7 7 6 d 6 6 6 6 6 6 6 d 6 . .
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 color = 1
-game.onUpdateInterval(200, function () {
-    previous = aTurtle.x
-    prevY = aTurtle.y
-})
+
 game.onUpdate(function () {
+    prevX = aTurtle.x
+    prevY = aTurtle.y
     aTurtle.x += controller.dx()
     aTurtle.y += controller.dy()
-    if (aTurtle.x != previous) {
+    if (aTurtle.x != prevX) {
         myImage.setPixel(aTurtle.x, aTurtle.y, color)
     } else if (aTurtle.y != prevY) {
         myImage.setPixel(aTurtle.x, aTurtle.y, color)
-    } else {
-    	
     }
 })
