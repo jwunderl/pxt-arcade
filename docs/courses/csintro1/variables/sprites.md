@@ -147,7 +147,7 @@ bigSprite = sprites.create(img`
 
 ### ~hint
 Try Changing the background color
-using ||Scene: set background color to||
+using ``||Scene: set background color to||``
 
 red as 2
 ### ~

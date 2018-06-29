@@ -297,11 +297,11 @@ scene.setTileMap(img`
 Tile maps allow us to design an area of play that is bigger than the screen. An Area of play with a size that is several screens is common in many "platform" adventure and role-playing games.  Using Tile maps, we will build multi-room and maze games.
 
 In this activity students will build tile maps games with expanded area of play using:
-* ||scene:set tile map to||
-* ||scene:set tile to||
+* ``||scene:set tile map to||``
+* ``||scene:set tile to||``
   * wall
   * decoration
-* ||scene:camera follow sprite||
+* ``||scene:camera follow sprite||``
 
 
 ### ~hint
@@ -316,9 +316,9 @@ The first tile map example is just beyond the bare minimum tile map design, a pl
 # TODO: Create Video 
 
 The basic tile map example uses:  
-* ||scene:set tile map to||
+* ``||scene:set tile map to||``
 * Sprite with basic game pad navigation
-* ||scene:camera follow sprite||
+* ``||scene:camera follow sprite||``
 
 ## Example: [Simple example 1]
 1. Review the code below
@@ -378,7 +378,7 @@ game.onUpdate(function () {
 ```  
 ## Task: expand first tile map
 1. starting with the the above first tile map example 
-2. edit the ||Scene:set tile map to|| image and expand the size from 16x16 to 16x32
+2. edit the ``||Scene:set tile map to||`` image and expand the size from 16x16 to 16x32
 3. design additional rooms using black for walls and other colors for the rooms
 4. make a pathway open to all of the room
 5. navigate the sprite to all rooms without crossing a black lines
@@ -459,7 +459,7 @@ game.onUpdate(function () {
 
 # TODO: might need a short video here 
 
-||scene:set tile to|| is a way to easily design obstacles such as walls, water, lava. This is also a fast way to "paint" on detail like a field of flowers, sky with clouds or a fancy flooring.
+``||scene:set tile to||`` is a way to easily design obstacles such as walls, water, lava. This is also a fast way to "paint" on detail like a field of flowers, sky with clouds or a fancy flooring.
 
 ## Example: Set tile map as design and as obstacle 
 
@@ -555,12 +555,12 @@ game.onUpdate(function () {
 
 ```  
 ### ~hint
-note the ||Scene:set tile to|| defining the tile for black displays as a brick wall. It also has selected "wall on" to create an obstacle. The light green tile is decorative only because "wall off" is set. 
+note the ``||Scene:set tile to||`` defining the tile for black displays as a brick wall. It also has selected "wall on" to create an obstacle. The light green tile is decorative only because "wall off" is set. 
 ### ~
 
 ## Task: add rooms with decorations and obstacles 
 1. starting with the "set tile design 1" from above example 
-2. edit the ||Scene:set tile map to|| image and expand the size from 16x16 to 16x32
+2. edit the ``||Scene:set tile map to||`` image and expand the size from 16x16 to 16x32
 3. design additional rooms using black for walls, create outline border walls and design rooms
 4. make a pathway open to all of the rooms, and pick a color for another obstacle (like a rock or lamp)
 5. add a decoration to another room
@@ -571,9 +571,6 @@ complete 3 or more of the following
 * add a 3rd obstacle
 * decorate a 3rd room
 * Make a new design for the "smiley" sprite
-
-
-
 
 ```blocks
 // :solution

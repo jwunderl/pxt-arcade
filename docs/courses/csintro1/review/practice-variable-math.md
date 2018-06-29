@@ -78,6 +78,6 @@ while (true) {
 ```
 
 Challenge: 
-* Try changing the range of values generated from || math: randomRange ||.
+* Try changing the range of values generated from ``||math:randomRange||``.
 * Try letting the user choose the range from which the random number will be generated!
 

@@ -154,7 +154,7 @@ info.startCountdown(30)
 
 Challenge:
 1. Make a target sprite that stays in center of a wall randomly. It should stay there for 1 second (use the 'on game update 1 sec' block) before figuring out the next wall to randomly jump to.  
-2. When projectiles overlap with the target, change the score by one. You will want || Sprites: on sprite of kind  overlaps|| blocks. This means you must make the projectiles of a certain type and your target sprite of another type. Don't forget to destroy the target. 
+2. When projectiles overlap with the target, change the score by one. You will want ``||Sprites:on sprite of kind overlaps||`` blocks. This means you must make the projectiles of a certain type and your target sprite of another type. Don't forget to destroy the target. 
 
 ```blocks
 // :solution

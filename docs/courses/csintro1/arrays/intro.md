@@ -5,7 +5,7 @@ TODO: lots of uses of array use Corgi to have array of strings, array of sounds 
 In this activity student will work with: 
 * [Add ALL Newly introduced blocks/concepts]
 * [Add items used with more depth]
-* ||Logic: if then||
+* ``||Logic: if then||``
 * while true loop 
 
 

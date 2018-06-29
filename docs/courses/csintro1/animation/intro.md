@@ -5,7 +5,7 @@ TODO: Create a timed animation such as explosion or celebration sequence, create
 In this activity student will work with: 
 * [Add ALL Newly introduced blocks/concepts]
 * [Add items used with more depth]
-* ||Logic: if then||
+* ``||Logic: if then||``
 * while true loop 
 
 

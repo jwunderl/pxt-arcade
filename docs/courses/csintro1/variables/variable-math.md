@@ -7,7 +7,7 @@ In this activity student will work with:
 * store the result of an equation in a variable 
 * evaluate equations using variables
 * modify and create variable equations
-* display text with || game: splash|| by using || text: join ||
+* display text with ``||game:splash||`` by using ``||text:join||``
 
 
 ## Concept: Using Math Operators with Variables  

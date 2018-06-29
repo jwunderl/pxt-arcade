@@ -7,7 +7,7 @@ In Arcade, Turtle is an **extension**. An extension is a "package" of code that 
 In this activity student will work with: 
 * [Add ALL Newly introduced blocks/concepts]
 * [Add items used with more depth]
-* ||Logic: if then||
+* ``||Logic: if then||``
 * while true loop 
 
 
