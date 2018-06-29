@@ -8,15 +8,14 @@ In this activity student will work with:
 * opening a game, game controls and playing a game
 * creating a new game, Blocks vs Script
 * "My Projects", game .png download, and creating a game link
-* while true loop 
 
 
 ## Concept: Opening a game
 
 # TODO: Video showing game being opened, explaining simulation
 
-## Student Task 1: Playing [ TODO: insert some example game here, probably asteroid example ]
-1. Click the "Asteroids" example game under the javascript category
+## Student Task 1: Playing Space Destroyer
+1. Click the "Space Destroyer" example game under the "Blocks Games" category
 2. Select "Open Example"
 3. Press left and right on the direction pad to move the space ship, and press a to fire the laser. 
 4. Look at what happens when the laser collides with an asteroid.
