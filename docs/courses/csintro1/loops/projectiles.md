@@ -104,7 +104,6 @@ let item: Sprite = null
 let projectile: Sprite = null
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
     info.changeScoreBy(1)
-    sprite.setFlag(SpriteFlag.AutoDestroy, false)
 })
 projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
@@ -136,7 +135,6 @@ let projectile: Sprite = null
 let sprite: Sprite = null
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
     info.changeScoreBy(1)
-    sprite.setFlag(SpriteFlag.AutoDestroy, false)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
     sprite.say("Hello!")
@@ -181,11 +179,6 @@ projectile = sprites.createProjectile(img`
 // :end-solution
 ```
 
-
-### ~hint
-**Teacher Note**
-TODO: These notes get removed for students and go to teacher guide so use exact format - think of advice on how the teacher might help un-stick students or reenforce concept.  A question you might pose.  "Ask students: What happens to the old value when we re-assign a new number to the lives? (Answer: it is destroyed and replaced with new assigned value)"  can use markdown lists here.
-### ~
 
 ## Student Task 2: add horizontal projectiles that move across the screen
 1. Start with the provided code below - currently, it will spawn meteors of kind "Enemy" that stay in random locations along the top of the screen.
@@ -315,6 +308,7 @@ You can even use the projectiles you have made as the source of other projectile
 enum SpriteKind {
     Cloud
 }
+let item: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
@@ -333,7 +327,7 @@ cloud = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 10, 0, SpriteKind.Cloud, null)
+`, 10, 0, SpriteKind.Cloud, item)
 ```
 
 There isn't all that much to this code; it spawns a cloud, which slowly moves across the screen. However, what if we want to make the cloud rain? We can do this by adding projectiles that are emitted from the cloud itself!
@@ -343,6 +337,7 @@ enum SpriteKind {
     Cloud,
     Rain
 }
+let item: Sprite = null
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectile(img`
@@ -362,7 +357,7 @@ cloud = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 10, 0, SpriteKind.Cloud, null)
+`, 10, 0, SpriteKind.Cloud, item)
 game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
@@ -382,18 +377,22 @@ game.onUpdateInterval(50, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 0, 30, SpriteKind.Rain, cloud)
+    raindrop.setFlag(SpriteFlag.Ghost, true)
 })
 ```
+
+You may notice that in the above example, we set the raindrops to be "ghosts" - this means that they won't be considered to overlap with other sprites, and will pass through sprites as if there were no overlap events. It turns out that there is a fairly large performance benefit to doing this when you spawn a large amount of projectiles (and don't need them to overlap with other sprites) - try removing that block, and see how much the performance goes down.
 
 We can change where the rain drops show up, so that they don't all appear in the same location relative to the cloud:
 
 ```blocks
-https://makecode.com/_MtUYHyHiwdmy
+// https://makecode.com/_MtUYHyHiwdmy
 
 enum SpriteKind {
     Cloud,
     Rain
 }
+let item: Sprite = null
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectile(img`
@@ -413,7 +412,7 @@ cloud = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 10, 0, SpriteKind.Cloud, null)
+`, 10, 0, SpriteKind.Cloud, item)
 game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
@@ -433,6 +432,7 @@ game.onUpdateInterval(50, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 0, 30, SpriteKind.Rain, cloud)
+    raindrop.setFlag(SpriteFlag.Ghost, true)
     raindrop.y += 3
     raindrop.x += Math.randomRange(1, 14)
 })
@@ -441,11 +441,12 @@ game.onUpdateInterval(50, function () {
 And we can even count the raindrops that make it to the bottom of the screen by counting when they're destroyed!
 
 ```blocks
-https://makecode.com/_5Wb33FiqaJeu
+// https://makecode.com/_5Wb33FiqaJeu
 enum SpriteKind {
     Cloud,
     Rain
 }
+let item: Sprite = null
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectile(img`
@@ -465,7 +466,7 @@ cloud = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 10, 0, SpriteKind.Cloud, null)
+`, 10, 0, SpriteKind.Cloud, item)
 game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
@@ -602,7 +603,8 @@ balloon.x += -50
 ```
 
 ```blocks
-\\ :solution
+// :solution
+
 enum SpriteKind {
     Player,
     Enemy,
@@ -694,59 +696,33 @@ balloon = sprites.create(img`
 balloon.x += -50
 
 // :end-solution
-```  
-
-## task add projectiles to previous code - horizontal (clouds and birds coming across screen)
-
-## Concept: [concept 2 -another item form the list]
-
-# TODO: might need a short video here 
-
-[line or two of high level concept]
-
-
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
-
-### ~hint
- // Hint to student
-### ~
-
-```blocks
-// :solution
-
-/* example of a full solution that the teacher can use - good to follow on previous solution but not required
-comments are good!
-we need the solution / end-solution tags so we can remove this for student version
-*/
-
-// :end-solution
-
+```
 
 ## What did we learn? [create 2 questions]
 
-1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
-2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
-3. [Come up with a question of your choice]
+1. Describe two benefits of using projectiles rather than normal sprites.  
+2. How did using a loop in this section help reduce the amount of blocks that were used?
+3. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
+4. Challenge: Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might be make your game run faster than leaving it off.
+### ~hint
+Does the game need to check whether a sprite is overlapping another if either is a ghost?
+### ~
 
 
 ## Rubrics
 
 
-### Projectiles task rubric [TODO]
+### Projectiles task rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| TODO Placeholder Stuff  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
+|   | Student made the ball fall down and another sprite move up in task 1 | Student made meteors fall from top, and changed score successfully in task 2 | Student successfully made the water balloon burst into around 50 splashes in task 3| Completed Challenge Code in tasks 1 and 2 |
 
 ### Score = \_\_\_\_\_\_ /10 
 
-### What did we learn rubric [TODO review based on number of questions]
+### What did we learn rubric 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  Addressed challenge question reasonably |
 
 ### Score = \_\_\_\_\_\_ /10 
