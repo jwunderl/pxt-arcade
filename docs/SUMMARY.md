@@ -53,5 +53,5 @@
 
 ## Courses #courses
 
-* [Courses](/courses)
+* Courses
     * [CS Intro](/courses/csintro)
