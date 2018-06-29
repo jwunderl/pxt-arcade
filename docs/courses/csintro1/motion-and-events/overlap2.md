@@ -1109,9 +1109,9 @@ The ``||sprites:on created () of kind ()||`` event allows us to become efficient
 2. Review the code and find spawn blocks
 3. add 2 more spawn blocks for clouds
 4. Spawn a new SpriteKind: 
-  - spawn a small image, perhaps a bird, butterfly, other small item
-  - add the image and random position using a new ``||sprites:on created () of kind ()||`` event block. 
-  - spawn at least five of the new sprites (in random positions)
+    - spawn a small image, perhaps a bird, butterfly, other small item
+    - add the image and random position using a new ``||sprites:on created () of kind ()||`` event block. 
+    - spawn at least five of the new sprites (in random positions)
 5. Challenge: create an event for the Helicopter overlap with the new SpriteKind that has an action that gives the New SpriteKind a fast velocity so will fly off the screen after overlap.
 
 ### ~hint
