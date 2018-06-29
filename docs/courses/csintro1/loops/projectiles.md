@@ -16,38 +16,232 @@ In this activity the student will implement:
 
 # TODO Basic meteor demo and then add something to own program (teacher can have students who lost their code add birds to helicopter)
 
-## Concept: [Concept 1]
+## Concept: Flying Birds!
 
 # TODO: Create Video covering (list items above mostly).  Provide high level script outline.
 
-Start with the following TODO Placeholder Stuff commands:  
-* Forward *(steps)*  
-* Turn *(degrees)*  
-* Pen Down and Pen Up  
-* Set pen color  
-* Set Position *(x,y)*  
+We can use projectiles to create sprites that move across the screen. Let's start off with making a simple bird projectile.
 
-## Example: [Simple example 1]
+## Example: Bird projectile
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
+3. Save the code for the task (name it Bird Projectile 1) 
+4. Look for what portion of the blocks makes the bird move across the screen, instead of just staying still.
 
 ```blocks  
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let projectile: Sprite = null
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 8 8 8 . . . 8 8 . . 
+. . . . . 8 8 8 8 8 . 8 8 8 . . 
+. . . . . 8 8 f 8 8 8 8 8 f 8 . 
+. . . . . 8 8 8 f f 8 8 8 8 4 4 
+. . . . . . 8 8 8 f 8 8 8 8 8 . 
+. . . . . . . 8 8 8 8 3 3 3 . . 
+. . . . . . 8 8 8 8 8 3 3 3 . . 
+. . . . . . 8 8 8 8 8 3 3 . . . 
+. . . . . . . 8 f . . f . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 50, 0)
+```
 
+It may seem surprising that there's only a single block inside the ``||loops:on start||`` block - projectiles make it particularly easy to create temporary sprites. They have another benefit that code example below will demonstrate
 
-```  
+```blocks  
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let item: Sprite = null
+let projectile: Sprite = null
+sprites.onDestroyed(SpriteKind.Player, function (sprite) {
+    info.changeScoreBy(1)
+})
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 8 8 8 . . . 8 8 . . 
+. . . . . 8 8 8 8 8 . 8 8 8 . . 
+. . . . . 8 8 f 8 8 8 8 8 f 8 . 
+. . . . . 8 8 8 f f 8 8 8 8 4 4 
+. . . . . . 8 8 8 f 8 8 8 8 8 . 
+. . . . . . . 8 8 8 8 3 3 3 . . 
+. . . . . . 8 8 8 8 8 3 3 3 . . 
+. . . . . . 8 8 8 8 8 3 3 . . . 
+. . . . . . . 8 f . . f . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 50, 0, SpriteKind.Player, item)
+
+```
+
+This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! This is available using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Finally, we'll see later on that projectiles can be created to originate at a given sprite. If they are not provided a sprite to start from, they will be created either in the middle of the screen (if their velocities are set to 0) or from the side of the screen opposite their initial speed (so that they move across the screen still.)
+
+## Student Task 1: Make a ball fall down
+1. Start with the provided code below.
+2. Modify the code so that the ball falls down the screen at a rate of 50 (that is, it moves along the y axis at a rate of 50)
+3. Create a second projectile that goes up the screen at a rate of 50 (moving in the direction opposite the ball)
+4. Challenge: Make something happen when the two projectiles overlap one another - perhaps have them ``||sprite:say||`` hello to eachother!
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let item: Sprite = null
+let projectile: Sprite = null
+sprites.onDestroyed(SpriteKind.Player, function (sprite) {
+    info.changeScoreBy(1)
+    sprite.setFlag(SpriteFlag.AutoDestroy, false)
+})
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . 8 9 8 8 8 8 8 9 8 . . . . 
+. . . 8 9 8 9 9 9 8 9 8 . . . . 
+. . 8 9 9 8 9 8 9 8 9 9 8 . . . 
+. . . 8 9 8 9 9 9 8 9 8 . . . . 
+. . . 8 9 8 8 8 8 8 9 8 . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 0, 0, SpriteKind.Player, item)
+```
+```blocks
+// :solution
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let item: Sprite = null
+let projectile: Sprite = null
+let sprite: Sprite = null
+sprites.onDestroyed(SpriteKind.Player, function (sprite) {
+    info.changeScoreBy(1)
+    sprite.setFlag(SpriteFlag.AutoDestroy, false)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.say("Hello!")
+})
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . 8 9 8 8 8 8 8 9 8 . . . . 
+. . . 8 9 8 9 9 9 8 9 8 . . . . 
+. . 8 9 9 8 9 8 9 8 9 9 8 . . . 
+. . . 8 9 8 9 9 9 8 9 8 . . . . 
+. . . 8 9 8 8 8 8 8 9 8 . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 0, 50, SpriteKind.Player, item)
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 2 . . . . . . . . 
+. . . . . 2 2 3 2 2 . . . . . . 
+. . . . 2 3 3 3 3 3 2 . . . . . 
+. . . 2 3 2 2 2 2 2 3 2 . . . . 
+. . . 2 3 2 3 3 3 2 3 2 . . . . 
+. . 2 3 3 2 3 2 3 2 3 3 2 . . . 
+. . . 2 3 2 3 3 3 2 3 2 . . . . 
+. . . 2 3 2 2 2 2 2 3 2 . . . . 
+. . . . 2 3 3 3 3 3 2 . . . . . 
+. . . . . 2 2 3 2 2 . . . . . . 
+. . . . . . . 2 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 0, -50, SpriteKind.Player, item)
+
+// :end-solution
+```
+
 
 ### ~hint
 **Teacher Note**
 TODO: These notes get removed for students and go to teacher guide so use exact format - think of advice on how the teacher might help un-stick students or reenforce concept.  A question you might pose.  "Ask students: What happens to the old value when we re-assign a new number to the lives? (Answer: it is destroyed and replaced with new assigned value)"  can use markdown lists here.
 ### ~
 
-## Student Task: add horizontal projectiles that move across the screen
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
+## Student Task 2: add horizontal projectiles that move across the screen
+1. Start with the provided code below - currently, it will spawn meteors of kind "Enemy" that stay in random locations along the top of the screen.
+2. Each time a projectile is created, add one to the score using the ``||info:change score by||`` block.
+3. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50.
+4. Challenge: Try making the projectile move at a random rate between 40 and 60, instead of the current constant rate of 50
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let item: Sprite = null
+let projectile: Sprite = null
+let mySprite: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, foodSprite) {
+    game.over()
+})
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+mySprite.y = 100
+game.onUpdate(function () {
+    mySprite.x += controller.dx()
+})
+game.onUpdateInterval(200, function () {
+    projectile = sprites.createProjectile(img`
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+`, 0, 0, SpriteKind.Enemy, item)
+    projectile.x = Math.randomRange(0, scene.screenWidth())
+})
+
+
+```
 
 ```blocks
 // :solution
@@ -95,11 +289,19 @@ d d d d d d d d
 d d d d d d d d 
 d d d d d d d d 
 `, 0, 50, SpriteKind.Enemy, item)
-    projectile.x = Math.randomRange(0, 160)
+//    projectile = sprites.createProjectile(img` // Challenge solution
+//d d d d d d d d 
+//d d d d d d d d 
+//d d d d d d d d 
+//d d d d d d d d 
+//d d d d d d d d 
+//d d d d d d d d 
+//d d d d d d d d 
+//d d d d d d d d 
+//`, 0, 40 + Math.randomRange(0, 20), SpriteKind.Enemy, item)
+    projectile.x = Math.randomRange(0, scene.screenWidth())
     info.changeScoreBy(1)
 })
-
-
 
 // :end-solution
 ```
@@ -297,7 +499,7 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 })
 ```
 
-## Student Task 2: Water balloons
+## Student Task 3: Water balloons
 
 1. Review the code below
 2. Create the sample code and run the code
