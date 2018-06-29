@@ -1,5 +1,4 @@
 # Activity: Projectile Sprites
-# TODO:  use the old function control in a onUpdate like previous 
 
 Projectiles are regular sprites that destroy themselves when they go off of the visible screen.  Projectile sprite blocks also expose the properties for velocity (vx & vy).
 
@@ -13,8 +12,6 @@ In this activity the student will implement:
 * onOverlap kind
 * on game update every
 * pick random
-
-# TODO Basic meteor demo and then add something to own program (teacher can have students who lost their code add birds to helicopter)
 
 ## Concept: Flying Birds!
 
