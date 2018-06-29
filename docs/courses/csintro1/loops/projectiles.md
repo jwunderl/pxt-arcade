@@ -161,7 +161,7 @@ cloud = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 10, 0, SpriteKind.Cloud, null)
-game.onUpdateInterval(__internal.__timePicker(50), function () {
+game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -212,7 +212,7 @@ cloud = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 10, 0, SpriteKind.Cloud, null)
-game.onUpdateInterval(__internal.__timePicker(50), function () {
+game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -264,7 +264,7 @@ cloud = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 10, 0, SpriteKind.Cloud, null)
-game.onUpdateInterval(__internal.__timePicker(50), function () {
+game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -283,6 +283,7 @@ game.onUpdateInterval(__internal.__timePicker(50), function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 0, 30, SpriteKind.Rain, cloud)
+    raindrop.setFlag(SpriteFlag.Ghost, true)
     raindrop.y += 3
     raindrop.x += Math.randomRange(1, 14)
 })
@@ -296,6 +297,203 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 })
 ```
 
+## Student Task 2: Water balloons
+
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "water balloon")
+4. Currently, when the balloon collides with the block, it creates only a single splash. Use a loop in the overlap event between sprites of kind Balloon and sprites of kind Enemy to create 50 splashes instead.
+### ~hint
+In total, this loop should include 4 blocks - the generation of a random xDirection and yDirection, the creation of the projectile, and the block that sets the projectiles ghost flag to be on.
+### ~
+
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Balloon,
+    Splash
+}
+let projectile: Sprite = null
+let yDirection = 0
+let xDirection = 0
+let balloon: Sprite = null
+let block: Sprite = null
+sprites.onOverlap(SpriteKind.Balloon, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.setFlag(SpriteFlag.Ghost, true)
+
+    // pick a random speed between -50 and 50 for the splash to go in both directions
+    xDirection = Math.randomRange(0, 100) - 50
+    yDirection = Math.randomRange(0, 100) - 50
+    // create the splash
+    projectile = sprites.createProjectile(img`
+9
+`, xDirection, yDirection, SpriteKind.Splash, sprite)
+    // make the splash a ghost, so that it doesn't interact with other sprites
+    projectile.setFlag(SpriteFlag.Ghost, true)
+
+    // destroy the balloon
+    sprite.destroy()
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    balloon.vx = 40
+    balloon.vy = -50
+    balloon.ay = 40
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    balloon.destroy()
+    balloon = sprites.create(img`
+. . . . . . . 8 . . . . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . 8 9 9 8 8 8 9 9 8 . . . . 
+. . . 8 9 8 8 9 9 8 9 8 . . . . 
+. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
+. . . 8 9 8 8 8 8 8 9 8 . . . . 
+. . . 8 9 9 8 8 8 9 9 8 . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+`, SpriteKind.Balloon)
+    balloon.x += -50
+})
+scene.setBackgroundColor(6)
+block = sprites.create(img`
+f f f f f f f f f f f f f f f f 
+f 1 2 2 1 1 2 2 2 1 2 1 1 2 1 f 
+f 1 2 1 2 1 2 1 2 1 2 2 1 2 1 f 
+f 1 2 1 2 1 2 2 2 1 2 1 2 2 1 f 
+f 1 2 2 1 1 2 1 2 1 2 1 1 2 1 f 
+f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f 
+f 1 2 2 2 1 2 2 2 1 2 2 2 1 1 f 
+f 1 2 1 1 1 2 1 1 1 2 1 2 1 1 f 
+f 1 2 1 2 1 2 2 1 1 2 2 2 1 1 f 
+f 1 2 2 2 1 2 2 2 1 2 1 1 2 1 f 
+f f f f f f f f f f f f f f f f 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+block.x += 50
+balloon = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . 8 9 9 8 8 8 9 9 8 . . . . 
+. . . 8 9 8 8 9 9 8 9 8 . . . . 
+. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
+. . . 8 9 8 8 8 8 8 9 8 . . . . 
+. . . 8 9 9 8 8 8 9 9 8 . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Balloon)
+balloon.x += -50
+```
+
+```blocks
+\\ :solution
+enum SpriteKind {
+    Player,
+    Enemy,
+    Balloon,
+    Splash
+}
+let projectile: Sprite = null
+let yDirection = 0
+let xDirection = 0
+let balloon: Sprite = null
+let block: Sprite = null
+sprites.onOverlap(SpriteKind.Balloon, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.setFlag(SpriteFlag.Ghost, true)
+    for (let index = 0; index <= 50; index++) {
+        xDirection = Math.randomRange(0, 100) - 50
+        yDirection = Math.randomRange(0, 100) - 50
+        projectile = sprites.createProjectile(img`
+9
+`, xDirection, yDirection, SpriteKind.Splash, sprite)
+        projectile.setFlag(SpriteFlag.Ghost, true)
+    }
+    sprite.destroy()
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    balloon.vx = 40
+    balloon.vy = -50
+    balloon.ay = 40
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    balloon.destroy()
+    balloon = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . 8 9 9 8 8 8 9 9 8 . . . . 
+. . . 8 9 8 8 9 9 8 9 8 . . . . 
+. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
+. . . 8 9 8 8 8 8 8 9 8 . . . . 
+. . . 8 9 9 8 8 8 9 9 8 . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Balloon)
+    balloon.x += -50
+})
+scene.setBackgroundColor(6)
+block = sprites.create(img`
+f f f f f f f f f f f f f f f f 
+f 1 2 2 1 1 2 2 2 1 2 1 1 2 1 f 
+f 1 2 1 2 1 2 1 2 1 2 2 1 2 1 f 
+f 1 2 1 2 1 2 2 2 1 2 1 2 2 1 f 
+f 1 2 2 1 1 2 1 2 1 2 1 1 2 1 f 
+f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f 
+f 1 2 2 2 1 2 2 2 1 2 2 2 1 1 f 
+f 1 2 1 1 1 2 1 1 1 2 1 2 1 1 f 
+f 1 2 1 2 1 2 2 1 1 2 2 2 1 1 f 
+f 1 2 2 2 1 2 2 2 1 2 1 1 2 1 f 
+f f f f f f f f f f f f f f f f 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+block.x += 50
+balloon = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . 8 9 9 8 8 8 9 9 8 . . . . 
+. . . 8 9 8 8 9 9 8 9 8 . . . . 
+. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
+. . . 8 9 8 8 8 8 8 9 8 . . . . 
+. . . 8 9 9 8 8 8 9 9 8 . . . . 
+. . . . 8 9 9 9 9 9 8 . . . . . 
+. . . . . 8 8 9 8 8 . . . . . . 
+. . . . . . . 8 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Balloon)
+balloon.x += -50
+
+// :end-solution
+```  
+
 ## task add projectiles to previous code - horizontal (clouds and birds coming across screen)
 
 ## Concept: [concept 2 -another item form the list]
@@ -304,16 +502,6 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 
 [line or two of high level concept]
 
-## Example: simple example 2 
-
-1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
-
-```blocks  
-// simple code here
-```  
 
 ## Task: add [something] to the code 
 1. starting with the [simple example 1] example 
