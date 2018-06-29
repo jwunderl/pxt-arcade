@@ -1,12 +1,20 @@
-let hunger = 0
+// https://makecode.com/_eFeRd0J3ebJh
+
+enum SpriteKind {
+    Player,
+    Enemy,
+    Dog,
+    Brush
+}
 let brushMode = false
+let hunger = 0
+let brush: Sprite = null
 let foodMode = false
 let sleepMode = false
-let brush: Sprite = null
 let sprite: Sprite = null
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     if (sleepMode) {
-        info.changeScoreBy(-2)
+        info.changeScoreBy(-5)
     }
 })
 function foodPoints() {
@@ -83,7 +91,7 @@ sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, 0)
+`, SpriteKind.Dog)
 sprite.x = 20
 brush = sprites.create(img`
 e e e e e 5 5 5 
@@ -102,15 +110,15 @@ e e e e e 5 5 5
 e e e e e 5 5 . 
 e e e e e 5 5 . 
 e e e e e 5 5 5 
-`, 0)
+`, SpriteKind.Brush)
 info.startCountdown(30)
 info.setScore(0)
-game.onUpdateInterval(__internal.__timePicker(1000), function () {
-    if (sleepMode && !(controller.anyButton.wasPressed())) {
+game.onUpdateInterval(1000, function () {
+    if (sleepMode) {
         info.changeScoreBy(10)
     }
 })
-game.onUpdateInterval(__internal.__timePicker(5000), function () {
+game.onUpdateInterval(5000, function () {
     sprite.say("woof!!")
     if (Math.percentChance(33)) {
         foodMode = true

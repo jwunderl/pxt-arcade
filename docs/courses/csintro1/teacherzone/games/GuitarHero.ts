@@ -1,4 +1,5 @@
-// https://makecode.com/_CJFdogAyd66D Guitar Hero
+// https://makecode.com/_8LTctMYJdLfs
+
 enum SpriteKind {
     Player,
     Enemy,
