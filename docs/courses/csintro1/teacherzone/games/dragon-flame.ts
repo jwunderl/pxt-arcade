@@ -1,7 +1,9 @@
+// https://makecode.com/_KTtYErTyCHT4
+
 enum SpriteKind {
     Player,
     Enemy,
-    dragon,
+    Dragon,
     Fire
 }
 let flame: Image[] = []
@@ -41,7 +43,7 @@ dragon = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.dragon)
+`, SpriteKind.Dragon)
 flame = [
     img`2`,
     img`3`,
@@ -50,10 +52,10 @@ flame = [
 ]
 game.onUpdate(function () {
     fire = sprites.createProjectile(Math.pickRandom(flame),
-            -Math.randomRange(30, 40),
-            Math.randomRange(0, 10) - 5,
-            SpriteKind.Fire,
-            dragon)
+        -Math.randomRange(30, 40),
+        Math.randomRange(0, 10) - 5,
+        SpriteKind.Fire,
+        dragon)
     fire.setFlag(SpriteFlag.Ghost, true)
     fire.x += -10
     fire.y += -9

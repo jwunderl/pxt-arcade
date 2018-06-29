@@ -1,3 +1,5 @@
+// https://makecode.com/_Lyq0TraEsT4c
+
 enum SpriteKind {
     Player,
     Enemy,
@@ -35,7 +37,7 @@ sprite = sprites.create(img`
 `, SpriteKind.Player)
 sprite.y = 110
 info.startCountdown(25)
-game.onUpdateInterval(__internal.__timePicker(500), function () {
+game.onUpdateInterval(500, function () {
     projectile = sprites.createProjectile(img`
 . . d d d . . . 
 . d e d e d d . 
@@ -48,7 +50,7 @@ e e d d d d b d
 `, 0, 25, SpriteKind.Enemy, null)
     projectile.x = Math.randomRange(5, 155)
 })
-game.onUpdateInterval(__internal.__timePicker(500), function () {
+game.onUpdateInterval(500, function () {
     console.log("" + info.score())
 })
 game.onUpdate(function () {
@@ -58,7 +60,5 @@ game.onUpdate(function () {
         sprite.x = 5
     } else if (sprite.x > 155) {
         sprite.x = 155
-    } else {
-    	
     }
 })

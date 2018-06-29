@@ -1,4 +1,10 @@
-// https://makecode.com/_KUVX0R8aME71
+// https://makecode.com/_Az63Hr186c1Y
+
+enum SpriteKind {
+    Player,
+    Enemy
+}
+
 let sprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let i = 0; i < 5; i++) {
@@ -44,4 +50,4 @@ sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . 6 b b b b . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, 0)
+`, SpriteKind.Player)

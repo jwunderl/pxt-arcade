@@ -1,3 +1,5 @@
+// https://makecode.com/_Ltm9JX6p2Es4
+
 /**
 * Snake Example
 * 2d Arrays
@@ -12,9 +14,7 @@ let speed = 0.3
 let time = 1
 
 // snake[n][0] is snake[n].x, snake[n][1] is snake[n].y
-// let snake: number[][]
-let snakeX: number[]
-let snakeY: number[]
+let snake: number[][]
 
 let foodX = 0
 let foodY = 0
@@ -33,9 +33,7 @@ function nextLevel() {
     game.splash("Level " + level, "")
     pause(1000)
     lastFoodIndex = 1
-    // snake = [[6, 5], [5, 5]]
-    snakeX = [6, 5]
-    snakeY = [5, 5]
+    snake = [[6, 5], [5, 5]]
     time = 1
     speed = 1 / (level / 2 + 2)
     xDirection = 1
@@ -43,18 +41,16 @@ function nextLevel() {
 }
 
 function getSnakeX(index: number) {
-    // return snake[index][0];
-    return snakeX[index]
+    return snake[index][0];
 }
 
 function getSnakeY(index: number) {
-    // return snake[index][1];
-    return snakeY[index]
+    return snake[index][1];
 }
 
 function inSnake(x: number, y: number) {
     // return snake.indexOf([x,y]) >= 0
-    for (let i = 0; i < snakeX.length; i++) {
+    for (let i = 0; i < snake.length; i++) {
         if (getSnakeX(i) == x && getSnakeY(i) == y) {
             return true;
         }
@@ -124,15 +120,11 @@ game.onPaint(function () {
             game.over()
             return
         }
-        // snake.unshift([x, y])
-        snakeX.unshift(x)
-        snakeY.unshift(y)
+        snake.unshift([x, y])
         if (x == foodX && y == foodY) {
             newFood()
         } else {
-            // snake.pop()
-            snakeX.pop()
-            snakeY.pop()
+            snake.pop()
         }
         time = 0
     }
