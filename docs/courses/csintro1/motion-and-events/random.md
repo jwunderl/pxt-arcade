@@ -117,6 +117,7 @@ actor.vy = 0
 
 ```blocks
 // :solution
+// https://makecode.com/_Ca23io8e6H9f
 
 enum SpriteKind {
     Player,
@@ -189,13 +190,252 @@ hat.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 
 
 // :end-solution
+```
 
+## Example #3: check for random overlap 
 
-## What did we learn? [create 2 questions]
+1. Review the code below
+2. Create the sample code and run the code 
+4. Examine the use of SpriteKind in the overlap.
 
-1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
-2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
-3. [Come up with a question of your choice]
+```blocks  
+
+enum SpriteKind {
+    Player,
+    Enemy,
+    Hat
+}
+let actor: Sprite = null
+let hat: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Hat, function (sprite, otherSprite) {
+    sprite.say("Excuse Me!", 500)
+})
+hat = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . . 6 4 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Hat)
+actor = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . 5 . . 5 . . 5 . . . . . . 
+. . . . 5 . 5 . 5 . . . . . . . 
+. . . . . 5 7 5 . . . . . . . . 
+. . . . 5 7 2 7 5 . . . . . . . 
+. . . . . 5 7 5 . . . . . . . . 
+. . . . . . 5 . . . . . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . 2 1 1 1 1 1 1 1 2 . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . . . . 1 . 1 . . . . . . . . 
+. . . . 7 . . . 7 . . . . . . . 
+. . . 7 . . . . . 7 . . . . . . 
+. . 2 2 . . . . . 2 2 . . . . . 
+`, SpriteKind.Player)
+actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+hat.setPosition(35, 60)
+
+```
+## Task #3: check for random overlap with many sprites
+1. starting with task #2 where the game randomly moves 2 sprites with button pushes
+2. add at least 2 more sprites with random or fixed position
+3. add an ``||sprite:on overlap||`` event result in a new behavior that uses ``||math:pick random||`` (e.g. - set velocity, set location, change location by, ..) with sprite action of saying something.
+4. be sure the overlap will work for several sprite of the same SpriteKind
+5. Challenge: make multiple sprites randomly change position with the 'A' button and both of the sprites a random velocity (use a range across negative and positive for vx and vy)
+
+```blocks
+// :solution
+
+enum SpriteKind {
+    Player,
+    Enemy,
+    Hat
+}
+let hat3: Sprite = null
+let actor: Sprite = null
+let hat2: Sprite = null
+let hat1: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+    hat1.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+    hat2.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+    hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Hat, function (sprite, otherSprite) {
+    sprite.say("Excuse Me!", 500)
+    sprite.vx = Math.randomRange(-15, 15)
+    sprite.vy = Math.randomRange(-15, 15)
+    sprite.x += 8
+    pause(500)
+    otherSprite.x = Math.randomRange(-20, 20)
+    otherSprite.vy = Math.randomRange(-20, 40)
+})
+hat1 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . 3 3 3 3 3 3 3 3 3 3 . . . . . . . . . . . . . . . 
+. . . . . . . 3 3 3 3 3 3 3 3 3 3 . . . . . . . . . . . . . . . 
+. . . . . . . 3 3 3 3 3 3 3 3 3 3 . . . . . . . . . . . . . . . 
+. . . . . . . 3 3 3 3 3 3 3 3 3 3 . . . . . . . . . . . . . . . 
+. . . . . . . 3 3 3 3 3 3 3 3 3 3 . . . . . . . . . . . . . . . 
+. . . . . . . 3 3 3 3 3 3 3 3 3 3 . . . . . . . . . . . . . . . 
+. . . . . . . 3 3 3 3 3 3 3 3 3 3 . . . . . . . . . . . . . . . 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . . . . . . . 
+. . . . . . . d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . . . d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . . . d 8 d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . d d d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . d d d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . d d d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . . d d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . . d d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . . . d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . . d d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . . d d d d d d d d d d . . . . . . . . . . . . . . . . 
+. . . . . . d d d d d d d d d . . . . . . . . . . . . . . . . . 
+. . . . . . d d d d d d d d d . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Hat)
+hat2 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . 1 1 . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . 
+. . . . 1 1 1 1 1 6 1 1 1 1 1 1 1 1 . . . . . . . . . . . . . . 
+. . . . . . . 6 6 6 6 1 1 1 1 1 1 1 . . . . . . . . . . . . . . 
+. . . . . . . 6 4 6 6 6 1 6 1 1 1 1 . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 1 1 1 1 1 . . . . . . . . . . . . . 
+. . . . . 6 6 6 6 6 6 6 6 6 1 1 1 1 1 . 1 1 . . . . . . . . . . 
+. . . . 6 6 6 6 6 6 6 6 6 6 6 1 1 1 1 1 . 1 . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 1 1 . 1 1 1 . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . 1 1 1 1 1 . . . . . . . . . . 
+. . . . . . . 6 6 6 6 6 6 6 6 6 . 1 1 1 1 1 . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . 1 1 1 1 . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . 1 . . . . . . . . . . 
+. . . . . . 6 6 . . 6 6 6 6 6 . . . . . . 1 . . . . . . . . . . 
+. . . . . . . . . . 6 6 6 6 6 . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Hat)
+hat3 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . 5 2 2 2 5 2 2 5 2 2 . . . . . . . . . . . . . . . 
+. . . . . . . 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . 
+. . . . . . . 2 2 5 2 2 2 5 2 2 5 . . . . . . . . . . . . . . . 
+. . . . . . . 5 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . 
+. . . . . . . 2 2 2 2 2 5 2 2 5 2 . . . . . . . . . . . . . . . 
+. . . . . . . 2 2 5 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . 
+. . . . . . . 2 2 2 2 2 5 2 5 2 2 . . . . . . . . . . . . . . . 
+. . . . . . . 2 5 2 2 2 2 2 2 2 5 . . . . . . . . . . . . . . . 
+. . . . . . 2 7 7 7 7 7 7 7 7 7 . 2 . . . . . . . . . . . . . . 
+. . . . 2 5 . 7 7 7 7 7 7 7 7 7 . . 2 . . . . . . . . . . . . . 
+. . 2 2 . . . 7 f 7 7 7 7 7 7 7 . . . 5 . . . . . . . . . . . . 
+2 5 . . . 7 7 7 7 7 7 7 7 7 7 7 . . . . 2 . . . . . . . . . . . 
+. . . . . 7 7 7 7 7 7 7 7 7 7 7 . . . . . 2 . . . . . . . . . . 
+. . . . . 7 7 7 7 7 7 7 7 7 7 7 . . . . . . 5 . . . . . . . . . 
+. . . . . . 7 7 7 7 7 7 7 7 7 7 . . . . . . . . . . . . . . . . 
+. . . . . . 7 7 7 7 7 7 7 7 7 7 . . . . . . . . . . . . . . . . 
+. . . . . . . 7 7 7 7 7 7 7 7 7 . . . . . . . . . . . . . . . . 
+. . . . . . 7 7 7 7 7 7 7 7 7 7 . . . . . . . . . . . . . . . . 
+. . . . . . 7 7 7 7 7 7 7 7 7 7 . . . . . . . . . . . . . . . . 
+. . . . . . 7 7 7 7 7 7 7 7 7 . . . . . . . . . . . . . . . . . 
+. . . . . . 7 7 7 7 7 7 7 7 7 . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Hat)
+actor = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . 5 . . 5 . . 5 . . . . . . 
+. . . . 5 . 5 . 5 . . . . . . . 
+. . . . . 5 7 5 . . . . . . . . 
+. . . . 5 7 2 7 5 . . . . . . . 
+. . . . . 5 7 5 . . . . . . . . 
+. . . . . . 5 . . . . . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . 2 1 1 1 1 1 1 1 2 . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . . . . 1 . 1 . . . . . . . . 
+. . . . 7 . . . 7 . . . . . . . 
+. . . 7 . . . . . 7 . . . . . . 
+. . 2 2 . . . . . 2 2 . . . . . 
+`, SpriteKind.Player)
+actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+hat1.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+hat2.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+
+// :end-solution
+```
+
+## What did we learn? 
+
+1. Describe how a set random makes programming can make a game more interesting and/or challenging.
+2. What is a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random is needed.  
+
 
 
 ## Rubrics
@@ -205,6 +445,14 @@ hat.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Turtle  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
+| pick random  | completed at least 2 tasks |  completed all 3 tasks | completed all 3 tasks well and at least 1 challenge | Completed all tasks & challenges  |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric 
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | answered a questions but parts are unclear or lack detail | Explanations address all 2 questions fully | all answers have clear and useful explanations | both answers have exceptional explanations using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
