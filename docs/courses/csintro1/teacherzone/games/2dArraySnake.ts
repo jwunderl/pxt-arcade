@@ -1,4 +1,5 @@
-// https://makecode.com/_PyrWfHhPTWgC Snake
+// https://makecode.com/_Ltm9JX6p2Es4
+
 /**
 * Snake Example
 * 2d Arrays
