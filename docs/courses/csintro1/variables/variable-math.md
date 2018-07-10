@@ -1,8 +1,11 @@
 # Activity: Math Operators with Variables 
 
-A variable is a container that can store some data.  We have previously used variables for  sprites (e.g. - player1).  Variables are used extensively in program code. Variables allow us to write code in a generic way that makes code easy to reuse.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values (if we know `Y = 3` we can calculate `X`.
+A variable points to a container that can store data.  We have previously used variables names for  sprites (e.g. - `player1`).  Variables act like an address, and let us store, retrieve or update data.  For our Sprite example, the variable `player1` allowed us to use the Sprite in our game.  The word "variable" also means change. We can update the values our variable point to, such as updating the `player1` variable to point to a new Sprite image.
 
-Variables also act like an address, and let us store, retrieve or update data.  For our Sprite example, the variable player1 allows us to use the sprite in our game or to update the Sprite image.
+Variables are used extensively in code. Variables allow code to be written in a generic way and allow for easier reuse of our code.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values.  
+
+If we know `Y = 3` we can calculate `X` from our equation.  Later `Y` can have a different value, `Y = 7`, and the equation, `X = 2Y`, can be reused.
+
 
 In this activity student will work with: 
 * combine numeric values with math operators (+, -, *, /)
