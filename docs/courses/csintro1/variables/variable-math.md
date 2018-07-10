@@ -1,6 +1,8 @@
 # Activity: Math Operators with Variables 
 
-We have previously used variables for the names of our sprites.  The use of variables is extensive in any program code because variables allow us to write code in a generic way that makes code more useful and easy to reuse.  Similarly, Math equations provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values.
+A variable is a container that can store some data.  We have previously used variables for  sprites (e.g. - player1).  Variables are used extensively in program code. Variables allow us to write code in a generic way that makes code easy to reuse.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values (if we know `Y = 3` we can calculate `X`.
+
+Variables also act like an address, and let us store, retrieve or update data.  For our Sprite example, the variable player1 allows us to use the sprite in our game or to update the Sprite image.
 
 In this activity student will work with: 
 * combine numeric values with math operators (+, -, *, /)
@@ -31,7 +33,7 @@ game.splash("3 + 5 = " + answer)
 ### ~hint
 **Teacher Note**
 ## Discuss with students
-The join block is used to coerce a number into a sting.  JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash  knows that we are displaying the string representation of our `answer` variable.
+The join block is used to **coerce** a number into a sting   JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash  knows that we are displaying the string representation of our `answer` variable.
 
 If only displaying a number we use an empty string in the join 
 ```blocks
@@ -39,6 +41,8 @@ let answer = 0
 answer = 3 + 5
 game.splash("" + answer)
 
+
+**coercion**: changing Type within an operation (e.g. - string to number for a comparison will compare the number value of the string `"3"` in `3 >= "3"` or number to string using join in the splash message example above)
 ```
 ### ~
 
@@ -51,7 +55,7 @@ game.splash("" + answer)
 ### ~hint
 In order to combine multiple items we will need to add additional Math blocks
 
-![animation: adding 3 numbers with blocks](..\Static\add3Numbers.gif)
+![animation: adding 3 numbers with blocks](static/courses/csintro1/variables/add3Numbers.gif)
 
 ```blocks
 // :solution
@@ -123,11 +127,11 @@ game.splash("5 * 7 = " + answer)
 1. starting with the previous example 
 2. add a thirdNumber variable with a unique value
 3. create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
-4, Swap the additional and Multiplication operator and run the program (Typically the answers will differ)
+4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)
 
 ### ~hint
 Look at the JavaScript.  Parenthesis `( )`are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
-![animation: Parenthesis in math code](..\Static\parenthesisMath.gif)
+![animation: Parenthesis in math code](static/courses/csintro1/variables/parenthesisMath.gif)
 ### ~
 
 ```blocks
@@ -232,31 +236,50 @@ game.splash("" + tempF + " F", "Celsius " + tempC)
 
 
 ## Student Task 5: Debugging
-1. We decided that we want to have three different variables in our code - a, b, and c. The variable a should be set to 5, b should be set to a + 5, and c should be set to a + 2 * b. This should result in b storing 10, and c storing 25 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
+1. We decided that we want to have three different variables in our code - a, b, and c. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
+
+Fix the code
+
 ```blocks
-// https://makecode.com/_T7FCazKrJUdh
+// https://makecode.com/_89VXzjCWhVwX
 let c = 0
 let b = 0
 let a = 0
-a = 5
+a = 3
 b = a + 5
 c = (a + 2) * b
 game.splash(c)
 ```
-2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any blocks beyond what was necessary for part 1, and explain what went wrong.
+
+### ~hint
+
+Click the error symbol `!` in the Splash block.  Splash can display string characters.  Reveiw previous examples of using Splash.
+
+### ~
+
+2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong?
+
+Fix the output
+
 ```blocks
 // :solution
-// https://makecode.com/_Hr52FwWRKR5L
+// https://makecode.com/_dm7i6WUHdKsh
 
 let c = 0
 let b = 0
 let a = 0
-a = 5
+a = 3
 b = a + 5
 c = a + (2 * b)
 game.splash("" + c)
 // :end-solution
 ```
+
+### ~hint
+
+It can be useful to view math equations in JavaScript.
+
+### ~
 
 ## What did we learn? 
 
