@@ -137,9 +137,9 @@ bigSprite = sprites.create(img`
 ```
 
 
-## Student Task: Build a "rainbow line" sprite that uses every color in the editor [ TODO - Remove? or Change? ]
+## Student Task: Build a "rainbow numbers" sprite that uses every color in the editor [ TODO video]
 
-![sprite rainbow](\..\static\rainbow.png)
+![sprite rainbow numbers image](/static/courses/csintro1/variables/rainbownumbers.png)
 1. make a blank **32x32** sprite  
 2. hover over every color and find color index 0 - which is the transparency color and add that color on the far left  
 3. then find and add the other colors as picture of the number in order to the right using color index 1, 2, 3, 4, ..., until you have color index 15
@@ -154,11 +154,10 @@ red as 2
 
 ### ~hint
 **Teacher Note**
-Ask Students "The image editor has 16 choices. Why can we only see 15 of the colors at a time on the "rainbow line" or sometimes only 14?"
+Discussion with Students: "The image editor has 16 choices. Why can we only see 15 of the colors at a time.  Who sees only 14 colors?"
 
-Answer: "Because one of the choices is transparent and if the background color matches the colors on the ends it looks like it is missing"
+Answer: "One of the choices is transparent - which is not a color. The background color displays but the images created in the background color are not visible."
 ### ~  
-
 
 ```blocks
 // :solution
