@@ -7,7 +7,7 @@ Variables are used extensively in code. Variables allow code to be written in a 
 If we know `Y = 3` we can calculate `X` from our equation.  Later `Y` can have a different value, `Y = 7`, and the equation, `X = 2Y`, can be reused.
 
 
-In this activity student will work with: 
+In this activity student will: 
 * combine numeric values with math operators (+, -, *, /)
 * store the result of an equation in a variable 
 * evaluate equations using variables
