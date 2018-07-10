@@ -2,7 +2,9 @@
 
 This activity starts with the basics to get started in MakeCode Arcade.
 
-If you are new to MakeCode, welcome.  The MakeCode Arcade Platform is similar to other MakeCode Products such as Miro:bit, Minecraft and the [others](https://makecode.com).  Previous users of MakeCode products, or even other block based coding platforms, will see familiarities in how to work with Blocks and to run code on a in-browser simulator.  MakeCode Arcade uses block menus items for concepts such as Sprites, Scene, and Controller which form the basis for making MakeCode Arcade games along with blocks that are common to other MakeCode Products such as Loops, Logic, Variables and Math.
+The MakeCode Arcade Platform is similar to other MakeCode Products such as Miro:bit, Minecraft and the [others](https://makecode.com).  If you are new to MakeCode, Welcome! Previous users of MakeCode, or other block based coding platforms, will see familiarities in how to work with Blocks and run code using an in-browser simulator.  
+
+MakeCode Arcade uses block menus items for concepts such as Sprites, Scene, and Controller which form the basis for making MakeCode Arcade games along with blocks that are common to other MakeCode Products such as Loops, Logic, Variables and Math.
 
 In this activity student will work with: 
 * opening a game, game controls and playing a game
@@ -26,13 +28,13 @@ In this activity student will work with:
 ## Student Task 2: Starting your own game
 1. Press the "Home" button in the upper left corner to return to the homepage
 2. Press the "New Project" button 
-3. The screen will have two blocks on it to start with - we will focus on the ``||loops:on start||`` block for now, so drag the ``||game:on game update||`` block to the side bar as shown below.
+3. The screen will have two blocks on it to start with - we will focus on the ``||loops:on start||`` block for now, so drag the ``||game:on game update||`` block to the side bar to delete it as shown below.
 ![Deleting Onstart](/static/courses/csintro1/orientation/delete-on-start.gif)
 4. Drag out a new sprite and have it ``||sprite:say||`` something as shown below
 ![Sprite Say](/static/courses/csintro1/orientation/sprite-say.gif)
-5. At the bottom of the screen, select a name to save this game as, and click "Download" to download it.
+5. At the bottom of the screen, select a name to save this game as (e.g. - "first game"), and click "Download" to download it.
 ![Downloading the game](/static/courses/csintro1/orientation/download.gif)
-6. You will turn in this file today, so be sure to keep track of it!
+6. Students will turn in this file today, so be sure to keep track of it!
 
 
 ## Student Task 3: Importing your game
@@ -65,8 +67,20 @@ There is one other common way that we will keep track of our games: by making li
 Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
 ### ~
 
-|   | 5pts | 7pts | 9pts | 10pts |
+## Rubrics
+
+### tasks rubric
+| points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | Student created the file for the game, and it can be imported into MakeCode Arcade | Student explained how they would prefer to send a game to their friend |  Student had a reasonable explanation of what the say block did in their code | The link submitted in question 4 works |
+| orientation | task 1 moved ship and scored a point | task 2 made a sprite say |task 3 opened game .gif file | shared a link to a game |
 
 ### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | Student answered #1 & #2  | clear explanation of using sprite say | clear explanation of email game choice (file or link)  |  explanations use an creative example or analogy |
+
+### Score = \_\_\_\_\_\_ /10 
+
