@@ -785,6 +785,7 @@ game.onUpdate(function () {
 })
 
 // :end-solution
+```
 
 
 ## What did we learn?

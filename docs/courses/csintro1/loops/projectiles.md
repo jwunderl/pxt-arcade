@@ -15,8 +15,6 @@ In this activity the student will implement:
 
 ## Concept: Flying Birds!
 
-# TODO: Create Video covering (list items above mostly).  Provide high level script outline.
-
 We can use projectiles to create sprites that move across the screen. Let's start off with making a simple bird projectile.
 
 ## Example: Bird projectile
@@ -30,8 +28,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let projectile: Sprite = null
-projectile = sprites.createProjectile(img`
+let projectile: Sprite = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -48,7 +45,7 @@ projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 50, 0)
+`, 50, 0, SpriteKind.Player)
 ```
 
 It may seem surprising that there's only a single block inside the ``||loops:on start||`` block - projectiles make it particularly easy to create temporary sprites. They have another benefit that code example below will demonstrate
@@ -176,6 +173,7 @@ projectile = sprites.createProjectile(img`
 // :end-solution
 ```
 
+# TODO: Create Video covering projectile motion with loops (task 2)
 
 ## Student Task 2: add horizontal projectiles that move across the screen
 1. Start with the provided code below - currently, it will spawn meteors of kind "Enemy" that stay in random locations along the top of the screen.

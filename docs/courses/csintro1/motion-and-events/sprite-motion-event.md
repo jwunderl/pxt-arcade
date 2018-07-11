@@ -168,7 +168,7 @@ agent = sprites.create(img`
 
 ```blocks
 // :solution
-https://makecode.com/_MgWimJ0UjbvU
+// https://makecode.com/_MgWimJ0UjbvU
 
 enum SpriteKind {
     Player,

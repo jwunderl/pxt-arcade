@@ -283,7 +283,7 @@ for (let index = 0; index <= 10; index++) {
 // :end-solution
 ```
 
-## What did we learn? [TODO create 2 questions]
+## What did we learn?
 
 1. In task 3, you may have noticed that when you switched from a repeat loop to a for loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that?
 2. When might you want to choose to use a ``||loops:repeat||``  loop over a ``||loops:for index||`` loop?
@@ -303,9 +303,9 @@ Is there a difference between how many times ``||loops repeat 0 times||`` and ``
 
 ### Score = \_\_\_\_\_\_ /10 
 
-### What did we learn rubric [TODO review based on number of questions]
+### What did we learn rubric
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 1 questions fully or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+| Explanation | answered at least 1 questions fully or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | both answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
