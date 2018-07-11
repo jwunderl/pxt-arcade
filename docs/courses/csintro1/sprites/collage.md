@@ -418,7 +418,7 @@ Updating Sprites is a good activity for the students who finish early as well.
 
 **Add-on Lesson Ideas**
 
-There is a lot of 8 bit hart available online
+There is a lot of excellent 8 bit art available online that will excite students.
 
 * Self Portrait (face or full character) image search online: "8 bit character" or "8 bit portrait" 
 * logo (Favorite Brand, School , super hero) image search online: "8 bit logo"
