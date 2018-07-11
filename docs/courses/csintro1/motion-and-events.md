@@ -1,10 +1,10 @@
-# [CS Intro](/courses/csintro)
+# Motion and Events
 
 * [CS Intro](/courses/csintro)
 
 ## Motion and Events
 
-* [Motion and Events](/courses/csintro1/motion-and-events.md)
+* [Motion and Events](/courses/csintro1/motion-and-events)
     * [Sprite Motion Event](/courses/csintro1/motion-and-events/sprite-motion-event)
     * [Overlap Section 1](/courses/csintro1/motion-and-events/overlap1)
     * [Random](/courses/csintro1/motion-and-events/random)
