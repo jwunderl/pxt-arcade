@@ -4,5 +4,4 @@
 
 ## Arrays
 
-* [Arrays](/courses/csintro1/arrays)
-    * [Intro](/courses/csintro1/arrays/intro)
+* [Intro](/courses/csintro1/arrays/intro)
