@@ -22,7 +22,7 @@ We use SpriteKind to classify our sprites.  We can have sprites that are Player,
 
 ## Example 1: Two Sprite Overlap  
 1. Review the code below 
-2. Create the sample code and run the code https://makecode.com/_1eHXHiAgP452
+2. Create the sample code and run the code https://makecode.com/_5pReRdcab2gm 
 3. Save the code for the task (name it "eatFruit")  
 4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite` 
 
@@ -189,7 +189,7 @@ The sprite **ghost on** setting makes the sprite able to pass "through" with oth
 
 ## Example 2: Sprite Overlap - Ghost on 
 1. Review the code below
-2. Create the sample code and run the code https://makecode.com/_iLyHR6RfYWPq 
+2. Create the sample code and run the code https://makecode.com/_7JU2esMVw9hf  
 3. Note: find the set ghost on block - switching to ghost off  means "no ghost" properties and the code will run like example 1.
 
 ```blocks
@@ -267,13 +267,13 @@ game.onUpdate(function () {
 1. start with example or task #1 or similar code -  create 3 sprites
 2. as before, make one sprite object move with the controller 
 3. Make the other sprites stationary and both of the same SpriteKind (e.g.- SpriteKind Enemy). 
-4. Set one sprite ghost off and one sprite ghost on
-5. Add an event for on Overlap of the stationary SpriteKind (e.g. sprite destroy and/or sprite say)
+4. Set one (stationary) sprite ghost off and one sprite ghost on
+5. Add an event for on Overlap of the stationary SpriteKind (e.g. - in the event have an action of sprite destroy and/or sprite say)
 6. Challenge: Give the moving sprite both X & Y direction mobility. Add additional stationary sprites, with one more new SpriteKind and overlap events for all SpriteKinds (e.g. - SpriteKind of  Player, Enemy, Food)
 
 ```blocks
 // :solution
-// https://makecode.com/_avyVmsVog48o
+// https://makecode.com/_RV3H0vUiofv9
 
 enum SpriteKind {
     Player,
@@ -461,7 +461,7 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 
 ```blocks
 // :solution
-// https://makecode.com/_1pX4CTC2U6Dc
+// https://makecode.com/_2915zF6wc5Ah
 
 enum SpriteKind {
     Player,
@@ -687,7 +687,7 @@ game.onUpdate(function () {
 ### What did we learn rubric [TODO review based on number of questions]
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with original example, drawing or analogy |
+| Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with a creative example, drawing or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
 
