@@ -15,8 +15,6 @@ In this activity the student will implement:
 
 ## Concept: Flying Birds!
 
-# TODO: Create Video covering (list items above mostly).  Provide high level script outline.
-
 We can use projectiles to create sprites that move across the screen. Let's start off with making a simple bird projectile.
 
 ## Example: Bird projectile
@@ -175,6 +173,7 @@ projectile = sprites.createProjectile(img`
 // :end-solution
 ```
 
+# TODO: Create Video covering projectile motion with loops (task 2)
 
 ## Student Task 2: add horizontal projectiles that move across the screen
 1. Start with the provided code below - currently, it will spawn meteors of kind "Enemy" that stay in random locations along the top of the screen.
