@@ -1,6 +1,6 @@
 # Activity: Button Speed   
 
-Games keep score and there are many ways game code needs to increase (or decrease) a count.  We refer to increasing count as increment and decreasing count as decrement. We will update our game score by using the  ``||change by||`` block.
+Games often keep score to keep track of how well a player is doing. When programming in blocks, there are many ways game code needs to increase (or decrease) a count.  We refer to increasing count as increment and decreasing count as decrement. We will update our game score by using the  ``||change by||`` block.
 
 In these activities, the student will use increments to increase a score, and move a sprite in a spiral: 
  

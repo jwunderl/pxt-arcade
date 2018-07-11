@@ -4,5 +4,4 @@
 
 ## Animation
 
-* [Animation](/courses/csintro1/animation)
-    * [Intro](/courses/csintro1/animation/intro)
+* [Intro](/courses/csintro1/animation/intro)
