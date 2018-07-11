@@ -30,8 +30,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let projectile: Sprite = null
-projectile = sprites.createProjectile(img`
+let projectile: Sprite = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -48,7 +47,7 @@ projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 50, 0)
+`, 50, 0, SpriteKind.Player)
 ```
 
 It may seem surprising that there's only a single block inside the ``||loops:on start||`` block - projectiles make it particularly easy to create temporary sprites. They have another benefit that code example below will demonstrate
