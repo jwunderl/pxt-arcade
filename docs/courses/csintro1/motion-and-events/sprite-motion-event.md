@@ -5,7 +5,7 @@
 
 # TODO video
 
-Motion is change in position.  Just as not moving means position doesn't change. So to get sprites moving we will change their position using an event on the game pad.  The game pad has controller events for up, down, left and right so we can change sprite location and make the sprite move.  We will also see how we can give a sprite a velocity.  Velocity is the rate of change of our position and is similar to Kilometers/hour or Miles/hour.
+Motion **is** change in position (To be still means position doesn't change). To get sprites moving we will change their position using a game pad event.  The game pad has controller events for up, down, left and right (e.g. - ``||controller:change()||``) we can change sprite location and make the sprite move.  We will also see how we can give a sprite a velocity.  Velocity is the rate of change of our position and is similar to Kilometers/hour or Miles/hour.
 
 In these activities, the student will use: 
 
@@ -17,6 +17,7 @@ In these activities, the student will use:
 * image flip (sprite image)
 
 ## Example 1: increment position left and right 
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "motionLR" or "motion left right")  
@@ -26,15 +27,14 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let sprite: Sprite = null
+let agent: Sprite = null
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x += 3
+    agent.x += 3
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x += -3
+    agent.x += -3
 })
-
-sprite = sprites.create(img`
+agent = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -52,6 +52,7 @@ sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+
 ```
 
 ## Student Task #1: increment position Y-axis (up and down) 
@@ -64,33 +65,33 @@ sprite = sprites.create(img`
 
 ```blocks
 // :solution
-// https://makecode.com/_LVdiagK4jCxW
+// https://makecode.com/_0y9YPV0sa2pm
 
 enum SpriteKind {
     Player,
     Enemy
 }
-let sprite: Sprite = null
+let agent: Sprite = null
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x += 3
+    agent.x += 3
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x += -3
+    agent.x += -3
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.y += -3
+    agent.y += -3
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.y += 3
+    agent.y += 3
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x = 80
-    sprite.y = 64
+    agent.x = 80
+    agent.y = 64
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.y += -15
+    agent.y += -15
 })
-sprite = sprites.create(img`
+agent = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -108,6 +109,7 @@ sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+
 
 // :end-solution
 ```
@@ -128,15 +130,14 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let sprite: Sprite = null
+let agent: Sprite = null
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vx += 1
+    agent.vx += 1
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vx += -1
+    agent.vx += -1
 })
-
-sprite = sprites.create(img`
+agent = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -167,35 +168,34 @@ sprite = sprites.create(img`
 
 ```blocks
 // :solution
-// https://makecode.com/_gJrFU7eX7iu6
-
+https://makecode.com/_MgWimJ0UjbvU
 
 enum SpriteKind {
     Player,
     Enemy
 }
-let sprite: Sprite = null
+let agent: Sprite = null
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vx += 1
+    agent.vx += 1
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vx += -1
+    agent.vx += -1
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vy += -1
+    agent.vy += -1
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vy += 1
+    agent.vy += 1
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x = 80
-    sprite.y = 64
+    agent.x = 80
+    agent.y = 64
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.vx = 0
-    sprite.vy = 0
+    agent.vx = 0
+    agent.vy = 0
 })
-sprite = sprites.create(img`
+agent = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -260,7 +260,6 @@ game.onUpdate(function () {
     ball.y += controller.dy()
 })
 
-
 ```
 
 # Student Task #3: Create Velocity Motion (short method)
@@ -280,7 +279,7 @@ The "stay in screen" block is is in the sprite menu.  Use a set sprite ghost blo
 
 ```blocks
 // :solution
-// https://makecode.com/_33Yb8iL6jV6x
+// https://makecode.com/_XKKJ14Vdh3ei
 
 enum SpriteKind {
     Player,
@@ -412,36 +411,23 @@ sprite = sprites.create(img`
 
 ```blocks
 // :solution
-// https://makecode.com/_hhCFuqYqqPAi
+// https://makecode.com/_4V9W91ax1RP8
 
 enum SpriteKind {
     Player,
     Enemy
 }
-let sprite: Sprite = null
+let agent: Sprite = null
+function fliphorizontal() {
+    agent.image.flipX()
+    pause(200)
+}
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+    // for (let i = 0; i < 19; i++) { fliphorizontal() }
     fliphorizontal()
 })
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.image.flipY()
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x += 3
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.x += -3
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.y += 3
-})
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprite.y += -3
-})
-function fliphorizontal() {
-    sprite.image.flipX()
-}
 scene.setBackgroundColor(6)
-sprite = sprites.create(img`
+agent = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . . 
