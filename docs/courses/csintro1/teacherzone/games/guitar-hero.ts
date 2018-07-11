@@ -1,4 +1,4 @@
-// https://makecode.com/_8LTctMYJdLfs
+// https://makecode.com/_WosVHahaLawu
 
 enum SpriteKind {
     Player,
@@ -20,30 +20,29 @@ sprites.onDestroyed(SpriteKind.B, function (sprite) {
     info.changeLifeBy(-1)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.A, function (sprite, otherSprite) {
-    if (sprite == A_button) {
-        if (controller.A.isPressed()) {
-            otherSprite.destroy()
-            info.changeScoreBy(2)
-            info.changeLifeBy(1)
-            music.playTone(494, music.beat(BeatFraction.Half))
-        }
-    }
+    otherSprite.destroy()
+    info.changeScoreBy(2)
+    info.changeLifeBy(1)
+    music.playTone(494, music.beat(BeatFraction.Half))
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.B, function (sprite, otherSprite) {
-    if (sprite == B_button) {
-        if (controller.B.isPressed()) {
-            otherSprite.destroy()
-            info.changeScoreBy(2)
-            info.changeLifeBy(1)
-            music.playTone(262, music.beat(BeatFraction.Half))
-        }
-    }
+    otherSprite.destroy()
+    info.changeScoreBy(2)
+    info.changeLifeBy(1)
+    music.playTone(262, music.beat(BeatFraction.Half))
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(-1)
+    A_button.setFlag(SpriteFlag.Ghost, false)
+    pause(25)
+    A_button.setFlag(SpriteFlag.Ghost, true)
+
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(-1)
+    B_button.setFlag(SpriteFlag.Ghost, false)
+    pause(25)
+    B_button.setFlag(SpriteFlag.Ghost, true)
 })
 
 B_button = sprites.create(img`
@@ -82,6 +81,10 @@ A_button = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
+
+B_button.setFlag(SpriteFlag.Ghost, true)
+A_button.setFlag(SpriteFlag.Ghost, true)
+
 B_spawner = sprites.create(img`
 a a a a a a a a a a a a a a a a 
 a a a a a a a a a a a a a a a a 
