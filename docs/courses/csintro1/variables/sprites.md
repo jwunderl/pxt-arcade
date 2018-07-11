@@ -52,15 +52,13 @@ and then using the sprite editor to color pixels for a sprite design.
 
 Look at the blocks and note that a name for the sprite (`actor`) is set to an image for the sprite (it's hot sauce!).
 
-https://makecode.com/_DgmcM1Epmgrm
+https://makecode.com/_VEXXpq9RtRfT
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
 let actor: Sprite = null
-let sprite = 0
-sprite = null
 actor = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . 2 . . . . . . . 

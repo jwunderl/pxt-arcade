@@ -3,16 +3,12 @@ enum SpriteKind {
     Enemy,
     Laser
 }
-let agent: Sprite = null
-let item: Sprite = null
 
-let dirImages: Image[] = []
 let dir = 0
 let speed = 30
-agent.setFlag(SpriteFlag.StayInScreen, true)
 
 scene.setBackgroundColor(1)
-dirImages = [img`
+let dirImages: Image[] = [img`
 . . 2 . . 
 . f f f . 
 . f f f . 
@@ -61,7 +57,9 @@ dirImages = [img`
 . f f f . 
 . . . . . 
 `]
-agent = sprites.create(dirImages[dir], SpriteKind.Player)
+let agent: Sprite = sprites.create(dirImages[dir], SpriteKind.Player)
+agent.setFlag(SpriteFlag.StayInScreen, true)
+
 game.onUpdate(function () {
     dir += -controller.dx()
     maintainAngle()
@@ -78,12 +76,22 @@ game.onUpdate(function () {
     let index = Math.round(dir * dirImages.length / 360)
     agent.setImage(dirImages[index])
     if (Math.percentChance(5)) {
-        let projectile = sprites.createProjectile(sprites.space.spaceAsteroid0, Math.randomRange(0, 60) - 30, Math.randomRange(0, 60) - 30, SpriteKind.Enemy, item)
+        let projectile = sprites.createProjectile(
+                            sprites.space.spaceAsteroid0,
+                            Math.randomRange(0, 60) - 30,
+                            Math.randomRange(0, 60) - 30,
+                            SpriteKind.Enemy,
+                            null)
     }
 })
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.createProjectile(img`8`, getXComponent() * speed * 2, getYComponent() * speed * 2, SpriteKind.Laser, agent)
+    sprites.createProjectile(
+                img`8`,
+                getXComponent() * speed * 2,
+                getYComponent() * speed * 2,
+                SpriteKind.Laser,
+                agent)
 })
 sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()

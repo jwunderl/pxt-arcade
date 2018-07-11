@@ -55,10 +55,11 @@ game.splash("" + answer)
 3. Test at least 3 different equations
 4. Challenge: make longer addition equations so the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using "show long text"
 
+
 ### ~hint
 In order to combine multiple items we will need to add additional Math blocks
 
-![animation: adding 3 numbers with blocks](static/courses/csintro1/variables/add3Numbers.gif)
+![animation: adding 3 numbers with blocks](/static/courses/csintro1/variables/add3Numbers.gif)
 
 ```blocks
 // :solution
@@ -134,7 +135,7 @@ game.splash("5 * 7 = " + answer)
 
 ### ~hint
 Look at the JavaScript.  Parenthesis `( )`are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
-![animation: Parenthesis in math code](static/courses/csintro1/variables/parenthesisMath.gif)
+![animation: Parenthesis in math code](/static/courses/csintro1/variables/parenthesisMath.gif)
 ### ~
 
 ```blocks
@@ -183,6 +184,7 @@ answer = firstNum * secondNum + thirdNum / fourthNum
 game.splash("15 * 5 + 9 / 6 = " + answer)
 
 // :end-solution
+```
 
 ```blocks
 // :solution
