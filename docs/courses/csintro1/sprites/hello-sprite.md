@@ -1,10 +1,10 @@
 # Activity: Hello Sprite
 
-"Hello World!" is a common first example used to introduce the syntax of a new programming language. In this activity we will first look at "Hello World!" displayed in a game.  Then we will modify our code to display in the **Console Simulator** environment.  
+"Hello World!" is a common first example used to introduce the syntax of a new programming language by showing a few words on a screen. In this activity we will display "Hello World!" on the game screen.  Then we will modify our code to display in the **Console Simulator** environment.  
 
 In this lesson students use:
 * Sprite Say
-* Console log
+* Console log (JavaScript)
 * String types
 * String Variables
 
@@ -12,10 +12,10 @@ In this lesson students use:
 
 # TODO: Video demo example introduce ``||sprites:say||`` and discuss changing variables  
 
-Sprite Objects have a method ``||sprites:say||`` (`say()`) that displays a text box over the sprite when used. 
+Sprite Objects have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 
 > ### Vocabulary: Method
-> A **method** is an action that an object supports. Example: Sprites have a "say" method that displays text provided above the sprite.
+> A **method** is an action that an object supports. Example: Sprites (an object) have a "say" method that displays text provided above the sprite.
 > 
 
 ## Example: Sprite Hello Blocks
