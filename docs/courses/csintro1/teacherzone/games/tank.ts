@@ -9,6 +9,7 @@ let item: Sprite = null
 let dirImages: Image[] = []
 let dir = 0
 let speed = 30
+agent.setFlag(SpriteFlag.StayInScreen, true)
 
 scene.setBackgroundColor(1)
 dirImages = [img`
