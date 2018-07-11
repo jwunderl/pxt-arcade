@@ -1,6 +1,6 @@
 # Activity: Collage
 
-**Visual Design** is an important part of Game Development.  This activity builds skills needed to create multiple sprites placed on a game screen by building Collage about you. The student will Create Sprites with custom variable names and arrange the sprites on a game screen using sprite properties to set the coordinates.
+**Visual Design** is an important part of Game Development.  This activity builds skills needed to create multiple sprites placed on a game screen by building a Personal Interest Collage. The student will Create Sprites with custom variable names and arrange the sprites on a game screen using sprite properties to set the coordinates.
 
 In this activity we will use
 * Sprites
@@ -384,7 +384,7 @@ Create separate sprites and combine by placing to make a single large image (e.g
 ## What did we learn?
 
  1. Describe and Explain observations of sprite images in the JavaScript code. What do periods (**.**) represent?  
- 2. What other blocks are available in the Sprite Blocks menu (list several)? For a block not used in collage, explain a hypothesis on what it does.
+ 2. What other blocks are available in the Sprite Blocks menu? List several blocks not used in collage and **give a hypothesis** on what one (or more) of these blocks does.
 
 ## Rubrics
 
@@ -417,6 +417,8 @@ Students skill in creating sprites is one key to engaging games. Consider additi
 Updating Sprites is a good activity for the students who finish early as well.  
 
 **Add-on Lesson Ideas**
+
+There is a lot of excellent 8 bit art available online that will excite students.
 
 * Self Portrait (face or full character) image search online: "8 bit character" or "8 bit portrait" 
 * logo (Favorite Brand, School , super hero) image search online: "8 bit logo"
