@@ -1,11 +1,11 @@
-# Activity: Sprite Overlap & Events 2
-(Part 2)
-We use SpriteKind to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." In the activity, all "Cloud" SpriteKind's respond with the same act the same when overlapped with  "Helicopter" SpriteKind. 
+# Activity: Sprite Overlap & Events - Part 2
 
-Making several clouds with the same SpriteKind of "Cloud," we have them all interact with the Helicopter overlap in the same way.
+We use SpriteKind to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." In the activity, all "Cloud" SpriteKind's respond with the same action when overlapped with a `Helicopter` SpriteKind. 
+
+By making several cloud shaped sprites with the same SpriteKind of `Cloud`, we write code to so all SpriteKind `Cloud` interact in the same way with a SpriteKind `Helicopter` overlap event.
 
 In this activity the student will continue to work with:
-* on overlap event with a SpriteKind (e.g. - Cloud) applied to several identical sprites
+* on overlap event with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
 * define multiple SpriteKind overlap events and actions
 * spawn a SpriteKind
 * ``||sprites:on created||`` event setting image and position when specific SpriteKind is spawned
@@ -40,12 +40,16 @@ Having sprites bump rather than pass over each other is useful game behavior for
 The code to make a bump can be difficult to grasp for students.  Break it down for them step by step.  
 
 Start with the behavior.  The faster the velocity the farther the bump in the opposite direction. 
-* The code uses (velocity)*(-1) to change the position. 
-* changes x position in pixels by using the negative of the velocity in the x direction.
+* The code uses (velocity)*(-1) to change the position. The value of velocity is number (positive or negative).
+* The number generated above is now the opposite sign (we multiplied by -1)
+* Using the velocity value that is the opposite we can adjust the position.  
 
-Give an example.  A car going 10 meters/second bumps -10 centimeters.
+### Give an example to students  
+A car going 10 meters/second bumps -10 centimeters.
 
-Ask: what if going -100 meters/second?  [Answer] bumps +100 centimeters
+Ask: what if going -100 meters/second?  [Answer] bumps +100 centimeters - always note the sign Changes (positive/negative swap)
+
+### Reveiw the bump code  
 
 This is the code that bumps the helicopter
 ```block
@@ -55,18 +59,23 @@ This is the code that bumps the helicopter
     sprite.vy = 0
 ```
 
-and this code shakes the cloud by moving it 1 pixel and then back
+Ask students for the values of sprite .x and sprite.y if sprite.vx = -25 and sprite .vy = 30
+
+### Reveiw the shake code  
+
+This code shakes the cloud by moving it 1 pixel and then back
 
 ```block
     otherSprite.y += -1
     pause(100)
     otherSprite.y += 1
 ```
+It moves the spite 1 pixel, pauses and then moves back. 
 ### ~
 
 ```blocks
 
-// https://makecode.com/_RHD3yygXAcsR
+// https://makecode.com/_JqUREsW6cPKP
 
 enum SpriteKind {
     Helicopter,
@@ -240,13 +249,14 @@ landing.y = 125
 ```
 
 
-## Student Task #1a: Soft Landing
+## Student Task #1a: Soft Landing  
+
 There is a "T" shaped landing area at the bottom of the example.  The helicopter sprite should not go through the landing, it should land!
 
 1. starting with the above example replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
-2. Review the rest of the code and then add an on overlap event for when the helicopter overlaps with the landing
+2. review the rest of the code and then add an on overlap event for when the helicopter overlaps with the landing (Note the SpriteKind of `LandingPad`)
 3. the block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more.
-4. Challenge: Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, or other) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. 
+4. Challenge: Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, or other) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity. Also, pauses allow the game player to see the motion changes more clearly.
 
 ### ~hint
 **Teacher Note**
@@ -266,13 +276,11 @@ For the landing:  to change the helicopter Y position to move up we have to chan
 
 Challenge Tip: Erratic motion can be made by changing the sprite position back and forth several times. Try changes in velocity and/or position separated by short pauses.
 
-``||loops:pause()||`` insertion can be useful between changes in movement.
-
 ### ~
 
 ```blocks
 // :solution
-// https://makecode.com/_9YDDRgemeMyo
+// https://makecode.com/_Ujght09RXCmJ
 
 enum SpriteKind {
     Helicopter,
@@ -493,7 +501,6 @@ game.onUpdate(function () {
     copter.vy += controller.dy()
 })
 
-
 // :end-solution
 ```
 
@@ -519,7 +526,7 @@ Continue to reinforce to students that SpriteKind controls overlap events. Any a
 
 ```blocks
 // :solution
-// https://makecode.com/_WfkFAW2cUCH1
+// https://makecode.com/_J488iW5KW2w4
 
 enum SpriteKind {
     Helicopter,
@@ -777,16 +784,13 @@ game.onUpdate(function () {
     copter.vy += controller.dy()
 })
 
-
 // :end-solution
 
 
-## What did we learn? [create 2 questions]
+## What did we learn?
 
-1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
-2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
-3. [Come up with a question of your choice]
-
+1. Describe how a SpritKind makes improves the code (e.g - makes programming easier, more powerful, more efficient...).  
+2. Describe "tricks" used to make games more interesting using sprite motion. Describe some other possible motions that could be used in a game.   
 
 ## Rubrics
 
@@ -802,7 +806,7 @@ game.onUpdate(function () {
 ### What did we learn rubric [TODO review based on number of questions]
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+| Explanation | answered both questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations with at least 2 examples for question #2 |  used an exceptional explanation and at least 3 examples total in question 2 |
 
 ### Score = \_\_\_\_\_\_ /10 
 
