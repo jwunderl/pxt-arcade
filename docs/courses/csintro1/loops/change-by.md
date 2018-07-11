@@ -245,7 +245,7 @@ There is another type of loop that can help in implementing this behavior. The `
 2. Remove the initialization and incrementing of the count variable. Your code should now behave like it did before you made any modifications - drifting up and to the left.
 3. Replace the count variable in all blocks that are changing the position of the sprite to use the index variable from the ``||loops:for index from 0 to 10||`` block.
 
-```
+```blocks
 // :solution
 enum SpriteKind {
     Player,

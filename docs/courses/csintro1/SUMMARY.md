@@ -2,9 +2,10 @@
 
 ## About
 
+# CS Intro Unit 1: Blocks
 ## Orientation
-* [Orientation to MakeCode](/courses/csintro1/orientation/makecode-orientation)
 * [Birthday Algorithm](/courses/csintro1/orientation/birthday-algorithm)
+* [Orientation to Makecode](/courses/csintro1/orientation/makecode-orientation)
 
 ## Variables
 * [Sprites](/courses/csintro1/variables/sprites)
@@ -15,15 +16,16 @@
 * [Collage](/courses/csintro1/sprites/collage)
 * [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
 
-## Loops
-* [Turtle](/courses/csintro1/loops/turtle)
-* [Change By](/courses/csintro1/loops/change-by)
-* [Spirals](/courses/csintro1/loops/spiral)
+## Motion and Events
+* [Sprite Motion Event](/courses/csintro1/motion-and-events/sprite-motion-event)
+* [Overlap Section 1](/courses/csintro1/motion-and-events/overlap1)
+* [Random](/courses/csintro1/motion-and-events/random)
+* [Overlap Section 2](/courses/csintro1/motion-and-events/overlap2)
 
-## Motion
-* [Sprite Motion](/courses/csintro1/motion/sprite-motion)
-* [Overlap](/courses/csintro1/motion/overlap)
-* [Projectiles](/courses/csintro1/motion/projectiles)
+## Loops
+* [Intro](/courses/csintro1/loops/intro)
+* [Change By](/courses/csintro1/loops/change-by)
+* [Projectiles](/courses/csintro1/loops/projectiles)
 
 ## Events
 * [Functions](/courses/csintro1/events/functions)
