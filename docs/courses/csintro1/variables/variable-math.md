@@ -184,6 +184,7 @@ answer = firstNum * secondNum + thirdNum / fourthNum
 game.splash("15 * 5 + 9 / 6 = " + answer)
 
 // :end-solution
+```
 
 ```blocks
 // :solution
