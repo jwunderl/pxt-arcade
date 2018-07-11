@@ -1,21 +1,28 @@
 # Activity: Intro to loops
-## TODO: Change all this to not include turtle
-Turtle is a classic Computer Science Program where the programmer controls a turtles motion.  The "turtle" (arrow sprite) can draw the path it takes to create interesting designs.  Many students will have seen Turtle or something similar previously if they have participated in various one hour coding activities.  Turtle is a "game" built in MakeCode Arcade that has it's own Blocks that we can use until we learn how to make our own movement controls.
 
-In Arcade, Turtle is an **extension**. An extension is a "package" of code that can be added to enable some functionality - in this case it adds Turtle Blocks to the top of our Blocks Menu. The Animated Image below the video demonstrates how we enable the turtle blocks with the Turtle extension.
+When writing code, we often want to repeat the same action multiple times. Using loops, we can often reduce logical redundancy in our code - that is, having the same (or nearly the same) code multiple times. One way to think of this would be to think of multiplication of integers as repeated addition - that is, 4 + 4 + 4 + 4 + 4 is equal to 4 * 5; we reduced the redundancy in this expression by using a different operation to express the same overall expression.
+
+We can use loops to solve a similar task. The following would leave the variable ``||variables:output||`` with the same output as the expressions above
+
+```blocks
+let output: number = 0
+for (let i = 0; i < 5; i++) {
+    output += 4
+}
+```
 
 In this activity students will work with: 
 
 * sprite motion
-* repeat loop   
+* repeat loop
 
-## Concept: Controlling the turtle's movement
+## Concept: Motion with loops
 
 # TODO: Video moving a sprite using loops
 
 We can start off by trying to solve a small task - slowly move a ghost from the center of the screen towards the bottom right corner.
 
-## Example: Moving a Ghost
+## Example: Moving a Ghost the long way
 1. Open up [this sample code](https://makecode.com/_bwkaqsVLgf9j)
 2. Run the code - the ghost should scroll off to the bottom right area of the screen, and peek just over the edge.
 3. Review the blocks that caused this to happen - what would you need to add if the screen was made to be twice as big?
