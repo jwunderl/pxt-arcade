@@ -1,7 +1,7 @@
 # Birthday Algorithm
 This Activity requires Pencil and Paper (no need for a computer).
 
-In this lesson students follow a a series of steps to complete a math trick. Students are introduced to 
+In this lesson students follow a series of steps to complete a math trick. Students are introduced to 
 * Algorithms  
 * Program flow  
 * Debugging  

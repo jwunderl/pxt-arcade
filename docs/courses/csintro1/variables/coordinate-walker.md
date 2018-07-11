@@ -22,7 +22,7 @@ In order to create games we need to place Sprites and other objects at various l
 
 Use the coordinate walker example to move around the screen and track X and Y coordinates.
 
-**Open [coordinate walker program](https://makecode.com/_gU5AtzV6v5iu)**: to compete the tasks
+**Open [coordinate walker program](https://makecode.com/_Vdi18F33t66F)**: to compete the tasks
 
 
 * **Check the location**: Run the program and then press the "A" button on the game pad (or space bar key on keyboard) to display the starting location coordinates - press to see x and y coordinates.
@@ -41,11 +41,11 @@ Use **X** and/or **Y** in your answers
 
 Two dimensional game screen coordinates are represented by values for **X** and **Y** axis locations.
 
-![XY Coordinates](../static/coordinates.png)
+![XY Coordinates](/static/courses/csintro1/variables/coordinates.png)
 
 * Move to the sprite to the top edge of the screen
   * what is the **Y** coordinate at the top of the screen?  
-  ![sprite at top edge of screen](../static/coordinate_edge.png)
+  ![sprite at top edge of screen](/static/courses/csintro1/variables/coordinate_edge.png)
 
 * Move to each of the corners and **map the coordinates** as a pair of X and Y values like `(x,y)`
   * Restart the game. What are the coordinates when you start? Should be `(64,64)`.
@@ -55,13 +55,13 @@ Two dimensional game screen coordinates are represented by values for **X** and 
   * **Record** the coordinates at the **Top Left** corner   
   * **Record** the Game Screen Dimensions (height by width)  
 
-![map the coordinates at the corners](../static/coordinatesmap.png)
+![map the coordinates at the corners](/static/courses/csintro1/variables/coordinatesmap.png)
 
 ### Record Results
 
 Record Results in a simple diagram
 
-![map the coordinates results](../Static/recordcoordinates.png)
+![map the coordinates results](/static/courses/csintro1/variables/recordcoordinates.png)
 
 ### Challenge
 
