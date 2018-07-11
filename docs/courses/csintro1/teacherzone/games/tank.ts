@@ -1,69 +1,108 @@
 enum SpriteKind {
     Player,
-    Enemy
+    Enemy,
+    Laser
 }
+let agent: Sprite = null
+let item: Sprite = null
+
+let dirImages: Image[] = []
+let dir = 0
+let speed = 30
+
 scene.setBackgroundColor(1)
-let dirImages: Image[] = [img`
-. . 2 . .
-. f f f .
-. f f f .
-. f f f .
-. . . . .
-`,
-img`
-2 . . . .
-. f f f .
-. f f f .
-. f f f .
-. . . . .
-`,
-img`
-. . . . .
-. f f f .
-2 f f f .
-. f f f .
-. . . . .
-`,
-img`
-. . . . .
-. f f f .
-. f f f .
-. f f f .
-2 . . . .
-`,
-img`
-. . . . .
-. f f f .
-. f f f .
-. f f f .
-. . 2 . .
-`,
-img`
-. . . . .
-. f f f .
-. f f f .
-. f f f .
-. . . . 2
-`,
-img`
-. . . . .
-. f f f .
-. f f f 2
-. f f f .
-. . . . .
-`,
-img`
-. . . . 2
-. f f f .
-. f f f .
-. f f f .
-. . . . .
+dirImages = [img`
+. . 2 . . 
+. f f f . 
+. f f f . 
+. f f f . 
+. . . . . 
+`, img`
+2 . . . . 
+. f f f . 
+. f f f . 
+. f f f . 
+. . . . . 
+`, img`
+. . . . . 
+. f f f . 
+2 f f f . 
+. f f f . 
+. . . . . 
+`, img`
+. . . . . 
+. f f f . 
+. f f f . 
+. f f f . 
+2 . . . . 
+`, img`
+. . . . . 
+. f f f . 
+. f f f . 
+. f f f . 
+. . 2 . . 
+`, img`
+. . . . . 
+. f f f . 
+. f f f . 
+. f f f . 
+. . . . 2 
+`, img`
+. . . . . 
+. f f f . 
+. f f f 2 
+. f f f . 
+. . . . . 
+`, img`
+. . . . 2 
+. f f f . 
+. f f f . 
+. f f f . 
+. . . . . 
 `]
-
-let dir: number = 0;
-let agent: Sprite = sprites.create(dirImages[dir], SpriteKind.Player)
-
-game.onUpdateInterval(250, function () {
-    dir = (dir + 1) % dirImages.length
-    agent.setImage(dirImages[dir])
+agent = sprites.create(dirImages[dir], SpriteKind.Player)
+game.onUpdate(function () {
+    dir += -controller.dx()
+    maintainAngle()
+    if (controller.up.isPressed()) {
+        agent.vx = speed * getXComponent()
+        agent.vy = speed * getYComponent()
+    } else if (controller.down.isPressed()) {
+        agent.vx = -speed * getXComponent()
+        agent.vy = -speed * getYComponent()
+    } else {
+        agent.vx = 0
+        agent.vy = 0
+    }
+    let index = Math.round(dir * dirImages.length / 360)
+    agent.setImage(dirImages[index])
+    if (Math.percentChance(5)) {
+        let projectile = sprites.createProjectile(sprites.space.spaceAsteroid0, Math.randomRange(0, 60) - 30, Math.randomRange(0, 60) - 30, SpriteKind.Enemy, item)
+    }
 })
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    sprites.createProjectile(img`8`, getXComponent() * speed * 2, getYComponent() * speed * 2, SpriteKind.Laser, agent)
+})
+sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    sprite.destroy()
+    info.changeScoreBy(1)
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    game.over()
+})
+
+function maintainAngle() {
+    dir = dir % 360;
+    if (dir < 0) dir += 360;
+}
+
+function getYComponent() {
+    return -Math.cos(dir * Math.PI / 180)
+}
+
+function getXComponent() {
+    return -Math.sin(dir * Math.PI / 180)
+}
