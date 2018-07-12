@@ -1,7 +1,5 @@
 # Activity: Random Sprite Location
 
-
-
 In this activity student will work with: 
 *  ``||math:pick random||`` to generate random numbers
 * setting sprite x and y positions
@@ -100,7 +98,7 @@ actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 
 ## Task #2: Set random position using a button event
 1. starting with example #2 example 
-2. add a ``||controller:on A button pressed||`` button
+2. add a ``||controller:on A button pressed||`` block
 3. make the action code for the 'A' button move a sprite to a new position
 4. Add another sprite and make it move with the B button
 5. Challenge: make both sprites change position with the 'A' button and make the 'B' button give one of the sprites a random velocity (use small numbers (e.g. - 10) negative and positive)
@@ -117,7 +115,7 @@ actor.vy = 0
 
 ```blocks
 // :solution
-// https://makecode.com/_Ca23io8e6H9f
+// https://makecode.com/_KUu08Kc9UXj2
 
 enum SpriteKind {
     Player,
@@ -278,6 +276,7 @@ hat.setPosition(35, 60)
 
 ```blocks
 // :solution
+// https://makecode.com/_EoRXfFEm5eFL
 
 enum SpriteKind {
     Player,
@@ -436,10 +435,7 @@ hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 1. Describe how a set random makes programming can make a game more interesting and/or challenging.
 2. What is a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random is needed.  
 
-
-
 ## Rubrics
-
 
 ### TODO Rubric
 

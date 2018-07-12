@@ -15,9 +15,7 @@ In this activity student will:
 * display text with ``||game:splash||`` by using ``||text:join||``
 
 
-## Concept: Using Math Operators with Variables  
-
-# TODO: Create Video 
+## Concept: Using Math Operators with Variables
 
 
 ## Example: math equation in a variable

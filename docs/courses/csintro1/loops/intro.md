@@ -18,8 +18,6 @@ In this activity students will work with:
 
 ## Concept: Motion with loops
 
-# TODO: Video moving a sprite using loops
-
 We can start off by trying to solve a small task - slowly move a ghost from the center of the screen towards the bottom right corner.
 
 ## Example: Moving a Ghost the long way

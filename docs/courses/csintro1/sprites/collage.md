@@ -6,9 +6,7 @@ In this activity we will use
 * Sprites
 * Variables to create multiple sprites  
 * Coordinates to arrange our sprites into a scene  
-* Background - set background  
-
-# TODO: Video demo example Making a sprite, changing the variable name and placing on the screen.   Use scene.setBackground() 
+* Background - set background
 
 ## Example: Sprite
 
