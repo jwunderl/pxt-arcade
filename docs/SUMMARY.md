@@ -81,6 +81,7 @@
             * [Sprite Motion Practice](/courses/csintro1/review/practice-sprite-motion)
             * [Variable Math Practice](/courses/csintro1/review/practice-variable-math)
             * [String Math Practice](/courses/csintro1/review/practice-string-math)
+            * [Review Game](/courses/csintro1/review/review-game)
         * [Loops](/courses/csintro1/loops)
             * [Intro](/courses/csintro1/loops/intro)
             * [Change By](/courses/csintro1/loops/change-by)
