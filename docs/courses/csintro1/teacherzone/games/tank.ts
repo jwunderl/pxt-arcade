@@ -70,8 +70,8 @@ game.onUpdate(function () {
         agent.vx = -speed * getXComponent()
         agent.vy = -speed * getYComponent()
     } else {
-        agent.vx = 0
-        agent.vy = 0
+        agent.vx = agent.vx * .8
+        agent.vy = agent.vy * .8
     }
     let index = Math.round(dir * dirImages.length / 360)
     agent.setImage(dirImages[index])
