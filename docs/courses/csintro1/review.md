@@ -16,3 +16,4 @@
 * [String Math Practice](/courses/csintro1/review/practice-string-math)
 * [Review Game](/courses/csintro1/review/review-game)
 * [Car Avoider](/courses/csintro1/review/car-avoider)
+* [Baseball Catching](/courses/csintro1/review/baseball-catching)

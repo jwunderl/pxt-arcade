@@ -2,7 +2,7 @@
 
 ![Final Car Game](/static/courses/csintro1/review/final-car-avoid.gif)
 
-## Student Task 1:
+## Provided Starter Code:
 
 ```blocks
 enum SpriteKind {
@@ -41,6 +41,8 @@ game.onUpdateInterval(500, function () {
 
 })
 ```
+
+## Student Task 1:
 
 Using the above code as a base, add to the ``||game:on game update every...||`` block to create projectiles of kind ``||sprites:car||`` that the player must avoid. They should move to the left across the center of the screen at a rate of 50. 
 
