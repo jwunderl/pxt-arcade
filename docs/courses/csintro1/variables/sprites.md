@@ -232,7 +232,7 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
-| Rainbow Line | 16 "colors" represented in rainbow line |Completed Color Table maps the color name to both the editor index and the JavaScript number/letter  |  *Explain answers* are clearly expressed | The *Explain answers* are expressed in a unique and/or interesting way or the **Challenge was completed**. |
+| Rainbow Numbers | 16 "colors" represented in rainbow number |Completed Color Table maps the color name to both the editor index and the JavaScript number/letter  |  *Explain answers* are clearly expressed | The *Explain answers* are expressed in a unique and/or interesting way or the **Challenge was completed**. |
 
 ### Score = \_\_\_\_\_\_ /10 
 
