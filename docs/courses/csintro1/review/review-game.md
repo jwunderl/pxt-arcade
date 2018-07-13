@@ -1,11 +1,12 @@
 # Task list:
 
-## Sprite:
+## Sprite
 * Make a **32 x 32** sprite that has 3 circles filled with different colors
 * Rename the the sprite from "agent" to "circles"
 * Make the sprite be of kind "Circles"
 * When the game starts, make ``||variables:circles||`` ``||sprite:say||`` something (for example, "I'm ready to play!") for **1000 ms**
 ## Motion and Button Events:
+* Make the ``||variables:circles||`` spawn in the top left corner, by ``||sprites:setting||`` the ``||sprites:x||`` and ``||sprites:y||`` coordinates both to 30
 * Use the ``||controller:on left button pressed||`` and ``||controller:on right button pressed||`` blocks to make ``||variables:circles||`` move left and right, by using the ``||sprite:change x by||`` block. Make the circles move **5** in the direction specified each time the button is pressed (remember - moving in one direction )
 ### ~hint
 Remember: moving in opposite directions is done by changing the value from positive to negative (or vice versa) - that means one button should change x by 5, and the other should change x by -5.
@@ -73,11 +74,13 @@ circles = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Circles)
 circles.say("I'm ready to play!", 1000)
+circles.x = 30
+circles.y = 30
 circles.ay = 5
 circles.ax = 2
 // :end-solution
 ```
-## Sprite Kinds
+## Sprite Kinds and Info
 * Use the ``||sprites:create empty sprite of kind Stars||`` block from the ``||sprites:Lifecycle||`` category inside of an ``||games:on game update every 500 ms||`` block to create a new sprite of kind Star twice per second. You'll need to make a new kind (in particular, ``||sprite:Stars||``) to do this.
 * Now we can add some behavior to sprites of kind Stars. To do this, we need an ``||sprites:on created sprite of kind Stars||`` event. Inside of that, change the image of the sprite using the ``||sprites:set agent image to...||`` block, and dragging the sprite in place of the agent, as shown below. Make sure to make a nice image for your star!
 ![Using sprite parameter in on created event](/static/courses/csintro1/review/use-sprite-parameter.gif)
@@ -88,6 +91,10 @@ circles.ax = 2
 ### ~hint
 Both the ``||sprites:z||`` and ``||sprites:lifespan||`` can be assigned using the drop down, similar to how the ``||sprites:x||`` can be set.
 ### ~
+* Create a ``||sprites:on sprite of kind Circles overlaps otherSprite of kind Stars||`` block to handle interactions between the Circles and Stars in the background.
+* Inside of the ``||sprites:overlap||`` block, destroy the ``||sprites:Star||`` that is overlapped, and ``||info:change score by 1||`` to add one to the score each time the ``||variables:circles||`` pass over a ``||sprites:Star||``.
+* Create a ``||info:start countdown||`` block with a time of 30 seconds, so that the game will be done after time runs out.
+* Add a ``||game:splash||`` message in the ``||loops:on start||`` section with a basic description of the game (for example, "catch the stars before time runs out!"). Does the placement of the splash screen affect how the game runs?
 
 ```blocks
 // :solution
@@ -98,11 +105,13 @@ enum SpriteKind {
     Stars
 }
 let circles: Sprite = null
+let sprite: Sprite = null
+sprites.onOverlap(SpriteKind.Circles, SpriteKind.Stars, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     circles.x += 5
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    circles.x += -5
 })
 sprites.onCreated(SpriteKind.Stars, function (sprite) {
     sprite.setImage(img`
@@ -128,11 +137,14 @@ sprites.onCreated(SpriteKind.Stars, function (sprite) {
     sprite.z = -5
     sprite.lifespan = 100
 })
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    circles.vy += -5
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    circles.x += -5
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     circles.vy += 5
+})
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    circles.vy += -5
 })
 circles = sprites.create(img`
 . . . . . . . . . . . . . . . 3 . . . . . . . . . . . . . . . . 
@@ -169,9 +181,72 @@ circles = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Circles)
 circles.say("I'm ready to play!", 1000)
+circles.x = 30
+circles.y = 30
 circles.ay = 5
+game.splash("Catch the Stars before time runs out!")
+info.startCountdown(30)
 game.onUpdateInterval(500, function () {
     sprites.createEmptySprite(SpriteKind.Stars)
 })
 // :end-solution
 ```
+
+## Debugging
+In the following examples, identify what part of the provided code is causing the behavior to be different from the expected behavior. All of the examples are small segments of code similar to what you made above, so looking at your game might help in finding the bugs.
+
+### Student 1: Bill
+
+Bill decided he wanted to make a simple game where a timer counts down to 5. After making the count down, he decides that it's not very helpful to countdown without telling the player that that is what is going to happen, so he adds in a splash screen to tell the player - unfortunately, the game now starts at some number less than 5, and occasionally is already over when he moves on to the countdown. What is going wrong with this code, and how can it be fixed?
+```blocks
+info.startCountdown(5)
+game.splash("Hello! This will count down from 5 for you!")
+```
+### ~hint
+**Teacher Note**
+The countdown will still run while the splash screen is being shown; Bill should move the countdown to start *after* the splash screen (that is, swap the order of the blocks).
+### ~
+
+### Student 2: Emma
+
+Emma decides that she does not like the Stars being destroyed when the ``||variables:circles||`` overlap them, so she removes the ``||sprite:destroy||`` block so that the ``||sprites:Stars||`` remain. However, this makes the game score behave weirdly, and no longer represent the number of stars that have been overlapped. What went wrong? (Challenge: can you fix it?)
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Circles,
+    Stars
+}
+sprites.onOverlap(SpriteKind.Circles, SpriteKind.Stars, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+})
+```
+### ~hint
+**Teacher Note**
+Because the game does not destroy the Stars, the circles will continue to overlap with them, and continue to add to the score as long as the Stars exist and the circles stay over them. There are two approaches students might take to fix this. One would be to destroy the old star and replace it with a new Star of a different kind. A more clear / clean approach would be to set the ``||variables:otherSprite||`` to ``||sprite:ghost on||``, so that it won't trigger collisions after the first one.
+### ~
+
+### Student 3: Sebastian
+
+Sebastian wants to add in a splash screen that shows the score the player reached before ending the game, so he uses the ``||info:on countdown end||`` block to add in this behavior, and then end the game. This block allows you to change the behavior of the countdown ending from the normal "game over" sequence to something different.
+
+```blocks
+info.onCountdownEnd(function () {
+    game.splash("")
+    game.over()
+})
+```
+
+Everything seems like it's working fine to start, until he tries to add in the score to the splash screen, as shown in the animation below. What is going wrong, and how can he fix it?
+![Adding score to splash screen](/static/courses/csintro1/review/score-to-splash.gif)
+
+### ~hint
+**Teacher Note**
+The splash screen needs to have a string to display, not a number - to display a number, you need to use ``||text:join||`` to force the number to be converted to a string. Joining it with an empty string will create just the number; otherwise, it will become the number and the other string next to one another.
+```blocks
+info.onCountdownEnd(function () {
+    game.splash("" + info.score())
+    game.over()
+})
+```
+### ~
