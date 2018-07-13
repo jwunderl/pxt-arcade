@@ -4,7 +4,7 @@ A variable points to a container that can store data.  We have previously used v
 
 Variables are used extensively in code. Variables allow code to be written in a generic way and allow for easier reuse of our code.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values.  
 
-If we know `Y = 3` we can calculate `X` from our equation.  Later `Y` can have a different value, `Y = 7`, and the equation, `X = 2Y`, can be reused.
+If we know `Y = 3` we can calculate `X` from our equation.  Later `Y` can have a different value, `Y = 7`. We can reuse the equation, `X = 2Y`, for both values of `Y`.
 
 
 In this activity student will: 
@@ -13,10 +13,9 @@ In this activity student will:
 * evaluate equations using variables
 * modify and create variable equations
 * display text with ``||game:splash||`` by using ``||text:join||``
-
+* differentiate between number and string data types
 
 ## Concept: Using Math Operators with Variables
-
 
 ## Example: math equation in a variable
 1. Review the code below
@@ -34,7 +33,7 @@ game.splash("3 + 5 = " + answer)
 ### ~hint
 **Teacher Note**
 ## Discuss with students
-The join block is used to **coerce** a number into a sting   JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash  knows that we are displaying the string representation of our `answer` variable.
+The join block is used to **coerce** a number into a string   JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash knows that we are displaying the string representation of our `answer` variable.
 
 If only displaying a number we use an empty string in the join 
 ```blocks
