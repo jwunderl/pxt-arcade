@@ -1,4 +1,4 @@
-# Sprites
+# Review Material
 
 * [CS Intro](/courses/csintro)
 
