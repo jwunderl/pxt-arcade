@@ -30,8 +30,6 @@ mitt = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-info.startCountdown(20)
-
 game.onUpdateInterval(500, function () {
     ball = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
@@ -58,7 +56,7 @@ game.onUpdateInterval(500, function () {
 
 * Make the ``||variables:mitt||`` move based off the direction keys using the ``||controller:control sprite with ...||`` block.
 * Force the ``||variables:mitt||`` to stay in the screen using the ``||set mitt stay in screen on||`` block.
-* Add a 
+* Add a ``||info:countdown||`` of 20 seconds, so that the game ends after 20 seconds are up.
 
 ```blocks
 // :solution
@@ -89,6 +87,7 @@ mitt = sprites.create(img`
 `, SpriteKind.Player)
 controller.controlSprite(mitt, 100, 100)
 mitt.setFlag(SpriteFlag.StayInScreen, true)
+info.startCountdown(20)
 game.onUpdateInterval(500, function () {
     ball = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
