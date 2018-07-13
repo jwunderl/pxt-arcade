@@ -197,7 +197,7 @@ In the following examples, identify what part of the provided code is causing th
 
 ### Student 1: Bill
 
-Bill decided he wanted to make a simple game where a timer counts down to 5. After making the count down, he decides that it's not very helpful to countdown without telling the player that that is what is going to happen, so he adds in a splash screen to tell the player - unfortunately, the game now starts at some number less than 5, and occasionally is already over when he moves on to the countdown. What is going wrong with this code, and how can it be fixed?
+Bill decided he wanted to make a simple game where a timer counts down to 5. After making the countdown, he decides that it's not very helpful without telling the player that that is what is going to happen, so he adds in a splash screen to tell the player - unfortunately, the game now starts at some number less than 5, and occasionally is already over when he closes the splash screen. What is going wrong with this code, and how can it be fixed?
 ```blocks
 info.startCountdown(5)
 game.splash("Hello! This will count down from 5 for you!")
