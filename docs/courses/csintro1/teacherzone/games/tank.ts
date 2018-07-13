@@ -4,8 +4,8 @@ enum SpriteKind {
     Laser
 }
 
-let dir = 0
-let speed = 30
+let dir: number = 0
+let speed: number = 30
 
 scene.setBackgroundColor(1)
 let dirImages: Image[] = [img`
