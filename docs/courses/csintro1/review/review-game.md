@@ -1,4 +1,5 @@
 # Task list:
+![Final Product Example](/static/courses/csintro1/review/final-review-game.gif)
 
 ## Sprite
 * Make a **32 x 32** sprite that has 3 circles filled with different colors
