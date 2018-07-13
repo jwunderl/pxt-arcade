@@ -15,7 +15,7 @@ Remember: moving in opposite directions is done by changing the value from posit
 * Use the ``||controller:on up button pressed||`` and ``||controller:on down button pressed||`` blocks to make ``||variables:circles||`` change the y velocity by 2 in the specified direction when up or down is pressed. 
 ### ~hint
 Changing the y velocity is done by changing the ``||variables:circles||`` ``||sprite:vy||``
-###~
+### ~
 * How is changing a sprite's ``||sprite:x||`` value different from changing it's ``||sprite:vx||`` value?
 * In the ``||loops:on start||`` block, set the ``||variables:circles||`` ``||sprite:ay||`` value to 5. This represents the circles **acceleration**, or how fast it increases in velocity. Try to keep the ``||variables:circles||`` in the screen.
 * Challenge: set the ``||variables:circles||`` to have an acceleration of 2 in the x direction as well; how long can you keep it on screen? (Be sure to remove this when before moving on to the next task)
