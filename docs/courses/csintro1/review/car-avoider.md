@@ -161,5 +161,3 @@ game.onUpdateInterval(500, function () {
 })
 // :end-solution
 ```
-
-## Studen Task 3
