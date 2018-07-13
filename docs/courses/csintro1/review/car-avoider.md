@@ -5,7 +5,6 @@
 ## Student Task 1:
 
 ```blocks
-// :solution
 enum SpriteKind {
     Player,
     Enemy,
@@ -40,7 +39,6 @@ info.startCountdown(10)
 game.onUpdateInterval(500, function () {
 
 })
-// :end-solution
 ```
 
 Using the above code as a base, add to the ``||game:on game update every...||`` block to create projectiles of kind ``||sprites:car||`` that the player must avoid. They should move to the left across the center of the screen at a rate of 50. 
