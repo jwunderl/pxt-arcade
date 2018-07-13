@@ -32,6 +32,22 @@
     * [Overlap Section 2](/courses/csintro1/motion-and-events/overlap2)
     * [Sprite Create and On Create](/courses/csintro1/motion-and-events/create-on-create-sprites.md)
 
+## Review and Extensions
+
+* [Review and Extensions](/courses/csintro1/review)
+    * [Motion](/courses/csintro1/review/motion)
+    * [Projectiles](/courses/csintro1/review/projectiles)
+    * [Change By Practice](/courses/csintro1/review/practice-change-by)
+    * [Conditionals Practice](/courses/csintro1/review/practice-conditionals)
+    * [Functions Practice](/courses/csintro1/review/practice-functions)
+    * [Loops Practice](/courses/csintro1/review/practice-loops)
+    * [Projectiles Practice](/courses/csintro1/review/practice-projectiles)
+    * [Sprite Motion Practice](/courses/csintro1/review/practice-sprite-motion)
+    * [Variable Math Practice](/courses/csintro1/review/practice-variable-math)
+    * [String Math Practice](/courses/csintro1/review/practice-string-math)
+    * [Review Game](/courses/csintro1/review/review-game)
+    * [Car Avoider](/courses/csintro1/review/car-avoider)
+
 ## Loops
 
 * [Loops](/courses/csintro1/loops)
