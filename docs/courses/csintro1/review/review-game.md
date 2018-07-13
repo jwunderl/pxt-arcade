@@ -181,11 +181,11 @@ circles = sprites.create(img`
 . . . . . . . . . . . . . . . 3 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Circles)
+game.splash("Catch the Stars before time runs out!")
 circles.say("I'm ready to play!", 1000)
 circles.x = 30
 circles.y = 30
 circles.ay = 5
-game.splash("Catch the Stars before time runs out!")
 info.startCountdown(30)
 game.onUpdateInterval(500, function () {
     sprites.createEmptySprite(SpriteKind.Stars)
