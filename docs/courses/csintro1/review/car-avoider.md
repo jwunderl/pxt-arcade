@@ -33,6 +33,7 @@ agent = sprites.create(img`
 . . . . . . . 5 . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+agent.setFlag(SpriteFlag.StayInScreen, true)
 agent.y += 40
 controller.controlSprite(agent, 100, 100)
 info.startCountdown(10)
@@ -73,6 +74,7 @@ agent = sprites.create(img`
 . . . . . . . 5 . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+agent.setFlag(SpriteFlag.StayInScreen, false)
 agent.y += 40
 controller.controlSprite(agent, 100, 100)
 info.startCountdown(10)
@@ -159,3 +161,5 @@ game.onUpdateInterval(500, function () {
 })
 // :end-solution
 ```
+
+## Studen Task 3
