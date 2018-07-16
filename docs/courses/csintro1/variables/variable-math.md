@@ -34,7 +34,7 @@ game.splash("3 + 5 = " + answer)
 ### ~hint
 **Teacher Note**
 ## Discuss with students
-The join block is used to **coerce** a number into a string   JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash knows that we are displaying the string representation of our `answer` variable.
+The join block is used to **coerce** a number into a string JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash knows that we are displaying the string representation of our `answer` variable.
 
 If only displaying a number we use an empty string in the join 
 ```blocks
@@ -77,7 +77,7 @@ game.splash("21+22 = " + answer)
 ### ~
 
 ### ~hint
-The splash screen is designed for short sentences.  This limits the length of equation we can display. "Show long text" allows for longer text.
+The splash screen is designed for short sentences.  This limits the length of equation we can effectively display. "Show long text" allows for a better representation for longer text.
 ### ~  
 
 ```blocks
