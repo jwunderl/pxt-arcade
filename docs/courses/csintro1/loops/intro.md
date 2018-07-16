@@ -372,7 +372,7 @@ for (let i = 0; i < 10; i++) {
 ## What did we learn?
 
 1. Describe how a ``||loop:repeat||`` block makes programming easier by reducing code repetition. Use an example.
-2. Was it easier or harder to add in a second sprite when with the code inside of the loop that it would have been in the prior (loop-less) version? Why?
+2. Explain how it easier or harder to add in a second sprite when with the code inside of the loop that it would have been in the prior (loop-less) version? Why?
 3. Did you use more than one ``||loop:repeat||`` in any of the tasks above? Why might you want to have one loop after another, rather than just combining them into a single loop?
 
 

@@ -249,7 +249,7 @@ landing.y = 125
 ```
 
 
-## Student Task #1a: Soft Landing  
+## Student Task #1: Soft Landing  
 
 There is a "T" shaped landing area at the bottom of the example.  The helicopter sprite should not go through the landing, it should land!
 
@@ -508,7 +508,7 @@ game.onUpdate(function () {
 
 
 
-## Student Task #1b: Add a new unique sprite with SpriteKind of "Cloud" 
+## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
 1. starting with example or task #1 
 2. add a new sprite that looks nothing like a cloud (e.g.- hat, tree, etc.)
 3. make sure the new sprite has SpriteKind of "Cloud"  
@@ -803,7 +803,7 @@ game.onUpdate(function () {
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Overlap & Events 2 | fully competed 1a + b tasks|  fully completed all 3 tasks | Completed all 3 tasks and at least 1 Challenge | Completed all tasks and All Challenge Code  |
+| Overlap & Events 2 | completed tasks|  fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and All Challenge Code  |
 
 ### Score = \_\_\_\_\_\_ /10 
 
