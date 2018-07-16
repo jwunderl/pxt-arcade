@@ -56,7 +56,7 @@ game.splash("You've seen " + dogsPerDay + " dogs per day!")
 There are many useful functions in the  Math blocks - in this example we will use the random number generation functionality to make a guessing game.
 
 1. Make a variable called 'actual'.  
-    - Set the 'actual' variable to a random number that is generated using  ``||math:pick random||` block .
+    - Set the 'actual' variable to a random number that is generated using  ``||math:pick random||`` block .
 2. Make another variable called 'guess'
     - set guess to the result of the user input
     - we need an integer so use ``||text:parse to integer||`` so we can do math with it later. 
@@ -80,4 +80,3 @@ while (true) {
 Challenge: 
 * Try changing the range of values generated from ``||math:randomRange||``.
 * Try letting the user choose the range from which the random number will be generated!
-

@@ -20,7 +20,6 @@ game.splash("You should try making a ", sandwichName + " sandwich!")
 // :end-solution
 ```
 
-
 # Practice 2: Phone Numbers
 
 In this practice example we'll be dealing with user input and practicing combining and dividing strings.
