@@ -1,6 +1,8 @@
 # Activity: Info Variables
 
-In the last section, we primarily interacted with variables we created. A lot of the time, though, we want to interact with variables and values that were created elsewhere, to allow us to make the most of the code that is provided to us. The ``||info:info||`` category in blocks has a few variables readily available to us that tend to be fairly common when building games, having to do with score, life, and time. Using these variables allows the system to provide us with some default behaviors for these items, without having to worry about (and remember) all the details of exactly how all that is managed.
+In this section we worked with variables we created. A lot of the time, though, we want to interact with variables and values that were created elsewhere.
+
+The ``||info:info||`` category in blocks contains a few variables (known as properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these variables in our code.
 
 ### ~hint
 **Teacher Note**
@@ -19,6 +21,9 @@ In this activity students will:
 The first example will be a simple one - simply counting the number of buttons pressed and keeping track of them as a score. We will discuss ``||controller:on any button pressed||`` block in more detail later, but for we just need to know that whatever is inside of the block will happen each time a button (``||controller:A||``, ``||controller:up||``, and so on) is pressed.
 
 ## Example: Counting button presses
+
+## TODO Video
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "button count")
@@ -29,7 +34,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-You likely noticed that the score popped up in the top right corner for you - that is one benefit of using the ``||info:score||`` variable to keep track of points the player has earned. Now, we will add in code to add a timer, to see some of the other benefits of the ``||info:info||`` blocks.
+Noticed that the score popped up in the top right corner - that is one benefit of using the ``||info:score||`` variable to keep track of points the player has earned. Now, we will add in code to add a timer, to see some of the other benefits of the ``||info:info||`` blocks.
 
 ## Student Task 1: 10 second button smash
 1. Start with the code saved as "button count" in the prior example.
@@ -52,7 +57,7 @@ Run the code you created in task 1 a few times, and try to get different scores.
 
 ## Concept: Using ``||info:life||``
 
-Beyond score, another important value to keep track of is the players life total. This lets you make games where players can be punished for mistakes, without simply ending the game immediately.
+Beyond score, another important value to keep track of is the players life total. This lets us make games where players can be penalized for mistakes, without simply ending the game immediately.
 
 ## Example: changing ``||info:life||`` totals
 1. Review the code below
@@ -66,7 +71,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 info.setLife(1)
 ```
 
-This simple game gives the user a simple task - to not touch a button. If they do touch a button, the life will go down to 0, and they will lose. The game is a bit boring, but it does demonstrate a few of the benefits of using ``||info:life||``: your life total shows up in the corner as a number of hearts, and when you run out of the lives, the game will end.
+This simple game gives the user a simple task - to not touch a button. If they do touch a button, the life will go down to 0, and they will lose. The game is a bit boring, but it does demonstrate a few of the benefits of using ``||info:life||``:  life total shows up in the corner as a number of hearts, and when you run out of the lives, the game will end.
 
 ## Student Task 2: Touch the button 15 times
 1. Start with the code saved as "do not touch the buttons" in the prior example.
@@ -77,15 +82,15 @@ This simple game gives the user a simple task - to not touch a button. If they d
 ```blocks
 // :solution
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy(3)
+    info.changeScoreBy(2)
     info.changeLifeBy(-1)
 })
-info.setLife(10)
+info.setLife(15)
 info.startCountdown(2)
 // :end-solution
 ```
 
-There was one small downside to the last game - no matter what, when the game was over, the same screen was shown, with the only difference being a minor one in score. We will attempt to make this better using two blocks: ``||info:on life zero||`` and ``||info:on countdown end||``. These blocks are used to override the default behavior of running out of lives and the count down running out - that is, they make it so that instead of the game just ending when either event occurs, whatever is inside those two blocks will occur instead.
+There was a downside to the last game - no matter what, when the game was over, the same screen was shown, with the only difference being the score. We will attempt to make this better using two blocks: ``||info:on life zero||`` and ``||info:on countdown end||``. These blocks are used to override the default behavior of running out of lives and the count down running out - that is, they make it so that instead of the game just ending when either event occurs, whatever is inside those two blocks will occur instead.
 
 ## Student Task 3: Improve "Touch the button 15 times"
 1. Add in the ``||info:on life zero||`` and ``||info:on countdown end||`` blocks into your code.
