@@ -258,7 +258,7 @@ game.splash("" + tempF + " F", "Celsius " + tempC)
 ## Student Task 5: Debugging
 1. We decided that we want to have three different variables in our code - a, b, and c. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
-Fix the code
+**Fix the code**
 
 ```blocks
 // https://makecode.com/_89VXzjCWhVwX
@@ -321,7 +321,7 @@ https://youtu.be/BPX2MHXmXJw
 ### Code Tasks
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
-| Variable Math | Completed 3 coding tasks |Completed All 4 Coding Tasks |"splash" screens display helpful explanation text with answers | Completed 2 or more Challenges |
+| Variable Math Tasks | Completed at least 4 coding tasks |Completed All 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
 
 ### Score = \_\_\_\_\_\_ /10 
 
