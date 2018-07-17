@@ -9,18 +9,14 @@
 * [Orientation](/courses/csintro1/orientation)
     * [Birthday Algorithm](/courses/csintro1/orientation/birthday-algorithm)
     * [Orientation to Makecode](/courses/csintro1/orientation/makecode-orientation)
-
-## Variables
-
-* [Variables](/courses/csintro1/variables)
-    * [Sprites](/courses/csintro1/variables/sprites)
-    * [Variable Math](/courses/csintro1/variables/variable-math)
-
+    * [Sprites](/courses/csintro1/orientation/sprites)
+    * [Variable Math](/courses/csintro1/orientation/variable-math)
+    * [Info Variables](/courses/csintro1/orientation/info)
 
 ## Sprites
 
 * [Sprites](/courses/csintro1/sprites)
-    * [Coordinate Walker](/courses/csintro1/variables/coordinate-walker)
+    * [Coordinate Walker](/courses/csintro1/sprites/coordinate-walker)
     * [Collage](/courses/csintro1/sprites/collage)
     * [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
 
@@ -36,6 +32,9 @@
 ## Review and Extensions
 
 * [Review and Extensions](/courses/csintro1/review)
+    * [Review Game](/courses/csintro1/review/review-game)
+    * [Car Avoider](/courses/csintro1/review/car-avoider)
+    * [Baseball Catching](/courses/csintro1/review/baseball-catching)
     * [Motion](/courses/csintro1/review/motion)
     * [Projectiles](/courses/csintro1/review/projectiles)
     * [Change By Practice](/courses/csintro1/review/practice-change-by)
@@ -46,8 +45,6 @@
     * [Sprite Motion Practice](/courses/csintro1/review/practice-sprite-motion)
     * [Variable Math Practice](/courses/csintro1/review/practice-variable-math)
     * [String Math Practice](/courses/csintro1/review/practice-string-math)
-    * [Review Game](/courses/csintro1/review/review-game)
-    * [Car Avoider](/courses/csintro1/review/car-avoider)
 
 ## Loops
 

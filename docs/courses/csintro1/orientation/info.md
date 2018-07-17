@@ -110,7 +110,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 info.onLifeZero(function () {
     info.stopCountdown()
     game.splash("Next Level!")
-    info.setLife(10)
+    info.setLife(15)
     info.startCountdown(2)
     info.setScore(2 * info.score())
 })
@@ -118,7 +118,7 @@ info.onCountdownEnd(function () {
     info.changeScoreBy(-10)
     game.over()
 })
-info.setLife(10)
+info.setLife(15)
 info.startCountdown(2)
 // :end-solution
 ```

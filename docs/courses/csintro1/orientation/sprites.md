@@ -143,7 +143,7 @@ https://youtu.be/oupwql9r-80
 3. then find and add the other colors as picture of the number in order to the right using color index 1, 2, 3, 4, ..., until you have color index 15
 4. look at the sprite image in JavaScript view to answer **What did we learn** questions below
 
-![sprite rainbow numbers image](/static/courses/csintro1/variables/rainbownumbers.png)
+![sprite rainbow numbers image](/static/courses/csintro1/orientation/rainbow-numbers.png)
 
 ### ~hint
 Try Changing the background color
