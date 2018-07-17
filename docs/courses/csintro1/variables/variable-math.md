@@ -259,9 +259,8 @@ game.splash("" + tempF + " F", "Celsius " + tempC)
 1. We decided that we want to have three different variables in our code - a, b, and c. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
 **Fix the code**
-
+// https://arcade.makecode.com/#editor
 ```blocks
-// https://makecode.com/_89VXzjCWhVwX
 let c = 0
 let b = 0
 let a = 0
@@ -273,7 +272,7 @@ game.splash(c)
 
 ### ~hint
 
-Click the error symbol `!` in the Splash block.  Splash can display string characters.  Reveiw previous examples of using Splash.
+Click edit then click the error symbol `!` in the Splash block.  Splash can display string characters.  Reveiw previous examples of using Splash.
 
 ### ~
 
