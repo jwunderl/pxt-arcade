@@ -11,10 +11,9 @@ In this activity Students are introduced to:
 * Viewing JavaScript  
 * Color codes in image editor, Blocks and JavaScript  
 
-
 # Concept: Set a Sprite variable to an image using the image editor
 
-# TODO: Video demo example Making a sprite, image editor (pixels), creating a share link and downloading a png code file.
+https://youtu.be/xujAdjmNPgc
 
 Sprites are created using the Sprites menu - choosing the set block  
 
@@ -80,6 +79,8 @@ actor = sprites.create(img`
 ```
 
 ## Student Task: Create your own sprite  
+
+https://youtu.be/oupwql9r-80
 
 * The default sprite is 16x16 pixels - **Make a sprite that is 32x32 pixels!**  
 
