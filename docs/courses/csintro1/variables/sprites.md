@@ -80,8 +80,6 @@ actor = sprites.create(img`
 
 ## Student Task: Create your own sprite  
 
-https://youtu.be/oupwql9r-80
-
 * The default sprite is 16x16 pixels - **Make a sprite that is 32x32 pixels!**  
 
 ### ~hint
@@ -136,7 +134,9 @@ bigSprite = sprites.create(img`
 ```
 
 
-## Student Task: Build a "rainbow numbers" sprite that uses every color in the editor [ TODO video]
+## Student Task: Build a "rainbow numbers" sprite that uses every color in the editor 
+
+https://youtu.be/oupwql9r-80  
 
 ![sprite rainbow numbers image](/static/courses/csintro1/variables/rainbownumbers.png)
 1. make a blank **32x32** sprite  
