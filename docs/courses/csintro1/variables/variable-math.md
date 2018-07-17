@@ -1,5 +1,7 @@
 # Activity: Math Operators with Variables 
 
+https://youtu.be/79vikAMjpBs
+
 A variable points to a container that can store data.  We have previously used variables names for  sprites (e.g. - `player1`).  Variables act like an address, and let us store, retrieve or update data.  For our Sprite example, the variable `player1` allowed us to use the Sprite in our game.  The word "variable" also means change. We can update the values our variable point to, such as updating the `player1` variable to point to a new Sprite image.
 
 Variables are used extensively in code. Variables allow code to be written in a generic way and allow for easier reuse of our code.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values.  
@@ -16,7 +18,13 @@ In this activity student will:
 * display text with ``||game:splash||`` by using ``||text:join||``
 * differentiate between number and string data types
 
+## Concept: Assign Number Variables and displaying numeric values
+
+https://youtu.be/nlp6Cqfxmb4
+
 ## Concept: Using Math Operators with Variables
+
+https://youtu.be/Dv-5K9bWcps 
 
 ## Example: math equation in a variable
 1. Review the code below
@@ -41,13 +49,15 @@ If only displaying a number we use an empty string in the join
 let answer = 0
 answer = 3 + 5
 game.splash("" + answer)
-
+```
 
 **coercion**: changing Type within an operation (e.g. - string to number for a comparison will compare the number value of the string `"3"` in `3 >= "3"` or number to string using join in the splash message example above)
-```
 ### ~
 
 ## Student Task 1: Try new values in the equation 
+
+
+
 1. starting with the above example 
 2. Experiment using different numbers in our equation (e.g.  `9 + 2`)
 3. Test at least 3 different equations
@@ -96,8 +106,9 @@ game.showLongText("13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7 = " + answer, DialogLayo
 
 ## Concept: basic math operators with variables 
 
-# TODO: short video here 
-We can convert basic math into code using variables and math operators.
+https://youtu.be/EiWXa52oIgU
+
+We can create variable based math equations, like `A = B + C`, into code using our code variables and math operators.
 
 ### Operators 
 In order of operation precedence:
@@ -105,6 +116,7 @@ In order of operation precedence:
 - Addition (**`+`**)  and  Subtraction (**`-`**)  
 - Multiplication (**`*`**)  and - Division (**`/`**)  
 
+Note that multiplication uses the **`*`** symbol and division uses **`/`** in JavaScript
 
 ## Example:  
 
@@ -126,6 +138,9 @@ answer = firstNumber * secondNumber
 game.splash("5 * 7 = " + answer)
 ```
 ## Student Task 2: basic math operators with variables
+
+https://youtu.be/C_UY8V-ufiI
+
 1. starting with the previous example 
 2. add a thirdNumber variable with a unique value
 3. create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
@@ -284,9 +299,18 @@ It can be useful to view math equations in JavaScript.
 
 ### ~
 
+## Variables Summary
+
+https://youtu.be/BPX2MHXmXJw
+
+* Variables are names that point to a container that can be updated to hold different data types  
+* Data Types used in variables so far are Sprites, Numbers and Strings  
+* Strings are Characters (like the Characters on a keyboard) surrounded by quotation marks  
+* Displaying a Number often requires coercion, persuading a number to act like a string, using ``||Text:join([] + [])||``
+
 ## What did we learn? 
 
-1. In MakeCode JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is not 30.
+1. In MakeCode JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 30.
 2. How is putting operators and numbers into a calculator different than writing in code  (example: 2 + 3 + 4 * 4)?  Explain.
 3. Research and describe 2 other Math Operators using the math menu in MakeCode (hover over values for more information) and/or use other JavaScript resources.
 
