@@ -147,6 +147,8 @@ https://youtu.be/C_UY8V-ufiI
 4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)
 
 ### ~hint
+**Teacher Note**
+## Tell students
 Look at the JavaScript.  Parenthesis `( )`are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
 ![animation: Parenthesis in math code](/static/courses/csintro1/variables/parenthesisMath.gif)
 ### ~

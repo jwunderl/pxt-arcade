@@ -138,11 +138,12 @@ bigSprite = sprites.create(img`
 
 https://youtu.be/oupwql9r-80  
 
-![sprite rainbow numbers image](/static/courses/csintro1/variables/rainbownumbers.png)
 1. make a blank **32x32** sprite  
 2. hover over every color and find color index 0 - which is the transparency color and add that color on the far left  
 3. then find and add the other colors as picture of the number in order to the right using color index 1, 2, 3, 4, ..., until you have color index 15
 4. look at the sprite image in JavaScript view to answer **What did we learn** questions below
+
+![sprite rainbow numbers image](/static/courses/csintro1/variables/rainbownumbers.png)
 
 ### ~hint
 Try Changing the background color
