@@ -11,7 +11,7 @@ In this activity Students are introduced to:
 * Viewing JavaScript  
 * Color codes in image editor, Blocks and JavaScript  
 
-# Concept: Set a Sprite variable to an image using the image editor
+## Concept: Set a Sprite variable to an image using the image editor
 
 https://youtu.be/xujAdjmNPgc
 
