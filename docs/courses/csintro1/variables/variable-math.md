@@ -258,23 +258,28 @@ game.splash("" + tempF + " F", "Celsius " + tempC)
 ## Student Task 5: Debugging
 1. We decided that we want to have three different variables in our code - a, b, and c. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
-**Fix the code**
-// https://arcade.makecode.com/#editor
+**Fix the code**  
+[Fix the Code here](https://makecode.com/_0qfiscfhEY9P)
+
+![image of code blocks with error](/static/courses/csintro1/variables/fixCode.png)
+
+### ~hint
+
+Click edit to fix code.  Splash can display string characters.  Review previous examples of using Splash.
+
+### ~
+
 ```blocks
+// :solution
 let c = 0
 let b = 0
 let a = 0
 a = 3
 b = a + 5
 c = (a + 2) * b
-game.splash(c)
+game.splash("" + c)
+// :end-solution
 ```
-
-### ~hint
-
-Click edit then click the error symbol `!` in the Splash block.  Splash can display string characters.  Reveiw previous examples of using Splash.
-
-### ~
 
 2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong?
 
@@ -307,7 +312,7 @@ https://youtu.be/BPX2MHXmXJw
 * Variables are names that point to a container that can be updated to hold different data types  
 * Data Types used in variables so far are Sprites, Numbers and Strings  
 * Strings are Characters (like the Characters on a keyboard) surrounded by quotation marks  
-* Displaying a Number often requires coercion, persuading a number to act like a string, using ``||Text:join([] + [])||``
+* Displaying a Number often requires coercion, persuading a number to act like a string, using ``||text:join()()||``
 
 ## What did we learn? 
 
