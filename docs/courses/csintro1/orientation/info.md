@@ -1,8 +1,8 @@
-# Activity: Info Variables
+# Activity: Info Category Variable Properties
 
-In this section we worked with variables we created. A lot of the time, though, we want to interact with variables and values that were created elsewhere.
+We have previously worked with variables we created. A lot of the time, software developers need to interact with variables and values that were created elsewhere.
 
-The ``||info:info||`` category in blocks contains a few variables (known as properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these variables in our code.
+The ``||info:info||`` category in blocks contains a few variables (data properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these as variables in our code.
 
 ### ~hint
 **Teacher Note**
