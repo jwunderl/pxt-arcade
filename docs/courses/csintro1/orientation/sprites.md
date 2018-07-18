@@ -230,7 +230,17 @@ students can create a table for colors
 Note:  JavaScript color is using Hexadecimal (base 16).  
 Hexadecimal is `0 to 9` for zero to nine, and `a, b, c, d, e, f` for ten through fifteen. 
 
-Consider having students research "Hexadecimal."
+* **Project consideration** have students research "Hexadecimal" and represent Decimal numbers as Hexadecimal.  
+Decimal = Hexadecimal:
+  * 10 = a
+  * 16 = 10
+  * 32 = 20
+  * 64 = 40
+  * 100 = 64
+  * 160 = a0
+  * 200 = c8
+  * 256 = 100
+*
 
 | color  name | editor color index | JavaScript |
 |-------------|--------------------|------------|
