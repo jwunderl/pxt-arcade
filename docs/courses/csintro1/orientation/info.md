@@ -115,14 +115,13 @@ Review the [Variable Math](/courses/csintro1/orientation/variable-math) activity
 For the Challenge 
 Remember to sue order of operations and parenthesis (JavaScript) to get the right equation,
 
-For multiple joins we can chain the ||text:join || blocks just as we did for addition. 
+For multiple joins we can chain the ``||text:join ||`` blocks just as we did for addition. 
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let minuteScore = 0
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -142,8 +141,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-minuteScore = 10 * info.score()
-mySprite.say("score " + ("is " + minuteScore))
+mySprite.say("score " + ("is " + "here"))
 ```
 
 ### ~
