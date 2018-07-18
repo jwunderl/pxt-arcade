@@ -67,7 +67,7 @@ game.splash("" + answer)
 ### ~hint
 In order to combine multiple items we will need to add additional Math blocks
 
-![animation: adding 3 numbers with blocks](/static/courses/csintro1/orientation/add3Numbers.gif)
+![animation: adding 3 numbers with blocks](/static/courses/csintro1/orientation/add-3-numbers.gif)
 
 ```blocks
 // :solution
@@ -150,7 +150,7 @@ https://youtu.be/C_UY8V-ufiI
 **Teacher Note**
 ## Tell students
 Look at the JavaScript.  Parenthesis `( )`are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
-![animation: Parenthesis in math code](/static/courses/csintro1/orientation/parenthesisMath.gif)
+![animation: Parenthesis in math code](/static/courses/csintro1/orientation/parenthesis-math.gif)
 ### ~
 
 ```blocks
@@ -261,7 +261,7 @@ game.splash("" + tempF + " F", "Celsius " + tempC)
  
 [Fix the Code here](https://makecode.com/_0qfiscfhEY9P)  
   
-![image of code blocks with error](/static/courses/csintro1/orientation/fixCode.png)
+![image of code blocks with error](/static/courses/csintro1/orientation/fix-code.png)
 
 ### ~hint
 
