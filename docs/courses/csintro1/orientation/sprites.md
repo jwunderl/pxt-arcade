@@ -224,6 +224,35 @@ sprite = sprites.create(img`
 2. Explain what happens to the color index 0 in JavaScript (form a hypothesis)  
 3. Explain why we see only 14 colors at a time although there are 16 color indexes (0-15) in the image editor?  
 
+### ~hint
+**Teacher Note**
+students can create a table for colors  
+Note:  JavaScript color is using Hexadecimal (base 16).  
+Hexadecimal is `0 to 9` for zero to nine, and `a, b, c, d, e, f` for ten through fifteen. 
+
+Consider having students research "Hexadecimal."
+
+| color  name | editor color index | JavaScript |
+|-------------|--------------------|------------|
+| Transparent | 0                  | .          |
+| White       | 1                  | 1          |
+| Red         | 2                  | 2          |
+| Pink        | 3                  | 3          |
+| Orange      | 4                  | 4          |
+| Yellow      | 5                  | 5          |
+| Teal        | 6                  | 6          |
+| Green       | 7                  | 7          |
+| Blue        | 8                  | 8          |
+| Light Blue  | 9                  | 9          |
+| Magenta    | 10                 | a         |
+| Grey        | 11                 | b         |
+| Grey-Purple | 12                 | c         |
+| Tan         | 13                 | d         |
+| Brown       | 14                 | e         |
+| Black       | 15                 | f         |
+
+### ~
+
 ## Rubrics
 
 ### ~hint
