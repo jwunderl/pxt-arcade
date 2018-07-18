@@ -1,8 +1,8 @@
-# Activity: Info Variables
+# Activity: Info Category Variable Properties
 
-In this section we worked with variables we created. A lot of the time, though, we want to interact with variables and values that were created elsewhere.
+We have previously worked with variables we created. A lot of the time, software developers need to interact with variables and values that were created elsewhere.
 
-The ``||info:info||`` category in blocks contains a few variables (known as properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these variables in our code.
+The ``||info:info||`` category in blocks contains a few variables (data properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these as variables in our code.
 
 ### ~hint
 **Teacher Note**
@@ -93,17 +93,60 @@ info.startCountdown(2)
 
 ## Student Task 3: Estimate rate of presses
 ### Overview
-When a nurse needs to take a patient's heart rate, they do not want to sit around for a minute to figure out how many beats per minute the heart rate is going. Instead, they can use another, quicker approach to estimate the pulse rate - count how many heart beats there are over 15 seconds, and then multiply that value by 4 to get an estimate for the full minute. In this task, we will use the score to do the same thing, only with button presses. The ``||loops:pause||`` block is new in this example, and pauses the code at that point for however many milliseconds it is provided - in this case, we pass 6000 ms so that it pauses for 6 seconds, and then multiply by 10 to get an estimate for 60 seconds (one minute).
+When a nurse needs to take a patient's heart rate, they do not want to sit around for a minute to figure out how many beats per minute the heart rate is going. Instead, they can use another, quicker approach to estimate the pulse rate - count how many heart beats there are over 15 seconds, and then multiply that value by 4 to get an estimate for the full minute. In this task, we will use the score to do the same thing, only with button presses. The ``||loops:pause||`` block is new in this example, and pauses the code at that point for however many milliseconds it is provided - in this case, we pass 6000 ms so that it pauses for 6 seconds, and then multiply by 10 to get an estimate for 60 seconds (one minute).  
 
-1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "button rate")
-4. Change the ``||sprites:say||`` block so that after 6 seconds have passed it says the ``||info:score||``. You may also want it to show a message explaining what the value represents
+1. Review the code below  
+2. Create the sample code and run the code  
+3. Save the code for the task (name it "button rate")  
+4. Change the ``||sprites:say||`` block  so that after 6 seconds have passed it says the ``||info:score||``. You may also want it to show a message explaining what the value represents  
+
 ### ~hint
-Review the [Variable Math](/courses/csintro1/variables/variable-math) section if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
+
+Review the [Variable Math](/courses/csintro1/orientation/variable-math) activity if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
+
 ### ~
-5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 when you make the sprite ``||sprites:say||`` it, so that it will correspond to one minute's worth of button presses.
-6. Challenge: instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to ``(score - 1) * 10``, and the high end of the range correspond to ``(score + 1) * 10``. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".
+
+5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 and store it in a variable called `minuteScore`, so  it will correspond to one minute's worth of button presses.    
+6. Make the sprite ``||sprites:say||`` the result stored in `minuteScore`.  Edit the sprite so it looks better.
+7. Challenge: instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to ``(score - 1) * 10``, and the high end of the range correspond to ``(score + 1) * 10``. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".  
+
+### ~hint
+
+For the Challenge 
+Remember to sue order of operations and parenthesis (JavaScript) to get the right equation,
+
+For multiple joins we can chain the ||text:join || blocks just as we did for addition. 
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let minuteScore = 0
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . 6 6 6 6 6 6 6 6 6 6 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 . 6 6 . . . 6 6 . 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 . 6 . . . . 6 6 . 6 . . . 
+. . 6 . 6 6 6 6 6 6 . . 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 6 6 6 6 6 6 6 6 6 6 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+minuteScore = 10 * info.score()
+mySprite.say("score " + ("is " + minuteScore))
+```
+
+### ~
 
 ```blocks
 enum SpriteKind {
@@ -113,7 +156,7 @@ enum SpriteKind {
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
-let agent: Sprite = sprites.create(img`
+let mySprite: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -131,9 +174,10 @@ let agent: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+mySprite.setPosition(25, 60)
 game.splash("Press buttons for 6 seconds!")
 pause(6000)
-agent.say(":)")
+mySprite.say(":)")
 ```
 
 ```blocks
@@ -142,10 +186,12 @@ enum SpriteKind {
     Player,
     Enemy
 }
+let minuteScore = 0
+let mySprite: Sprite = null
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
-let agent: Sprite = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -163,9 +209,11 @@ let agent: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+mySprite.setPosition(25, 60)
 game.splash("Press buttons for 6 seconds!")
 pause(6000)
-agent.say("Presses per minute is" + 10 * info.score())
+minuteScore = 10 * info.score()
+mySprite.say("Press/minute= " + minuteScore)
 // :end-solution
 ```
 
@@ -176,10 +224,13 @@ enum SpriteKind {
     Player,
     Enemy
 }
+let hiMinuteScore = 0
+let lowMinuteScore = 0
+let mySprite: Sprite = null
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
-let agent: Sprite = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -197,9 +248,13 @@ let agent: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+mySprite.setPosition(25, 60)
 game.splash("Press buttons for 6 seconds!")
 pause(6000)
-agent.say("Between " + 10 * (info.score() - 1) + " and " + 10 * (info.score() + 1))
+lowMinuteScore = 10 * (info.score() - 1)
+hiMinuteScore = 10 * (info.score() + 1)
+mySprite.say("minute " + ("" + lowMinuteScore + ("-" + hiMinuteScore)))
+
 // :end-solution
 ```
 

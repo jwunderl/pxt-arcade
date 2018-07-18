@@ -36,6 +36,16 @@ In this activity student will work with:
 ![Downloading the game](/static/courses/csintro1/orientation/download.gif)
 6. Students will turn in this file today, so be sure to keep track of it!
 
+### ~hint
+**Teacher Note**
+MakeCode saves a special image (.png) file that embeds the code in the file. The file looks like a typical thumbnail image when opened with an image viewer but when opened in MakeCode it loads game code.
+
+Each Browser is different with opening the location of the file download.  Try in the student environment before the exercise.  The key is to have the student save the files in a consistent location such as a named folder.  Later, students will need to navigate to this location to open the file in MakeCode Arcade.
+
+Common Browser Saving behavior:
+* show download file at the browser bottom border (then click to open or to see save dialog) 
+* present a dialog that has options for saving or opening
+### ~  
 
 ## Student Task 3: Importing your game
 To make sure you saved your project properly, we should import it back into MakeCode Arcade!
