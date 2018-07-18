@@ -102,7 +102,7 @@ When a nurse needs to take a patient's heart rate, they do not want to sit aroun
 
 ### ~hint
 
-Review the [Variable Math](/courses/csintro1/variables/variable-math) section if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
+Review the [Variable Math](/courses/csintro1/orientation/variable-math) activity if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
 
 ### ~
 
