@@ -23,7 +23,7 @@ The first example will be a simple one - simply counting the number of buttons p
 
 ## Example: Counting button presses
 
-## TODO Video
+https://youtu.be/7JkbbfBJCdI 
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -62,7 +62,7 @@ Beyond score, another important value to keep track of is the players life total
 
 ## Example: changing ``||info:life||`` totals
 
-## TODO Video
+https://youtu.be/YiZ-yl5CbYM 
 
 1. Review the code below
 2. Create the sample code and run the code
