@@ -61,6 +61,9 @@ Run the code you created in task 1 a few times, and try to get different scores.
 Beyond score, another important value to keep track of is the players life total. This lets us make games where players can be penalized for mistakes, without simply ending the game immediately.
 
 ## Example: changing ``||info:life||`` totals
+
+## TODO Video
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "do not touch the buttons")
@@ -90,6 +93,10 @@ info.setLife(15)
 info.startCountdown(2)
 // :end-solution
 ```
+### Simplify Blocks chained together with JavaScript
+
+![simplify join blocks with JavaScript](/static/courses/csintro1/orientation/join_javascript.gif)
+
 
 ## Student Task 3: Estimate rate of presses
 ### Overview
