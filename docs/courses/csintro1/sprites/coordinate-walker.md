@@ -8,7 +8,7 @@ In this Activity students investigate the game screen using
 
 ## Concept: Identify the X, Y coordinates of the Game Screen  
 
-# TODO: Video Using the coordinate walker to discover the coordinate system and dimension of our game screen
+https://youtu.be/R6NJjzXfejM 
 
 In order to create games we need to place Sprites and other objects at various locations on the Game Screen.  In this set of activities we will relate the screen `(x, y)` coordinates to the 4 corners and middle of the game screen
 
