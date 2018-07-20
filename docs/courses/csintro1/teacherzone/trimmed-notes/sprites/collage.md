@@ -6,9 +6,9 @@ In this activity we will use
 * Coordinates to arrange our sprites into a scene  
 * Background - set background
 
-## Example: Sprite
+## Example: Sprite & Background
 
-## Example: Sprite placement & background 
+## Example: Sprite placement 
 
 ## Student Task: Build a Collage 
 
