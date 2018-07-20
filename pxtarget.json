@@ -12,6 +12,7 @@
         "githubPackages": true
     },
     "bundleddirs": [
+        "libs/animation",
         "libs/base",
         "libs/core",
         "libs/core---stm32f401re",
@@ -97,7 +98,8 @@
         "variablesBlocks": true,
         "textBlocks": true,
         "functionBlocks": true,
-        "listsBlocks": true
+        "listsBlocks": true,
+        "bannedCategories": ["pins", "console", "control"]
     },
     "simulator": {
         "autoRun": true,
@@ -111,7 +113,12 @@
         "docsLogo": "./static/logo.svg",
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
+        "organization": "Microsoft MakeCode",
+        "organizationUrl": "https://makecode.com/org",
+        "organizationLogo": "./static/Micorsoft_logo_rgb_W-white_D-square.png",
+        "organizationWideLogo": "./static/Micorsoft_logo_rgb_W-white_D.png",
         "homeUrl": "https://arcade.makecode.com/",
+        "embedUrl": "https://arcade.makecode.com/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "betaUrl": "https://github.com/Microsoft/pxt-32",
