@@ -10,7 +10,7 @@ In this lesson students use:
 
 ## Concept: ``||sprites:say||``
 
-# TODO: Video demo example introduce ``||sprites:say||`` and discuss changing variables  
+https://youtu.be/bsixXqQgPEI 
 
 Sprite Objects have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 
@@ -47,7 +47,7 @@ mySprite.say(msg)
 1. Identify and show the JavaScript code that aligns with which each block.  
 2. Identify any JavaScript code that doesn't seem to have any blocks. Hypothesize and Explain.  
  
-# TODO: Video demo example introduce console.log() show string and string variable
+https://youtu.be/9xSWNoDOAQc 
 
 # Example: console.log()  
 
@@ -71,6 +71,8 @@ console.log("msg sent!")
 Consider This!: The code `console.log()` doesn't use **mySprite** as with ``||sprites:say||``. Why?
 
 ## Task: Add another sprite and set its coordinates
+
+https://youtu.be/1xQWu1tHFCo 
 
 1. Start with the above project and add another sprite (need a different variable name) 
 2. add in a ``||sprite:say||`` messages to have a conversation with the first sprite
