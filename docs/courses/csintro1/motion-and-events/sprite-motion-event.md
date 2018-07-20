@@ -176,7 +176,7 @@ The "stay in screen" block is is in the sprite menu.  Start with a ``||Sprite:se
 Flipping an image creates a left right mirror image when we use flip horizontal. This can be useful in creating a simple 2 frame walking animation.
 
 1. Review the code below
-2. Create the sample code and run the code https://makecode.com/_aPh5UFKkEKUT 
+2. Create the sample code and run the code https://makecode.com/_D2yMge4to89R 
 3. Save the code for the task (name it "FlipImage")  
 4. note use of the  function called "fliphorizontal"
 5. find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
