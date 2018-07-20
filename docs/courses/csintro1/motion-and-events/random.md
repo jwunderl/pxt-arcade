@@ -34,9 +34,9 @@ Repeat for smaller than 5 , down to zero.
 ## Task #1: create random numbers ranges 
 1. starting with the above example 
 2. adjust the code to pick a random number from 1 to 100
-3. add a new variable 'anotherRandom` to pick a random number from 20 to 30
+3. add a new variable `anotherRandom` to pick a random number from 20 to 30
 4. add ``||console:console log value||`` for 'anotherRandom' variable and change the label from 'x' to a meaningful label
-4. Challenge: Log the value of a random number that can have both negative and positive values
+t. Challenge: Log the value of a random number that can have both negative and positive values
 
 ```blocks
 // :solution

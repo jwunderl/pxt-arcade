@@ -22,8 +22,8 @@ Having sprites bump rather than pass over each other is useful game behavior for
 * move the sprite in the opposite direction after the overlap (We bump backwards).  The faster we bump, the farther we move away from the overlap object.
 
 * Stop the sprite (set vx and vy to 0)
-  * change x position by (-1)*(x-velocity)
-  * change y position by (-1)*(y-velocity)
+  * change x position by (-1)\*(x-velocity)
+  * change y position by (-1)\*(y-velocity)
 * Shake the stationary object (cloud)
   * move 1 pixel (any direction)
   * pause
@@ -503,9 +503,6 @@ game.onUpdate(function () {
 
 // :end-solution
 ```
-
-
-
 
 
 ## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
