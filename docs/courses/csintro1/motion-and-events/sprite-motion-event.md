@@ -4,7 +4,7 @@
 
 # TODO video
 
-Motion **is** change in position, to be still means position doesn't change. To get sprites moving we will change their position using a game pad event.  The game pad has controller events for up, down, left and right (e.g. - ``||controller:change()||``) we can change sprite location and make the sprite move.  We will also see how to give a sprite a velocity.  Velocity is the rate of change of our position and is similar to Kilometers/hour or Miles/hour and when not 0 (zero) represents constant motion.
+Motion **is** change in position, to be still means position doesn't change. To get sprites moving we will change their position using a game pad event.  The game pad has controller events for up, down, left and right so we can change sprite location and make the sprite move.  We will also see how to give a sprite a velocity.  Velocity is the rate of change of our position and is similar to Kilometers/hour or Miles/hour. When velocity is not 0 (zero) then the sprite will be in motion.
 
 In these activities, the student will use: 
 

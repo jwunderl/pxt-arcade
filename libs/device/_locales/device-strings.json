@@ -1,3 +1,8 @@
 {
-  "{id:category}Sprites": "Sprites"
+  "game.reset|block": "reset game",
+  "game.runtime|block": "time since start (ms)",
+  "game|block": "game",
+  "{id:category}Game": "Game",
+  "{id:category}Sprites": "Sprites",
+  "{id:group}Gameplay": "Gameplay"
 }

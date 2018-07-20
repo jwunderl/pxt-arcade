@@ -1,0 +1,5 @@
+{
+  "animation.attachAnimation": "attaches an animation to a sprite",
+  "animation.createAnimation": "Creates an animation",
+  "animation.setAction": "Sets the action to Sprite"
+}
