@@ -95,7 +95,7 @@ info.startCountdown(2)
 ```
 ### Simplify Blocks chained together with JavaScript
 
-![simplify join blocks with JavaScript](/static/courses/csintro1/orientation/join_javascript.gif)
+![simplify join blocks with JavaScript](/static/courses/csintro1/orientation/join-javascript.gif)
 
 
 ## Student Task 3: Estimate rate of presses
