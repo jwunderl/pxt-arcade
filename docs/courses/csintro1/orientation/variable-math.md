@@ -31,13 +31,13 @@ https://youtu.be/Dv-5K9bWcps
 2. Create the sample code and run the code
 3. Save the code for the task (name it "equation variable") 
 
-https://makecode.com/_RdXJ5jMxubqA
+[equation variable](https://makecode.com/_RdXJ5jMxubqA)
 
 ```blocks  
 let answer = 0
 answer = 3 + 5
 game.splash("3 + 5 = " + answer)
-```  
+```
 
 ## Student Task 1: Try new values in the equation 
 
@@ -103,22 +103,6 @@ https://youtu.be/C_UY8V-ufiI
 3. create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
 4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)
 
-```blocks
-// https://makecode.com/_Euh8RJRuzhsf
-
-let answer = 0
-let firstNumber = 0
-let secondNumber = 0
-let thirdNumber = 0
-firstNumber = 15
-secondNumber = 5
-thirdNumber = 3
-answer = firstNumber + secondNumber * thirdNumber
-game.splash("15 + 5 * 3 = " + answer)
-answer = firstNumber * secondNumber + thirdNumber
-game.splash("15 * 5 + 3 = " + answer)
-```
-
 ## Student Task 3: multiple operators and variables equation  
 1. starting with the previous example 
 2. add a fourthNumber variable
@@ -148,12 +132,12 @@ It can be difficult to structure parenthesis using blocks.  Look at and edit the
 
 ### ~
 
-## Student Task 5: Debugging
-1. We decided that we want to have three different variables in our code - a, b, and c. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
- 
+## Student Task 5: Debugging
+1. We decided that we want to have three different variables in our code - `a`, `b`, and `c`. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
+
 [Fix the Code here](https://makecode.com/_0qfiscfhEY9P)  
-  
+
 ![image of code blocks with error](/static/courses/csintro1/orientation/fix-code.png)
 
 ### ~hint
@@ -162,9 +146,7 @@ Click edit to fix code.  Splash can display string characters.  Review previous 
 
 ### ~
 
-2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong?
-
-Fix the output
+2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong? Fix the output
 
 ### ~hint
 
