@@ -4,7 +4,7 @@
 
 # TODO video
 
-Motion **is** change in position (To be still means position doesn't change). To get sprites moving we will change their position using a game pad event.  The game pad has controller events for up, down, left and right (e.g. - ``||controller:change()||``) we can change sprite location and make the sprite move.  We will also see how we can give a sprite a velocity.  Velocity is the rate of change of our position and is similar to Kilometers/hour or Miles/hour.
+Motion **is** change in position, to be still means position doesn't change. To get sprites moving we will change their position using a game pad event.  The game pad has controller events for up, down, left and right (e.g. - ``||controller:change()||``) we can change sprite location and make the sprite move.  We will also see how to give a sprite a velocity.  Velocity is the rate of change of our position and is similar to Kilometers/hour or Miles/hour and when not 0 (zero) represents constant motion.
 
 In these activities, the student will use: 
 
@@ -14,6 +14,7 @@ In these activities, the student will use:
 * Motion short method
 * stay on screen
 * image flip (sprite image)
+* functions
 
 ## Example 1: increment position left and right 
 
@@ -69,7 +70,7 @@ Velocity is speed in a particular direction - continuous movement.  In our games
 ## Example 2: increment velocity left and right 
 
 1. Review the code below
-2. Create the sample code and run the code
+2. Create the sample code and run the code https://makecode.com/_P2zg4qYYcYH3
 3. Save the code for the task (name it "velocityLR" or "velocity left right")  
 
 ```blocks
@@ -121,7 +122,7 @@ We have created motion by capturing the key pad events and incrementing (or decr
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "MotionShortMethod" or "motion Short Method")  
-4. note the ``||controller:dx (left-right buttons)||`` and ``||controller:dy (up-down buttons)||`` blocks
+4. note the blocks in ``||game: on game update||``
 
 ```blocks
 enum SpriteKind {
@@ -154,40 +155,40 @@ game.onUpdate(function () {
 })
 ```
 
-# Student Task #3: Create Velocity Motion (short method)
+## Student Task #3: Create Velocity Motion (discover the short method)
 
 1. start with Motion (short method) example above or similar code
-2. change the key pad motion to creating a velocity (item keeps moving)
+2. explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``  
+3. change the key pad motion to use the discovered block 
 3. make the sprite stay in the screen boundary
 4. Challenge: add button events for Stop motion and Center sprite. Also, make a better sprite than a ball!
 
 ### ~hint
 
-Use controller dx/dy, such as  ``||controller:dx (left-right buttons)||`` the same way as example but update the sprite **velocity x** (vx) instead of **horizontal position** (x).
-
-The "stay in screen" block is is in the sprite menu.  Use a set sprite ghost block and change the dropdown.
+The "stay in screen" block is is in the sprite menu.  Start with a ``||Sprite:set sprite ghost||`` block and change the dropdown.
 
 ### ~
 
-## Flip Image 
 
-Flipping an image creates a left right mirror image when we use flip horizontal. This can be useful in creating a simple 2 frame walking animation.
 
 ## Example 4: Image Flip with button press event
 
+Flipping an image creates a left right mirror image when we use flip horizontal. This can be useful in creating a simple 2 frame walking animation.
+
 1. Review the code below
-2. Create the sample code and run the code https://makecode.com/_9VDMqeh0P53x 
+2. Create the sample code and run the code https://makecode.com/_aPh5UFKkEKUT 
 3. Save the code for the task (name it "FlipImage")  
-4. note use of  ## TODO Finish this?
+4. note use of the  function called "fliphorizontal"
+5. find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let sprite: Sprite = null
+let mySprite: Sprite = null
 function fliphorizontal() {
-    sprite.image.flipX()
+    mySprite.image.flipX()
     pause(200)
 }
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -195,7 +196,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     fliphorizontal()
 })
 scene.setBackgroundColor(6)
-sprite = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . . 
@@ -235,9 +236,9 @@ sprite = sprites.create(img`
 # Student Task 4: Image Flip with motion
 
 1. start with Motion (short method) example above or similar code
-2. Make the image move using the up, down, left, right controller
+2. Make **your own image** move using the up, down, left, right controller
 3. Use "A" button to flip vertically (upside down and back upright)
-4. Challenge: add the flip as a function.
+4. Challenge: add the flip Vertical as a function.
 
 ## What did we learn? 
 

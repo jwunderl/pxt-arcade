@@ -80,7 +80,7 @@ https://youtu.be/1xQWu1tHFCo
 
 ### ~hint
 
-There is a pause block under the Loops menu ||Loops:pause(1000)|| that can be used to delay the response of the second sprite.
+There is a pause block under the Loops menu ``||Loops:pause(1000)||`` that can be used to delay the response of the second sprite.
 
 ### ~
 
