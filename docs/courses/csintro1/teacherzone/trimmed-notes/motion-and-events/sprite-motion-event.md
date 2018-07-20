@@ -11,37 +11,41 @@ In these activities, the student will use:
 * Motion short method
 * stay on screen
 * image flip (sprite image)
+* functions
 
 ## Example 1: increment position left and right 
+
 ## Student Task #1: increment position Y-axis (up and down) 
+
+https://makecode.com/_Jt9cW5EPtXjK
+
 ```blocks
-// https://makecode.com/_0y9YPV0sa2pm
 
 enum SpriteKind {
     Player,
     Enemy
 }
-let agent: Sprite = null
+let mySprite: Sprite = null
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.x += 3
+    mySprite.x += 3
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.x += -3
+    mySprite.x += -3
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.y += -3
+    mySprite.y += -3
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.y += 3
+    mySprite.y += 3
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.x = 80
-    agent.y = 64
+    mySprite.x = 80
+    mySprite.y = 64
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.y += -15
+    mySprite.y += -15
 })
-agent = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -62,37 +66,41 @@ agent = sprites.create(img`
 ```
 
 ## Sprite Motion Velocity
+
 ## Example 2: increment velocity left and right 
+
 ## Student Task #2: Increment Velocity Up and Down 
+
+https://makecode.com/_RoXXC4aogHr1
+
 ```blocks
-// https://makecode.com/_MgWimJ0UjbvU
 
 enum SpriteKind {
     Player,
     Enemy
 }
-let agent: Sprite = null
+let mySprite: Sprite = null
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vx += 1
+    mySprite.vx += 1
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vx += -1
+    mySprite.vx += -1
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vy += -1
+    mySprite.vy += -1
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vy += 1
+    mySprite.vy += 1
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.x = 80
-    agent.y = 64
+    mySprite.x = 80
+    mySprite.y = 64
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vx = 0
-    agent.vy = 0
+    mySprite.vx = 0
+    mySprite.vy = 0
 })
-agent = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -119,8 +127,9 @@ agent = sprites.create(img`
 
 # Student Task #3: Create Velocity Motion (short method)
 
+https://makecode.com/_PYY8wLemzgUs
+
 ```blocks
-// https://makecode.com/_XKKJ14Vdh3ei
 
 enum SpriteKind {
     Player,
@@ -180,26 +189,36 @@ game.onUpdate(function () {
 ## Flip Image 
 
 ## Example 4: Image Flip with button press event
+
 # Student Task 4: Image Flip with motion
 
+https://makecode.com/_Rhd3AxLzc71c
+
 ```blocks
-// https://makecode.com/_4V9W91ax1RP8
 
 enum SpriteKind {
     Player,
     Enemy
 }
-let agent: Sprite = null
-function fliphorizontal() {
-    agent.image.flipX()
-    pause(200)
-}
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     // for (let i = 0; i < 19; i++) { fliphorizontal() }
     fliphorizontal()
 })
+function fliphorizontal() {
+    mySprite.image.flipX()
+    pause(200)
+}
+function flipvertical() {
+    mySprite.image.flipY()
+    pause(200)
+}
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    // for (let i = 0; i < 19; i++) { fliphorizontal() }
+    flipvertical()
+})
+let mySprite: Sprite = null
 scene.setBackgroundColor(6)
-agent = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . . 
@@ -233,6 +252,10 @@ agent = sprites.create(img`
 . . . . . . . . . . . . . . . . . 7 7 . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . d d d . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+game.onUpdate(function () {
+    mySprite.x += controller.dx()
+    mySprite.y += controller.dy()
+})
 
 ```
 
