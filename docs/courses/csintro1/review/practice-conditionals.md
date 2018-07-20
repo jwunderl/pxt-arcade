@@ -9,52 +9,6 @@
 	- Add some more logic so that if it's the final week (1 to 7 days of school left), the sprite doesn't say any of the countdown stuff, but instead says "FINAL WEEK!! WOOHOO!!". You'll need to add another branch to your current if/else (click the + button bottom of the blue if block to add another branch) to add this behavior in.
 	- Add some more logic (another branch to the if/else) so that if the `remainder of`schoolDaysLeft divided by 7 is = 0, the sprite should say how many weeks there are left instead. (There will be schoolDays / 7 weeks left at that point).
 
-```blocks
-// :solution
-enum SpriteKind {
-    Player,
-    Enemy
-}
-
-let schoolDaysLeft = 0
-let sprite: Sprite = null
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    schoolDaysLeft += -1
-    if (schoolDaysLeft == 0) {
-        sprite.say("Done with school!!")
-        pause(2000)
-        game.over()
-    } else if (schoolDaysLeft < 8) {
-        sprite.say("FINAL WEEK!! WOOHOO!!")
-    } else if (schoolDaysLeft % 7 == 0) {
-        sprite.say("" + schoolDaysLeft / 7 + " weeks of school left!")
-    } else {
-        sprite.say("" + schoolDaysLeft + " days of school left!")
-    }
-})
-sprite = sprites.create(img`
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 6 1 6 6 6 6 6 6 1 6 6 6 6 6 
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 1 6 6 6 6 6 6 6 6 6 6 6 6 6 
-6 6 1 6 6 6 6 6 6 6 6 6 1 6 6 6 
-6 6 6 1 6 6 6 6 6 6 6 6 1 6 6 6 
-6 6 6 6 1 1 6 6 6 6 6 1 6 6 6 6 
-6 6 6 6 6 1 1 1 1 1 1 1 6 6 6 6 
-6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-`, SpriteKind.Player)
-schoolDaysLeft = 48
-sprite.x = 8
-// :end-solution
-```
-
 # Practice #2: Dream Fictional Job Survey
 
 In this example, we'll explore using conditionals inside other conditionals. We'll be surveying the user by asking yes / no questions to figure out what fictional job suits them. Here's what the logic of our game will look like.
@@ -70,22 +24,3 @@ Each of the questions will represent conditional blocks, and depending on which 
 3. Expand the conditional from the previous step so that the `else` branch includes the logic for "Would you prefer to be the authority over those around you?". This means you will need to add another `if / else` block asking that question that decides between the two answer you choose, and put it inside the main else branch.
 
 4. Get creative! Feel free to add some more questions and fun jobs as possibilities.
-
-```blocks
-// :solution
-if (game.ask("Would you like to see dragons?")) {
-    if (game.ask("Would you like to fight them?")) {
-        game.splash("job prediction:", "dragon slayer")
-    } else {
-        game.splash("job prediction:", "dragon rider")
-    }
-} else {
-    if (game.ask("Would you prefer to rule your people (A) or work with them (B).")) {
-        game.splash("job prediction:", "royal ruler")
-    } else {
-        game.splash("job prediction:", "wise elf")
-    }
-}
-
-// :end-solution
-```

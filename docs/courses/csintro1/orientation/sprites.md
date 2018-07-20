@@ -83,56 +83,10 @@ actor = sprites.create(img`
 * The default sprite is 16x16 pixels - **Make a sprite that is 32x32 pixels!**  
 
 ### ~hint
+
 When using the image editor the pixel dimensions are displayed in the lower right corner. Sizes include 8x8, 16x16, 32x32, and other odd sizes.
+
 ### ~
-
-```blocks
-// :solution
-/* https://makecode.com/_arj7ewLpXas6 */   
-
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let bigSprite: Sprite = null
-bigSprite = sprites.create(img` 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 7 7 7 . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 7 7 7 . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 7 7 7 . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . 2 2 2 2 2 2 2 . . . . . . . . . . . . . 
-. . . . . . . . . . . 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . 
-. . . . . . . . . . 2 2 1 1 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 1 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 7 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 7 7 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 7 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 7 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 7 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 7 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 7 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 7 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 1 1 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 1 1 1 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 1 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-
-// :end-solution
-```
-
 
 ## Student Task: Build a "rainbow numbers" sprite that uses every color in the editor 
 
@@ -146,74 +100,10 @@ https://youtu.be/oupwql9r-80
 ![sprite rainbow numbers image](/static/courses/csintro1/orientation/rainbow-numbers.png)
 
 ### ~hint
-Try Changing the background color
-using ``||Scene: set background color to||``
 
-red as 2
+Try Changing the background color using ``||Scene: set background color to||`` red as 2
+
 ### ~
-
-### ~hint
-**Teacher Note**
-Discussion with Students: "The image editor has 16 choices. Why can we only see 15 of the colors at a time.  Who sees only 14 colors?"
-
-Answer: "One of the choices is transparent - which is not a color. The background color displays but the images created in the background color are not visible."
-### ~  
-
-```blocks
-// :solution
-
-/* https://makecode.com/_ipr4sK16fcvq */
-
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let sprite: Sprite = null
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    scene.setBackgroundColor(15)
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    // Students will not use controller events to change
-    // background but easier for Teacher demo
-    scene.setBackgroundColor(1)
-})
-sprite = sprites.create(img`
-1 . . . 2 2 2 . . . . . 3 3 3 . . . . . . 4 . . . . . . . . . . 
-1 . . . . . . 2 . . . . 3 . 3 . . . . 4 . 4 . . . . 5 5 5 5 . . 
-1 . . . . 2 2 2 . . . . . . 3 . . . . 4 . 4 . . . . 5 . . . . . 
-1 . . . 2 . . . . . . . . 3 3 . . . . 4 4 4 . . . . 5 5 5 5 . . 
-1 . . . 2 2 2 2 . . . . . . 3 . . . . . . 4 . . . . . . . 5 . . 
-. . . . . . . . . . . 3 3 3 3 . . . . . . 4 . . . . . . . 5 . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . 5 5 5 5 . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . 6 6 6 6 . . . . 7 7 7 7 7 . . . . . 8 8 8 8 . . . . . . . . 
-. 6 6 . . 6 . . . . . . . 7 7 . . . . . 8 . . 8 . . . . 9 9 9 . 
-. 6 . . . . . . . . . . . 7 . . . . . . 8 . . 8 . . . 9 9 . 9 . 
-. 6 . . . . . . . . . . . 7 . . . . . . 8 8 8 8 . . 9 9 . . 9 . 
-. 6 . . . . . . . . . . 7 . . . . . . . . 8 8 8 . . 9 9 . 9 9 . 
-. 6 6 6 6 6 . . . . . 7 7 . . . . . . . 8 8 . 8 . . . 9 9 9 9 . 
-. 6 6 . . 6 . . . . . 7 . . . . . . . . 8 . . 8 . . . . . . 9 . 
-. . 6 6 6 . . . . . . . . . . . . . . . 8 . . 8 . . . . . . 9 . 
-. . . . . . . . . . . . . . . . . . . . 8 8 8 8 . . . . . . 9 . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 . 
-. a . . a a a a . . . . . b . . . b . . . . . . . . . . . . . . 
-. a . . a . . a . . . . . b . . . b . . . . . c . c c c c . . . 
-. a . a a . . a . . . . . b . . . b . . . . . c . c . . c . . . 
-. a . a a a a a . . . . . b . . . b . . . . . c . . . c . . . . 
-. a . . . . . . . . . . . b . . . b . . . . . c . . c . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . c . . c c c c . . 
-. d . . . . . . . . . . . . . . . e . . . . . . . . . . . . . . 
-. d . . d d d . . . . . e . e . . e . . . . f . f f f f . . . . 
-. d . . . d d . . . . . e . e . . e . . . . f . f . . . . . . . 
-. d . . . d d . . . . . e . e e e e . . . . f . f f f f . . . . 
-. d . . . . . d . . . . e . . . . e . . . . f . . . . f . . . . 
-. d . . d d d d . . . . e . . . . e . . . . f . . . . f . . . . 
-. . . . . . . . . . . . . . . . . e . . . . f . f f f f . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-
-// :end-Solution
-```
 
 ## What did we learn?
 
@@ -223,45 +113,6 @@ sprite = sprites.create(img`
      - Color representation in JavaScript  
 2. Explain what happens to the color index 0 in JavaScript (form a hypothesis)  
 3. Explain why we see only 14 colors at a time although there are 16 color indexes (0-15) in the image editor?  
-
-### ~hint
-**Teacher Note**
-students can create a table for colors  
-Note:  JavaScript color is using Hexadecimal (base 16).  
-Hexadecimal is `0 to 9` for zero to nine, and `a, b, c, d, e, f` for ten through fifteen. 
-
-* **Project consideration** have students research "Hexadecimal" and represent Decimal numbers as Hexadecimal.  
-Decimal = Hexadecimal:
-  * 10 = a
-  * 16 = 10
-  * 32 = 20
-  * 64 = 40
-  * 100 = 64
-  * 160 = a0
-  * 200 = c8
-  * 256 = 100
-*
-
-| color  name | editor color index | JavaScript |
-|-------------|--------------------|------------|
-| Transparent | 0                  | .          |
-| White       | 1                  | 1          |
-| Red         | 2                  | 2          |
-| Pink        | 3                  | 3          |
-| Orange      | 4                  | 4          |
-| Yellow      | 5                  | 5          |
-| Teal        | 6                  | 6          |
-| Green       | 7                  | 7          |
-| Blue        | 8                  | 8          |
-| Light Blue  | 9                  | 9          |
-| Magenta    | 10                 | a         |
-| Grey        | 11                 | b         |
-| Grey-Purple | 12                 | c         |
-| Tan         | 13                 | d         |
-| Brown       | 14                 | e         |
-| Black       | 15                 | f         |
-
-### ~
 
 ## Rubrics
 

@@ -14,15 +14,14 @@ In this lesson students use:
 
 Sprite Objects have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 
-> ### Vocabulary: Method
-> A **method** is an action that an object supports. Example: Sprites (an object) have a "say" method that displays text provided above the sprite.
-> 
+### Vocabulary: Method
+
+A **method** is an action that an object supports. Example: Sprites (an object) have a "say" method that displays text provided above the sprite.
 
 ## Example: Sprite Hello Blocks
 
 1. Create the **Block** code below in MakeCode (give it a title: "sprite hello")
 2. View the code in JavaScript
-
 
 ```blocks
 enum SpriteKind {
@@ -47,7 +46,6 @@ mySprite.say(msg)
 ## What did we learn? 
 1. Identify and show the JavaScript code that aligns with which each block.  
 2. Identify any JavaScript code that doesn't seem to have any blocks. Hypothesize and Explain.  
-
  
 # TODO: Video demo example introduce console.log() show string and string variable
 
@@ -72,33 +70,6 @@ console.log("msg sent!")
 
 Consider This!: The code `console.log()` doesn't use **mySprite** as with ``||sprites:say||``. Why?
 
-```blocks
-// :solution
-// https://makecode.com/_Wr8PUXPeVUT1
-
-enum SpriteKind {
-    Player
-}
-let msg: string = "Hello World!"
-let mySprite: Sprite = null
-mySprite = sprites.create(img`
-. . . . . . . . 
-. . . . . . . . 
-4 4 4 4 4 4 4 4 
-4 f 4 4 4 4 f 4 
-4 4 4 a a 4 4 4 
-4 4 4 4 4 4 4 4 
-4 4 b b b b 4 4 
-4 4 4 4 4 4 4 4 
-`, SpriteKind.Player)
-scene.setBackgroundColor(9)
-mySprite.say(msg)
-console.log(msg)
-console.log("msg sent!")
-
-// :end-solution
-```
-
 ## Task: Add another sprite and set its coordinates
 
 1. Start with the above project and add another sprite (need a different variable name) 
@@ -106,191 +77,20 @@ console.log("msg sent!")
 3. push the **+** on the ``||sprites:say||`` block and set the time for each message (**1000** millisecond = 1 second)
 
 ### ~hint
-There is a pause block under the Loops menu ||Loops:pause(1000)|| that can be used to delay the response of the second sprite. 
+
+There is a pause block under the Loops menu ||Loops:pause(1000)|| that can be used to delay the response of the second sprite.
+
 ### ~
-
-```blocks
-// :solution
-// https://makecode.com/_3vw05FiutJww
-
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let world: Sprite = null
-let mySprite: Sprite = null
-let msgWorld = ""
-let msgSprite = ""
-scene.setBackgroundColor(9)
-msgSprite = "Hello World!"
-msgWorld = "Hi Sprite!"
-mySprite = sprites.create(img`
-. . . . . . . . 
-. . . . . . . . 
-4 4 4 4 4 4 4 4 
-4 f 4 4 4 4 f 4 
-4 4 4 a a 4 4 4 
-4 4 4 4 4 4 4 4 
-4 4 b b b b 4 4 
-4 4 4 4 4 4 4 4 
-`, SpriteKind.Player)
-world = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . 1 . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . 8 1 1 1 1 1 e . . . . . . . . . . . . . . . . . 
-. . . . . . . 8 8 e e 8 8 7 7 e . . . . . . . . . . . . . . . . 
-. . . . . . e e 8 e e 8 8 7 e e e . . . . . . . . . . . . . . . 
-. . . . . e e e 8 8 8 8 8 7 e e e e . . . . . . . . . . . . . . 
-. . . . e e e e e 8 8 8 7 7 e e e e e . . . . . . . . . . . . . 
-. . . . e e e e e 8 8 8 7 7 7 7 7 7 e . . . . . . . . . . . . . 
-. . . . e e e e e 8 8 8 8 8 8 8 7 7 e . . . . . . . . . . . . . 
-. . . e e e 8 8 8 8 8 8 8 8 8 7 7 e e e . . . . . . . . . . . . 
-. . . . e e 8 8 8 8 8 8 8 8 8 7 e e e . . . . . . . . . . . . . 
-. . . . e e e 8 8 8 8 8 e 8 8 7 e e e . . . . . . . . . . . . . 
-. . . . e e e e 8 8 8 8 8 8 8 8 7 e e . . . . . . . . . . . . . 
-. . . . . e e e e 8 8 8 8 8 8 8 7 e . . . . . . . . . . . . . . 
-. . . . . . e e e 8 8 8 8 8 8 8 7 . . . . . . . . . . . . . . . 
-. . . . . . . e e 8 8 8 8 8 8 8 . . . . . . . . . . . . . . . . 
-. . . . . . . . e 8 1 1 1 8 8 . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . 1 . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-world.x = 30
-mySprite.say(msgSprite, 2000)
-pause(1000)
-world.say(msgWorld, 4000)
-
-// :end-solution
-```
 
 ## Challenge
 
 1. Add additional Sprites at different coordinates and use ``||sprites:say||`` messages  
-2. Make larger 32x32 sprites  
-
-```blocks
-// :solution
-// https://makecode.com/_9TqMJR6WTPzU
-
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let bird: Sprite = null
-let world: Sprite = null
-let mySprite: Sprite = null
-let msgWorld = ""
-let msgSprite = ""
-scene.setBackgroundColor(9)
-msgSprite = "Hello World!"
-msgWorld = "Hi Sprite!"
-mySprite = sprites.create(img`
-. . . . . . . . 
-. . . . . . . . 
-4 4 4 4 4 4 4 4 
-4 f 4 4 4 4 f 4 
-4 4 4 a a 4 4 4 
-4 4 4 4 4 4 4 4 
-4 4 b b b b 4 4 
-4 4 4 4 4 4 4 4 
-`, SpriteKind.Player)
-world = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . 1 . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . 8 1 1 1 1 1 e . . . . . . . . . . . . . . . . . 
-. . . . . . . 8 8 e e 8 8 7 7 e . . . . . . . . . . . . . . . . 
-. . . . . . e e 8 e e 8 8 7 e e e . . . . . . . . . . . . . . . 
-. . . . . e e e 8 8 8 8 8 7 e e e e . . . . . . . . . . . . . . 
-. . . . e e e e e 8 8 8 7 7 e e e e e . . . . . . . . . . . . . 
-. . . . e e e e e 8 8 8 7 7 7 7 7 7 e . . . . . . . . . . . . . 
-. . . . e e e e e 8 8 8 8 8 8 8 7 7 e . . . . . . . . . . . . . 
-. . . e e e 8 8 8 8 8 8 8 8 8 7 7 e e e . . . . . . . . . . . . 
-. . . . e e 8 8 8 8 8 8 8 8 8 7 e e e . . . . . . . . . . . . . 
-. . . . e e e 8 8 8 8 8 e 8 8 7 e e e . . . . . . . . . . . . . 
-. . . . e e e e 8 8 8 8 8 8 8 8 7 e e . . . . . . . . . . . . . 
-. . . . . e e e e 8 8 8 8 8 8 8 7 e . . . . . . . . . . . . . . 
-. . . . . . e e e 8 8 8 8 8 8 8 7 . . . . . . . . . . . . . . . 
-. . . . . . . e e 8 8 8 8 8 8 8 . . . . . . . . . . . . . . . . 
-. . . . . . . . e 8 1 1 1 8 8 . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . 1 . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-bird = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . f . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . f f f f . . . 
-. . . . . . . . . . . . . . . . . . . . . . f f f 6 f . . . . . 
-. . . . . . . . . . . . . . . . . . . f 6 f 6 8 8 8 f . . . . . 
-. . . . . . . . . . . . . . . . f 6 f 8 8 8 8 8 8 f . . . . . . 
-. . . . . . . . . . . . . f f 6 8 8 8 8 8 8 8 8 f . . . . . . . 
-. . . . . . . . . . . f 6 8 8 8 6 6 8 8 8 8 f f . . . . . . f f 
-. . . . . . . . . . f f 8 8 8 8 8 8 8 8 8 f f . . . . . . . f f 
-. . . . . . f f f f f 6 8 8 6 6 6 6 6 8 8 6 f f f f . . . f f f 
-. . . . f f b b f b b b 8 8 8 6 6 8 8 8 8 6 6 6 6 6 f f f f b f 
-. . f f f b b b b b b b 8 8 8 6 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 f 
-. . . . f f b b b b b b 8 8 8 8 8 8 6 6 6 8 6 8 6 6 6 6 6 8 8 f 
-. . f f f f f b b b b b 8 6 8 8 8 8 8 8 8 . 6 8 8 6 6 b b 6 6 f 
-. . . . . f f f f f f f 8 8 8 6 6 6 8 8 f f 6 8 8 6 f f f f f f 
-. . . . . . . . . . . f 6 8 6 8 8 8 8 8 f . f . f f . . . f f . 
-. . . . . . . . . . . . f 8 8 8 8 6 8 8 f . . . . . . . . . f . 
-. . . . . . . . . . . . f 8 8 8 8 6 8 8 f . . . . . . . . . . . 
-. . . . . . . . . . . . . f 8 8 8 8 6 8 f . . . . . . . . . . . 
-. . . . . . . . . . . . . f 6 8 8 8 8 8 6 f . . . . . . . . . . 
-. . . . . . . . . . . . . . f 6 8 8 8 8 6 f . . . . . . . . . . 
-. . . . . . . . . . . . . . f 6 f 8 8 8 8 f f . . . . . . . . . 
-. . . . . . . . . . . . . . . . . f f . f 6 f f f . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . f f f f f f . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . f f . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-world.x = 30
-bird.x = 130
-bird.y = 105
-mySprite.say(msgSprite, 2000)
-pause(1000)
-world.say(msgWorld, 4000)
-pause(2000)
-bird.say("Tweet", 1000)
-
-// :end-solution
-```
+2. Make larger 32x32 sprites
 
 ### What did we learn?
 
- 3. Discuss the different ways we can display a message in this exercise. List and example.
- 4. Come up with a hypothesis and explain why `console.log()` has a large limit on the length of text. Explain.
+3. Discuss the different ways we can display a message in this exercise. List and example.
+4. Come up with a hypothesis and explain why `console.log()` has a large limit on the length of text. Explain.
 
 
 ## Rubrics

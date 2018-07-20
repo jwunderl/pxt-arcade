@@ -39,24 +39,7 @@ answer = 3 + 5
 game.splash("3 + 5 = " + answer)
 ```  
 
-### ~hint
-**Teacher Note**
-## Discuss with students
-The join block is used to **coerce** a number into a string JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash knows that we are displaying the string representation of our `answer` variable.
-
-If only displaying a number we use an empty string in the join 
-```blocks
-let answer = 0
-answer = 3 + 5
-game.splash("" + answer)
-```
-
-**coercion**: changing Type within an operation (e.g. - string to number for a comparison will compare the number value of the string `"3"` in `3 >= "3"` or number to string using join in the splash message example above)
-### ~
-
 ## Student Task 1: Try new values in the equation 
-
-
 
 1. starting with the above example 
 2. Experiment using different numbers in our equation (e.g.  `9 + 2`)
@@ -65,44 +48,18 @@ game.splash("" + answer)
 
 
 ### ~hint
+
 In order to combine multiple items we will need to add additional Math blocks
 
 ![animation: adding 3 numbers with blocks](/static/courses/csintro1/orientation/add-3-numbers.gif)
 
-```blocks
-// :solution
-// https://makecode.com/_h6vfmy28s34T
-
-let answer = 0
-answer = 9 + 2
-game.splash("9 + 2 = " + answer)
-answer = 17 + 12 
-game.splash("17+12 = " + answer)
-answer = 17 + 12 
-game.splash("21+22 = " + answer)
-
-// :end-solution
-```
-
 ### ~
 
 ### ~hint
+
 The splash screen is designed for short sentences.  This limits the length of equation we can effectively display. "Show long text" allows for a better representation for longer text.
+
 ### ~  
-
-```blocks
-// :solution
-// https://makecode.com/_VaeKM9dowVam
-
-let answer = 0
-answer = 13 + 9 + 1 + 0 + 18 + 5
-game.splash("13+9+1+0+18+5=" + answer)
-/* longer equation */
-answer = 13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7
-game.showLongText("13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7 = " + answer, DialogLayout.Bottom)
-
-// :end-solution
-```
 
 ## Concept: basic math operators with variables 
 
@@ -146,15 +103,7 @@ https://youtu.be/C_UY8V-ufiI
 3. create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
 4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)
 
-### ~hint
-**Teacher Note**
-## Tell students
-Look at the JavaScript.  Parenthesis `( )`are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
-![animation: Parenthesis in math code](/static/courses/csintro1/orientation/parenthesis-math.gif)
-### ~
-
 ```blocks
-// :solution
 // https://makecode.com/_Euh8RJRuzhsf
 
 let answer = 0
@@ -168,8 +117,6 @@ answer = firstNumber + secondNumber * thirdNumber
 game.splash("15 + 5 * 3 = " + answer)
 answer = firstNumber * secondNumber + thirdNumber
 game.splash("15 * 5 + 3 = " + answer)
-
-// :end-solution
 ```
 
 ## Student Task 3: multiple operators and variables equation  
@@ -179,48 +126,10 @@ game.splash("15 * 5 + 3 = " + answer)
 4. Challenge: create an equation using all 4 basic operators (`+, -, *, /`) and at least 5 unique variables.  
 
 ### ~hint
+
 Look at the JavaScript code.  For multiple operator equations it is often easier to code in JavaScript. Note how using parenthesis `( )` changes the equation.
+
 ### ~
-
-```blocks
-// :solution
-// https://makecode.com/_eC9Cwk3uXiCr
-
-let answer = 0
-let firstNum = 0
-let secondNum = 0
-let thirdNum = 0
-let fourthNum = 0
-firstNum = 15
-secondNum = 5
-thirdNum = 9
-fourthNum = 6
-answer = firstNum * secondNum + thirdNum / fourthNum
-game.splash("15 * 5 + 9 / 6 = " + answer)
-
-// :end-solution
-```
-
-```blocks
-// :solution
-// Challenge:https://makecode.com/_WyA12wV0K74p  
-
-let answer = 0
-let fifthNum = 0
-let fourthNum = 0
-let thirdNum = 0
-let secondNum = 0
-let firstNum = 0
-firstNum = 15
-secondNum = 5
-thirdNum = 9
-fourthNum = 6
-fifthNum = 10
-answer = firstNum * secondNum + thirdNum / fourthNum - fifthNum
-game.splash("15*5+9/6-10 = " + answer)
-
-// :end-solution
-```
 
 ## Student Task 4: Conversion  
 1. create 2 variables
@@ -234,26 +143,10 @@ game.splash("15*5+9/6-10 = " + answer)
     - be sure to pay attention to the parenthesis
 
 ### ~hint
+
 It can be difficult to structure parenthesis using blocks.  Look at and edit the JavaScript code to create the formula where it looks much more like a math equation, except for **\*** is used for multiplication and **/** is used for division.  Note: evaluate parenthesis first because code follows the the same parenthesis rules as mathematics.
+
 ### ~
-
-```blocks
-// :solution
-// https://makecode.com/_A3PHiyg9rTD6
-
-let tempF = 0
-let tempC = 0
-tempC = 22
-tempF = tempC * (9 / 5) + 32
-game.splash("" + tempC + " C", "Fahrenheit " + tempF)
-tempF = 75
-// Challenge
-tempC = (tempF - 32) * (5 / 9)
-game.splash("" + tempF + " F", "Celsius " + tempC)
-
-// :end-solution
-```
-
 
 ## Student Task 5: Debugging
 1. We decided that we want to have three different variables in our code - a, b, and c. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
@@ -269,35 +162,9 @@ Click edit to fix code.  Splash can display string characters.  Review previous 
 
 ### ~
 
-```blocks
-// :solution
-let c = 0
-let b = 0
-let a = 0
-a = 3
-b = a + 5
-c = (a + 2) * b
-game.splash("" + c)
-// :end-solution
-```
-
 2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong?
 
 Fix the output
-
-```blocks
-// :solution
-// https://makecode.com/_dm7i6WUHdKsh
-
-let c = 0
-let b = 0
-let a = 0
-a = 3
-b = a + 5
-c = a + (2 * b)
-game.splash("" + c)
-// :end-solution
-```
 
 ### ~hint
 

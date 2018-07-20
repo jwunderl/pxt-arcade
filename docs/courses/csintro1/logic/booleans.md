@@ -85,7 +85,9 @@ we need the solution / end-solution tags so we can remove this for student versi
 4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
 
 ### ~hint
+
  // Hint to student
+ 
 ### ~
 
 ```blocks

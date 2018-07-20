@@ -22,25 +22,3 @@ info.startCountdown(2)
 5. To give the player some indication that the game is moving on to the next level, we should say something to them. Before resetting the lives and countdown, add in a ``||game:splash||`` block with a message to the player telling them they're moving on to the next level.
 6. To make sure that the game keeping track of the countdown correctly, add in a ``||info:stop countdown||`` block before the splash message, so that the countdown will not continue in the background.
 7. We can also add a benefit to moving on to the next level by increasing the score more than normal. To do so, we will use the ``||info:set score to||`` block to set the score to two times the current score - to do this, you will need to use the ``||math:x||`` block and the ``||info:score||`` block.
-
-```blocks
-// :solution
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy(2)
-    info.changeLifeBy(-1)
-})
-info.onLifeZero(function () {
-    info.stopCountdown()
-    game.splash("Next Level!")
-    info.setLife(15)
-    info.startCountdown(2)
-    info.setScore(2 * info.score())
-})
-info.onCountdownEnd(function () {
-    info.changeScoreBy(-10)
-    game.over()
-})
-info.setLife(15)
-info.startCountdown(2)
-// :end-solution
-```

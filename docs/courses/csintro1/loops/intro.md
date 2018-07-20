@@ -104,89 +104,6 @@ pause(100)
 2. Make the sprite move up and to the left instead - to do so, change all movements to be in the opposite direction.
 3. Change the pause between each step to be only 50 ms, instead of 100 - we decided we want the ghost to be a little bit faster than it was
 
-### ~hint
-**Teacher Note**  
-
-This task is intentionally tedious - it's likely a good idea to cut them off early after having them start on it, as it doesn't take long to recognize how much is involved in making a relatively small change in the current code.
-### ~
-
-```blocks
-// :solution
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let sprite: Sprite = null
-sprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 1 1 1 . . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . . 1 f 1 f 1 . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . 1 1 f f f 1 1 . . . . 
-. . . . . 1 1 1 1 1 1 1 . . . . 
-. . . . 1 . 1 1 1 1 1 . 1 . . . 
-. . . 1 1 . . 1 1 1 . . 1 1 . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-sprite.x += -5
-pause(50)
-sprite.y += -5
-pause(50)
-// :end-solution
-```
-
-
 ## Concept: Moving a sprite using loops (introduce the repeat block)
 
 # TODO: Video for using a repeat block to move sprite
@@ -224,73 +141,20 @@ for (let i = 0; i < 12; i++) {
     sprite.y += -5
     pause(50)
 }
-
 ```
+
 ## Student Task 2: Add a second sprite using loops
 We now want to add in a second ghost, that moves towards the bottom right like in the first example.
 1. Add in a second sprite
 2. Make the second sprite move in the opposite direction of the current sprite, right after the current sprite moves.
 
 ### ~hint
+
 Copy the blocks from the example  
 
 There isn't too much different between the two sprites - we don't even need to make a new loop! We just need to add more things into the **body** of the loop - that is, the code that is surrounded by the loop.
-### ~
 
-```blocks
-// :solution
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let sprite: Sprite = null
-sprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 1 1 1 . . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . . 1 f 1 f 1 . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . 1 1 f f f 1 1 . . . . 
-. . . . . 1 1 1 1 1 1 1 . . . . 
-. . . . 1 . 1 1 1 1 1 . 1 . . . 
-. . . 1 1 . . 1 1 1 . . 1 1 . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-let sprite2: Sprite = null
-sprite2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 1 1 1 . . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . . 1 f 1 f 1 . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . 1 1 f f f 1 1 . . . . 
-. . . . . 1 1 1 1 1 1 1 . . . . 
-. . . . 1 . 1 1 1 1 1 . 1 . . . 
-. . . 1 1 . . 1 1 1 . . 1 1 . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-for (let i = 0; i < 12; i++) {
-    sprite.x += -5
-    sprite2.x += 5
-    pause(50)
-    sprite.y += -5
-    sprite2.y += 5
-    pause(50)
-}
-// :end-solution
-```
+### ~
 
 ## Student Task 3: Boomerang
 1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the course of two seconds
@@ -329,44 +193,6 @@ boomerang = sprites.create(img`
 `, SpriteKind.Player)
 boomerang.x += 5
 pause(200)
-```
-
-```blocks
-// :solution
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let boomerang: Sprite = null
-boomerang = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 4 . . . . . . . 
-. . . . . . . 4 5 4 . . . . . . 
-. . . . . . . . 4 5 4 . . . . . 
-. . . . . . . . . 4 5 4 . . . . 
-. . . . . . . . . 4 5 4 . . . . 
-. . . . . . . . 4 5 5 4 . . . . 
-. . . . . . . . 4 5 4 . . . . . 
-. . . . . . . 4 5 4 . . . . . . 
-. . . . . . . . 4 . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-for (let i = 0; i < 10; i++) {
-    boomerang.x += 5
-    boomerang.image.flipX()
-    pause(200)
-}
-for (let i = 0; i < 10; i++) {
-    boomerang.x += -5
-    boomerang.image.flipX()
-    pause(200)
-}
-// :end-solution
 ```
 
 ## What did we learn?

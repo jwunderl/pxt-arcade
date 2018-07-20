@@ -118,60 +118,6 @@ projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 `, 0, 0, SpriteKind.Player, item)
 ```
-```blocks
-// :solution
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let item: Sprite = null
-let projectile: Sprite = null
-let sprite: Sprite = null
-sprites.onDestroyed(SpriteKind.Player, function (sprite) {
-    info.changeScoreBy(1)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    sprite.say("Hello!")
-})
-projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . 8 9 8 9 9 9 8 9 8 . . . . 
-. . 8 9 9 8 9 8 9 8 9 9 8 . . . 
-. . . 8 9 8 9 9 9 8 9 8 . . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 0, 50, SpriteKind.Player, item)
-projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 2 . . . . . . . . 
-. . . . . 2 2 3 2 2 . . . . . . 
-. . . . 2 3 3 3 3 3 2 . . . . . 
-. . . 2 3 2 2 2 2 2 3 2 . . . . 
-. . . 2 3 2 3 3 3 2 3 2 . . . . 
-. . 2 3 3 2 3 2 3 2 3 3 2 . . . 
-. . . 2 3 2 3 3 3 2 3 2 . . . . 
-. . . 2 3 2 2 2 2 2 3 2 . . . . 
-. . . . 2 3 3 3 3 3 2 . . . . . 
-. . . . . 2 2 3 2 2 . . . . . . 
-. . . . . . . 2 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 0, -50, SpriteKind.Player, item)
-
-// :end-solution
-```
 
 # TODO: Create Video covering projectile motion with loops (task 2)
 
@@ -227,71 +173,6 @@ d d d d d d d d
 `, 0, 0, SpriteKind.Enemy, item)
     projectile.x = Math.randomRange(0, scene.screenWidth())
 })
-
-
-```
-
-```blocks
-// :solution
-
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let item: Sprite = null
-let projectile: Sprite = null
-let mySprite: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, foodSprite) {
-    game.over()
-})
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
-. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
-. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
-. . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-mySprite.y = 100
-game.onUpdate(function () {
-    mySprite.x += controller.dx()
-})
-game.onUpdateInterval(200, function () {
-    projectile = sprites.createProjectile(img`
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-`, 0, 50, SpriteKind.Enemy, item)
-//    projectile = sprites.createProjectile(img` // Challenge solution
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//`, 0, 40 + Math.randomRange(0, 20), SpriteKind.Enemy, item)
-    projectile.x = Math.randomRange(0, scene.screenWidth())
-    info.changeScoreBy(1)
-})
-
-// :end-solution
 ```
 
 ## Projectiles as sprites
@@ -500,11 +381,6 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 2. Create the sample code and run the code
 3. Save the code for the task (name it "screen fill")
 4. Surround the code in the ``||loops:on start||`` block with a ``||loops:for index from 0 to 12||`` block, to create 13 projectiles, one every 300 ms.
-### ~hint
-**Teacher Note**
-Ask the students why this creates 13 projectiles, instead of just 12.
-Answer: there is an extra value because it is including both 0 and 12.
-### ~
 5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value `10 * index`, so that they start further down the screen on each iteration.
 
 ```blocks
@@ -533,38 +409,6 @@ projectile = sprites.createProjectile(img`
 `, 40, 0, SpriteKind.Player)
 projectile.y = 10
 pause(300)
-```
-
-```blocks
-// :solution
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let projectile: Sprite = null
-for (let index = 0; index <= 12; index++) {
-    projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. 6 6 6 6 6 6 6 6 . . . . . . . 
-. 6 8 8 8 8 8 8 8 6 . . . . . . 
-. 6 8 6 6 6 6 6 6 8 6 . . . . . 
-. 6 8 6 6 6 6 6 6 6 8 6 . . . . 
-. 6 8 6 6 6 6 6 6 8 6 . . . . . 
-. 6 8 8 8 8 8 8 8 6 . . . . . . 
-. 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 40, 0, SpriteKind.Player)
-    projectile.y = index * 10
-    pause(300)
-}
-// :end-solution
 ```
 
 ## Student Task 4: Water balloons
@@ -671,102 +515,6 @@ balloon = sprites.create(img`
 balloon.x += -50
 ```
 
-```blocks
-// :solution
-
-enum SpriteKind {
-    Player,
-    Enemy,
-    Balloon,
-    Splash
-}
-let projectile: Sprite = null
-let yDirection = 0
-let xDirection = 0
-let balloon: Sprite = null
-let block: Sprite = null
-sprites.onOverlap(SpriteKind.Balloon, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprite.setFlag(SpriteFlag.Ghost, true)
-    for (let index = 0; index <= 50; index++) {
-        xDirection = Math.randomRange(0, 100) - 50
-        yDirection = Math.randomRange(0, 100) - 50
-        projectile = sprites.createProjectile(img`
-9
-`, xDirection, yDirection, SpriteKind.Splash, sprite)
-        projectile.setFlag(SpriteFlag.Ghost, true)
-    }
-    sprite.destroy()
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    balloon.vx = 40
-    balloon.vy = -50
-    balloon.ay = 40
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    balloon.destroy()
-    balloon = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . 8 9 8 8 9 9 8 9 8 . . . . 
-. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Balloon)
-    balloon.x += -50
-})
-scene.setBackgroundColor(6)
-block = sprites.create(img`
-f f f f f f f f f f f f f f f f 
-f 1 2 2 1 1 2 2 2 1 2 1 1 2 1 f 
-f 1 2 1 2 1 2 1 2 1 2 2 1 2 1 f 
-f 1 2 1 2 1 2 2 2 1 2 1 2 2 1 f 
-f 1 2 2 1 1 2 1 2 1 2 1 1 2 1 f 
-f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f 
-f 1 2 2 2 1 2 2 2 1 2 2 2 1 1 f 
-f 1 2 1 1 1 2 1 1 1 2 1 2 1 1 f 
-f 1 2 1 2 1 2 2 1 1 2 2 2 1 1 f 
-f 1 2 2 2 1 2 2 2 1 2 1 1 2 1 f 
-f f f f f f f f f f f f f f f f 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-block.x += 50
-balloon = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . 8 9 8 8 9 9 8 9 8 . . . . 
-. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Balloon)
-balloon.x += -50
-
-// :end-solution
-```
-
 ## What did we learn? [create 2 questions]
 
 1. Describe two benefits of using projectiles rather than normal sprites.  
@@ -774,9 +522,10 @@ balloon.x += -50
 3. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
 4. Challenge: Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might be make your game run faster than leaving it off.
 ### ~hint
-Does the game need to check whether a sprite is overlapping another if either is a ghost?
-### ~
 
+Does the game need to check whether a sprite is overlapping another if either is a ghost?
+
+### ~
 
 ## Rubrics
 

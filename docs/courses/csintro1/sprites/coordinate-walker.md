@@ -5,7 +5,6 @@ Move walker sprite around the game screen to identify X-Y coordinates
 In this Activity students investigate the game screen using
 * Game X, Y Coordinates  
 
-
 ## Concept: Identify the X, Y coordinates of the Game Screen  
 
 https://youtu.be/R6NJjzXfejM 
@@ -35,8 +34,6 @@ Use **X** and/or **Y** in your answers
 1. Describe how coordinates change when moving up versus moving down  
 2. Describe how coordinates change when moving right versus moving left  
 
-
-
 ### Map Game Screen
 
 Two dimensional game screen coordinates are represented by values for **X** and **Y** axis locations.
@@ -48,12 +45,12 @@ Two dimensional game screen coordinates are represented by values for **X** and 
   ![sprite at top edge of screen](/static/courses/csintro1/sprites/coordinate-edge.png)
 
 * Move to each of the corners and **map the coordinates** as a pair of X and Y values like `(x,y)`
-  * Restart the game. What are the coordinates when you start? Should be `(64,64)`.
-  * **Record** the coordinates at the **Top Right** corner  
-  * **Record** the coordinates at the **Bottom Right** corner  
-  * **Record** the coordinates at the **Bottom Left** corner  
-  * **Record** the coordinates at the **Top Left** corner   
-  * **Record** the Game Screen Dimensions (height by width)  
+    * Restart the game. What are the coordinates when you start? Should be `(64,64)`.
+    * **Record** the coordinates at the **Top Right** corner  
+    * **Record** the coordinates at the **Bottom Right** corner  
+    * **Record** the coordinates at the **Bottom Left** corner  
+    * **Record** the coordinates at the **Top Left** corner   
+    * **Record** the Game Screen Dimensions (height by width)  
 
 ![map the coordinates at the corners](/static/courses/csintro1/sprites/coordinates-map.png)
 
@@ -78,7 +75,9 @@ Record Results in a simple diagram
 ## Rubrics
 
 ### ~hint
+
 Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
+
 ### ~
 
 ### Coordinate Walker Rubric

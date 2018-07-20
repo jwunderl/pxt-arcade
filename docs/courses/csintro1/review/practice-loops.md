@@ -10,19 +10,6 @@ The next section will describe specific steps for creating the game described ab
 
 3. Make it so that after each round (surviving the randomized health trials) the score increases by one.
 
-
-```blocks
-// :solution
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    for (let i = 0; i < 4; i++) {
-        info.setLife(Math.randomRange(0, 4))
-        pause(1000)
-    }
-    info.changeScoreBy(1)
-})
-// :end-solution
-```
-
 # Practice 2: Moving Sprites with Loops
 
 As we saw in the fundamentals lesson on loops, one application of loops is to repeatedly change the x and y location of a sprite, which makes it gradually move. Our end goal is to make our sprite gradually move clockwise in a square across the whole screen. We can break it down into the following steps:
@@ -39,56 +26,6 @@ As we saw in the fundamentals lesson on loops, one application of loops is to re
 
 Note: You may have noticed that this exercise seems awfully familiar in result to some things we've used before: vx and vy! It turns out that vx and vy really are equivalent in concept to what we wrote blocks for in this past exercise.  Try playing with the pause time and how much the x and y position change by each loop iteration. You'll find that a very smooth animation can be acheived with the right values for those two parameters.
 
-
-```blocks
-// :solution
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let asdf: Sprite = null
-let index = 0
-asdf = sprites.create(img`
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-8 8 8 8 8 8 8 1 8 8 8 8 8 8 8 8 
-8 8 8 8 8 1 1 1 1 1 8 8 8 8 8 8 
-8 8 8 8 1 1 1 1 1 1 1 8 8 8 8 8 
-8 8 8 1 1 1 1 1 1 1 1 1 8 8 8 8 
-8 8 1 1 1 1 1 1 1 1 1 1 1 8 8 8 
-8 8 1 1 1 1 1 1 1 1 1 1 1 8 8 8 
-8 1 1 1 1 1 1 1 1 1 1 1 1 1 8 8 
-8 8 1 1 1 1 1 1 1 1 1 1 1 8 8 8 
-8 8 1 1 1 1 1 1 1 1 1 1 1 8 8 8 
-8 8 8 1 1 1 1 1 1 1 1 1 8 8 8 8 
-8 8 8 8 1 1 1 1 1 1 1 8 8 8 8 8 
-8 8 8 8 8 1 1 1 1 1 8 8 8 8 8 8 
-8 8 8 8 8 8 8 1 8 8 8 8 8 8 8 8 
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-`, SpriteKind.Player)
-asdf.setPosition(8, 8)
-forever(function () {
-    for (let index = 0; index <= 20; index++) {
-        asdf.x += 5
-        pause(100)
-    }
-    for (let index = 0; index <= 20; index++) {
-        asdf.y += 5
-        pause(100)
-    }
-    for (let index = 0; index <= 20; index++) {
-        asdf.x += -5
-        pause(100)
-    }
-    for (let index = 0; index <= 20; index++) {
-        asdf.y += -5
-        pause(100)
-    }
-})
-// :end-solution
-
-```
-
 Challenge: Move your sprite in other shapes besides a square (triangles, circles). You could also try to move multiple sprites at once and see how that turns out.
 
 
@@ -99,38 +36,6 @@ For this exercise we're not going to use loops to chose movement, but rather loo
 1. On any buttom press, make your sprite appear at a random location.
 2. We know that the sprite needs to appear 3 times total, and we just wrote the code for it to appear randomly once. Let's put the previous code we have into a loop that runs 3 times. 
 
-```blocks
-// :solution
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let sprite: Sprite = null
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    for (let index = 0; index <= 2; index++) {
-        sprite = sprites.create(img`
-. . . . . . . 5 5 . . . . . . . 
-. . . . . . . 5 5 . . . . . . . 
-. . . . . . . 5 5 . . . . . . . 
-. . . . . . 5 5 5 . . . . . . . 
-. . . . . . 5 5 5 . . . . . . . 
-5 5 5 5 . 5 5 5 5 . . . . . . . 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-. 5 5 5 5 5 5 5 5 5 5 5 . . . . 
-. . 5 5 5 5 5 5 5 5 5 . . . . . 
-. . . 5 5 5 5 5 5 5 5 . . . . . 
-. . . . 5 5 5 5 5 5 5 . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 . . . . 
-. . . 5 5 5 5 . 5 5 5 5 . . . . 
-. . . 5 5 . . . . 5 5 5 . . . . 
-. . . 5 . . . . . . 5 5 . . . . 
-`, SpriteKind.Player)
-        sprite.setPosition(Math.randomRange(0, 144), Math.randomRange(0, 104))
-    }
-})
-// :end-solution
-```
 # Practice 4: Drawing a row / column of spirtes with loops
 
 TODO flesh out steps / provide solution:

@@ -7,9 +7,7 @@ Sprites, and other game objects, can overlap to activate event code such as scor
 In this activity the student will work with:
 * On Overlap event with SpriteKind
 * Ghost on - Ghost off
-* destroy sprite  
-
-
+* destroy sprite
 
 # Overlaps
 
@@ -27,7 +25,6 @@ We use SpriteKind to classify our sprites.  We can have sprites that are Player,
 4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite` 
 
 ```blocks  
-
 enum SpriteKind {
     Player,
     Enemy
@@ -94,95 +91,18 @@ head.setPosition(120, 60)
 game.onUpdate(function () {
     head.x += controller.dx()
 })
-```  
+```
+
 ## Student Task 1: Add actions to overlap events
 1. starting with example 1, or your own similar code
 2. add additional code to the overlap event that has the person saying something (e.g. - "Good!")
 3. Challenge: add another action to the overlap event. (Hint: can use both sprites)
-
 
 ### ~hint
 
 Use ``||loops:pause||`` before using sprite destroy otherwise the sprite will be destroyed before we see what it was saying.
 
 ### ~
-
-```blocks
-// :solution
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let head: Sprite = null
-let food: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.say("help", 500)
-    pause(500)
-    otherSprite.destroy()
-    sprite.say("Yum!", 2000)
-    pause(2000)
-    sprite.destroy()
-})
-food = sprites.create(img`
-. . . . . 7 7 . . . . 7 7 . . . 
-. . . . . 7 7 7 7 . 7 7 7 7 . . 
-. . . . . 7 7 7 7 e 7 7 7 7 . . 
-. . . . . . 7 7 e e 7 7 7 . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . 2 . . . . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . . . 2 2 2 . . . . . . . 
-`, SpriteKind.Enemy)
-head = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . a a a a a a a a a a a . . . . . . . . . . . 
-. . . . . . . . a a a a a a a a a a a a a a a . . . . . . . . . 
-. . . . . . . . . a a a 5 5 5 a a a a a a a a a . . . . . . . . 
-. . . . . . . . a 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . . 5 5 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . 5 5 5 5 6 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 a a a a a a a a a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 a a a 5 5 5 5 5 a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 1 . 1 . 1 . 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . . . 1 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . 1 . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . 
-. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . 
-. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-`, SpriteKind.Player)
-food.setPosition(20, 60)
-head.setPosition(120, 60)
-game.onUpdate(function () {
-    head.x += controller.dx()
-})
-
-// :end-solution
-```
 
 ## set Sprite ghost on
 The sprite **ghost on** setting makes the sprite able to pass "through" with other sprites and objects (such as walls that we create later) on the screen without an overlap or collision event being detected.  The default when we don't use the Sprite ghost block is ghost off.
@@ -260,7 +180,6 @@ head.setPosition(120, 60)
 game.onUpdate(function () {
     head.x += controller.dx()
 })
-
 ```
 
 ## Student Task 2: Sprite Overlap - Ghost off and on
@@ -270,179 +189,6 @@ game.onUpdate(function () {
 4. Set one (stationary) sprite ghost off and one sprite ghost on
 5. Add an event for on Overlap of the stationary SpriteKind (e.g. - in the event have an action of sprite destroy and/or sprite say)
 6. Challenge: Give the moving sprite both X & Y direction mobility. Add additional stationary sprites, with one more new SpriteKind and overlap events for all SpriteKinds (e.g. - SpriteKind of  Player, Enemy, Food)
-
-```blocks
-// :solution
-// https://makecode.com/_RV3H0vUiofv9
-
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food
-}
-let orange: Sprite = null
-let apple: Sprite = null
-let head: Sprite = null
-let shoe: Sprite = null
-let rock: Sprite = null
-let otherSprite: Sprite = null
-let sprite: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.say("help", 500)
-    pause(500)
-    otherSprite.destroy()
-    sprite.say("Yum!", 2000)
-    pause(2000)
-    otherSprite.destroy()
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.say("not food!", 1000)
-    pause(1000)
-    sprite.say("Yucky!", 1000)
-})
-rock = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . e e b . . . . . . . 
-. . . . . e e b b d d . . . . . 
-. . . e e e b b b b d d . . . . 
-. . e e b d b b d b b d d . . . 
-. . e b b d b b d d e b d . . . 
-. e e b b d b d d d d d d . . . 
-b e d b b e b d b d d b d . . . 
-. e b b b d d b b d e b d . . . 
-. e e b b d d d e b b d . . . . 
-. . e e b d d d d b d . . . . . 
-. . . e e b d b d d . . . . . . 
-. . . . e e b b d . . . . . . . 
-`, SpriteKind.Enemy)
-shoe = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . f . . 9 9 9 9 9 9 9 9 9 
-. . . . . . . . . . . . . . . . . . . . . f . 3 3 3 3 3 3 3 3 3 
-. . . . . . . . . . . . . . . . . . . . . . f 3 3 3 3 3 3 3 3 3 
-. . . . . . . . . . . . . . . . . f 3 3 3 f 3 3 3 3 3 5 5 5 3 3 
-. . . . . . . . . . . . f 3 3 3 3 3 3 3 f 3 3 3 3 3 3 5 5 5 3 3 
-. . . . . . f 3 3 3 3 3 3 3 3 3 3 3 3 f 3 3 3 3 3 3 3 5 5 5 3 3 
-. . 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-. 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-apple = sprites.create(img`
-. . . . . 7 7 . . . . 7 7 . . . 
-. . . . . 7 7 7 7 . 7 7 7 7 . . 
-. . . . . 7 7 7 7 e 7 7 7 7 . . 
-. . . . . . 7 7 e e 7 7 7 . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . 2 . . . . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . . . 2 2 2 . . . . . . . 
-`, SpriteKind.Food)
-orange = sprites.create(img`
-. . . . . 7 7 . . . . 7 7 . . . 
-. . . . . 7 7 7 7 . 7 7 7 7 . . 
-. . . . . 7 7 7 7 e 7 7 7 7 . . 
-. . . . . . 7 7 e e 7 7 7 . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . 4 4 4 4 4 . . . . . . 
-. . . . 4 4 4 4 4 4 4 . . . . . 
-. . . 4 4 4 4 4 4 4 4 4 . . . . 
-. . 4 4 4 4 4 4 4 4 4 4 4 . . . 
-. . 4 4 4 4 4 4 4 4 4 4 4 . . . 
-. . 4 4 4 4 4 4 4 4 4 4 4 . . . 
-. . . 4 4 4 4 4 4 4 4 4 . . . . 
-. . . . 4 4 4 4 4 4 4 . . . . . 
-. . . . . 4 4 4 4 4 . . . . . . 
-. . . . . . 4 4 4 . . . . . . . 
-`, SpriteKind.Food)
-head = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . a a a a a a a a a a a . . . . . . . . . . . 
-. . . . . . . . a a a a a a a a a a a a a a a . . . . . . . . . 
-. . . . . . . . . a a a 5 5 5 a a a a a a a a a . . . . . . . . 
-. . . . . . . . a 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . . 5 5 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . 5 5 5 5 6 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 a a a a a a a a a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 a a a 5 5 5 5 5 a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 1 . 1 . 1 . 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . . . 1 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . 1 . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . 
-. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . 
-. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-`, SpriteKind.Player)
-apple.setFlag(SpriteFlag.Ghost, true)
-rock.setPosition(45, 95)
-shoe.setPosition(90, 25)
-apple.setPosition(20, 60)
-head.setPosition(120, 60)
-game.onUpdate(function () {
-    head.x += controller.dx()
-    head.y += controller.dy()
-})
-
-// :end-solution
-```
-
-### ~hint
-**Teacher Note**
-
-Walk through the use of SpriteKind for overlap and how the local variables `sprite` and `otherSprite` get assigned to the overlapping items.
-
-Also, check among several students for ability to create sprite motion with game pad using the shorter (dx/dy) method.
-
-### ~
 
 ## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind Enemy
 
@@ -459,222 +205,12 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 
 ### ~
 
-```blocks
-// :solution
-// https://makecode.com/_2915zF6wc5Ah
-
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food,
-    Musical
-}
-let orange: Sprite = null
-let apple: Sprite = null
-let shoe: Sprite = null
-let head: Sprite = null
-let rock: Sprite = null
-let horn: Sprite = null
-let otherSprite: Sprite = null
-let sprite: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.say("help", 500)
-    pause(500)
-    otherSprite.destroy()
-    sprite.say("Yum!", 2000)
-    pause(2000)
-    otherSprite.destroy()
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.say("not food!", 1000)
-    pause(1000)
-    sprite.say("Yucky!", 1000)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Musical, function (sprite, otherSprite) {
-    music.ringTone(262)
-    pause(1000)
-    music.stopAllSounds()
-})
-horn = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . 7 . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . 7 7 7 . . 7 7 7 . 7 7 7 . 7 7 7 . . . . . . . . . 
-. . . . . . 7 7 5 7 7 . . 7 . . . 7 . . . 7 . . . . . . . . . . 
-. . . . . 7 7 5 5 5 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 . 7 . . . . . 
-. . . . 7 7 5 5 5 5 5 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 . . . . . 
-. . . . . 7 7 5 5 5 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 . 7 . . . . . 
-. . . . . . 7 7 5 7 7 . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . 7 7 7 . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . 7 . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Musical)
-rock = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . e e b . . . . . . . 
-. . . . . e e b b d d . . . . . 
-. . . e e e b b b b d d . . . . 
-. . e e b d b b d b b d d . . . 
-. . e b b d b b d d e b d . . . 
-. e e b b d b d d d d d d . . . 
-b e d b b e b d b d d b d . . . 
-. e b b b d d b b d e b d . . . 
-. e e b b d d d e b b d . . . . 
-. . e e b d d d d b d . . . . . 
-. . . e e b d b d d . . . . . . 
-. . . . e e b b d . . . . . . . 
-`, SpriteKind.Enemy)
-shoe = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . f . . 9 9 9 9 9 9 9 9 9 
-. . . . . . . . . . . . . . . . . . . . . f . 3 3 3 3 3 3 3 3 3 
-. . . . . . . . . . . . . . . . . . . . . . f 3 3 3 3 3 3 3 3 3 
-. . . . . . . . . . . . . . . . . f 3 3 3 f 3 3 3 3 3 5 5 5 3 3 
-. . . . . . . . . . . . f 3 3 3 3 3 3 3 f 3 3 3 3 3 3 5 5 5 3 3 
-. . . . . . f 3 3 3 3 3 3 3 3 3 3 3 3 f 3 3 3 3 3 3 3 5 5 5 3 3 
-. . 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-. 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-apple = sprites.create(img`
-. . . . . 7 7 . . . . 7 7 . . . 
-. . . . . 7 7 7 7 . 7 7 7 7 . . 
-. . . . . 7 7 7 7 e 7 7 7 7 . . 
-. . . . . . 7 7 e e 7 7 7 . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . 2 . . . . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . . . 2 2 2 . . . . . . . 
-`, SpriteKind.Food)
-orange = sprites.create(img`
-. . . . . 7 7 . . . . 7 7 . . . 
-. . . . . 7 7 7 7 . 7 7 7 7 . . 
-. . . . . 7 7 7 7 e 7 7 7 7 . . 
-. . . . . . 7 7 e e 7 7 7 . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . 4 4 4 4 4 . . . . . . 
-. . . . 4 4 4 4 4 4 4 . . . . . 
-. . . 4 4 4 4 4 4 4 4 4 . . . . 
-. . 4 4 4 4 4 4 4 4 4 4 4 . . . 
-. . 4 4 4 4 4 4 4 4 4 4 4 . . . 
-. . 4 4 4 4 4 4 4 4 4 4 4 . . . 
-. . . 4 4 4 4 4 4 4 4 4 . . . . 
-. . . . 4 4 4 4 4 4 4 . . . . . 
-. . . . . 4 4 4 4 4 . . . . . . 
-. . . . . . 4 4 4 . . . . . . . 
-`, SpriteKind.Food)
-head = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . a a a a a a a a a a a . . . . . . . . . . . 
-. . . . . . . . a a a a a a a a a a a a a a a . . . . . . . . . 
-. . . . . . . . . a a a 5 5 5 a a a a a a a a a . . . . . . . . 
-. . . . . . . . a 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . . 5 5 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . 5 5 5 5 6 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 a a a a a a a a a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 a a a 5 5 5 5 5 a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 1 . 1 . 1 . 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . . . 1 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . 1 . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . 
-. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . 
-. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-`, SpriteKind.Player)
-horn.setPosition(85, 100)
-apple.setFlag(SpriteFlag.Ghost, true)
-rock.setPosition(45, 95)
-shoe.setPosition(90, 25)
-apple.setPosition(20, 60)
-head.setPosition(120, 60)
-game.onUpdate(function () {
-    head.x += controller.dx()
-    head.y += controller.dy()
-})
-
-// :end-solution
-```
-
-
 ## What did we learn? 
 
 1. Describe how a SpriteKind label is used to detect overlap
 2. 2 or more sprites can have the same SpriteKind, explain how to reference only a sprite that was involved in the overlap.  
 
-
-
 ## Rubrics
-
 
 ### Overlap task rubric
 
@@ -690,4 +226,3 @@ game.onUpdate(function () {
 | Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with a creative example, drawing or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
-

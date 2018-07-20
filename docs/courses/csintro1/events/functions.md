@@ -9,8 +9,6 @@ In this activity student implement:
 * simple functions
 * calling  functions by name
 * shortened main program logic that is easier to understand
-* 
-
 
 ## Concept: create a simple function
 

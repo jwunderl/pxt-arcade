@@ -1,6 +1,5 @@
 # Activity: Sprite Motion and Events 
 
-
 ## Change position with controller event  
 
 # TODO video
@@ -63,57 +62,6 @@ agent = sprites.create(img`
     - add an "A" button event to move the sprite to the center of the game screen.  
     - Add a "B" button event to make the sprite "jump" (move) 15 pixels.
 
-```blocks
-// :solution
-// https://makecode.com/_0y9YPV0sa2pm
-
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let agent: Sprite = null
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.x += 3
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.x += -3
-})
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.y += -3
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.y += 3
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.x = 80
-    agent.y = 64
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.y += -15
-})
-agent = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 . . . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . 6 6 6 6 6 6 6 . . . . . 
-. . . . 6 6 6 6 6 6 6 6 . . . . 
-. . . 6 6 6 6 6 6 6 6 6 . . . . 
-. . . 6 6 6 6 6 6 6 6 6 . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . . . 6 6 6 . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-
-
-// :end-solution
-```
-
 ## Sprite Motion Velocity
 
 Velocity is speed in a particular direction - continuous movement.  In our games we typically track movement in X and Y directions. If we have a positive x velocity we more right and a negative X velocity is moving left.
@@ -125,7 +73,6 @@ Velocity is speed in a particular direction - continuous movement.  In our games
 3. Save the code for the task (name it "velocityLR" or "velocity left right")  
 
 ```blocks
-
 enum SpriteKind {
     Player,
     Enemy
@@ -155,7 +102,6 @@ agent = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-
 ```
 
 ## Student Task #2: Increment Velocity Up and Down 
@@ -165,58 +111,6 @@ agent = sprites.create(img`
 3. Challenges: 
     - add an "A" button event move the sprite to the center of the game screen.  
     - Add a "B" button event to stop the sprite (all velocities = 0).  
-
-```blocks
-// :solution
-// https://makecode.com/_MgWimJ0UjbvU
-
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let agent: Sprite = null
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vx += 1
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vx += -1
-})
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vy += -1
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vy += 1
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.x = 80
-    agent.y = 64
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    agent.vx = 0
-    agent.vy = 0
-})
-agent = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 . . . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . 6 6 6 6 6 6 6 . . . . . 
-. . . . 6 6 6 6 6 6 6 6 . . . . 
-. . . 6 6 6 6 6 6 6 6 6 . . . . 
-. . . 6 6 6 6 6 6 6 6 6 . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . . . 6 6 6 . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-
-// :end-solution
-```
-
 
 ## Motion - short dx/dy code method
 
@@ -230,7 +124,6 @@ We have created motion by capturing the key pad events and incrementing (or decr
 4. note the ``||controller:dx (left-right buttons)||`` and ``||controller:dy (up-down buttons)||`` blocks
 
 ```blocks
-
 enum SpriteKind {
     Player,
     Enemy
@@ -259,7 +152,6 @@ game.onUpdate(function () {
     ball.x += controller.dx()
     ball.y += controller.dy()
 })
-
 ```
 
 # Student Task #3: Create Velocity Motion (short method)
@@ -277,67 +169,6 @@ The "stay in screen" block is is in the sprite menu.  Use a set sprite ghost blo
 
 ### ~
 
-```blocks
-// :solution
-// https://makecode.com/_XKKJ14Vdh3ei
-
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let ball: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    ball.x = 80
-    ball.y = 64
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    ball.vx = 0
-    ball.vy = 0
-})
-scene.setBackgroundColor(1)
-ball = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 6 6 6 6 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 5 5 5 5 2 . . 
-. 2 5 5 5 6 6 6 6 6 6 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 5 5 2 . . 
-. 2 5 5 6 6 6 6 6 6 6 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 5 5 2 . . 
-. 2 5 5 6 6 6 6 6 6 6 6 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 5 5 2 . . 
-2 2 5 6 6 6 6 6 6 6 6 6 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 5 5 2 2 . 
-2 2 5 6 6 6 6 6 6 f 6 6 5 5 5 5 5 5 5 6 6 6 6 6 f 6 5 5 5 2 2 . 
-2 2 5 5 5 6 6 6 6 6 6 5 5 5 5 5 5 5 5 5 5 6 6 6 5 5 5 5 5 2 2 . 
-2 2 5 5 5 5 6 6 6 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 2 . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 a a 2 a a 2 a a 2 a a 2 a 2 a 2 a 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 a a 2 a a 2 a a 2 a a 2 a 2 a 2 a 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 . . 
-. 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-ball.setFlag(SpriteFlag.StayInScreen, true)
-game.onUpdate(function () {
-    ball.vx += controller.dx()
-    ball.vy += controller.dy()
-})
-
-// :end-solution
-```
-
 ## Flip Image 
 
 Flipping an image creates a left right mirror image when we use flip horizontal. This can be useful in creating a simple 2 frame walking animation.
@@ -347,8 +178,7 @@ Flipping an image creates a left right mirror image when we use flip horizontal.
 1. Review the code below
 2. Create the sample code and run the code https://makecode.com/_9VDMqeh0P53x 
 3. Save the code for the task (name it "FlipImage")  
-4. note use of 
-
+4. note use of  ## TODO Finish this?
 
 ```blocks
 enum SpriteKind {
@@ -409,68 +239,11 @@ sprite = sprites.create(img`
 3. Use "A" button to flip vertically (upside down and back upright)
 4. Challenge: add the flip as a function.
 
-```blocks
-// :solution
-// https://makecode.com/_4V9W91ax1RP8
-
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let agent: Sprite = null
-function fliphorizontal() {
-    agent.image.flipX()
-    pause(200)
-}
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    // for (let i = 0; i < 19; i++) { fliphorizontal() }
-    fliphorizontal()
-})
-scene.setBackgroundColor(6)
-agent = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . . 
-. . . . . . . . . . . 2 2 2 2 2 2 2 . . . . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 
-. . . . . . . . . . 2 2 7 2 2 2 7 2 2 . . . . . . . . . . . . . 
-. . . . . . . . . 2 2 2 2 2 8 2 2 2 2 2 . . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 8 8 2 2 2 . . . . . . . . . . . . . 
-. . . . . . . . . . 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 
-. . . . . . . . . . . 2 2 9 9 2 2 2 . . . . . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 2 2 2 2 2 4 4 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 4 4 2 4 4 4 4 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . 4 4 4 . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . a a a . . . . . . . . . . 
-. . . . . . . 4 4 4 . 4 4 4 4 4 4 4 . a . a . . . . . . . . . . 
-. . . . . . . a a a . 4 4 4 4 4 4 4 . a a a . . . . . . . . . . 
-. . . . . . . a . a . 4 4 4 4 4 4 4 . . . . . . . . . . . . . . 
-. . . . . . . a a a . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . 7 7 . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . d d d . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . 7 7 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . d d d . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-
-// :end-solution
-```
-
 ## What did we learn? 
 
 1. Describe how an events can be used to run code using an example.
 2. Describe the difference between changing position and changing velocity.
 3. In using flip, the sprite is **not** flipped.  What is flipped? Explain how you know.  
-
 
 ## Rubrics
 

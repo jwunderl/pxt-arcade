@@ -162,7 +162,7 @@ game.onUpdateInterval(500, function () {
     change = change * -1
 })
 game.onUpdate(function () {
-    scene.centerCameraAt(user.x - scene.screenWidth() / 2, 15)  // TODO:Change this when center gets fixed
+    scene.centerCameraAt(user.x, 15)
 })
 
 ```
