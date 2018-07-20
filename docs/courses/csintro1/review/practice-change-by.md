@@ -9,7 +9,9 @@ Have you ever wanted to make a computer count eggs for you? No? Well now you can
 3. Add an `on-A-button-press block` that increases the number of eggs by 12 when A is pressed. Yay for buying eggs!
 4. Add an `on-B-button-press block` that decreases the number of eggs by 1 when B is pressed. A delicious egg was eaten that day.
 ### ~hint
+
 `change by` will always add the number you tell it to to the variable you specify. It might be tricky to decrease the number eggs at first, but consider what types of numbers you can add to make the total smaller.
+
 ### ~
 5. Add instructions `on start` with `splash` to tell a new player what each of the buttons do, so that they know how to start buying eggs.
 6. We have one issue; we can eat eggs that don't exist! Use the `if` block to make sure that we only eat eggs if we have eggs remaining - that is, if `eggCount > 0`. If the player tries to eat an egg that they don't have, use the `else` condition to make it so the sprite says that they don't have any eggs left.

@@ -262,8 +262,11 @@ balloon.x += -50
 2. How did using a loop in this section help reduce the amount of blocks that were used?
 3. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
 4. Challenge: Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might be make your game run faster than leaving it off.
+
 ### ~hint
+
 Does the game need to check whether a sprite is overlapping another if either is a ghost?
+
 ### ~
 
 

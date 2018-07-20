@@ -21,6 +21,7 @@
 * Get students use to modifying the examples by modifying values  
     * update score increment, update interval and countdown time 
     * making the examples add 2 or 3 to the count on each button press, and identifying how that changes the results.
+
 ### ~
 
 ## Student Task 1: Make the game have a cheering coach
@@ -163,8 +164,11 @@ for (let index = 0; index <= 10; index++) {
 
 1. In task 3, you may have noticed that when you switched from a repeat loop to a for loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that?
 2. When might you want to choose to use a ``||loops:repeat||``  loop over a ``||loops:for index||`` loop?
+
 ### ~hint
-Is there a difference between how many times ``||loops repeat 0 times||`` and ``||for index from 0 to 0||`` will run? 
+
+Is there a difference between how many times ``||loops repeat 0 times||`` and ``||for index from 0 to 0||`` will run?
+
 ### ~
 
 ## Rubrics

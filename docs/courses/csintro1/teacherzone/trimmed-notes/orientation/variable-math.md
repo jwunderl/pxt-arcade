@@ -27,6 +27,7 @@ game.splash("" + answer)
 ```
 
 **coercion**: changing Type within an operation (e.g. - string to number for a comparison will compare the number value of the string `"3"` in `3 >= "3"` or number to string using join in the splash message example above)
+
 ### ~
 
 ## Student Task 1: Try new values in the equation 

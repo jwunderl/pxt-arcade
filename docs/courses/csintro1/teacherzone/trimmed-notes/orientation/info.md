@@ -123,7 +123,9 @@ mySprite.say("minute " + ("" + lowMinuteScore + ("-" + hiMinuteScore)))
 2. List one potential downside of using ``||info:score||`` over just using your own variables to keep track of the state of your game.
 
 ### ~hint
+
 What would you do if you needed to keep track of the number of coins the player has earned, the number of keys they have collected, and the number of chicken legs they have to eat. Would using ``||info:score||`` be helpful in storing all these values?
+
 ### ~
 
 ### Task rubrics

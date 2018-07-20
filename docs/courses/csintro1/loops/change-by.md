@@ -72,6 +72,7 @@ Challenge requires using ``||text:join||`` from Text Blocks under Advanced
 Then ``||text:join||`` the score with a few words of encouragement.
 
 ``||info:score||`` is located in the info Blocks
+
 ### ~
 
 ## Student Task 2: Move in a spiral
