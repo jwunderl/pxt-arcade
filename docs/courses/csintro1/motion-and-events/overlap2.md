@@ -236,7 +236,7 @@ Challenge Tip: Erratic motion can be made by changing the sprite position back a
 
 ## What did we learn?
 
-1. Describe how a SpritKind makes improves the code (e.g - makes programming easier, more powerful, more efficient...).    
+1. Describe how a SpritKind can improve code (e.g - makes programming easier, more powerful, more efficient...).    
 2. Explain why in creating a "bump" effect negative X and Y velocities are used to change the X and Y positions. 
 
 ## Rubrics
