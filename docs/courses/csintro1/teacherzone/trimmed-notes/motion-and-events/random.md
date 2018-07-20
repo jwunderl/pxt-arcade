@@ -20,10 +20,9 @@ Repeat for smaller than 5 , down to zero.
 
 ### ~
 
+https://makecode.com/_CwaCsqfg4hAF
 ## Task #1: create random numbers ranges 
 ```blocks
-// https://makecode.com/_guHCVgaxAiXy
-
 let positiveOrNegative = 0
 let anotherRandom = 0
 let randomNumber = 0
@@ -41,25 +40,23 @@ console.logValue("-10 to 10", positiveOrNegative)
 ## Example #2: random sprite location 
 
 ## Task #2: Set random position using a button event
-
+https://makecode.com/_5iohuoV11crL
 ```blocks
-// https://makecode.com/_KUu08Kc9UXj2
-
 enum SpriteKind {
     Player,
     Enemy
 }
 let hat: Sprite = null
-let actor: Sprite = null
+let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+    mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
     hat.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    actor.vx = Math.randomRange(-10, 10)
-    actor.vy = Math.randomRange(-10, 10)
+    mySprite.vx = Math.randomRange(-10, 10)
+    mySprite.vy = Math.randomRange(-10, 10)
 })
-actor = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . 5 . . 5 . . 5 . . . . . . 
 . . . . 5 . 5 . 5 . . . . . . . 
@@ -111,28 +108,26 @@ hat = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 hat.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 ```
 
 ## Example #3: check for random overlap 
 
 ## Task #3: check for random overlap with many sprites
-
+https://makecode.com/_9LvUTX7X5RJA
 ```blocks
-// https://makecode.com/_EoRXfFEm5eFL
-
 enum SpriteKind {
     Player,
     Enemy,
     Hat
 }
 let hat3: Sprite = null
-let actor: Sprite = null
+let mySprite: Sprite = null
 let hat2: Sprite = null
 let hat1: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+    mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
     hat1.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
     hat2.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
     hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
@@ -248,7 +243,7 @@ hat3 = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Hat)
-actor = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . 5 . . 5 . . 5 . . . . . . 
 . . . . 5 . 5 . 5 . . . . . . . 
@@ -266,7 +261,7 @@ actor = sprites.create(img`
 . . . 7 . . . . . 7 . . . . . . 
 . . 2 2 . . . . . 2 2 . . . . . 
 `, SpriteKind.Player)
-actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 hat1.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 hat2.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))

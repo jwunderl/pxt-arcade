@@ -20,7 +20,7 @@ We use SpriteKind to classify our sprites.  We can have sprites that are Player,
 
 ## Example 1: Two Sprite Overlap  
 1. Review the code below 
-2. Create the sample code and run the code https://makecode.com/_5pReRdcab2gm 
+2. Create the sample code and run the code https://makecode.com/_e77ia1MAyA0U
 3. Save the code for the task (name it "eatFruit")  
 4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite` 
 
@@ -109,7 +109,7 @@ The sprite **ghost on** setting makes the sprite able to pass "through" with oth
 
 ## Example 2: Sprite Overlap - Ghost on 
 1. Review the code below
-2. Create the sample code and run the code https://makecode.com/_7JU2esMVw9hf  
+2. Create the sample code and run the code https://makecode.com/_FR3ciEHqR8YE
 3. Note: find the set ghost on block - switching to ghost off  means "no ghost" properties and the code will run like example 1.
 
 ```blocks
