@@ -75,8 +75,3 @@
 
 * [Arrays](/courses/csintro1/arrays)
     * [Intro](/courses/csintro1/arrays/intro)
-
-## Animation
-
-* [Animation](/courses/csintro1/animation)
-    * [Intro](/courses/csintro1/animation/intro)
