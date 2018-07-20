@@ -69,9 +69,9 @@ game.onUpdate(function () {
 
 ### ~
 
-```blocks
-// https://makecode.com/_Ujght09RXCmJ
+https://makecode.com/_Wjfcstfppdbu
 
+```blocks
 enum SpriteKind {
     Helicopter,
     Cloud,
@@ -300,9 +300,9 @@ Continue to reinforce to students that SpriteKind controls overlap events. Any a
 
 ### ~
 
-```blocks
-// https://makecode.com/_J488iW5KW2w4
+https://makecode.com/_ReDWRUa989L8
 
+```blocks
 enum SpriteKind {
     Helicopter,
     Cloud,
@@ -563,7 +563,7 @@ game.onUpdate(function () {
 
 ## What did we learn?
 
-1. Describe how a SpritKind makes improves the code (e.g - makes programming easier, more powerful, more efficient...).    
+1. Describe how a SpriteKind can improve code (e.g - makes programming easier, more powerful, more efficient...).    
 2. Explain why in creating a "bump" effect negative X and Y velocities are used to change the X and Y positions.
 
 ## Rubrics
