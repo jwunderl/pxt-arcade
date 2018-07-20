@@ -43,8 +43,8 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let actor: Sprite = null
-actor = sprites.create(img`
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . 5 . . 5 . . 5 . . . . . . 
 . . . . 5 . 5 . 5 . . . . . . . 
@@ -62,8 +62,7 @@ actor = sprites.create(img`
 . . . 7 . . . . . 7 . . . . . . 
 . . 2 2 . . . . . 2 2 . . . . . 
 `, SpriteKind.Player)
-actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
-
+mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 ```  
 
 ## Task #2: Set random position using a button event
@@ -78,9 +77,9 @@ actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 For Challenge: velocity can be set using the set sprite blocks
 
 ```block
-let actor: Sprite = null
-actor.vx = 0
-actor.vy = 0
+let mySprite: Sprite = null
+mySprite.vx = 0
+mySprite.vy = 0
 ```
 
 ### ~
@@ -89,7 +88,7 @@ actor.vy = 0
 
 1. Review the code below
 2. Create the sample code and run the code 
-4. Examine the use of SpriteKind in the overlap.
+3. Examine the use of SpriteKind in the overlap.
 
 ```blocks
 enum SpriteKind {
@@ -97,10 +96,10 @@ enum SpriteKind {
     Enemy,
     Hat
 }
-let actor: Sprite = null
+let mySprite: Sprite = null
 let hat: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+    mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Hat, function (sprite, otherSprite) {
     sprite.say("Excuse Me!", 500)
@@ -139,7 +138,7 @@ hat = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Hat)
-actor = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . 5 . . 5 . . 5 . . . . . . 
 . . . . 5 . 5 . 5 . . . . . . . 
@@ -157,7 +156,7 @@ actor = sprites.create(img`
 . . . 7 . . . . . 7 . . . . . . 
 . . 2 2 . . . . . 2 2 . . . . . 
 `, SpriteKind.Player)
-actor.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 hat.setPosition(35, 60)
 ```
 

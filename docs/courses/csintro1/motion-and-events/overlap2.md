@@ -35,9 +35,9 @@ Having sprites bump rather than pass over each other is useful game behavior for
 3. Save the code for the task (name it "copterBump1")  
 4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite` and the how the code creates the bump behavior.
 
-```blocks
-// https://makecode.com/_JqUREsW6cPKP
+https://makecode.com/_UhT3dj2UjKPv
 
+```blocks
 enum SpriteKind {
     Helicopter,
     Cloud,
