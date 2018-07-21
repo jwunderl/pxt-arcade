@@ -196,7 +196,7 @@ game.onUpdate(function () {
 1. start with Task #1, Task #2 or your own similar code
 2. add a few Sprites that will use the same SpriteKind (such as SpriteKind Enemy) and a third & fourth SpriteKind as well 
 3. enable sprite to move anywhere on screen along x and y axis
-4. Challenge: use a total of 6 or more sprites and have an overlap involving each SpriteKind. Make one of the Overlap events play a sound, pause and then stop all sounds.
+4. Challenge: using a total of 6 or more sprites and have an overlap involving each SpriteKind. Make one of the Overlap events play a sound, pause and then stop all sounds.
 
 ### ~hint
 
