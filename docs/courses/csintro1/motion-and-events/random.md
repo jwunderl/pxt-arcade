@@ -20,6 +20,7 @@ We can pick a random number in a range using ``||math:pick random||``.  We can s
 let randomNumber = 0
 randomNumber = Math.randomRange(0, 10)
 game.splash("Random Number is " + randomNumber)
+```
 
 ## Task #1: create random numbers ranges 
 
