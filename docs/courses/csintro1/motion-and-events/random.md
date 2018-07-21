@@ -2,33 +2,37 @@
 
 In this activity student will work with: 
 *  ``||math:pick random||`` to generate random numbers
-* setting sprite x and y positions
+* setting sprite x and y positions  
+* setting button press events
 
 ## Concept: pick a random number
 We can pick a random number in a range using ``||math:pick random||``.  We can set it to a variable and 'print' it out to the console. 
 
+# TODO Video 
+
 ## Example #1: pick random
 1. Review the code below
 2. Create the sample code and run the code
-3. press the "Show Console Simulator" and re-run several times to see random numbers
-4. look for how the range (between two numbers) is set
+3. re-run several times to see random numbers
+4. Observe how the range (between two numbers) is set
 
 ```blocks  
 let randomNumber = 0
 randomNumber = Math.randomRange(0, 10)
-console.logValue("number", randomNumber)
-```  
+game.splash("Random Number is " + randomNumber)
 
 ## Task #1: create random numbers ranges 
+
 1. starting with the above example 
 2. adjust the code to pick a random number from 1 to 100
 3. add a new variable `anotherRandom` to pick a random number from 20 to 30
-4. add ``||console:console log value||`` for 'anotherRandom' variable and change the label from 'x' to a meaningful label
-t. Challenge: Log the value of a random number that can have both negative and positive values
+4. add ``||game:splash||`` for 'anotherRandom' variable and change the label from 'x' to a meaningful label
+5. Challenge: create the value of a random number that can have both negative and positive values
 
 ## Concept: pick a random location
 
 # TODO: Video eric
+
 Games like to have an element of luck and surprise so we will use random number to place a sprite on the screen.  We can use a random range because we know the dimensions of the screen.
 
 ## Example #2: random sprite location 

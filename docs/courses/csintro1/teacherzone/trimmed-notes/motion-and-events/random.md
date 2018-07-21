@@ -3,6 +3,7 @@
 In this activity student will work with: 
 *  ``||math:pick random||`` to generate random numbers
 * setting sprite x and y positions
+* setting button press events
 
 ## Concept: pick a random number
 
@@ -20,18 +21,21 @@ Repeat for smaller than 5 , down to zero.
 
 ### ~
 
-https://makecode.com/_CwaCsqfg4hAF
 ## Task #1: create random numbers ranges 
+
+https://makecode.com/_ahtdT1UrfP95
+
+
 ```blocks
 let positiveOrNegative = 0
 let anotherRandom = 0
 let randomNumber = 0
 randomNumber = Math.randomRange(1, 100)
-console.logValue("1 to 100", randomNumber)
+game.splash("1 to 100: " + randomNumber)
 anotherRandom = Math.randomRange(20, 30)
-console.logValue("20 to 30", anotherRandom)
+game.splash("20 to 30: " + anotherRandom)
 positiveOrNegative = Math.randomRange(-10, 10)
-console.logValue("-10 to 10", positiveOrNegative)
+game.splash("-10 to 10: " + positiveOrNegative)
 ```
 
 
@@ -40,7 +44,10 @@ console.logValue("-10 to 10", positiveOrNegative)
 ## Example #2: random sprite location 
 
 ## Task #2: Set random position using a button event
-https://makecode.com/_5iohuoV11crL
+
+https://makecode.com/_CwaCsqfg4hAF
+
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -115,7 +122,9 @@ hat.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 ## Example #3: check for random overlap 
 
 ## Task #3: check for random overlap with many sprites
+
 https://makecode.com/_9LvUTX7X5RJA
+
 ```blocks
 enum SpriteKind {
     Player,
