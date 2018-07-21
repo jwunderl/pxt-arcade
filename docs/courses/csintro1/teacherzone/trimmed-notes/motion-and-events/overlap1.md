@@ -1,6 +1,7 @@
 # Activity: Sprite Overlap & Events 1
 
 In this activity the student will work with:
+* SpriteKind
 * On Overlap event with SpriteKind
 * Ghost on - Ghost off
 * destroy sprite  
@@ -260,8 +261,10 @@ Also, check among several students for ability to create sprite motion with game
 
 ### ~
 
-## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind Enemy
+## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind 
+
 https://makecode.com/_8vvhL4RL0Xdy
+
 ```blocks
 enum SpriteKind {
     Player,

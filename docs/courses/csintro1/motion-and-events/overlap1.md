@@ -5,6 +5,7 @@ Once the spites are moving, the next step is to detect when sprites interact wit
 Sprites, and other game objects, can overlap to activate event code such as scoring points, destroying an object, simulating a bump between objects, starting an animation, ending the game, and much more.
 
 In this activity the student will work with:
+* SpriteKind
 * On Overlap event with SpriteKind
 * Ghost on - Ghost off
 * destroy sprite
@@ -190,7 +191,7 @@ game.onUpdate(function () {
 5. Add an event for on Overlap of the stationary SpriteKind (e.g. - in the event have an action of sprite destroy and/or sprite say)
 6. Challenge: Give the moving sprite both X & Y direction mobility. Add additional stationary sprites, with one more new SpriteKind and overlap events for all SpriteKinds (e.g. - SpriteKind of  Player, Enemy, Food)
 
-## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind Enemy
+## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind 
 
 1. start with Task #1, Task #2 or your own similar code
 2. add a few Sprites that will use the same SpriteKind (such as SpriteKind Enemy) and a third SpriteKind as well
