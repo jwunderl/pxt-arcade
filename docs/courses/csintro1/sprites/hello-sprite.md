@@ -47,9 +47,9 @@ mySprite.say(msg)
 1. Identify and show the JavaScript code that aligns with which each block.  
 2. Identify any JavaScript code that doesn't seem to have any blocks. Hypothesize and Explain.  
  
-https://youtu.be/9xSWNoDOAQc 
-
 # Example: console.log()  
+
+https://youtu.be/9xSWNoDOAQc 
 
 1. Start a new project (name it "console")  
 2. Switch to JavaScript view and replace all code with the code below  
