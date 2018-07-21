@@ -189,13 +189,13 @@ game.onUpdate(function () {
 3. Make the other sprites stationary and both of the same SpriteKind (e.g.- SpriteKind Enemy). 
 4. Set one (stationary) sprite ghost off and one sprite ghost on
 5. Add an event for on Overlap of the stationary SpriteKind (e.g. - in the event have an action of sprite destroy and/or sprite say)
-6. Challenge: Give the moving sprite both X & Y direction mobility. Add additional stationary sprites, with one more new SpriteKind and overlap events for all SpriteKinds (e.g. - SpriteKind of  Player, Enemy, Food)
+6. Add additional stationary sprites, with one more new SpriteKind and overlap events for all SpriteKinds (e.g. - SpriteKind of  Player, Enemy, Food)
 
 ## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind 
 
 1. start with Task #1, Task #2 or your own similar code
-2. add a few Sprites that will use the same SpriteKind (such as SpriteKind Enemy) and a third SpriteKind as well
-3. enable sprite to move anywhere on screen along x and y axises
+2. add a few Sprites that will use the same SpriteKind (such as SpriteKind Enemy) and a third & fourth SpriteKind as well 
+3. enable sprite to move anywhere on screen along x and y axis
 4. Challenge: use a total of 6 or more sprites and have an overlap involving each SpriteKind. Make one of the Overlap events play a sound, pause and then stop all sounds.
 
 ### ~hint
