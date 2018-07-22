@@ -18,18 +18,20 @@ In this activity the student will continue to work with:
 
 
 ## Concept: SpriteKind Overlap Event "bump" action  
-Having sprites bump rather than pass over each other is useful game behavior for a SpriteKind overlap event. One way to simulate a bump is:
-* move the sprite in the opposite direction after the overlap (We bump backwards).  The faster we bump, the farther we move away from the overlap object.
 
-* Stop the sprite (set vx and vy to 0)
-  * change x position by (-1)\*(x-velocity)
-  * change y position by (-1)\*(y-velocity)
-* Shake the stationary object (cloud)
-  * move 1 pixel (any direction)
-  * pause
-  * move back
+Having sprites bump rather than pass over each other is useful game behavior for a SpriteKind overlap event. One way to simulate a bump is:
+
+* move the sprite in the opposite direction after the overlap (We bump backwards).  The faster we bump, the farther we move away from the overlap object.  
+* Stop the sprite (set vx and vy to 0)  
+  * change x position by (-1)\*(x-velocity)  
+  * change y position by (-1)\*(y-velocity)  
+* Shake the stationary object (cloud)  
+  * move 1 pixel (any direction)  
+  * pause  
+  * move back  
 
 ## Example 1: bump action from overlap event  
+
 1. Review the code below 
 2. Create the sample code and run the code 
 3. Save the code for the task (name it "copterBump1")  
@@ -227,6 +229,7 @@ Challenge Tip: Erratic motion can be made by changing the sprite position back a
 ### ~
 
 ## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
+
 1. starting with example or task #1 
 2. add a new sprite that looks nothing like a cloud (e.g.- hat, tree, etc.)
 3. make sure the new sprite has SpriteKind of "Cloud"  
