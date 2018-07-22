@@ -29,11 +29,13 @@ A car going 10 meters/second bumps -10 centimeters.
 
 Ask: what if going -100 meters/second?  [Answer] bumps +100 centimeters - always note the sign Changes (positive/negative swap)
 
-### ~
+
 
 ### Review the bump code  
 
-This is the code that bumps the helicopter
+This is the code that bumps the helicopter 
+### ~
+
 ```block
     sprite.x += -1 * sprite.vx
     sprite.y += -1 * sprite.vy
@@ -41,24 +43,35 @@ This is the code that bumps the helicopter
     sprite.vy = 0
 ```
 
+### ~hint
+
 Ask students for the values of sprite .x and sprite.y if sprite.vx = -25 and sprite .vy = 30
 
 ### Review the shake code  
 
 This code shakes the cloud by moving it 1 pixel and then back
 
+### ~
+
 ```block
     otherSprite.y += -1
     pause(100)
     otherSprite.y += 1
 ```
+### ~hint  
+
 It moves the spite 1 pixel, pauses and then moves back. 
+
 ### ~
 
 ## Student Task #1: Soft Landing  
+
 ### ~hint
 
 Continue to quiz students throughout the course on how to use the short method to give a sprite motion using ``||controller:dx (left-right buttons)||``  type controller block.
+
+
+### ~
 
 ```block
 game.onUpdate(function () {
@@ -66,8 +79,7 @@ game.onUpdate(function () {
     copter.vy += controller.dy()
 })
 ```
-
-### ~
+### Solution
 
 https://makecode.com/_Wjfcstfppdbu
 
