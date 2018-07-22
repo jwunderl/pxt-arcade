@@ -249,19 +249,13 @@ Challenge Tip: Erratic motion can be made by changing the sprite position back a
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Overlap & Events 2 | completed tasks|  fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and All Challenge Code  |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with original example, drawing or analogy |
+| Overlap & Events 2 | completed tasks |  Fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and All Challenge Code  |
 
 ### Score = \_\_\_\_\_\_ /10 
 
 
-### What did we learn rubric [TODO review based on number of questions]
+
+### What did we learn rubric 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanation | answers for both questions | Explanations address all questions fully | all answers have clear explanations with at least 2 examples for question #1 |  used an exceptional explanation (such as a diagram) in question #2 |
