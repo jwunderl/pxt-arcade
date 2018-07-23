@@ -13,7 +13,7 @@ In this activity Students are introduced to:
 
 ## Concept: Set a Sprite variable to an image using the image editor
 
-https://youtu.be/tGISp5qcrR4 
+https://youtu.be/tGISp5qcrR4
 
 Sprites are created using the Sprites menu - choosing the set block  
 
@@ -101,7 +101,7 @@ https://youtu.be/oupwql9r-80
 
 ### ~hint
 
-Try Changing the background color using ``||Scene: set background color to||`` red as 2
+Try Changing the background color using ``||Scene: set background color to||``
 
 ### ~
 

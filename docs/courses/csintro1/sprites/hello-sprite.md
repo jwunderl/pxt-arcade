@@ -1,6 +1,6 @@
 # Activity: Hello Sprite
 
-"Hello World!" is a common first example used to introduce the syntax of a new programming language by showing a few words on a screen. In this activity we will display "Hello World!" on the game screen.  Then we will modify our code to display in the **Console Simulator** environment.  
+"Hello World!" is a common first example used to introduce the syntax of a new programming language by showing a few words on a screen. In this activity we will display "Hello World!" on the game screen.  Then we will modify our code to display in the **Console Simulator** environment.
 
 In this lesson students use:
 * Sprite Say
@@ -10,7 +10,7 @@ In this lesson students use:
 
 ## Concept: ``||sprites:say||``
 
-https://youtu.be/iufK6TM9OkM  
+https://youtu.be/iufK6TM9OkM
 
 Sprite Objects have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 
@@ -46,10 +46,10 @@ mySprite.say(msg)
 ## What did we learn? 
 1. Identify and show the JavaScript code that aligns with which each block.  
 2. Identify any JavaScript code that doesn't seem to have any blocks. Hypothesize and Explain.  
- 
-# Example: console.log()  
 
-https://youtu.be/9xSWNoDOAQc 
+# Example: console.log()
+
+https://youtu.be/9xSWNoDOAQc
 
 1. Start a new project (name it "console")  
 2. Switch to JavaScript view and replace all code with the code below  
@@ -68,11 +68,15 @@ console.log("msg sent!")
     * a string (example: "Hello console")
     * a string variable (example: use **msg** variable)
 
+### ~hint
+
 Consider This!: The code `console.log()` doesn't use **mySprite** as with ``||sprites:say||``. Why?
 
-## Task: Add another sprite and set its coordinates
+### ~
 
-https://youtu.be/1xQWu1tHFCo 
+## Task: Add another sprite and set it's coordinates
+
+https://youtu.be/1xQWu1tHFCo
 
 1. Start with the above project and add another sprite (need a different variable name) 
 2. add in a ``||sprite:say||`` messages to have a conversation with the first sprite
@@ -80,7 +84,7 @@ https://youtu.be/1xQWu1tHFCo
 
 ### ~hint
 
-There is a pause block under the Loops menu ``||Loops:pause(1000)||`` that can be used to delay the response of the second sprite.
+There is a pause block under the Loops menu ``||loops:pause(1000)||`` that can be used to delay the response of the second sprite.
 
 ### ~
 
@@ -93,7 +97,6 @@ There is a pause block under the Loops menu ``||Loops:pause(1000)||`` that can b
 
 3. Discuss the different ways we can display a message in this exercise. List and example.
 4. Come up with a hypothesis and explain why `console.log()` has a large limit on the length of text. Explain.
-
 
 ## Rubrics
 
