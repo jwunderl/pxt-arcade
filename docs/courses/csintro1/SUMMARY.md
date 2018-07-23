@@ -27,7 +27,7 @@
     * [Overlap Section 1](/courses/csintro1/motion-and-events/overlap1)
     * [Random](/courses/csintro1/motion-and-events/random)
     * [Overlap Section 2](/courses/csintro1/motion-and-events/overlap2)
-    * [Sprite Create and On Create](/courses/csintro1/motion-and-events/create-on-create-sprites.md)
+    * [Sprite Create and On Create](/courses/csintro1/motion-and-events/create-on-create-sprites)
 
 ## Review and Extensions
 
@@ -72,11 +72,10 @@
 * [Arrays](/courses/csintro1/arrays)
     * [Intro](/courses/csintro1/arrays/intro)
 
-## CS Teacher Zone Material
+## [CS Teacher Zone Material](/courses/csintro1/teacherzone/trimmed-notes/teachers)
 
 ## Orientation Teacher
-
-* [Orientation Teacher](/courses/csintro1/orientation)
+* [Orientation Teacher](/courses/csintro1/teacherzone/trimmed-notes/orientation)
     * [Birthday Algorithm](/courses/csintro1/teacherzone/trimmed-notes/orientation/birthday-algorithm)
     * [Orientation to Makecode](/courses/csintro1/teacherzone/trimmed-notes/orientation/makecode-orientation)
     * [Sprites](/courses/csintro1/teacherzone/trimmed-notes/orientation/sprites)
@@ -85,14 +84,14 @@
 
 ## Sprites Teacher
 
-* [Sprites Teacher](/courses/csintro1/sprites)
+* [Sprites Teacher](/courses/csintro1/teacherzone/trimmed-notes/sprites)
     * [Coordinate Walker](/courses/csintro1/teacherzone/trimmed-notes/sprites/coordinate-walker)
     * [Collage](/courses/csintro1/teacherzone/trimmed-notes/sprites/collage)
     * [Hello Sprite](/courses/csintro1/teacherzone/trimmed-notes/sprites/hello-sprite)
 
 ## Motion and Events Teacher
 
-* [Motion and Events Teacher](/courses/csintro1/motion-and-events)
+* [Motion and Events Teacher](/courses/csintro1/teacherzone/trimmed-notes/motion-and-events)
     * [Sprite Motion Event](/courses/csintro1/teacherzone/trimmed-notes/motion-and-events/sprite-motion-event)
     * [Overlap Section 1](/courses/csintro1/teacherzone/trimmed-notes/motion-and-events/overlap1)
     * [Random](/courses/csintro1/teacherzone/trimmed-notes/motion-and-events/random)
@@ -101,7 +100,7 @@
 
 ## Review and Extensions Teacher
 
-* [Review and Extensions Teacher](/courses/csintro1review)
+* [Review and Extensions Teacher](/courses/csintro1/teacherzone/trimmed-notes/review)
     * [Review Game](/courses/csintro1/teacherzone/trimmed-notes/review/review-game)
     * [Car Avoider](/courses/csintro1/teacherzone/trimmed-notes/review/car-avoider)
     * [Baseball Catching](/courses/csintro1/teacherzone/trimmed-notes/review/baseball-catching)
@@ -118,7 +117,7 @@
 
 ## Loops and Functions Teacher
 
-* [Loops and Functions Teacher](/courses/csintro1/loops-and-functions)
+* [Loops and Functions Teacher](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions)
     * [Intro](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions/intro)
     * [Change By](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions/change-by)
     * [Projectiles](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions/projectiles)
@@ -127,17 +126,17 @@
 
 ## Tilemap Teacher
 
-* [Tilemap Teacher](/courses/csintro1/tilemap)
+* [Tilemap Teacher](/courses/csintro1/teacherzone/trimmed-notes/tilemap)
     * [Intro](/courses/csintro1/teacherzone/trimmed-notes/tilemap/intro)
     * [Collisions](/courses/csintro1/teacherzone/trimmed-notes/tilemap/collisions)
 
 ## Logic Teacher
 
-* [Logic Teacher](/courses/csintro1/logic)
+* [Logic Teacher](/courses/csintro1/teacherzone/trimmed-notes/logic)
     * [Conditionals](/courses/csintro1/teacherzone/trimmed-notes/logic/conditions)
     * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
 
 ## Arrays Teacher
 
-* [Arrays Teacher](/courses/csintro1/arrays)
+* [Arrays Teacher](/courses/csintro1/teacherzone/trimmed-notes/arrays)
     * [Intro](/courses/csintro1/teacherzone/trimmed-notes/arrays/intro)
