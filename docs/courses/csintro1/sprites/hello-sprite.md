@@ -10,7 +10,7 @@ In this lesson students use:
 
 ## Concept: ``||sprites:say||``
 
-https://youtu.be/bsixXqQgPEI 
+https://youtu.be/iufK6TM9OkM  
 
 Sprite Objects have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 

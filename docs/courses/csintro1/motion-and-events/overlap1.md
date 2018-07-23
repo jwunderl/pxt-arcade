@@ -12,10 +12,10 @@ In this activity the student will work with:
 
 # Overlaps
 
-# TODO: eric overview video
-
 
 ## Concept: SpriteKind Overlap Event
+
+https://youtu.be/rdZdXltoWXE 
 
 We use SpriteKind to classify our sprites.  We can have sprites that are Player, Enemy, Coin, SpaceShip or anything crate any label that is a good descriptive name.  Sometimes there just 1 of a SpriteKind and other times there will be many as with clouds. Once we have SpriteKind we can check if SpriteKinds are overlapping using the on SpriteKind overlap event.
 

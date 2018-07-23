@@ -2,7 +2,7 @@
 
 ## Change position with controller event  
 
-# TODO video
+https://youtu.be/O27uzdkbgK4 
 
 Motion **is** change in position, to be still means position doesn't change. To get sprites moving we will change their position using a game pad event.  The game pad has controller events for up, down, left and right so we can change sprite location and make the sprite move.  We will also see how to give a sprite a velocity.  Velocity is the rate of change of our position and is similar to Kilometers/hour or Miles/hour. When velocity is not 0 (zero) then the sprite will be in motion.
 
@@ -65,6 +65,9 @@ agent = sprites.create(img`
 
 ## Sprite Motion Velocity
 
+https://youtu.be/Gl0Y2sHY_MA 
+
+
 Velocity is speed in a particular direction - continuous movement.  In our games we typically track movement in X and Y directions. If we have a positive x velocity we more right and a negative X velocity is moving left.
 
 ## Example 2: increment velocity left and right 
@@ -113,7 +116,9 @@ agent = sprites.create(img`
     - add an "A" button event move the sprite to the center of the game screen.  
     - Add a "B" button event to stop the sprite (all velocities = 0).  
 
-## Motion - short dx/dy code method
+## Motion - short dx/dy code method  
+
+https://youtu.be/TPpg3jp2lx4 
 
 We have created motion by capturing the key pad events and incrementing (or decrementing) a location coordinate or velocity. Now that we have seen how this works for the four directional buttons we can use a shorter method.
 
@@ -155,6 +160,7 @@ game.onUpdate(function () {
 })
 ```
 
+
 ## Student Task #3: Create Velocity Motion (discover the short method)
 
 1. start with Motion (short method) example above or similar code
@@ -169,7 +175,11 @@ The "stay in screen" block is is in the sprite menu.  Start with a ``||Sprite:se
 
 ### ~
 
+## Flip Image
 
+https://youtu.be/1tae8OZpt4w 
+
+By making a mirror flip of a sprite we can simulate walking by making each leg appear differently 
 
 ## Example 4: Image Flip with button press event
 
