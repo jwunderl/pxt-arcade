@@ -12,7 +12,7 @@ In this activity we will use
 
 ## Student Task: Build a Collage 
 
-// https://makecode.com/_7dtM9RfzKKD4 
+https://makecode.com/_7dtM9RfzKKD4 
 
 ```blocks
 enum SpriteKind {
