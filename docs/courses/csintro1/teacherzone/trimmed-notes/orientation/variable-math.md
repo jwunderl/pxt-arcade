@@ -14,17 +14,23 @@ In this activity student will:
 ## Concept: Using Math Operators with Variables
 
 ## Example: math equation in a variable
+
 ### ~hint
 
 ## Discuss with students
 The join block is used to **coerce** a number into a string JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash knows that we are displaying the string representation of our `answer` variable.
 
 If only displaying a number we use an empty string in the join 
+
+### ~
+
 ```blocks
 let answer = 0
 answer = 3 + 5
 game.splash("" + answer)
 ```
+
+### ~hint
 
 **coercion**: changing Type within an operation (e.g. - string to number for a comparison will compare the number value of the string `"3"` in `3 >= "3"` or number to string using join in the splash message example above)
 
@@ -67,6 +73,7 @@ game.showLongText("13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7 = " + answer, DialogLayo
 ### ~hint
 
 ## Tell students
+
 Look at the JavaScript.  Parenthesis `( )`are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
 ![animation: Parenthesis in math code](/static/courses/csintro1/orientation/parenthesis-math.gif)
 
@@ -125,6 +132,7 @@ game.splash("15*5+9/6-10 = " + answer)
 ```
 
 ## Student Task 4: Conversion
+
 ```blocks
 // https://makecode.com/_A3PHiyg9rTD6
 
@@ -141,6 +149,7 @@ game.splash("" + tempF + " F", "Celsius " + tempC)
 
 
 ## Student Task 5: Debugging
+
 1. Use ``||text:join||`` to show sprite
 ```blocks
 let c = 0
@@ -165,6 +174,7 @@ b = a + 5
 c = a + (2 * b)
 game.splash("" + c)
 ```
+
 ## Variables Summary
 
 ## What did we learn? 
@@ -176,6 +186,7 @@ game.splash("" + c)
 ## Rubrics
 
 ### Code Tasks
+
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
 | Variable Math Tasks | Completed at least 4 coding tasks |Completed All 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
@@ -187,4 +198,5 @@ game.splash("" + c)
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations |  Explanations are outstanding in detail and/or use creative examples |
+
 ### Score = \_\_\_\_\_\_ /10 
