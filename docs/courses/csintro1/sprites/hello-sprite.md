@@ -63,6 +63,8 @@ console.log("msg sent!")
 
 ## Task: Add console.log( ) to "sprite hello"
 
+https://youtu.be/1xQWu1tHFCo
+
 1. open (or recreate) the "sprite hello"  
 2. add in console messages using `console.log()` for:
     * a string (example: "Hello console")
@@ -75,8 +77,6 @@ Consider This!: The code `console.log()` doesn't use **mySprite** as with ``||sp
 ### ~
 
 ## Task: Add another sprite and set it's coordinates
-
-https://youtu.be/1xQWu1tHFCo
 
 1. Start with the above project and add another sprite (need a different variable name) 
 2. add in a ``||sprite:say||`` messages to have a conversation with the first sprite

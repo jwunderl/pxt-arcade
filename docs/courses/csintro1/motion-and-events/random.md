@@ -2,8 +2,8 @@
 
 In this activity student will work with: 
 *  ``||math:pick random||`` to generate random numbers
-* setting sprite x and y positions  
-* setting button press events
+* Setting sprite x and y positions  
+* Setting button press events
 
 ## Concept: pick a random number
 We can pick a random number in a range using ``||math:pick random||``.  We can set it to a variable and 'print' it out to the console. 
@@ -13,7 +13,7 @@ We can pick a random number in a range using ``||math:pick random||``.  We can s
 ## Example #1: pick random
 1. Review the code below
 2. Create the sample code and run the code
-3. re-run several times to see random numbers
+3. Re-run several times to see random numbers
 4. Observe how the range (between two numbers) is set
 
 ```blocks  
@@ -24,24 +24,24 @@ game.splash("Random Number is " + randomNumber)
 
 ## Task #1: create random numbers ranges 
 
-1. starting with the above example 
-2. adjust the code to pick a random number from 1 to 100
-3. add a new variable `anotherRandom` to pick a random number from 20 to 30
-4. add ``||game:splash||`` for 'anotherRandom' variable and change the label from 'x' to a meaningful label
-5. Challenge: create the value of a random number that can have both negative and positive values
+1. Starting with the above example 
+2. Adjust the code to pick a random number from 1 to 100
+3. Add a new variable `anotherRandom` to pick a random number from 20 to 30
+4. Add ``||game:splash||`` for 'anotherRandom' variable and change the label from 'x' to a meaningful label
+5. **Challenge:** create the value of a random number that can have both negative and positive values
 
 ## Concept: pick a random location
 
 # TODO: Video eric
 
-Games like to have an element of luck and surprise so we will use random number to place a sprite on the screen.  We can use a random range because we know the dimensions of the screen.
+Games often have an element of luck and surprise to keep the player engaged. In this example, we will use random numbers to place a sprite on the screen in a random location.  We can use a random range because we know the dimensions of the screen.
 
 ## Example #2: random sprite location 
 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it 'randomLocation) 
-4. Examine the use of pick random in the sprite location block.  The code does not assign the random pick to a variable.
+4. Examine the use of pick random in the sprite location block. The code does not assign the chosen random number to a variable.
 
 ```blocks  
 enum SpriteKind {
@@ -71,11 +71,11 @@ mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 ```  
 
 ## Task #2: Set random position using a button event
-1. starting with example #2 example 
-2. add a ``||controller:on A button pressed||`` block
-3. make the action code for the 'A' button move a sprite to a new position
+1. Starting with example #2 code
+2. Add a ``||controller:on A button pressed||`` block
+3. Make the action code for the 'A' button move a sprite to a new random position
 4. Add another sprite and make it move with the B button
-5. Challenge: make both sprites change position with the 'A' button and make the 'B' button give one of the sprites a random velocity (use small numbers (e.g. - 10) negative and positive)
+5. **Challenge:** make both sprites change position with the 'A' button and make the 'B' button give one of the sprites a random velocity (use small numbers (e.g. - 10) negative and positive)
 
 ### ~hint
 
@@ -166,11 +166,11 @@ hat.setPosition(35, 60)
 ```
 
 ## Task #3: check for random overlap with many sprites
-1. starting with task #2 where the game randomly moves 2 sprites with button pushes
-2. add at least 2 more sprites with random or fixed position
-3. add an ``||sprite:on overlap||`` event result in a new behavior that uses ``||math:pick random||`` (e.g. - set velocity, set location, change location by, ..) with sprite action of saying something.
-4. be sure the overlap will work for several sprite of the same SpriteKind
-5. Challenge: make multiple sprites randomly change position with the 'A' button and both of the sprites a random velocity (use a range across negative and positive for vx and vy)
+1. Starting with task #2 where the game randomly moves 2 sprites with button pushes
+2. Add at least 2 more sprites with random or fixed position
+3. Add an ``||sprite:on overlap||`` event result in a new behavior that uses ``||math:pick random||`` (e.g. - set velocity, set location, change location by, ..) with sprite action of saying something.
+4. Be sure the overlap will work for several sprite of the same SpriteKind
+5. **Challenge:** make multiple sprites randomly change position with the 'A' button and both of the sprites a random velocity (use a range across negative and positive for vx and vy)
 
 ## What did we learn? 
 
@@ -179,7 +179,7 @@ hat.setPosition(35, 60)
 
 ## Rubrics
 
-### TODO Rubric
+### Task Rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|

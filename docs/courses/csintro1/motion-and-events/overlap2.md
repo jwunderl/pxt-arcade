@@ -5,9 +5,9 @@ We use SpriteKind to give a label to Sprites so we can define how a "kind of spr
 By making several cloud shaped sprites with the same SpriteKind of `Cloud`, we write code to so all SpriteKind `Cloud` interact in the same way with a SpriteKind `Helicopter` overlap event.
 
 In this activity the student will continue to work with:
-* on overlap event with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
-* define multiple SpriteKind overlap events and actions
-* spawn a SpriteKind
+* ``||sprites:on overlap event||`` with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
+* Define multiple SpriteKind overlap events and actions
+* Spawn a SpriteKind
 * ``||sprites:on created||`` event setting image and position when specific SpriteKind is spawned
   * ``||sprites:set image to||``
   * ``||math:pick random||`` 
@@ -21,14 +21,15 @@ In this activity the student will continue to work with:
 
 Having sprites bump rather than pass over each other is useful game behavior for a SpriteKind overlap event. One way to simulate a bump is:
 
-* move the sprite in the opposite direction after the overlap (We bump backwards).  The faster we bump, the farther we move away from the overlap object.  
-* Stop the sprite (set vx and vy to 0)  
-  * change x position by (-1)\*(x-velocity)  
-  * change y position by (-1)\*(y-velocity)  
-* Shake the stationary object (cloud)  
-  * move 1 pixel (any direction)  
-  * pause  
-  * move back  
+1. Move the sprite in the opposite direction after the overlap (we will make it bump backwards). The faster we bump, the farther we move away from the overlap object.  
+2. Stop the sprite
+    * set vx and vy to 0
+    * Change x position by (-1) \* (x-velocity)  
+    * Change y position by (-1) \* (y-velocity)  
+3. Shake the stationary object (cloud)  
+    * Move 1 pixel (any direction)  
+    * Pause  
+    * Move back
 
 ## Example 1: bump action from overlap event  
 
@@ -215,10 +216,10 @@ landing.y = 125
 
 There is a "T" shaped landing area at the bottom of the example.  The helicopter sprite should not go through the landing, it should land!
 
-1. starting with the above example replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
-2. review the rest of the code and then add an on overlap event for when the helicopter overlaps with the landing (Note the SpriteKind of `LandingPad`)
-3. the block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more.
-4. Challenge: Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, or other) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity. Also, pauses allow the game player to see the motion changes more clearly.
+1. Starting with example #1,  replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
+2. Review the rest of the code and then add an on overlap event for when the helicopter overlaps with the landing (Note the SpriteKind of `LandingPad`)
+3. The block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more.
+4. **Challenge:** Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, or other) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity. Also, pauses allow the game player to see the motion changes more clearly.
 
 ### ~hint
 
@@ -230,20 +231,19 @@ Challenge Tip: Erratic motion can be made by changing the sprite position back a
 
 ## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
 
-1. starting with example or task #1 
-2. add a new sprite that looks nothing like a cloud (e.g.- hat, tree, etc.)
-3. make sure the new sprite has SpriteKind of "Cloud"  
-4. position the new sprite so it is not touching any other sprite
-5. Challenge: Add another Sprite that looks identical to the previous new sprite but give it a SpriteKind other than "Cloud" and make sure it has a unique overlap event action (e.g. - might say something new) 
-6. **Test the overlaps on the new sprite(s)**
+1. Starting with example or task #1 
+2. Add a new sprite that looks nothing like a cloud (e.g.- hat, tree, etc.)
+3. Make sure the new sprite has SpriteKind of "Cloud"  
+4. Position the new sprite so it is not touching any other sprite
+5. **Challenge:** Add another Sprite that looks identical to the previous new sprite but give it a SpriteKind other than "Cloud" and make sure it has a unique overlap event action (e.g. - might say something new) 
+6. Test the overlaps on the new sprite(s)
 
 ## What did we learn?
 
-1. Describe how a SpritKind can improve code (e.g - makes programming easier, more powerful, more efficient...).    
+1. Describe how a SpriteKind can improve code (for example, how it can make programming easier, more powerful, more efficient...).    
 2. Explain why in creating a "bump" effect negative X and Y velocities are used to change the X and Y positions. 
 
 ## Rubrics
-
 
 ### Overlap task rubric
 
@@ -252,8 +252,6 @@ Challenge Tip: Erratic motion can be made by changing the sprite position back a
 | Overlap & Events 2 | completed tasks |  Fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and All Challenge Code  |
 
 ### Score = \_\_\_\_\_\_ /10 
-
-
 
 ### What did we learn rubric 
 |   | 5pts | 7pts | 9pts | 10pts |
