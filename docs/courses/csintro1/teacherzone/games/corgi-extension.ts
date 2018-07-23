@@ -5,11 +5,12 @@
 namespace corgi {
     let _player: Sprite;
 
+    let _initJump: boolean = true;
     let _maxMoveVelocity: number = 70;
     let _gravity: number = 80;
     let _jumpVelocity: number = 65;
     let _maxJump: number = 2;
-    let _jumpReset: number = 5;
+    let _jumpReset: number = 2;
     let _remainingJump: number = _maxJump;
 
     // current time / number of times updateSprite has been called,
@@ -339,13 +340,14 @@ namespace corgi {
         init();
 
         controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-            if ((_player.left <= _jumpReset && controller.right.isPressed())
-                || screen.width - _player.right <= _jumpReset && controller.left.isPressed()) {
+            if (contactLeft() && controller.right.isPressed()
+                || contactRight() && controller.left.isPressed()) {
                 _remainingJump = 1;
             }
             if (_remainingJump > 0) {
-                if (_player.bottom == screen.height) {
+                if (_initJump) {
                     _player.vy = -1 * _jumpVelocity;
+                    _initJump = false;
                 } else {
                     _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
                                             _player.vy - _jumpVelocity);
@@ -353,28 +355,30 @@ namespace corgi {
                 _remainingJump--;
             }
         })
+        controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+            if (contactRight() && controller.up.isPressed()) {
+                _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
+                    _player.vy - _jumpVelocity);
+            }
+        })
+        controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+            if (contactLeft() && controller.up.isPressed()) {
+                _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
+                    _player.vy - _jumpVelocity);
+            }
+        })
         game.onUpdate(function () {
-            if (((_player.left < 2 && controller.left.isPressed())
-                    || screen.width - _player.right < 2 && controller.right.isPressed())
+            if ((contactLeft() && controller.left.isPressed()
+                    || contactRight() && controller.right.isPressed())
                     && _player.vy > - 10) {
                 _player.ay = _gravity / 4;
             } else {
                 _player.ay = _gravity
             }
-        })
-    }
 
-    /**
-     * Make sure that the main character stays within the screen.
-     */
-    //% group="Movement"
-    //% blockId=boundCheck block="Make sure character stays on the screen"
-    //% weight=100 blockGap=5
-    export function boundCheck(): void {
-        init();
-        game.onUpdate(function () {
-            if (Math.abs(_player.y - screen.height) <= _jumpReset) {
+            if (contactBelow()) {
                 _remainingJump = _maxJump;
+                _initJump = true;
             }
         })
     }
@@ -421,5 +425,20 @@ namespace corgi {
     // Grab the next sprite to use from the given array, based off the current _count
     function pickNext(input: Image[], state: number = 3): Image {
         return input[(_count / state) % input.length];
+    }
+
+    // Check if there is contact to the left; this includes tilemap walls and the boundaries of the screen
+    function contactLeft() {
+        return _player.left < 2 || _player.isHittingTile(CollisionDirection.Left);
+    }
+
+    // Check if there is contact to the right; this includes tilemap walls and the boundaries of the screen
+    function contactRight() {
+        return screen.width - _player.right < 2 || _player.isHittingTile(CollisionDirection.Right);
+    }
+
+    // Check if there is contact to below; this includes tilemap walls and the boundaries of the screen
+    function contactBelow() {
+        return screen.height - _player.bottom <= _jumpReset || _player.isHittingTile(CollisionDirection.Bottom);
     }
 }
