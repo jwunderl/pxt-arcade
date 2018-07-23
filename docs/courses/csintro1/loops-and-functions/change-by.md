@@ -4,20 +4,20 @@ Games often keep score to keep track of how well a player is doing. When program
 
 In these activities, the student will use increments to increase a score, and move a sprite in a spiral: 
  
-* repeat loops
-* for index loops
-* variables with increase by
-* game update every
-* info set score
-* game countdown
+* ``||loops:repeat||`` loops
+* ``||loops:for index||`` loops
+* Variables with ``||variables:increase by||``
+* ``||game:on game update every||``
+* Info ``||info:set score||``
+* Game ``||info:countdown||``
 
 ## Concept: Increase By (increment)
 
 # TODO: Create Video overview + increment.  Provide high level script outline.
 
-* variables with increase by  
-* game update every  
-* info set score  
+* Variables with increase by  
+* Game update every  
+* Info set score  
 
 ## Examples: Incrementing a Variable 
 
@@ -60,11 +60,11 @@ info.startCountdown(5)
 ```
 
 ## Student Task 1: Make the game have a cheering coach
-1. start with "Increment with Button A" example 
-2. add a sprite to coach the player
-3. use ``||sprites:say("")||`` to give words of encouragement, setting a short display time.
+1. Start with "Increment with Button A" example 
+2. Add a sprite to coach the player
+3. Use ``||sprites:say("")||`` to give words of encouragement, setting a short display time.
 4. Make ``||sprites:say("")||`` so it flashes by placing it in ``||game:on game update(1000)||``
-4. Challenge: Have the sprite coach giving current score and some cheer ("Faster!)
+4. **Challenge:** Have the sprite coach giving current score and some cheer ("Faster!)
 
 ### ~hint
 

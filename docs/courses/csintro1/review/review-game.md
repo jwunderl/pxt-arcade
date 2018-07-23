@@ -6,6 +6,7 @@
 * Rename the the sprite from "agent" to "circles"
 * Make the sprite be of kind "Circles"
 * When the game starts, make ``||variables:circles||`` ``||sprite:say||`` something (for example, "I'm ready to play!") for **1000 ms**
+
 ## Motion and Button Events:
 * Make the ``||variables:circles||`` spawn in the top left corner, by ``||sprites:setting||`` the ``||sprites:x||`` and ``||sprites:y||`` coordinates both to 30
 * Use the ``||controller:on left button pressed||`` and ``||controller:on right button pressed||`` blocks to make ``||variables:circles||`` move left and right, by using the ``||sprite:change x by||`` block. Make the circles move **5** in the direction specified each time the button is pressed (remember - moving in one direction )
@@ -22,7 +23,7 @@ Changing the y velocity is done by changing the ``||variables:circles||`` ``||sp
 ### ~
 * How is changing a sprite's ``||sprite:x||`` value different from changing it's ``||sprite:vx||`` value?
 * In the ``||loops:on start||`` block, set the ``||variables:circles||`` ``||sprite:ay||`` value to 5. This represents the circles **acceleration**, or how fast it increases in velocity. Try to keep the ``||variables:circles||`` in the screen.
-* Challenge: set the ``||variables:circles||`` to have an acceleration of 2 in the x direction as well; how long can you keep it on screen? (Be sure to remove this when before moving on to the next task)
+* **Challenge:** set the ``||variables:circles||`` to have an acceleration of 2 in the x direction as well; how long can you keep it on screen? (Be sure to remove this when before moving on to the next task)
 
 ## Sprite Kinds and Info
 * Use the ``||sprites:create empty sprite of kind Stars||`` block from the ``||sprites:Lifecycle||`` category inside of an ``||games:on game update every 500 ms||`` block to create a new sprite of kind Star twice per second. You'll need to make a new kind (in particular, ``||sprite:Stars||``) to do this.
@@ -56,7 +57,7 @@ game.splash("Hello! This will count down from 5 for you!")
 
 ### Student 2: Emma
 
-Emma decides that she does not like the Stars being destroyed when the ``||variables:circles||`` overlap them, so she removes the ``||sprite:destroy||`` block so that the ``||sprites:Stars||`` remain. However, this makes the game score behave weirdly, and no longer represent the number of stars that have been overlapped. What went wrong? (Challenge: can you fix it?)
+Emma decides that she does not like the Stars being destroyed when the ``||variables:circles||`` overlap them, so she removes the ``||sprite:destroy||`` block so that the ``||sprites:Stars||`` remain. However, this makes the game score behave weirdly, and no longer represent the number of stars that have been overlapped. What went wrong? (**Challenge:** can you fix it?)
 
 ```blocks
 enum SpriteKind {
