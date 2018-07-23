@@ -12,9 +12,9 @@ In this activity we will use
 
 ## Student Task: Build a Collage 
 
-```blocks
-// https://makecode.com/_7dtM9RfzKKD4
+// https://makecode.com/_7dtM9RfzKKD4 
 
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -280,9 +280,11 @@ sandals.y = 66
 ## Rubrics
 
 ### ~hint
+
 Start on the left rubric column (5pts), if the work meets the rubric continue to the right (7pts, 9pts, 10pts). Award the sore of the right most rubric that is completed by the student.  
 
 This means that to get the highest score student must pass **all** previous rubrics.
+
 ### ~
 
 ### Collage task rubric
