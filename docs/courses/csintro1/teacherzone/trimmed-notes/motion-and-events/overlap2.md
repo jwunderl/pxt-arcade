@@ -1,9 +1,9 @@
 # Activity: Sprite Overlap & Events - Part 2
 
 In this activity the student will continue to work with:
-* on overlap event with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
-* define multiple SpriteKind overlap events and actions
-* spawn a SpriteKind
+* ``||sprites:on overlap event||`` with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
+* Define multiple SpriteKind overlap events and actions
+* Spawn a SpriteKind
 * ``||sprites:on created||`` event setting image and position when specific SpriteKind is spawned
   * ``||sprites:set image to||``
   * ``||math:pick random||`` 
@@ -34,7 +34,6 @@ Ask: what if going -100 meters/second?  [Answer] bumps +100 centimeters - always
 ### Review the bump code  
 
 This is the code that bumps the helicopter 
-### ~
 
 ```block
     sprite.x += -1 * sprite.vx
@@ -42,6 +41,8 @@ This is the code that bumps the helicopter
     sprite.vx = 0
     sprite.vy = 0
 ```
+
+### ~
 
 ### ~hint
 
@@ -69,7 +70,6 @@ It moves the spite 1 pixel, pauses and then moves back.
 ### ~hint
 
 Continue to quiz students throughout the course on how to use the short method to give a sprite motion using ``||controller:dx (left-right buttons)||``  type controller block.
-
 
 ### ~
 
@@ -571,7 +571,6 @@ game.onUpdate(function () {
     copter.vy += controller.dy()
 })
 ```
-
 
 ## What did we learn?
 

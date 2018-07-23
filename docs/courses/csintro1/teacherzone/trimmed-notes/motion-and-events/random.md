@@ -2,8 +2,8 @@
 
 In this activity student will work with: 
 *  ``||math:pick random||`` to generate random numbers
-* setting sprite x and y positions
-* setting button press events
+* Setting sprite x and y positions
+* Setting button press events
 
 ## Concept: pick a random number
 
@@ -25,7 +25,6 @@ Repeat for smaller than 5 , down to zero.
 
 https://makecode.com/_ahtdT1UrfP95
 
-
 ```blocks
 let positiveOrNegative = 0
 let anotherRandom = 0
@@ -46,7 +45,6 @@ game.splash("-10 to 10: " + positiveOrNegative)
 ## Task #2: Set random position using a button event
 
 https://makecode.com/_CwaCsqfg4hAF
-
 
 ```blocks
 enum SpriteKind {
@@ -283,7 +281,7 @@ hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 
 ## Rubrics
 
-### TODO Rubric
+### Task Rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
