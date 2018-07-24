@@ -4,7 +4,7 @@ Make a game of your choosing!
 
 ![Catch the Cents](/static/courses/csintro1/motion-and-events/catch-the-cents.gif)
 
-Use at least **10** of the following.
+Use at least **10** of the following:
 * Sprites
 * Position (coordinates)
 * Controller (dx) (vx)

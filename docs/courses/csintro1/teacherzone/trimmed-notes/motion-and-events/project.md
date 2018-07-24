@@ -1,6 +1,6 @@
 # Example Projects
 
-Use 8-10 of 
+Use at least 10 of the following
 * Sprites
 * Position (coordinates)
 * Controller (dx) (vx)
