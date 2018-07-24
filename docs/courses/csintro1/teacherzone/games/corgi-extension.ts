@@ -7,13 +7,15 @@ namespace corgi {
 
     let _initJump: boolean = true;
     let _maxMoveVelocity: number = 70;
-    let _gravity: number = 80;
+    let _gravity: number = 120;
     let _jumpVelocity: number = 65;
     let _maxJump: number = 2;
-    let _jumpReset: number = 2;
+
+    // The Corgi is 'touching' a wall if it is within this 
+    let _touching: number = 2;
     let _remainingJump: number = _maxJump;
 
-    // current time / number of times updateSprite has been called,
+    // Current time / number of times updateSprite has been called,
     let _count = 0;
 
     let _script: string[] = [
@@ -234,7 +236,7 @@ namespace corgi {
 
     /**
      * Sets the rate of gravity; increase to fall faster, decrease to fall slower.
-     * @param gravity rate of gravity that causes character to drop, eg: 10
+     * @param gravity rate of gravity that causes character to drop, eg: 120
      */
     //% group="Movement Properties"
     //% blockId=setGravity block="Set rate of gravity to %gravity"
@@ -258,7 +260,7 @@ namespace corgi {
 
     /**
      * Sets the initial jump velocity
-     * @param rate initial jumping speed, eg: 85
+     * @param rate initial jumping speed, eg: 65
      */
     //% group="Movement Properties"
     //% blockId=setJumpVelocity block="Set initial jump speed to %rate"
@@ -290,7 +292,7 @@ namespace corgi {
     }
 
     /**
-     * Return the sprite of the player.
+     * Return the Corgi sprite.
      */
     //% group="Sprite"
     //% blockId=getSprite block="Get the Corgi Sprite"
@@ -325,7 +327,7 @@ namespace corgi {
             let dir: number = controller.dx();
 
             _player.vx = dir ? normalize(dir) * _maxMoveVelocity :
-                roundTowardsZero(_player.vx * decelerationRate)
+                                roundTowardsZero(_player.vx * decelerationRate);
         })
 
     }
@@ -349,24 +351,24 @@ namespace corgi {
                     _player.vy = -1 * _jumpVelocity;
                     _initJump = false;
                 } else {
-                    _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
-                                            _player.vy - _jumpVelocity);
+                    doubleJump();
                 }
                 _remainingJump--;
             }
         })
+
         controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
             if (contactRight() && controller.up.isPressed()) {
-                _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
-                    _player.vy - _jumpVelocity);
+                doubleJump();
             }
         })
+
         controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
             if (contactLeft() && controller.up.isPressed()) {
-                _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
-                    _player.vy - _jumpVelocity);
+                doubleJump();
             }
         })
+
         game.onUpdate(function () {
             if ((contactLeft() && controller.left.isPressed()
                     || contactRight() && controller.right.isPressed())
@@ -394,9 +396,9 @@ namespace corgi {
         game.onUpdate(function () {
             _count++;
 
-            if (_player.vx == 0) _player.setImage(pickNext(_corgi_still, 6));
+            if (_player.vx == 0)     _player.setImage(pickNext(_corgi_still, 6));
             else if (_player.vx < 0) _player.setImage(pickNext(_corgi_left));
-            else _player.setImage(pickNext(_corgi_right));
+            else                     _player.setImage(pickNext(_corgi_right));
         })
     }
 
@@ -417,28 +419,34 @@ namespace corgi {
         return (input < 0 ? 1 : 0) + Math.floor(input);
     }
 
-    // normalize input number to 0, 1, or -1
+    // Normalize input number to 0, 1, or -1
     function normalize(input: number): number {
         return input != 0 ? input / Math.abs(input) : 0;
     }
 
-    // Grab the next sprite to use from the given array, based off the current _count
+    // Grab the next Image to use from the given array, based off the current _count
     function pickNext(input: Image[], state: number = 3): Image {
         return input[(_count / state) % input.length];
     }
 
+    // Provides an impulse for a 'double jump'
+    function doubleJump(): void {
+        _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
+                                _player.vy - _jumpVelocity);
+    }
+
     // Check if there is contact to the left; this includes tilemap walls and the boundaries of the screen
-    function contactLeft() {
-        return _player.left < 2 || _player.isHittingTile(CollisionDirection.Left);
+    function contactLeft(): boolean {
+        return _player.left <= _touching || _player.isHittingTile(CollisionDirection.Left);
     }
 
     // Check if there is contact to the right; this includes tilemap walls and the boundaries of the screen
-    function contactRight() {
-        return screen.width - _player.right < 2 || _player.isHittingTile(CollisionDirection.Right);
+    function contactRight(): boolean {
+        return screen.width - _player.right <= _touching || _player.isHittingTile(CollisionDirection.Right);
     }
 
     // Check if there is contact to below; this includes tilemap walls and the boundaries of the screen
-    function contactBelow() {
-        return screen.height - _player.bottom <= _jumpReset || _player.isHittingTile(CollisionDirection.Bottom);
+    function contactBelow(): boolean {
+        return screen.height - _player.bottom <= _touching || _player.isHittingTile(CollisionDirection.Bottom);
     }
 }
