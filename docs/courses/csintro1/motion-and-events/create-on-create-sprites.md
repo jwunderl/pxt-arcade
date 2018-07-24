@@ -17,7 +17,6 @@ on created event to set image and location after a SpriteKind is spawned
 4. Carefully examine the ``||sprites:spawn kind||``  block and ``||sprites:on created () of kind ()||`` event
 
 ```blocks
-
 enum SpriteKind {
     Helicopter,
     Cloud,
@@ -108,9 +107,8 @@ agent = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Helicopter)
 // Create and place "clouds"  Sprites
-sprites.create(null, SpriteKind.Cloud)
-sprites.create(null, SpriteKind.Cloud)
-
+sprites.createEmptySprite(SpriteKind.Cloud)
+sprites.createEmptySprite(SpriteKind.Cloud)
 ```
 
 ## Student Task #2: More Random Clouds
