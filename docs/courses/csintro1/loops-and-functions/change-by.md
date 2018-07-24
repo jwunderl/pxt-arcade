@@ -46,7 +46,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```  
 
-### Example: Increment with Add Countdown   
+### Example: Increment with a Countdown   
 
 ```blocks
 let count = 0
@@ -62,18 +62,9 @@ info.startCountdown(5)
 ## Student Task 1: Make the game have a cheering coach
 1. Start with "Increment with Button A" example 
 2. Add a sprite to coach the player
-3. Use ``||sprites:say("")||`` to give words of encouragement, setting a short display time.
+3. Use ``||sprites:say("")||`` to give words of encouragement, setting a short display time (for example, 500 ms).
 4. Make ``||sprites:say("")||`` so it flashes by placing it in ``||game:on game update(1000)||``
-4. **Challenge:** Have the sprite coach giving current score and some cheer ("Faster!)
-
-### ~hint
-
-Challenge requires using ``||text:join||`` from Text Blocks under Advanced 
-Then ``||text:join||`` the score with a few words of encouragement.
-
-``||info:score||`` is located in the info Blocks
-
-### ~
+4. **Challenge:** Have the sprite coach give the current score and some cheer ("Faster!")
 
 ## Student Task 2: Move in a spiral
 We want to move the sprite in the following blocks in a spiral - starting with a small square, and moving further and further away as the iterations move on. Right now, though, the sprite just drifts up and to the left. We need to increase the distance that the sprite travels on each iteration so that it moves further and further away in all directions.
@@ -115,7 +106,7 @@ for (let i = 0; i < 10; i++) {
 ```
 1. First, add in a new variable - we'll refer to it as count. Set it at 0 to start.
 2. Use the ``||variables:change by||`` block to increment count by 1 at the end of each iteration of the loop.
-3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable count * 5 in the the movement of the sprite - that might look like
+3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable count to increase the distance the sprite moves on each step - that might look like
 
 ```block
 sprite.x += -7 - count * 5
@@ -131,12 +122,12 @@ There is another type of loop that can help in implementing this behavior. The `
 ## What did we learn?
 
 1. In task 3, you may have noticed that when you switched from a repeat loop to a for loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that?
-2. When might you want to choose to use a ``||loops:repeat||``  loop over a ``||loops:for index||`` loop?
 ### ~hint
 
-Is there a difference between how many times ``||loops repeat 0 times||`` and ``||for index from 0 to 0||`` will run?
+Is there a difference between how many times ``||loops:repeat 0 times||`` and ``||loops:for index from 0 to 0||`` will run?
 
 ### ~
+2. When might you want to choose to use a ``||loops:repeat||``  loop over a ``||loops:for index||`` loop?
 
 ## Rubrics
 

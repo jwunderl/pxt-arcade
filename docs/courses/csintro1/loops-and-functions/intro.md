@@ -146,7 +146,7 @@ for (let i = 0; i < 12; i++) {
 ## Student Task 2: Add a second sprite using loops
 We now want to add in a second ghost, that moves towards the bottom right like in the first example.
 1. Add in a second sprite
-2. Make the second sprite move in the opposite direction of the current sprite, right after the current sprite moves.
+2. Make the second sprite move in the opposite direction of the current sprite, with each step immediately following the current sprite.
 
 ### ~hint
 
@@ -216,7 +216,7 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 ### Score = \_\_\_\_\_\_ /10 
 
-### What did we learn rubric [TODO review based on number of questions]
+### What did we learn rubric
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |

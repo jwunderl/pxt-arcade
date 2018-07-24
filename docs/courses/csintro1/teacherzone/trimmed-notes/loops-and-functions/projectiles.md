@@ -11,6 +11,13 @@ In this activity the student will implement:
 
 ## Concept: Flying Birds!
 ## Example: Bird projectile
+
+### ~hint
+
+Have students experiment with the example for a few minutes with different values for ``||sprites:vx||`` and ``||sprites:vy||`` before moving on; have them make a hypothesis on how a negative ``||sprites:vx||`` or ``||sprites:vy||`` might change the result
+
+### ~
+
 ## Student Task 1: Make a ball fall down
 ```blocks
 enum SpriteKind {
@@ -65,6 +72,7 @@ projectile = sprites.createProjectile(img`
 ```
 
 ## Student Task 2: add vertical projectiles that move across the screen
+### Normal Solution
 ```block
 enum SpriteKind {
     Player,
@@ -109,16 +117,57 @@ d d d d d d d d
 d d d d d d d d 
 d d d d d d d d 
 `, 0, 50, SpriteKind.Enemy, item)
-//    projectile = sprites.createProjectile(img` // Challenge solution
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//d d d d d d d d 
-//`, 0, 40 + Math.randomRange(0, 20), SpriteKind.Enemy, item)
+    projectile.x = Math.randomRange(0, scene.screenWidth())
+    info.changeScoreBy(1)
+})
+```
+
+### Challenge solution:
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let item: Sprite = null
+let projectile: Sprite = null
+let mySprite: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, foodSprite) {
+    game.over()
+})
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+mySprite.y = 100
+game.onUpdate(function () {
+    mySprite.x += controller.dx()
+})
+game.onUpdateInterval(200, function () {
+    projectile = sprites.createProjectile(img`
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+d d d d d d d d 
+`, 0, 40 + Math.randomRange(0, 20), SpriteKind.Enemy, item)
     projectile.x = Math.randomRange(0, scene.screenWidth())
     info.changeScoreBy(1)
 })
@@ -129,7 +178,7 @@ d d d d d d d d
 ### ~hint
 
 Ask the students why this creates 13 projectiles, instead of just 12.
-Answer: there is an extra value because it is including both 0 and 12.
+Answer: there is an extra value because the loop is including both 0 and 12.
 
 ### ~
 
@@ -261,11 +310,11 @@ balloon.x += -50
 1. Describe two benefits of using projectiles rather than normal sprites.  
 2. How did using a loop in this section help reduce the amount of blocks that were used?
 3. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
-4. Challenge: Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might be make your game run faster than leaving it off.
+4. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might be make your game run faster than leaving it off.
 
 ### ~hint
 
-Does the game need to check whether a sprite is overlapping another if either is a ghost?
+Does the game need to check whether a sprite is overlapping another if either is a ghost? No, because ghosts will just move through the other sprite without overlapping anyways.
 
 ### ~
 

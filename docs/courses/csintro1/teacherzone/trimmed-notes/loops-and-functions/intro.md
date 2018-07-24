@@ -89,7 +89,8 @@ pause(50)
 ```
 
 ## Concept: Moving a sprite using loops (introduce the repeat block)
-
+## Example: Moving up and to the left using loops
+## Student Task 2: Add a second sprite using loops
 ```blocks
 enum SpriteKind {
     Player,
@@ -144,6 +145,13 @@ for (let i = 0; i < 12; i++) {
 ```
 
 ## Student Task 3: Boomerang
+
+### ~hint
+
+If a student is stuck on this task, suggest that they move on to the "What did we learn?" section and return to this section afterwards; question 3 is meant to refer to this task, and can serve as a hint to the student.
+
+### ~
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -201,7 +209,7 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 ### Score = \_\_\_\_\_\_ /10 
 
-### What did we learn rubric [TODO review based on number of questions]
+### What did we learn rubric
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |

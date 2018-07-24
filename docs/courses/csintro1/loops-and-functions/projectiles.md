@@ -78,10 +78,9 @@ projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 50, 0, SpriteKind.Player, item)
-
 ```
 
-This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! This is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Finally, we'll see later on that projectiles can be created to originate at a given sprite. If they are not provided a sprite to start from, they will be created either in the middle of the screen (if their velocities are set to 0) or from the side of the screen opposite their initial speed (so that they can move across the screen).
+This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! This is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Finally, we'll see later on that projectiles can be created to originate at a given sprite. If they are not provided a sprite to start from, they will be created either in the middle of the screen (if the velocities in the x and y direction are both set to 0) or from the side of the screen opposite their initial speed (so that they can move across the screen).
 
 ## Student Task 1: Make a ball fall down
 1. Start with the provided code below.
@@ -416,7 +415,7 @@ pause(300)
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "water balloon")
-4. Currently, when the balloon collides with the block, it creates only a single splash. Use a loop in the overlap event between sprites of kind Balloon and sprites of kind Enemy to create 50 splashes instead.
+4. Currently, when the balloon collides with the block, it creates only a single drop of a splash. Use a loop in the overlap event between sprites of kind Balloon and sprites of kind Enemy to create 50 drops of kind ``||sprites:Splash||`` instead.
 
 ### ~hint
 
