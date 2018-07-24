@@ -6,10 +6,11 @@ namespace corgi {
     let _player: Sprite;
 
     let _initJump: boolean = true;
+    let _releasedJump: boolean = true;
     let _maxMoveVelocity: number = 70;
     let _gravity: number = 160;
     let _jumpVelocity: number = 65;
-    let _maxJump: number = 2;
+    const _maxJump: number = 2;
 
     // The Corgi is 'touching' a wall if it is within this 
     let _touching: number = 2;
@@ -341,35 +342,29 @@ namespace corgi {
     export function verticalMovement(): void {
         init();
 
-        controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-            if (contactLeft() && controller.right.isPressed()
-                || contactRight() && controller.left.isPressed()) {
-                _remainingJump = 1;
-            }
-            if (_remainingJump > 0) {
-                if (_initJump) {
-                    _player.vy = -1 * _jumpVelocity;
-                    _initJump = false;
-                } else {
-                    doubleJump();
-                }
-                _remainingJump--;
-            }
-        })
-
-        controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-            if (contactRight() && controller.up.isPressed()) {
-                doubleJump();
-            }
-        })
-
-        controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-            if (contactLeft() && controller.up.isPressed()) {
-                doubleJump();
-            }
+        controller.up.onEvent(ControllerButtonEvent.Released, function () {
+            _releasedJump = true;
         })
 
         game.onUpdate(function () {
+            if (controller.up.isPressed()) {
+                if (contactLeft() && controller.right.isPressed()
+                    || contactRight() && controller.left.isPressed()) {
+                    _remainingJump = Math.max(_remainingJump + 1, _maxJump);
+                }
+                if (_remainingJump > 0 && _releasedJump) {
+                    _releasedJump = false;
+                    if (_initJump) {
+                        _player.vy = -1 * _jumpVelocity;
+                        _initJump = false;
+                    } else {
+                        _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
+                                                _player.vy - _jumpVelocity);
+                    }
+                    _remainingJump--;
+                }
+            }
+
             if ((contactLeft() && controller.left.isPressed()
                     || contactRight() && controller.right.isPressed())
                     && _player.vy > - 10) {
