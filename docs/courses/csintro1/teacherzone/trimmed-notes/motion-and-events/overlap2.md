@@ -52,14 +52,11 @@ Ask students for the values of sprite .x and sprite.y if sprite.vx = -25 and spr
 
 This code shakes the cloud by moving it 1 pixel and then back
 
-### ~
-
 ```block
     otherSprite.y += -1
     pause(100)
     otherSprite.y += 1
 ```
-### ~hint  
 
 It moves the spite 1 pixel, pauses and then moves back. 
 
@@ -312,7 +309,7 @@ Continue to reinforce to students that SpriteKind controls overlap events. Any a
 
 ### ~
 
-https://makecode.com/_ReDWRUa989L8
+https://makecode.com/_iEHdaHKjmDcU
 
 ```blocks
 enum SpriteKind {
@@ -351,6 +348,7 @@ sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Forest, function (sprite, ot
     sprite.vx = -30
     sprite.vy = -30
     sprite.x += -15
+    otherSprite.say("ouch!")
     pause(100)
     sprite.x += 17
     pause(200)

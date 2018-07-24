@@ -228,9 +228,9 @@ Challenge Tip: Erratic motion can be made by changing the sprite position back a
 
 1. Starting with example or task #1 
 2. Add a new sprite that looks nothing like a cloud (e.g.- hat, tree, etc.)
-3. Make sure the new sprite has SpriteKind of "Cloud"  
+3. Make sure the new sprite has SpriteKind of "Cloud"  even though it is not a cloud
 4. Position the new sprite so it is not touching any other sprite
-5. **Challenge:** Add another Sprite that looks identical to the previous new sprite but give it a SpriteKind other than "Cloud" and make sure it has a unique overlap event action (e.g. - might say something new) 
+5. **Challenge:** Add another Sprite that looks different from the previous new sprite and give it a SpriteKind other than "Cloud" and make sure it has a unique overlap event action (e.g. - might say something new) 
 6. Test the overlaps on the new sprite(s)
 
 ## What did we learn?
