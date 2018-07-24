@@ -7,15 +7,10 @@ By making several cloud shaped sprites with the same SpriteKind of `Cloud`, we w
 In this activity the student will continue to work with:
 * ``||sprites:on overlap event||`` with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
 * Define multiple SpriteKind overlap events and actions
-* Spawn a SpriteKind
-* ``||sprites:on created||`` event setting image and position when specific SpriteKind is spawned
-  * ``||sprites:set image to||``
-  * ``||math:pick random||`` 
 
 # Overlaps & Events (part 2)
 
 # TODO: eric overview video bump
-
 
 ## Concept: SpriteKind Overlap Event "bump" action  
 
