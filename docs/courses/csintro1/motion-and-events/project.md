@@ -42,7 +42,7 @@ From what we learned in the previous lessons we should be able to make some grea
 
 ### Score = \_\_\_\_\_\_ /10 
 
-### What did we learn rubric [todo - from overlap 2]
+### What did we learn rubric 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with original example, drawing or analogy |
