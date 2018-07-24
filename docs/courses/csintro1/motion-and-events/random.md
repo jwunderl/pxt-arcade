@@ -1,16 +1,19 @@
 # Activity: Random Sprite Location
 
 In this activity student will work with: 
+
 *  ``||math:pick random||`` to generate random numbers
 * Setting sprite x and y positions  
 * Setting button press events
 
 ## Concept: pick a random number
+
 We can pick a random number in a range using ``||math:pick random||``.  We can set it to a variable and 'print' it out to the console. 
 
-# TODO Video 
+https://youtu.be/PS8clbMInjw 
 
 ## Example #1: pick random
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Re-run several times to see random numbers
@@ -32,7 +35,7 @@ game.splash("Random Number is " + randomNumber)
 
 ## Concept: pick a random location
 
-# TODO: Video eric
+https://youtu.be/Ggj4rOXw6ns 
 
 Games often have an element of luck and surprise to keep the player engaged. In this example, we will use random numbers to place a sprite on the screen in a random location.  We can use a random range because we know the dimensions of the screen.
 
@@ -71,6 +74,7 @@ mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 ```  
 
 ## Task #2: Set random position using a button event
+
 1. Starting with example #2 code
 2. Add a ``||controller:on A button pressed||`` block
 3. Make the action code for the 'A' button move a sprite to a new random position
@@ -90,6 +94,8 @@ mySprite.vy = 0
 ### ~
 
 ## Example #3: check for random overlap 
+
+https://youtu.be/OgyWVwCJJIk
 
 1. Review the code below
 2. Create the sample code and run the code 
@@ -166,6 +172,7 @@ hat.setPosition(35, 60)
 ```
 
 ## Task #3: check for random overlap with many sprites
+
 1. Starting with task #2 where the game randomly moves 2 sprites with button pushes
 2. Add at least 2 more sprites with random or fixed position
 3. Add an ``||sprite:on overlap||`` event result in a new behavior that uses ``||math:pick random||`` (e.g. - set velocity, set location, change location by, ..) with sprite action of saying something.
