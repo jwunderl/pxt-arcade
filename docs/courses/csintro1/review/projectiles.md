@@ -123,11 +123,12 @@ game.onUpdate(function () {
         dir = -1
     }
     alien.vx = dir * rate
-    corgi.horizontalMovement()
-    corgi.verticalMovement()
-    corgi.boundCheck()
-    corgi.updateSprite()
 })
+
+corgi.horizontalMovement()
+corgi.verticalMovement()
+corgi.updateSprite()
+
 game.onUpdateInterval(50, function () {
     if (Math.percentChance(8)) {
         projectile = sprites.createProjectile(img`

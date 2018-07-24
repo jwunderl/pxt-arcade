@@ -7,7 +7,7 @@ namespace corgi {
 
     let _initJump: boolean = true;
     let _maxMoveVelocity: number = 70;
-    let _gravity: number = 120;
+    let _gravity: number = 160;
     let _jumpVelocity: number = 65;
     let _maxJump: number = 2;
 
@@ -15,7 +15,7 @@ namespace corgi {
     let _touching: number = 2;
     let _remainingJump: number = _maxJump;
 
-    // Current time / number of times updateSprite has been called,
+    // Current time / number of times updateSprite has been called
     let _count = 0;
 
     let _script: string[] = [
@@ -386,6 +386,20 @@ namespace corgi {
     }
 
     /**
+     *
+     */
+    //% group="Movement"
+    //% blockId=followCorgi block="Make camera follow corgi left and right"
+    //% weight=100 blockGap=5
+    export function followCorgi() {
+        init();
+        game.onUpdate(function() {
+            scene.centerCameraAt(_player.x - screen.width / 2, 0)
+            // TODO: Fix if centercameraat gets fixed
+        })
+    }
+
+    /**
      * Make the character change sprites when moving.
      */
     //% group="Movement"
@@ -410,7 +424,6 @@ namespace corgi {
             _player = sprites.create(_corgi_still[0], SpriteKind.Player);
             _player.setFlag(SpriteFlag.StayInScreen, true);
             _player.ay = _gravity
-            _player.bottom = screen.height;
         }
     }
 
