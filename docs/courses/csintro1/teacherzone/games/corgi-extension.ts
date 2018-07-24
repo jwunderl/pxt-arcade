@@ -5,25 +5,18 @@
 namespace corgi {
     let _player: Sprite;
 
-    let _maxMoveVelocity: number = 50;
-    let _gravity: number = 10;
-    let _jumpVelocity: number = 85;
-    let _maxJump: number = 12;
-    let _jumpReset: number = 2;
+    let _initJump: boolean = true;
+    let _maxMoveVelocity: number = 70;
+    let _gravity: number = 160;
+    let _jumpVelocity: number = 65;
+    let _maxJump: number = 2;
+
+    // The Corgi is 'touching' a wall if it is within this 
+    let _touching: number = 2;
     let _remainingJump: number = _maxJump;
 
-    // current time / number of times updateSprite has been called,
+    // Current time / number of times updateSprite has been called
     let _count = 0;
-    // How many frames to remain on the same sprite within a group.
-    // const _state_transition: number = 8; <--- Use this in pickNext if it gets fixed
-
-    let _edge: number = 3;
-
-    // Likely remove these when'constrain to screen' functionality is added
-    let _ground: number;
-    let _ceiling: number;
-    let _leftWall: number;
-    let _rightWall: number;
 
     let _script: string[] = [
         "bork",
@@ -243,7 +236,7 @@ namespace corgi {
 
     /**
      * Sets the rate of gravity; increase to fall faster, decrease to fall slower.
-     * @param gravity rate of gravity that causes character to drop, eg: 10
+     * @param gravity rate of gravity that causes character to drop, eg: 120
      */
     //% group="Movement Properties"
     //% blockId=setGravity block="Set rate of gravity to %gravity"
@@ -267,7 +260,7 @@ namespace corgi {
 
     /**
      * Sets the initial jump velocity
-     * @param rate initial jumping speed, eg: 85
+     * @param rate initial jumping speed, eg: 65
      */
     //% group="Movement Properties"
     //% blockId=setJumpVelocity block="Set initial jump speed to %rate"
@@ -275,15 +268,6 @@ namespace corgi {
     export function setJumpVelocity(rate: number): void {
         init();
         _jumpVelocity = rate;
-    }
-
-    /**
-     * Sets the main sprite for the character
-     * @param sprite to set as main sprite, eg: null
-     */
-    export function setSprite(sprite: Image = _corgi_still[0]): void {
-        init();
-        _player.setImage(sprite);
     }
 
     /**
@@ -308,7 +292,7 @@ namespace corgi {
     }
 
     /**
-     * Return the sprite of the player.
+     * Return the Corgi sprite.
      */
     //% group="Sprite"
     //% blockId=getSprite block="Get the Corgi Sprite"
@@ -331,7 +315,6 @@ namespace corgi {
 
     /**
      * Make the character move in the direction indicated by the left and right arrow keys.
-     * Generally called in an unbounded loop, as in "on game update"
      * @param decelerationRate rate at which corgi should maintain momentum after arrow keys have been released, eg: 0.7
      */
     //% group="Movement"
@@ -339,114 +322,108 @@ namespace corgi {
     //% weight=100 blockGap=5
     export function horizontalMovement(decelerationRate: number = 0.7): void {
         init();
-        let dir: number = controller.dx();
 
-        // if (dir)     _player.vx = normalize(dir) * _maxMoveVelocity;
-        // else         _player.vx = roundTowardsZero(_player.vx * decelerationRate);
-        _player.vx = dir ? normalize(dir) * _maxMoveVelocity :
-            roundTowardsZero(_player.vx * decelerationRate)
+        game.onUpdate(function () {
+            let dir: number = controller.dx();
+
+            _player.vx = dir ? normalize(dir) * _maxMoveVelocity :
+                                roundTowardsZero(_player.vx * decelerationRate);
+        })
+
     }
 
     /**
-     * Make the character jump when the up arrow key is pressed.
-     * Generally called in an unbounded loop, as in "on game update"
-     * @param WallGrabFallAcc Rate at which the player 'slips' / approachs wallGrabMaxSlip, eg: 0.2
-     * @param wallGrabMaxSlip max fall rate when 'grabbing' a wall, eg: 30
-     * @param wallJumpReset what proportion of the standard jump length to allow for a wall jump, eg: 0.7
-     * @param wallJumpImpulse proportion of the standard jump impulse to provide for a wall jump, eg: 0.8
+     * Make the character jump when the up arrow key is pressed, and grab onto the wall when falling.
      */
     //% group="Movement"
     //% blockId=verticalMovement block="Jump if up arrow key is pressed"
     //% weight=100 blockGap=5
-    export function verticalMovement(wallGrabFallAcc: number = 0.2,
-        wallGrabMaxSlip: number = 30,
-        wallJumpReset: number = 0.7,
-        wallJumpImpulse: number = 0.8): void {
+    export function verticalMovement(): void {
         init();
-        // If the player has jump remaining, up is pressed, and we are not falling...
-        if (_remainingJump > 0 && controller.up.isPressed() && _player.vy <= 0) {
-            if (_player.vy === 0) _player.vy = -1 * _jumpVelocity;
-            else _player.vy -= _gravity / 2;
-            _remainingJump--;
-        } else if (((Math.abs(_player.x - _leftWall) <= _jumpReset && controller.right.isPressed())
-                || Math.abs(_player.x - _rightWall) <= _jumpReset && controller.left.isPressed())
-                && controller.up.isPressed()) {
-            _remainingJump = _maxJump * wallJumpReset;
-            _player.vy = -wallJumpImpulse * _jumpVelocity;
-        } else if ((_player.x == _leftWall && controller.left.isPressed()) ||
-            _player.x == _rightWall && controller.right.isPressed()) {
-            _player.vy = Math.clamp(0, wallGrabMaxSlip, _player.vy + wallGrabFallAcc);
-        } else {
-            _player.vy += _gravity;
-        }
+
+        controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+            if (contactLeft() && controller.right.isPressed()
+                || contactRight() && controller.left.isPressed()) {
+                _remainingJump = 1;
+            }
+            if (_remainingJump > 0) {
+                if (_initJump) {
+                    _player.vy = -1 * _jumpVelocity;
+                    _initJump = false;
+                } else {
+                    doubleJump();
+                }
+                _remainingJump--;
+            }
+        })
+
+        controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+            if (contactRight() && controller.up.isPressed()) {
+                doubleJump();
+            }
+        })
+
+        controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+            if (contactLeft() && controller.up.isPressed()) {
+                doubleJump();
+            }
+        })
+
+        game.onUpdate(function () {
+            if ((contactLeft() && controller.left.isPressed()
+                    || contactRight() && controller.right.isPressed())
+                    && _player.vy > - 10) {
+                _player.ay = _gravity / 4;
+            } else {
+                _player.ay = _gravity
+            }
+
+            if (contactBelow()) {
+                _remainingJump = _maxJump;
+                _initJump = true;
+            }
+        })
     }
 
     /**
-     * Make sure that the main character stays within the screen.
+     *
      */
     //% group="Movement"
-    //% blockId=boundCheck block="Make sure character stays on the screen"
+    //% blockId=followCorgi block="Make camera follow corgi left and right"
     //% weight=100 blockGap=5
-    export function boundCheck(): void {
+    export function followCorgi() {
         init();
-        // Reset jump when near ground
-        if (Math.abs(_player.y - _ground) <= _jumpReset) {
-            _remainingJump = _maxJump;
-        }
-
-        if (_player.y >= _ground) {
-            _player.y = _ground;
-            _player.vy = Math.min(0, _player.vy);
-        } else if (_player.y <= _ceiling) {
-            _player.y = _ceiling;
-            _player.vy = Math.max(0, _player.vy);
-        }
-
-        if (_player.x <= _leftWall) {
-            _player.x = _leftWall;
-            _player.vx = Math.max(0, _player.vx);
-        } else if (_player.x >= _rightWall) {
-            _player.x = _rightWall;
-            _player.vx = Math.min(0, _player.vx);
-        }
+        game.onUpdate(function() {
+            scene.centerCameraAt(_player.x - screen.width / 2, 0)
+            // TODO: Fix if centercameraat gets fixed
+        })
     }
 
     /**
      * Make the character change sprites when moving.
-     * Generally called in an unbounded loop, as in "on game update"
      */
     //% group="Movement"
     //% blockId=updateSprite block="Change image when corgi is moving"
     //% weight=100 blockGap=5
     export function updateSprite(): void {
         init();
-        _count++;
+        game.onUpdate(function () {
+            _count++;
 
-        if (_player.vx == 0) _player.setImage(pickNext(_corgi_still, 6));
-        else if (_player.vx < 0) _player.setImage(pickNext(_corgi_left));
-        else _player.setImage(pickNext(_corgi_right));
+            if (_player.vx == 0)     _player.setImage(pickNext(_corgi_still, 6));
+            else if (_player.vx < 0) _player.setImage(pickNext(_corgi_left));
+            else                     _player.setImage(pickNext(_corgi_right));
+        })
     }
-
 
     /** miscellaneous helper methods **/
 
     // Initialize state of corgi.
-    // @param force whether or not to force reset state variables, rather than
-    //             only when first made, eg: false
-    function init(force: boolean = false) {
-        if (!_player || force) {
+    function init() {
+        if (!_player) {
             _player = sprites.create(_corgi_still[0], SpriteKind.Player);
-            // _player.addMovementFrame(_corgi_img[1], sprites.MovementDirection.Right, true);
-            // debug? Above seems to be backwards from expectaiton,
-            // and doesn't properly reset corgi to standard frame after motion.
-
-            _ground = screen.height - (_player.height / 2) - _edge;
-            _ceiling = _player.height / 2;
-            _leftWall = _player.width / 2 + _edge;
-            _rightWall = screen.width - _leftWall;
-
-            _player.x = (screen.width / 2) + (_player.width / 2);
-            _player.y = _ground;
+            _player.setFlag(SpriteFlag.StayInScreen, true);
+            _player.ay = _gravity
         }
     }
 
@@ -455,13 +432,34 @@ namespace corgi {
         return (input < 0 ? 1 : 0) + Math.floor(input);
     }
 
-    // normalize input number to 0, 1, or -1
+    // Normalize input number to 0, 1, or -1
     function normalize(input: number): number {
         return input != 0 ? input / Math.abs(input) : 0;
     }
 
-    // Grab the next sprite to use from the given array, based off the current _count
+    // Grab the next Image to use from the given array, based off the current _count
     function pickNext(input: Image[], state: number = 3): Image {
         return input[(_count / state) % input.length];
+    }
+
+    // Provides an impulse for a 'double jump'
+    function doubleJump(): void {
+        _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
+                                _player.vy - _jumpVelocity);
+    }
+
+    // Check if there is contact to the left; this includes tilemap walls and the boundaries of the screen
+    function contactLeft(): boolean {
+        return _player.left <= _touching || _player.isHittingTile(CollisionDirection.Left);
+    }
+
+    // Check if there is contact to the right; this includes tilemap walls and the boundaries of the screen
+    function contactRight(): boolean {
+        return screen.width - _player.right <= _touching || _player.isHittingTile(CollisionDirection.Right);
+    }
+
+    // Check if there is contact to below; this includes tilemap walls and the boundaries of the screen
+    function contactBelow(): boolean {
+        return screen.height - _player.bottom <= _touching || _player.isHittingTile(CollisionDirection.Bottom);
     }
 }

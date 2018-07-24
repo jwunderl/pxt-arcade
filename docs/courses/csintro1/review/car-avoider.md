@@ -46,6 +46,6 @@ game.onUpdateInterval(500, function () {
 
 Using the above code as a base, add to the ``||game:on game update every...||`` block to create projectiles of kind ``||sprites:car||`` that the player must avoid. They should move to the left across the center of the screen at a rate of 50. 
 
-## Student Task 2
+## Student Task 2:
 
 Now, make the cars start at a random y position on the screen, so that they don't move in a straight line. To do this, you will need to use the ``||math:pick random between...||`` and ``||scene:screen height||`` blocks.

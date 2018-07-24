@@ -26,7 +26,7 @@ As we saw in the fundamentals lesson on loops, one application of loops is to re
 
 Note: You may have noticed that this exercise seems awfully familiar in result to some things we've used before: vx and vy! It turns out that vx and vy really are equivalent in concept to what we wrote blocks for in this past exercise.  Try playing with the pause time and how much the x and y position change by each loop iteration. You'll find that a very smooth animation can be acheived with the right values for those two parameters.
 
-Challenge: Move your sprite in other shapes besides a square (triangles, circles). You could also try to move multiple sprites at once and see how that turns out.
+**Challenge:** Move your sprite in other shapes besides a square (triangles, circles). You could also try to move multiple sprites at once and see how that turns out.
 
 
 # Practice 3: Drawing multiple sprites with loops
@@ -40,4 +40,4 @@ For this exercise we're not going to use loops to chose movement, but rather loo
 
 TODO flesh out steps / provide solution:
 
-Challenge: Draw a grid (rows x columns) of a user requested number of sprites. Choosing some max number that go in each row/column will probably be arbitrary.  TODO talk about nested loops / give hint and small ex.
+**Challenge:** Draw a grid (rows x columns) of a user requested number of sprites. Choosing some max number that go in each row/column will probably be arbitrary.  TODO talk about nested loops / give hint and small ex.

@@ -6,9 +6,9 @@ Functions can contain multiple lines of code but can be called with a single sta
 
 
 In this activity student implement: 
-* simple functions
-* calling  functions by name
-* shortened main program logic that is easier to understand
+* Simple functions
+* Calling  functions by name
+* Shortened main program logic that is easier to understand
 
 ## Concept: create a simple function
 

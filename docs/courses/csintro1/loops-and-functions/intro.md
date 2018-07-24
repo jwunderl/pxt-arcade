@@ -13,8 +13,8 @@ for (let i = 0; i < 5; i++) {
 
 In this activity students will work with: 
 
-* sprite motion
-* repeat loop
+* Sprite motion
+* Repeat loop
 
 ## Concept: Motion with loops
 
@@ -159,7 +159,7 @@ There isn't too much different between the two sprites - we don't even need to m
 ## Student Task 3: Boomerang
 1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the course of two seconds
 2. Make the boomerang return to it's original location over the course of two seconds using a loop.
-3. Challenge: Use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies
+3. **Challenge:** Use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies
 
 ### ~hint
 

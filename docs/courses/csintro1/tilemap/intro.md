@@ -166,8 +166,6 @@ Tile maps allow us to design an area of play that is bigger than the screen. An 
 In this activity students will build tile maps games with expanded area of play using:
 * ``||scene:set tile map to||``
 * ``||scene:set tile to||``
-  * wall
-  * decoration
 * ``||scene:camera follow sprite||``
 
 ## Concept: create a tile map
@@ -183,7 +181,7 @@ The basic tile map example uses:
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "first tile map") 
-4. navigate through the tile map with the sprite
+4. Navigate through the tile map with the sprite
 
 ```blocks
 enum SpriteKind {
@@ -233,13 +231,14 @@ game.onUpdate(function () {
     mapSprite.y += controller.dy(100)
 })
 ```
+
 ## Task: expand first tile map
-1. starting with the the above first tile map example 
-2. edit the ``||Scene:set tile map to||`` image and expand the size from 16x16 to 16x32
-3. design additional rooms using black for walls and other colors for the rooms
-4. make a pathway open to all of the room
-5. navigate the sprite to all rooms without crossing a black lines
-5. Challenge: design a 32x32 tile map and make a more interesting sprite
+1. Starting with the the above first tile map example 
+2. Edit the ``||Scene:set tile map to||`` image and expand the size from 16x16 to 16x32
+3. Design additional rooms using black for walls and other colors for the rooms
+4. Make a pathway open to all of the room
+5. Navigate the sprite to all rooms without crossing a black lines
+5. **Challenge:** design a 32x32 tile map and make a more interesting sprite
 
 ## Concept: Set tile map tile to make obstacles
 
@@ -248,11 +247,11 @@ game.onUpdate(function () {
 ``||scene:set tile to||`` is a way to easily design obstacles such as walls, water, lava. This is also a fast way to "paint" on detail like a field of flowers, sky with clouds or a fancy flooring.
 
 ## Example: Set tile map as design and as obstacle 
-1. review the code below
-2. navigate the sprite to each room and bump into a few walls
-3. notice which blocks become obstacles for our sprite and which are just decoration
-4. save the code for the task (name it "set tile design 1") 
-5. notice that this sprite moves faster
+1. Review the code below
+2. Navigate the sprite to each room and bump into a few walls
+3. Notice which blocks become obstacles for our sprite and which are just decoration
+4. Save the code for the task (name it "set tile design 1") 
+5. Notice that this sprite moves faster
 
 ```blocks  
 enum SpriteKind {
@@ -341,22 +340,21 @@ game.onUpdate(function () {
 ```  
 ### ~hint
 
-note the ``||Scene:set tile to||`` defining the tile for black displays as a brick wall. It also has selected "wall on" to create an obstacle. The light green tile is decorative only because "wall off" is set. 
+note the ``||scene:set tile to||`` defining the tile for black displays as a brick wall. It also has selected "wall on" to create an obstacle. The light green tile is decorative only because "wall off" is set. 
 
 ### ~
 
 ## Task: add rooms with decorations and obstacles 
-1. starting with the "set tile design 1" from above example 
-2. edit the ``||Scene:set tile map to||`` image and expand the size from 16x16 to 16x32
-3. design additional rooms using black for walls, create outline border walls and design rooms
-4. make a pathway open to all of the rooms, and pick a color for another obstacle (like a rock or lamp)
-5. add a decoration to another room
-6. navigate the sprite to all rooms making sure the sprite will bump into walls and the new obstacles
+1. Starting with the "set tile design 1" from above example 
+2. Edit the ``||Scene:set tile map to||`` image and expand the size from 16x16 to 16x32
+3. Design additional rooms using black for walls, create outline border walls and design rooms
+4. Make a pathway open to all of the rooms, and pick a color for another obstacle (like a rock or lamp)
+5. Add a decoration to another room
+6. Navigate the sprite to all rooms making sure the sprite will bump into walls and the new obstacles
 
-### Challenge
-complete 3 or more of the following
-* add a 3rd obstacle
-* decorate a 3rd room
+### Challenges
+* Add a 3rd obstacle
+* Decorate a 3rd room
 * Make a new design for the "smiley" sprite
 
 ## What did we learn? [create 2 questions]

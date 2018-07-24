@@ -5,9 +5,9 @@
 # TODO: Video - review some looping examples (a few), loop crash motion,  & show controller.dx() 
 
 In these activities, the student will use:
-* functions for everything!
-* sprite kind 
-* on kind overlap
+* Functions for everything!
+* ``||sprites:sprite kind||``
+* ``||on kind overlap||``
 * Loop to animate sprite movement
 
 ```blocks

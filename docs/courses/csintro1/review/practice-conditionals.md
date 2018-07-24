@@ -3,11 +3,11 @@
 1. Make a sprite that will be our player for this game and set a new variable called 'schoolDaysLeft' to be some number near 50. You'll also want to set the horizontal position of your sprite to somewhere on the left side of the screen.
 2. On any button press, subtract 1 from schoolDaysLeft (use `change by`).
 3. Here's where we'll add an if/else to say different messages depending on how many days of school are left.
-	- If there are no more school days left, have your sprite say "Done with school!!". Hint: use a logic block that can compare numbers to use schoolDaysLeft with some other value) #TODO: make this use hint box
-	- Otherwise, have your sprite say how many more days of school are left. For example if there were 48 more days of school left, an ideal message would be "48 days of school left!!". You'll have to use the `join` block to join a variable and string message together.
+	* If there are no more school days left, have your sprite say "Done with school!!". Hint: use a logic block that can compare numbers to use schoolDaysLeft with some other value)
+	* Otherwise, have your sprite say how many more days of school are left. For example if there were 48 more days of school left, an ideal message would be "48 days of school left!!". You'll have to use the `join` block to join a variable and string message together.
 4. Try running it! The countdown should work right now, but we can use conditional blocks to make this a little more fancy.
-	- Add some more logic so that if it's the final week (1 to 7 days of school left), the sprite doesn't say any of the countdown stuff, but instead says "FINAL WEEK!! WOOHOO!!". You'll need to add another branch to your current if/else (click the + button bottom of the blue if block to add another branch) to add this behavior in.
-	- Add some more logic (another branch to the if/else) so that if the `remainder of`schoolDaysLeft divided by 7 is = 0, the sprite should say how many weeks there are left instead. (There will be schoolDays / 7 weeks left at that point).
+	* Add some more logic so that if it's the final week (1 to 7 days of school left), the sprite doesn't say any of the countdown stuff, but instead says "FINAL WEEK!! WOOHOO!!". You'll need to add another branch to your current if/else (click the + button bottom of the blue if block to add another branch) to add this behavior in.
+	* Add some more logic (another branch to the if/else) so that if the `remainder of`schoolDaysLeft divided by 7 is = 0, the sprite should say how many weeks there are left instead. (There will be schoolDays / 7 weeks left at that point).
 
 # Practice #2: Dream Fictional Job Survey
 

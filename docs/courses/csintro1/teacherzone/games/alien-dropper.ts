@@ -1,16 +1,13 @@
-// https://makecode.com/_XAvAygD5oFqP alien dropper:
-// must have Corgi_extension either imported or made as custom block
-
 enum SpriteKind {
     Player,
     Enemy,
     Arrow
 }
+let dir: number = 0
 let alien: Sprite = null
-let dir = 0
 let projectile: Sprite = null
-let count = 0
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Arrow, function (sprite, otherSprite) {
+let rate: number = 0
+sprites.onOverlap(SpriteKind.Arrow, SpriteKind.Player, function (sprite, otherSprite) {
     game.over()
 })
 info.setScore(0)
@@ -35,42 +32,42 @@ alien = sprites.create(img`
 `, SpriteKind.Enemy)
 alien.setPosition(10, 4)
 alien.vx = 20
-count = Math.sqrt(info.score()) * 3 + 20
+rate = 20
 dir = 1
 game.onUpdate(function () {
-    count = Math.sqrt(info.score()) * 3 + 20
+    rate = Math.sqrt(info.score()) * 3 + 20
     if (alien.x <= 6) {
         dir = 1
     } else if (alien.x >= screen.width - 6) {
         dir = -1
     }
-    alien.vx = dir * count
-    corgi.horizontalMovement()
-    corgi.verticalMovement(
-    )
-    corgi.boundCheck()
-    corgi.updateSprite()
+    alien.vx = dir * rate
 })
+
+corgi.horizontalMovement()
+corgi.verticalMovement()
+corgi.updateSprite()
+
 game.onUpdateInterval(50, function () {
     if (Math.percentChance(8)) {
         projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-. . . . . . . a . . . . . . . . 
-. . . . . . . a . . . . . . . . 
-. . . . . . . a . . . . . . . . 
-. . . . . . . a . . . . . . . . 
-. . . . a a a a a a a . . . . . 
-. . . a d d e a e d d a . . . . 
-. . . . a e d a d e a . . . . . 
-. . . . . a d a d a . . . . . . 
-. . . . . . a a a . . . . . . . 
-. . . . . . . a . . . . . . . . 
+. . . . . . . 7 . . . . . . . . 
+. . . . . . . 7 . . . . . . . . 
+. . . . . . . 7 . . . . . . . . 
+. . . . . . . 7 . . . . . . . . 
+. . . . 7 7 7 7 7 7 7 . . . . . 
+. . . 7 5 5 e 7 e 5 5 7 . . . . 
+. . . . 7 e 5 7 5 e 7 . . . . . 
+. . . . . 7 5 7 5 7 . . . . . . 
+. . . . . . 7 7 7 . . . . . . . 
+. . . . . . . 7 . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, count + Math.randomRange(0, 15), SpriteKind.Arrow, alien)
+`, 0, rate + Math.randomRange(0, 15), SpriteKind.Arrow, alien)
     }
     info.changeScoreBy(1)
 })

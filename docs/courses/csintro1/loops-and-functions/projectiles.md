@@ -6,12 +6,12 @@ Depending on the game a projectile can be dangerous, friendly, a nuisance that b
 
 In this activity the student will implement:
 
-* projectile sprites
-* onUpdate 
-* set sprite kind
-* onOverlap kind
-* on game update every
-* pick random
+* ``||sprites:projectile||`` sprites
+* ``||game:on game update||``
+* ``||sprites:set sprite kind||``
+* ``||sprites:on overlap kind||``
+* ``||game:on game update every||``
+* ``||math:pick random||``
 
 ## Concept: Flying Birds!
 
@@ -87,7 +87,7 @@ This modified version adds in an event that triggers when the projectile is dest
 1. Start with the provided code below.
 2. Modify the code so that the ball falls down the screen at a rate of 50 (that is, it moves along the y axis at a rate of 50)
 3. Create a second projectile that goes up the screen at a rate of 50 (moving in the direction opposite the ball)
-4. Challenge: Make something happen when the two projectiles overlap one another as learned previously - perhaps have them ``||sprite:say||`` hello to each other!
+4. **Challenge:** Make something happen when the two projectiles overlap one another as learned previously - perhaps have them ``||sprite:say||`` hello to each other!
 
 ```blocks
 enum SpriteKind {
@@ -125,7 +125,7 @@ projectile = sprites.createProjectile(img`
 1. Start with the provided code below - currently, it will spawn meteors of kind "Enemy" that stay in random locations along the top of the screen.
 2. Each time a projectile is created, add one to the score using the ``||info:change score by||`` block.
 3. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50.
-4. Challenge: Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50
+4. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50
 
 ```blocks
 enum SpriteKind {
@@ -520,7 +520,7 @@ balloon.x += -50
 1. Describe two benefits of using projectiles rather than normal sprites.  
 2. How did using a loop in this section help reduce the amount of blocks that were used?
 3. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
-4. Challenge: Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might be make your game run faster than leaving it off.
+4. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might make your game run faster than leaving it off.
 ### ~hint
 
 Does the game need to check whether a sprite is overlapping another if either is a ghost?
@@ -528,7 +528,6 @@ Does the game need to check whether a sprite is overlapping another if either is
 ### ~
 
 ## Rubrics
-
 
 ### Projectiles task rubric
 
