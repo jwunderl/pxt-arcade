@@ -4,6 +4,8 @@ Make games of your choosing!
 
 ![Catch the Cents](/static/courses/csintro1/motion-and-events/catch-the-cents.gif)
 
+![Text Adventure](/static/courses/csintro1/motion-and-events/text-adventure.gif)
+
 From what we learned in the previous lessons we should be able to make some great games. 
 
 1. Generate several game ideas (at least 3) and discuss with another student on what is good and what can be improved.
