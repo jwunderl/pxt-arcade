@@ -127,18 +127,17 @@ mySprite = sprites.create(img`
 
 # Student Task #3: Create Velocity Motion (short method)
 
-https://makecode.com/_PYY8wLemzgUs
+https://makecode.com/_TEmAxDimtac8
 
 ```blocks
-
 enum SpriteKind {
     Player,
     Enemy
 }
+let mySprite: Sprite = null
 let ball: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    ball.x = 80
-    ball.y = 64
+    ball.setPosition(75, 60)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     ball.vx = 0
@@ -180,6 +179,7 @@ ball = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 ball.setFlag(SpriteFlag.StayInScreen, true)
+controller.controlSprite(mySprite, 100, 100)
 game.onUpdate(function () {
     ball.vx += controller.dx()
     ball.vy += controller.dy()

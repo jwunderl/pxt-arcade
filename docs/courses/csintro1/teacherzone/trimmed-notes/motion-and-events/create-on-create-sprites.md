@@ -5,7 +5,7 @@
 
 ### ~hint
 
-Students can use a local variable within ``||sprites:on created () of kind ()||`` event block since it is used only in the scope of that block of code (not accessible outside that code block of code).  This is variable scope, which is not a main concept for this lesson or for unit 1. 
+Students can use a local variable within ``||sprites:on created||`` event block since it is used only in the scope of that block of code (not accessible outside that code block of code).  This is variable scope, which is not a main concept for this lesson or for unit 1. 
 
 For now we say the variable is used for a short time in the event and then goes away.  We will address local scope in later Arcade Intro CS units.
 
@@ -134,10 +134,74 @@ sprites.createEmptySprite(SpriteKind.Bird)
 ```
 ## What did we learn? [TODO - this is from overlap 2]
 
-1.  Describe how a SpriteKind label is used in "spawning" a sprite using ``||Sprite:create empty sprite of kind ( )||`` block
-2. Explain what the  ``||sprites:on created () of kind ()||`` block does.
+1.  Describe how a SpriteKind label is used in "spawning" a sprite using ``||Sprite:create empty sprite||`` block
+2. Explain what the  ``||sprites:on created||`` block does.
 
 
+### ~hint
+
+**Additional Projects**
+This is an opportunity top assign a project to students to create a game that will generate lots of sprites in random locations.  Students can use a ``||game:on game update||`` block with ``||Sprite:create empty sprite||`` in a game with using ``||info:countdown||``.  Students could start with a score of 100 and subtract for every overlap. Encourage students to be creative.  Note that the way to cheat is to go off screen so ask students to solve that problem (by keeping onscreen).
+
+https://makecode.com/_eUX2P1DmwUb7
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    star
+}
+let mySprite: Sprite = null
+let sprite: Sprite = null
+sprites.onCreated(SpriteKind.star, function (sprite) {
+    sprite.setImage(img`
+5 . . . 5 . . 5 
+. 5 . . 5 . 5 . 
+. . 5 5 5 5 . . 
+. . 5 5 5 5 5 5 
+5 5 5 5 5 5 . . 
+. . 5 5 5 5 . . 
+. 5 . 5 . . 5 . 
+5 . . 5 . . . 5 
+`)
+    sprite.setPosition(Math.randomRange(10, 150), Math.randomRange(10, 110))
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.star, function (sprite, otherSprite) {
+    info.changeScoreBy(-1)
+})
+game.splash("Avoid Obstacles")
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 1 1 1 1 1 . . . . . . 
+. . . . 1 e e e e e 1 . . . . . 
+. . . 1 e e e e e e e 1 . . . . 
+. . 1 e e e e e e e e e 1 . . . 
+. . 1 e e f e e e f e e 1 . . . 
+. 1 e e e e e e e e e e e . . . 
+. . 1 e e e e 4 e e e e 1 . . . 
+. . 1 e e e e e e e e e 1 . . . 
+. . . 1 e e e 1 e e e 1 . . . . 
+. . . . 1 e e e e e 1 . . . . . 
+. . . . . 1 1 1 1 1 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+controller.controlSprite(mySprite, 100, 100)
+info.setScore(100)
+info.startCountdown(10)
+game.onUpdateInterval(100, function () {
+    sprites.createEmptySprite(SpriteKind.star)
+})
+
+```
+
+ **Additionally**, students can change the helicopter game to be something totally different.  It could be an animal or people.  The overlaps can have lots of different effects like destroy, change position or velocity or image.  
+ 
+ More ideas in the projects lesson that follows.
+
+### ~
 
 ## Rubrics
 
