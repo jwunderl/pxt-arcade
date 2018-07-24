@@ -2,6 +2,7 @@
 
 Use at least 10 of the following
 * Sprites
+* Button Press Event
 * Position (coordinates)
 * Controller (dx) (vx)
 * Overlap Events / sprite kind
@@ -13,18 +14,21 @@ Use at least 10 of the following
 * Flip
 * Stay in screen / ghost
 * Set image
-* Function
 * Sprite say
 * Splash
 
 
-## [Catch the cents](https://makecode.com/_2WKKYbDri5Kc)
+## Example games (Student code will vary)
+
+### [Catch the cents](https://makecode.com/_2WKKYbDri5Kc)
+
+![Catch the Cents](/static/courses/csintro1/motion-and-events/catch-the-cents.gif)
 
 Uses:
 * Sprites
 * Position
 * Overlap
-* Controller
+* Controller (``||control sprite with||``)
 * Create / on create
 * Random
 * Score
@@ -90,5 +94,128 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.startCountdown(10)
 game.onUpdateInterval(500, function () {
     sprites.createEmptySprite(SpriteKind.Collectible)
+})
+```
+
+### [Text Adventure](https://makecode.com/_3XC1g76u21YM)
+
+![Text Adventure](/static/courses/csintro1/motion-and-events/text-adventure.gif)
+
+Uses:
+* Sprites
+* Button Press Event
+* Controller (``||dx||`` and ``||dy||``)
+* Position
+* Life
+* Flip
+* Showing numbers as string
+* Stay in Screen
+* Sprite Say
+* Splash
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Platypus,
+    Dogtor
+}
+let dogtor: Sprite = null
+let platypus: Sprite = null
+let otherSprite: Sprite = null
+let sprite: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Platypus, function (sprite, otherSprite) {
+    otherSprite.say("plat", 100)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Dogtor, function (sprite, otherSprite) {
+    otherSprite.say("your health is: " + info.life(), 100)
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeLifeBy(-1)
+})
+let player: Sprite = null
+sprite = null
+scene.setBackgroundColor(1)
+game.splash("Talk to the animals!", "And don't press B!")
+player = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . . 2 . . . . . . 2 . . . . 
+. . . . 2 . 2 . . 2 . 2 . . . . 
+. . . . 2 . . . . . . 2 . . . . 
+. . . . 2 . . . . . . 2 . . . . 
+. . . . 2 . . . . . . 2 . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . 2 . . . 
+. . . . 2 2 2 2 2 2 2 2 2 . . . 
+. . . . 2 . . . 2 . . . . . . . 
+. . . . 2 . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 2 . . . . . . 
+. . . . . . . 2 . . 2 . . . . . 
+. . . . . . 2 . . . . 2 . . . . 
+. . . . . . 2 . . . . . . . . . 
+. . . . . 2 . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+player.setFlag(SpriteFlag.StayInScreen, true)
+info.setLife(5)
+platypus = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . 7 7 7 7 . . . . . . . . . . 
+. 7 7 . . 7 . . . . . . e e . . 
+. . 7 7 7 7 7 7 7 7 7 7 e e . . 
+. . . . . . 7 . . . . 7 . . . . 
+. . . . . 7 . 7 . . 7 . 7 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Platypus)
+platypus.setPosition(120, 40)
+dogtor = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . e e . e e . e e . . . . 
+. . . . e e e e e e e e . . . . 
+. . . . e . e f e f . e . . . . 
+. . . . . . e e e e . . . . . . 
+. . . . . . e e f 3 . . . . . . 
+. . . . f f e e e e f f . . . . 
+. . . . f 1 1 1 1 1 1 f . . . . 
+. . . . f 1 1 1 9 1 1 f . . . . 
+. . . . f 1 1 1 1 1 1 f . . . . 
+. . . . f 1 1 1 9 1 1 f . . . . 
+. . . . f 1 1 1 1 1 1 f . . . . 
+. . . . f 1 1 f f f 1 f . . . . 
+. . . . . e e . . . e e . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Dogtor)
+dogtor.setPosition(20, 100)
+game.onUpdate(function () {
+    player.x += controller.dx()
+    player.y += controller.dy()
+})
+game.onUpdateInterval(150, function () {
+    player.image.flipX()
 })
 ```
