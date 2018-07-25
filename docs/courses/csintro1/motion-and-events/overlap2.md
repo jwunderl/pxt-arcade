@@ -8,11 +8,9 @@ In this activity the student will continue to work with:
 * ``||sprites:on overlap event||`` with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
 * Define multiple SpriteKind overlap events and actions
 
-# Overlaps & Events (part 2)
-
-# TODO: eric overview video bump
-
 ## Concept: SpriteKind Overlap Event "bump" action  
+
+https://youtu.be/eXCpLH74tF4 
 
 Having sprites bump rather than pass over each other is useful game behavior for a SpriteKind overlap event. One way to simulate a bump is:
 
