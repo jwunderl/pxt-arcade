@@ -7,9 +7,59 @@ In this Activity students investigate the game screen using
 ## Concept: Identify the X, Y coordinates of the Game Screen  
 
 ## Student Activity
+
 ### Coordinate Walker
 
+https://makecode.com/_huXKRL3r24iC
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.splash("X=" + Math.trunc(player1.x) + " Y=" + Math.trunc(player1.y))
+})
+let player1: Sprite = null
+game.splash("Sprite Walker", "\"A\" for coordinates")
+player1 = sprites.create(img`
+1 1 1 
+1 2 1 
+1 1 1 
+`, SpriteKind.Player)
+scene.setBackgroundColor(12)
+game.onUpdate(function () {
+    // Move sprite bigger number is faster e.g. - dx(20)
+    player1.x += controller.dx(15)
+    player1.y += controller.dy(15)
+    if (player1.x < -10) {
+        player1.x = -10
+    }
+    if (player1.x > 170) {
+        player1.x = 170
+    }
+    if (player1.y < -10) {
+        player1.y = -10
+    }
+    if (player1.y > 130) {
+        player1.x = 130
+    }
+})
+```
+
+### ~hint
+
+Students must get use to the coordinates of the game screen and how they change as a sprite moves.
+
+* **Up** movement changes by getting smaller or **subtracting** from the **Y** coordinate
+* **Down**  movement changes by getting larger or **adding** to the **Y** coordinate
+* **Left** movement changes by getting smaller or **subtracting** from the **X** coordinate
+* **Right** movement changes by getting larger or **adding** to the **X** coordinate
+
+### ~
+
 ## What did we learn?
+
 Use **X** and/or **Y** in your answers  
 
 1. Describe how coordinates change when moving up versus moving down  
@@ -26,7 +76,9 @@ Use **X** and/or **Y** in your answers
 ## Rubrics
 
 ### ~hint
+
 Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
+
 ### ~
 
 ### Coordinate Walker Rubric
