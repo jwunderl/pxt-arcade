@@ -1,5 +1,17 @@
 # Example Projects
 
+### ~hint
+
+If you feel that students need a bit of review before moving on, there are several [review and extension sections](/courses/csintro1/review) sections that could be fit in at this point.
+
+* [Implementing and debugging a full collection game](/courses/csintro1/review/review-game)
+* [Extension of "Touch the Button" example from info category](/courses/csintro1/review/extend-touch-the-button)
+* [Practice with variables](/courses/csintro1/review/practice-variable-math)
+* [Practice with strings](/courses/csintro1/review/practice-string-math)
+* [Practice with sprite motion and button events](/courses/csintro1/review/practice-sprite-motion)
+
+### ~
+
 Use at least 10 of the following
 * Sprites
 * Button Press Event
