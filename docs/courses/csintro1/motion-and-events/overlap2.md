@@ -8,19 +8,17 @@ In this activity the student will continue to work with:
 * ``||sprites:on overlap event||`` with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
 * Define multiple SpriteKind overlap events and actions
 
-# Overlaps & Events (part 2)
-
-# TODO: eric overview video bump
-
 ## Concept: SpriteKind Overlap Event "bump" action  
+
+https://youtu.be/eXCpLH74tF4 
 
 Having sprites bump rather than pass over each other is useful game behavior for a SpriteKind overlap event. One way to simulate a bump is:
 
 1. Move the sprite in the opposite direction after the overlap (we will make it bump backwards). The faster we bump, the farther we move away from the overlap object.  
 2. Stop the sprite
-    * set vx and vy to 0
-    * Change x position by (-1) \* (x-velocity)  
-    * Change y position by (-1) \* (y-velocity)  
+    * set ``||sprites:vx||`` and ``||sprites:vy||`` to 0
+    * Change x position by (-1) \* (``||sprites:vx||``)  
+    * Change y position by (-1) \* (``||sprites:vy||``)  
 3. Shake the stationary object (cloud)  
     * Move 1 pixel (any direction)  
     * Pause  
@@ -218,7 +216,7 @@ There is a "T" shaped landing area at the bottom of the example.  The helicopter
 
 ### ~hint
 
-For the landing:  to change the helicopter Y position to move up we have to change by an negative Y value.
+For the landing: to change the helicopter ``||sprites:Y||`` position in order to move upwards we have to change by an negative value.
 
 Challenge Tip: Erratic motion can be made by changing the sprite position back and forth several times. Try changes in velocity and/or position separated by short pauses.
 

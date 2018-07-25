@@ -6,12 +6,13 @@ namespace corgi {
     let _player: Sprite;
 
     let _initJump: boolean = true;
+    let _releasedJump: boolean = true;
     let _maxMoveVelocity: number = 70;
-    let _gravity: number = 160;
-    let _jumpVelocity: number = 65;
-    let _maxJump: number = 2;
+    let _gravity: number = 300;
+    let _jumpVelocity: number = 125;
+    const _maxJump: number = 2;
 
-    // The Corgi is 'touching' a wall if it is within this 
+    // The Corgi is 'touching' a wall if it is within this many pixels of it.
     let _touching: number = 2;
     let _remainingJump: number = _maxJump;
 
@@ -341,35 +342,29 @@ namespace corgi {
     export function verticalMovement(): void {
         init();
 
-        controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-            if (contactLeft() && controller.right.isPressed()
-                || contactRight() && controller.left.isPressed()) {
-                _remainingJump = 1;
-            }
-            if (_remainingJump > 0) {
-                if (_initJump) {
-                    _player.vy = -1 * _jumpVelocity;
-                    _initJump = false;
-                } else {
-                    doubleJump();
-                }
-                _remainingJump--;
-            }
-        })
-
-        controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-            if (contactRight() && controller.up.isPressed()) {
-                doubleJump();
-            }
-        })
-
-        controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-            if (contactLeft() && controller.up.isPressed()) {
-                doubleJump();
-            }
+        controller.up.onEvent(ControllerButtonEvent.Released, function () {
+            _releasedJump = true;
         })
 
         game.onUpdate(function () {
+            if (controller.up.isPressed()) {
+                if (contactLeft() && controller.right.isPressed()
+                    || contactRight() && controller.left.isPressed()) {
+                    _remainingJump = Math.max(_remainingJump + 1, _maxJump);
+                }
+                if (_remainingJump > 0 && _releasedJump) {
+                    _releasedJump = false;
+                    if (_initJump) {
+                        _player.vy = -1 * _jumpVelocity;
+                        _initJump = false;
+                    } else {
+                        _player.vy = Math.clamp((-4 * _jumpVelocity) / 3, -30,
+                                                _player.vy - _jumpVelocity);
+                    }
+                    _remainingJump--;
+                }
+            }
+
             if ((contactLeft() && controller.left.isPressed()
                     || contactRight() && controller.right.isPressed())
                     && _player.vy > - 10) {
@@ -379,7 +374,7 @@ namespace corgi {
             }
 
             if (contactBelow()) {
-                _remainingJump = _maxJump;
+                if (_initJump) _remainingJump = _maxJump;
                 _initJump = true;
             }
         })
@@ -391,8 +386,9 @@ namespace corgi {
     //% group="Movement"
     //% blockId=followCorgi block="Make camera follow corgi left and right"
     //% weight=100 blockGap=5
-    export function followCorgi() {
+    export function followCorgi(): void {
         init();
+
         game.onUpdate(function() {
             scene.centerCameraAt(_player.x - screen.width / 2, 0)
             // TODO: Fix if centercameraat gets fixed
@@ -407,6 +403,7 @@ namespace corgi {
     //% weight=100 blockGap=5
     export function updateSprite(): void {
         init();
+
         game.onUpdate(function () {
             _count++;
 
@@ -419,22 +416,22 @@ namespace corgi {
     /** miscellaneous helper methods **/
 
     // Initialize state of corgi.
-    function init() {
+    function init(): void {
         if (!_player) {
             _player = sprites.create(_corgi_still[0], SpriteKind.Player);
             _player.setFlag(SpriteFlag.StayInScreen, true);
-            _player.ay = _gravity
+            _player.ay = _gravity;
         }
     }
 
     // Round input towards 0; 1.4 becomes 1.0, -0.4 becomes 0.0
     function roundTowardsZero(input: number): number {
-        return (input < 0 ? 1 : 0) + Math.floor(input);
+        return Math.floor(input) + input < 0 ? 1 : 0;
     }
 
     // Normalize input number to 0, 1, or -1
     function normalize(input: number): number {
-        return input != 0 ? input / Math.abs(input) : 0;
+        return input ? input / Math.abs(input) : 0;
     }
 
     // Grab the next Image to use from the given array, based off the current _count

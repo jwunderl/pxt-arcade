@@ -1,7 +1,5 @@
 ## Extend "Touch The Button"
 
-## TODO: Make this into a guided tutorial
-
 When we implemented "touch the button 15 times" way back in the info section in the orientation, there was a very basic problem with the game - no matter what, when the game was over, the same screen was shown, with the only difference being the score. We will attempt to make this better using two blocks: ``||info:on life zero||`` and ``||info:on countdown end||``. These blocks are used to override the default behavior of running out of lives and the count down running out - that is, they make it so that instead of the game just ending when either event occurs, whatever is inside those two blocks will occur instead.
 
 ## Base Game:
