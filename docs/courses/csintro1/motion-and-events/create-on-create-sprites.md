@@ -4,7 +4,7 @@ Many games need to spawn sprites to be collected like coins, or avoided like oil
 
 ## Concept: Random Clouds - on created event with spawn SpriteKind 
 
-# TODO: short video eric
+https://youtu.be/iPxXjitXEUg 
 
 ## Example 2: random clouds
 
