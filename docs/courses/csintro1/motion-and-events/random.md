@@ -31,7 +31,7 @@ game.splash("Random Number is " + randomNumber)
 2. Adjust the code to pick a random number from 1 to 100
 3. Add a new variable `anotherRandom` to pick a random number from 20 to 30
 4. Add ``||game:splash||`` for 'anotherRandom' variable and change the label from 'x' to a meaningful label
-5. **Challenge:** create the value of a random number that can have both negative and positive values
+5. **Challenge:** use blocks to generate a random number that can result in both negative and positive values
 
 ## Concept: pick a random location
 
