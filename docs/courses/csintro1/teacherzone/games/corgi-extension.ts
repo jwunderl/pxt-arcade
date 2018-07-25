@@ -8,11 +8,11 @@ namespace corgi {
     let _initJump: boolean = true;
     let _releasedJump: boolean = true;
     let _maxMoveVelocity: number = 70;
-    let _gravity: number = 160;
-    let _jumpVelocity: number = 65;
+    let _gravity: number = 300;
+    let _jumpVelocity: number = 125;
     const _maxJump: number = 2;
 
-    // The Corgi is 'touching' a wall if it is within this 
+    // The Corgi is 'touching' a wall if it is within this many pixels of it.
     let _touching: number = 2;
     let _remainingJump: number = _maxJump;
 
@@ -374,7 +374,7 @@ namespace corgi {
             }
 
             if (contactBelow()) {
-                _remainingJump = _maxJump;
+                if (_initJump) _remainingJump = _maxJump;
                 _initJump = true;
             }
         })
@@ -386,8 +386,9 @@ namespace corgi {
     //% group="Movement"
     //% blockId=followCorgi block="Make camera follow corgi left and right"
     //% weight=100 blockGap=5
-    export function followCorgi() {
+    export function followCorgi(): void {
         init();
+
         game.onUpdate(function() {
             scene.centerCameraAt(_player.x - screen.width / 2, 0)
             // TODO: Fix if centercameraat gets fixed
@@ -402,6 +403,7 @@ namespace corgi {
     //% weight=100 blockGap=5
     export function updateSprite(): void {
         init();
+
         game.onUpdate(function () {
             _count++;
 
@@ -414,22 +416,22 @@ namespace corgi {
     /** miscellaneous helper methods **/
 
     // Initialize state of corgi.
-    function init() {
+    function init(): void {
         if (!_player) {
             _player = sprites.create(_corgi_still[0], SpriteKind.Player);
             _player.setFlag(SpriteFlag.StayInScreen, true);
-            _player.ay = _gravity
+            _player.ay = _gravity;
         }
     }
 
     // Round input towards 0; 1.4 becomes 1.0, -0.4 becomes 0.0
     function roundTowardsZero(input: number): number {
-        return (input < 0 ? 1 : 0) + Math.floor(input);
+        return Math.floor(input) + input < 0 ? 1 : 0;
     }
 
     // Normalize input number to 0, 1, or -1
     function normalize(input: number): number {
-        return input != 0 ? input / Math.abs(input) : 0;
+        return input ? input / Math.abs(input) : 0;
     }
 
     // Grab the next Image to use from the given array, based off the current _count
