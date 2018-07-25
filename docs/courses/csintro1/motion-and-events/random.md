@@ -181,7 +181,7 @@ hat.setPosition(35, 60)
 
 ## What did we learn? 
 
-1. Describe how a set random makes programming can make a game more interesting and/or challenging.
+1. Describe how a set random feature makes programming can make a game more interesting and/or challenging.
 2. What is a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random is needed.  
 
 ## Rubrics

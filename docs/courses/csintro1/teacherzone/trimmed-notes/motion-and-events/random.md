@@ -116,6 +116,31 @@ hat = sprites.create(img`
 mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 hat.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 ```
+### ~hint
+
+When placing items randomly on the scree we can use can use the a screen property to get the width and height of the screen.
+
+```blocks
+let heightY = 0
+let widthX = 0
+widthX = scene.screenWidth()
+heightY = scene.screenHeight()
+```
+
+if we  want to use this in a random game screen placement with a little bit of buffer around edge of screen we use the following:
+
+```blocks
+let positionX = 0
+let positionY = 0
+let heightY = 0
+let widthX = 0
+widthX = scene.screenWidth()
+heightY = scene.screenHeight()
+positionY = Math.randomRange(15, heightY - 15)
+positionX = Math.randomRange(0, widthX - 15)
+```
+
+### ~
 
 ## Example #3: check for random overlap 
 
@@ -276,7 +301,7 @@ hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 
 ## What did we learn? 
 
-1. Describe how a set random makes programming can make a game more interesting and/or challenging.
+1. Describe how a set random feature makes programming can make a game more interesting and/or challenging.
 2. What is a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random is needed.  
 
 ## Rubrics
