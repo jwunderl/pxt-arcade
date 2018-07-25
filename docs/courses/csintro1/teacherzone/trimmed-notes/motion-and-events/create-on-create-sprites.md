@@ -1,7 +1,7 @@
 ## Concept: Random Clouds - on created event with spawn SpriteKind 
 
-## Example 2: random clouds
-## Student Task #2: More Random Clouds
+## Example 1: random clouds
+## Student Task #1: More Random Clouds
 
 ### ~hint
 
@@ -10,10 +10,9 @@ Students can use a local variable within ``||sprites:on created||`` event block 
 For now we say the variable is used for a short time in the event and then goes away.  We will address local scope in later Arcade Intro CS units.
 
 ### ~
+https://makecode.com/_UPTKViRTtR1e
 
 ```blocks
-// https://makecode.com/_4WwWAzA0sMs1
-
 enum SpriteKind {
     Helicopter,
     Cloud,
