@@ -30,9 +30,9 @@ Use at least 10 of the following
 * Splash
 
 
-## Example games (Student code will vary)
+# Example games (Student code will vary)
 
-### [Catch the cents](https://makecode.com/_2WKKYbDri5Kc)
+## [Catch the cents](https://makecode.com/_2WKKYbDri5Kc)
 
 ![Catch the Cents](/static/courses/csintro1/motion-and-events/catch-the-cents.gif)
 
@@ -47,6 +47,69 @@ Uses:
 * Timer
 * Stay in screen
 * Set image
+
+### MVP (Minimum Viable Product) version:
+* MVP games are meant as quick examples of a game, in order to allow you to get a quick prototype to solicit feedback and get small portions working to begin with. For example, this first MVP game would be an MVP testing an implementation using the ``||sprites:create empty sprite||`` and ``||sprites:on created||`` blocks. Further development of the game (the full version below) adds in features like overlap events, score, timers, and randomness, as well as minor quality of life enhancements such as making all sprites stay on screen. By avoiding getting stuck on thinking of and implementing these niceties at first, students can iterate on their design and let ideas come to them from feedback and reasoning as they get basic versions done quickly.
+
+### ~hint
+
+Depending on the class size, you might consider coming up with a few MVP games as a group with your entire class, to get students acquainted with what actually constitutes an MVP game.
+
+### ~
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Collectible
+}
+let mySprite: Sprite = null
+let sprite: Sprite = null
+sprites.onCreated(SpriteKind.Collectible, function (sprite) {
+    sprite.setImage(img`
+6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
+6 7 7 7 7 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 7 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 6 6 6 6 6 6 6 6 7 7 7 6 
+6 7 7 7 6 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 6 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 6 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 6 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 6 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 6 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 6 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 6 6 6 6 6 6 6 6 7 7 7 6 
+6 7 7 7 7 7 7 7 6 7 7 7 7 7 7 6 
+6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
+6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+`)
+    sprite.setPosition(40, 40)
+    sprite.setFlag(SpriteFlag.StayInScreen, true)
+})
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . 5 5 5 5 5 5 5 5 5 . . . . 
+. . . 5 . . . . . . . 5 . . . . 
+. . . 5 . 5 . . 5 . . 5 . . . . 
+. . . 5 . . . . . . . 5 . . . . 
+. . . 5 . 5 5 5 5 . . 5 . . . . 
+. . . 5 . . . . . . . 5 . . . . 
+. . . 5 . . . . . . . 5 . . . . 
+. . . 5 5 5 5 5 5 5 5 5 . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+controller.controlSprite(mySprite, 100, 100)
+sprites.createEmptySprite(SpriteKind.Collectible)
+```
+
+### Full version:
 
 ```blocks
 enum SpriteKind {
@@ -109,7 +172,7 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-### [Text Adventure](https://makecode.com/_3XC1g76u21YM)
+## [Text Adventure](https://makecode.com/_3XC1g76u21YM)
 
 ![Text Adventure](/static/courses/csintro1/motion-and-events/text-adventure.gif)
 
@@ -125,6 +188,84 @@ Uses:
 * Sprite Say
 * Splash
 
+### MVP:
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Platypus,
+}
+let platypus: Sprite = null
+let otherSprite: Sprite = null
+let sprite: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Platypus, function (sprite, otherSprite) {
+    otherSprite.say("plat", 100)
+})
+let player: Sprite = null
+sprite = null
+player = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . . 2 . . . . . . 2 . . . . 
+. . . . 2 . 2 . . 2 . 2 . . . . 
+. . . . 2 . . . . . . 2 . . . . 
+. . . . 2 . . . . . . 2 . . . . 
+. . . . 2 . . . . . . 2 . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . 2 . . . 
+. . . . 2 2 2 2 2 2 2 2 2 . . . 
+. . . . 2 . . . 2 . . . . . . . 
+. . . . 2 . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 . . . . . . . 
+. . . . . . . . 2 2 . . . . . . 
+. . . . . . . 2 . . 2 . . . . . 
+. . . . . . 2 . . . . 2 . . . . 
+. . . . . . 2 . . . . . . . . . 
+. . . . . 2 . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+platypus = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . 7 7 7 7 . . . . . . . . . . 
+. 7 7 . . 7 . . . . . . e e . . 
+. . 7 7 7 7 7 7 7 7 7 7 e e . . 
+. . . . . . 7 . . . . 7 . . . . 
+. . . . . 7 . 7 . . 7 . 7 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Platypus)
+platypus.setPosition(120, 40)
+
+game.onUpdate(function () {
+    player.x += controller.dx()
+    player.y += controller.dy()
+})
+pause(1000)
+player.image.flipX()
+```
+
+### Full Version:
 ```blocks
 enum SpriteKind {
     Player,
