@@ -21,7 +21,8 @@ In this activity students will work with:
 We can start off by trying to solve a small task - slowly move a ghost from the center of the screen towards the bottom right corner.
 
 ## Example: Moving a Ghost the long way
-1. Open up [this sample code](https://makecode.com/_bwkaqsVLgf9j)
+
+1. Open up [this sample code](https://makecode.com/_VDCA0g4VmRkF)
 2. Run the code - the ghost should scroll off to the bottom right area of the screen, and peek just over the edge.
 3. Review the blocks that caused this to happen - what would you need to add if the screen was made to be twice as big?
 
@@ -100,6 +101,7 @@ pause(100)
 ```  
 
 ## Student Task 1: Move to the upper left corner, and move faster
+
 1. Load up the blocks from the previous example
 2. Make the sprite move up and to the left instead - to do so, change all movements to be in the opposite direction.
 3. Change the pause between each step to be only 50 ms, instead of 100 - we decided we want the ghost to be a little bit faster than it was
@@ -111,6 +113,7 @@ pause(100)
 When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by hand, we can instead using loops to repeat that chunk of code more easily.
 
 ## Example: Moving up and to the left using loops
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -144,6 +147,7 @@ for (let i = 0; i < 12; i++) {
 ```
 
 ## Student Task 2: Add a second sprite using loops
+
 We now want to add in a second ghost, that moves towards the bottom right like in the first example.
 1. Add in a second sprite
 2. Make the second sprite move in the opposite direction of the current sprite, with each step immediately following the current sprite.
@@ -157,6 +161,7 @@ There isn't too much different between the two sprites - we don't even need to m
 ### ~
 
 ## Student Task 3: Boomerang
+
 1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the course of two seconds
 2. Make the boomerang return to it's original location over the course of two seconds using a loop.
 3. **Challenge:** Use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies
@@ -213,6 +218,7 @@ pause(200)
 ### Score = \_\_\_\_\_\_ /10 
 
 ### What did we learn rubric
+
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
