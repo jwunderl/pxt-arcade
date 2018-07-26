@@ -74,8 +74,8 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let sprite: Sprite = null
-sprite = sprites.create(img`
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
 . . . . . . . . 8 . . . . . . . 
 . . . . . 8 8 8 8 8 8 8 . . . . 
 . . . . 8 8 8 8 8 8 8 9 8 . . . 
@@ -95,25 +95,40 @@ sprite = sprites.create(img`
 `, SpriteKind.Player)
 for (let i = 0; i < 10; i++) {
     pause(200)
-    sprite.x += 5
+    mySprite.x += 5
     pause(200)
-    sprite.y += 6
+    mySprite.y += 6
     pause(200)
-    sprite.x += -7
+    mySprite.x += -7
     pause(200)
-    sprite.y += -8
+    mySprite.y += -8
 }
 ```
 1. First, add in a new variable - we'll refer to it as count. Set it at 0 to start.
 2. Use the ``||variables:change by||`` block to increment count by 1 at the end of each iteration of the loop.
-3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable count to increase the distance the sprite moves on each step - that might look like
+3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable count to increase the distance the sprite moves on each step - that might look like the code in this start block.
 
-```block
-sprite.x += -7 - count * 5
+```blocks
+let mySprite: Sprite = null
+let count = 0
+mySprite.x += -7 - count * 5
 ```
 
+
+The math order of operation code tells us that the code above will multiply count by 5 and then subtract that result from 7 as in  `7 - (count * 5)`.
+
+
+
 ## Student Task 3: for index loops
-There is another type of loop that can help in implementing the behavior from task 2. The ``||loops:for index from 0 to 4||`` loop behaves very similarly to the repeat loop, but gives you access to a variable inside the loop called index. Each iteration this value will be updated - on the first iteration it will be 0, on the second iteration it will be 1, and so on, until it reaches the final iteration - with the default value of 4, this last iteration will have index be 4. This is very similar to how we used the count variable in the last task, so let's clean up that code by switching to this block.
+There is another type of loop that can help in implementing the behavior from task 2. 
+
+The ``||loops:for index from 0 to 4||`` loop behaves similar to the repeat loop, but gives you access to a variable inside the loop called index. Each iteration this value will be updated. 
+
+* on the first iteration it will be 0
+* on the second iteration it will be 1
+* and so on, until it reaches the final iteration - with the default value of 4
+
+This last iteration will have index = 4. This is very similar to how we used the count variable in the last task, so let's clean up that code by switching to this block.
 
 1. Swap the ``||loops:repeat 10 times||`` block in your code for the ``||loops:for index from 0 to 4||`` block. Change the value in the loop block from 4 to 10.
 2. Remove the initialization and incrementing of the count variable. Your code should now behave like it did before you made any modifications - drifting up and to the left.
@@ -121,16 +136,11 @@ There is another type of loop that can help in implementing the behavior from ta
 
 ## What did we learn?
 
-1. In task 3, you may have noticed that when you switched from a repeat loop to a for loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that?
-### ~hint
+1. In task 3, you may have noticed that when you switched from a repeat loop to a for loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that? 
 
-Is there a difference between how many times ``||loops:repeat 0 times||`` and ``||loops:for index from 0 to 0||`` will run?
-
-### ~
-2. When might you want to choose to use a ``||loops:repeat||``  loop over a ``||loops:for index||`` loop?
+2. Is there a difference between how many times ``||loops:repeat 0 times||`` and ``||loops:for index from 0 to 0||`` will run? When might you want to choose to use a ``||loops:repeat||``  loop over a ``||loops:for index||`` loop? 
 
 ## Rubrics
-
 
 ### Change by task rubric
 
