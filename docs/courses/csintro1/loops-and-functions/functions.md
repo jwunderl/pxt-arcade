@@ -245,28 +245,24 @@ princess = sprites.create(sprites.castle.princessFront0, SpriteKind.Princess)
 princess.setPosition(50, 50)
 ```
 
+## What did we learn?
 
-## What did we learn? [TODO create 2 questions]
-
-1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
-2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
-3. [Come up with a question of your choice]
-
+1. Describe how the use of functions in code can help make code programming easier.
+2. Does putting code into separate functions always make sense? Would it be more or less clear if we took the code from example #2, and made a function that calls the other three, so that our ``||loops:on start||`` block only had a single block inside of it?
 
 ## Rubrics
 
-
-### TODO task rubric
+### task rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| TODO !!!!!Placeholder Stuff!!!! review and replace!!!  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
+| Function Tasks | Made three functions in task #1 | Completed all parts of task #1 | Completed task #2 | Completed challenge code |
 
-### Score = \_\_\_\_\_\_ /10 
+### Score = \_\_\_\_\_\_ /10
 
-### What did we learn rubric [TODO review based on number of questions]
+### What did we learn rubric
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+| Explanation | Answered one of the questions fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
