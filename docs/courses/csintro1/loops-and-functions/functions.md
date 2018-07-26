@@ -145,7 +145,7 @@ placeCow()
 placeAsteroid()
 ```
 
-One way to think of this is like a book: by adding new functions to our code, we were able to make the ``||loops:on start||`` block resemble a table of contents, with simple descriptions of the tasks we wanted done. Each function ends up being a chapter; if you wanted to get a feeling for how the book will be, you skim through the table of contents, and if parts sound interesting, you can read those by going to the specified location (or function).
+One way to think of this is like a book: by adding new functions to our code, we were able to make the blocks inside of the ``||loops:on start||`` block resemble a table of contents for our code, with simple descriptions of the tasks we wanted done. Each function ends up being a chapter in the book with more details on what exactly is getting down. If you want to get a feeling for how the book will be, you skim through the table of contents, and if parts sound interesting, you can read those by going to the specified location (or function).
 
 ## Student Task #1: make your own functions
 1. Review the code below 
