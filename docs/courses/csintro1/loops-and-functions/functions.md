@@ -198,6 +198,52 @@ info.setScore(0)
 info.startCountdown(10)
 ```
 
+## Student Task #2: Functions in Events
+Functions can be used throughout your code - not just in the ``||loops:on start||`` block. In this task, we will clean up the ``||controller:on A button pressed||`` event to make it a bit easier to read.
+1. Review the code below
+2. Create the sample code and run the code
+3. Create 2 new functions, named "conversation" and "scorePoints"
+4. Move the blocks for the conversation to ``||functions:conversation||``, and the blocks for scoring a point and playing a sound to ``||functions:scorePoints||``
+5. Use the ``||functions:call function||`` block 2 times in the ``||controller:on A button pressed||`` event to call both new functions
+
+```blocks
+enum SpriteKind {
+    Player,
+    Princess,
+    Enemy
+}
+let princess: Sprite = null
+let player: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    player.say("Hello!", 500)
+    pause(500)
+    princess.say("Hello!", 500)
+    info.changeScoreBy(1)
+    music.playSound(music.sounds(Sounds.PowerUp))
+})
+player = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 b b 3 3 3 3 b b 3 3 3 . 
+. 3 3 3 b b 3 3 3 3 b b 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+controller.controlSprite(player, 100, 100)
+player.setFlag(SpriteFlag.StayInScreen, true)
+princess = sprites.create(sprites.castle.princessFront0, SpriteKind.Princess)
+princess.setPosition(50, 50)
+```
 
 
 ## What did we learn? [TODO create 2 questions]
