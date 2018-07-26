@@ -1,15 +1,11 @@
 # Activity: Projectile Sprites
 
-Projectiles are regular sprites that destroy themselves when they go off of the visible screen.  Projectile sprite blocks also expose the properties for velocity (``||sprites:vx||`` & ``||sprites:vy||``) right as they are created, to allow developers to simplify the code .
+Projectiles are regular sprites that destroy themselves when they go off of the visible screen. Projectile sprite blocks also expose the properties for velocity (``||sprites:vx||`` & ``||sprites:vy||``) right as they are created, to allow software developers to simplify the code they write.
 
-Depending on the game a projectile can be dangerous, friendly, a nuisance that bumps the player out of the way or just a decoration that floats across the screen. In our code, we will control projectiles to move across the screen or come from a specific sprite. Typically, projectiles will be used because we want movement for meteors, laser beams, cars, coins, cats, balloons or whatever we decide we need. There will often be many projectiles created, so it is good that they are destroyed automatically when they go off screen so we don't need to worry about game performance issues from old projectiles sitting in memory. 
+Depending on the game, a projectile can be dangerous, friendly, or even just a decoration that floats across the screen. In our code, we will use projectiles to represent temporary sprites that move across the screen. Typically, projectiles will be used because we want movement for meteors, laser beams, cars, or whatever we decide we need in our games. In many games, we will create a large number of these, so ability for them to be automatically destroyed as they leave the screen will often be very helpful in making sure our games run efficiently.
 
-In this activity the student will implement:
-
+In this activity, the student will be introduced to:
 * ``||sprites:projectile||`` sprites
-* ``||game:on game update||``
-* ``||sprites:set sprite kind||``
-* ``||sprites:on overlap kind||``
 * ``||game:on game update every||``
 * ``||math:pick random||``
 
@@ -17,11 +13,11 @@ In this activity the student will implement:
 
 We can use projectiles to create sprites that move across the screen. Let's start off with making a simple bird projectile.
 
-## Example: Bird projectile
+## Example #1: Bird projectile
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "Bird Projectile 1") 
-4. Look for what portion of the blocks makes the bird move across the screen, instead of just staying still.
+4. Look for what portion of the blocks makes the bird move across the screen, instead of just staying still
 
 ```blocks  
 enum SpriteKind {
@@ -48,7 +44,7 @@ let projectile: Sprite = sprites.createProjectile(img`
 `, 50, 0, SpriteKind.Player)
 ```
 
-It may seem surprising that there's only a single block inside the ``||loops:on start||`` block - projectiles make it particularly easy to create temporary sprites. They have another benefit that code example below will demonstrate.
+It may seem surprising that there's only a single block inside the ``||loops:on start||`` block - projectiles make it particularly easy to create temporary sprites, by including a lot of common behaviors in one. They have another benefit that code example below will demonstrate.
 
 ```blocks  
 enum SpriteKind {
@@ -80,13 +76,13 @@ projectile = sprites.createProjectile(img`
 `, 50, 0, SpriteKind.Player, item)
 ```
 
-This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! This is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Finally, we'll see later on that projectiles can be created to originate at a given sprite. If they are not provided a sprite to start from, they will be created either in the middle of the screen (if the velocities in the x and y direction are both set to 0) or from the side of the screen opposite their initial speed (so that they can move across the screen).
+This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! This is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Finally, we'll see later on that projectiles can be created to originate from another sprite (for example, we could set the bird from this example to start off at a nest somewhere else on the screen). If they are not provided a sprite to start from, they will be created either in the middle of the screen (if the velocities in the x and y direction are both set to 0) or from the side of the screen opposite their initial speed (so that they can move across the screen).
 
-## Student Task 1: Make a ball fall down
-1. Start with the provided code below.
+## Student Task #1: Make a ball fall down
+1. Start with the provided code below
 2. Modify the code so that the ball falls down the screen at a rate of 50 (that is, it moves along the y axis at a rate of 50)
 3. Create a second projectile that goes up the screen at a rate of 50 (moving in the direction opposite the ball)
-4. **Challenge:** Make something happen when the two projectiles overlap one another as learned previously - perhaps have them ``||sprite:say||`` hello to each other!
+4. **Challenge:** Make something happen when the two projectiles overlap one another as learned previously - perhaps have them ``||sprite:say||`` hello to each other
 
 ```blocks
 enum SpriteKind {
@@ -120,10 +116,10 @@ projectile = sprites.createProjectile(img`
 
 # TODO: Create Video covering projectile motion with loops (task 2)
 
-## Student Task 2: add vertical projectiles that move across the screen
-1. Start with the provided code below - currently, it will spawn meteors of kind "Enemy" that stay in random locations along the top of the screen.
-2. Each time a projectile is created, add one to the score using the ``||info:change score by||`` block.
-3. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50.
+## Student Task #2: add vertical projectiles that move across the screen
+1. Start with the provided code below. Currently, it will spawn meteors of ``||sprites:Kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
+2. Each time a projectile is created, add one to the score using the ``||info:change score by||`` block
+3. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
 4. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50
 
 ```blocks
@@ -256,7 +252,7 @@ game.onUpdateInterval(50, function () {
 })
 ```
 
-You may notice that in the above example, we set the raindrops to be "ghosts" - this means that they won't be considered to overlap with other sprites, and will pass through sprites as if there were no overlap events. It turns out that there is a fairly large performance benefit to doing this when you spawn a large amount of projectiles (and don't need them to overlap with other sprites) - try removing that block, and see how much the performance goes down.
+You may notice that in the above example, we set the raindrops to be ``||sprites:ghosts||`` - this means that they won't be considered to overlap with other sprites, and will pass through sprites as if there were no overlap events. It turns out that there is a fairly significant performance benefit to doing this when you spawn a large amount of projectiles (and don't need them to overlap with other sprites) - try removing that block, and see how much the performance goes down.
 
 We can change where the rain drops show up, so that they don't all appear in the same location relative to the cloud:
 
@@ -375,12 +371,12 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 })
 ```
 
-## Student Task 3: Projectiles with loops
+## Student Task #3: Projectiles with loops
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "screen fill")
-4. Surround the code in the ``||loops:on start||`` block with a ``||loops:for index from 0 to 12||`` block, to create 13 projectiles, one every 300 ms.
-5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value `10 * index`, so that they start further down the screen on each iteration.
+4. Surround the code in the ``||loops:on start||`` block with a ``||loops:for index from 0 to 12||`` block, to create 13 projectiles, one every 300 ms
+5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value `10 * index`, so that they start further down the screen on each iteration
 
 ```blocks
 enum SpriteKind {
@@ -410,12 +406,11 @@ projectile.y = 10
 pause(300)
 ```
 
-## Student Task 4: Water balloons
-
+## Student Task #4: Water balloons
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "water balloon")
-4. Currently, when the balloon collides with the block, it creates only a single drop of a splash. Use a loop in the overlap event between sprites of kind Balloon and sprites of kind Enemy to create 50 drops of kind ``||sprites:Splash||`` instead.
+4. Currently, when the balloon collides with the block, it creates only a single drop of a splash. Use a loop in the overlap event between sprites of kind Balloon and sprites of kind Enemy to create 50 drops of kind ``||sprites:Splash||`` instead
 
 ### ~hint
 
@@ -514,7 +509,7 @@ balloon = sprites.create(img`
 balloon.x += -50
 ```
 
-## What did we learn? [create 2 questions]
+## What did we learn?
 
 1. Describe two benefits of using projectiles rather than normal sprites.  
 2. How did using a loop in this section help reduce the amount of blocks that were used?
@@ -530,15 +525,15 @@ Does the game need to check whether a sprite is overlapping another if either is
 
 ### Projectiles task rubric
 
-|   | 5pts | 7pts | 9pts | 10pts |
+| Student Tasks | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-|   | Student made the ball fall down and another sprite move up in task 1 | Student made meteors fall from top, and changed score successfully in task 2 | Student successfully made the water balloon burst into around 50 splashes in task 3| Completed Challenge Code in tasks 1 and 2 |
+| Student Tasks | Student made the ball fall down and another sprite move up in task #1 | Student made meteors fall from top, and changed score successfully in task #2 | Student successfully made the water balloon burst into around 50 splashes in task #3 | Completed Challenge Code in tasks #1 and #2 |
 
 ### Score = \_\_\_\_\_\_ /10 
 
 ### What did we learn rubric 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  Addressed challenge question reasonably |
+| Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Addressed challenge question reasonably |
 
 ### Score = \_\_\_\_\_\_ /10 

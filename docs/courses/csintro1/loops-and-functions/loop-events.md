@@ -1,14 +1,12 @@
-# loops in events
+# Activity: Loops in events
 
 ## Mountain Overlap
 
 # TODO: Video - review some looping examples (a few), loop crash motion,  & show controller.dx() 
 
-In these activities, the student will use:
-* Functions for everything!
-* ``||sprites:sprite kind||``
-* ``||on kind overlap||``
-* Loop to animate sprite movement
+In these activities, the student be introduced to:
+* ``||functions:Functions||``
+* Loops to animate sprite movement
 
 ```blocks
 // https://makecode.com/_dzEEJaXJiHmt or https://makecode.com/_aPFcv5JAj0Re in progress transition to Kind (need new kind-s)- removed tilemap
