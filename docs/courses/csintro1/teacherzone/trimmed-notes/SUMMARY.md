@@ -52,6 +52,13 @@
     * [Intro](/courses/csintro1/teacherzone/trimmed-notes/loops/intro)
     * [Change By](/courses/csintro1/teacherzone/trimmed-notes/loops/change-by)
     * [Projectiles](/courses/csintro1/teacherzone/trimmed-notes/loops/projectiles)
+    * [Loop Events](/courses/csintro1/teacherzone/trimmed-notes/loops/loop-events)
+
+## Functions
+
+* [Functions](/courses/csintro1/teacherzone/trimmed-notes/functions)
+    * [Functions](/courses/csintro1/teacherzone/trimmed-notes/functions/intro)
+    * [Reducing Redundancy with Functions](/courses/csintro1/teacherzone/trimmed-notes/functions/redundancy)
 
 ## Events
 

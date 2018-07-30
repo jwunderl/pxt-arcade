@@ -46,15 +46,18 @@
     * [Variable Math Practice](/courses/csintro1/review/practice-variable-math)
     * [String Math Practice](/courses/csintro1/review/practice-string-math)
 
-## Loops and Functions
+## Loops
 
-* [Loops and Functions](/courses/csintro1/loops-and-functions)
-    * [Intro](/courses/csintro1/loops-and-functions/intro)
-    * [Change By](/courses/csintro1/loops-and-functions/change-by)
-    * [Projectiles](/courses/csintro1/loops-and-functions/projectiles)
-    * [Functions](/courses/csintro1/loops-and-functions/functions)
-    * [Reducing Redundancy with Functions](/courses/csintro1/loops-and-functions/redundancy)
-    * [Loop Events](/courses/csintro1/loops-and-functions/loop-events)
+* [Loops](/courses/csintro1/loops)
+    * [Intro](/courses/csintro1/loops/intro)
+    * [Change By](/courses/csintro1/loops/change-by)
+    * [Projectiles](/courses/csintro1/loops/projectiles)
+    * [Loop Events](/courses/csintro1/loops/loop-events)
+
+## Functions
+* [Functions](/courses/csintro1/functions)
+    * [Functions](/courses/csintro1/functions/intro)
+    * [Reducing Redundancy with Functions](/courses/csintro1/functions/redundancy)
 
 ## Tilemap
 
@@ -116,14 +119,19 @@
     * [Variable Math Practice](/courses/csintro1/teacherzone/trimmed-notes/review/practice-variable-math)
     * [String Math Practice](/courses/csintro1/teacherzone/trimmed-notes/review/practice-string-math)
 
-## Loops and Functions Teacher
+## Loops Teacher
 
-* [Loops and Functions Teacher](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions)
-    * [Intro](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions/intro)
-    * [Change By](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions/change-by)
-    * [Projectiles](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions/projectiles)
-    * [Functions](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions/functions)
-    * [Loop Events](/courses/csintro1/teacherzone/trimmed-notes/loops-and-functions/loop-events)
+* [Loops](/courses/csintro1/teacherzone/trimmed-notes/loops)
+    * [Intro](/courses/csintro1/teacherzone/trimmed-notes/loops/intro)
+    * [Change By](/courses/csintro1/teacherzone/trimmed-notes/loops/change-by)
+    * [Projectiles](/courses/csintro1/teacherzone/trimmed-notes/loops/projectiles)
+    * [Loop Events](/courses/csintro1/teacherzone/trimmed-notes/loops/loop-events)
+
+## Functions Teacher
+
+* [Functions](/courses/csintro1/teacherzone/trimmed-notes/functions)
+    * [Functions](/courses/csintro1/teacherzone/trimmed-notes/functions/intro)
+    * [Reducing Redundancy with Functions](/courses/csintro1/teacherzone/trimmed-notes/functions/redundancy)
 
 ## Tilemap Teacher
 
