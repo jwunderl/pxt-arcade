@@ -2,7 +2,7 @@
 
 Functions are a way to group sections of code to be run together. They are regularly used when writing code both to increase the readability of code, and to allow for reuse of common actions. In Blocks, ``||functions:Functions||`` can be found under the `Advanced` section.
 
-![finding functions in blocks](/static/courses/csintro1/loops-and-functions/finding-functions.gif)
+![finding functions in blocks](/static/courses/csintro1/functions/finding-functions.gif)
 
 In this activity, student will be introduced to:
 * Simple functions in blocks
