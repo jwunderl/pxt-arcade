@@ -204,6 +204,16 @@ boomerang.x += 5
 pause(200)
 ```
 
+## Additional Challenge or Project
+
+Students can easily extend the Boomerang project.
+
+* Make the boomerang go a random distance (for instance 25 to 30 loops)
+* Add a Splash screen or make the A button "throw" the boomerang
+* Change the Y position of the boomerang sprite using the controller.  This allows the Boomerang to go up and down and avoid or hit obstacles (see next item)
+* Randomly place some obstacle sprites on the far left of the screen and give points if an overlap
+* Randomly place some enemy obstacles and take away lives (consider starting with 2 lives or more)
+
 ## What did we learn?
 
 1. Describe how a ``||loop:repeat||`` block makes programming easier by reducing code repetition. Use an example.
