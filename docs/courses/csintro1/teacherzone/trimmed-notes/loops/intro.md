@@ -11,9 +11,11 @@ In this activity students will work with:
 
 ### ~hint
 
-This task is intentionally tedious - it's O.K. to cut them off early after having them start on it, as it doesn't take long to recognize how much is involved in making a relatively small change in the current code.
+This task is intentionally tedious, we want to show that loops are helpful for reducing boring repeated work. So, it is O.K. to stop students early - once they recognize how much is involved in making a relatively small change in the current code.
 
 ### ~
+
+https://makecode.com/_Erxa0TJu9eL4
 
 ```blocks
 enum SpriteKind {
@@ -95,6 +97,8 @@ pause(50)
 
 ## Student Task 2: Add a second sprite using loops
 
+https://makecode.com/_UXKfMxRAd7hz  
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -152,13 +156,13 @@ for (let i = 0; i < 12; i++) {
 
 Have students examine the JavaScript code to find out what a loops looks like (`for (let i = 0; i < 12; i++)`).  Ask for some analysis from students.  
 
-Can explain that loops have a counting variable (often `i`) and that it has to be created (instantiated) for use in the loop (using `let`) and that the counter variable gets destroyed when the loop finishes. 
+Can explain that loops have a counting variable (often `i`) and that it has to be created (instantiated) for use in the loop (using `let`). Also, the counter variable gets destroyed when the loop finishes and the counter (i) only exists inside the loop and is not available to use eslewher in the program code.
 
-The next part of the loop is checking if the loops is still less than 12 (`i < 12`) - when it is not longer less than 12 the loop is done and stops repeating the code in the loop. 
+The next part of the loop is checking if the loops is still less than 12 (`i < 12`) - when it is not longer less than 12 the loop is done and stops repeating the code in the loop. This will be covered in the next section on Conditional Logic.
 
 The last part (`i++`) is a short way to write increase `i` by 1. 
 
-This is challenging code to read the first time, students should know that they will become good at reading and writing this type of code if they complete unit 2 of the course.
+Overall, this is challenging code to read the first time.  Students should know that they will become competent at reading and writing this type of code if they complete unit 2 of the course.
 
 ### ~hint
 
@@ -167,6 +171,8 @@ This is challenging code to read the first time, students should know that they 
 If a student is stuck on this task, suggest that they move on to the "What did we learn?" section and return to this section afterwards; question 3 is meant to refer to this task, and can serve as a hint to the student.
 
 ### ~
+
+https://makecode.com/_9DgVbsC6yfkR
 
 ```blocks
 enum SpriteKind {
