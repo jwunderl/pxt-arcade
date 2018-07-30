@@ -25,12 +25,14 @@ Having sprites bump rather than pass over each other is useful game behavior for
     * Move back
 
 ## Example #1: bump action from overlap event
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "copterBump1")
 4. Look at the overlap event - note which sprite is named ``||variables:sprite||`` and which is ``||variables:otherSprite||``, and how the code creates the bump behavior
 
 https://makecode.com/_UhT3dj2UjKPv
+
 ```blocks
 enum SpriteKind {
     Helicopter,
@@ -203,6 +205,7 @@ landing.y = 125
 ```
 
 ## Student Task #1: Soft Landing  
+
 There is a "T" shaped landing area at the bottom of the example. The helicopter sprite should not go through the landing pad, it should land!
 1. Starting with example #1, replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
 2. Review the rest of the code, and then add an on overlap event for when the helicopter overlaps with the landing (note the ``||sprites:Kind||`` of ``||sprites:LandingPad||``)
@@ -216,6 +219,7 @@ Challenge Tip: erratic motion can be made by changing the sprite position back a
 ### ~
 
 ## Student Task #2: Add a new unique sprite with ``||sprites:Kind||`` of ``||sprites:Cloud||``
+
 1. Starting with example code or task #1
 2. Add a new sprite that looks nothing like a cloud (for example, a hat or a tree)
 3. Make sure the new sprite has ``||sprites:Kind||`` of "Cloud"  even though it is not a cloud
@@ -239,6 +243,7 @@ Challenge Tip: erratic motion can be made by changing the sprite position back a
 ### Score = \_\_\_\_\_\_ /10 
 
 ### What did we learn rubric 
+
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanation | Answers for both questions | Explanations address all questions fully | All answers have clear explanations with at least 2 examples for question 1 | Used an exceptional explanation (such as a diagram) in question 2 |
