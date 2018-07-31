@@ -14,12 +14,12 @@ From what we learned in the previous lessons we should be able to make some grea
 4. Use at least **5** of these following items in creating a game:
   * Sprites
   * Projectiles
-  * Position (coordinates)
+  * ``||game:update||`` every loop
+  * Position (set or change coordinates)
   * Controller (dx) and ``||controller:control sprite with||``
   * Overlap Events / sprite kind
-  * "Spawn" create / on create
+  * Function
   * Random
-  * 
 5. Also, use at least **5** of these following items in creating a game:
   * Showing numbers as string
   * Score / life
@@ -27,12 +27,14 @@ From what we learned in the previous lessons we should be able to make some grea
   * Flip
   * Stay in screen / ghost
   * Set image
-  * Function
   * Sprite say
   * Splash
-6. Challenges- Use  the following in creating a game:
+  * create / on create
+  * Math (multiply, divide, add, or subtract)
+  * set background color
+6. Challenges - Use  the following in creating a game:
   * Projectile from Sprite
-  * Crash, bump or other movement based function
+  * Crash, bump or other movement based function using ``||loops:repeat||`` or ``||loops:for||``
 7. Repeat this process as time allows, until you've created as many games as required for the project
 
 ## What did we learn? 
