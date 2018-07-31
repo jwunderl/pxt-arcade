@@ -11,7 +11,7 @@ We reduced the redundancy in the expression
 
 by using a different operator (multiplication:  **`*`**) to express the same overall expression.
 
-We can use loops to solve task in a similarly. The following code leaves the variable ``||variables:output||`` with the same output as the expressions above
+We can use loops to solve tasks in a similar way. The following code leaves the variable ``||variables:output||`` with the same output as the expressions above
 
 ```blocks
 let output: number = 0
@@ -21,7 +21,6 @@ for (let i = 0; i < 5; i++) {
 ```
 
 In this activity students will be introduced to:
-
 * Sprite motion with loops
 * ``||loops:repeat||`` loop
 
@@ -166,7 +165,7 @@ We now want to add in a second ghost, that moves towards the bottom right like i
 
 The loop body is the code that is surrounded by the loop. We need to add more things into the **body** of the loop.  
 
-Start with the code in the example.   The solution isn't much different from the example - we just need to add to the code for the second sprite in the body or the same loop.
+Start with the code in the example. The solution isn't much different from the example - we just need to add to the code for the second sprite in the body or the same loop.
 
 ### ~
 
