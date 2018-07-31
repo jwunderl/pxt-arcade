@@ -173,26 +173,7 @@ hat.setPosition(35, 60)
 4. Be sure the overlap will work for several sprite of the same SpriteKind
 5. **Challenge:** make multiple sprites randomly change position with the `A` button and both of the sprites a random velocity (use a range across negative and positive for ``||sprites:vx||`` and ``||sprites:vy||``)
 
-
 ## What did we learn? 
 
 1. Describe how the ability to generate a random value can make a game more interesting and/or challenging.
 2. Make a hypothesis of a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random would be needed.
-
-## Rubrics
-
-### Task Rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Pick Random | Completed at least 2 tasks | Completed all 3 tasks | Completed all 3 tasks well and at least 1 challenge | Completed all tasks & challenges |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric 
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered a questions but parts are unclear or lack detail | Explanations address all 2 questions fully | All answers have clear and useful explanations | Both answers have exceptional explanations using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10 

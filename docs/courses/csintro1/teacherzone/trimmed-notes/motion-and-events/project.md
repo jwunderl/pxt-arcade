@@ -372,3 +372,20 @@ game.onUpdateInterval(150, function () {
     player.image.flipX()
 })
 ```
+
+## Rubrics - one for each game project produced
+
+### Project task rubric 
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Project | Completed MVP of game | Gathered feedback on design and MVP Game | Built a game using 10 items from list |  Interesting feature(s) or unique concept in game |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric 
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with original example, drawing or analogy |
+
+### Score = \_\_\_\_\_\_ /10 

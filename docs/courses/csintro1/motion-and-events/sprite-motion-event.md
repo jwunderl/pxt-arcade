@@ -56,8 +56,8 @@ agent = sprites.create(img`
 1. Start with example 1 (motionLR, or your own similar code)
 2. Add additional code to control the up down Y-direction motions using the controller 
 3. **Challenges:**
-    - Add an `A` button event to move the sprite to the center of the game screen
-    - Add a `B` button event to make the sprite "jump" (move) 15 pixels
+    * Add an `A` button event to move the sprite to the center of the game screen
+    * Add a `B` button event to make the sprite "jump" (move) 15 pixels
 
 ## Sprite Motion Velocity
 
@@ -154,7 +154,7 @@ game.onUpdate(function () {
 ```
 
 ## Student Task #3: Create Velocity Motion (discover the very short method)
-1. Start with Motion (short method) example above or similar code
+1. Start with motion (short method) example above or similar code
 2. Explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``  
 3. Change the key pad motion to use the discovered block by placing it in ``||game:on start||``
 3. Make the sprite stay in the screen boundary
@@ -179,7 +179,7 @@ Flipping an image creates a left right mirror image when we use flip horizontal.
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "flipImage")  
-4. Note use of the  function called "flipHorizontal"
+4. Note use of the function called "flipHorizontal"
 5. Find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
 
 ```blocks
@@ -241,22 +241,4 @@ let mySprite: Sprite = sprites.create(img`
 
 1. Describe how an events can be used to run code using an example.
 2. Describe the difference between changing position and changing velocity.
-3. In using flip, the sprite is **not** what is flipped. What is actually flipped? Explain how you know.
-
-## Rubrics
-
-### Motion event tasks rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Motion Event | Completed 3 or more Tasks| Completed all 4 tasks properly | Completed all tasks and 1 or more challenges | Completed all tasks and challenge Code |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric 
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10 
+3. When using ``||images:flip||``, the sprite is **not** what is flipped. What is actually flipped? Explain how you know.

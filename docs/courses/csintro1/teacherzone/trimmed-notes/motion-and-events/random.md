@@ -37,7 +37,6 @@ positiveOrNegative = Math.randomRange(-10, 10)
 game.splash("-10 to 10: " + positiveOrNegative)
 ```
 
-
 ## Concept: pick a random location
 
 ## Example #2: random sprite location 
@@ -310,7 +309,7 @@ hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| pick random  | completed at least 2 tasks |  completed all 3 tasks | completed all 3 tasks well and at least 1 challenge | Completed all tasks & challenges  |
+| Pick Random | Completed at least 2 tasks | Completed all 3 tasks | Completed all 3 tasks well and at least 1 challenge | Completed all tasks & challenges |
 
 ### Score = \_\_\_\_\_\_ /10 
 
@@ -318,6 +317,6 @@ hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered a questions but parts are unclear or lack detail | Explanations address all 2 questions fully | all answers have clear and useful explanations | both answers have exceptional explanations using an original example and/or analogy |
+| Explanation | answered a questions but parts are unclear or lack detail | Explanations address all 2 questions fully | All answers have clear and useful explanations | Both answers have exceptional explanations using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 

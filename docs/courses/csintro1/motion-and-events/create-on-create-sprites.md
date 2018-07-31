@@ -6,7 +6,7 @@ Many games need to spawn sprites to be collected like coins, or avoided like oil
 
 https://youtu.be/iPxXjitXEUg 
 
-## Example #1: random clouds
+## Example #1: Random clouds
 
 Use ``||sprites:on created||`` event to set the sprite image and location after a sprite of a particular kind is spawned.
 
@@ -126,20 +126,3 @@ The ``||sprites:on created||`` event allows us to become efficient with our code
 ## What did we learn? 
 1. Describe how a ``||sprites:Kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block.
 2. Explain what the ``||sprites:on created||`` block does for you.
-
-## Rubrics
-
-### Overlap task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Create & On-Create | Fully competed parts 1 through 3 of task #1 | Fully completed all part 4 of task #1 | Adds an overlap event for sprite in challenge section | Completed all parts of task #1 |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with original example, drawing or analogy |
-
-### Score = \_\_\_\_\_\_ /10 

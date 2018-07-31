@@ -214,20 +214,3 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 
 1. Describe how a ``||sprites:Kind||`` is used to detect overlap.
 2. Suppose you have 2 or more sprites that have the same ``||sprites:Kind||``, and one of them triggers an overlap event. Explain how you can reference the sprite that was involved in the overlap event, rather than one of the other sprites of that ``||sprites:Kind||``.
-
-## Rubrics
-
-### Overlap task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Overlap 1 | Fully competed 2 tasks | Fully completed all 3 tasks | Completed all 3 tasks and at least 1 challenge code | Completed all tasks and challenge Code |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with a creative example, drawing or analogy |
-
-### Score = \_\_\_\_\_\_ /10 

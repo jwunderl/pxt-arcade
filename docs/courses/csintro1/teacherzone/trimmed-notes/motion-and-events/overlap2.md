@@ -571,18 +571,18 @@ game.onUpdate(function () {
 
 ## Rubrics
 
-
 ### Overlap task rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Overlap & Events 2 | completed tasks |  Fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and All Challenge Code  |
+| Overlap & Events | Completed tasks | Fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and all challenge code |
 
 ### Score = \_\_\_\_\_\_ /10 
 
 ### What did we learn rubric 
+
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answers for both questions | Explanations address all questions fully | all answers have clear explanations with at least 2 examples for question #1 |  used an exceptional explanation (such as a diagram) in question #2 |
+| Explanation | Answers for both questions | Explanations address all questions fully | All answers have clear explanations with at least 2 examples for question 1 | Used an exceptional explanation (such as a diagram) in question 2 |
 
 ### Score = \_\_\_\_\_\_ /10 

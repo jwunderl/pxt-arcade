@@ -470,24 +470,21 @@ game.onUpdate(function () {
 ## What did we learn? 
 
 1. Describe how a SpriteKind label is used to detect overlap
-2. 2 or more sprites can have the same SpriteKind, explain how to reference only a sprite that was involved in the overlap.  
-
+2. 2 or more sprites can have the same SpriteKind, explain how to reference only a sprite that was involved in the overlap.
 
 ## Rubrics
-
 
 ### Overlap task rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Overlap 1 | fully competed 2 tasks|  fully completed all 3 tasks | Completed all 3 tasks and at least 1 Challenge | Completed all tasks and Challenge Code  |
+| Overlap 1 | Fully competed 2 tasks | Fully completed all 3 tasks | Completed all 3 tasks and at least 1 challenge code | Completed all tasks and challenge Code |
 
 ### Score = \_\_\_\_\_\_ /10 
 
-### What did we learn rubric [TODO review based on number of questions]
+### What did we learn rubric
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with a creative example, drawing or analogy |
+| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with a creative example, drawing or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
-

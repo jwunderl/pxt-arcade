@@ -34,20 +34,3 @@ From what we learned in the previous lessons we should be able to make some grea
 
 1. What did you learn making a MVP version of the game?  What was useful and what was difficult?
 2. Were items in the list of elements of a game to use in the game were not used?  Why? If all were used explain which ones were essential to the game versus less essential elements of a game.
-
-## Rubrics - one for each game project produced
-
-### Project task rubric 
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Project | Completed MVP of game | Gathered feedback on design and MVP Game | Built a game using 10 items from list |  Interesting feature(s) or unique concept in game |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric 
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with original example, drawing or analogy |
-
-### Score = \_\_\_\_\_\_ /10 

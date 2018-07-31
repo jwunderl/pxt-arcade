@@ -131,16 +131,15 @@ sprites.createEmptySprite(SpriteKind.Bird)
 sprites.createEmptySprite(SpriteKind.Bird)
 sprites.createEmptySprite(SpriteKind.Bird)
 ```
-## What did we learn? [TODO - this is from overlap 2]
 
-1.  Describe how a SpriteKind label is used in "spawning" a sprite using ``||Sprite:create empty sprite||`` block
-2. Explain what the  ``||sprites:on created||`` block does.
-
+## What did we learn? 
+1. Describe how a ``||sprites:Kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block.
+2. Explain what the ``||sprites:on created||`` block does for you.
 
 ### ~hint
 
 **Additional Projects**
-This is an opportunity top assign a project to students to create a game that will generate lots of sprites in random locations.  Students can use a ``||game:on game update||`` block with ``||Sprite:create empty sprite||`` in a game with using ``||info:countdown||``.  Students could start with a score of 100 and subtract for every overlap. Encourage students to be creative.  Note that the way to cheat is to go off screen so ask students to solve that problem (by keeping onscreen).
+This is an opportunity to assign a project to students to create a game that will generate lots of sprites in random locations.  Students can use a ``||game:on game update||`` block with ``||Sprite:create empty sprite||`` in a game with using ``||info:countdown||``.  Students could start with a score of 100 and subtract for every overlap. Encourage students to be creative.  Note that the way to cheat is to go off screen so ask students to solve that problem (by keeping onscreen).
 
 https://makecode.com/_eUX2P1DmwUb7
 
@@ -204,18 +203,17 @@ game.onUpdateInterval(100, function () {
 
 ## Rubrics
 
-
-### Overlap task rubric [TODO from overlap 2 make unique]
+### Overlap task rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Overlap & Events 2 | fully competed 1a + b tasks|  fully completed all 3 tasks | Completed all 3 tasks and at least 1 Challenge | Completed all tasks and Challenge Code  |
+| Create & On-Create | Fully competed parts 1 through 3 of task #1 | Fully completed all part 4 of task #1 | Adds an overlap event for sprite in challenge section | Completed all parts of task #1 |
 
 ### Score = \_\_\_\_\_\_ /10 
 
-### What did we learn rubric [todo - from overlap 2]
+### What did we learn rubric
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with original example, drawing or analogy |
+| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with original example, drawing or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
