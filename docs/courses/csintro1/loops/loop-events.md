@@ -1,12 +1,19 @@
-# Activity: Loops in events
+# Activity: Loops in events - Mountain crash
 
-## Mountain Overlap
 
 # TODO: Video - review some looping examples (a few), loop crash motion,  & show controller.dx() 
 
 In these activities, the student be introduced to:
+
 * ``||functions:Functions||``
 * Loops to animate sprite movement
+
+## Concept: Mountain Overlap
+
+We can easily make dynamic motion effects such as a bump, crash, wobble, or spin using loops.
+
+## Example: Mountain Overlap Crashing Loop
+
 https://makecode.com/_aPFcv5JAj0Re 
 
 ```blocks
