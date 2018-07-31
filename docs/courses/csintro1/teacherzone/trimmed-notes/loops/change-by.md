@@ -177,6 +177,11 @@ for (let index = 0; index <= 10; index++) {
 
 ### ~hint
 
+### Possible Answers
+
+1. the for loop is inclusive and loops for items 0 through 10 or 11 times.  The repeat loops runs just the number of times entered (10).
+2. the for loop always runs at least 1 time and you can set the start and end values.  So you can start at 5 and end at 10 for instance.
+
 Is there a difference between how many times ``||loops:repeat 0 times||`` and ``||loops:for index from 0 to 0||`` will run? A ``||loops: for index||`` loop will go from 0 to the parameter, including both the start of 0 and whatever the final value is. This means that ``||loops:for index from 0 to 0||`` will iterate one time, with ``||variables:index||`` having a value of 0.
 
 ### ~

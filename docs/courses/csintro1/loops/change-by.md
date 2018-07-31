@@ -113,9 +113,9 @@ We want to move the sprite in the following blocks in a spiral - starting small 
 
 ![spiral image](/static/courses/csintro1/loops/spiral.png)
 
-1. First, add in a new variable - we'll refer to it as `increase`. Set it at 0 to start
-2. Use the ``||variables:change by||`` block to increment count by 5 at the end of each iteration of the loop
-3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable `increase` to increase the distance the sprite moves on each step - that might look like the code in this ``||loops:on start||`` block
+1. Start with the example above, add in a new variable - we'll refer to it as `increase`. 
+2. Use the ``||variables:change by||`` block to increment `increase` by 5 at the end of the code block for the loop.
+3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable `increase` to increase the distance the sprite moves on each step - that might look like the code in this ``||loops:on start||`` block below:
 
 ```blocks
 let mySprite: Sprite = null
@@ -124,15 +124,18 @@ mySprite.x += -7 - increase
 increase += 5
 ```
 
-The code above will get larger by 5 on each loop, and then subtract that result from 7 as in  `7 - (count * 5)`. Finally, it will add the result of that expression to the sprite's ``||sprites:x||`` coordinate.  
+The code above will cause mySprite X movement to move farther by 5 on each loop as `increase` becomes 5 larger each loop.  In the small example code above we subtract `increase` from -7 as in  `-7 - increase`. The result of that expression to is the sprite's updated ``||sprites:x||`` coordinate.  
 
-So we can see the following
+So we can see the following for one of the spiral sides
 
 * Loop 1: mySprite x coordinate = -7  
 * Loop 2: mySprite X coordinate = -7 - 5 = -12  
 * Loop 3: mySprite X coordinate = -7 - 10 - -17
 
+in the task we will need to update all sides of the spiral
+
 ## Student Task #3: for index loops
+
 There is another type of loop that can help in implementing the behavior from task #2.
 
 The ``||loops:for index from 0 to 4||`` loop behaves similar to the repeat loop, but gives you access to a variable inside the loop called index. Each iteration this value will be updated. 
@@ -143,9 +146,9 @@ The ``||loops:for index from 0 to 4||`` loop behaves similar to the repeat loop,
 
 This is very similar to how we used the `increase` variable in the last task, so let's clean up that code by switching to this block.
 
-1. Add the ``||loops:repeat 10 times||`` block in your code by editing the ``||loops:for index from 0 to 4||`` block. Change the value in the loop block from 4 to **10**.  
+1. Update to loop additional times in your code by editing the ``||loops:for index from 0 to 4||`` block. **Change the value in the loop block from 4 to 10**.  
 2. Remove the initialization to 0 and incrementing of the `increase` variable. Your code should now behave like it did before you made any modifications - drifting up and to the left
-3. Replace the increment of the `increase` variable toto just eet the value of `increase` to `index` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block
+3. Replace the increment of the `increase` variable to set the value of `increase` to `index` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block.  
 
 ## What did we learn?
 
