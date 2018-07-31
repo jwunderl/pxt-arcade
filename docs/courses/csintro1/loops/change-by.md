@@ -110,7 +110,7 @@ for (let i = 0; i < 10; i++) {
 
 ## Student Task #2: Move in a spiral
 
-We want to move the sprite in the following blocks in a spiral - starting small in a square like pattern, and moving further and further away as the iterations move on. Right now, though, the sprite just drifts up and to the left. We need to increase the distance that the sprite travels side for each iteration so that it moves further and further away in all directions.
+We want to move the sprite in the following blocks in a spiral - starting small in a square like pattern, and moving further and further away as the iterations move on. Currently, the sprite drifts up and to the left. We need to increase the distance that the sprite travels on a side for each iteration so that it moves further for each side.
 
 ![spiral image](/static/courses/csintro1/loops/spiral.png)
 
@@ -125,13 +125,13 @@ mySprite.x += -7 - increase
 increase += 5
 ```
 
-The code above will cause mySprite X movement to move farther by 5 on each loop as `increase` becomes 5 larger each loop.  In the small example code above we subtract `increase` from -7 as in  `-7 - increase`. The result of that expression to is the sprite's updated ``||sprites:x||`` coordinate.  
+The code above will cause mySprite X movement to move farther by 5 on each loop as `increase` becomes 5 larger each loop.  In the small example code above we subtract `increase` from -7 as in  `-7 - increase`. The result is used to update the sprite's ``||sprites:x||`` coordinate.  
 
-So we can see the following for one of the spiral sides
+So we can see the following for how one of the spiral sides moves farther each loop
 
-* Loop 1: mySprite x coordinate = -7  
-* Loop 2: mySprite X coordinate = -7 - 5 = -12  
-* Loop 3: mySprite X coordinate = -7 - 10 - -17
+* Loop 1: mySprite x coordinate change = **-7 ** 
+* Loop 2: mySprite X coordinate change = -7 - 5 = **-12 ** 
+* Loop 3: mySprite X coordinate change = -7 - 10 - **-17**
 
 in the task we will need to update all sides of the spiral
 
@@ -149,7 +149,8 @@ This is very similar to how we used the `increase` variable in the last task, so
 
 1. Update to loop additional times in your code by editing the ``||loops:for index from 0 to 4||`` block. **Change the value in the loop block from 4 to 10**.  
 2. Remove the initialization to 0 and incrementing of the `increase` variable. Your code should now behave like it did before you made any modifications - drifting up and to the left
-3. Replace the increment of the `increase` variable to set the value of `increase` to `index` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block.  
+3. Now replace how we define the `increase` variable.  We won't interment any more but will set the value of `increase` to `index` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block. 
+So we are setting `increase = index * 5`. 
 
 ## What did we learn?
 
