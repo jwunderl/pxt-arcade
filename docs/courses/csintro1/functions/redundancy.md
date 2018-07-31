@@ -112,11 +112,13 @@ mySprite.destroy()
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create a function to replace the series of blocks that are repeated each time a projectile is made
+
 ### ~hint
 
 The function should include 4 blocks that appear in the same order 3 separate times.
 
 ### ~
+
 4. Reduce the redundancy in the code using your newly created function, without changing the behavior of the game
 5. **Challenge:** Change the behavior of the game by making the projectiles move to the right across the screen, and by making the ``||music:play tone||`` block play a `Middle A` instead
 
