@@ -147,10 +147,15 @@ The ``||loops:for index from 0 to 4||`` loop behaves similar to the repeat loop,
 
 This is very similar to how we used the `increase` variable in the last task, so let's clean up that code by switching to this block.
 
-1. Update to loop additional times in your code by editing the ``||loops:for index from 0 to 4||`` block. **Change the value in the loop block from 4 to 10**.  
-2. Remove the initialization to 0 and incrementing of the `increase` variable. Your code should now behave like it did before you made any modifications - drifting up and to the left
-3. Now replace how we define the `increase` variable.  We won't interment any more but will set the value of `increase` to `index` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block. 
-So we are setting `increase = index * 5`. 
+1. Update to loop additional times in your code by editing the ``||loops:for index from 0 to 4||`` block. **Change the value in the loop block from 4 to 10**.  Your code should now behave like it did before you made any modifications - drifting up and to the left.
+2. Now replace how we define the `increase` variable.  We won't increment the variable any more but will set the value of `increase` to `index` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block. 
+
+```blocks
+let increase = 0
+let index = 0
+index = 0
+increase += index * 5
+```
 
 ## What did we learn?
 
