@@ -59,6 +59,7 @@
 * [Functions](/courses/csintro1/teacherzone/trimmed-notes/functions)
     * [Functions](/courses/csintro1/teacherzone/trimmed-notes/functions/intro)
     * [Reducing Redundancy with Functions](/courses/csintro1/teacherzone/trimmed-notes/functions/redundancy)
+    * [Using Extensions](/courses/csintro1/teacherzone/trimmed-notes/loops/extensions)
 
 ## Events
 

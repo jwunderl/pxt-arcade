@@ -58,6 +58,7 @@
 * [Functions](/courses/csintro1/functions)
     * [Functions](/courses/csintro1/functions/intro)
     * [Reducing Redundancy with Functions](/courses/csintro1/functions/redundancy)
+    * [Using Extensions](/courses/csintro1/functions/extensions)
 
 ## Tilemap
 
@@ -132,6 +133,7 @@
 * [Functions](/courses/csintro1/teacherzone/trimmed-notes/functions)
     * [Functions](/courses/csintro1/teacherzone/trimmed-notes/functions/intro)
     * [Reducing Redundancy with Functions](/courses/csintro1/teacherzone/trimmed-notes/functions/redundancy)
+    * [Using Extensions](/courses/csintro1/teacherzone/trimmed-notes/functions/extensions)
 
 ## Tilemap Teacher
 
