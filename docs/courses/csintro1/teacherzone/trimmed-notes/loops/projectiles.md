@@ -305,7 +305,7 @@ balloon = sprites.create(img`
 balloon.x += -50
 ```
 
-## What did we learn? [create 2 questions]
+## What did we learn?
 
 1. Describe two benefits of using projectiles rather than normal sprites.  
 2. How did using a loop in this section help reduce the amount of blocks that were used?
@@ -321,18 +321,17 @@ Does the game need to check whether a sprite is overlapping another if either is
 
 ## Rubrics
 
-
 ### Projectiles task rubric
 
-|   | 5pts | 7pts | 9pts | 10pts |
+| Student Tasks | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-|   | Student made the ball fall down and another sprite move up in task 1 | Student made meteors fall from top, and changed score successfully in task 2 | Student successfully made the water balloon burst into around 50 splashes in task 3| Completed Challenge Code in tasks 1 and 2 |
+| Student Tasks | Student made the ball fall down and another sprite move up in task #1 | Student made meteors fall from top, and changed score successfully in task #2 | Student successfully made the water balloon burst into around 50 splashes in task #3 | Completed Challenge Code in tasks #1 and #2 |
 
 ### Score = \_\_\_\_\_\_ /10 
 
 ### What did we learn rubric 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  Addressed challenge question reasonably |
+| Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Addressed challenge question reasonably |
 
 ### Score = \_\_\_\_\_\_ /10 

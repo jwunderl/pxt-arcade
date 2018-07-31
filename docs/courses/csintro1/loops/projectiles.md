@@ -252,7 +252,7 @@ game.onUpdateInterval(50, function () {
 })
 ```
 
-You may notice that in the above example, we set the raindrops to be ``||sprites:ghosts||`` - this means that they won't be considered to overlap with other sprites, and will pass through sprites as if there were no overlap events. It turns out that there is a fairly significant performance benefit to doing this when you spawn a large amount of projectiles (and don't need them to overlap with other sprites) - try removing that block, and see how much the performance goes down.
+Be sure to notice that in the above example, we set the raindrops to be ``||sprites:ghosts||`` - this means that they won't be considered to overlap with other sprites, and will pass through sprites as if there were no overlap events. It turns out that there is a fairly significant performance benefit to doing this when you spawn a large amount of projectiles (and don't need them to overlap with other sprites) - try removing that block, and see how much the performance goes down.
 
 We can change where the rain drops show up, so that they don't all appear in the same location relative to the cloud:
 
@@ -520,20 +520,3 @@ balloon.x += -50
 Does the game need to check whether a sprite is overlapping another if either is a ghost?
 
 ### ~
-
-## Rubrics
-
-### Projectiles task rubric
-
-| Student Tasks | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Student Tasks | Student made the ball fall down and another sprite move up in task #1 | Student made meteors fall from top, and changed score successfully in task #2 | Student successfully made the water balloon burst into around 50 splashes in task #3 | Completed Challenge Code in tasks #1 and #2 |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric 
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Addressed challenge question reasonably |
-
-### Score = \_\_\_\_\_\_ /10 
