@@ -147,7 +147,7 @@ placeAsteroid()
 
 One way to think of this is like a book: by adding new functions to our code, we were able to make the blocks inside of the ``||loops:on start||`` block resemble a table of contents for our code, with simple descriptions of the tasks we wanted done. Each function ends up being a chapter in the book with more details on what exactly is getting down. If you want to get a feeling for how the book will be, you skim through the table of contents, and if parts sound interesting, you can read those by going to the specified location (or function).
 
-## Student Task #1: make your own functions
+## Student Task #1: Make your own functions
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create 3 different functions, with names that describe different sections of the code.
@@ -249,20 +249,3 @@ princess.setPosition(50, 50)
 
 1. Describe how the use of functions in code can help make code programming easier.
 2. Does putting code into separate functions always make sense? Would it be more or less clear if we took the code from example #2, and made a function that calls the other three, so that our ``||loops:on start||`` block only had a single block inside of it?
-
-## Rubrics
-
-### task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Function Tasks | Made three functions in task #1 | Completed all parts of task #1 | Completed task #2 | Completed challenge code |
-
-### Score = \_\_\_\_\_\_ /10
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered one of the questions fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10 
