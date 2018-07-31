@@ -42,7 +42,8 @@ scene.setBackgroundColor(4)
 mySprite.say(msg)
 ```
 
-## What did we learn? 
+## What did we learn?
+
 1. Identify and show the JavaScript code that aligns with which each block.
 2. Identify any JavaScript code that doesn't seem to have any blocks directly related to it. Make a hypothesis of what it means does.
 
@@ -61,6 +62,7 @@ console.log("msg sent!")
 ```
 
 ## Student Task #1: Add `console.log( )` to "sprite hello"
+
 1. Open the "sprite hello" code saved above
 2. Add in console messages using `console.log()` for:
     * a string (example: "Hello console")

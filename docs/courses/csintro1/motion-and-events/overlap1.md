@@ -16,7 +16,8 @@ https://youtu.be/rdZdXltoWXE
 
 We use ``||sprites:SpriteKind||`` to classify our sprites. We can have sprites in our games that represent many different things - players, enemies, coins, food, or anything else you might want to represent in your games. Creating labels (that is, ``||sprites:Kinds||``) for different groups of sprites helps us assign them each unique behaviors - for example, you might want to have the player in your game be able to eat 5 different food sprites, so combining them into a single ``||sprites:Kind||`` allows you to write the code for a single section  Sometimes there just one of a given ``||sprites:Kind||`` (for example, the Player), and other times there will be many sprites (for example, Clouds in the sky). Once we have ``||sprites:Kind||``s for different sprites, we can check if two different sprites are overlapping one another using the ``sprites:on overlap||`` event.
 
-## Example #1: Two Sprite Overlap  
+## Example #1: Two Sprites Overlap
+
 1. Review the code below 
 2. Create the sample code and run the code
 3. Save the code for the task (name it "eatFruit")  
@@ -111,6 +112,7 @@ https://youtu.be/rN1UyX6YkQE
 The ``||sprites:ghost on||`` setting for sprites makes the sprite ignore ``||sprites:on overlap||`` events while it is turned on. By default, the setting is off.
 
 ## Example #2: Sprite Overlap - Ghost on
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Try turning the ``||sprites:ghost||`` setting on and off and see the difference
@@ -187,6 +189,7 @@ game.onUpdate(function () {
 ```
 
 ## Student Task #2: Sprite Overlap - Ghost off and on
+
 1. Start with the example or task #1
 2. Create 3 sprites in different locations across
 3. Make the newly created sprites all be of the same ``||sprites:Kind||``. 

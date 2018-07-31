@@ -11,6 +11,7 @@ In this activity, students will be introduced to:
 * Changing a the background color
 
 ## Example: Sprite & Background
+
 This sprite example is larger than the default 16x16, and uses a custom variable name ``||variables:hotSauce||``. However, the image does not show up properly on the screen with the default background, so we must change the background color for the image to show up correctly.
 
 https://youtu.be/TY0kSXUaPkg
@@ -126,6 +127,7 @@ Make a collage with different images scattered around the screen. It can be abou
 5. **Challenge:** create a large image by using multiple sprites and 'combining' them by carefully placing them next to eachother (for example, sprites for head, body and legs that combine to represent a person)
 
 ## What did we learn?
+
 1. How could the use of multiple sprites in a single game enhance your ability to convey a story in your games?
 2. What other blocks are available in the ``||sprite:Sprites||`` menu? List several blocks not used in collage and make a hypothesis of what one (or more) of these blocks does.
 3. **Challenge:** switch to the JavaScript version of your collage, and take a look at the images you drew in the task above. What do periods (**.**) represent in the images?

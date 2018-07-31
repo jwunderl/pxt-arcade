@@ -18,7 +18,8 @@ In these activities, the student will be introduced to:
 * Game update every  
 * Info set score  
 
-## Examples: Incrementing a Variable 
+## Examples: Incrementing a Variable
+
 1. Review each example below
 2. Create the sample and run the code
 3. Save the code for the start of the next task (name it "increment") 
@@ -58,6 +59,7 @@ info.startCountdown(5)
 ```
 
 ## Student Task #1: Make the game have a cheering coach
+
 1. Start with code from example #2
 2. Add a sprite to coach the player
 3. Use ``||sprites:say("")||`` to give words of encouragement, setting a short display time (for example, 500 ms)
@@ -65,6 +67,7 @@ info.startCountdown(5)
 4. **Challenge:** Have the sprite coach give the current score in addition to a cheer ("Faster!")
 
 ## Student Task #2: Move in a spiral
+
 We want to move the sprite in the following blocks in a spiral - starting with a small square, and moving further and further away as the iterations move on. Right now, though, the sprite just drifts up and to the left. We need to increase the distance that the sprite travels on each iteration so that it moves further and further away in all directions.
 
 ```blocks
@@ -116,6 +119,7 @@ mySprite.x += -7 - count * 5
 The code above will multiply count by 5, and then subtract that result from 7 as in  `7 - (count * 5)`. Finally, it will add the result of that expression to the sprite's ``||sprites:x||`` coordinate.
 
 ## Student Task #3: for index loops
+
 There is another type of loop that can help in implementing the behavior from task #2.
 
 The ``||loops:for index from 0 to 4||`` loop behaves similar to the repeat loop, but gives you access to a variable inside the loop called index. Each iteration this value will be updated. 

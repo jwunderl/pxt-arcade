@@ -1,4 +1,4 @@
-# Activity: Sprite
+# Activity: Sprites
 
 Games tell a story, and those stories generally require characters. In MakeCode Arcade, those characters are generally represented using sprites. This activity equips students with the skills necessary to create, test and save sprites using the MakeCode development environment. Students will build unique sprites by using the sprite menu and the integrated image editor.
 
@@ -77,7 +77,8 @@ mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Student Task #1: Create your own sprite  
+## Student Task #1: Create your own sprite
+
 * The default sprite is 16x16 pixels - press the `change sprite size` button to make a sprite that is 32x32 pixels!
 
 ### ~hint

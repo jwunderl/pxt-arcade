@@ -5,9 +5,6 @@ Besides simplifying long sections of code, functions are also regularly used to 
 In this activity, students will be introduced to:
 * reducing redundancy using functions
 
-
-
-
 ### TODO: Update as necessary when tasks & examples complete
 ## Rubrics
 

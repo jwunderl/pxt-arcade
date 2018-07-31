@@ -9,9 +9,11 @@ In this activity, student will be introduced to:
 * Calling functions by name
 
 ## Concept: Making a basic function for readability
+
 Functions allow us to break up code into different sections. In doing so, we can separate distinct tasks, giving a distinct name for small tasks in your code.
 
 ## Example #1: Creating Sprites
+
 1. Review the code below 
 2. Create the sample code and run the code
 3. Save the code for the example (name it "placeSprites")
@@ -148,6 +150,7 @@ placeAsteroid()
 One way to think of this is like a book: by adding new functions to our code, we were able to make the blocks inside of the ``||loops:on start||`` block resemble a table of contents for our code, with simple descriptions of the tasks we wanted done. Each function ends up being a chapter in the book with more details on what exactly is getting down. If you want to get a feeling for how the book will be, you skim through the table of contents, and if parts sound interesting, you can read those by going to the specified location (or function).
 
 ## Student Task #1: Make your own functions
+
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create 3 different functions, with names that describe different sections of the code.
@@ -199,6 +202,7 @@ info.startCountdown(10)
 ```
 
 ## Student Task #2: Functions in Events
+
 Functions can be used throughout your code - not just in the ``||loops:on start||`` block. In this task, we will clean up the ``||controller:on A button pressed||`` event to make it a bit easier to read.
 1. Review the code below
 2. Create the sample code and run the code
