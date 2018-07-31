@@ -92,21 +92,3 @@ There is a pause block under the ``||loops:Loops||`` menu ``||loops:pause(1000)|
 2. Come up with a hypothesis and explain why `console.log()` has a larger limit on the length of text. Explain.
 3. Add additional sprites at different coordinates and use ``||sprites:say||`` to make messages for all of them.
 4. **Challenge:** Make larger 32x32 sprites with more detail than the smaller sprites allowed.
-
-## Rubrics
-
-### Hello Sprite task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Hello Sprites | Sprite text with on screen and and in console | 2 sprites on screen in different locations both using "say" | 2 sprites are on screen in different locations both using ``||sprites:say||``, and messages are timed and go away at different times | Completed Challenge or exceptional art for sprites created |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 3 questions fully or answered all 4 questions but parts are unclear or lack detail | Explanations address all 4 questions fully | Uses multiple examples and clear explanations |  Explanation uses an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10

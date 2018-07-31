@@ -129,21 +129,3 @@ Make a collage with different images scattered around the screen. It can be abou
 1. How could the use of multiple sprites in a single game enhance your ability to convey a story in your games?
 2. What other blocks are available in the ``||sprite:Sprites||`` menu? List several blocks not used in collage and make a hypothesis of what one (or more) of these blocks does.
 3. **Challenge:** switch to the JavaScript version of your collage, and take a look at the images you drew in the task above. What do periods (**.**) represent in the images?
-
-## Rubrics
-
-### Collage Task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Collage | Collage has at least 5 sprites | Collage has at least 6 sprites with 1 placed in each quadrant | Collage has more than 6 sprites of various sizes and designs | Collage strongly conveys information to viewer without needing explanation, or student completed the challenge code |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Mostly addressing questions #1 & #2, but parts are unclear or lack detail | Explanation address questions #1 & #2 fully | Uses multiple examples and clear explanations | Explanation uses an original, creative example or analogy or multiple ``||sprites:Sprites||`` category blocks explained |
-
-### Score = \_\_\_\_\_\_ /10

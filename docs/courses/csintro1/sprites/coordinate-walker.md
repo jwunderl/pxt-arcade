@@ -97,13 +97,3 @@ Challenge a peer to bring the sprite back into view after you move the sprite of
     * pick 1: `up` or `down` `Y` direction
     * pick 1: `left` or `right`  `X` direction
     * using only the controller pad keys chosen bring the sprite back onto the screen
-
-## Rubrics
-
-### Coordinate Walker Rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Coordinate Walker | Filled in the diagram of all corners (`X`,`Y`) | Diagram is correct | Answered "What did we learn" questions 1 and 2 using `X` and `Y` | Answered questions with clear explanations using examples and/or excellent detail |
-
-### Score = \_\_\_\_\_\_ /10 

@@ -279,19 +279,11 @@ sandals.y = 66
 
 ## Rubrics
 
-### ~hint
-
-Start on the left rubric column (5pts), if the work meets the rubric continue to the right (7pts, 9pts, 10pts). Award the sore of the right most rubric that is completed by the student.  
-
-This means that to get the highest score student must pass **all** previous rubrics.
-
-### ~
-
-### Collage task rubric
+### Collage Task rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Collage | Collage has at least 5 sprites | Collage has at least 6 sprites with 1 placed in each quadrant | Collage has more than 6 sprites of various sizes and designs  | Collage strongly conveys information to viewer without needing explanation or completed the Challenge |
+| Collage | Collage has at least 5 sprites | Collage has at least 6 sprites with 1 placed in each quadrant | Collage has more than 6 sprites of various sizes and designs | Collage strongly conveys information to viewer without needing explanation, or student completed the challenge code |
 
 ### Score = \_\_\_\_\_\_ /10 
 
@@ -299,7 +291,7 @@ This means that to get the highest score student must pass **all** previous rubr
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | Mostly addressing Questions # 1 & 2, but parts are unclear or lack detail | Explanation address Questions 1 & #2 fully | Uses multiple examples and clear explanations |  Explanation uses an original, creative example or analogy or multiple Sprite blocks explained |
+| Explanation | Mostly addressing questions #1 & #2, but parts are unclear or lack detail | Explanation address questions #1 & #2 fully | Uses multiple examples and clear explanations | Explanation uses an original, creative example or analogy or multiple ``||sprites:Sprites||`` category blocks explained |
 
 ### Score = \_\_\_\_\_\_ /10
 

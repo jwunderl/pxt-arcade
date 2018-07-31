@@ -222,18 +222,13 @@ bird.say("Tweet", 1000)
 3. Discuss the different ways we can display a message in this exercise. List and example.
 4. Come up with a hypothesis and explain why `console.log()` has a large limit on the length of text. Explain.
 
-
 ## Rubrics
-
-### ~hint
-Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
-### ~
 
 ### Hello Sprite task rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Hello Sprites | sprite text with on screen and and in console |   2 sprites on screen in different locations both using "say"  | 2 sprites on screen in different locations both using "say" and messages are timed and go away at different times | Completed Challenge or exceptional art for sprites created |
+| Hello Sprites | Sprite text with on screen and and in console | 2 sprites on screen in different locations both using "say" | 2 sprites are on screen in different locations both using ``||sprites:say||``, and messages are timed and go away at different times | Completed Challenge or exceptional art for sprites created |
 
 ### Score = \_\_\_\_\_\_ /10 
 
@@ -241,6 +236,6 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 3 questions fully or answered all 4 questions but parts are unclear or lack detail | Explanations address all 4 questions fully | Uses multiple examples and clear explanations |  Explanation uses an original example and/or analogy |
+| Explanation | Answered at least 3 questions fully or answered all 4 questions but parts are unclear or lack detail | Explanations address all 4 questions fully | Uses multiple examples and clear explanations |  Explanation uses an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10

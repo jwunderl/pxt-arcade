@@ -75,16 +75,10 @@ Use **X** and/or **Y** in your answers
 
 ## Rubrics
 
-### ~hint
-
-Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
-
-### ~
-
 ### Coordinate Walker Rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Coordinate Walker  | Filled in the diagram of all corners (x,y) | Diagram is correct  |  Answered "What did we learn" Question 1 and 2 using X and Y | Answered questions with clear explanations using examples and/or excellent detail |
+| Coordinate Walker | Filled in the diagram of all corners (`X`,`Y`) | Diagram is correct | Answered "What did we learn" questions 1 and 2 using `X` and `Y` | Answered questions with clear explanations using examples and/or excellent detail |
 
-### Score = \_\_\_\_\_\_ /10 
+### Score = \_\_\_\_\_\_ /10
