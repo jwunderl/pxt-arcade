@@ -210,12 +210,31 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
+## Additional Challenge or Project
+
+Students can easily extend the Boomerang project.
+
+* Make the boomerang go a random distance using the loop bounds (for example, between 25 and 30 loops)
+* Add a ``||game:splash||`` screen or make the ``||controller:A||`` button "throw" the boomerang
+* Change the ``||sprites:Y||`` position of the boomerang sprite using the controller.  This allows the Boomerang to go up and down and avoid or hit obstacles (see next item)
+* Randomly place some obstacle sprites on the far left side of the screen and give points on an overlap
+* Randomly place some enemy obstacles and take away lives (consider starting with 2 lives or more)
+
 ## What did we learn?
 
 1. Describe how a ``||loop:repeat||`` block makes programming easier by reducing code repetition. Use an example.
 2. Explain how it easier or harder to add in a second sprite when with the code inside of the loop that it would have been in the prior (loop-less) version? Why?
 3. Did you use more than one ``||loop:repeat||`` in any of the tasks above? Why might you want to have one loop after another, rather than just combining them into a single loop?
 
+### ~hint
+
+### Possible Answers  
+
+1. The repeat loop makes repeated code easy by having a single number determine how many times we will repeat.  Tell the loop to move the sprite 2 times or 2000 times and it does it just as easily as far as writing code is concerned.  Just change the repeat number but leave the body code the same.  
+2. Adding a second sprite is way easier.  The the 2 sprites do the same thing just in opposite directions. One moves negative x, y and the other positive x, y.  Easier because there is more code in the loop body to keep track of, so more to write in the old version and it is hard to read long code.  
+3. Answers vary using one or two loops.  Using one loop can be confusing because there is very similar code and sprites and easy to mix up.  Two loops is a little more code but for some people more it seems simpler and more organized.
+
+### ~
 ## Rubrics
 
 ### ~hint
@@ -224,11 +243,13 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 ### ~
 
+## Rubrics
+
 ### Loops Rubric
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Loops tasks 2 and 3  | Successfully added in a second sprite in task 2 that moved in the opposite direction| Student successfully made the boomerang move to the right 50 pixels with a loop | Successfully moved the boomerang back 50 pixels with a loop | Completed Challenge Code, making the boomerang "rotate" |
+| Loops tasks #2 and #3 | Successfully added in a second sprite in task #2 that moved in the opposite direction| Student successfully made the boomerang move to the right 50 pixels with a loop | Successfully moved the boomerang back 50 pixels with a loop | Completed challenge code, making the boomerang "rotate" |
 
 ### Score = \_\_\_\_\_\_ /10 
 
@@ -236,6 +257,6 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+| Explanation | Answered at least 2 questions fully, or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 

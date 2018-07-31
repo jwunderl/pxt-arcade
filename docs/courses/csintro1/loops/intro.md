@@ -2,9 +2,9 @@
 
 When writing code, we often want to repeat the same action. Using loops, we can reduce redundancy in our code - that is, we can avoid writing the same code multiple times. 
 
-An example to visualize a loop is looking at multiplication of integers as repeated addition.  The repeated addition of the integer 4  added together five times, 4 + 4 + 4 + 4 + 4, is equal to 4 * 5. 
+An example to visualize a loop is looking at multiplication of integers as repeated addition. The repeated addition of the integer 4 added together five times, 4 + 4 + 4 + 4 + 4, is equal to 4\*5.
 
-we reduced the redundancy in the expression 4*5 by using a different operation to express the same overall expression.
+We reduced the redundancy in the expression 4 + 4 + 4 + 4 + 4 by using a different operation, \*, to express the same overall expression.
 
 We can use loops to solve a similar task. The following would leave the variable ``||variables:output||`` with the same output as the expressions above
 
@@ -24,7 +24,6 @@ In this activity students will be introduced to:
 Start off by trying to solve a small task - slowly move a ghost from the center of the screen towards the bottom right corner.
 
 ## Example #1: Moving a Ghost (the long way)
-
 1. Open up [this sample code](https://makecode.com/_VDCA0g4VmRkF)
 2. Run the code. The ghost should scroll off to the bottom right area of the screen, and peek just over the edge
 3. Review the blocks that caused this to happen. What would you need to add if the screen was made to be twice as big?
@@ -104,7 +103,6 @@ pause(100)
 ```  
 
 ## Student Task #1: Move to the upper left corner, and move faster
-
 1. Load up the blocks from the previous example
 2. Make the sprite move up and to the left instead - to do so, change all movements to be in the opposite direction
 3. Change the pause between each step to be only 50 ms, instead of 100 - we decided we want the ghost to be a little bit faster than it was
@@ -116,7 +114,6 @@ pause(100)
 When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by hand, we can instead using loops to repeat that chunk of code more easily.
 
 ## Example #2: Moving up and to the left using loops
-
 ```blocks
 enum SpriteKind {
     Player,
@@ -150,7 +147,6 @@ for (let i = 0; i < 12; i++) {
 ```
 
 ## Student Task #2: Add a second sprite using loops
-
 We now want to add in a second ghost, that moves towards the bottom right like in the first example.
 
 1. Add in a second sprite
@@ -165,14 +161,13 @@ Start with the code in the example.   The solution isn't much different from the
 ### ~
 
 ## Student Task #3: Boomerang
-
 1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the course of two seconds
 2. Make the boomerang return to it's original location over the course of two seconds using a loop
-3. **Challenge:** Use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies.  
+3. **Challenge:** Use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies. 
 
 ### ~hint
 
-Motion and flips will occur very quickly unless you include the ``||loops:pause||`` in the loop.
+Motion and flips will both occur very quickly unless you include the ``||loops:pause||`` in the loop.
 
 ### ~
 
@@ -204,46 +199,8 @@ boomerang.x += 5
 pause(200)
 ```
 
-## Additional Challenge or Project
-
-Students can easily extend the Boomerang project.
-
-* Make the boomerang go a random distance (for instance 25 to 30 loops)
-* Add a Splash screen or make the A button "throw" the boomerang
-* Change the Y position of the boomerang sprite using the controller.  This allows the Boomerang to go up and down and avoid or hit obstacles (see next item)
-* Randomly place some obstacle sprites on the far left of the screen and give points if an overlap
-* Randomly place some enemy obstacles and take away lives (consider starting with 2 lives or more)
-
 ## What did we learn?
 
 1. Describe how a ``||loop:repeat||`` block makes programming easier by reducing code repetition. Use an example.
 2. Explain how it is easier (or harder) to add in a second sprite when with the code inside of the loop that it would have been in the prior (loop-less) version? Why?
 3. Did you use more than one ``||loop:repeat||`` in any of the tasks above? Why might you want to have one loop after another, rather than just combining them into a single loop?
-
-### ~hint
-
-### Possible Answers  
-
-1. The repeat loop makes repeated code easy by having a single number determine how many times we will repeat.  Tell the loop to move the sprite 2 times or 2000 times and it does it just as easily as far as writing code is concerned.  Just change the repeat number but leave the body code the same.  
-2. Adding a second sprite is way easier.  The the 2 sprites do the same thing just in opposite directions. One moves negative x, y and the other positive x, y.  Easier because there is more code in the loop body to keep track of, so more to write in the old version and it is hard to read long code.  
-3. Answers vary using one or two loops.  Using one loop can be confusing because there is very similar code and sprites and easy to mix up.  Two loops is a little more code but for some people more it seems simpler and more organized.
-
-### ~
-
-## Rubrics
-
-### Loops Rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Loops tasks #2 and #3 | Successfully added in a second sprite in task #2 that moved in the opposite direction| Student successfully made the boomerang move to the right 50 pixels with a loop | Successfully moved the boomerang back 50 pixels with a loop | Completed challenge code, making the boomerang "rotate" |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 2 questions fully, or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10 

@@ -177,13 +177,13 @@ Is there a difference between how many times ``||loops:repeat 0 times||`` and ``
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Loops  | Made the "coach" using the say block |  Used count to successfully complete task 2 | Transitioned to a 'for index from 0 to 10' loop in task 3 | Completed Challenge Code in Task 1 |
+| Loops | Made the "coach" using the say block | Used count to successfully complete task #2 | Transitioned to a ``||loops:for index from 0 to 10||`` loop in task #3 | Completed challenge code in task #1 |
 
 ### Score = \_\_\_\_\_\_ /10 
 
 ### What did we learn rubric
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 1 questions fully or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | both answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+| Explanation | Answered at least 1 questions fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | Both answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
