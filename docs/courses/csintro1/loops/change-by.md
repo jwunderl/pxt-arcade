@@ -129,8 +129,8 @@ The code above will cause mySprite X movement to move farther by 5 on each loop 
 
 So we can see the following for how one of the spiral sides moves farther each loop
 
-* Loop 1: mySprite x coordinate change = **-7 ** 
-* Loop 2: mySprite X coordinate change = -7 - 5 = **-12 ** 
+* Loop 1: mySprite x coordinate change = **-7** 
+* Loop 2: mySprite X coordinate change = -7 - 5 = **-12** 
 * Loop 3: mySprite X coordinate change = -7 - 10 - **-17**
 
 in the task we will need to update all sides of the spiral

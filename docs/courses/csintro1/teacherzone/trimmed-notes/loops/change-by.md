@@ -25,9 +25,10 @@
 ### ~
 
 ## Student Task 1: Make the game have a cheering coach
+
 ### ~hint
 
-> Show students sprite say has a millisecond duration setting  
+> Show students sprite say has a millisecond duration setting
 ```blocks
 sprite.say("FASTER!", 500)
 ```
@@ -179,8 +180,8 @@ for (let index = 0; index <= 10; index++) {
 
 ### Possible Answers
 
-1. the for loop is inclusive and loops for items 0 through 10 or 11 times.  The repeat loops runs just the number of times entered (10).
-2. the for loop always runs at least 1 time and you can set the start and end values.  So you can start at 5 and end at 10 for instance.
+1. the for loop is inclusive, and loops for items 0 through 10 or 11 times.  The repeat loops runs just the number of times entered (10).
+2. If you don't use the index in the for loop, you can reduce the complexity of your code by using a repeat loop that hides the unnecessary variable.
 
 Is there a difference between how many times ``||loops:repeat 0 times||`` and ``||loops:for index from 0 to 0||`` will run? A ``||loops: for index||`` loop will go from 0 to the parameter, including both the start of 0 and whatever the final value is. This means that ``||loops:for index from 0 to 0||`` will iterate one time, with ``||variables:index||`` having a value of 0.
 

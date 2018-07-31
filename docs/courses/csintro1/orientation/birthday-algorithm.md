@@ -60,4 +60,4 @@ Example: first 4 steps
     3. `7m - 1`  
     4. `(7m - 1)13 = 91m - 13`
 
-### ~hint
+### ~
