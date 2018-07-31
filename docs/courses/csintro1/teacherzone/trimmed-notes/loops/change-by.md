@@ -34,6 +34,8 @@ sprite.say("FASTER!", 500)
 
 ### ~
 
+https://makecode.com/_2b6iiV41k50X
+
 ```blocks
 let sprite: Sprite = null
 let count = 0
@@ -84,6 +86,9 @@ game.onUpdateInterval(2000, function () {
 ```
 
 ## Student Task 2: Move in a spiral
+
+https://makecode.com/_gb63TcFpcRmw
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -112,24 +117,28 @@ sprite = sprites.create(img`
 count = 0
 for (let i = 0; i < 10; i++) {
     pause(200)
-    sprite.x += 5 + count * 5
+    sprite.x += 5 + count
     pause(200)
-    sprite.y += 6 + count * 5
+    sprite.y += 6 + count
     pause(200)
-    sprite.x += -7 - count * 5
+    sprite.x += -7 - count
     pause(200)
-    sprite.y += -8 - count * 5
-    count += 1
+    sprite.y += -8 - count
+    count += 5
 }
 ```
 
 ## Student Task 3: for index loops
+
+https://makecode.com/_37ddd0RF88K7
+
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
 let sprite: Sprite = null
+let increase = 0
 sprite = sprites.create(img`
 . . . . . . . . 8 . . . . . . . 
 . . . . . 8 8 8 8 8 8 8 . . . . 
@@ -150,13 +159,14 @@ sprite = sprites.create(img`
 `, SpriteKind.Player)
 for (let index = 0; index <= 10; index++) {
     pause(200)
-    sprite.x += 5 + index * 5
+    sprite.x += 5 + increase
     pause(200)
-    sprite.y += 6 + index * 5
+    sprite.y += 6 + increase
     pause(200)
-    sprite.x += -7 - index * 5
+    sprite.x += -7 - increase
     pause(200)
-    sprite.y += -8 - index * 5
+    sprite.y += -8 - increase
+    increase = index*5
 }
 ```
 
