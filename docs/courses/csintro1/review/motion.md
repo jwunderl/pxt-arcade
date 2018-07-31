@@ -4,13 +4,16 @@
     https://makecode.com/_dALdVA19C3ed
 
 ## Mini lessons:
+
 ### make camera follow in only x axis:
+
 ```blocks
 game.onUpdate(function () {
     scene.centerCameraAt(user.x - scene.screenWidth() / 2, 15)
 })
 ```
 ### Make character bounce up and down a bit for impression of movement:
+
 ```blocks
 game.onUpdateInterval(500, function () {
     user.y += change
@@ -18,6 +21,7 @@ game.onUpdateInterval(500, function () {
 })
 ```
 ### Make shocked / dizzy
+
 ```blocks
 user.vx = -8
 projectile = sprites.createProjectile(img`
@@ -45,6 +49,7 @@ projectile.destroy()
 ```
 
 ## Wall collision / stumble:
+
 ```blocks
 enum SpriteKind {
     Player,

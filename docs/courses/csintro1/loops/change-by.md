@@ -20,7 +20,8 @@ In these activities, the student will be introduced to:
 * Game update every  
 * Info set score  
 
-## Examples: Incrementing a Variable 
+## Examples: Incrementing a Variable
+
 1. Review each example below
 2. Create the sample and run the code
 3. Save the code for the start of the next task (name it "increment") 
@@ -67,9 +68,9 @@ info.startCountdown(5)
 4. Make ``||sprites:say("")||`` so it flashes by placing it in ``||game:on game update(1000)||``
 4. **Challenge:** Have the sprite coach give the current score in addition to a cheer ("Faster!")
 
-### Example #4: Increment  to make a spiral
+### Example #4: Increment to make a spiral
 
- A spiral increases the length of each side.  In the example below the sides are 5, 6, 7 and 8 pixels long.  To continue the spiral we will need to continue to make each side longer than the last.  Notice some of the lengths are negative values (moving up or moving left).
+A spiral increases the length of each side. In the example below the sides are 5, 6, 7 and 8 pixels long. To continue the spiral we will need to continue to make each side longer than the last. Notice that some of the lengths are negative values (in order to move up or move left).
 
 ```blocks
 enum SpriteKind {

@@ -3,6 +3,7 @@
 When we implemented "touch the button 15 times" way back in the info section in the orientation, there was a very basic problem with the game - no matter what, when the game was over, the same screen was shown, with the only difference being the score. We will attempt to make this better using two blocks: ``||info:on life zero||`` and ``||info:on countdown end||``. These blocks are used to override the default behavior of running out of lives and the count down running out - that is, they make it so that instead of the game just ending when either event occurs, whatever is inside those two blocks will occur instead.
 
 ## Base Game:
+
 ```blocks
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(2)
@@ -13,6 +14,7 @@ info.startCountdown(2)
 ```
 
 ## Student Task: Improve "Touch the button 15 times"
+
 1. Add in the ``||info:on life zero||`` and ``||info:on countdown end||`` blocks into your code.
 2. Inside the ``||info:on countdown end||`` block, use the ``||info:change score by||`` block to subtract 10 from the score.
 3. After subtracting 10 from the score in the ``||info:on countdown end||``, use the ``||game:game over||`` block to end the game.

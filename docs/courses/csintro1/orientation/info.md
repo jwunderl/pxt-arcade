@@ -32,6 +32,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 Notice that the score pops up in the top right corner as soon as it is used for the first time - that is one benefit of using the ``||info:score||`` variable to keep track of the points the player has earned. Next, we will add in code to in order to create a timer, to see some of the other benefits of the ``||info:info||`` blocks.
 
 ## Student Task #1: 10 second button smash
+
 1. Start with the code saved as "button count" in the prior example
 2. Create an ``||loops:on start||`` block
 
@@ -50,6 +51,7 @@ Run the code you created in task #1 a few times, and try to get different scores
 Beyond score, another important value to keep track of is the players life total. This allows us to make games where players can be penalized for mistakes, without simply ending the game immediately when they make one.
 
 ## Example: changing ``||info:life||`` totals
+
 https://youtu.be/YiZ-yl5CbYM
 
 1. Review the code below
@@ -66,6 +68,7 @@ info.setLife(1)
 This simple game gives the user a simple task - to not touch a button. If they do touch a button, the life will go down to 0, and they will lose. The game is a bit boring, but it does demonstrate a few of the benefits of using ``||info:life||``: life total shows up in the corner as a number of hearts, and when you run out of the lives, the game will end.
 
 ## Student Task 2: Touch the button 15 times
+
 1. Start with the code saved as "do not touch the buttons" in the prior example
 2. Modify the initial value of the life to be 15, instead of just 1
 3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed
@@ -76,8 +79,13 @@ This simple game gives the user a simple task - to not touch a button. If they d
 ![simplify join blocks with JavaScript](/static/courses/csintro1/orientation/join-javascript.gif)
 
 ## Student Task 3: Estimate rate of presses
+
 ### Overview
+
 When a nurse needs to take a patient's heart rate with their other vital signs, they do not want to (or have time to) sit around for a full minute to count how many beats there are. Instead, they can use another, quicker approach to estimate the patient's heart rate - count how many heart beats there are over 15 seconds, and then multiply that value by 4 to get an estimate for the full minute. In this task, we will use the score to do the same thing, only with button presses. The ``||loops:pause||`` block is new in this example, and pauses the code at that point for however many milliseconds it is provided - in this case, we pass 6000 ms so that it pauses for 6 seconds, and then multiply by 10 to get an estimate for the full 60 seconds (one minute).
+
+### Coding
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "button rate")
@@ -161,7 +169,8 @@ pause(6000)
 mySprite.say(":)")
 ```
 
-## What did we learn? 
+## What did we learn?
+
 1. List one extra behavior you get for each of the three values we used in the ``||info:info||`` category (``||info:score||``, ``||info:lives||``, and ``||info:countdown||``).
 2. List one potential downside of using ``||info:score||`` over just using your own variables to keep track of the state of your game.
 

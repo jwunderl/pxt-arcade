@@ -14,6 +14,7 @@ In this activity, the student will be introduced to:
 We can use projectiles to create sprites that move across the screen. Let's start off with making a simple bird projectile.
 
 ## Example #1: Bird projectile
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "Bird Projectile 1") 
@@ -79,6 +80,7 @@ projectile = sprites.createProjectile(img`
 This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! This is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Finally, we'll see later on that projectiles can be created to originate from another sprite (for example, we could set the bird from this example to start off at a nest somewhere else on the screen). If they are not provided a sprite to start from, they will be created either in the middle of the screen (if the velocities in the x and y direction are both set to 0) or from the side of the screen opposite their initial speed (so that they can move across the screen).
 
 ## Student Task #1: Make a ball fall down
+
 1. Start with the provided code below
 2. Modify the code so that the ball falls down the screen at a rate of 50 (that is, it moves along the y axis at a rate of 50)
 3. Create a second projectile that goes up the screen at a rate of 50 (moving in the direction opposite the ball)
@@ -117,6 +119,7 @@ projectile = sprites.createProjectile(img`
 # TODO: Create Video covering projectile motion with loops (task 2)
 
 ## Student Task #2: add vertical projectiles that move across the screen
+
 1. Start with the provided code below. Currently, it will spawn meteors of ``||sprites:Kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
 2. Each time a projectile is created, add one to the score using the ``||info:change score by||`` block
 3. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
@@ -171,6 +174,7 @@ d d d d d d d d
 ```
 
 ## Projectiles as sprites
+
 Projectiles are just sprites with a bit of extra behavior by default; this means that you can do anything with them that you can do with sprites. You can change their speed, the image they show, and how they interact with other sprites. 
 
 You can even use the projectiles you have made as the source of other projectiles! For example, we can start with the following cloud moving across the screen:
@@ -372,6 +376,7 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 ```
 
 ## Student Task #3: Projectiles with loops
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "screen fill")
@@ -407,6 +412,7 @@ pause(300)
 ```
 
 ## Student Task #4: Water balloons
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "water balloon")

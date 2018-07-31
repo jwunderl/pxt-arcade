@@ -25,6 +25,7 @@ https://youtu.be/nlp6Cqfxmb4
 https://youtu.be/Dv-5K9bWcps 
 
 ## Example: math equation in a variable
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "equation variable") 
@@ -37,7 +38,8 @@ answer = 3 + 5
 game.splash("3 + 5 = " + answer)
 ```
 
-## Student Task #1: Try new values in the equation 
+## Student Task #1: Try new values in the equation
+
 1. Starting with the above example 
 2. Experiment using different numbers in our equation (e.g.  `9 + 2`)
 3. Test at least 3 different equations
@@ -63,7 +65,8 @@ https://youtu.be/EiWXa52oIgU
 
 We can create variable based math equations, like `A = B + C`, into code using our code variables and math operators.
 
-### Operators 
+### Operators
+
 In JavaScript, the following order of operation precedence applies:
 
 * Addition (`+`) and Subtraction (`-`)  
@@ -72,6 +75,7 @@ In JavaScript, the following order of operation precedence applies:
 Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
 
 ## Example: Displaying expressions with ``||game:splash||``
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Press any button to see then second equation on splash message
@@ -111,7 +115,8 @@ Look at the JavaScript code. For multiple operator equations it is often easier 
 
 ### ~
 
-## Student Task 4: Conversion  
+## Student Task 4: Conversion
+
 1. Create 2 variables
     * ``||variables:tempC||`` (temperature Celsius) 
     * ``||variables:tempF||`` (temperature Fahrenheit)
@@ -129,6 +134,7 @@ It can be difficult to structure complicated expressions using blocks. Look at a
 ### ~
 
 ## Student Task #5: Debugging
+
 1. We decided that we want to have three different variables in our code - ``||variables:a||``, ``||variables:b||``, and ``||variables:c||``. The variable ``||variables:a||`` should be set to `3`, ``||variables:b||`` should be set to `a + 5`, and ``||variables:c||`` should be set to `a + 2 * b`. This should result in ``||variables:a||`` storing 3, ``||variables:b||`` storing 8, and ``||variables:c||`` storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
 [Fix the Code here](https://makecode.com/_0qfiscfhEY9P)  
