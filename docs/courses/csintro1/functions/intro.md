@@ -160,6 +160,8 @@ One way to think of this is like a book: by adding new functions to our code, we
 
 ### ~hint
 
+the 3 functions should cover the initial sprite setup, playing the music, and display items.
+
 For the challenge, try re-ordering the ``||functions:function calls||`` in your ``||loops:on start||`` - does anything change, or happen in a different order?
 
 ### ~
