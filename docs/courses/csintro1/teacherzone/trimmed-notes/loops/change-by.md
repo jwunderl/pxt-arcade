@@ -87,7 +87,7 @@ game.onUpdateInterval(2000, function () {
 
 ## Student Task 2: Move in a spiral
 
-https://makecode.com/_gb63TcFpcRmw
+https://makecode.com/_ATHDHxgmAeAp
 
 ```blocks
 enum SpriteKind {
@@ -116,6 +116,7 @@ sprite = sprites.create(img`
 `, SpriteKind.Player)
 count = 0
 for (let i = 0; i < 10; i++) {
+    count += 5
     pause(200)
     sprite.x += 5 + count
     pause(200)
@@ -124,13 +125,12 @@ for (let i = 0; i < 10; i++) {
     sprite.x += -7 - count
     pause(200)
     sprite.y += -8 - count
-    count += 5
 }
 ```
 
 ## Student Task 3: for index loops
 
-https://makecode.com/_37ddd0RF88K7
+https://makecode.com/_2HPJPF0H0fsY
 
 ```blocks
 enum SpriteKind {
@@ -158,6 +158,7 @@ sprite = sprites.create(img`
 . . . . . 8 8 8 8 8 8 8 . . . . 
 `, SpriteKind.Player)
 for (let index = 0; index <= 10; index++) {
+    increase = index * 5
     pause(200)
     sprite.x += 5 + increase
     pause(200)
@@ -166,7 +167,6 @@ for (let index = 0; index <= 10; index++) {
     sprite.x += -7 - increase
     pause(200)
     sprite.y += -8 - increase
-    increase = index*5
 }
 ```
 
