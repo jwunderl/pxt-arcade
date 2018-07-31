@@ -36,18 +36,18 @@ Common Browser Saving behavior:
 3. Include the image created in task 2
 4. Include the link created in task 4 here
 
-### Rubric
-
-### ~hint
-Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
-### ~
-
 ## Rubrics
 
-### tasks rubric
+### ~hint
+
+Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
+
+### ~
+
+### Tasks rubric
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
-| orientation | task 1 moved ship and scored a point | task 2 made a sprite say |task 3 opened game .gif file | shared a link to a game |
+| Orientation | Task #1 moved ship and scored a point | Task #2 made a sprite say | Task #3 opened game .gif file | Shared a link to a game |
 
 ### Score = \_\_\_\_\_\_ /10 
 
@@ -55,6 +55,6 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | Student answered #1 & #2  | clear explanation of using sprite say | clear explanation of email game choice (file or link)  |  explanations use an creative example or analogy |
+| Explanation | Student answered #1 & #2  | Clear explanation of using ``||sprite:say||`` | clear explanation of email game choice (file or link) |  Explanations use an creative example or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 

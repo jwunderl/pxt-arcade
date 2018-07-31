@@ -29,11 +29,13 @@ An Algorithm is series of steps, decisions and/or formulas. Some common examples
 # Rubrics
 
 ### ~hint
+
 Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
+
 ### ~
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | Mostly addressed Questions # 1 & 2, but parts are unclear or lack detail | Explanation address Questions 1 & #2 fully | Uses multiple examples and clear explanations |  Explanation uses an original example or analogy and/or  *Extra* in #3 was completed |
+| Explanation | Mostly addressed Questions #1 & #2, but parts are unclear or lack detail | Explanation address questions #1 & #2 fully | Uses multiple examples and clear explanations | Explanation uses an original example or analogy and/or **Challenge** in #3 was completed |
 
 Score = \_\_\_\_\_\_ /10

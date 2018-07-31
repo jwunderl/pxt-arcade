@@ -186,10 +186,9 @@ game.splash("" + c)
 ## Rubrics
 
 ### Code Tasks
-
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
-| Variable Math Tasks | Completed at least 4 coding tasks |Completed All 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
+| Variable Math Tasks | Completed at least 4 coding tasks | Completed all 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
 
 ### Score = \_\_\_\_\_\_ /10 
 
@@ -197,6 +196,5 @@ game.splash("" + c)
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations |  Explanations are outstanding in detail and/or use creative examples |
-
+| Explanation | Answered at least 2 questions fully, or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations | Explanations are outstanding in detail and/or use creative examples |
 ### Score = \_\_\_\_\_\_ /10 

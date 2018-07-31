@@ -157,19 +157,3 @@ https://youtu.be/BPX2MHXmXJw
 1. In JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 30.
 2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
 3. Research and describe 2 other ``||math:Math||`` Operators found in the math menu in MakeCode (hover over values for more information).
-
-## Rubrics
-
-### Code Tasks
-| points | 5 | 7 | 9 | 10 |
-|:---:|:---:|:---:|:---:|:---:|
-| Variable Math Tasks | Completed at least 4 coding tasks | Completed all 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn Questions
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 2 questions fully, or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations | Explanations are outstanding in detail and/or use creative examples |
-### Score = \_\_\_\_\_\_ /10 

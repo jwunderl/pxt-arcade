@@ -111,26 +111,3 @@ Try changing the background color using ``||scene:set background color to||`` in
     * Color representation in JavaScript
 2. Explain what happens to the color index 0 in JavaScript (form a hypothesis).
 3. Explain why we see only 14 colors at a time, despite the fact that there are 16 color indexes (0-15) in the image editor.
-
-## Rubrics
-
-### ~hint
-
-Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
-
-### ~
-
-### Sprite task rubrics
-
-| points | 5 | 7 | 9 | 10 |
-|:---:|:---:|:---:|:---:|:---:|
-| Rainbow Numbers | 15 "colors" represented in task #2 | Completed Color Table connects the color name to both the editor index and the JavaScript number/letter | *Explain answers* are clearly expressed | *Explain answers* are expressed in a unique and/or interesting way or the **Challenge was completed** |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Has an exceptional explanation using an original example |
-
-### Score = \_\_\_\_\_\_ /10 

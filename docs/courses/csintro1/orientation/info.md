@@ -43,7 +43,7 @@ Remember that you can find blocks easily by using the search bar
 
 3. Add in a ``||info:start countdown 10 (s)||`` block into the ``||loops:on start||`` block
 
-Run the code you created in task 1 a few times, and try to get different scores. Notice the benefits of using both the ``||info:countdown||`` and the ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you which is shown in the top right corner. When the game is over, the ``||info:score||`` maintains a ``||info:high score||`` automatically through multiple runs of the game.
+Run the code you created in task #1 a few times, and try to get different scores. Notice the benefits of using both the ``||info:countdown||`` and the ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you which is shown in the top right corner. When the game is over, the ``||info:score||`` maintains a ``||info:high score||`` automatically through multiple runs of the game.
 
 ## Concept: Using ``||info:life||``
 
@@ -170,18 +170,3 @@ mySprite.say(":)")
 What would you do if you needed to keep track of the number of coins the player has earned, the number of keys they have collected, and the number of chicken legs they have to eat. Would using ``||info:score||`` be helpful in storing all these values?
 
 ### ~
-
-### Task rubrics
-
-| points | 5 | 7 | 9 | 10 |
-|:---:|:---:|:---:|:---:|:---:|
-| Button Presses | Completed Task 1 | Completed Task 2 | Completed Task 3 | Completed the **challenge code** in Task 3 |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 1 question fully or answered both questions but parts are unclear or lack detail | Explanations address all three parts of question 1 fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10 
