@@ -77,12 +77,14 @@ projectile = sprites.createProjectile(img`
 `, 50, 0, SpriteKind.Player, item)
 ```
 
-This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! This is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Finally, we'll see later on that projectiles can be created to originate from another sprite (for example, we could set the bird from this example to start off at a nest somewhere else on the screen). If they are not provided a sprite to start from, they will be created either in the middle of the screen (if the velocities in the x and y direction are both set to 0) or from the side of the screen opposite their initial speed (so that they can move across the screen).
+This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! This is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. 
+
+Finally, we'll see later on that projectiles can be created to originate from another sprite (for example, we could set the bird from this example to start off at a nest somewhere else on the screen). If they are not provided a sprite to start from, they will be created either in the middle of the screen (if the velocities in the x and y direction are both set to 0) or from the side of the screen opposite their initial speed (so that they can move across the screen).
 
 ## Student Task #1: Make a ball fall down
 
 1. Start with the provided code below
-2. Modify the code so that the ball falls down the screen at a rate of 50 (that is, it moves along the y axis at a rate of 50)
+2. Modify the code so that the ball falls down the screen at a rate of 50 (that is, it moves along the y axis at a velocity of 50)
 3. Create a second projectile that goes up the screen at a rate of 50 (moving in the direction opposite the ball)
 4. **Challenge:** Make something happen when the two projectiles overlap one another as learned previously - perhaps have them ``||sprite:say||`` hello to each other
 
@@ -521,6 +523,7 @@ balloon.x += -50
 2. How did using a loop in this section help reduce the amount of blocks that were used?
 3. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
 4. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might make your game run faster than leaving it off.
+
 ### ~hint
 
 Does the game need to check whether a sprite is overlapping another if either is a ghost?
