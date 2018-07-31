@@ -1,4 +1,4 @@
-# Mid Course Project
+# Motion Project
 
 Make games of your choosing!
 
