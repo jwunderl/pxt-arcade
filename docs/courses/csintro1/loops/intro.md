@@ -14,10 +14,11 @@ by using a different operator (multiplication:  **`*`**) to express the same ove
 We can use loops to solve tasks in a similar way. The following code leaves the variable ``||variables:output||`` with the same output as the expressions above
 
 ```blocks
-let output: number = 0
+let output = 0
 for (let i = 0; i < 5; i++) {
     output += 4
 }
+game.splash("5x4=" + output)
 ```
 
 In this activity students will be introduced to:
