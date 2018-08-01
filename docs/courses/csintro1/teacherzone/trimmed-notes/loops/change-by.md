@@ -28,7 +28,8 @@
 
 ### ~hint
 
-> Show students sprite say has a millisecond duration setting
+Show students sprite say has a millisecond duration setting
+
 ```blocks
 sprite.say("FASTER!", 500)
 ```
