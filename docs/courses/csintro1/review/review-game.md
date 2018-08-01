@@ -4,7 +4,7 @@
 ## Sprite
 
 * Make a **32 x 32** sprite that has 3 circles filled with different colors
-* Rename the the sprite from "agent" to "circles"
+* Name the sprite "circles"
 * Make the sprite be of kind "Circles"
 * When the game starts, make ``||variables:circles||`` ``||sprite:say||`` something (for example, "I'm ready to play!") for **1000 ms**
 
@@ -15,16 +15,18 @@
 
 ### ~hint
 
-Remember: moving in opposite directions is done by changing the value from positive to negative (or vice versa) - that means one button should change x by 5, and the other should change x by -5.
+Remember: moving in opposite directions is done by changing the value from positive to negative (or vice versa) - that means one button should change x by 5, and the other should change x by -5.  When we use the short methods this is handled for us by the blocks.
 
 ### ~
 
 * Use the ``||controller:on up button pressed||`` and ``||controller:on down button pressed||`` blocks to make ``||variables:circles||`` change the y velocity by 2 in the specified direction when up or down is pressed. 
+
 ### ~hint
 
 Changing the y velocity is done by changing the ``||variables:circles||`` ``||sprite:vy||``
 
 ### ~
+
 * How is changing a sprite's ``||sprite:x||`` value different from changing it's ``||sprite:vx||`` value?
 * In the ``||loops:on start||`` block, set the ``||variables:circles||`` ``||sprite:ay||`` value to 5. This represents the circles **acceleration**, or how fast it increases in velocity. Try to keep the ``||variables:circles||`` in the screen.
 * **Challenge:** set the ``||variables:circles||`` to have an acceleration of 2 in the x direction as well; how long can you keep it on screen? (Be sure to remove this when before moving on to the next task)
@@ -81,9 +83,10 @@ sprites.onOverlap(SpriteKind.Circles, SpriteKind.Stars, function (sprite, otherS
 })
 ```
 
-### Student 3: Sebastian
+### Student 3: Collette
 
-Sebastian wants to add in a splash screen that shows the score the player reached before ending the game, so he uses the ``||info:on countdown end||`` block to add in this behavior, and then end the game. This block allows you to change the behavior of the countdown ending from the normal "game over" sequence to something different.
+Collette wants to add in a splash screen that shows the score the player reached before ending the game, so sgit pull
+he uses the ``||info:on countdown end||`` block to add in this behavior, and then end the game. This block allows you to change the behavior of the countdown ending from the normal "game over" sequence to something different.
 
 ```blocks
 info.onCountdownEnd(function () {
