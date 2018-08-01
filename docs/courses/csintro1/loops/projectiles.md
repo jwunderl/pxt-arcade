@@ -4,7 +4,7 @@ Projectiles are regular sprites that destroy themselves when they go off of the 
 
 Depending on the game, a projectile can be dangerous, friendly, or even just a decoration that floats across the screen. In our code, we will use projectiles to represent temporary sprites that move across the screen. Typically, projectiles will be used because we want movement for meteors, laser beams, cars, or whatever we decide we need in our games. In many games, we will create a large number of these, so ability for them to be automatically destroyed as they leave the screen will often be very helpful in making sure our games run efficiently.
 
-In this activity, the student will be introduced to:
+In this activity, students will be introduced to:
 * ``||sprites:projectile||`` sprites
 * ``||game:on game update every||``
 * ``||math:pick random||``

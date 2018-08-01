@@ -1,9 +1,124 @@
+# Activity: Sprite Physics
+
+Up to this point, we have generally glossed over the exact details of how sprite motion works. In this activity, students will gain a greater understanding of how exactly a sprite's velocity and acceleration actually affects their behavior in a game.
+
+In this activity, student will be introduced to:
+* ``||sprites:projectile||`` sprites
+* ``||game:on game update every||``
+* ``||math:pick random||``
+* ``||sprites:vx||`` and ``||sprites:vy||``
+* ``||sprites:ax||`` and ``||sprites:ay||``
+
+
+## Velocity
+
+Velocity is defined as the speed of something in a given direction; that is, the rate at which it's position changes, and the direction the position is changing in. In real life, you can think of this like being in a car; the speed on a highway may be 60 miles per hour, but the velocity would be 60 miles per hour going north. What this means is that, over the course of an hour at this rate, you will be 60 miles further north than you are currently.
+
+In MakeCode Arcade, a sprite's velocity is measured in pixels per second, and stored as a sprite's ``||sprites:vx||`` and ``||sprite:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis - that is, how quickly the sprite's ``||sprites:x||`` value is changing in value. A sprite's ``||sprites:vy||``, on the other hand, represents the sprite's velocity in the vertical axis - how quickly the sprite's ``||sprites:y||`` changes in value.
+
+## Example 1: Change in location vs Velocity
+
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "Race 1")
+4. Notice how the behavior for the two sprites is similar, and how it is different.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let second: Sprite = null
+let first: Sprite = null
+first = sprites.create(img`
+. . . . . . . . . 2 . . . . . . 
+. . . . . . . . . . 2 . . . . . 
+. . 2 2 2 2 2 2 2 2 2 2 . . . . 
+. . . . . . . . . . 2 . . . . . 
+. . . . . . . . . 2 . . . . . . 
+`, SpriteKind.Player)
+second = sprites.create(img`
+. . . . . . . . . 9 . . . . . . 
+. . . . . . . . . . 9 . . . . . 
+. . 9 9 9 9 9 9 9 9 9 9 . . . . 
+. . . . . . . . . . 9 . . . . . 
+. . . . . . . . . 9 . . . . . . 
+`, SpriteKind.Player)
+first.x += -80
+second.x += -80
+first.y += -10
+second.y += 10
+first.vx = 30
+
+game.onUpdateInterval(1000, function () {
+    second.x += 30
+})
+
+game.onUpdate(function () {
+    first.say("x: " + Math.round(first.x))
+    second.say("x: " + second.x)
+})
+```
+
+## Acceleration
+
+Acceleration represents the rate of change in velocity. This makes the relationship between acceleration and velocity the same as the relationship between velocity and position; velocity is the rate at which position is changing, and acceleration is the rate at which velocity is changing.
+
+In MakeCode Arcade, a sprite's acceleration is defined in terms of pixels per second, per second.
+
+## Example 2: Change in Velocity vs Acceleration
+
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "Race 2")
+4. Notice how the behavior for the two sprites is similar, and how it is different.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let second: Sprite = null
+let first: Sprite = null
+first = sprites.create(img`
+. . . . . . . . . 2 . . . . . . 
+. . . . . . . . . . 2 . . . . . 
+. . 2 2 2 2 2 2 2 2 2 2 . . . . 
+. . . . . . . . . . 2 . . . . . 
+. . . . . . . . . 2 . . . . . . 
+`, SpriteKind.Player)
+second = sprites.create(img`
+. . . . . . . . . 9 . . . . . . 
+. . . . . . . . . . 9 . . . . . 
+. . 9 9 9 9 9 9 9 9 9 9 . . . . 
+. . . . . . . . . . 9 . . . . . 
+. . . . . . . . . 9 . . . . . . 
+`, SpriteKind.Player)
+first.x += -80
+second.x += -80
+first.y += -10
+second.y += 10
+first.ax = 5
+second.vx = -5
+
+game.onUpdateInterval(1000, function () {
+    second.vx += 5
+})
+
+
+game.onUpdate(function () {
+    first.say("vx: " + Math.round(first.vx))
+    second.say("vx: " + second.vx)
+})
+```
+
 ## Student Task #1: Water balloons
 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "water balloon")
 4. Currently, when the balloon collides with the block, it creates only a single drop of a splash. Use a loop in the overlap event between sprites of kind Balloon and sprites of kind Enemy to create 50 drops of kind ``||sprites:Splash||`` instead
+5. **Challenge:** Set the acceleration for every splash of water emitted from the balloon to be 40, so that the splashes will accelerate downwards at the same rate the balloon did
 
 ### ~hint
 
@@ -102,6 +217,6 @@ balloon = sprites.create(img`
 balloon.x += -50
 ```
 
-## What did we learn?
+## What did we learn? ## TODO at least one more question
 
 1. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?

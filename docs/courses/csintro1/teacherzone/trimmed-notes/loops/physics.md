@@ -1,3 +1,19 @@
+# Activity: Sprite Physics
+
+
+In this activity, student will be introduced to:
+* ``||sprites:projectile||`` sprites
+* ``||game:on game update every||``
+* ``||math:pick random||``
+
+## Velocity
+
+## Example 1: Change in location vs Velocity
+
+## Acceleration
+
+## Example 2: Change in Velocity vs Acceleration
+
 ## Student Task 1: Water balloons
 ```blocks
 enum SpriteKind {
@@ -20,6 +36,7 @@ sprites.onOverlap(SpriteKind.Balloon, SpriteKind.Enemy, function (sprite, otherS
 9
 `, xDirection, yDirection, SpriteKind.Splash, sprite)
         projectile.setFlag(SpriteFlag.Ghost, true)
+        projectile.ay = 40
     }
     sprite.destroy()
 })
@@ -92,6 +109,8 @@ balloon.x += -50
 ```
 
 
-## What did we learn?
+## What did we learn?  ## TODO one more question
 
 1. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
+
+## TODO RUBRICS
