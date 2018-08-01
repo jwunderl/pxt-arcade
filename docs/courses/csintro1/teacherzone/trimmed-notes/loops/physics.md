@@ -109,7 +109,7 @@ balloon.x += -50
 ```
 
 
-## What did we learn?  ## TODO one more question
+## What did we learn?  ## TODO at least one more question
 
 1. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
 
