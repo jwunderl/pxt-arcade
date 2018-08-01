@@ -2,7 +2,7 @@
 
 Make games of your choosing!
 
-![Projectile Game Gif](/static/courses/csintro1/loops/project-projectile.gif)
+![Projectile Game Gif](/static/courses/csintro1/loops/project-game-1.gif)
 
 From what we learned in the previous lessons we should be able to make some great games. 
 
