@@ -14,9 +14,9 @@ In this activity, student will be introduced to:
 
 Velocity is defined as the speed of something in a given direction; that is, the rate at which it's position changes, and the direction the position is changing in. In real life, you can think of this like being in a car; the speed on a highway may be 60 miles per hour, but the velocity would be 60 miles per hour going north. What this means is that, over the course of an hour at this rate, you will be 60 miles further north than you are currently.
 
-In MakeCode Arcade, a sprite's velocity is measured in pixels per second, and stored as a sprite's ``||sprites:vx||`` and ``||sprite:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis - that is, how quickly the sprite's ``||sprites:x||`` value is changing in value. A sprite's ``||sprites:vy||``, on the other hand, represents the sprite's velocity in the vertical axis - how quickly the sprite's ``||sprites:y||`` changes in value.
+In MakeCode Arcade, a sprite's velocity is measured in pixels per second, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis - that is, how quickly the sprite's ``||sprites:x||`` value is changing in value. A sprite's ``||sprites:vy||``, on the other hand, represents the sprite's velocity in the vertical axis - how quickly the sprite's ``||sprites:y||`` changes in value.
 
-## Example 1: Change in location vs Velocity
+## Example #1: Change in location vs Velocity
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -55,7 +55,7 @@ game.onUpdateInterval(1000, function () {
 })
 
 game.onUpdate(function () {
-    first.say("x: " + Math.round(first.x))
+    first.say("x: " + Math.ceil(first.x))
     second.say("x: " + second.x)
 })
 ```
@@ -66,7 +66,7 @@ Acceleration represents the rate of change in velocity. This makes the relations
 
 In MakeCode Arcade, a sprite's acceleration is defined in terms of pixels per second, per second.
 
-## Example 2: Change in Velocity vs Acceleration
+## Example #2: Change in Velocity vs Acceleration
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -107,7 +107,7 @@ game.onUpdateInterval(1000, function () {
 
 
 game.onUpdate(function () {
-    first.say("vx: " + Math.round(first.vx))
+    first.say("vx: " + Math.ceil(first.vx))
     second.say("vx: " + second.vx)
 })
 ```
@@ -220,3 +220,5 @@ balloon.x += -50
 ## What did we learn? ## TODO at least one more question
 
 1. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
+2. In examples #1 and #2, you likely noticed that the values were fluctuating more quickly for ``||variables:first||`` than for ``||variables:second||``, even though they were both increasing at the same rate on a second-by-second basis. Make a hypothesis on why that is.
+3. **Challenge:** Did either race (example #1 or example #2) have a clear winner? Make a hypothesis on why this might be, even if the rate of change is the same on a second-by-second basis.
