@@ -85,8 +85,7 @@ sprites.onOverlap(SpriteKind.Circles, SpriteKind.Stars, function (sprite, otherS
 
 ### Student 3: Collette
 
-Collette wants to add in a splash screen that shows the score the player reached before ending the game, so sgit pull
-he uses the ``||info:on countdown end||`` block to add in this behavior, and then end the game. This block allows you to change the behavior of the countdown ending from the normal "game over" sequence to something different.
+Collette wants to add in a splash screen that shows the score the player reached before ending the game, so she uses the ``||info:on countdown end||`` block to add in this behavior, and then end the game. This block allows you to change the behavior of the countdown ending from the normal "game over" sequence to something different.
 
 ```blocks
 info.onCountdownEnd(function () {
