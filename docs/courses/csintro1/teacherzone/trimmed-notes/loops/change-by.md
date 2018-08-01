@@ -59,9 +59,13 @@ sprites.say("FASTER!", 500)
 
 ### ~
 
-https://makecode.com/_2b6iiV41k50X
+https://makecode.com/_VaK8ttUjzgim
 
 ```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
 let sprite: Sprite = null
 let count = 0
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -102,12 +106,13 @@ sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`)
+`, SpriteKind.Player)
 game.splash("Press \"A\" FAST", "READY, SET, GO!")
 info.startCountdown(10)
 game.onUpdateInterval(2000, function () {
-    sprite.say(info.score() + " keep going", 500)
+    sprite.say("" + info.score() + " keep going", 500)
 })
+
 ```
 
 ## Student Task 2: Move in a spiral
