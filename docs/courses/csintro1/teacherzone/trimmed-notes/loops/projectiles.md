@@ -1,13 +1,9 @@
 # Activity: Projectile Sprites
 
-In this activity the student will implement:
-
-* projectile sprites
-* onUpdate 
-* set sprite kind
-* onOverlap kind
-* on game update every
-* pick random
+In this activity, the student will be introduced to:
+* ``||sprites:projectile||`` sprites
+* ``||game:on game update every||``
+* ``||math:pick random||``
 
 ## Concept: Flying Birds!
 ## Example: Bird projectile
@@ -212,105 +208,11 @@ for (let index = 0; index <= 12; index++) {
 }
 ```
 
-## Student Task 4: Water balloons
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Balloon,
-    Splash
-}
-let projectile: Sprite = null
-let yDirection = 0
-let xDirection = 0
-let balloon: Sprite = null
-let block: Sprite = null
-sprites.onOverlap(SpriteKind.Balloon, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprite.setFlag(SpriteFlag.Ghost, true)
-    for (let index = 0; index <= 50; index++) {
-        xDirection = Math.randomRange(0, 100) - 50
-        yDirection = Math.randomRange(0, 100) - 50
-        projectile = sprites.createProjectile(img`
-9
-`, xDirection, yDirection, SpriteKind.Splash, sprite)
-        projectile.setFlag(SpriteFlag.Ghost, true)
-    }
-    sprite.destroy()
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    balloon.vx = 40
-    balloon.vy = -50
-    balloon.ay = 40
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    balloon.destroy()
-    balloon = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . 8 9 8 8 9 9 8 9 8 . . . . 
-. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Balloon)
-    balloon.x += -50
-})
-scene.setBackgroundColor(6)
-block = sprites.create(img`
-f f f f f f f f f f f f f f f f 
-f 1 2 2 1 1 2 2 2 1 2 1 1 2 1 f 
-f 1 2 1 2 1 2 1 2 1 2 2 1 2 1 f 
-f 1 2 1 2 1 2 2 2 1 2 1 2 2 1 f 
-f 1 2 2 1 1 2 1 2 1 2 1 1 2 1 f 
-f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f 
-f 1 2 2 2 1 2 2 2 1 2 2 2 1 1 f 
-f 1 2 1 1 1 2 1 1 1 2 1 2 1 1 f 
-f 1 2 1 2 1 2 2 1 1 2 2 2 1 1 f 
-f 1 2 2 2 1 2 2 2 1 2 1 1 2 1 f 
-f f f f f f f f f f f f f f f f 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-block.x += 50
-balloon = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . 8 9 8 8 9 9 8 9 8 . . . . 
-. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Balloon)
-balloon.x += -50
-```
-
 ## What did we learn?
 
 1. Describe two benefits of using projectiles rather than normal sprites.  
 2. How did using a loop in this section help reduce the amount of blocks that were used?
-3. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
-4. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might be make your game run faster than leaving it off.
+3. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might be make your game run faster than leaving it off.
 
 ### ~hint
 
@@ -325,13 +227,13 @@ Does the game need to check whether a sprite is overlapping another if either is
 
 | Student Tasks | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Student Tasks | Student made the ball fall down and another sprite move up in task #1 | Student made meteors fall from top, and changed score successfully in task #2 | Student successfully made the water balloon burst into around 50 splashes in task #3 | Completed Challenge Code in tasks #1 and #2 |
+| Student Tasks | Student made the ball fall down and another sprite move up in task #1 | Student made meteors fall from top, and changed score successfully in task #2 | Student successfully completed challenge code in task #1 | Student successfully completed challenge code in task #2 |
 
 ### Score = \_\_\_\_\_\_ /10 
 
 ### What did we learn rubric 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Addressed challenge question reasonably |
+| Explanation | Answered at least 1 question1 fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Addressed challenge question reasonably |
 
 ### Score = \_\_\_\_\_\_ /10 
