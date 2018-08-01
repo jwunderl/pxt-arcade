@@ -4,9 +4,11 @@ enum SpriteKind {
     Hoop,
     Ray
 }
-let angle: number = 20;
-let pow: number = 25;
-const iter: number = 40
+let angle: number = 160;
+let pow: number = 50;
+
+const iter: number = 3;
+const gravity: number = 20;
 
 let player: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -44,6 +46,8 @@ let basketball: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Basketball);
+basketball.setFlag(SpriteFlag.StayInScreen, true)
+
 let hoop: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . c c c . . . . 
@@ -70,19 +74,39 @@ basketball.y = player.y - 5;
 hoop.x += 50;
 hoop.y -= 25;
 
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    angle -= controller.dy();
-    pow += controller.dx();
+game.onUpdate(function () {
+    angle -= controller.dx() / 5;
+    pow -= controller.dy() / 5;
 })
 
 game.onUpdateInterval(50, function () {
     bkgd.fill(15);
-    let ray: Sprite = sprites.create(img`.`, SpriteKind.Ray);
-    ray.x = basketball.x
-    ray.y = basketball.y
-    for (let i: number = 0; i < iter; i++) {
-        ray.x += i * pow / 100;
-        ray.y -= (i * angle - (i * i * angle) / 15 ) / 50
-        bkgd.setPixel(ray.x, ray.y, 1);
+    if (!basketball.ay) {
+        let xComponent = pow * Math.sin(angle * Math.PI / 180);
+        let yComponent = -pow * Math.cos(angle * Math.PI / 180)
+
+        for (let i: number = 0; i < iter; i += (2 * i | 1) / 10) {
+            let x = basketball.x + i * xComponent;
+            let y = basketball.y - i * yComponent + i * i * gravity / 2;
+            bkgd.setPixel(x, y, 1);
+        }
     }
+})
+
+sprites.onOverlap(SpriteKind.Basketball, SpriteKind.Hoop, function (sprite: Sprite, otherSprite: Sprite) {
+    music.playSound(music.sounds(Sounds.PowerUp))
+})
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    basketball.vx = pow * Math.sin(angle * Math.PI / 180);
+    basketball.vy = pow * Math.cos(angle * Math.PI / 180);
+    basketball.ay = gravity;
+})
+
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    basketball.ay = 0;
+    basketball.vx = 0;
+    basketball.vy = 0;
+    basketball.x = player.x + 5;
+    basketball.y = player.y - 5;
 })
