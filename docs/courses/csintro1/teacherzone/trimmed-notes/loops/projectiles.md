@@ -69,6 +69,9 @@ projectile = sprites.createProjectile(img`
 
 ## Student Task 2: add vertical projectiles that move across the screen
 ### Normal Solution
+
+https://makecode.com/_iDp4cVW0hTCv
+
 ```block
 enum SpriteKind {
     Player,
@@ -77,7 +80,7 @@ enum SpriteKind {
 let item: Sprite = null
 let projectile: Sprite = null
 let mySprite: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, foodSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, Enemy) {
     game.over()
 })
 mySprite = sprites.create(img`
@@ -99,10 +102,8 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 mySprite.y = 100
-game.onUpdate(function () {
-    mySprite.x += controller.dx()
-})
-game.onUpdateInterval(200, function () {
+controller.controlSprite(mySprite, 100, 0)
+for (let i = 0; i < 100; i++) {
     projectile = sprites.createProjectile(img`
 d d d d d d d d 
 d d d d d d d d 
@@ -115,10 +116,18 @@ d d d d d d d d
 `, 0, 50, SpriteKind.Enemy, item)
     projectile.x = Math.randomRange(0, scene.screenWidth())
     info.changeScoreBy(1)
+    pause(200)
+}
+game.over(true)
+game.onUpdateInterval(200, function () {
+	
 })
+
 ```
 
 ### Challenge solution:
+
+https://makecode.com/_PXr4aL5kr3x0
 
 ```blocks
 enum SpriteKind {
@@ -128,7 +137,7 @@ enum SpriteKind {
 let item: Sprite = null
 let projectile: Sprite = null
 let mySprite: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, foodSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, Enemy) {
     game.over()
 })
 mySprite = sprites.create(img`
@@ -150,10 +159,8 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 mySprite.y = 100
-game.onUpdate(function () {
-    mySprite.x += controller.dx()
-})
-game.onUpdateInterval(200, function () {
+controller.controlSprite(mySprite, 100, 0)
+for (let i = 0; i < 100; i++) {
     projectile = sprites.createProjectile(img`
 d d d d d d d d 
 d d d d d d d d 
@@ -166,17 +173,24 @@ d d d d d d d d
 `, 0, 40 + Math.randomRange(0, 20), SpriteKind.Enemy, item)
     projectile.x = Math.randomRange(0, scene.screenWidth())
     info.changeScoreBy(1)
-})
+    pause(200)
+}
+game.over(true)
+
 ```
 
 ## Projectiles as sprites
+
 ## Student Task 3: Projectiles with loops
+
 ### ~hint
 
 Ask the students why this creates 13 projectiles, instead of just 12.
 Answer: there is an extra value because the loop is including both 0 and 12.
 
 ### ~
+
+https://makecode.com/_HUgdUmbwgHx6 
 
 ```blocks
 enum SpriteKind {
@@ -186,10 +200,10 @@ enum SpriteKind {
 let projectile: Sprite = null
 for (let index = 0; index <= 12; index++) {
     projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. 6 . . . . . . . . . . . . . . 
+. 6 6 . . . . . . . . . . . . . 
+. 6 . 6 . . . . . . . . . . . . 
+. 6 . . 6 . . . . . . . . . . . 
 . 6 6 6 6 6 6 6 6 . . . . . . . 
 . 6 8 8 8 8 8 8 8 6 . . . . . . 
 . 6 8 6 6 6 6 6 6 8 6 . . . . . 
@@ -201,7 +215,7 @@ for (let index = 0; index <= 12; index++) {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .  
 `, 40, 0, SpriteKind.Player)
     projectile.y = index * 10
     pause(300)

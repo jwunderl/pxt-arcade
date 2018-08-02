@@ -1,8 +1,10 @@
 # Activity: Projectile Sprites
 
-Projectiles are regular sprites that destroy themselves when they go off of the visible screen. Projectile sprite blocks also expose the properties for velocity (``||sprites:vx||`` & ``||sprites:vy||``) right as they are created, to allow software developers to simplify the code they write.
+Projectiles are regular sprites that destroy themselves when they go off of the visible screen. Projectile sprite blocks also expose the properties for velocity (``||sprites:vx||`` & ``||sprites:vy||``)  as they are created, to simplify the code we write.
 
-Depending on the game, a projectile can be dangerous, friendly, or even just a decoration that floats across the screen. In our code, we will use projectiles to represent temporary sprites that move across the screen. Typically, projectiles will be used because we want movement for meteors, laser beams, cars, or whatever we decide we need in our games. In many games, we will create a large number of these, so ability for them to be automatically destroyed as they leave the screen will often be very helpful in making sure our games run efficiently.
+Depending on the game, a projectile can be dangerous, friendly, or even just a decoration that floats across the screen. In our code, we will use projectiles to represent temporary sprites that move across the screen. 
+
+Typically, projectiles will be used because we want movement for meteors, laser beams, cars, or whatever we decide we need in our games. In many games, we will create a large number of projectiles, so the ability for them to be automatically destroyed as they leave the screen will often be very helpful in making sure our games run efficiently.
 
 In this activity, students will be introduced to:
 * ``||sprites:projectile||`` sprites
@@ -45,7 +47,7 @@ let projectile: Sprite = sprites.createProjectile(img`
 `, 50, 0, SpriteKind.Player)
 ```
 
-It may seem surprising that there's only a single block inside the ``||loops:on start||`` block - projectiles make it particularly easy to create temporary sprites, by including a lot of common behaviors in one. They have another benefit that code example below will demonstrate.
+It may seem surprising that there's only a single block inside the ``||loops:on start||`` block - projectiles make it particularly easy to create temporary sprites, by including a lot of common behaviors. 
 
 ```blocks  
 enum SpriteKind {
@@ -77,9 +79,11 @@ projectile = sprites.createProjectile(img`
 `, 50, 0, SpriteKind.Player, item)
 ```
 
-This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! This is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. 
+This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! 
 
-Finally, we'll see later on that projectiles can be created to originate from another sprite (for example, we could set the bird from this example to start off at a nest somewhere else on the screen). If they are not provided a sprite to start from, they will be created either in the middle of the screen (if the velocities in the x and y direction are both set to 0) or from the side of the screen opposite their initial speed (so that they can move across the screen).
+Auto Destroy is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. 
+
+If projectiles are not provided a name of a sprite to start from, they will be created either in the middle of the screen (if the velocities in the x and y direction are both set to 0) or from the side of the screen opposite their initial speed (so that they can move across the screen).
 
 ## Student Task #1: Make a ball fall down
 
@@ -118,14 +122,14 @@ projectile = sprites.createProjectile(img`
 `, 0, 0, SpriteKind.Player, item)
 ```
 
+## Concept: Projectile Loop
+
+Games often create many projectiles, one after another.  We can use a loop to create multiple projectiles by creating a projectile in the body of the loop.
+
+
 # TODO: Create Video covering projectile motion with loops (task 2)
 
-## Student Task #2: add vertical projectiles that move across the screen
-
-1. Start with the provided code below. Currently, it will spawn meteors of ``||sprites:Kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
-2. Each time a projectile is created, add one to the score using the ``||info:change score by||`` block
-3. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
-4. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50
+### Example #2: Projectile Loop
 
 ```blocks
 enum SpriteKind {
@@ -175,7 +179,16 @@ d d d d d d d d
 })
 ```
 
-## Projectiles as sprites
+## Student Task #2: add vertical projectiles that move across the screen
+
+1. Start with the provided code in the example above. Currently, it will spawn meteors of ``||sprites:Kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
+2. Replace the ``||game:onupdate||`` ``||loops:repeat||`` loop 
+3. Each time a projectile is created, add one point (1) to the score using the ``||info:change score by||`` block
+4. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
+5. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50.
+
+
+## Concept: Projectiles as sprites
 
 Projectiles are just sprites with a bit of extra behavior by default; this means that you can do anything with them that you can do with sprites. You can change their speed, the image they show, and how they interact with other sprites. 
 
@@ -258,12 +271,13 @@ game.onUpdateInterval(50, function () {
 })
 ```
 
-Be sure to notice that in the above example, we set the raindrops to be ``||sprites:ghosts||`` - this means that they won't be considered to overlap with other sprites, and will pass through sprites as if there were no overlap events. It turns out that there is a fairly significant performance benefit to doing this when you spawn a large amount of projectiles (and don't need them to overlap with other sprites) - try removing that block, and see how much the performance goes down.
+Notice that in the above example, we set the raindrops to be ``||sprites:ghosts||`` - this means that they won't be detected in overlap with other sprites, and will pass through sprites as if there were no overlap events. It turns out that there is a fairly significant performance benefit to doing this when you spawn a large amount of projectiles (and don't need them to overlap with other sprites) - try removing the ``||sprites:ghosts||`` block, and see how much the performance goes down.
 
 We can change where the rain drops show up, so that they don't all appear in the same location relative to the cloud:
 
+https://makecode.com/_MtUYHyHiwdmy
+
 ```blocks
-// https://makecode.com/_MtUYHyHiwdmy
 
 enum SpriteKind {
     Cloud,
@@ -317,8 +331,9 @@ game.onUpdateInterval(50, function () {
 
 And we can even count the raindrops that make it to the bottom of the screen by counting when they're destroyed!
 
+https://makecode.com/_5Wb33FiqaJeu
+
 ```blocks
-// https://makecode.com/_5Wb33FiqaJeu
 enum SpriteKind {
     Cloud,
     Rain
@@ -382,8 +397,8 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "screen fill")
-4. Surround the code in the ``||loops:on start||`` block with a ``||loops:for index from 0 to 12||`` block, to create 13 projectiles, one every 300 ms
-5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value `10 * index`, so that they start further down the screen on each iteration
+4. Move the code in the ``||loops:on start||`` block into a ``||loops:for index from 0 to 12||`` block, to create 13 projectiles, one every 300 ms
+5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value **`10 * index`**, so that they start further down the screen on each iteration
 
 ```blocks
 enum SpriteKind {
@@ -392,10 +407,10 @@ enum SpriteKind {
 }
 let projectile: Sprite = null
 projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. 6 . . . . . . . . . . . . . . 
+. 6 6 . . . . . . . . . . . . . 
+. 6 . 6 . . . . . . . . . . . . 
+. 6 . . 6 . . . . . . . . . . . 
 . 6 6 6 6 6 6 6 6 . . . . . . . 
 . 6 8 8 8 8 8 8 8 6 . . . . . . 
 . 6 8 6 6 6 6 6 6 8 6 . . . . . 
