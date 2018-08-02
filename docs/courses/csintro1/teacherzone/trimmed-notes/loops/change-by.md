@@ -28,7 +28,7 @@
 
 ### ~hint
 
-Show students sprite say has a millisecond duration setting
+ Show students sprite say has a millisecond duration setting
 
 ```blocks
 enum SpriteKind {
@@ -54,11 +54,12 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-sprites.say("FASTER!", 500)
+mySprite.say("FASTER!", 500)
 ```
 
 ### ~
 
+### Solution
 https://makecode.com/_VaK8ttUjzgim
 
 ```blocks
