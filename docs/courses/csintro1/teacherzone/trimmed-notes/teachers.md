@@ -57,12 +57,16 @@
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/tilemap/intro)
 * [Collisions](/courses/csintro1/teacherzone/trimmed-notes/tilemap/collisions)
+* [Using Corgi Extension](/courses/csintro1/teacherzone/trimmed-notes/tilemap/extensions)
 
 ## [Logic Teacher](/courses/csintro1/teacherzone/trimmed-notes/logic)
 
 * [Conditionals](/courses/csintro1/teacherzone/trimmed-notes/logic/conditions)
 * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
+* [Validating User Input](/courses/csintro1/teacherzone/trimmed-notes/logic/user-input)
 
 ## [Arrays Teacher](/courses/csintro1/teacherzone/trimmed-notes/arrays)
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/arrays/intro)
+* [String Arrays](/courses/csintro1/teacherzone/trimmed-notes/arrays/string)
+* [Sprite Arrays](/courses/csintro1/teacherzone/trimmed-notes/arrays/sprites)
