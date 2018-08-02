@@ -217,6 +217,20 @@ balloon = sprites.create(img`
 balloon.x += -50
 ```
 
+## Student Task #2: Flying Duck
+
+In this task, you will make a basic version of a flying bird game. In it, the bird will fall due to gravity, and whenever the player presses ``||controller:A||``, the bird flies into the sky.
+
+![Flying Duck](/static/courses/csintro1/loops/flying-duck.gif)
+
+1. Open a new project, and name it "Flying Duck"
+2. Create a sprite on the screen
+3. Give the sprite an acceleration in the ``||sprites:Y||`` direction, so that it falls due to 'gravity'
+4. Create an ``||controller:on A button pressed||`` event
+5. Inside of the ``||controller:on A button pressed||`` event, use ``||sprites:change by||`` to change the sprite's velocity in the ``||sprites:Y||`` direction, so that pressing the ``||controller:A||`` button makes the sprite 'fly' and counteract 'gravity'
+6. **Challenge:** create an ``||game:on game update every 2000 ms||`` event, a spawn a projectile that moves horizontally across the screen. Set the projectile's ``||sprites:Y||`` position to a random place on the screen, using the ``||Math:pick random||`` and ``||Scene:screen height||`` blocks. Make something happen when the projectiles overlap with the player sprite!
+
+
 ## What did we learn?
 
 1. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?

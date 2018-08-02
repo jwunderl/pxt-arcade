@@ -204,6 +204,96 @@ balloon = sprites.create(img`
 balloon.x += -50
 ```
 
+## Student Task #2: Flying Duck
+
+### Standard Solution:
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.vy = -100
+})
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 7 7 . . . . . . . . 
+. . . . . 7 7 f 7 5 . . . . . . 
+. . . . . . 7 7 . . . . . . . . 
+. . . . . . 7 7 7 . . . . . . . 
+. . . . . . 7 7 . . . . . . . . 
+. . . . . . 7 7 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+mySprite.ay = 100
+```
+
+### Challenge Solution
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let projectile: Sprite = null
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.vy = -100
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.say("Oww!", 500)
+})
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 7 7 . . . . . . . . 
+. . . . . 7 7 f 7 5 . . . . . . 
+. . . . . . 7 7 . . . . . . . . 
+. . . . . . 7 7 7 . . . . . . . 
+. . . . . . 7 7 . . . . . . . . 
+. . . . . . 7 7 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+mySprite.ay = 100
+game.onUpdateInterval(2000, function () {
+    projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 3 . . . . . . . . . . 
+. . . . . . 3 . . . . . . . . . 
+. . 3 3 3 3 3 3 . . . . . . . . 
+. . . . . . 3 . . . . . . . . . 
+. . . . . 3 . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 50, 0, SpriteKind.Enemy)
+    projectile.y = Math.randomRange(0, scene.screenHeight())
+})
+```
 
 ## What did we learn?
 

@@ -4,7 +4,7 @@ enum SpriteKind {
     Hoop,
     Ray
 }
-let angle: number = 160;
+let angle: number = 0;
 let pow: number = 50;
 
 const iter: number = 3;
@@ -75,15 +75,15 @@ hoop.x += 50;
 hoop.y -= 25;
 
 game.onUpdate(function () {
-    angle -= controller.dx() / 5;
+    angle += controller.dx() / 5;
     pow -= controller.dy() / 5;
 })
 
 game.onUpdateInterval(50, function () {
     bkgd.fill(15);
     if (!basketball.ay) {
-        let xComponent = pow * Math.sin(angle * Math.PI / 180);
-        let yComponent = -pow * Math.cos(angle * Math.PI / 180)
+        let xComponent = pow * Math.cos(angle * Math.PI / 180);
+        let yComponent = -pow * Math.sin(angle * Math.PI / 180)
 
         for (let i: number = 0; i < iter; i += (2 * i | 1) / 10) {
             let x = basketball.x + i * xComponent;
@@ -98,8 +98,8 @@ sprites.onOverlap(SpriteKind.Basketball, SpriteKind.Hoop, function (sprite: Spri
 })
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    basketball.vx = pow * Math.sin(angle * Math.PI / 180);
-    basketball.vy = pow * Math.cos(angle * Math.PI / 180);
+    basketball.vx = pow * Math.cos(angle * Math.PI / 180);
+    basketball.vy = pow * Math.sin(angle * Math.PI / 180);
     basketball.ay = gravity;
 })
 
