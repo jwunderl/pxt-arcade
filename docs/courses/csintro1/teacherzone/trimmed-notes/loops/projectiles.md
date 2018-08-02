@@ -15,6 +15,9 @@ Have students experiment with the example for a few minutes with different value
 ### ~
 
 ## Student Task 1: Make a ball fall down
+
+https://makecode.com/_1qTi6qfXj4zp
+
 ```blocks
 enum SpriteKind {
     Player,
