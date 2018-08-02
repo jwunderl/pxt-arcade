@@ -1,6 +1,7 @@
 ## Arrays Teacher
 
-* [Arrays Teacher](/courses/csintro1/teacherzone/trimmed-notes/arrays)
-    * [Intro](/courses/csintro1/teacherzone/trimmed-notes/arrays/intro)
+* [Intro](/courses/csintro1/teacherzone/trimmed-notes/arrays/intro)
+* [String Arrays](/courses/csintro1/teacherzone/trimmed-notes/arrays/string)
+* [Sprite Arrays](/courses/csintro1/teacherzone/trimmed-notes/arrays/sprites)
 
 ## [CS Teacher Zone Material](/courses/csintro1/teacherzone/trimmed-notes/teachers)

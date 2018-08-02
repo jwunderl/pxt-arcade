@@ -1,6 +1,4 @@
-# [CS Intro](/courses/csintro)
-
-* [CS Intro](/courses/csintro)
+# CS Intro
 
 # CS Intro Unit 1: Blocks
 
@@ -61,15 +59,19 @@
 
 * [Intro](/courses/csintro1/tilemap/intro)
 * [Collisions](/courses/csintro1/tilemap/collisions)
+* [Using Corgi Extension](/courses/csintro1/tilemap/extensions)
 
 ## [Logic](/courses/csintro1/logic)
 
 * [Conditionals](/courses/csintro1/logic/conditions)
 * [Booleans](/courses/csintro1/logic/booleans)
+* [Validating User Input](/courses/csintro1/logic/user-input)
 
 ## [Arrays](/courses/csintro1/arrays)
 
 * [Intro](/courses/csintro1/arrays/intro)
+* [String Arrays](/courses/csintro1/arrays/string)
+* [Sprite Arrays](/courses/csintro1/arrays/sprites)
 
 # [CS Teacher Zone Material](/courses/csintro1/teacherzone/trimmed-notes/teachers)
 
@@ -130,12 +132,17 @@
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/tilemap/intro)
 * [Collisions](/courses/csintro1/teacherzone/trimmed-notes/tilemap/collisions)
+* [Using Corgi Extension](/courses/csintro1/teacherzone/trimmed-notes/tilemap/extensions)
 
 ## [Logic Teacher](/courses/csintro1/teacherzone/trimmed-notes/logic)
 
 * [Conditionals](/courses/csintro1/teacherzone/trimmed-notes/logic/conditions)
 * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
+* [Validating User Input](/courses/csintro1/teacherzone/trimmed-notes/logic/user-input)
 
 ## [Arrays Teacher](/courses/csintro1/teacherzone/trimmed-notes/arrays)
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/arrays/intro)
+* [String Arrays](/courses/csintro1/teacherzone/trimmed-notes/arrays/string)
+* [Sprite Arrays](/courses/csintro1/teacherzone/trimmed-notes/arrays/sprites)
+

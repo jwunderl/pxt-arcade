@@ -1,0 +1,1 @@
+introduce 'ask for string with text', making boolean expressions based off this, validating users did 'valid' things
