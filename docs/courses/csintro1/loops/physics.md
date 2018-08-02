@@ -14,14 +14,18 @@ In this activity, student will be introduced to:
 
 Velocity is defined as the speed of something in a given direction; that is, the rate at which it's position changes, and the direction the position is changing in. In real life, you can think of this like being in a car; the speed on a highway may be 60 miles per hour, but the velocity would be 60 miles per hour going north. What this means is that, over the course of an hour at this rate, you will be 60 miles further north than you are currently.
 
-In MakeCode Arcade, a sprite's velocity is measured in pixels per second, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis - that is, how quickly the sprite's ``||sprites:x||`` value is changing in value. A sprite's ``||sprites:vy||``, on the other hand, represents the sprite's velocity in the vertical axis - how quickly the sprite's ``||sprites:y||`` changes in value.
+In MakeCode Arcade, a sprite's velocity is measured in pixels per second, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis - that is, how quickly the sprite's ``||sprites:x||`` value is changing in value moving left to right. A sprite's ``||sprites:vy||``, on the other hand, represents the sprite's velocity in the vertical axis - how quickly the sprite's ``||sprites:y||`` changes in value moving up and down.
 
-## Example #1: Change in location vs Velocity
+In MakeCode Arcade, a sprite's velocity is defined in terms of pixels per second.
+
+## Example #1a: Change in location vs Velocity
 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "Race 1")
 4. Notice how the behavior for the two sprites is similar, and how it is different.
+
+https://makecode.com/_isU6zL0MH47Y
 
 ```blocks
 enum SpriteKind {
@@ -62,16 +66,61 @@ game.onUpdate(function () {
 
 ## Acceleration
 
-Acceleration represents the rate of change in velocity. This makes the relationship between acceleration and velocity the same as the relationship between velocity and position; velocity is the rate at which position is changing, and acceleration is the rate at which velocity is changing.
+Acceleration represents the rate of change in velocity. We think of this is how much an object is speeding up or slowing down in a particular direction.  Gravity is a good example that speed the velocity of a object in the down direction.
+
+The relationship between acceleration and velocity is similar to the relationship between velocity and position. Velocity is the rate at which position is changing, and acceleration is the rate at which velocity is changing.
+
+In other words, acceleration tells us how quickly the velocity is changing. Braking in a car or a rocket taking off are examples of acceleration.  We feel a pull in our bodies when there is acceleration.
 
 In MakeCode Arcade, a sprite's acceleration is defined in terms of pixels per second, per second.
 
-## Example #2: Change in Velocity vs Acceleration
+
+### Example #1b - Sprite with Acceleration
+
+This is a sprite with an Acceleration applied.  We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time.
+
+https://makecode.com/_W4Uf9xH6fM30
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . 1 1 1 1 1 1 1 1 1 1 1 . . 
+. . . 1 e e e e e e e e e 1 . . 
+. . . 1 e e e e e e e e e 1 . . 
+. . . 1 e e e e e e e e e 1 . . 
+. . . 1 e e e e e e e e e 1 . . 
+. . . 1 e e e e e e e e e 1 . . 
+. . . 1 e e e e e e e e e 1 . . 
+. . . 1 e e e e e e e e e 1 . . 
+. . . 1 1 1 1 1 1 1 1 1 1 1 . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+mySprite.ay = -20
+for (let i = 0; i < 5; i++) {
+    mySprite.y = 140
+    pause(2000)
+}
+
+```
+
+## Example #2c: Change in Velocity vs Acceleration
 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "Race 2")
 4. Notice how the behavior for the two sprites is similar, and how it is different.
+
+https://makecode.com/_JPjWfkLCb2fX
 
 ```blocks
 enum SpriteKind {
@@ -123,6 +172,8 @@ game.onUpdate(function () {
 ### ~hint
 
 In total, this loop should include 4 blocks - the generation of a random xDirection and yDirection, the creation of the projectile, and the block that sets the projectiles ghost flag to be on.
+
+https://makecode.com/_1Mbhp1HLF2td
 
 ### ~
 
@@ -230,6 +281,13 @@ In this task, you will make a basic version of a flying bird game. In it, the bi
 5. Inside of the ``||controller:on A button pressed||`` event, use ``||sprites:change by||`` to change the sprite's velocity in the ``||sprites:Y||`` direction, so that pressing the ``||controller:A||`` button makes the sprite 'fly' and counteract 'gravity'
 6. **Challenge:** create an ``||game:on game update every 2000 ms||`` event, a spawn a projectile that moves horizontally across the screen. Set the projectile's ``||sprites:Y||`` position to a random place on the screen, using the ``||Math:pick random||`` and ``||Scene:screen height||`` blocks. Make something happen when the projectiles overlap with the player sprite!
 
+### ~hint
+
+Try different values for the vertical acceleration representing gravity ``||sprites:ay||`` such as 25, 50, 100, 200
+
+What is a reasonably challenging value?
+
+### ~
 
 ## What did we learn?
 

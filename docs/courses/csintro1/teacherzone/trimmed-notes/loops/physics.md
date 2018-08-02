@@ -18,6 +18,8 @@ In this activity, student will be introduced to:
 
 ### Standard:
 
+https://makecode.com/_guR4YbDhbboK
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -111,6 +113,9 @@ balloon.x += -50
 ```
 
 ### Challenge:
+
+https://makecode.com/_FLCbad1g8HpX
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -208,6 +213,8 @@ balloon.x += -50
 
 ### Standard Solution:
 
+https://makecode.com/_fAsTCTVb8giV
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -239,6 +246,8 @@ mySprite.ay = 100
 ```
 
 ### Challenge Solution
+
+https://makecode.com/_iLWMdoCbWV22
 
 ```blocks
 enum SpriteKind {
