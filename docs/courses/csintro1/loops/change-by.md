@@ -135,7 +135,7 @@ So we can see the following for how one of the spiral sides moves farther each l
 
 in the task we will need to update all sides of the spiral
 
-## Example #3
+### Example #3: For Loop
 
 The ``||loops:for||`` loop is another common loop.  This loop has a counter variable built in that defaults as `index` in blocks.  The value of index is incremented between the values entered in the for loop.  We can use the `index` variable inside of the body of the ``||loops:for||`` loop.
 
