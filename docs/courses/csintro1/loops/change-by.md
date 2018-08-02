@@ -27,7 +27,7 @@ In these activities, the student will be introduced to:
 3. Save the code for the start of the next task (name it "increment") 
 4. Note how changing the ``||variables:change by||`` amount changes the game score  
 
-### Example #1: Increment with On Game Update 
+### Example #1a: Increment with On Game Update 
 
 ```blocks  
 let count = 0
@@ -37,7 +37,7 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-### Example #2: Increment with "A" Button  
+### Example #1b: Increment with "A" Button  
 
 ```blocks  
 let count = 0
@@ -47,7 +47,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```  
 
-### Example #3: Increment with a Countdown   
+### Example #1c: Increment with a Countdown   
 
 ```blocks
 let count = 0
@@ -62,13 +62,13 @@ info.startCountdown(5)
 
 ## Student Task #1: Make the game have a cheering coach
 
-1. Start with code from example #3
+1. Start with code from example #1c
 2. Add a sprite to coach the player
 3. Use ``||sprites:say("")||`` to give words of encouragement, setting a short display time (for example, 500 ms)
 4. Make ``||sprites:say("")||`` so it flashes by placing it in ``||game:on game update(1000)||``
 4. **Challenge:** Have the sprite coach give the current score in addition to a cheer ("Faster!")
 
-### Example #4: Increment to make a spiral
+### Example #2: Increment to make a spiral
 
 A spiral increases the length of each side. In the example below the sides are 5, 6, 7 and 8 pixels long. To continue the spiral we will need to continue to make each side longer than the last. Notice that some of the lengths are negative values (in order to move up or move left).
 
@@ -135,20 +135,54 @@ So we can see the following for how one of the spiral sides moves farther each l
 
 in the task we will need to update all sides of the spiral
 
-## Student Task #3: for index loops
+## Example #3
 
-There is another type of loop that can help in implementing the behavior from task #2.
+The ``||loops:for||`` loop is another common loop.  This loop has a counter variable built in that defaults as `index` in blocks.  The value of index is incremented between the values entered in the for loop.  We can use the `index` variable inside of the body of the ``||loops:for||`` loop.
 
-The ``||loops:for index from 0 to 4||`` loop behaves similar to the repeat loop, but gives you access to a variable inside the loop called index. Each iteration this value will be updated. 
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 9 9 9 . . . . . . . 
+. . . . . . 9 2 9 . . . . . . . 
+. . . . . . 9 9 9 . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+for (let index = 0; index <= 4; index++) {
+    mySprite.say("" + index, 500)
+    pause(1000)
+}
+```
+
+The ``||loops:for index from 0 to 4||`` loop behaves similar to the repeat loop, but gives  access to a variable inside the loop called index. Each iteration this value will be updated. 
 
 * on the first iteration `index` will be 0
 * on the second iteration `index` will be 1
 * and so on, until `index` reaches the final iteration - with the default value of 4
 
-This is very similar to how we used the `increase` variable in the last task, so let's clean up that code by switching to this block.
+## Student Task #3: for index loops
 
-1. Update to loop additional times in your code by editing the ``||loops:for index from 0 to 4||`` block. **Change the value in the loop block from 4 to 10**.  Your code should now behave like it did before you made any modifications - drifting up and to the left.
-2. Now replace how we define the `increase` variable.  We won't increment the variable any more but will set the value of `increase` to `index` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block. 
+In this task we need to use ``||loops:for||`` loop to help in implementing the behavior from task #2.
+
+This ``||loops:for||`` will provide the variable ``||variables:index||`` similar to how we used the `increase` variable in ttask #2. We need to clean up the task #2 code by switching to use a ``||loops:for||`` block.
+
+1. Add a ``||loops:for||`` to your task #2 solution.  **Change the end value in the** ``||loops:for index from 0 to 4||`` ** block from `4` to `10`**.  Your code should now behave like it did before you made any modifications.
+2. Replace how we define the `increase` variable.  We won't increment the variable any more but will set the value of `increase` to `index` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block. 
 
 ```blocks
 let increase = 0
