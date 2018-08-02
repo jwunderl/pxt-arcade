@@ -83,6 +83,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (text_list.length > 2) {
         mySprite.say(Math.pickRandom(text_list) + Math.pickRandom(text_list), 500)
+    } else {
+        mySprite.say(Math.pickRandom(text_list), 500)
     }
 })
 text_list = []
