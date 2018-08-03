@@ -19,6 +19,8 @@ The first example will be a simple one - simply counting the number of buttons p
 
 https://youtu.be/7JkbbfBJCdI
 
+[Alternative Video Location](https://aka.ms/40544a-infoproperties1)
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "button count")
@@ -53,6 +55,8 @@ Beyond score, another important value to keep track of is the players life total
 ## Example: changing ``||info:life||`` totals
 
 https://youtu.be/YiZ-yl5CbYM
+
+[Alternative Video Location](https://aka.ms/40544a-infoproperties2)
 
 1. Review the code below
 2. Create the sample code and run the code

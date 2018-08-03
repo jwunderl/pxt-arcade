@@ -17,6 +17,8 @@ In this activity, students are introduced to:
 
 https://youtu.be/GsvBCViybPs
 
+[Alternative Video Location](https://aka.ms/40544a-orientation1)
+
 ## Student Task #1: Playing Space Destroyer
 
 1. Click the "Space Destroyer" example game under the "Blocks Games" category
@@ -27,6 +29,8 @@ https://youtu.be/GsvBCViybPs
 ### New Project
 
 https://youtu.be/iEQa-Wd3MRs
+
+[Alternative Video Location](https://aka.ms/40544a-orientation2)
 
 ## Student Task #2: Starting your own game
 

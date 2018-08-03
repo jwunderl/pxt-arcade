@@ -12,7 +12,9 @@ In this activity, students will be introduced to:
 
 ## Concept: SpriteKind Overlap Event
 
-https://youtu.be/rdZdXltoWXE 
+https://youtu.be/rdZdXltoWXE
+
+[Alternative Video Location](https://aka.ms/40544a-overlap1spritekind)
 
 We use ``||sprites:SpriteKind||`` to classify our sprites. We can have sprites in our games that represent many different things - players, enemies, coins, food, or anything else you might want to represent in your games. Creating labels (that is, ``||sprites:Kinds||``) for different groups of sprites helps us assign them each unique behaviors - for example, you might want to have the player in your game be able to eat 5 different food sprites, so combining them into a single ``||sprites:Kind||`` allows you to write the code for a single section  Sometimes there just one of a given ``||sprites:Kind||`` (for example, the Player), and other times there will be many sprites (for example, Clouds in the sky). Once we have ``||sprites:Kind||``s for different sprites, we can check if two different sprites are overlapping one another using the ``sprites:on overlap||`` event.
 
@@ -109,6 +111,8 @@ Use ``||loops:pause||`` before using sprite destroy otherwise the sprite will be
 
 https://youtu.be/rN1UyX6YkQE
 
+[Alternative Video Location](https://aka.ms/40544a-overlap1spritekindtask)
+
 The ``||sprites:ghost on||`` setting for sprites makes the sprite ignore ``||sprites:on overlap||`` events while it is turned on. By default, the setting is off.
 
 ## Example #2: Sprite Overlap - Ghost on
@@ -199,7 +203,9 @@ game.onUpdate(function () {
 
 ## Student Task #3: Create overlap using one sprite of ``||sprites:Kind||`` Player and multiple other ``||sprites:Kind||``
 
-https://youtu.be/Nasu00HvaYE 
+https://youtu.be/Nasu00HvaYE
+
+[Alternative Video Location](https://aka.ms/40544a-overlap1task3)
 
 1. Start with task #2 or your own similar code
 2. Enable sprite to move anywhere on screen along x and y axis

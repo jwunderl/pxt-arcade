@@ -9,7 +9,9 @@ In this activity, students will be introduced to:
 
 We can pick a random number in a range using ``||math:pick random||``.  First, we will use this to display a random value.
 
-https://youtu.be/PS8clbMInjw 
+https://youtu.be/PS8clbMInjw
+
+[Alternative Video Location](https://aka.ms/40544a-randomsplash)
 
 ## Example #1: pick random
 
@@ -34,7 +36,9 @@ game.splash("Random Number is " + randomNumber)
 
 ## Concept: pick a random location
 
-https://youtu.be/Ggj4rOXw6ns 
+https://youtu.be/Ggj4rOXw6ns
+
+[Alternative Video Location](https://aka.ms/40544a-randomposition)
 
 Games often have an element of luck and surprise to keep the player engaged. In this example, we will use random numbers to place a sprite on the screen in a random location.  We can use a random range because we know the dimensions of the screen.
 
@@ -95,6 +99,8 @@ mySprite.vy = 0
 ## Example #3: check for random overlap 
 
 https://youtu.be/OgyWVwCJJIk
+
+[Alternative Video Location](https://aka.ms/40544a-randompositionoverlap)
 
 1. Review the code below
 2. Create the sample code and run the code 

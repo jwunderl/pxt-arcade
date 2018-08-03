@@ -10,6 +10,8 @@ In this activity, students will be introduced to:
 
 https://youtu.be/iufK6TM9OkM
 
+[Alternative Video Location](https://aka.ms/40544a-spritesay_final)
+
 Sprite Objects have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 
 ### Vocabulary: Method
@@ -51,6 +53,8 @@ mySprite.say(msg)
 
 https://youtu.be/9xSWNoDOAQc
 
+[Alternative Video Location](https://aka.ms/40544a-consolelog)
+
 1. Start a new project, and name it "console"
 2. Switch to JavaScript view and replace all code with the code below
 3. Press **Show Console Simulator** button below the simulator to display `console` output
@@ -77,6 +81,8 @@ Consider This!: The code `console.log()` doesn't use **mySprite** like ``||sprit
 ## Student Task #2: Add another sprite, and set it's coordinates
 
 https://youtu.be/1xQWu1tHFCo
+
+[Alternative Video Location](https://aka.ms/40544a-spritesaylog)
 
 1. Start with the above project and add another sprite (make sure to give both unique variable names)
 2. Add in a ``||sprite:say||`` messages to have a conversation with the first sprite

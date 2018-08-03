@@ -2,7 +2,9 @@
 
 ## Change position with controller event  
 
-https://youtu.be/O27uzdkbgK4 
+https://youtu.be/O27uzdkbgK4
+
+[Alternative Video Location](https://aka.ms/40544a-spritemoevent1)
 
 Motion is the change in position. To get sprites moving, we will change their position using a game pad event. The game pad has ``||controller:controller events||`` for the up, down, left and right buttons. We can use those events to change sprite location, and to make the sprite move. We will also see how to give a sprite a velocity. Velocity is the rate of change of our position - in real life, this is often measured as kilometers per hour or miles per hour. When the velocities of a sprite are not zero, then the sprite will be in motion.
 
@@ -65,6 +67,8 @@ agent = sprites.create(img`
 
 https://youtu.be/Gl0Y2sHY_MA 
 
+[Alternative Video Location](https://aka.ms/40544a-spritemoevent2velocity)
+
 Velocity is speed in a particular direction. In our games we typically track movement in `X` and `Y` directions. If we have a positive `X` velocity, for example, then our sprite will continue to increase in `X`, making it move to the right across the screen.
 
 ## Example 2: Increment Velocity Left and Right
@@ -115,7 +119,9 @@ agent = sprites.create(img`
 
 ## Motion - short ``||sprites:dx||``/``||sprites:dy||`` code method  
 
-https://youtu.be/TPpg3jp2lx4 
+https://youtu.be/TPpg3jp2lx4
+
+[Alternative Video Location](https://aka.ms/40544a-spritemoevent3shortmethod)
 
 We have created motion by capturing the key pad events and incrementing (or decrementing) a location coordinate or a velocity. Now that we have seen how this works for the four directional buttons we can use a shorter method to handle this.
 
@@ -173,7 +179,9 @@ The ``||sprites:stay in screen||`` block is in the sprite menu.
 
 ## Flip Image
 
-https://youtu.be/1tae8OZpt4w 
+https://youtu.be/1tae8OZpt4w
+
+[Alternative Video Location](https://aka.ms/40544a-spritemoevent4flip)
 
 By making a mirror flip of a sprite we can simulate walking by making each leg appear differently 
 

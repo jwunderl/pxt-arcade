@@ -2,6 +2,8 @@
 
 https://youtu.be/79vikAMjpBs
 
+[Alternative Video Location](https://aka.ms/40544a-intromath)
+
 A variable points to a container that can store data. We have previously used variables names for sprites (for example, ``||sprites:mySprite||``). Variables act like an address, and allow us to store, retrieve, and update data. For the examples in the Sprites lesson, the variable ``||variables:mySprite||`` allowed us to interact with the sprite in our game. The word "variable" also means change. We can update the values our variable point to, such as updating the ``||variable:mySprite||`` variable to point to a completely different sprite.
 
 Variables are used extensively in code. Variables allow code to be written in a generic way, and allow for easier reuse of our code.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values.  
@@ -20,9 +22,13 @@ In this activity, student are introduced to:
 
 https://youtu.be/nlp6Cqfxmb4
 
+[Alternative Video Location](https://aka.ms/40544a-variablesmath1)
+
 ## Concept: Using Math Operators with Variables
 
-https://youtu.be/Dv-5K9bWcps 
+https://youtu.be/Dv-5K9bWcps
+
+[Alternative Video Location](https://aka.ms/40544a-variablesmath2)
 
 ## Example: math equation in a variable
 
@@ -30,7 +36,7 @@ https://youtu.be/Dv-5K9bWcps
 2. Create the sample code and run the code
 3. Save the code for the task (name it "equation variable") 
 
-[equation variable](https://makecode.com/_RdXJ5jMxubqA)
+[Equation variable](https://makecode.com/_RdXJ5jMxubqA)
 
 ```blocks  
 let answer = 0
@@ -63,6 +69,8 @@ The splash screen is primarily designed for short sentences.  This limits the le
 
 https://youtu.be/EiWXa52oIgU
 
+[Alternative Video Location](https://aka.ms/40544a-variablesmath3)
+
 We can create variable based math equations, like `A = B + C`, into code using our code variables and math operators.
 
 ### Operators
@@ -94,9 +102,11 @@ answer = firstNumber * secondNumber
 game.splash("5 * 7 = " + answer)
 ```
 
-## Student Task #2: basic math operators with variables
+## Student Task #2: Basic math operators with variables
 
 https://youtu.be/C_UY8V-ufiI
+
+[Alternative Video Location](https://aka.ms/40544a-variablesmath4)
 
 1. Start with the previous example 
 2. Add a ``||variables:thirdNumber||`` variable with a unique value
@@ -152,6 +162,8 @@ Click edit to fix code. ``||game:splash||`` can display string characters. Revie
 ## Variables Summary
 
 https://youtu.be/BPX2MHXmXJw
+
+[Alternative Video Location](https://aka.ms/40544a-variabledatatype)
 
 * Variables are names that point to a container that can be updated to hold different data types.
 * Data Types used in variables so far are ``||variables:Sprite||``, ``||variables:numbers||`` and ``||variables:strings||``.

@@ -2,11 +2,15 @@
 
 https://youtu.be/fr036vKEFiI
 
+[Alternative Video Location](https://aka.ms/40544a-03_coordinate_walker_intro_final)
+
 In this activity, students will investigate the game screen.
 
 ## Concept: Identify the X, Y coordinates of the Game Screen  
 
-https://youtu.be/R6NJjzXfejM 
+https://youtu.be/R6NJjzXfejM
+
+[Alternative Video Location](https://aka.ms/40544a-coordinate-walker)
 
 Move walker sprite around the game screen, and use it to identify `X` and `Y` coordinates
 

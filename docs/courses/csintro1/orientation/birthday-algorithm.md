@@ -27,6 +27,8 @@ example: June 1st would be `6.01`
 
 https://youtu.be/G0iDwdEHn_8
 
+[Alternative Video Location](https://aka.ms/40544a-01_birthday_algorithm_final)
+
 Follow the Birthday Algorithm step below working with a partner. Record the steps and the answer at each steps so you can troubleshoot. Doing this with just paper and pencil adds to the challenge. If the trick doesn't work, retrace the steps and check each calculation with partner.
 
 Produce a total at the end of each step and use the total in the next step until producing the birthday `month.day`. 
