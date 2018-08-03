@@ -5,7 +5,7 @@
 ## Loops
 
 * [Intro](/courses/csintro1/loops/intro)
-* [Change By](/courses/csintro1/loops/change-by)
+* [Increment Loop](/courses/csintro1/loops/increment-loop)
 * [Projectiles](/courses/csintro1/loops/projectiles)
 * [Physics](/courses/csintro1/loops/physics)
 * [Project](/courses/csintro1/loops/project)

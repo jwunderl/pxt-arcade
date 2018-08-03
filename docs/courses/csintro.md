@@ -44,7 +44,7 @@
 ## [Loops](/courses/csintro1/loops)
 
 * [Intro](/courses/csintro1/loops/intro)
-* [Change By](/courses/csintro1/loops/change-by)
+* [Increment Loop](/courses/csintro1/loops/increment-loop)
 * [Projectiles](/courses/csintro1/loops/projectiles)
 * [Physics](/courses/csintro1/loops/physics)
 * [Project](/courses/csintro1/loops/project)
@@ -117,7 +117,7 @@
 ## [Loops Teacher](/courses/csintro1/teacherzone/trimmed-notes/loops)
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/loops/intro)
-* [Change By](/courses/csintro1/teacherzone/trimmed-notes/loops/change-by)
+* [Increment Loop](/courses/csintro1/teacherzone/trimmed-notes/loops/increment-loop)
 * [Projectiles](/courses/csintro1/teacherzone/trimmed-notes/loops/projectiles)
 * [Physics](/courses/csintro1/teacherzone/trimmed-notes/loops/physics)
 * [Project](/courses/csintro1/teacherzone/trimmed-notes/loops/project)
