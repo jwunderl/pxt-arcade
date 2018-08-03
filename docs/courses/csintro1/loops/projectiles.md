@@ -181,220 +181,13 @@ d d d d d d d d
 })
 ```
 
-## Student Task #2: add vertical projectiles that move down the screen
+## Student Task #2a: add vertical projectiles that move down the screen
 
 1. Start with the provided [code](https://makecode.com/_UYWcVpgLF3c9) in the example above. Currently, it will spawn meteors of ``||sprites:Kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
 2. Replace the ``||game:onupdate||`` ``||loops:repeat||`` loop 
 3. Each time a projectile is created, add one point (1) to the score using the ``||info:change score by||`` block
 4. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
-5. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50.
-
-
-## Concept: Projectiles as sprites
-
-Projectiles are just sprites with a bit of extra behavior by default; this means that you can do anything with them that you can do with sprites. You can change their speed, the image they show, and how they interact with other sprites. 
-
-You can even use the projectiles you have made as the source of other projectiles! For example, we can start with the following cloud moving across the screen:
-
-```blocks
-enum SpriteKind {
-    Cloud
-}
-let item: Sprite = null
-let cloud: Sprite = null
-cloud = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 1 1 1 1 1 . 1 . . . 
-. . 1 1 1 1 1 9 9 9 1 1 1 1 . . 
-. . 1 1 9 9 9 9 1 9 9 9 9 1 . . 
-. 1 1 9 9 1 9 9 1 9 9 1 9 1 . . 
-. 1 9 9 1 9 9 9 9 1 1 1 1 1 . . 
-. 1 1 1 1 1 1 1 1 1 1 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 10, 0, SpriteKind.Cloud, item)
-```
-
-There isn't all that much to this code; it spawns a cloud, which slowly moves across the screen. However, what if we want to make the cloud rain? We can do this by adding projectiles that are emitted from the cloud itself!
-
-```blocks
-enum SpriteKind {
-    Cloud,
-    Rain
-}
-let item: Sprite = null
-let raindrop: Sprite = null
-let cloud: Sprite = null
-cloud = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 1 1 1 1 1 . 1 . . . 
-. . 1 1 1 1 1 9 9 9 1 1 1 1 . . 
-. . 1 1 9 9 9 9 1 9 9 9 9 1 . . 
-. 1 1 9 9 1 9 9 1 9 9 1 9 1 . . 
-. 1 9 9 1 9 9 9 9 1 1 1 1 1 . . 
-. 1 1 1 1 1 1 1 1 1 1 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 10, 0, SpriteKind.Cloud, item)
-game.onUpdateInterval(50, function () {
-    raindrop = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 0, 30, SpriteKind.Rain, cloud)
-    raindrop.setFlag(SpriteFlag.Ghost, true)
-})
-```
-
-Notice that in the above example, we set the raindrops to be ``||sprites:ghosts||`` - this means that they won't be detected in overlap with other sprites, and will pass through sprites as if there were no overlap events. It turns out that there is a fairly significant performance benefit to doing this when you spawn a large amount of projectiles (and don't need them to overlap with other sprites) - try removing the ``||sprites:ghosts||`` block, and see how much the performance goes down.
-
-We can change where the rain drops show up, so that they don't all appear in the same location relative to the cloud:
-
-https://makecode.com/_MtUYHyHiwdmy
-
-```blocks
-
-enum SpriteKind {
-    Cloud,
-    Rain
-}
-let item: Sprite = null
-let raindrop: Sprite = null
-let cloud: Sprite = null
-cloud = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 1 1 1 1 1 . 1 . . . 
-. . 1 1 1 1 1 9 9 9 1 1 1 1 . . 
-. . 1 1 9 9 9 9 1 9 9 9 9 1 . . 
-. 1 1 9 9 1 9 9 1 9 9 1 9 1 . . 
-. 1 9 9 1 9 9 9 9 1 1 1 1 1 . . 
-. 1 1 1 1 1 1 1 1 1 1 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 10, 0, SpriteKind.Cloud, item)
-game.onUpdateInterval(50, function () {
-    raindrop = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 0, 30, SpriteKind.Rain, cloud)
-    raindrop.setFlag(SpriteFlag.Ghost, true)
-    raindrop.y += 3
-    raindrop.x += Math.randomRange(1, 14)
-})
-```
-
-And we can even count the raindrops that make it to the bottom of the screen by counting when they're destroyed!
-
-https://makecode.com/_5Wb33FiqaJeu
-
-```blocks
-enum SpriteKind {
-    Cloud,
-    Rain
-}
-let item: Sprite = null
-let raindrop: Sprite = null
-let cloud: Sprite = null
-cloud = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 1 1 1 1 1 . 1 . . . 
-. . 1 1 1 1 1 9 9 9 1 1 1 1 . . 
-. . 1 1 9 9 9 9 1 9 9 9 9 1 . . 
-. 1 1 9 9 1 9 9 1 9 9 1 9 1 . . 
-. 1 9 9 1 9 9 9 9 1 1 1 1 1 . . 
-. 1 1 1 1 1 1 1 1 1 1 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 10, 0, SpriteKind.Cloud, item)
-game.onUpdateInterval(50, function () {
-    raindrop = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 0, 30, SpriteKind.Rain, cloud)
-    raindrop.setFlag(SpriteFlag.Ghost, true)
-    raindrop.y += 3
-    raindrop.x += Math.randomRange(1, 14)
-})
-
-sprites.onDestroyed(SpriteKind.Rain, function (sprite: Sprite) {
-    info.changeScoreBy(1)
-})
-
-sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
-    game.over(true)
-})
-```
-
-## Student Task #3: Projectiles with loops
+5. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50.## Student Task #2b: Projectiles with loops
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -430,11 +223,53 @@ projectile.y = 10
 pause(300)
 ```
 
+
+## Concept: Projectiles from Corners
+
+Projectiles with a Y velocity only will start on the Top or Bottom of the game screen and projectiles with a X velocity only will start from the left by default.  In this example and task we will see how we can make a projectile start from any corner we choose by default.
+
+### Example #3: Projectile from corner
+
+We can make a projectile start in the top left corner by setting the X velocity and Y velocity to positive 10.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let projectile: Sprite = null
+projectile = sprites.createProjectile(img`
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+`, 10, 10, SpriteKind.Player)
+```
+
+## Task #3: Projectile from upper right corner
+
+1. Create the example code above 
+2. Modify the code to make the sprite start from the upper right corner by default and move toward the lower left corner 
+3. Place the code in a loop to repeat 4 times with a short pause between loop iterations
+4. Challenge: Make sprites originate from each of the 4 corners inside the loop.
+
 ## What did we learn?
 
-1. Describe two benefits of using projectiles rather than normal sprites.  
+1. Describe two benefits of using projectiles rather than normal sprites.  Expalin.
 2. How did using a loop in this section help reduce the amount of blocks that were used?
-3. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might make your game run faster than leaving it off.
+
 
 ### ~hint
 
