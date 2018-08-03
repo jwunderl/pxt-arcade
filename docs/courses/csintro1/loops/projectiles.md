@@ -131,6 +131,8 @@ Games often create many projectiles, one after another.  We can use a loop to cr
 
 ### Example #2: Projectile Loop
 
+This example randomly places the projectiles on the screen but they don't have any velocity assigned so they are stationary.
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -181,7 +183,7 @@ d d d d d d d d
 
 ## Student Task #2: add vertical projectiles that move down the screen
 
-1. Start with the provided code in the example above. Currently, it will spawn meteors of ``||sprites:Kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
+1. Start with the provided [code](https://makecode.com/_UYWcVpgLF3c9) in the example above. Currently, it will spawn meteors of ``||sprites:Kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
 2. Replace the ``||game:onupdate||`` ``||loops:repeat||`` loop 
 3. Each time a projectile is created, add one point (1) to the score using the ``||info:change score by||`` block
 4. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
