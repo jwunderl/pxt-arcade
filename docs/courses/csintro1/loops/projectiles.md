@@ -76,7 +76,7 @@ projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 50, 0, SpriteKind.Player, item)
+`, 50, 0, SpriteKind.Player)
 ```
 
 This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! 
