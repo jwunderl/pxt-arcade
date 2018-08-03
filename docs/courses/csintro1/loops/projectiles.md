@@ -179,7 +179,7 @@ d d d d d d d d
 })
 ```
 
-## Student Task #2: add vertical projectiles that move across the screen
+## Student Task #2: add vertical projectiles that move down the screen
 
 1. Start with the provided code in the example above. Currently, it will spawn meteors of ``||sprites:Kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
 2. Replace the ``||game:onupdate||`` ``||loops:repeat||`` loop 

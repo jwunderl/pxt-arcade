@@ -70,7 +70,7 @@ projectile = sprites.createProjectile(img`
 `, 0, -50, SpriteKind.Player, item)
 ```
 
-## Student Task 2: add vertical projectiles that move across the screen
+## Student Task 2: add vertical projectiles that move down the screen
 ### Normal Solution
 
 https://makecode.com/_iDp4cVW0hTCv
