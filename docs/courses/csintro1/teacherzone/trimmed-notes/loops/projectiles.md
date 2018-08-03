@@ -184,7 +184,7 @@ game.over(true)
 
 ## Projectiles as sprites
 
-## Student Task 3: Projectiles with loops
+## Student Task 2: Projectiles with loops
 
 ### ~hint
 
@@ -224,6 +224,13 @@ for (let index = 0; index <= 12; index++) {
     pause(300)
 }
 ```
+
+## Corner Projectiles
+
+Solution: https://makecode.com/_WLvC2v9TwfEc
+
+Challenge: https://makecode.com/_f334JygXU4Ya 
+
 
 ## What did we learn?
 
