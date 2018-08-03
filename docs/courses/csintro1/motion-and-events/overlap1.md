@@ -194,6 +194,10 @@ game.onUpdate(function () {
 
 ## Student Task #2: Sprite Overlap - Ghost off and on
 
+https://youtu.be/FwDty0LxzSM
+
+[Alternative Video Location](https://aka.ms/40544a-overlap1ghostntask)
+
 1. Start with the example or task #1
 2. Create 3 sprites in different locations across
 3. Make the newly created sprites all be of the same ``||sprites:Kind||``. 
