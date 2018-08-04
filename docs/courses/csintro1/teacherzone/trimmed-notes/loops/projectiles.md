@@ -71,7 +71,7 @@ projectile = sprites.createProjectile(img`
 `, 0, -50, SpriteKind.Player)
 ```
 
-## Student Task 2: add vertical projectiles that move down the screen
+## Student Task 2a: add vertical projectiles that move down the screen
 
 ### Normal Solution
 
@@ -185,7 +185,7 @@ game.over(true)
 
 ## Projectiles as sprites
 
-## Student Task 2: Projectiles with loops
+## Student Task #2b: Projectiles with loops
 
 ### ~hint
 
@@ -228,9 +228,13 @@ for (let index = 0; index <= 12; index++) {
 
 ## Corner Projectiles
 
-Solution: https://makecode.com/_WLvC2v9TwfEc
+### Solution: 
 
-Challenge: https://makecode.com/_f334JygXU4Ya 
+https://makecode.com/_WLvC2v9TwfEc
+
+### Challenge: 
+
+https://makecode.com/_f334JygXU4Ya 
 
 
 ## What did we learn?
