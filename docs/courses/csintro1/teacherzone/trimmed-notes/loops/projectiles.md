@@ -16,14 +16,15 @@ Have students experiment with the example for a few minutes with different value
 
 ## Student Task 1: Make a ball fall down
 
-https://makecode.com/_1qTi6qfXj4zp
+Then make a second ball go up
+
+https://makecode.com/_ese4kJDJ2eHE
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let item: Sprite = null
 let projectile: Sprite = null
 let sprite: Sprite = null
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
@@ -49,7 +50,7 @@ projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 50, SpriteKind.Player, item)
+`, 0, 50, SpriteKind.Player)
 projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -67,10 +68,11 @@ projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, -50, SpriteKind.Player, item)
+`, 0, -50, SpriteKind.Player)
 ```
 
 ## Student Task 2: add vertical projectiles that move down the screen
+
 ### Normal Solution
 
 https://makecode.com/_iDp4cVW0hTCv
@@ -80,7 +82,6 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let item: Sprite = null
 let projectile: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, Enemy) {
@@ -116,7 +117,7 @@ d d d d d d d d
 d d d d d d d d 
 d d d d d d d d 
 d d d d d d d d 
-`, 0, 50, SpriteKind.Enemy, item)
+`, 0, 50, SpriteKind.Enemy)
     projectile.x = Math.randomRange(0, scene.screenWidth())
     info.changeScoreBy(1)
     pause(200)
@@ -130,14 +131,14 @@ game.onUpdateInterval(200, function () {
 
 ### Challenge solution:
 
-https://makecode.com/_PXr4aL5kr3x0
+hhttps://makecode.com/_U77Hgo3pxfYo
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let item: Sprite = null
+
 let projectile: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, Enemy) {
@@ -173,7 +174,7 @@ d d d d d d d d
 d d d d d d d d 
 d d d d d d d d 
 d d d d d d d d 
-`, 0, 40 + Math.randomRange(0, 20), SpriteKind.Enemy, item)
+`, 0, 40 + Math.randomRange(0, 20), SpriteKind.Enemy)
     projectile.x = Math.randomRange(0, scene.screenWidth())
     info.changeScoreBy(1)
     pause(200)

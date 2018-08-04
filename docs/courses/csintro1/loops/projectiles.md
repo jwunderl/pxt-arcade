@@ -54,7 +54,6 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let item: Sprite = null
 let projectile: Sprite = null
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
     info.changeScoreBy(1)
@@ -87,6 +86,8 @@ If projectiles are not provided a name of a sprite to start from, they will be c
 
 ## Student Task #1: Make a ball fall down
 
+...and then another ball going up!
+
 1. Start with the provided code below
 2. Modify the code so that the ball falls down the screen at a rate of 50 (that is, it moves along the y axis at a velocity of 50)
 3. Create a second projectile that goes up the screen at a rate of 50 (moving in the direction opposite the ball)
@@ -97,7 +98,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let item: Sprite = null
+
 let projectile: Sprite = null
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
     info.changeScoreBy(1)
@@ -119,7 +120,7 @@ projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 0, SpriteKind.Player, item)
+`, 0, 0, SpriteKind.Player)
 ```
 
 ## Concept: Projectile Loop
@@ -138,7 +139,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let item: Sprite = null
+
 let projectile: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (playerSprite, foodSprite) {
@@ -176,7 +177,7 @@ d d d d d d d d
 d d d d d d d d 
 d d d d d d d d 
 d d d d d d d d 
-`, 0, 0, SpriteKind.Enemy, item)
+`, 0, 0, SpriteKind.Enemy)
     projectile.x = Math.randomRange(0, scene.screenWidth())
 })
 ```
@@ -188,6 +189,8 @@ d d d d d d d d
 3. Each time a projectile is created, add one point (1) to the score using the ``||info:change score by||`` block
 4. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
 5. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50.## Student Task #2b: Projectiles with loops
+
+## Student Task #2b:
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -267,8 +270,8 @@ projectile = sprites.createProjectile(img`
 
 ## What did we learn?
 
-1. Describe two benefits of using projectiles rather than normal sprites.  Expalin.
-2. How did using a loop in this section help reduce the amount of blocks that were used?
+1. Describe two benefits of using projectiles rather than normal sprites.  
+2. How did using a loop in this section help reduce the amount of blocks that were used? 
 
 
 ### ~hint
