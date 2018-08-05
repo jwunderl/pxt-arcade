@@ -6,16 +6,17 @@ Depending on the game, a projectile can be dangerous, friendly, or even just a d
 
 Typically, projectiles will be used because we want movement for meteors, laser beams, cars, or whatever we decide we need in our games. In many games, we will create a large number of projectiles, so the ability for them to be automatically destroyed as they leave the screen will often be very helpful in making sure our games run efficiently.
 
-In this activity, students will be introduced to:
+In this activity, students will use:
 * ``||sprites:projectile||`` sprites
 * ``||game:on game update every||``
 * ``||math:pick random||``
+* ``||loops:for||`` loop 
 
 ## Concept: Flying Birds!
 
 We can use projectiles to create sprites that move across the screen. Let's start off with making a simple bird projectile.
 
-## Example #1: Bird projectile
+### Example #1: Bird projectile
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -190,7 +191,9 @@ d d d d d d d d
 4. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
 5. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50.## Student Task #2b: Projectiles with loops
 
-## Student Task #2b:
+## Student Task #2b: Offset Projectiles
+
+We have seen how it is useful for projectiles to come from random positions but at other times we will want projectiles spawned in a structured manner. This tasks uses a loop to off set the Y position of each projectile using a ``||loops:for||`` loop index. 
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -266,16 +269,10 @@ projectile = sprites.createProjectile(img`
 1. Create the example code above 
 2. Modify the code to make the sprite start from the upper right corner by default and move toward the lower left corner 
 3. Place the code in a loop to repeat 4 times with a short pause between loop iterations
-4. Challenge: Make sprites originate from each of the 4 corners inside the loop.
+4. **Challenge**: Make sprites originate from each of the 4 corners inside the loop.
 
 ## What did we learn?
 
 1. Describe two benefits of using projectiles rather than normal sprites.  
 2. How did using a loop in this section help reduce the amount of blocks that were used? 
 
-
-### ~hint
-
-Does the game need to check whether a sprite is overlapping another if either is a ghost?
-
-### ~
