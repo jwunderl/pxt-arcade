@@ -2,30 +2,48 @@
 
 Up to this point, we have generally glossed over the exact details of how sprite motion works. In this activity, students will gain a greater understanding of how exactly a sprite's velocity and acceleration actually affects their behavior in a game.
 
-In this activity, student will be introduced to:
+In this activity, student will use:
 * ``||sprites:projectile||`` sprites
 * ``||game:on game update every||``
 * ``||math:pick random||``
-* ``||sprites:vx||`` and ``||sprites:vy||``
-* ``||sprites:ax||`` and ``||sprites:ay||``
+* Velocity: ``||sprites:vx||`` and ``||sprites:vy||``
+* Acceleration: ``||sprites:ax||`` and ``||sprites:ay||``
 
 
-## Velocity
+## Concept: Velocity
 
-Velocity is defined as the speed of something in a given direction; that is, the rate at which it's position changes, and the direction the position is changing in. In real life, you can think of this like being in a car; the speed on a highway may be 60 miles per hour, but the velocity would be 60 miles per hour going north. What this means is that, over the course of an hour at this rate, you will be 60 miles further north than you are currently.
+#TODO video
 
-In MakeCode Arcade, a sprite's velocity is measured in pixels per second, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis - that is, how quickly the sprite's ``||sprites:x||`` value is changing in value moving left to right. A sprite's ``||sprites:vy||``, on the other hand, represents the sprite's velocity in the vertical axis - how quickly the sprite's ``||sprites:y||`` changes in value moving up and down.
+Velocity is defined as speed in a given direction. Velocity is the rate at which an object's position changes, and the direction the position is changing. 
+
+In real life, you can think of velocity like being in a train or a car; the speed on a highway may be 60 miles per hour, but the velocity would be 60 miles per hour going North. This means over the course of an hour at this rate, you will be 60 miles further North than you are currently.
+
+In MakeCode Arcade, a sprite's velocity is measured in **pixels per second**, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis and is, how quickly the sprite's ``||sprites:x||`` value is changing in value moving left to right. 
+
+A sprite's ``||sprites:vy||``, represents the sprite's velocity in the vertical axis, and is how quickly the sprite's ``||sprites:y||`` changes in value moving up and down.
 
 In MakeCode Arcade, a sprite's velocity is defined in terms of pixels per second.
 
-## Example #1a: Change in location vs Velocity
+### Example #1a: Change in Position vs Velocity
 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "Race 1")
 4. Notice how the behavior for the two sprites is similar, and how it is different.
 
-https://makecode.com/_isU6zL0MH47Y
+**note these parts of the code**
+
+
+```block
+let first: Sprite = null
+let second: Sprite = null
+first.vx = 30
+game.onUpdateInterval(1000, function () {
+    second.x += 30
+})
+```
+
+https://makecode.com/_efqPrJavXK5T
 
 ```blocks
 enum SpriteKind {
@@ -34,52 +52,72 @@ enum SpriteKind {
 }
 let second: Sprite = null
 let first: Sprite = null
-first = sprites.create(img`
-. . . . . . . . . 2 . . . . . . 
-. . . . . . . . . . 2 . . . . . 
-. . 2 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . . . . . . . 2 . . . . . 
-. . . . . . . . . 2 . . . . . . 
-`, SpriteKind.Player)
-second = sprites.create(img`
-. . . . . . . . . 9 . . . . . . 
-. . . . . . . . . . 9 . . . . . 
-. . 9 9 9 9 9 9 9 9 9 9 . . . . 
-. . . . . . . . . . 9 . . . . . 
-. . . . . . . . . 9 . . . . . . 
-`, SpriteKind.Player)
+first = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . 2 . . . 
+. . . . . . . . . . . . 2 2 . . 
+. . . . . . . . . . . . 2 2 2 . 
+. . . . . . . . . . . . 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . 2 2 2 2 
+. . . . . . . . . . . . 2 2 2 . 
+. . . . . . . . . . . . 2 2 . . 
+. . . . . . . . . . . . 2 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 0, 0, SpriteKind.Player)
+second = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . 9 . . . 
+. . . . . . . . . . . . 9 9 . . 
+. . . . . . . . . . . . 9 9 9 . 
+. . . . . . . . . . . . 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+. . . . . . . . . . . . 9 9 9 9 
+. . . . . . . . . . . . 9 9 9 . 
+. . . . . . . . . . . . 9 9 . . 
+. . . . . . . . . . . . 9 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 0, 0, SpriteKind.Player)
 first.x += -80
 second.x += -80
 first.y += -10
 second.y += 10
 first.vx = 30
-
 game.onUpdateInterval(1000, function () {
     second.x += 30
 })
-
 game.onUpdate(function () {
     first.say("x: " + Math.ceil(first.x))
     second.say("x: " + second.x)
 })
 ```
 
-## Acceleration
+## Concept: Acceleration
 
-Acceleration represents the rate of change in velocity. We think of this is how much an object is speeding up or slowing down in a particular direction.  Gravity is a good example that speed the velocity of a object in the down direction.
+Acceleration represents the rate of change in velocity. We think of this is how much an object is speeding up or slowing down in a particular direction.  Gravity is a good example of acceleration where falling objects increase in velocity, falling faster and faster, in the down direction.
 
 The relationship between acceleration and velocity is similar to the relationship between velocity and position. Velocity is the rate at which position is changing, and acceleration is the rate at which velocity is changing.
 
-In other words, acceleration tells us how quickly the velocity is changing. Braking in a car or a rocket taking off are examples of acceleration.  We feel a pull in our bodies when there is acceleration.
+In other words, acceleration tells us how quickly the velocity is changing. Braking in a car or speeding up in a rocket taking off are examples of acceleration.  We feel a force pull on our bodies when there is acceleration.
 
-In MakeCode Arcade, a sprite's acceleration is defined in terms of pixels per second, per second.
+In MakeCode Arcade, a sprite's acceleration is defined in terms of **pixels per second, per second** (pixels/s/s).
 
 
 ### Example #1b - Sprite with Acceleration
 
-This is a sprite with an Acceleration applied.  We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time.
+Below is a sprite with an Acceleration applied.  We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time.  We see the sprite has a larger velocity with each pass.
 
-https://makecode.com/_W4Uf9xH6fM30
+https://makecode.com/_XvjRki5vzMrC
 
 ```blocks
 enum SpriteKind {
@@ -110,6 +148,7 @@ for (let i = 0; i < 5; i++) {
     mySprite.y = 140
     pause(2000)
 }
+mySprite.destroy()
 
 ```
 
@@ -120,7 +159,7 @@ for (let i = 0; i < 5; i++) {
 3. Save the code for the task (name it "Race 2")
 4. Notice how the behavior for the two sprites is similar, and how it is different.
 
-https://makecode.com/_JPjWfkLCb2fX
+https://makecode.com/_9Xiair9qeH55
 
 ```blocks
 enum SpriteKind {
@@ -129,36 +168,53 @@ enum SpriteKind {
 }
 let second: Sprite = null
 let first: Sprite = null
-first = sprites.create(img`
-. . . . . . . . . 2 . . . . . . 
-. . . . . . . . . . 2 . . . . . 
-. . 2 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . . . . . . . 2 . . . . . 
-. . . . . . . . . 2 . . . . . . 
-`, SpriteKind.Player)
-second = sprites.create(img`
-. . . . . . . . . 9 . . . . . . 
-. . . . . . . . . . 9 . . . . . 
-. . 9 9 9 9 9 9 9 9 9 9 . . . . 
-. . . . . . . . . . 9 . . . . . 
-. . . . . . . . . 9 . . . . . . 
-`, SpriteKind.Player)
-first.x += -80
-second.x += -80
+first = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . 2 . . . 
+. . . . . . . . . . . . 2 2 . . 
+. . . . . . . . . . . . 2 2 2 . 
+. . . . . . . . . . . . 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . 2 2 2 2 
+. . . . . . . . . . . . 2 2 2 . 
+. . . . . . . . . . . . 2 2 . . 
+. . . . . . . . . . . . 2 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 20, 0, SpriteKind.Player)
+second = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . 9 . . . 
+. . . . . . . . . . . . 9 9 . . 
+. . . . . . . . . . . . 9 9 9 . 
+. . . . . . . . . . . . 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+. . . . . . . . . . . . 9 9 9 9 
+. . . . . . . . . . . . 9 9 9 . 
+. . . . . . . . . . . . 9 9 . . 
+. . . . . . . . . . . . 9 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 20, 0, SpriteKind.Player)
 first.y += -10
 second.y += 10
-first.ax = 5
-second.vx = -5
-
-game.onUpdateInterval(1000, function () {
-    second.vx += 5
-})
-
-
+first.ax = 2
 game.onUpdate(function () {
     first.say("vx: " + Math.ceil(first.vx))
     second.say("vx: " + second.vx)
 })
+game.onUpdateInterval(1000, function () {
+    second.vx += 2
+})
+
 ```
 
 ## Student Task #1: Water balloons
@@ -173,9 +229,9 @@ game.onUpdate(function () {
 
 In total, this loop should include 4 blocks - the generation of a random xDirection and yDirection, the creation of the projectile, and the block that sets the projectiles ghost flag to be on.
 
-https://makecode.com/_1Mbhp1HLF2td
-
 ### ~
+
+https://makecode.com/_K1jC1dJzgKa2
 
 ```blocks
 enum SpriteKind {
@@ -186,22 +242,24 @@ enum SpriteKind {
 }
 let projectile: Sprite = null
 let yDirection = 0
-let xDirection = 0
 let balloon: Sprite = null
+let xDirection = 0
 let block: Sprite = null
 sprites.onOverlap(SpriteKind.Balloon, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.setFlag(SpriteFlag.Ghost, true)
-
-    // pick a random speed between -50 and 50 for the splash to go in both directions
-    xDirection = Math.randomRange(0, 100) - 50
-    yDirection = Math.randomRange(0, 100) - 50
+    xDirection = Math.randomRange(0, 50)
+    yDirection = Math.randomRange(0, 50)
     // create the splash
     projectile = sprites.createProjectile(img`
-9
+9 
 `, xDirection, yDirection, SpriteKind.Splash, sprite)
-    // make the splash a ghost, so that it doesn't interact with other sprites
+    // create the splash
+    projectile = sprites.createProjectile(img`
+9 
+`, -1 * xDirection, -1 * yDirection, SpriteKind.Splash, sprite)
+    // make the splash a ghost, so that it doesn't
+    // interact with other sprites
     projectile.setFlag(SpriteFlag.Ghost, true)
-
     // destroy the balloon
     sprite.destroy()
 })
@@ -266,6 +324,7 @@ balloon = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Balloon)
 balloon.x += -50
+
 ```
 
 ## Student Task #2: Flying Duck
