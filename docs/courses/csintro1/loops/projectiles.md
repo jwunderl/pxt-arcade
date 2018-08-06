@@ -13,6 +13,9 @@ In this activity, students will use:
 * ``||loops:for||`` loop 
 
 ## Concept: Flying Birds!
+https://youtu.be/K4feIZBn56g
+
+[Alternative Video Location](https://aka.ms/40544a-projectiles1)
 
 We can use projectiles to create sprites that move across the screen. Let's start off with making a simple bird projectile.
 
@@ -128,10 +131,11 @@ projectile = sprites.createProjectile(img`
 
 Games often create many projectiles, one after another.  We can use a loop to create multiple projectiles by creating a projectile in the body of the loop.
 
-
-# TODO: Create Video covering projectile motion with loops (task 2)
-
 ### Example #2: Projectile Loop
+
+https://youtu.be/Rox0yQ8k9dU
+
+[Alternative Video Location](https://aka.ms/40544a-projectiles2) 
 
 This example randomly places the projectiles on the screen but they don't have any velocity assigned so they are stationary.
 
@@ -193,6 +197,8 @@ d d d d d d d d
 
 ## Student Task #2b: Offset Projectiles
 
+![spiral image](/static/courses/csintro1/loops/offset-projectiles-2b.png)
+
 We have seen how it is useful for projectiles to come from random positions but at other times we will want projectiles spawned in a structured manner. This tasks uses a loop to off set the Y position of each projectile using a ``||loops:for||`` loop index. 
 
 1. Review the code below
@@ -231,6 +237,10 @@ pause(300)
 
 
 ## Concept: Projectiles from Corners
+
+https://youtu.be/59hNi1CGCTo
+
+[Alternative Video Location](https://aka.ms/40544a-projectiles3)
 
 Projectiles with a Y velocity only will start on the Top or Bottom of the game screen and projectiles with a X velocity only will start from the left by default.  In this example and task we will see how we can make a projectile start from any corner we choose by default.
 
