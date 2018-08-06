@@ -261,20 +261,7 @@ info.setScore(0)
 info.startCountdown(15)
 ```
 
-### TODO: Update as necessary when tasks & examples complete
-## Rubrics
+## What did we learn?
 
-### task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-|  | Made three functions in task #1 | Completed all parts of task #1 | Completed task #2 | Completed challenge code |
-
-### Score = \_\_\_\_\_\_ /10
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered one of the questions fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10 
+1. Does the use of a function to capture repeated code make it easier or harder to maek changes to those repeated sections in the future?
+2. Are there any possible downsides to moving repeated code into a function?
