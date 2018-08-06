@@ -46,6 +46,7 @@
 * [Intro](/courses/csintro1/loops/intro)
 * [Increment Loop](/courses/csintro1/loops/increment-loop)
 * [Projectiles](/courses/csintro1/loops/projectiles)
+* [Projectiles from Sprites](/courses/csintro1/loops/projectiles-from)
 * [Physics](/courses/csintro1/loops/physics)
 * [Project](/courses/csintro1/loops/project)
 
@@ -119,6 +120,7 @@
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/loops/intro)
 * [Increment Loop](/courses/csintro1/teacherzone/trimmed-notes/loops/increment-loop)
 * [Projectiles](/courses/csintro1/teacherzone/trimmed-notes/loops/projectiles)
+* [Projectiles from Sprites](/courses/csintro1/teacherzone/trimmed-notes/loops/projectiles-from)
 * [Physics](/courses/csintro1/teacherzone/trimmed-notes/loops/physics)
 * [Project](/courses/csintro1/teacherzone/trimmed-notes/loops/project)
 
