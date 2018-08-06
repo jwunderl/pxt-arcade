@@ -197,7 +197,7 @@ pause(500)
 game.over()
 ```
 
-## Student Task #2
+## Student Task #2: Events
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create a function called "buttonPress" and copy over the behavior from the ``||controller:on A button pressed||`` event
