@@ -108,6 +108,9 @@ pause(100)
 sprite.y += 5
 pause(100)
 ```  
+https://youtu.be/Y2Y-n4p1QNI
+
+[Alternative Video Location](https://aka.ms/40544a-loop-intro)
 
 ## Student Task #1: Move to the upper left corner, and move faster
 
@@ -116,10 +119,6 @@ pause(100)
 3. Change the pause between each step to be only 50 ms, instead of 100 - we decided we want the ghost to be a little bit faster than it was
 
 ## Concept: Moving a sprite using the repeat block loop
-
-https://youtu.be/Y2Y-n4p1QNI
-
-[Alternative Video Location](https://aka.ms/40544a-loop-intro)
 
 When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by hand, we can instead using loops to repeat that chunk of code more easily.
 
