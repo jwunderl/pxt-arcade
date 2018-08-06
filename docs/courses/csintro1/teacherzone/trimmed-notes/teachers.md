@@ -44,7 +44,7 @@
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/loops/intro)
 * [Increment Loop](/courses/csintro1/teacherzone/trimmed-notes/loops/increment-loop)
 * [Projectiles](/courses/csintro1/teacherzone/trimmed-notes/loops/projectiles)
-* [Projectiles from Sprites](/courses/csintro1/teacherzone/trimmed-notes/loops/projectiles-from)
+* [Projectiles from Sprites](/courses/csintro1/teacherzone/trimmed-notes/loops/projectile-from)
 * [Physics](/courses/csintro1/teacherzone/trimmed-notes/loops/physics)
 * [Project](/courses/csintro1/teacherzone/trimmed-notes/loops/project)
 
