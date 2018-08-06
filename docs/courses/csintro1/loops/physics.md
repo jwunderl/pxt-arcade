@@ -152,12 +152,11 @@ mySprite.destroy()
 
 ```
 
-## Example #2c: Change in Velocity vs Acceleration
+### Example #1c: Change in Velocity vs Acceleration
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "Race 2")
-4. Notice how the behavior for the two sprites is similar, and how it is different.
+3. Notice how the behavior for the two sprites is similar, and how it is different.
 
 https://makecode.com/_9Xiair9qeH55
 
@@ -344,12 +343,12 @@ In this task, you will make a basic version of a flying bird game. In it, the bi
 
 Try different values for the vertical acceleration representing gravity ``||sprites:ay||`` such as 25, 50, 100, 200
 
-What is a reasonably challenging value?
+What is a reasonably challenging value for the acceleration of gravity for Duck?
 
 ### ~
 
 ## What did we learn?
 
 1. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
-2. In examples #1 and #2, you likely noticed that the values were fluctuating more quickly for ``||variables:first||`` than for ``||variables:second||``, even though they were both increasing at the same rate on a second-by-second basis. Make a hypothesis on why that is.
+2. In examples #1a and #1c, you likely noticed that the values were fluctuating more for ``||variables:first||`` than for ``||variables:second||``, even though they were both increasing at the same rate on a second-by-second basis. Make a hypothesis on why that is.
 3. **Challenge:** Did either race (example #1 or example #2) have a clear winner? Make a hypothesis on why this might be, even if the rate of change is the same on a second-by-second basis.

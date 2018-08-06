@@ -8,11 +8,13 @@ In this activity, student will be introduced to:
 
 ## Velocity
 
-## Example 1: Change in location vs Velocity
+### Example 1a: Change in Position vs Velocity
 
 ## Acceleration
 
-## Example 2: Change in Velocity vs Acceleration
+### Example 1b: Sprite with Acceleration
+
+### Example 1c: Change in Velocity vs Acceleration
 
 ## Student Task 1: Water balloons
 
@@ -209,7 +211,7 @@ balloon = sprites.create(img`
 balloon.x += -50
 ```
 
-## Student Task #2: Flying Duck
+## Student Task #1b: Flying Duck
 
 ### Standard Solution:
 
@@ -307,7 +309,17 @@ game.onUpdateInterval(2000, function () {
 ## What did we learn?
 
 1. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
-2. In examples #1 and #2, you likely noticed that the values were fluctuating more quickly for ``||variables:first||`` than for ``||variables:second||``, even though they were both increasing at the same rate on a second-by-second basis. Make a hypothesis on why that is.
+2. In examples #1a and #1c, you likely noticed that the values were fluctuating more for ``||variables:first||`` than for ``||variables:second||``, even though they were both increasing at the same rate on a second-by-second basis. Make a hypothesis on why that is.
 3. **Challenge:** Did either race (example #1 or example #2) have a clear winner? Make a hypothesis on why this might be, even if the rate of change is the same on a second-by-second basis.
+### ~hint
+
+### Possible Answers:
+
+1. The X and Y directions move horizonal and vertical.  If we use only Positive values then the motion will always be upward and to the right side.  So only 1/4 of a 360 degree circle or 90 degrees.  Having both X and Y positive and negative give randomness in all 360 degrees of direction.
+2. The values of "first" when change more because they constantly change.  If you have Velocity your position is always changing or if you have acceleration your velocity is always change.  With "second" the changes only happen every second.
+3. "Second" seemed to always win.  "Second" jumped every 1 second and would jump ahead of "first" where as "first" had a more steady change so it would be at rates in between the jump values. For example: in 1c the velocities for "first" were both odd and even numbers but "second" was only even numbers. 
+
+### ~
+
 
 ## TODO RUBRICS
