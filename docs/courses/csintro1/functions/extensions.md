@@ -150,4 +150,7 @@ projectile = sprites.createProjectile(img`
 6. Share the game and load it into another project 
 7. **Challenge:** every 2000 ms, spawn a meteor that moves across the screen. Make sure to set a random ``||sprites:vertical position||`` for it as well
 
-### TODO add what did we learn questions
+## What did we learn?
+
+1. How could sharing and importing projects help manage a group project with four or more students?
+2. What is one benefit to importing code from a project versus just copying the code into the project? You might find it useful to discuss task #2 in your response to this question.
