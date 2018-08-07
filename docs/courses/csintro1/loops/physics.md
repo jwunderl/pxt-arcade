@@ -12,7 +12,9 @@ In this activity, student will use:
 
 ## Concept: Velocity
 
-#TODO video
+https://youtu.be/aNYPqyIFRT0 
+
+[Alternative Video Location](https://aka.ms/40544a-physics-velocity) 
 
 Velocity is defined as speed in a given direction. Velocity is the rate at which an object's position changes, and the direction the position is changing. 
 
@@ -28,8 +30,7 @@ In MakeCode Arcade, a sprite's velocity is defined in terms of pixels per second
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "Race 1")
-4. Notice how the behavior for the two sprites is similar, and how it is different.
+3. Notice how the behavior for the two sprites is similar, and how it is different.
 
 **note these parts of the code**
 
@@ -103,6 +104,10 @@ game.onUpdate(function () {
 ```
 
 ## Concept: Acceleration
+
+https://youtu.be/pRUlsEekmUg 
+
+[Alternative Video Location](https://aka.ms/40544a-physics-acceleration) 
 
 Acceleration represents the rate of change in velocity. We think of this is how much an object is speeding up or slowing down in a particular direction.  Gravity is a good example of acceleration where falling objects increase in velocity, falling faster and faster, in the down direction.
 
@@ -216,7 +221,11 @@ game.onUpdateInterval(1000, function () {
 
 ```
 
-## Student Task #1: Water balloons
+## Student Task #1a: Water balloons
+
+https://youtu.be/lMLLUf4NQF0 
+
+[Alternative Video Location](https://aka.ms/40544a-physics-task-a) 
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -326,11 +335,13 @@ balloon.x += -50
 
 ```
 
-## Student Task #2: Flying Duck
+## Student Task #1b: Flying Duck
+
+https://youtu.be/mmRhSMyFtaY 
+
+[Alternative Video Location](https://aka.ms/40544a-physics-task-b) 
 
 In this task, you will make a basic version of a flying bird game. In it, the bird will fall due to gravity, and whenever the player presses ``||controller:A||``, the bird flies into the sky.
-
-![Flying Duck](/static/courses/csintro1/loops/flying-duck.gif)
 
 1. Open a new project, and name it "Flying Duck"
 2. Create a sprite on the screen
@@ -338,6 +349,8 @@ In this task, you will make a basic version of a flying bird game. In it, the bi
 4. Create an ``||controller:on A button pressed||`` event
 5. Inside of the ``||controller:on A button pressed||`` event, use ``||sprites:change by||`` to change the sprite's velocity in the ``||sprites:Y||`` direction, so that pressing the ``||controller:A||`` button makes the sprite 'fly' and counteract 'gravity'
 6. **Challenge:** create an ``||game:on game update every 2000 ms||`` event, a spawn a projectile that moves horizontally across the screen. Set the projectile's ``||sprites:Y||`` position to a random place on the screen, using the ``||Math:pick random||`` and ``||Scene:screen height||`` blocks. Make something happen when the projectiles overlap with the player sprite!
+
+![Flying Duck](/static/courses/csintro1/loops/flying-duck.gif)
 
 ### ~hint
 
