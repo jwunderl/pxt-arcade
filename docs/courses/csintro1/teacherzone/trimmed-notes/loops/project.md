@@ -87,7 +87,7 @@ game.onUpdate(function () {
     ped.y += controller.dy(25)
 })
 ```
-https://makecode.com/_PMPcw19LtWyq
+## [Extinguisher](https://makecode.com/_PMPcw19LtWyq)
 
 ```blocks
 enum SpriteKind {
