@@ -101,3 +101,120 @@ myCorg.updateSprite()
 myCorg.verticalMovement()
 myCorg.follow()
 ```
+
+## Goals, Puzzles, and Hazards
+
+## Student Task #3: Creating an interesting level
+
+https://makecode.com/_EFT54zAabUPf
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Princess
+}
+let princess: Sprite = null
+let myCorg: Corgi = null
+let sprite: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Princess, function (sprite, otherSprite) {
+    otherSprite.say("Thank you!")
+    pause(1000)
+    game.over(true)
+})
+scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
+    game.over(false)
+})
+myCorg = corgi.create(SpriteKind.Player)
+scene.setTileMap(img`
+1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 2 1 1 2 1 1 1 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 1 1 2 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 2 1 1 2 1 1 1 1 1 1 2 1 1 2 2 2 1 1 2 2 2 2 1 1 2 2 2 1 1 1 1 2 1 1 1 1 1 1 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+2 2 1 1 2 1 1 2 2 2 2 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 2 1 1 1 1 1 1 1 1 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 2 1 1 1 1 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 2 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 2 7 7 1 1 1 1 7 7 2 1 1 1 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 2 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 7 7 7 1 1 1 1 1 1 1 1 1 1 1 1 1 
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(15, img`
+e e e e e f f e e e e e e f f e 
+e e e e e f f e e e e e e f f e 
+e e e e e f f e e e e e e f f e 
+f f f f f f f f f f f f f f f f 
+f f e e e e e e e f f e e e e e 
+f f e e e e e e e f f e e e e e 
+f f e e e e e e e f f e e e e e 
+f f f f f f f f f f f f f f f f 
+e e e e e f f e e e e e e f f e 
+e e e e e f f e e e e e e f f e 
+e e e e e f f e e e e e e f f e 
+f f f f f f f f f f f f f f f f 
+f f e e e e e e e f f e e e e e 
+f f e e e e e e e f f e e e e e 
+f f e e e e e e e f f e e e e e 
+f f f f f f f f f f f f f f f f 
+`, true)
+scene.setTile(2, img`
+d d d d d d d d d d d d d d d d 
+d 1 1 1 d d d d d d d d 1 1 1 d 
+d 1 1 1 1 d d d d d d 1 1 1 1 d 
+d 1 1 1 1 d d d d d d 1 1 1 1 d 
+d 1 1 1 d d d d d d d d 1 1 1 d 
+d 1 1 d d d d d d d d d d 1 1 d 
+d 1 1 d d d d d d d d d d 1 1 d 
+d 1 1 d d d d d d d d d d 1 1 d 
+d 1 1 d d d d d d d d d d 1 1 d 
+d 1 1 d d d d d d d d d d 1 1 d 
+d 1 1 d d d d d d d d d d 1 1 d 
+d 1 1 1 d d d d d d d d 1 1 1 d 
+d 1 1 1 1 d d d d d d 1 1 1 1 d 
+d 1 1 1 1 d d d d d d 1 1 1 1 d 
+d 1 1 1 d d d d d d d d 1 1 1 d 
+d d d d d d d d d d d d d d d d 
+`, true)
+scene.setTile(7, img`
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 4 4 4 4 2 4 4 4 2 4 4 4 2 2 
+2 2 4 2 2 4 2 4 2 4 2 4 2 2 4 2 
+2 2 4 2 2 4 2 4 2 4 2 4 2 2 4 2 
+2 2 4 4 4 2 2 4 4 4 2 4 2 2 4 2 
+2 2 4 2 2 4 2 4 2 4 2 4 2 2 4 2 
+2 2 4 4 4 4 2 4 2 4 2 4 4 4 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+`, true)
+myCorg.horizontalMovement()
+myCorg.verticalMovement()
+myCorg.follow()
+myCorg.updateSprite()
+princess = sprites.create(img`
+. . . . . . 5 . 5 . . . . . . . 
+. . . . . f 5 5 5 f f . . . . . 
+. . . . f 1 5 2 5 1 6 f . . . . 
+. . . f 1 6 6 6 6 6 1 6 f . . . 
+. . . f 6 6 f f f f 6 1 f . . . 
+. . . f 6 f f d d f f 6 f . . . 
+. . f 6 f d f d d f d f 6 f . . 
+. . f 6 f d 3 d d 3 d f 6 f . . 
+. . f 6 6 f d d d d f 6 6 f . . 
+. f 6 6 f 3 f f f f 3 f 6 6 f . 
+. . f f d 3 5 3 3 5 3 d f f . . 
+. . f d d f 3 5 5 3 f d d f . . 
+. . . f f 3 3 3 3 3 3 f f . . . 
+. . . f 3 3 5 3 3 5 3 3 f . . . 
+. . . f f f f f f f f f f . . . 
+. . . . . f f . . f f . . . . . 
+`, SpriteKind.Princess)
+princess.x = 928
+princess.ay = 100
+```
+
+## TODO: What did we learn
+## TODO: rubric

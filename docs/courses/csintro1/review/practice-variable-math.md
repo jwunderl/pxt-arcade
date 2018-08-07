@@ -1,7 +1,5 @@
 # Practice 1: Life Questionnaire
 
-## TODO: add in singular blocks in place of wordy descriptions throughout.
-
 This example will get us more experience with math and programming, by getting our computers to play the part of a calculator and a little bit more.
 
 1. Copy and paste the given code into the MakeCode editor. Then try running it!
@@ -19,7 +17,7 @@ ageSentence = "" + ageSentence + ageInDays
 game.splash("" + ageSentence + " days old")
 ```
 
-2. The 'ask for string with text' block is needed, which will bring up a keyboard on the screen where the user can enter numbers and text. Regardless if we enter numbers or text the entry evaluates as string. You can see that we currently store it in a variable for later use. We also do one more thing here: we convert the string to an int with another block that is labeled parse to integer. This is just so our computer knows that this piece of data is meant to be a number, rather than a word or phrase. More on this later, so don't worry about all the details right now. Just know that if you want to use input from the user as a number that you can do math with, you have to use the 'parse as integer' block, and if you want to switch that number back to a string to display, you need to use the join block.
+2. The ``||game:ask for string with text||`` block is needed, which will bring up a keyboard on the screen where the user can enter numbers and text. Regardless if we enter numbers or text the entry evaluates as string. You can see that we currently store it in a variable for later use. We also do one more thing here: we convert the string to an int with another block that is labeled parse to integer. This is just so our computer knows that this piece of data is meant to be a number, rather than a word or phrase. More on this later, so don't worry about all the details right now. Just know that if you want to use input from the user as a number that you can do math with, you have to use the ``||text:parse to integer||`` block, and if you want to switch that number back to a string to display, you need to use the join block.
 
 3. Calculate the number of months for someone's age and display it however you want. Splash is probably the easiest, but you could also make a sprite and use say. We will say that there are 365 days in a year and there are 12 months in a year, ignoring leap years.
 

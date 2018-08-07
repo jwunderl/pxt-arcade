@@ -1,5 +1,161 @@
 # Tile Map
 
+Maps and levels form the basis of many of the most common types of videogames; they allow a location for the games story to progress, and for the player to explore. In MakeCode Arcade, ``||scene:tilemaps||`` provide an easy way to design two dimensional maps.
+
+## Example #1: Words!
+
+1. Make a new project (name it "tilemapWords")
+2. Review the code below
+3. Copy the code below into your project and run it
+
+```blocks
+scene.setTileMap(img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . 6 5 7 8 . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`)
+scene.setTile(2, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 1 1 1 1 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(3, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 1 1 1 f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(6, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f 1 1 f f 1 f f f f 
+f f f f 1 f 1 f f 1 f 1 f f f f 
+f f f f 1 1 f f f f 1 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(5, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(4, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(7, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f 1 1 1 1 f f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 1 1 1 1 f f f f f f 
+f f f f f 1 f f 1 f f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(8, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 1 1 1 f f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 1 1 1 1 f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+```
+
+## Student Task #1: Hello World!
+
+1. Start with the code from example #1
+2. Change the tilemap so that it displays "Hello World" instead of just "Word"
+3. **Challenge:** Create a new tile with an exclamation mark, and change the tilemap so that "Hello World!" is displayed
+
+
+### DEPRECATED BELOW
+
 # TODO: keep programing with functions - make this function code
 
 ## Student Task: Make a Maze 16x32, Challenge 32x48 or larger
