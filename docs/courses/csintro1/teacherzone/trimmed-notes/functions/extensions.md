@@ -357,3 +357,34 @@ game.onUpdateInterval(2000, function () {
     projectile.setFlag(SpriteFlag.Ghost, true)
 })
 ```
+
+## What did we learn?
+
+1. How could sharing and importing projects help manage a group project with four or more students?
+2. What is one benefit to importing code from a project versus just copying the code into the project? You might find it useful to discuss task #2 in your response to this question.
+
+### ~hint
+
+Possible answers:
+
+1. Sharing and importing code can make it so people can work on different parts of the code on their own before bringing it all together. Importing the code could make it easier to keep things up to date.
+2. Importing the code helps keep things separated - you don't have to clog up your working area / space with a lot of unrelated content. Easier to update sections of the code as things are changed.
+
+### ~
+
+## Rubrics
+
+### task rubric
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+|  | Successfully imported Darts extension in task #1 | Successfully created a 'star background' in task #2 | Successfully created a link to import task #2 into other projects | Completed challenge code |
+
+### Score = \_\_\_\_\_\_ /10
+
+### What did we learn rubric
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | Answered one of the questions fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
+
+### Score = \_\_\_\_\_\_ /10 

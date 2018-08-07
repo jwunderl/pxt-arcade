@@ -26,17 +26,9 @@ In this activity, students will use:
 Start with the following cloud moving across the screen: https://makecode.com/_UfeX3VY6CfgD
 
 ## Example #2b: Cloud projectile that emits projectile rain 
-
 https://makecode.com/_Es5HF0VEuCiL
 
 ## Example #2c: Cloud projectile that widely emits projectile rain
-
-We can change where the rain drops show up, so that they don't all appear in the same location relative to the cloud by applying a random value to the raindrop X value.  
-
-```block
-let raindrop: Sprite = null
-raindrop.x += Math.randomRange(1, 14)
-```
 
 https://makecode.com/_CvEVPuh35bbj
 
@@ -45,17 +37,6 @@ https://makecode.com/_CvEVPuh35bbj
 
 The ghost raindrop sprites can't have an overlap event but we can use ``||sprite:on sprite destroyed||``. So we can count the raindrops that make it to the bottom of the screen by counting when they're destroyed!
 
-```block
-enum SpriteKind {
-    Cloud,
-    Rain
-}
-let raindrop: Sprite = null
-sprites.onDestroyed(SpriteKind.Rain, function (sprite: Sprite) {
-    info.changeScoreBy(1)
-})
-```
-
 https://makecode.com/_HhcT57KDxR9s
 
 
@@ -63,15 +44,15 @@ https://makecode.com/_HhcT57KDxR9s
 
 ### ~hint
 
-Use a loop and if creating many projectiles use ``||sprite:ghost on||``
+Use a loop!  Remember if creating many projectiles use ``||sprite:ghost on||`` if no overlap events are needed to increase performance.
 
 ### ~
 
 ### Solution: 
-https://makecode.com/_UAiartd0gHsL
+https://makecode.com/_J1T3YEJFAdFb
 
 ### Challenge Solution: 
-https://makecode.com/_C8Famb42tfmd
+https://makecode.com/_AckKRmR7m7Ja
 
 ## What did we learn?
 
@@ -87,7 +68,7 @@ Can there be overlapping another if either sprite is a ghost?
 
 ### ~hint
 
-### Possible Answers
+### Possible Answers:
 
 1. To make a sprite act like a projectile sprite: Sprites can start on the edge of a screen like x=0, have a velocity away from the edge of the screen vx=20, we can destroy the sprite.
 2. a decoration like a bubble or rain is ghost on so no overlap events.  A laser beam would use a on overlap event and destroy the object it overlapped with.  A coin would have an overlap event and would give a score when it overlaps with the player.
