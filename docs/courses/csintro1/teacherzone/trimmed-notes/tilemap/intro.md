@@ -1,5 +1,316 @@
 # Tile Map
 
+## Example #1: Words!
+
+## Student Task #1: Hello World!
+
+### Standard:
+
+https://makecode.com/_4cc0DwDszaj9
+
+```blocks
+scene.setTileMap(img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+2 3 4 4 5 . . . . . 
+. . . . . . . . . . 
+. . . 6 5 7 4 8 . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`)
+scene.setTile(2, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 1 1 1 1 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(3, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 1 1 1 f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(6, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f 1 1 f f 1 f f f f 
+f f f f 1 f 1 f f 1 f 1 f f f f 
+f f f f 1 1 f f f f 1 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(5, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(4, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(7, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f 1 1 1 1 f f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 1 1 1 1 f f f f f f 
+f f f f f 1 f f 1 f f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(8, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 1 1 1 f f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 1 1 1 1 f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+```
+
+### Challenge:
+
+https://makecode.com/_T9FcEWijg68m
+
+```blocks
+scene.setTileMap(img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+2 3 4 4 5 . . . . . 
+. . . . . . . . . . 
+. . . 6 5 7 4 8 f . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`)
+scene.setTile(2, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 1 1 1 1 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(3, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 1 1 1 f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(6, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f 1 f f 1 1 f f 1 f f f f 
+f f f f 1 f 1 f f 1 f 1 f f f f 
+f f f f 1 1 f f f f 1 1 f f f f 
+f f f f 1 f f f f f f 1 f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(5, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 f f f f f 1 f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(4, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 f f f f f f f f f f f 
+f f f f 1 1 1 1 1 1 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(7, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f 1 1 1 1 f f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 1 1 1 1 f f f f f f 
+f f f f f 1 f f 1 f f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f 1 f f f 1 f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(8, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 1 1 1 f f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 f f f f 1 f f f f f f 
+f f f f 1 1 1 1 1 f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+scene.setTile(15, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f 1 1 f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`)
+```
+
+
+### DEPRECATED BELOW
+
 ## Student Task: Make a Maze 16x32, Challenge 32x48 or larger
 ```blocks
 let sprite: Sprite = null
