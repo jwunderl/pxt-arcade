@@ -44,15 +44,15 @@ https://makecode.com/_HhcT57KDxR9s
 
 ### ~hint
 
-Use a loop and if creating many projectiles use ``||sprite:ghost on||``
+Use a loop!  Remember if creating many projectiles use ``||sprite:ghost on||`` if no overlap events are needed to increase performance.
 
 ### ~
 
 ### Solution: 
-https://makecode.com/_UAiartd0gHsL
+https://makecode.com/_J1T3YEJFAdFb
 
 ### Challenge Solution: 
-https://makecode.com/_C8Famb42tfmd
+https://makecode.com/_AckKRmR7m7Ja
 
 ## What did we learn?
 
