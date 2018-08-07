@@ -17,7 +17,7 @@ We are not stuck with only the functions provided when you first open MakeCode. 
 
 1. Open a new project (name it "soccer")
 2. Using the extensions menu, search for jwunderl/pxt-darts. Notice how a new section is added to the menu, above ``||game:Game||`` ### TODO change this if darts gets approved to just search by package name
-3. Review the example code below, and either recreate it or build something similar.
+3. Review the example code below, and either recreate it or build something similar
 
 ## TODO: Make gif showing opening darts package when darts gets approved or not
 
@@ -105,7 +105,7 @@ Creating new blocks like the ones in example #1 requires the use of JavaScript o
 2. Press share (and confirm) to create a link to this code
 3. Open a new project in another window
 4. Under extensions, enter the link you generated into the search bar and press the search icon; a single extension should come up (with the name "birdie") - add that to your current project
-5. The bird will fly across the screen as soon as the game is loaded, even though the new project only has the initial blocks.
+5. The bird will fly across the screen as soon as the game is loaded, even though the new project only has the initial blocks
 6. **Challenge:** open the JavaScript tab, and open the explorer below the simulator. Find where the code that was imported was added into your project
 
 ### ~hint

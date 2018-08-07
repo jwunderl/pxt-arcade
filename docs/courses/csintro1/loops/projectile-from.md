@@ -10,7 +10,11 @@ In this activity, students will use:
 
 ## Concept: Projectile From Sprite
 
-# TODO Video
+https://youtu.be/Y7_-noa6_FU 
+
+[Alternative Video Location](https://aka.ms/40544a-projectile-from-sprite) 
+
+
 
 There are many games that have sprites sending out projectile sprites.  We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile - from sprite||`` as below: 
 
@@ -97,7 +101,9 @@ mySprite.setPosition(145, 60)
 
 ## Concept: Projectiles from other Projectile Sprites
 
-# TODO Video
+https://youtu.be/EkG5UxwfxG8 
+
+[Alternative Video Location](https://aka.ms/40544a-projectile-from-projectile)
 
 We can use the projectiles we have made as the source of animation like projectiles by following the following examples to build a projectile raining cloud (that is a projectile). 
 
@@ -333,6 +339,10 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 ```
 
 ## Student Task #2: Projectile from Projectile
+
+https://youtu.be/qlijC56n88k 
+
+[Alternative Video Location](https://aka.ms/40544a-projectile-from-proj-task)
 
 Make a projectile go across the bottom of the screen that will give off different projectiles that "float" to the top of the screen. Use parts of example code above for inspiration to start you project
 
