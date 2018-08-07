@@ -76,3 +76,25 @@ myCorg.verticalMovement()
 1. Start with the code from example #1
 2. Add the ``||corgi:make camera follow myCorg left and right||`` block, so that the camera will follow the corgi while it moves across the tilemap
 3. Open the tile map in the image editor, and add a red wall that is 3 tiles tall in the middle of the map. Make sure to set that tile to have a sprite and to be a wall
+ 
+## Goals, Puzzles, and Hazards
+
+Just having a single wall in your game does not make for a particularly challenging or fun experience; you need a bit more to make a game someone will actually want to try and play. To do so, we will introduce three things to the platformer: an end goal for the player to try and get to, walls that form a small puzzle to get through, and hazards that will add a possibility of failure to the game.
+
+## Student Task #3: Creating an interesting level
+
+1. Start with the code from task #2
+2. Add red walls to the map, so that they form a harder level to make your way through - try making an area that is only accessible by jumping past a series of tiles
+3. Create a sprite of a new kind, and place it at the end of the level. Add an ``||sprites:overlap||`` event to congratulate the player and end the game (after a small pause) when the player reaches the sprite
+
+### ~hint
+
+The tilemap we are using is 64 tiles wide, and 8 tiles tall, with each tile being 16 pixels by 16 pixels
+
+### ~
+
+4. Create a green tile on the map, that is a wall (and looks ominous)
+5. Add an ``||scene:on sprite of kind player hits wall||`` for your green tile, so that the game ends (and the player loses) when the tile is hit
+
+## What did we learn?
+### TODO
