@@ -1,6 +1,8 @@
 # Activity: Functions
 
-Functions are a way to group sections of code to be run together. They are regularly used when writing code both to increase the readability of code, and to allow for reuse of common actions. In Blocks, ``||functions:Functions||`` can be found under the `Advanced` section.
+Functions are a way to group sections of code to be run together. They are regularly used when writing code both to increase the readability of code, and to allow for reuse of common actions. 
+
+In Blocks, ``||functions:Functions||`` can be found under the `Advanced` section.
 
 ![finding functions in blocks](/static/courses/csintro1/functions/finding-functions.gif)
 
@@ -12,7 +14,7 @@ In this activity, student will be introduced to:
 
 Functions allow us to break up code into different sections. In doing so, we can separate distinct tasks, giving a distinct name for small tasks in your code.
 
-## Example #1: Creating Sprites
+## Example #1a: Creating Sprites
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -73,9 +75,11 @@ asteroid = sprites.createProjectile(sprites.space.spaceAsteroid0, -10, 10, Sprit
 asteroid.say("Crash")
 ```
 
-This code has a reasonably long ``||loops:on start||`` for how simple it is; we make a human, then we make a cow, and finally we make an asteroid. In the next examples, we will simplify the ``||loops:on start||`` code by splitting the code into three different functions, so that people reading your code can get an idea of what happens when you start the game quickly, rather than having to read through every single block.
+This code has a reasonably long ``||loops:on start||`` for how simple it is; we make a human, then we make a cow, and finally we make an asteroid. 
 
-## Example #2: Creating Sprites (with functions)
+In the next examples, we will simplify the ``||loops:on start||`` code by splitting the code into three different functions, so that people reading your code can get an idea of what happens when you start the game quickly, rather than having to read through every single block.
+
+## Example #1b: Creating Sprites (with functions)
 
 ### TODO: Video of this example
 
@@ -147,20 +151,22 @@ placeCow()
 placeAsteroid()
 ```
 
-One way to think of this is like a book: by adding new functions to our code, we were able to make the blocks inside of the ``||loops:on start||`` block resemble a table of contents for our code, with simple descriptions of the tasks we wanted done. Each function ends up being a chapter in the book with more details on what exactly is getting down. If you want to get a feeling for how the book will be, you skim through the table of contents, and if parts sound interesting, you can read those by going to the specified location (or function).
+One way to think of this is like a book: by adding new functions to our code, we were able to make the blocks inside of the ``||loops:on start||`` block resemble a table of contents for our code, with simple descriptions of the tasks we wanted done. 
 
-## Student Task #1: Make your own functions
+Each function ends up being a chapter in the book with more details on what exactly is getting down. If you want to get a feeling for how the book will be, you skim through the table of contents, and if parts sound interesting, you can read those by going to the specified location (or function).
+
+## Student Task #1a: Make your own functions
 
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create 3 different functions, with names that describe different sections of the code.
-4. Remove the blocks from the ``||loops:on start||`` block and split it into the three different functions. Each function should have 3 of the 9 blocks
-5. Use the ``||functions:call function||`` block 3 times in your ``||loops:on start||`` block to call each new function
-6. **Challenge:** make sure your code behaves **exactly** the same as the code below
+  * Remove the blocks from the ``||loops:on start||`` block and split it into the three different functions. Each function should have 3 of the 9 blocks
+  * Use the ``||functions:call function||`` block 3 times in your ``||loops:on start||`` block to call each new function
+4. Make sure your code behaves **exactly** the same as the code below!
 
 ### ~hint
 
-the 3 functions should cover the initial sprite setup, playing the music, and display items.
+The 3 functions should cover the initial sprite setup, playing the music, and display items.
 
 For the challenge, try re-ordering the ``||functions:function calls||`` in your ``||loops:on start||`` - does anything change, or happen in a different order?
 
@@ -203,14 +209,20 @@ info.setScore(0)
 info.startCountdown(10)
 ```
 
-## Student Task #2: Functions in Events
+## Student Task #1b: Functions in Events
 
-Functions can be used throughout your code - not just in the ``||loops:on start||`` block. In this task, we will clean up the ``||controller:on A button pressed||`` event to make it a bit easier to read.
+Functions can be used throughout your code - not just in the ``||loops:on start||`` block. 
+
+In this task, we will clean up the ``||controller:on A button pressed||`` event to make it a bit easier to read.
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Create 2 new functions, named "conversation" and "scorePoints"
-4. Move the blocks for the conversation to ``||functions:conversation||``, and the blocks for scoring a point and playing a sound to ``||functions:scorePoints||``
+4. Move the blocks in ``||controller:on A button pressed||`` for the conversation to ``||functions:conversation||``, and the blocks for scoring a point and playing a sound to ``||functions:scorePoints||``
 5. Use the ``||functions:call function||`` block 2 times in the ``||controller:on A button pressed||`` event to call both new functions
+6. **Challenge**: Create an ``||sprites:on overlap||`` event that uses 
+  * the "conversation" function 
+  * an additional function (e.g. - playerConversation, or movePlayer, or...)
 
 ```blocks
 enum SpriteKind {

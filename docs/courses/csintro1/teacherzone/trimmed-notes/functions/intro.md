@@ -9,10 +9,15 @@ In this activity, student will be introduced to:
 * Calling functions by name
 
 ## Concept: Making a basic function for readability
-## Example #1: Creating Sprites
-## Example #2: Creating Sprites (with functions)
-## Student Task #1: Make your own functions
-## Student Task #2: Functions in Events
+## Example #1a: Creating Sprites
+## Example #1b: Creating Sprites (with functions)
+## Student Task #1a: Make your own functions
+
+Solution: https://makecode.com/_J8ohLR9rVYqR
+
+## Student Task #1b: Functions in Events
+
+Solution: https://makecode.com/_4brfuqfU9dp9 (Contains Challenge)
 
 ## Rubrics
 
