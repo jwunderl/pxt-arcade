@@ -1,6 +1,6 @@
 # Projectile Project
 
-Example Project
+Example Projects
 
 https://makecode.com/_EW28qDiCFLXw 
 
@@ -85,6 +85,95 @@ game.onUpdateInterval(3000, function () {
 })
 game.onUpdate(function () {
     ped.y += controller.dy(25)
+})
+```
+https://makecode.com/_PMPcw19LtWyq
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Water
+}
+let hose: Sprite = null
+let projectile: Sprite = null
+let sprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . 8 8 . . . . . . . . 
+. . . . . . 8 8 8 . . . . . . . 
+. . . . . . 8 8 8 . . . . . . . 
+. . . . . 8 8 8 8 . . . . . . . 
+. . . . . 8 8 8 8 8 . . . . . . 
+. . . . 8 8 8 8 8 8 . . . . . . 
+. . . 8 8 8 8 8 8 8 8 . . . . . 
+. . . 8 8 8 8 8 8 8 8 . . . . . 
+. . . 8 8 8 8 8 8 8 8 8 . . . . 
+. . 8 8 8 8 8 8 8 8 8 8 . . . . 
+. . 8 8 9 9 8 8 8 8 8 8 8 . . . 
+. . 8 8 8 9 9 8 8 8 8 8 8 . . . 
+. . . 8 8 9 9 9 9 9 8 8 . . . . 
+. . . . 8 8 9 9 9 9 8 8 . . . . 
+. . . . . 8 8 8 8 8 8 . . . . . 
+`, 50, 0, SpriteKind.Water, hose)
+})
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    hose.y += -10
+})
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Water, function (sprite, otherSprite) {
+    sprite.destroy()
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    hose.y += 10
+})
+scene.setBackgroundColor(1)
+hose = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . f f f . . . . . . . . . 
+. . . . . . f f f f f f . . . . 
+. . . . f f 2 2 . . . f f . . . 
+. . . . 2 2 2 2 2 2 . f f f . . 
+. . . . 2 2 2 2 2 2 . . f f f f 
+. . . . 2 1 1 1 1 2 . . . f f f 
+. . . . 2 1 1 1 1 2 . . . . . . 
+. . . . 2 1 1 1 1 2 . . . . . . 
+. . . . 2 1 1 1 1 2 . . . . . . 
+. . . . 2 1 1 1 1 2 . . . . . . 
+. . . . 2 1 1 1 1 2 . . . . . . 
+. . . . 2 1 1 1 1 2 . . . . . . 
+. . . . 2 2 2 2 2 2 . . . . . . 
+. . . . 2 2 2 2 2 2 . . . . . . 
+`, SpriteKind.Player)
+hose.x = 8
+info.setScore(0)
+info.startCountdown(60)
+game.onUpdate(function () {
+    
+})
+game.onUpdateInterval(1500, function () {
+    sprite = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . 2 2 2 . . . . . . . . 
+. . . . . 2 4 2 2 . . . . . . . 
+. . . . . 2 4 4 2 2 . . . . . . 
+. . . . 2 4 5 4 2 2 2 . . . . . 
+. . . . 2 4 5 5 4 2 2 2 . . . . 
+. . . 2 4 4 5 5 4 4 2 2 . . . . 
+. . 2 2 4 4 5 5 4 4 4 2 . . . . 
+. 2 2 2 4 5 5 5 5 4 4 2 2 2 . . 
+2 2 2 2 4 5 5 5 5 4 4 4 2 2 2 . 
+2 2 4 4 4 5 5 5 5 5 4 4 2 2 2 . 
+2 2 2 4 4 5 5 5 5 5 4 4 2 2 2 2 
+2 2 4 4 4 4 4 4 4 4 4 2 2 2 2 2 
+. 2 2 2 2 2 2 2 2 2 2 2 . . . . 
+. . . . 2 2 2 2 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, -10, 0, SpriteKind.Enemy)
+    sprite.setPosition(scene.screenWidth(), Math.randomRange(0, scene.screenHeight()))
 })
 ```
 
