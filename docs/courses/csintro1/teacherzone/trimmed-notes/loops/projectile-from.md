@@ -49,10 +49,10 @@ Use a loop and if creating many projectiles use ``||sprite:ghost on||``
 ### ~
 
 ### Solution: 
-https://makecode.com/_UAiartd0gHsL
+https://makecode.com/_J1T3YEJFAdFb
 
 ### Challenge Solution: 
-https://makecode.com/_C8Famb42tfmd
+https://makecode.com/_AckKRmR7m7Ja
 
 ## What did we learn?
 
