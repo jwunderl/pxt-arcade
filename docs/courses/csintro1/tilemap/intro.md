@@ -179,7 +179,7 @@ In this example, there is a new block being used: ``||scene:set tile to||``. Thi
 
 1. Start with the code from example #2
 2. Change the ``||scene:tilemap||`` image so that it displays "Hello World" instead of just "Word"
-3. **Challenge:** Create a new tile with an exclamation mark, and change the tilemap so that "Hello World!" is displayed
+3. **Challenge:** Create a new tile with an exclamation mark, and change the tilemap so that "Hello World**!**" is displayed
 
 ## Example #3: A brand new home
 
@@ -340,7 +340,7 @@ game.onUpdate(function () {
 })
 ```
 
-In this example, we have done a few new things; in particular, we have made a tilemap that is actually larger than the screen size by increasing the size within the image editor, and we've created a few tiles with ``||scene:wall||`` set to on - this means that the player won't be able to move through them.
+In this example, we have done a few new things; in particular, we have made a tilemap that is significantly larger than the screen size by increasing the size within the image editor, and we've created a few tiles with ``||scene:wall||`` set to on - this means that the player won't be able to move through them.
 
 The example tiles that are provided here are the following:
 * The black tile represents a wall
@@ -356,3 +356,17 @@ The example tiles that are provided here are the following:
 3. Add home furnishings around the house, by changing some of the white tiles to be some of the other provided tiles
 4. Create another tile with a different image, and place that tile around the house to personalize it
 5. **Challenge:** create two more tiles with different sprites, and place them around the house as well. 
+
+## What did we learn?
+
+1. What is the default size when you create a new tilemap? Does it perfectly match the screen size?
+
+### ~hint
+
+Open the tilemap from the first example in the image editor; it will give the dimensions of the tilemap in the bottom-left corner. When displayed on the screen, each tile in that tilemap will be a 16x16 square.
+
+As a reminder, the ``||scene:screen height||`` is 120 pixels, and the ``||scene:screen width||`` is 160 pixels.
+
+### ~
+
+2. When ``||scene:camera follow sprite||`` is set to follow a sprite, does that sprite always stay in the center of the screen, or are there times where it somewhere else on the screen? Explain how you know.

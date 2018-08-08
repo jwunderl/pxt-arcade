@@ -507,3 +507,17 @@ game.onUpdate(function () {
     controller.controlSprite(HomeOwner, 100, 100)
 })
 ```
+
+## What did we learn?
+
+1. What is the default size when you create a new tilemap? Does it perfectly match the screen size?
+2. When ``||scene:camera follow sprite||`` is set to follow a sprite, does that sprite always stay in the center of the screen, or are there times where it is off center?
+
+### ~hint
+
+Possible Solutions:
+
+1. The default size is 10x8. Because we know that each tile is shown on screen as a 16x16 square, this will result in a total map of size 160x128 - this is slightly taller than the screen size, so it won't be displayed fully on the screen.
+2. The camera does not center on the sprite if the sprite is near the edge of the tilemap - the sprite can move all the way up to the corner of the screen in that case.
+
+### ~

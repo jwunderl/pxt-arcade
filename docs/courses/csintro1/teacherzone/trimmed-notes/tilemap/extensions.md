@@ -216,5 +216,18 @@ princess.x = 928
 princess.ay = 100
 ```
 
-## TODO: What did we learn
+## What did we learn?
+
+1. How did using an extension impact the development of this platformer? What took up the largest portion of your time while doing this activity?
+2. How difficult was it to balance making your level interesting and still completable? Where there any portions of the level that you had to change in order to make the game playable?
+
+### ~hint
+
+Possible Solutions:
+
+1. Effectively any answer works here; "using an extension made it so I could focus on the level design without worrying about the gameplay as much yet" and "creating a level that is both hard and not impossible took some reworking / had to figure out how to put dangerous obstacles"
+2. "It was a bit harder than I expected to create a level that was interesting to players without being too hard" and "I had to move the obstacle away from the landing spot mid way through the level as it was too hard to avoid otherwise"
+
+### ~
+
 ## TODO: rubric

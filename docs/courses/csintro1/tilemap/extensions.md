@@ -97,4 +97,6 @@ The tilemap we are using is 64 tiles wide, and 8 tiles tall, with each tile bein
 5. Add an ``||scene:on sprite of kind player hits wall||`` for your green tile, so that the game ends (and the player loses) when the tile is hit
 
 ## What did we learn?
-### TODO
+
+1. How did using an extension impact the development of this platformer? What took up the most of your time while doing this activity?
+2. How difficult was it to balance making your level interesting and completable? Where there any portions of the level that you had to change in order to make the game playable?
