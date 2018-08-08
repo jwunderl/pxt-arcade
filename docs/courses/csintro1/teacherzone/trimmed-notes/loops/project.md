@@ -87,6 +87,7 @@ game.onUpdate(function () {
     ped.y += controller.dy(25)
 })
 ```
+
 ## [Extinguisher](https://makecode.com/_PMPcw19LtWyq)
 
 ```blocks
