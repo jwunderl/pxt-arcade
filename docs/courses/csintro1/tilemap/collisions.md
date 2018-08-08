@@ -179,7 +179,7 @@ golfBall.updateBackground(img`
 
 ### ~hint
 
-Notice how the ``||darts:change golfball background to image||`` block changes the game; try taking it out of the code and adding it back in. You can even try drawing an image for the background using the image editor!
+Notice how the ``||darts:change golfBall background to image||`` block changes the game; try taking it out of the code and adding it back in. You can even try drawing an image for the background using the image editor!
 
 ### ~
 
@@ -201,7 +201,7 @@ The golf ball will actually keep on moving! For example, if the wall is below th
 
 1. Start with the code from task #1
 2. Create an ``||scene:on sprite of kind hits wall||`` between the golf ball (kind ``||sprites:GolfBall||``) and the brown wall
-3. Inside of that event, use the ``||darts:stop golfBall||`` to force the golfball to stop in it's current position
+3. Inside of that event, use the ``||darts:stop golfBall||`` to force the golf ball to stop in it's current position
 4. Verify that the behavior is now fixed - that the golf ball correctly stops when it touches a wall
 
 ## Student Task #3: Make a real course
