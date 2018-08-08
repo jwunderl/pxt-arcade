@@ -9,6 +9,10 @@ In this activity, students will:
 
 ## Example #1a: Movement
 
+https://youtu.be/LGDwglUEb_8 
+
+[Alternative Video Location](https://aka.ms/40544a-function-redundant-example)
+
 1. Review the code below 
 2. Create the sample code and run the code
 3. Save the code for the example (name it "moveSprite")
@@ -113,6 +117,10 @@ mySprite.destroy()
 ```
 
 ## Student Task #1: Simplification
+https://youtu.be/m4AamaGjDoE 
+
+[Alternative Video Location](https://aka.ms/40544a-function-refactoring-task2a)
+
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create a function to replace the series of blocks that are repeated each time a projectile is made
@@ -203,6 +211,10 @@ game.over()
 ```
 
 ## Student Task #2: Events
+https://youtu.be/46mdlB941Yo 
+
+[Alternative Video Location](https://aka.ms/40544a-function-redundant-task2)
+
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create a function called "buttonPress" and copy over the behavior from the ``||controller:on A button pressed||`` event

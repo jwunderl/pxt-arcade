@@ -14,6 +14,10 @@ In this activity, student will be introduced to:
 
 Functions allow us to break up code into different sections. In doing so, we can separate distinct tasks, giving a distinct name for small tasks in your code.
 
+https://youtu.be/NsENrceOCDw 
+
+[Alternative Video Location](https://aka.ms/40544a-function-refactoring)
+
 ## Example #1a: Creating Sprites
 
 1. Review the code below 
@@ -157,6 +161,10 @@ Each function ends up being a chapter in the book with more details on what exac
 
 ## Student Task #1a: Make your own functions
 
+https://youtu.be/-50-av1tblc 
+
+[Alternative Video Location](https://aka.ms/40544a-function-refactoring-task1a)
+
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create 3 different functions, with names that describe different sections of the code.
@@ -210,6 +218,10 @@ info.startCountdown(10)
 ```
 
 ## Student Task #1b: Functions in Events
+
+https://youtu.be/lMLLUf4NQF0 
+
+[Alternative Video Location](https://aka.ms/40544a-physics-task-a) 
 
 Functions can be used throughout your code - not just in the ``||loops:on start||`` block. 
 
