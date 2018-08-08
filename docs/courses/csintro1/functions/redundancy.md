@@ -1,11 +1,13 @@
 # Activity: Reduce redundancy using functions
 
-Besides simplifying long sections of code, functions are also regularly used to reduce redundancy in code, similar to loops. Using functions, we can take code that is repeated in multiple locations, and keep it in one centralized location. That way, when there are changes needed or bugs found, the code can be updated in a single place, instead of in several (or a hundred different) locations.
+Besides simplifying long sections of code, functions are also regularly used to reduce redundancy in code, similar to loops. 
 
-In this activity, students will be introduced to:
-* reducing redundancy using functions
+Using functions, we can take code that is repeated in multiple locations, and keep it in one centralized location. That way, when there are changes needed or bugs found, the code can be updated in a single place, instead of in several (or a hundred different) locations.
 
-## Example #1: Movement
+In this activity, students will:
+* reduce redundancy using functions
+
+## Example #1a: Movement
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -58,9 +60,11 @@ mySprite.destroy()
 
 This code may seem like it's easy to simplify using loops at first, but there is a problem with that approach; each ``||sprites:say||`` block says something different!
 
-In this case, it is easier to use ``||functions:functions||`` to reduce redundancy; that way, we can capture the portions of the code that are repeated, without losing the details that are actually different. In this case, the ``||loops:pause||``, ``||sprites:movement||``, and ``||music:tone||`` all happen in the same order throughout the code, so putting those pieces into a function reduces that redundancy. If it is later decided that playing a tone of `Middle E` works better, then only one block needs to be changed in one location, instead of 3 different blocks.
+In this case, it is easier to use ``||functions:functions||`` to reduce redundancy; that way, we can capture the portions of the code **that are repeated**, without losing the details that are actually different. 
 
-## Example #2: Movement using functions
+In this case, the ``||loops:pause||``, ``||sprites:movement||``, and ``||music:tone||`` all happen in the same order throughout the code, so putting those pieces into a function reduces that redundancy. If it is later decided that playing a tone of `Middle E` works better, then only one block needs to be changed in one location, instead of 3 different blocks.
+
+## Example #1b: Movement using functions
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -120,7 +124,7 @@ The function should include 4 blocks that appear in the same order 3 separate ti
 ### ~
 
 4. Reduce the redundancy in the code using your newly created function, without changing the behavior of the game
-5. **Challenge:** Change the behavior of the game by making the projectiles move to the right across the screen, and by making the ``||music:play tone||`` block play a `Middle A` instead
+5. **Challenge:** Change the behavior of the game by making the projectiles move at twice the vx rate (from -20 to -40), and by making the ``||music:play tone||`` block play a `Middle A`.
 
 ```blocks
 enum SpriteKind {
@@ -194,6 +198,7 @@ projectile.y += -30
 pause(500)
 music.playTone(262, music.beat(BeatFraction.Half))
 pause(500)
+pause(2000)
 game.over()
 ```
 
