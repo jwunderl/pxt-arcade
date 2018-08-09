@@ -1,4 +1,4 @@
-# Activity: ## TODO figure out what this activity should be called / not really collisions based
+# Activity: Interactions
 
 To demonstrate some of the more advanced uses of a tilemap, students will implement their own game of mini golf using the darts extension covered in a previous lesson, similar to the game shown below
 

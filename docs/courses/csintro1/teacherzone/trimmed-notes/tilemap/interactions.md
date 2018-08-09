@@ -1,3 +1,4 @@
+# Activity: Interactions
 
 ### Finished example game from gif
 

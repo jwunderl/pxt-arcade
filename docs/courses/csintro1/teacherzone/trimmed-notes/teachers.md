@@ -57,7 +57,7 @@
 ## [Tilemap Teacher](/courses/csintro1/teacherzone/trimmed-notes/tilemap)
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/tilemap/intro)
-* [Collisions](/courses/csintro1/teacherzone/trimmed-notes/tilemap/collisions)
+* [Interactions](/courses/csintro1/teacherzone/trimmed-notes/tilemap/interactions)
 * [Using Corgi Extension](/courses/csintro1/teacherzone/trimmed-notes/tilemap/extensions)
 
 ## [Logic Teacher](/courses/csintro1/teacherzone/trimmed-notes/logic)
