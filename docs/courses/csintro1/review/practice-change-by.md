@@ -9,7 +9,7 @@ Have you ever wanted to make a computer count eggs for you? No? Well now you can
 
 ### ~hint
 
-``||sprite:change by||`` will always add the number you tell it to to the variable you specify. It might be tricky to decrease the number eggs at first, but consider what types of numbers you can add to make the total smaller.
+``||variables:change by||`` will always add the number you tell it to to the variable you specify. It might be tricky to decrease the number eggs at first, but consider what types of numbers you can add to make the total smaller.
 
 ### ~
 
