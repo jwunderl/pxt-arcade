@@ -100,3 +100,7 @@ The tilemap we are using is 64 tiles wide, and 8 tiles tall, with each tile bein
 
 1. How did using an extension impact the development of this platformer? What took up the most of your time while doing this activity?
 2. How difficult was it to balance making your level interesting and completable? Where there any portions of the level that you had to change in order to make the game playable?
+
+```package
+corgio=github:jwunderl/pxt-corgio#master
+```

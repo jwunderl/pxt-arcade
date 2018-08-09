@@ -77,6 +77,10 @@ mySprite = sprites.create(img`
 mySprite.setPosition(150, 110)
 ```
 
+```package
+darts=github:jwunderl/pxt-darts#master
+```
+
 Using extensions can reduce the number of things you have to worry about while writing your own game. In this case, you do not have to worry as much about algebra or calculus to be able to calculate and display the path a sprite will take; the extension **abstracts away** portions of the code that you may not be an expert in (but still want in order to make interesting games)
 
 ## Student Task #1: Build an Obstacle Course
