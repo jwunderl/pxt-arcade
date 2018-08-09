@@ -244,6 +244,8 @@ The ``||scene:set tile to||`` blocks allow us to personalize how the tile shows 
 2. Review the code below
 3. Copy the code below into your project and run it
 
+[NewHome project](https://makecode.com/_2X5PdkLjp5p5)
+
 ```blocks
 enum SpriteKind {
     Player,
