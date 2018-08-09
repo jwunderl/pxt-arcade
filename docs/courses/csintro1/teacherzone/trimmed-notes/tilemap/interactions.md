@@ -1,3 +1,4 @@
+# Activity: Interactions
 
 ### Finished example game from gif
 
@@ -859,4 +860,8 @@ hole = sprites.create(img`
 `, SpriteKind.Hole)
 hole.setPosition(960, 105)
 scene.cameraFollowSprite(golfBall.sprite)
+```
+
+```package
+darts=github:jwunderl/pxt-darts#master
 ```

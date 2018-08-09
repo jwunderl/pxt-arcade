@@ -16,10 +16,10 @@ We are not stuck with only the functions provided when you first open MakeCode. 
 ## Example #1: Using a package
 
 1. Open a new project (name it "soccer")
-2. Using the extensions menu, search for jwunderl/pxt-darts. Notice how a new section is added to the menu, above ``||game:Game||`` ### TODO change this if darts gets approved to just search by package name
+2. Using the extensions menu, search for "darts" (or the full package location at github.com/jwunderl/pxt-darts). Notice how a new section is added to the menu, above ``||game:Game||``
 3. Review the example code below, and either recreate it or build something similar
 
-## TODO: Make gif showing opening darts package when darts gets approved or not
+![Finding Dart Extension](/static/courses/csintro1/functions/finding-darts.gif)
 
 ```blocks
 enum SpriteKind {
@@ -77,7 +77,9 @@ mySprite = sprites.create(img`
 mySprite.setPosition(150, 110)
 ```
 
-### TODO See if there is a way to share example code with it still showing up as blocks when using extensions
+```package
+darts=github:jwunderl/pxt-darts#master
+```
 
 Using extensions can reduce the number of things you have to worry about while writing your own game. In this case, you do not have to worry as much about algebra or calculus to be able to calculate and display the path a sprite will take; the extension **abstracts away** portions of the code that you may not be an expert in (but still want in order to make interesting games)
 

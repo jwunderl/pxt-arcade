@@ -5,5 +5,5 @@
 ## Tilemap
 
 * [Intro](/courses/csintro1/tilemap/intro)
-* [Collisions](/courses/csintro1/tilemap/collisions)
+* [Interactions](/courses/csintro1/tilemap/interactions)
 * [Using Corgi Extension](/courses/csintro1/tilemap/extensions)

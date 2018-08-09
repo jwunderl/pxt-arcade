@@ -43,7 +43,7 @@ myCorg.addToScript("sit")
 
 ## Student Task #2: Creating a side scroller
 
-```
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -231,3 +231,7 @@ Possible Solutions:
 ### ~
 
 ## TODO: rubric
+
+```package
+corgio=github:jwunderl/pxt-corgio#master
+```

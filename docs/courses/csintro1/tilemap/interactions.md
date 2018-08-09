@@ -1,4 +1,4 @@
-# Activity: ## TODO figure out what this activity should be called / not really collisions based
+# Activity: Interactions
 
 To demonstrate some of the more advanced uses of a tilemap, students will implement their own game of mini golf using the darts extension covered in a previous lesson, similar to the game shown below
 
@@ -213,3 +213,7 @@ Now that we have a functioning game of mini golf, we should make an interesting 
 3. Open the image from the ``||scene:set tile map to||`` block, increase the size of the image to 64x8, and add brown walls to create your own unique mini golf course
 4. Move the flag's ``||sprites:x||`` coordinate to 960 - this will be closer to the end of this new tilemap
 5. Use the ``||scene:camera follow sprite||`` and ``||darts:myDart sprite||`` blocks to make it so the camera follows the golf ball as it moves across the screen
+
+```package
+darts=github:jwunderl/pxt-darts#master
+```
