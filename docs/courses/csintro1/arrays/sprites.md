@@ -36,7 +36,7 @@ sprites.onCreated(SpriteKind.WindMill, function (sprite) {
 `)
     fan.z = 1
     sprite.z = 0
-    fan.setPosition(sprite.x, sprite.y - 8)
+    fan.setPosition(sprite.x, sprite.y - sprite.height / 2)
 })
 straight = img`
 . . . . . . . . . . . . . . . . 
