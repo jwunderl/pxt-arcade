@@ -6,9 +6,15 @@
 
 Student creations for this section will vary, but should all closely resemble example #1 with a different drawing on it.
 
-## Example #2: Words!
+### Example #2: Creating tiles in a tilemap
 
-## Student Task #2: Hello World!
+## Student Task #2: Add tile to tilemap
+
+Student solution similar to the [student example given](https://makecode.com/_5RhYt8JrqP55)  - Student should have individual modifications.
+
+## Example #3: Words!
+
+## Student Task #3: Hello World!
 
 ### Standard:
 
@@ -314,9 +320,9 @@ f f f f f f f f f f f f f f f f
 `)
 ```
 
-## Example #3: A brand new home
+## Example #4: A brand new home
 
-## Student Task #3: Decorate and move around the house
+## Student Task #4: Decorate and move around the house
 
 ### Standard:
 

@@ -14,11 +14,10 @@ A ``|scene:tilemap|`` is called a "Map" because it "maps" a tilemap color to ima
 
 # TODO Video Tilemap
 
-## Example #1: Making a tilemap
+### Example #1: Making a tilemap
 
-1. Make a new project (name it "smiley")
-2. Review the code below
-3. Copy the code below into your project and run it
+1. Review the code below
+2. Copy the code below into your project and run it
 
 ```blocks
 scene.setTileMap(img`
@@ -38,9 +37,53 @@ In this example, we have used ``||scene:set tilemap to||`` to set the tilemap to
 ## Student Task #1: Personalized Tilemap
 
 1. Start with example #1
-2. Modify the image to create a tilemap of your creation
+2. **Modify** the image to create a tilemap of your creation (name it "intro tilemap 1")
 
-## Example #2: Words!
+### Example #2: Creating tiles in a tilemap
+
+#TODO Video using tiles in a tilemap
+
+1. Review the code below
+2. Copy the code below into your project and run it
+
+```blocks
+scene.setTileMap(img`
+1 1 1 1 1 1 1 1 1 1 
+1 1 1 5 1 1 5 1 1 1 
+1 1 1 5 1 1 5 1 1 1 
+1 1 1 1 1 1 1 1 1 1 
+1 1 5 1 1 1 1 5 1 1 
+1 1 1 5 5 5 5 1 1 1 
+1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 
+`)
+scene.setTile(5, img`
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 5 a a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 a a a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 a a a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 a a a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 a a a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 a a a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 a a a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 a a a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 a a a 
+5 5 5 6 6 6 6 6 6 6 6 6 6 a a a 
+5 5 5 a a a a a a a a a a a a a 
+5 5 a a a a a a a a a a a a a a 
+5 a a a a a a a a a a a a a a a 
+`)
+```
+
+
+## Student Task #2: Add tile to tilemap
+
+1. Start with your "intro tilemap 1" code and name "tile in tilemap"
+2. **Modify** the code to include a tile image that is used in the tilemap
+
+### Example #3: Words!
 
 1. Make a new project (name it "tilemapWords")
 2. Review the code below
@@ -189,13 +232,13 @@ In this example, there is a new block being used: ``||scene:set tile to||``
 
 The ``||scene:set tile to||`` blocks allow us to personalize how the tile shows up on the screen. Here, we have created a few images containing letters of the alphabet, assigned to different color tiles, with ``||scene:set tilemap to||`` set to create a tilemap with the tiles necessary to display "word" on the background.
 
-## Student Task #2: Hello World!
+## Student Task #3: Hello World!
 
 1. Start with the code from example #2
 2. Change the ``||scene:tilemap||`` image so that it displays "Hello World" instead of just "Word"
 3. **Challenge:** Create a new tile with an exclamation mark, and change the tilemap so that "Hello World**!**" is displayed
 
-## Example #3: A brand new home
+### Example #4: A brand new home
 
 1. Make a new project (name it "newHome")
 2. Review the code below
@@ -367,7 +410,7 @@ The example tiles that are provided here are the following:
 * The orange tile represents a table
 * The purple tile represents a rug
 
-## Student Task #3: Decorate and move around the house
+## Student Task #4: Decorate and move around the house
 
 1. Start with the code from example #3
 2. Make the camera follow the sprite by adding the ``||scene:camera follow sprite||`` block to the ``||loops:on start||`` block and set it to follow the ``||variables:homeOwner||``
