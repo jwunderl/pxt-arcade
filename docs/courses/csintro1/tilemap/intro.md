@@ -1,6 +1,18 @@
 # Tile Map
 
-Maps and levels form the basis of many of the most common types of videogames; they allow a location for the games story to progress, and for the player to explore. In MakeCode Arcade, ``||scene:tilemaps||`` provide an easy way to design two dimensional maps.
+Maps and levels form the basis of many of the most common types of video games; they allow a location for the games story to progress, and for the player to explore. 
+
+In MakeCode Arcade, ``||scene:tilemaps||`` provide an easy way to design two dimensional maps.
+
+## Concept: editing a tilemap
+
+The tilemap uses an image to represent a game space that is often much larger than the visible game screen. 
+
+Each pixel in a tilemap image translates to and area of 16x16 pixels on the 150x120 pixel game screen.  
+
+A ``|scene:tilemap|`` is called a "Map" because it "maps" a tilemap color to image that is stored as a tile.
+
+# TODO Video Tilemap
 
 ## Example #1: Making a tilemap
 
@@ -173,7 +185,9 @@ f f f f f f f f f f f f f f f f
 `)
 ```
 
-In this example, there is a new block being used: ``||scene:set tile to||``. This blocks allow us to personalize how the tile shows up on the screen. In this case, we have created a few images containing letters of the alphabet, assigned to different color tiles, with ``||scene:set tilemap to||`` set to create a tilemap with the tiles necessary to display "word" on the background.
+In this example, there is a new block being used: ``||scene:set tile to||``
+
+The ``||scene:set tile to||`` blocks allow us to personalize how the tile shows up on the screen. Here, we have created a few images containing letters of the alphabet, assigned to different color tiles, with ``||scene:set tilemap to||`` set to create a tilemap with the tiles necessary to display "word" on the background.
 
 ## Student Task #2: Hello World!
 
@@ -340,7 +354,11 @@ game.onUpdate(function () {
 })
 ```
 
-In this example, we have done a few new things; in particular, we have made a tilemap that is significantly larger than the screen size by increasing the size within the image editor, and we've created a few tiles with ``||scene:wall||`` set to on - this means that the player won't be able to move through them.
+For the "newHome" example, we have made a tilemap that is significantly larger than the screen size by increasing the size to 32x32 within the ``||scene:tilemap||`` image editor.
+
+![image: tilemap editor](/static/courses/csintro1/tilemap/tilemap-editor.png)
+
+ We've created a few tiles with ``||scene:wall||`` set to on - this means that the player won't be able to move through them.
 
 The example tiles that are provided here are the following:
 * The black tile represents a wall
