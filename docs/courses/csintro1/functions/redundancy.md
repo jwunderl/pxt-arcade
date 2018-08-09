@@ -9,10 +9,9 @@ In this activity, students will:
 
 ## Example #1a: Movement
 
-https://youtu.be/LGDwglUEb_8 
+https://youtu.be/NsENrceOCDw 
 
-[Alternative Video Location](https://aka.ms/40544a-function-redundant-example)
-
+[Alternative Video Location](https://aka.ms/40544a-function-refactoring)
 1. Review the code below 
 2. Create the sample code and run the code
 3. Save the code for the example (name it "moveSprite")
@@ -117,9 +116,10 @@ mySprite.destroy()
 ```
 
 ## Student Task #1: Simplification
-https://youtu.be/m4AamaGjDoE 
 
-[Alternative Video Location](https://aka.ms/40544a-function-refactoring-task2a)
+https://youtu.be/-50-av1tblc 
+
+[Alternative Video Location](https://aka.ms/40544a-function-refactoring-task1a)
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -211,9 +211,10 @@ game.over()
 ```
 
 ## Student Task #2: Events
-https://youtu.be/46mdlB941Yo 
+https://youtu.be/m4AamaGjDoE 
 
-[Alternative Video Location](https://aka.ms/40544a-function-redundant-task2)
+[Alternative Video Location](https://aka.ms/40544a-function-refactoring-task2a)
+
 
 1. Review the code below 
 2. Create the sample code and run the code
