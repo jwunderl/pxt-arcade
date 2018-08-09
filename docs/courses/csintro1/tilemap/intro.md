@@ -1,6 +1,6 @@
 # Tile Map
 
-Maps and levels form the basis of many of the most common types of video games; they allow a location for the games story to progress, and for the player to explore. 
+Maps and levels form the basis of many of the most common types of video games; they allow a canvas for the games story to progress, and for the player to explore. 
 
 In MakeCode Arcade, ``||scene:tilemaps||`` provide an easy way to design two dimensional maps.
 
