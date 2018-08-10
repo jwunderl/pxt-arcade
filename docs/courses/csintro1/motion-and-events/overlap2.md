@@ -1,6 +1,8 @@
 # Activity: Sprite Overlap & Events - Part 2
 
-We use ``||sprites:Kind||`` to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." In the activity, all "Cloud" ``||sprites:Kind||``'s respond with the same action when overlapped with a `Helicopter` ``||sprites:Kind||``. 
+We use ``||sprites:Kind||`` to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." 
+
+In the previous activity, all "Cloud" ``||sprites:Kind||``'s respond with the same action when overlapped with a Helicopter ``||sprites:Kind||``. 
 
 By making several cloud shaped sprites with the same ``||sprites:Kind||`` of `Cloud`, we write code to so all ``||sprites:Kind||`` `Cloud` interact in the same way with a ``||sprites:Kind||`` `Helicopter` overlap event.
 

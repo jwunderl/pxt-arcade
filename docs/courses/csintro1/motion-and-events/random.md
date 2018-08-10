@@ -1,5 +1,7 @@
 # Activity: Random Sprite Location
 
+Random numbers provide the element of chance to our games that make them look and feel more natural.  They can also provide surprises and introduce elements of "good" or "bad" luck.
+
 In this activity, students will be introduced to: 
 *  ``||math:pick random||`` to generate random numbers
 * Setting random sprite positions
