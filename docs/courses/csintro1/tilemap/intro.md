@@ -12,9 +12,11 @@ Each pixel in a tilemap image translates to and area of 16x16 pixels on the 150x
 
 A ``|scene:tilemap|`` is called a "Map" because it "maps" a tilemap color to image that is stored as a tile.
 
-# TODO Video Tilemap
-
 ### Example #1: Making a tilemap
+
+https://youtu.be/eBLl_sQ2bGU 
+
+[Alternative Video Location](https://aka.ms/40544a-intro-tilemap) 
 
 1. Review the code below
 2. Copy the code below into your project and run it
@@ -41,7 +43,9 @@ In this example, we have used ``||scene:set tilemap to||`` to set the tilemap to
 
 ### Example #2: Creating tiles in a tilemap
 
-#TODO Video using tiles in a tilemap
+https://youtu.be/S2fHt1qqCYY 
+
+[Alternative Video Location](https://aka.ms/40544a-tile-in-tilemap) 
 
 1. Review the code below
 2. Copy the code below into your project and run it
@@ -84,6 +88,10 @@ scene.setTile(5, img`
 2. **Modify** the code to include a tile image that is used in the tilemap
 
 ### Example #3: Words!
+
+https://youtu.be/bqU8zBSoKl4 
+
+[Alternative Video Location](https://aka.ms/40544a-tile-words )
 
 1. Make a new project (name it "tilemapWords")
 2. Review the code below
@@ -239,6 +247,10 @@ The ``||scene:set tile to||`` blocks allow us to personalize how the tile shows 
 3. **Challenge:** Create a new tile with an exclamation mark, and change the tilemap so that "Hello World**!**" is displayed
 
 ### Example #4: A brand new home
+
+https://youtu.be/YHYBQ03ecOk 
+
+[Alternative Video Location](https://aka.ms/40544a-tilemap-home )
 
 1. Make a new project (name it "newHome")
 2. Review the code below
