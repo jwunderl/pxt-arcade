@@ -250,7 +250,7 @@ let mySprite: Sprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-# Student Task #4: Image Flip with motion
+## Student Task #4: Image Flip with motion
 
 1. Start with Motion (short method) example above or similar code
 2. Make your own image move using the `up`, `down`, `left`, `right` buttons on the controller
