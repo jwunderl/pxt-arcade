@@ -1,12 +1,13 @@
 # Activity: Interactions
 
-To demonstrate some of the more advanced uses of a tilemap, students will implement their own game of mini golf using the darts extension covered in a previous lesson, similar to the game shown below
+To demonstrate some of the more uses of a tile map, students will implement their own game of mini golf using the darts extension covered in a previous function extensions lesson, similar to the game shown below
 
 ![Mini golf example game](/static/courses/csintro1/tilemap/mini-golf.gif)
 
-In this activity, students will:
-
-...
+In this activity, students will use: 
+* ``||scene:set tile to||``
+* ``||scene:on sprite of kind hits wall||``
+* ``||scene:set tile map to  ||``
 
 ## Example #1: Creating a course
 
@@ -195,7 +196,11 @@ Play around with the game for a bit; what happens when you hit a wall? Try and l
 
 ## Golf Ball Momentum
 
-The golf ball will actually keep on moving! For example, if the wall is below the ball, it will still move horizontally and maintain it's speed. This doesn't work so well for our game; the golf ball will continue to roll after it collides with the wall, and after the first shot, you won't see the trace of the path the ball will go on for any future shots. We can fix this using the ``||scene:on sprite of kind hits wall||`` block, which creates an event that occurs whenever the given sprite touches the given wall tile.
+The golf ball will keep on moving! For example, if the wall is below the ball, it will still move horizontally and maintain it's speed. 
+
+When the golf ball continues to roll forever after it collides with the wall, that doesn't work for our game. 
+
+We can stop the ball when it strikes a wall and fix this using the ``||scene:on sprite of kind hits wall||`` block, which creates an event that occurs whenever the given sprite touches the given wall tile.
 
 ## Student Task #2: Make it stop
 
@@ -211,9 +216,14 @@ Now that we have a functioning game of mini golf, we should make an interesting 
 1. Start with the code from task #2
 2. Remove the walls that are currently on the right side of the image
 3. Open the image from the ``||scene:set tile map to||`` block, increase the size of the image to 64x8, and add brown walls to create your own unique mini golf course
-4. Move the flag's ``||sprites:x||`` coordinate to 960 - this will be closer to the end of this new tilemap
+4. Move the flag's ``||sprites:x||`` coordinate to 960 - this will be closer to the end of this new tile map
 5. Use the ``||scene:camera follow sprite||`` and ``||darts:myDart sprite||`` blocks to make it so the camera follows the golf ball as it moves across the screen
 
 ```package
 darts=github:jwunderl/pxt-darts#master
 ```
+
+## What did we learn? 
+
+1. Describe how the ability to generate a random value can make a game more interesting and/or challenging.
+2. Make a hypothesis of a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random would be needed.

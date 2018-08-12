@@ -2,17 +2,17 @@
 
 Maps and levels form the basis of many of the most common types of video games; they allow a canvas for the games story to progress, and for the player to explore. 
 
-In MakeCode Arcade, ``||scene:tilemaps||`` provide an easy way to design two dimensional maps.
+In MakeCode Arcade, ``||scene:tile maps||`` provide an easy way to design two dimensional maps.
 
-## Concept: editing a tilemap
+## Concept: editing a tile map
 
-The tilemap uses an image to represent a game space that is often much larger than the visible game screen. 
+The tile map uses an image to represent a game space that is often much larger than the visible game screen. 
 
-Each pixel in a tilemap image translates to and area of 16x16 pixels on the 150x120 pixel game screen.  
+Each pixel in a tile map image translates to and area of 16x16 pixels on the 150x120 pixel game screen.  
 
-A ``|scene:tilemap|`` is called a "Map" because it "maps" a tilemap color to image that is stored as a tile.
+A ``|scene:tile map|`` is called a "Map" because it "maps" a tile map color to image that is stored as a tile.
 
-### Example #1: Making a tilemap
+### Example #1: Making a tile map
 
 https://youtu.be/eBLl_sQ2bGU 
 
@@ -34,14 +34,14 @@ scene.setTileMap(img`
 `)
 ```
 
-In this example, we have used ``||scene:set tilemap to||`` to set the tilemap to an image of a smile; the smile shows up on the screen, effectively replacing the standard black background.
+In this example, we have used ``||scene:set tile map to||`` to set the tile map to an image of a smile; the smile shows up on the screen, effectively replacing the standard black background.
 
-## Student Task #1: Personalized Tilemap
+## Student Task #1: Personalized tile map
 
 1. Start with example #1
-2. **Modify** the image to create a tilemap of your creation (name it "intro tilemap 1")
+2. **Modify** the image to create a tile map of your creation (name it "intro tile map 1")
 
-### Example #2: Creating tiles in a tilemap
+### Example #2: Creating tiles in a tile map
 
 https://youtu.be/S2fHt1qqCYY 
 
@@ -82,10 +82,10 @@ scene.setTile(5, img`
 ```
 
 
-## Student Task #2: Add tile to tilemap
+## Student Task #2: Add tile to tile map
 
-1. Start with your "intro tilemap 1" code and name "tile in tilemap"
-2. **Modify** the code to include a tile image that is used in the tilemap
+1. Start with your "intro tile map 1" code and name "tile in tile map"
+2. **Modify** the code to include a tile image that is used in the tile map
 
 ### Example #3: Words!
 
@@ -238,13 +238,13 @@ f f f f f f f f f f f f f f f f
 
 In this example, there is a new block being used: ``||scene:set tile to||``
 
-The ``||scene:set tile to||`` blocks allow us to personalize how the tile shows up on the screen. Here, we have created a few images containing letters of the alphabet, assigned to different color tiles, with ``||scene:set tilemap to||`` set to create a tilemap with the tiles necessary to display "word" on the background.
+The ``||scene:set tile to||`` blocks allow us to personalize how the tile shows up on the screen. Here, we have created a few images containing letters of the alphabet, assigned to different color tiles, with ``||scene:set tile map to||`` set to create a tile map with the tiles necessary to display "word" on the background.
 
 ## Student Task #3: Hello World!
 
 1. Start with the code from example #2
-2. Change the ``||scene:tilemap||`` image so that it displays "Hello World" instead of just "Word"
-3. **Challenge:** Create a new tile with an exclamation mark, and change the tilemap so that "Hello World**!**" is displayed
+2. Change the ``||scene:tile map||`` image so that it displays "Hello World" instead of just "Word"
+3. **Challenge:** Create a new tile with an exclamation mark, and change the tile map so that "Hello World**!**" is displayed
 
 ### Example #4: A brand new home
 
@@ -411,9 +411,9 @@ game.onUpdate(function () {
 })
 ```
 
-For the "newHome" example, we have made a tilemap that is significantly larger than the screen size by increasing the size to 32x32 within the ``||scene:tilemap||`` image editor.
+For the "newHome" example, we have made a tile map that is significantly larger than the screen size by increasing the size to 32x32 within the ``||scene:tile map||`` image editor.
 
-![image: tilemap editor](/static/courses/csintro1/tilemap/tilemap-editor.png)
+![image: tile map editor](/static/courses/csintro1/tilemap/tilemap-editor.png)
 
  We've created a few tiles with ``||scene:wall||`` set to on - this means that the player won't be able to move through them.
 
@@ -434,11 +434,11 @@ The example tiles that are provided here are the following:
 
 ## What did we learn?
 
-1. What is the default size when you create a new tilemap? Does it perfectly match the screen size?
+1. What is the default size when you create a new tile map? Does it perfectly match the screen size?
 
 ### ~hint
 
-Open the tilemap from the first example in the image editor; it will give the dimensions of the tilemap in the bottom-left corner. When displayed on the screen, each tile in that tilemap will be a 16x16 square.
+Open the tile map from the first example in the image editor; it will give the dimensions of the tile map in the bottom-left corner. When displayed on the screen, each tile in that tile map will be a 16x16 square.
 
 As a reminder, the ``||scene:screen height||`` is 120 pixels, and the ``||scene:screen width||`` is 160 pixels.
 
