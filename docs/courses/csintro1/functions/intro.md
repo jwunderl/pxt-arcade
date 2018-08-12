@@ -85,8 +85,6 @@ In the next examples, we will simplify the ``||loops:on start||`` code by splitt
 
 ## Example #1b: Creating Sprites (with functions)
 
-### TODO: Video of this example
-
 1. Review the code below 
 2. Create the sample code and run the code
 3. Save the code for the example (name it "placeSpritesWithFunctions")
