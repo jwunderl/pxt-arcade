@@ -1,128 +1,101 @@
-# Activity: Boolean Statements
+# Activity: Boolean Statements and Expressions
 
-TODO: Play music with conditionals and update life and/or score, button event, direction facing up
-Possible targets
+In the previous lesson, we saw how ``||logic:if||`` and ``||else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers. These statements are centered around **boolean logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. These expressions are evaluated to values, and can be stored and used as `boolean` variables, just like Sprites, numbers, and strings.
 
-In these activities students will work with: 
-* ``||sprites:is facing||``
-* ``||sprites:showing animation||``
-* ``||sprites:overlaps with||``
-* ``||controller:is button pressed||``
-* ``||controller:was button pressed||``
-* ``||scene:tile color colliding with||``
-* ``||logic:and||``
-* ``||logic:or||``
+In these activities students will work with:
+* boolean flags and values
+* ``||logic:and||`` & ``||logic:or||``
 * ``||logic:not||``
 
-# TODO: Create overview Video covering (list items above mostly).  Provide high level script outline.
+## Concept: Boolean Flags
 
+Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe variables as "boolean flags" - these often are used to turn on (and off) different behaviors that might be useful. For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen.
 
-## Concept: Sprite Boolean Functions (Methods)
-
-## Vocabulary: Boolean Method 
-TODO
-# TODO: Create Video covering (list items above mostly).  Provide high level script outline.
-
-Start with the following Turtle commands:  
-* Forward *(steps)*  
-* Turn *(degrees)*  
-* Pen Down and Pen Up  
-* Set pen color  
-* Set Position *(x,y)*  
-
-## Example: [Simple example 1]
-1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
-
-```blocks  
-// simple code here
-```  
-
-### ~hint
-**Teacher Note**
-TODO: These notes get removed for students and go to teacher guide so use exact format - think of advice on how the teacher might help un-stick students or reenforce concept.  A question you might pose.  "Ask students: What happens to the old value when we re-assign a new number to the lives? (Answer: it is destroyed and replaced with new assigned value)"  can use markdown lists here.
-### ~
-
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
-
-```blocks
-// :solution
-
-/* example of a full solution that the teacher can use
-comments are good!
-we need the solution / end-solution tags so we can remove this for student version
-*/ 
-// :end-solution
-```
-
-## Concept: [concept 2 -another item form the list]
-
-# TODO: might need a short video here 
-
-[line or two of high level concept]
-
-## Example: simple example 2 
+## Example #1: Are you hungry?
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
+3. Identify what needs to be done in game to ``||game:splash||`` "You're hungry!", and what needs to be done to ``||game:splash||`` "You're not hungry!"
 
-```blocks  
-// simple code here
-```  
+```blocks
+let isHungry = false
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (isHungry) {
+        game.splash("You're hungry!")
+    } else {
+        game.splash("You're not hungry!")
+    }
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    isHungry = true
+})
+game.splash("Press A if you are hungry!")
+isHungry = false
+```
 
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
+In this example, ``||variables:isHungry||`` is a flag that will change the behavior of the ``||controller:on B button pressed||`` event. When it is off (set tofalse), the game assumes that you are not hungry; when you turn it on (set to true), though, it tells the game that you **are** hungry, and it reacts to this information.
+
+## Student Task #1: Off and on
+
+1. Start with the code from example #1
+2. Modify the ``||controller:on A button pressed||`` event so that it **switches** the value of ``||variables:isHungry||``, rather than always just setting it to true, by using an ``||logic:if else||`` block
+3. **Challenge:** rather than use an ``||logic:if else||`` block, use the ``||logic:not||`` block to flip ``||isHungry||`` on and off
 
 ### ~hint
 
- // Hint to student
- 
+For the challenge: the ``||logic:not||`` block **negates** whatever value is passed to it - if you pass in ``||variables:value||`` with value set to false, it will become true, and if value is set to true, it will become false.
+
 ### ~
 
+## Concept: ``||logic:and||`` & ``||logic:or||``
+
+Beyond just using a single boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are very similar to the definition in plain english; for example, the statement
+
+> If I have food in the pantry and I am hungry, I will make lunch
+
+means that if **both**conditions (there being food in the pantry, and me being hungry) are true, then lunch will be made. If either is false, though, no lunch will be made. Similarly, the statement
+
+> If I need to buy milk or I need to buy eggs, I will go to the store
+
+means that if **either** condition is true, I will go to the store. If I don't need to buy milk and I also don't need to buy eggs, then I will not end up going to the store.
+
+## Example #2a: ``||logic:and||``
+
+1. Review the code below
+2. Create the sample code and run the code
+3. Identify which combinations of true and false evaluate to true, and which evaluate to false
+
 ```blocks
+if (true && true) game.splash("true and true is true")
+else game.splash("true and true is false")
 
-// :solution
+if (true && false) game.splash("true and false is true")
+else game.splash("true and false is false")
 
-/* example of a full solution that the teacher can use - good to follow on previous solution but not required
-comments are good!
-we need the solution / end-solution tags so we can remove this for student version
-*/
-
-// :end-solution
+if (false && false) game.splash("false and false is true")
+else game.splash("false and false is false")
 ```
 
-## What did we learn? [create 2 questions]
+## Example #2b: ``||logic:or||``
 
-1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
-2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
-3. [Come up with a question of your choice]
+1. Review the code below
+2. Create the sample code and run the code
+3. Identify which combinations of true or false evaluate to true, and which evaluate to false
 
+```blocks
+if (true || true) game.splash("true or true is true")
+else game.splash("true or true is false")
 
-## Rubrics
+if (true || false) game.splash("true or false is true")
+else game.splash("true or false is false")
 
+if (false || false) game.splash("false or false is true")
+else game.splash("false or false is false")
+```
 
-### Boolean task rubric [TODO]
+## Student Task #2: Using ``||logic:and||`` and ``||logic:or||``
 
-|   | 5 | 7 | 9 | 10 |
-|:---:|:---:|:---:|:---:|:---:|
-| Turtle  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric [TODO review based on number of questions]
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10 
+1. Create a new project
+2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
+3. In the ``||game:on game update||`` block, add an ``||logic:if||`` statement that makes the sprite ``||sprites:say||`` "hello" for 200 ms. Use ``||logic:and||`` to make this happen when the ``||sprites:sprite x||`` **and** ``||sprites:sprite y||`` values are both less than 30
+4. In the ``||game:on game update||`` block, add another ``||logic:if||`` statement that makes the sprite ``|sprites:say||`` "bye" for 200 ms when the ``||sprites:sprite x||`` **or** the ``||sprites:sprite y||`` is greater than 80
