@@ -164,7 +164,7 @@ The last part (`i++`) is a short way to write increase `i` by 1.
 
 Overall, this is challenging code to read the first time.  Students should know that they will become competent at reading and writing this type of code if they complete unit 2 of the course.
 
-### ~hint
+### ~
 
 ## Student Task 3: Boomerang
 
