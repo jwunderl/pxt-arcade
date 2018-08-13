@@ -53,7 +53,7 @@ Beyond just using a single boolean value, there are several ways in which we can
 
 > If I have food in the pantry and I am hungry, I will make lunch
 
-means that if **both**conditions (there being food in the pantry, and me being hungry) are true, then lunch will be made. If either is false, though, no lunch will be made. Similarly, the statement
+means that if **both** conditions (there being food in the pantry, and me being hungry) are true, then lunch will be made. If either is false, though, no lunch will be made. Similarly, the statement
 
 > If I need to buy milk or I need to buy eggs, I will go to the store
 
