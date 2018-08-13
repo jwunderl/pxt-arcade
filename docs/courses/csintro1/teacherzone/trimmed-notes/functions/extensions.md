@@ -265,12 +265,21 @@ princess2.setPosition(140, 50)
 
 ## Example #2: Spawn a single bird
 
+[Completed example](https://makecode.com/_1YWPhJVAFMkx)
 
 ## Student Task #2: Making the stars go by
 
 ### Standard:
 
-https://makecode.com/_eVbAWWWHigdi
+[standard extension code](https://makecode.com/_3Ku5qeiwed0x)
+
+[using standard extension](https://makecode.com/_76t872Ro26yu)
+
+[challenge extension](https://makecode.com/_CvyMEtEsxith)
+
+[using challenge extension](https://makecode.com/_Frc5AHcmzW3u)
+
+Extension code
 
 ```blocks
 enum SpriteKind {
@@ -302,61 +311,6 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-### Challenge:
-
-https://makecode.com/_EqEXRp2pRbcJ
-
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let projectile: Sprite = null
-game.onUpdateInterval(500, function () {
-    projectile = sprites.createProjectile(img`
-. . . . . 1 . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, Math.randomRange(-90, -30), 0, SpriteKind.Player)
-    projectile.y = Math.randomRange(0, scene.screenHeight())
-    projectile.setFlag(SpriteFlag.Ghost, true)
-})
-game.onUpdateInterval(2000, function () {
-    projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . c c c . . . . . . 
-. . . . . . a b a a . . . . . . 
-. . . . . c b a f c a c . . . . 
-. . . . c b b b f f a c c . . . 
-. . . . b b f a b b a a c . . . 
-. . . . c b f f b a f c a . . . 
-. . . . . c a a c b b a . . . . 
-. . . . . . c c c c . . . . . . 
-. . . . . . . c . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, Math.randomRange(-90, -30), 0, SpriteKind.Player)
-    projectile.y = Math.randomRange(0, scene.screenHeight())
-    projectile.setFlag(SpriteFlag.Ghost, true)
-})
-```
 
 ## What did we learn?
 
@@ -367,7 +321,7 @@ game.onUpdateInterval(2000, function () {
 
 Possible answers:
 
-1. Sharing and importing code can make it so people can work on different parts of the code on their own before bringing it all together. Importing the code could make it easier to keep things up to date.
+1. Sharing and importing code can make it so individuals can work on different parts of the code on their own before bringing it all together. Importing the code could make it easier to keep things up to date.
 2. Importing the code helps keep things separated - you don't have to clog up your working area / space with a lot of unrelated content. Easier to update sections of the code as things are changed.
 
 ### ~
