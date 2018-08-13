@@ -64,6 +64,7 @@
 
 ## [Logic](/courses/csintro1/logic)
 
+* [Introduction](/courses/csintro1/logic/intro)
 * [Conditionals](/courses/csintro1/logic/conditions)
 * [Booleans](/courses/csintro1/logic/booleans)
 * [Validating User Input](/courses/csintro1/logic/user-input)
@@ -138,6 +139,7 @@
 
 ## [Logic Teacher](/courses/csintro1/teacherzone/trimmed-notes/logic)
 
+* [Introduction](/courses/csintro1/teacherzone/trimmed-notes/logic/intro)
 * [Conditionals](/courses/csintro1/teacherzone/trimmed-notes/logic/conditions)
 * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
 * [Validating User Input](/courses/csintro1/teacherzone/trimmed-notes/logic/user-input)

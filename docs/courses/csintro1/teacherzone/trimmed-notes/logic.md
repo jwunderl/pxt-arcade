@@ -1,5 +1,6 @@
 ## Logic Teacher
 
+* [Introduction](/courses/csintro1/teacherzone/trimmed-notes/logic/intro)
 * [Conditionals](/courses/csintro1/teacherzone/trimmed-notes/logic/conditions)
 * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
 * [Validating User Input](/courses/csintro1/teacherzone/trimmed-notes/logic/user-input)
