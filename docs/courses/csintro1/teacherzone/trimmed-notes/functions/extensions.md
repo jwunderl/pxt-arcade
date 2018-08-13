@@ -4,11 +4,13 @@
 
 ## Example #1: Using a package
 
+
+
 ## Student Task #1:  Build an Obstacle Course
 
 ### Standard:
 
-https://makecode.com/_YRsTvUU7bU6j
+https://makecode.com/_VwFWeJi6A8H6
 
 ```blocks
 enum SpriteKind {
