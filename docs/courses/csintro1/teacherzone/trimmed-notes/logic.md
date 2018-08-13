@@ -3,5 +3,7 @@
 * [Introduction](/courses/csintro1/teacherzone/trimmed-notes/logic/intro)
 * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
 * [Validating User Input](/courses/csintro1/teacherzone/trimmed-notes/logic/user-input)
+* [Project](/courses/csintro1/teacherzone/trimmed-notes/logic/project)
+
 
 ## [CS Teacher Zone Material](/courses/csintro1/teacherzone/trimmed-notes/teachers)

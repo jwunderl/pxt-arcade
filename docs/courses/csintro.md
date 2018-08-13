@@ -55,24 +55,30 @@
 * [Functions Intro](/courses/csintro1/functions/intro)
 * [Reducing Redundancy with Functions](/courses/csintro1/functions/redundancy)
 * [Using Extensions](/courses/csintro1/functions/extensions)
+* [Project](/courses/csintro1/functions/project)
 
 ## [Tilemap](/courses/csintro1/tilemap)
 
 * [Intro](/courses/csintro1/tilemap/intro)
 * [Interactions](/courses/csintro1/tilemap/interactions)
 * [Using Corgi Extension](/courses/csintro1/tilemap/extensions)
+* [Project](/courses/csintro1/tilemap/project)
 
 ## [Logic](/courses/csintro1/logic)
 
 * [Introduction](/courses/csintro1/logic/intro)
 * [Booleans](/courses/csintro1/logic/booleans)
 * [Validating User Input](/courses/csintro1/logic/user-input)
+* [Project](/courses/csintro1/logic/project)
 
 ## [Arrays](/courses/csintro1/arrays)
 
 * [Intro](/courses/csintro1/arrays/intro)
 * [String Arrays](/courses/csintro1/arrays/string)
 * [Sprite Arrays](/courses/csintro1/arrays/sprites)
+* [Project](/courses/csintro1/arrays/project)
+
+## [Final Project](/courses/csintro1/final-project)
 
 # [CS Teacher Zone Material](/courses/csintro1/teacherzone/trimmed-notes/teachers)
 
@@ -129,22 +135,29 @@
 * [Functions Intro](/courses/csintro1/teacherzone/trimmed-notes/functions/intro)
 * [Reducing Redundancy with Functions](/courses/csintro1/teacherzone/trimmed-notes/functions/redundancy)
 * [Using Extensions](/courses/csintro1/teacherzone/trimmed-notes/functions/extensions)
+* [Project](/courses/csintro1/teacherzone/trimmed-notes/functions/project)
 
 ## [Tilemap Teacher](/courses/csintro1/teacherzone/trimmed-notes/tilemap)
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/tilemap/intro)
 * [Interactions](/courses/csintro1/teacherzone/trimmed-notes/tilemap/interactions)
 * [Using Corgi Extension](/courses/csintro1/teacherzone/trimmed-notes/tilemap/extensions)
+* [Project](/courses/csintro1/teacherzone/trimmed-notes/tilemap/project)
 
 ## [Logic Teacher](/courses/csintro1/teacherzone/trimmed-notes/logic)
 
 * [Introduction](/courses/csintro1/teacherzone/trimmed-notes/logic/intro)
 * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
 * [Validating User Input](/courses/csintro1/teacherzone/trimmed-notes/logic/user-input)
+* [Project](/courses/csintro1/teacherzone/trimmed-notes/logic/project)
+
 
 ## [Arrays Teacher](/courses/csintro1/teacherzone/trimmed-notes/arrays)
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/arrays/intro)
 * [String Arrays](/courses/csintro1/teacherzone/trimmed-notes/arrays/string)
 * [Sprite Arrays](/courses/csintro1/teacherzone/trimmed-notes/arrays/sprites)
+* [Project](/courses/csintro1/teacherzone/trimmed-notes/arrays/project)
+
+## [Final Project](/courses/csintro1/teacherzone/trimmed-notes/final-project)
 
