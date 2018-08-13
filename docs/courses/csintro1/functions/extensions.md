@@ -13,7 +13,7 @@ Now that we have experience writing functions, we might notice something differe
 
 We are not stuck with only the functions provided when you first open MakeCode. Extensions, in the advanced menu, allow functions, and other code, to be included and used in our games. 
 
-We can make even make our own packages of code to share w or reuse in our games.
+We can make even make our own packages of code to share or reuse in our games.
 
 ## Example #1: Using a package
 
@@ -93,7 +93,7 @@ Using the darts extension package, we do not have to worry as much about algebra
 2. Add at least 3 new sprites of kind ``||sprites:Obstacle||``
 3. Place the sprites in different positions on the screen so that they are in between the ``||sprites:Foot_Ball||`` and the ``||sprites:Goal||`` (or equivalent)
 4. Add a new ``||sprites:on overlap||`` event between the ball and the obstacles, so that hitting an obstacle causes a ``||game:game over||``
-5. **Challenge:** add a controller event so that pressing the ``||controller:B||`` button stops the ball in it's current location
+5. **Challenge:** add a controller event so that pressing the ``||controller:B||`` button stops the ball at it's current location.
 
 ## Sharing Code
 
@@ -106,21 +106,26 @@ Creating new blocks like the ones in example #1 requires the use of JavaScript o
 ### ~
 
 ## Example #2: Spawn a single bird
+Follow these steps as shown in the video
 
-1. Review the code below, and load it into a new project (name it "birdie")
+1. Review the code below, and load it into a new project (name it "birdy")
 2. Press share (and confirm) to create a link to this code
 3. Open a new (empty) project in another window
 4. Under extensions, enter the link you generated into the search bar and press the search icon; a single extension should come up (with the name "birdie") - add that to your current project
 5. The bird will fly across the screen as soon as the game is loaded, even though the new project only has the initial blocks
-6. **Challenge:** open the JavaScript tab, and open the explorer below the simulator. Find where the code that was imported was added into your project
+6. Change the background color in the new project
 
 ![Sharing an Extension](/static/courses/csintro1/functions/adding-shared-project.gif)
 
 ### ~hint
 
+**Challenge:** open the JavaScript tab, and open the explorer below the simulator. Find where the code that was imported was added into your project.
+
 Do any of the names of the tabs in the explorer look similar to the name of the project you shared?
 
 ### ~
+
+https://makecode.com/_0r2MxgLeKcjL
 
 ```blocks
 enum SpriteKind {
@@ -150,14 +155,19 @@ projectile = sprites.createProjectile(img`
 
 ## Student Task #2: Making the stars go by
 
-1. Create a new project (name it "starryNight")
+1. Create a new project (name it "starryNight") that we will include in other projects
 2. Add an ``||game:on game update every 500ms||`` block
 3. Inside of ``||game:on game update every 500ms||`` block, create a new projectile with 1 or 2 pixels colored in white or yellow - this will be a single star in the sky
 4. Set the projectile to have a random ``||sprites:vx||`` between -90 and -30, so it moves across the screen to the left
 5. Set the projectile to have a random ``||sprites:y||`` position between 0 and ``||scene:screen height||``, and ``||sprites:set projectile ghost on||``
-6. Share the game and load it into another project (name it "use StarryNight")
-7. In your new project - change the background color from black default
-7. **Challenge:** every 2000 ms, spawn a meteor that moves across the screen. Make sure to set a random ``||sprites:vertical position||`` for it as well
+6. Share the game and load it into another project (name the project "use starryNight")
+7. In your new project ("use starryNight")
+    * add a new ``||scene:background color||``  
+    * Add a ``||info:countdown||`` block so the game will eventually end
+7. **Challenge:** Create and add code to "use starryNight" so that a second type of projectile that will spawn a meteor every that moves across the screen. 
+  * Save the updated "starryNight" code and get a share link.
+  * Add the share link into a new game and save as "challenge starryNight" 
+  * The Challenge game should have updated background color and countdown timer
 
 ## What did we learn?
 
