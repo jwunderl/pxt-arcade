@@ -114,6 +114,8 @@ Creating new blocks like the ones in example #1 requires the use of JavaScript o
 5. The bird will fly across the screen as soon as the game is loaded, even though the new project only has the initial blocks
 6. **Challenge:** open the JavaScript tab, and open the explorer below the simulator. Find where the code that was imported was added into your project
 
+![Sharing an Extension](/static/courses/csintro1/functions/adding-shared-project.gif)
+
 ### ~hint
 
 Do any of the names of the tabs in the explorer look similar to the name of the project you shared?
