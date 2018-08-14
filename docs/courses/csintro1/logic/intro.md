@@ -2,8 +2,6 @@
  
 todo: Briefly Describe `if` and comparison test `x>3` Boolean result (T/F)
 
-`// we are building to make this example part 1b https://makecode.com/_beuXJ0WvvMcU`
-
 When coding, your program can exist in different states when you run it different times. Variables could be different values, sprites may be in different locations, or the player’s score may be different. So we pose the question, how can you make your program behave in different ways depending on the specific state it is in?
 
 The answer is by the use of what are called `if` statements. The way an `if` statement works is that it will take some sort of logic test and if the logic test evaluates to true, then it will run code that is given. A logic test is something that will evaluate to a Boolean, meaning it’s either true or false. Some examples are `score = 10`, `x < 5`, `life ≥ 0`. These are what are known as comparisons because they compare the value of two things.
@@ -15,9 +13,9 @@ if (info.highScore() > 5) {
     game.splash("Good luck!")
 }
 ```
-When we use an if statement, we also have the option to add an else statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the if block’s code will run, else, the else block’s code will run. 
+When we use an ``||logic:if||`` statement, we also have the option to add an else statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the if block’s code will run, else, the else block’s code will run. 
 
-To use an if else block, either drag it from the logic menu, or click on the plus sign of an existing if block.
+To use an ``||logic:if else||`` block, either drag it from the logic menu, or click on the plus sign of an existing ``||logic:if||`` block.
 
 ```blocks
 if (info.highScore() > 5) {
@@ -27,8 +25,8 @@ if (info.highScore() > 5) {
 }
 ```
 
-Using an if block with an else block allows us to split all possibilities into just two categories and run code that is specific to each category. But what if we needed to split everything into three or four or more categories?
- To do this, we can use the else if block. By clicking the plus sign of an if else block, an else if block will appear. This requires another logic test and that splits the cases after the original logic test evaluates to false. 
+Using an ``||logic:if||`` block with an else block allows us to split all possibilities into just two categories and run code that is specific to each category. But what if we needed to split everything into three or four or more categories?
+ To do this, we can use the ``||logic:else if||`` block. By clicking the plus sign of an ``||logic:if else||`` block, and an ``||logic:else if||`` block will appear. This requires another logic test and that splits the cases after the original logic test evaluates to false. 
 
 ```blocks
 if (info.highScore() > 5) {
@@ -52,25 +50,204 @@ Make sprite alternate between saying "A" and "B"
 
  todo code: sprite alternate msg
 
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+let randomPick = 0
+function generate() {
+    randomPick = Math.randomRange(0, 1)
+    if (randomPick == 0) {
+        mySprite.say("push A")
+    }
+    if (randomPick == 1) {
+        mySprite.say("push B")
+    }
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    generate()
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    generate()
+})
+game.splash("Push A or B as directed")
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 4 4 4 4 4 4 4 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . e . . e . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 4 . 1 1 . 4 4 . . . 
+. . . . . . 4 4 4 4 4 4 . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+info.startCountdown(20)
+generate()
+```
+https://makecode.com/_HXMRAzYY4YkU
+
 ### Example 1b: Check if correct button is pressed
 
-todo code: check correct  button pushed and score
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+let randomPick = 0
+function generate() {
+    randomPick = Math.randomRange(0, 1)
+    if (randomPick == 0) {
+        mySprite.say("push A")
+    }
+    if (randomPick == 1) {
+        mySprite.say("push B")
+    }
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (randomPick == 0) {
+        info.changeScoreBy(1)
+    }
+    generate()
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (randomPick == 1) {
+        info.changeScoreBy(1)
+    }
+    generate()
+})
+game.splash("Push A or B as directed")
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 4 4 4 4 4 4 4 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . e . . e . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 4 . 1 1 . 4 4 . . . 
+. . . . . . 4 4 4 4 4 4 . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+info.startCountdown(20)
+generate()
+```
+
+https://makecode.com/_FDoAgwhKdh1X
 
 ### Example 1c:  ``|logic:else|`` for random alternating message
 
-https://makecode.com/_eMhT2Xc2maru
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+let randomPick = 0
+function generate() {
+    randomPick = Math.randomRange(0, 1)
+    if (randomPick == 0) {
+        mySprite.say("push A")
+    } else {
+        mySprite.say("push B")
+    }
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (randomPick == 0) {
+        info.changeScoreBy(1)
+    }
+    generate()
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (randomPick == 1) {
+        info.changeScoreBy(1)
+    }
+    generate()
+})
+game.splash("Push A or B as directed")
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 4 4 4 4 4 4 4 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . e . . e . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 4 . 1 1 . 4 4 . . . 
+. . . . . . 4 4 4 4 4 4 . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+info.startCountdown(20)
+generate()
+```
 
-## Student Task 1: ``|logic:else|`` for Check if correct button is pressed
+https://makecode.com/_FDoAgwhKdh1X
 
-todo step by step instructions to : Add `else` to button press that changes score by -1 when the incorrect button is pushed
+## Student Task 1: ``|logic:else|`` for check if correct button is pressed
 
-### Task #2: End of Game Message
 
-todo step by step instructions to : Add `else` to button press that changes score by -1
+Now that we have the basic functionality of our game, let’s make it so that the player loses points when they press the wrong button.
 
-https://makecode.com/_f6qLRv744frJ 
 
-todo Challenge Make the sprite have a shake or bump effect each time it has a say so can see when letter updates even when it is the same.
+1. Add else ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
+2. Decrease the players ``||info:score||`` by 1 when they press the wrong button by using the ``||info:change score by||`` block.
+
+### ~hint
+
+To decrease a value, you change its value by a negative amount
+
+### ~
+
+## Task #2: End of Game Message
+
+Now let’s congratulate the player at the end of the game, giving them a specific message based on their ``||info:score||``.
+
+1. Create an event for when the countdown ends by using the ``||info:on countdown end||`` block
+2. Check to see if the player’s ``||info:score||`` is less than `20`. If it is, use a splash block to say “Beginner score of” and then the player’s ``||info:score||``
+
+### ~hint
+
+You can combine a string and a number to form a string using the ``||text:join||`` block.
+
+### ~
+
+3. Use an ``||logic:else||`` block to do the same for if the player’s ``||info:score||`` was greater than or equal to `20` but say “Pro score of” and then the player’s ``||info:score||``.
+4. Use a game over block to let the game know that it is over and that the player won.
+
+### ~hint 
+
+By clicking the plus sign of a game over block, you can let the game know whether or not the player won. 
+
+This will change the dialog shown on the game over screen. 
+
+### ~
+
+
+## Challenge
+Make the sprite have a shake or bump effect each time it has a say so can see when letter updates even when it is the same.
 
 ## What did we learn?
 
