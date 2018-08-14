@@ -10,7 +10,7 @@
 
 ### Standard:
 
-https://makecode.com/_VwFWeJi6A8H6
+https://makecode.com/_YRsTvUU7bU6j
 
 ```blocks
 enum SpriteKind {

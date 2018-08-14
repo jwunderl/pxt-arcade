@@ -17,6 +17,10 @@ We can make even make our own packages of code to share or reuse in our games.
 
 ## Example #1: Using a package
 
+https://youtu.be/VVjxMS29jjU
+
+[Alternative Video Location](https://aka.ms/40544a-extensiondart) 
+
 1. Open a new project (name it "football")
 2. Using the extensions menu, search for "darts" (or the full package location at github.com/jwunderl/pxt-darts). Notice how a new section is added to the menu, above ``||game:Game||``
 3. Review the example code below, and either recreate it or build something similar
@@ -89,6 +93,10 @@ Using the darts extension package, we do not have to worry as much about algebra
 
 ## Student Task #1: Build an Obstacle Course
 
+https://youtu.be/HmhCPIvfKe8
+
+[Alternative Video Location](https://aka.ms/40544a-darttask)
+
 1. Start with the code from example #1
 2. Add at least 3 new sprites of kind ``||sprites:Obstacle||``
 3. Place the sprites in different positions on the screen so that they are in between the ``||sprites:Foot_Ball||`` and the ``||sprites:Goal||`` (or equivalent)
@@ -106,6 +114,11 @@ Creating new blocks like the ones in example #1 requires the use of JavaScript o
 ### ~
 
 ## Example #2: Spawn a single bird
+
+https://youtu.be/kZNYHZSdhdY
+
+[Alternative Video Location](https://aka.ms/40544a-starrynight)
+
 Follow these steps as shown in the video
 
 1. Review the code below, and load it into a new project (name it "birdy")
