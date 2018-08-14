@@ -1,12 +1,19 @@
 # if and if else logic
  
-todo: Briefly Describe `if` and comparison test `x>3` Boolean result (T/F)
+When coding, your program can exist in different states when you run it different times. Variables could be different values, sprites may be in different locations, or the player’s score may be different. ``if`` and ``if else`` statements allow us  to make our programs behave in different ways based on the specific state that it is in.
 
-When coding, your program can exist in different states when you run it different times. Variables could be different values, sprites may be in different locations, or the player’s score may be different. So we pose the question, how can you make your program behave in different ways depending on the specific state it is in?
+The way an ``||logic:if||`` statement works is that it will take some sort of logic test and if the logic test evaluates to true, then it will run code that is given. Some examples are:
 
-The answer is by the use of what are called `if` statements. The way an `if` statement works is that it will take some sort of logic test and if the logic test evaluates to true, then it will run code that is given. A logic test is something that will evaluate to a Boolean, meaning it’s either true or false. Some examples are `score = 10`, `x < 5`, `life ≥ 0`. These are what are known as comparisons because they compare the value of two things.
+* if your score is greater than your opponent's score, then you are winning
+* if the player has 0 lives left, then it is game over
+* if you are 18 years or older, then you are an adult
 
-To use an `if` statement, simply drag the use an ``||logic:if||`` block and fill it with a comparison test.
+These are what are known as comparisons because they compare the value of two things.
+
+
+To use an ``||logic:if||`` statement, simply drag the use an ``||logic:if||`` block and fill it with a comparison test.
+
+### Example 1a
 
 ```blocks
 if (info.highScore() > 5) {
@@ -16,6 +23,8 @@ if (info.highScore() > 5) {
 When we use an ``||logic:if||`` statement, we also have the option to add an else statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the if block’s code will run, else, the else block’s code will run. 
 
 To use an ``||logic:if else||`` block, either drag it from the logic menu, or click on the plus sign of an existing ``||logic:if||`` block.
+
+### Example 1b
 
 ```blocks
 if (info.highScore() > 5) {
@@ -27,6 +36,8 @@ if (info.highScore() > 5) {
 
 Using an ``||logic:if||`` block with an else block allows us to split all possibilities into just two categories and run code that is specific to each category. But what if we needed to split everything into three or four or more categories?
  To do this, we can use the ``||logic:else if||`` block. By clicking the plus sign of an ``||logic:if else||`` block, and an ``||logic:else if||`` block will appear. This requires another logic test and that splits the cases after the original logic test evaluates to false. 
+
+### Example 1c
 
 ```blocks
 if (info.highScore() > 5) {
@@ -46,10 +57,7 @@ Make sprite alternate between saying "A" and "B"
 
 # TODO: Video (eric)
 
-### Example #1a: random alternating message
-
- todo code: sprite alternate msg
-
+### Example a: random alternating message
 
 ```blocks
 enum SpriteKind {
@@ -97,7 +105,7 @@ generate()
 ```
 https://makecode.com/_HXMRAzYY4YkU
 
-### Example 1b: Check if correct button is pressed
+### Example 2b: Check if correct button is pressed
 
 ```blocks
 enum SpriteKind {
@@ -152,7 +160,7 @@ generate()
 
 https://makecode.com/_FDoAgwhKdh1X
 
-### Example 1c:  ``|logic:else|`` for random alternating message
+### Example 2c:  ``|logic:else|`` for random alternating message
 
 ```blocks
 enum SpriteKind {
@@ -213,7 +221,7 @@ Now that we have the basic functionality of our game, let’s make it so that th
 
 
 1. Add else ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
-2. Decrease the players ``||info:score||`` by 1 when they press the wrong button by using the ``||info:change score by||`` block.
+2. Decrease the players ``||info:score||`` by 1 when they press the wrong button by using the ``||info:change score by||`` block
 
 ### ~hint
 
@@ -234,8 +242,8 @@ You can combine a string and a number to form a string using the ``||text:join||
 
 ### ~
 
-3. Use an ``||logic:else||`` block to do the same for if the player’s ``||info:score||`` was greater than or equal to `20` but say “Pro score of” and then the player’s ``||info:score||``.
-4. Use a game over block to let the game know that it is over and that the player won.
+3. Use an ``||logic:else||`` block to do the same for if the player’s ``||info:score||`` was greater than or equal to `20` but say “Pro score of” and then the player’s ``||info:score||``
+4. Use a game over block to let the game know that it is over and that the player won
 
 ### ~hint 
 
@@ -251,4 +259,28 @@ Make the sprite have a shake or bump effect each time it has a say so can see wh
 
 ## What did we learn?
 
-todo 3 questions
+1. What's a case in which you use an ``||logic:if||`` but not an ``||logic:else||``?
+2. For example 2c, we changed the ``|logic:if||`` ``|logic:if||`` structure to an ``|logic:if else||`` structure. Why does it make sense to do this?
+3. What is the same and what is different between the following code samples? Which one is easier to read?
+
+```blocks
+if (info.score() > 10) {
+    game.splash("Case 1")
+} else {
+    if (info.score() > 5) {
+        game.splash("Case 2")
+    } else {
+        game.splash("Case 3")
+    }
+}
+```
+
+```blocks
+if (info.score() > 10) {
+    game.splash("Case 1")
+} else if (info.score() > 5) {
+    game.splash("Case 2")
+} else {
+    game.splash("Case 3")
+}
+```
