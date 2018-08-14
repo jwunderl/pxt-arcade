@@ -1,7 +1,5 @@
 # if and if else logic
  
-todo: Briefly Describe `if` and comparison test `x>3` Boolean result (T/F)
-
 `// we are building to make this example part 1b https://makecode.com/_beuXJ0WvvMcU`
 
 ## Button Game
@@ -11,8 +9,6 @@ Make sprite alternate between saying "A" and "B"
 # TODO: Video (eric)
 
 ### Example #1a: random alternating message
-
- todo code: sprite alternate msg
 
 ```blocks
 enum SpriteKind {
@@ -305,4 +301,28 @@ todo Challenge Make the sprite have a shake or bump effect each time it has a sa
 https://makecode.com/_f2XKXrcPtYhh
 ## What did we learn?
 
-todo 3 questions
+1. What's a case in which you use an ``||logic:if||`` but not an ``||logic:else||``?
+2. For example 1c, we changed the ``|logic:if||`` ``|logic:if||`` structure to an ``|logic:if else||`` structure. Why does it make sense to do this?
+3. What is similar and what is different between the following code samples? Which one is easier to read?
+
+```blocks
+if (info.score() > 10) {
+    game.splash("Case 1")
+} else {
+    if (info.score() > 5) {
+        game.splash("Case 2")
+    } else {
+        game.splash("Case 3")
+    }
+}
+```
+
+```blocks
+if (info.score() > 10) {
+    game.splash("Case 1")
+} else if (info.score() > 5) {
+    game.splash("Case 2")
+} else {
+    game.splash("Case 3")
+}
+```
