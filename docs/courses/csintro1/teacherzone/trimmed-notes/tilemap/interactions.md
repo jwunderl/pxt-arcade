@@ -220,7 +220,7 @@ hole.setPosition(120, 105)
 
 ## Student Task #1: Implement mini golf
 
-[solution: mini golf](https://makecode.com/_gTWJD99t0cdC)
+[solution: mini golf](https://makecode.com/_KHuDEcYcs23g)
 
 ## Golf Ball Momentum
 
