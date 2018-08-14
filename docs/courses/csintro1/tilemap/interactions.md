@@ -182,7 +182,7 @@ golfBall.controlWithArrowKeys()
 
 ### ~hint
 
-Notice how the ``||darts:change golfBall background to image||`` block changes the game; try taking it out of the code and adding it back in. You can even try drawing an image for the background using the image editor!
+Notice how the ``||scene:background to image||`` block changes the game; try taking it out of the code and adding it back in. You can even try drawing an image for the background using the image editor! but be sure to place it **before** any ``||darts:dart||`` blocks in the ``||Game: on start||``
 
 ### ~
 
