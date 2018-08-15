@@ -11,6 +11,11 @@ In this activity, students will use:
 
 ## Example #1: Creating a course
 
+https://youtu.be/ZPMexvC1BfY 
+
+[Alternative Video Location](https://aka.ms/40544a-tilemap-golf )
+
+
 1. Make a new project (name it "Golf Course")
 2. Review the code below
 3. Import the darts extension
@@ -205,6 +210,11 @@ When the golf ball continues to roll forever after it collides with the wall, th
 We can stop the ball when it strikes a wall and fix this using the ``||scene:on sprite of kind hits wall||`` block, which creates an event that occurs whenever the given sprite touches the given wall tile.
 
 ## Student Task #2: Make it stop
+
+https://youtu.be/VBzh-vZeWKs 
+
+[Alternative Video Location](https://aka.ms/40544a-tilemap-longgolf)
+
 
 1. Start with the code from task #1
 2. Create an ``||scene:on sprite of kind hits wall||`` between the golf ball (kind ``||sprites:GolfBall||``) and the brown wall
