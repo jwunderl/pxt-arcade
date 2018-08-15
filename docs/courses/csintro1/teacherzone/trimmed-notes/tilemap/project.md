@@ -2,6 +2,8 @@
 
 ![Find the coins](/static/courses/csintro1/tilemap/find-the-coins.gif)
 
+#TODO add link to game from gif
+
 ## Student Task #1:
 
 ## What did we learn? 
