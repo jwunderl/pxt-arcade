@@ -1,141 +1,100 @@
-# Activity: Array
+# Activity: Arrays Intro
 
-TODO: lots of uses of array use Corgi to have array of strings, array of sounds (???), images (this is how animation works), change background color to only a few select colors that don't interfere with viewing game, coordinates , ...
+Software developers often need to store multiple related values at once - for example, multiple sprites that are "enemies," or the names of the highest scoring players in a leaderboard. Arrays allow for the storage and use of a large number of values that share a type.
 
-In this activity student will work with: 
-* [Add ALL Newly introduced blocks/concepts]
-* [Add items used with more depth]
-* ``||Logic: if then||``
-* while true loop 
+Arrays store values at different indices, so that you can keep track of where values are located within the array.
 
+In Blocks, arrays can be found under the Advanced category of the toolbox.
 
-## Concept: [Concept 1 ]
+![locating arrays](/static/courses/csintro1/arrays/locating-arrays)
 
-# TODO: Create Video covering (list items above mostly).  Provide high level script outline.
+In this activity, students will:
+* Interact with arrays
+* Create arrays of numbers
+* ``||arrays:length of array||``
+* ``||arrays:add||`` and ``||arrays:remove||`` values from arrays
+* ``||math:random item from||``
 
-Start with the following Turtle commands:  
-* Forward *(steps)*  
-* Turn *(degrees)*  
-* Pen Down and Pen Up  
-* Set pen color  
-* Set Position *(x,y)*  
+## Concept: Creating Arrays
 
-## Example: [Simple example 1]
-1. Review the code below
+## Example #1: Creating an array of numbers
+
+1. Review the code below 
 2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
-
-```blocks  
-// :solution
-let locations: number[] = []
-let item = 0
-let sprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    item = Math.floor(Math.random() * locations.length)
-    // Check if index is even or odd
-    if (item % 2 == 0) {
-        sprite.setPosition(locations[item], locations[item + 1])
-    } else {
-        sprite.setPosition(locations[item - 1], locations[item])
-    }
-})
-sprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . 5 . . . . . . . . 
-. . . . . 5 5 6 5 5 . . . . . . 
-. . . . 5 6 6 6 6 6 5 . . . . . 
-. . . 5 6 6 6 6 6 6 6 5 . . . . 
-. . 5 6 6 6 6 6 6 6 6 6 5 . . . 
-. . 5 6 6 6 6 6 6 6 6 6 5 . . . 
-. 5 6 6 6 6 6 6 6 6 6 6 6 5 . . 
-. . 5 6 6 6 6 6 6 6 6 6 5 . . . 
-. . 5 6 6 6 6 6 6 6 6 6 5 . . . 
-. . . 5 6 6 6 6 6 6 6 5 . . . . 
-. . . . 5 6 6 6 6 6 5 . . . . . 
-. . . . . 5 5 6 5 5 . . . . . . 
-. . . . . . . 5 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`)
-locations = [20, 20, 140, 120, 150, 25, 15, 110]
-// :end-solution
-```  
-
-### ~hint
-**Teacher Note**
-TODO: These notes get removed for students and go to teacher guide so use exact format - think of advice on how the teacher might help un-stick students or reenforce concept.  A question you might pose.  "Ask students: What happens to the old value when we re-assign a new number to the lives? (Answer: it is destroyed and replaced with new assigned value)"  can use markdown lists here.
-### ~
-
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
+3. Save the code for the example (name it "Arrays")
 
 ```blocks
-// :solution
-
-/* example of a full solution that the teacher can use
-comments are good!
-we need the solution / end-solution tags so we can remove this for student version
-*/ 
-// :end-solution
+let list: number[] = []
+list = [1, 2]
+game.splash("" + list[1])
 ```
 
+The first block in the ``||loops:on start||`` creates a new array, with two values to start with - 1 and 2. The next block prints out the value that is stored at **index 1** - the value **2**. 
 
-## Concept: [concept 2 -another item form the list]
-
-# TODO: might need a short video here 
-
-[line or two of high level concept]
-
-## Example: simple example 2 
-
-1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
-
-```blocks  
-// simple code here
-```  
-
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
+This might seem odd - after all, there are two values in the array, and the first one listed is **1**, not **2**. The reason that index 1 stores the value 2 is due to the fact that arrays are indexed starting at 0 in JavaScript - that is, the first value in the array is stored at index 0.
 
 ### ~hint
- // Hint to student
+
+One way to think about this is in terms of where the value is located within the array - the first value is located **0** positions away from the beginning, the second value is **1** position away from the beginning, and so on. As such, index 0 means "0 values away from the first."
+
 ### ~
 
+## Student Task #1: Random values from Arrays
+
+1. Start with the code from example #1
+2. Add two more numbers to the array, by pressing the ``||arrays:+||`` button on the block
+3. Instead of always splashing the value at index 1, change the ``||arrays:get value at||`` block to choose a random index between 0 and 3 using the ``||math:pick random||`` block
+4. Add one more number to the array. Identify whether this value will ever show up as one of the values being ``||game:splashed||``
+
+### ~hint
+
+What index will the new value be located at?
+
+### ~
+
+5. The ``||arrays:length of array||`` block will return the length of the array - that is, the number of values contained within it. Modify the values in the ``||math:pick random||`` so that it will pick a value between 0 and the highest index in the array
+
+### ~hint
+
+When there were 4 items in the array, the index with the last value was 3 and the length of the array was 4
+
+### ~
+
+## Concept: Modifying an Array
+
+Arrays can also be added to and modified after they are created. For example, you can add more values to an array after it has been created, or remove values that you no longer need to keep track of.
+
+## Example #2: Adding to an array
+
+1. Review the code below 
+2. Create the sample code and run the code
+3. Save the code for the example (name it "Adding to an Array")
+
 ```blocks
-// :solution
+let list: number[] = []
+list = [1, 2]
+list.push(5)
+```
 
-/* example of a full solution that the teacher can use - good to follow on previous solution but not required
-comments are good!
-we need the solution / end-solution tags so we can remove this for student version
-*/
+In this example, we added 5 to the end of the array, after it's already been created. This might seem simple in this case, but it allows for many other uses of arrays we create - for example, adding a new high score, or keeping track of where a sprite has already been.
 
-// :end-solution
+## Example #2: Add on event
 
+1. Create a new array with the values -3, 3, and 4
+2. Create a ``||controller:on A button press||`` event
+3. Inside the ``||controller:on A button press||`` event, use ``||arrays:list add value to end||`` to append a random number using ``||math:pick random -10 to 10||``
+4. Create a ``||controller: on B button press||`` event
+5. Inside the ``||controller: on B button press||`` event, use ``||math:random item from||`` to select a random item from the ``||variables:list||`` and ``||game:splash||`` it
 
-## What did we learn? [create 2 questions]
+### ~hint
 
-1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
-2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
-3. [Come up with a question of your choice]
+remember to use ``||string:join||`` to convert from number to string
 
+### ~
 
-## Rubrics
+6. **Challenge:** Modify the value of the ``||game:splash||`` to instead display the result of adding **two** random values from the ``||variable:list||``
 
+## What did we learn?
 
-### TODO Rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Turtle  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
-
-### Score = \_\_\_\_\_\_ /10 
+1. What is the difference between creating an array of numbers and storing multiple values as individual variables (as in, `value1 = 1`, `value2 = 2`, `value3 ...`)? What can an array do that storing different variables by themselves cannot?
+2. How does the ``||arrays:length||`` of an array relate to the position of the final element?
