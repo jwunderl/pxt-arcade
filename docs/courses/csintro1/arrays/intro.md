@@ -11,8 +11,9 @@ In Blocks, arrays can be found under the Advanced category of the toolbox.
 In this activity, students will:
 * Interact with arrays
 * Create arrays of numbers
-* ``||arrays:length||``
+* ``||arrays:length of array||``
 * ``||arrays:add||`` and ``||arrays:remove||`` values from arrays
+* ``||math:random item from||``
 
 ## Concept: Creating Arrays
 
@@ -51,6 +52,14 @@ What index will the new value be located at?
 
 ### ~
 
+5. The ``||arrays:length of array||`` block will return the length of the array - that is, the number of values contained within it. Modify the values in the ``||math:pick random||`` so that it will pick a value between 0 and the highest index in the array
+
+### ~hint
+
+When there were 4 items in the array, the index with the last value was 3 and the length of the array was 4
+
+### ~
+
 ## Concept: Modifying an Array
 
 Arrays can also be added to and modified after they are created. For example, you can add more values to an array after it has been created, or remove values that you no longer need to keep track of.
@@ -68,3 +77,24 @@ list.push(5)
 ```
 
 In this example, we added 5 to the end of the array, after it's already been created. This might seem simple in this case, but it allows for many other uses of arrays we create - for example, adding a new high score, or keeping track of where a sprite has already been.
+
+## Example #2: Add on event
+
+1. Create a new array with the values -3, 3, and 4
+2. Create a ``||controller:on A button press||`` event
+3. Inside the ``||controller:on A button press||`` event, use ``||arrays:list add value to end||`` to append a random number using ``||math:pick random -10 to 10||``
+4. Create a ``||controller: on B button press||`` event
+5. Inside the ``||controller: on B button press||`` event, use ``||math:random item from||`` to select a random item from the ``||variables:list||`` and ``||game:splash||`` it
+
+### ~hint
+
+remember to use ``||string:join||`` to convert from number to string
+
+### ~
+
+6. **Challenge:** Modify the value of the ``||game:splash||`` to instead display the result of adding **two** random values from the ``||variable:list||``
+
+## What did we learn?
+
+1. What is the difference between creating an array of numbers and storing multiple values as individual variables (as in, `value1 = 1`, `value2 = 2`, `value3 ...`)? What can an array do that storing different variables by themselves cannot?
+2. How does the ``||arrays:length||`` of an array relate to the position of the final element?
