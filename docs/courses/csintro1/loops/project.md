@@ -13,10 +13,12 @@ From what we learned in the previous lessons we should be able to make some grea
 1. Generate several quick game ideas (at least 3) and discuss with another student on what is good and what can be improved
 2. Pick the game to be built and design a simplest version of that game to start with. We call this a MVP or Minimum Viable Product.  It is the simplest version of a a product that has some working features
 3.  Make the MVP fast - not perfect.  Test it and show it to others for feedback.  Decide which features you will add to the game
+4. . **Use loops in your game**
+  * use a ``||loops:repeat||`` and/or ``||loops:for||`` loop block
+  * or use a ``||game:update every||`` loop block
 4. Use at least **10** of these following items in creating a game:
   * Sprites
   * Projectiles
-  * ``||game:update||`` every loop
   * Position (set or change coordinates)
   * Controller (dx) and ``||controller:control sprite with||``
   * Overlap Events / sprite kind
