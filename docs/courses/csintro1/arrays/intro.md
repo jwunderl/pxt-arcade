@@ -2,7 +2,7 @@
 
 Software developers often need to store multiple related values at once - for example, multiple sprites that are "enemies," or the names of the highest scoring players in a leaderboard. Arrays allow for the storage and use of a large number of values that share a type.
 
-Arrays store values at different indices, so that you can keep track of where values are located within the array.
+Arrays store values at different indices, so that you can keep track of where values are located within the array. In most programming languages, arrays serve as some of the most basic **data structures** that can be used to keep track of sequences of data (with some minor differences in behavior depending on how the language implements them). 
 
 In Blocks, arrays can be found under the Advanced category of the toolbox.
 
