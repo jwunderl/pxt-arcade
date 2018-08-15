@@ -1,12 +1,19 @@
-# if and if else logic
+# Comparisons 
+
+**if and if else logic**
  
-When coding, your program can exist in different states when you run it different times. Variables could be different values, sprites may be in different locations, or the player’s score may be different. ``if`` and ``if else`` statements allow us  to make our programs behave in different ways based on the specific state that it is in.
+In our games we will often want to compare values to see if they match
 
-The way an ``||logic:if||`` statement works is that it will take some sort of logic test and if the logic test evaluates to true, then it will run code that is given. Some examples are:
+* if player score is greater than opponent score we know our player is winning
+* if the player has 0 lives left, then we set to game over
+* if we complete all requirements, we pass the course
 
-* if your score is greater than your opponent's score, then you are winning
-* if the player has 0 lives left, then it is game over
-* if you are 18 years or older, then you are an adult
+A program that is running a game can exist in different states at different times. Variables have different values, sprites may be in different locations, or the player’s score may be different. ``if`` and ``if else`` statements allow us  to make our programs behave in different ways based on the state of the game.
+
+``||logic:if||`` statement work performing a test and if the logic test evaluates to true, then it will run code that is given. Some examples are:
+
+* if the score is greater than 10, give additional countdown time
+* if the player has 0 lives left, then game over
 
 These are what are known as comparisons because they compare the value of two things.
 
