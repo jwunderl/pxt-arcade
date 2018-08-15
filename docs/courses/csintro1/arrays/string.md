@@ -79,7 +79,7 @@ The changes in this task make the code a lot easier to read, and demonstrate a v
 ## Student Task #1b: Using ``||loops:for element||``
 
 1. Start with the code from task #1a
-2. Replace the ``||loops:for index from 0 to||`` loop with a ``loops:for element||`` loop. Be sure that it refers to the correct array
+2. Replace the ``||loops:for index from 0 to||`` loop with a ``||loops:for element||`` loop. Be sure that it refers to the correct array
 3. Replace the ``||array:text list get value at index||`` with the ``||variables:value||`` parameter of the ``||loops:for element||`` loop
 
 ## Concept: Random Reactions
@@ -162,7 +162,7 @@ text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
     * "leave"
 3. Add at least three other sprites in different locations around the map of ``||sprites:kind enemy||``
 3. Set the player's ``||info:life||`` to 5
-4. Create an ``||sprites:on overlap||`` event between ``||sprites:kind player||`` and ``||sprites:kind enemy||``, which causes ``info:life||`` to change by -1 and the ``||sprites:enemy||`` to say a random word from ``||variables:enemyScript||``
+4. Create an ``||sprites:on overlap||`` event between ``||sprites:kind player||`` and ``||sprites:kind enemy||``, which causes ``||info:life||`` to change by -1 and the ``||sprites:enemy||`` to say a random word from ``||variables:enemyScript||``
 
 ### ~hint
 
