@@ -139,13 +139,16 @@ levelStart()
 
 ## What did we learn? 
 
-1. What did you learn making a MVP version of the game?  What was useful and what was difficult?
-2. Were items in the list of elements of a game to use in the game were not used?  Why? If all were used explain which ones were essential to the game versus less essential elements of a game.
+1. Describe a feature of this game that you would like to expand and ideas for improved implementation.
+2. List the names of the the functions you used. Describe for each function name, why it has a good descriptive name and/or how the function name could be improved.
 
 ### ~hint
 
 ### Possible Answers
 
-Answers **Vary Widely**
+Answers **Vary Widely** and are unique to individuals and the games they make.
+
+1. [Instructor: encourage students to think outside the box]  I would like to have my sprite work in 3-D with virtual reality.
+2. "setSprites" function is a good name because it says exactly what it does - it "sets the sprites."  "scoring" function is an OK name but could call it "scoringEvents" as an improvement.
 
 ### ~
