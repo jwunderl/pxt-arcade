@@ -9,7 +9,6 @@ In this activity, student will use:
 * Velocity: ``||sprites:vx||`` and ``||sprites:vy||``
 * Acceleration: ``||sprites:ax||`` and ``||sprites:ay||``
 
-
 ## Concept: Velocity
 
 https://youtu.be/aNYPqyIFRT0 
@@ -30,21 +29,7 @@ In MakeCode Arcade, a sprite's velocity is defined in terms of pixels per second
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Notice how the behavior for the two sprites is similar, and how it is different.
-
-**note these parts of the code**
-
-
-```block
-let first: Sprite = null
-let second: Sprite = null
-first.vx = 30
-game.onUpdateInterval(1000, function () {
-    second.x += 30
-})
-```
-
-https://makecode.com/_efqPrJavXK5T
+3. Notice how the behavior for the two sprites is similar, and how it is different
 
 ```blocks
 enum SpriteKind {
@@ -103,26 +88,35 @@ game.onUpdate(function () {
 })
 ```
 
+In particular, pay attention to these portions of the code:
+
+```block
+let first: Sprite = null
+let second: Sprite = null
+first.vx = 30
+game.onUpdateInterval(1000, function () {
+    second.x += 30
+})
+```
+
 ## Concept: Acceleration
 
 https://youtu.be/pRUlsEekmUg 
 
 [Alternative Video Location](https://aka.ms/40544a-physics-acceleration) 
 
-Acceleration represents the rate of change in velocity. We think of this is how much an object is speeding up or slowing down in a particular direction.  Gravity is a good example of acceleration where falling objects increase in velocity, falling faster and faster, in the down direction.
+Acceleration represents the rate of change in velocity. We think of this is how much an object is speeding up or slowing down in a particular direction. Gravity is a good example of acceleration where falling objects increase in velocity, falling faster and faster, in the down direction.
 
 The relationship between acceleration and velocity is similar to the relationship between velocity and position. Velocity is the rate at which position is changing, and acceleration is the rate at which velocity is changing.
 
-In other words, acceleration tells us how quickly the velocity is changing. Braking in a car or speeding up in a rocket taking off are examples of acceleration.  We feel a force pull on our bodies when there is acceleration.
+In other words, acceleration tells us how quickly the velocity is changing. Braking in a car or speeding up in a rocket taking off are examples of acceleration. We feel a force pull on our bodies when there is acceleration.
 
 In MakeCode Arcade, a sprite's acceleration is defined in terms of **pixels per second, per second** (pixels/s/s).
 
 
 ### Example #1b - Sprite with Acceleration
 
-Below is a sprite with an Acceleration applied.  We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time.  We see the sprite has a larger velocity with each pass.
-
-https://makecode.com/_XvjRki5vzMrC
+Below is a sprite with an Acceleration applied. We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time. We see the sprite has a larger velocity with each pass.
 
 ```blocks
 enum SpriteKind {
@@ -161,9 +155,7 @@ mySprite.destroy()
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Notice how the behavior for the two sprites is similar, and how it is different.
-
-https://makecode.com/_9Xiair9qeH55
+3. Notice how the behavior for the two sprites is similar, and how it is different
 
 ```blocks
 enum SpriteKind {
@@ -238,8 +230,6 @@ https://youtu.be/lMLLUf4NQF0
 In total, this loop should include 4 blocks - the generation of a random xDirection and yDirection, the creation of the projectile, and the block that sets the projectiles ghost flag to be on.
 
 ### ~
-
-https://makecode.com/_K1jC1dJzgKa2
 
 ```blocks
 enum SpriteKind {
@@ -348,13 +338,13 @@ In this task, you will make a basic version of a flying bird game. In it, the bi
 3. Give the sprite an acceleration in the ``||sprites:Y||`` direction, so that it falls due to 'gravity'
 4. Create an ``||controller:on A button pressed||`` event
 5. Inside of the ``||controller:on A button pressed||`` event, use ``||sprites:change by||`` to change the sprite's velocity in the ``||sprites:Y||`` direction, so that pressing the ``||controller:A||`` button makes the sprite 'fly' and counteract 'gravity'
-6. **Challenge:** create an ``||game:on game update every 2000 ms||`` event, a spawn a projectile that moves horizontally across the screen. Set the projectile's ``||sprites:Y||`` position to a random place on the screen, using the ``||Math:pick random||`` and ``||Scene:screen height||`` blocks. Make something happen when the projectiles overlap with the player sprite!
+6. **Challenge:** create an ``||game:on game update every 2000 ms||`` event which spawns a projectile that moves horizontally across the screen. Set the projectile's ``||sprites:Y||`` position to a random place on the screen, using the ``||Math:pick random||`` and ``||Scene:screen height||`` blocks. Make something happen when the projectiles overlap with the player sprite!
 
 ![Flying Duck](/static/courses/csintro1/loops/flying-duck.gif)
 
 ### ~hint
 
-Try different values for the vertical acceleration representing gravity ``||sprites:ay||`` such as 25, 50, 100, 200
+Try different values for the vertical acceleration representing gravity ``||sprites:ay||`` such as 25, 50, 100, 200.
 
 What is a reasonably challenging value for the acceleration of gravity for Duck?
 

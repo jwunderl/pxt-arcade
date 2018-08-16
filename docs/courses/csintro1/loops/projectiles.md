@@ -13,6 +13,7 @@ In this activity, students will use:
 * ``||loops:for||`` loop 
 
 ## Concept: Flying Birds!
+
 https://youtu.be/K4feIZBn56g
 
 [Alternative Video Location](https://aka.ms/40544a-projectiles1)
@@ -129,7 +130,7 @@ projectile = sprites.createProjectile(img`
 
 ## Concept: Projectile Loop
 
-Games often create many projectiles, one after another.  We can use a loop to create multiple projectiles by creating a projectile in the body of the loop.
+Games often create many projectiles, one after another. We can use a loop to create multiple projectiles by creating a projectile in the body of the loop.
 
 ### Example #2: Projectile Loop
 
@@ -205,7 +206,7 @@ We have seen how it is useful for projectiles to come from random positions but 
 2. Create the sample code and run the code
 3. Save the code for the task (name it "screen fill")
 4. Move the code in the ``||loops:on start||`` block into a ``||loops:for index from 0 to 12||`` block, to create 13 projectiles, one every 300 ms
-5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value **`10 * index`**, so that they start further down the screen on each iteration
+5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value `10 * index`, so that they start further down the screen on each iteration
 
 ```blocks
 enum SpriteKind {
@@ -242,7 +243,7 @@ https://youtu.be/59hNi1CGCTo
 
 [Alternative Video Location](https://aka.ms/40544a-projectiles3)
 
-Projectiles with a Y velocity only will start on the Top or Bottom of the game screen and projectiles with a X velocity only will start from the left by default.  In this example and task we will see how we can make a projectile start from any corner we choose by default.
+Projectiles with a Y velocity only will start on the Top or Bottom of the game screen and projectiles with a X velocity only will start from the left by default. In this example and task we will see how we can make a projectile start from any corner we choose by default.
 
 ### Example #3: Projectile from corner
 
@@ -279,10 +280,9 @@ projectile = sprites.createProjectile(img`
 1. Create the example code above 
 2. Modify the code to make the sprite start from the upper right corner by default and move toward the lower left corner 
 3. Place the code in a loop to repeat 4 times with a short pause between loop iterations
-4. **Challenge**: Make sprites originate from each of the 4 corners inside the loop.
+4. **Challenge**: Make sprites originate from each of the 4 corners inside the loop
 
 ## What did we learn?
 
-1. Describe two benefits of using projectiles rather than normal sprites.  
+1. Describe two benefits of using projectiles rather than normal sprites. 
 2. How did using a loop in this section help reduce the amount of blocks that were used? 
-

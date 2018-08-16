@@ -163,20 +163,18 @@ https://youtu.be/MXQTc9At7Ts
 
 [Alternative Video Location](https://aka.ms/40544a-function-redundant-task1)
 
-
-
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create 3 different functions, with names that describe different sections of the code.
-  * Remove the blocks from the ``||loops:on start||`` block and split it into the three different functions. Each function should have 3 of the 9 blocks
-  * Use the ``||functions:call function||`` block 3 times in your ``||loops:on start||`` block to call each new function
-4. Make sure your code behaves **exactly** the same as the code below!
+    * Remove the blocks from the ``||loops:on start||`` block and split it into the three different functions. Each function should have 3 of the 9 blocks
+    * Use the ``||functions:call function||`` block 3 times in your ``||loops:on start||`` block to call each new function
+4. Make sure your code behaves **exactly** the same as the code below
 
 ### ~hint
 
 The 3 functions should cover the initial sprite setup, playing the music, and display items.
 
-For the challenge, try re-ordering the ``||functions:function calls||`` in your ``||loops:on start||`` - does anything change, or happen in a different order?
+Try re-ordering the ``||functions:function calls||`` in your ``||loops:on start||`` - does anything change, or happen in a different order?
 
 ### ~
 
@@ -219,8 +217,9 @@ info.startCountdown(10)
 
 ## Student Task #1b: Functions in Events
 
-https://youtu.be/46mdlB941Yo 
-[Alternative Video Location] (https://aka.ms/40544a-function-redundant-task2)
+https://youtu.be/46mdlB941Yo
+
+[Alternative Video Location](https://aka.ms/40544a-function-redundant-task2)
 
 Functions can be used throughout your code - not just in the ``||loops:on start||`` block. 
 
@@ -232,8 +231,8 @@ In this task, we will clean up the ``||controller:on A button pressed||`` event 
 4. Move the blocks in ``||controller:on A button pressed||`` for the conversation to ``||functions:conversation||``, and the blocks for scoring a point and playing a sound to ``||functions:scorePoints||``
 5. Use the ``||functions:call function||`` block 2 times in the ``||controller:on A button pressed||`` event to call both new functions
 6. **Challenge**: Create an ``||sprites:on overlap||`` event that uses 
-  * the "conversation" function 
-  * an additional function (e.g. - playerConversation, or movePlayer, or...)
+    * the "conversation" function 
+    * an additional function (e.g. - playerConversation, or movePlayer, or...)
 
 ```blocks
 enum SpriteKind {

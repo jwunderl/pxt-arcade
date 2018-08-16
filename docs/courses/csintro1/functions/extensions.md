@@ -22,7 +22,7 @@ https://youtu.be/VVjxMS29jjU
 [Alternative Video Location](https://aka.ms/40544a-extensiondart) 
 
 1. Open a new project (name it "football")
-2. Using the extensions menu, search for "darts" (or the full package location at github.com/jwunderl/pxt-darts). Notice how a new section is added to the menu, above ``||game:Game||``
+2. Using the extensions menu, search for "darts" (or the full package location at [github.com/jwunderl/pxt-darts](github.com/jwunderl/pxt-darts)). Notice how a new section is added to the menu, above ``||game:Game||``
 3. Review the example code below, and either recreate it or build something similar
 
 ![Finding Dart Extension](/static/courses/csintro1/functions/finding-darts.gif)
@@ -101,7 +101,7 @@ https://youtu.be/HmhCPIvfKe8
 2. Add at least 3 new sprites of kind ``||sprites:Obstacle||``
 3. Place the sprites in different positions on the screen so that they are in between the ``||sprites:Foot_Ball||`` and the ``||sprites:Goal||`` (or equivalent)
 4. Add a new ``||sprites:on overlap||`` event between the ball and the obstacles, so that hitting an obstacle causes a ``||game:game over||``
-5. **Challenge:** add a controller event so that pressing the ``||controller:B||`` button stops the ball at it's current location.
+5. **Challenge:** add a controller event so that pressing the ``||controller:B||`` button stops the ball at it's current location
 
 ## Sharing Code
 
@@ -137,8 +137,6 @@ Follow these steps as shown in the video
 Do any of the names of the tabs in the explorer look similar to the name of the project you shared?
 
 ### ~
-
-https://makecode.com/_0r2MxgLeKcjL
 
 ```blocks
 enum SpriteKind {
@@ -177,10 +175,10 @@ projectile = sprites.createProjectile(img`
 7. In your new project ("use starryNight")
     * add a new ``||scene:background color||``  
     * Add a ``||info:countdown||`` block so the game will eventually end
-7. **Challenge:** Create and add code to "use starryNight" so that a second type of projectile that will spawn a meteor every that moves across the screen. 
-  * Save the updated "starryNight" code and get a share link.
-  * Add the share link into a new game and save as "challenge starryNight" 
-  * The Challenge game should have updated background color and countdown timer
+7. **Challenge:** Create and add code to "use starryNight" so that a second type of projectile that will spawn a meteor every that moves across the screen
+    * Save the updated "starryNight" code and get a share link.
+    * Add the share link into a new game and save as "challenge starryNight" 
+    * The Challenge game should have updated background color and countdown timer
 
 ## What did we learn?
 

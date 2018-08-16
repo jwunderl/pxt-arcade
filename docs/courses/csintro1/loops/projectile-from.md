@@ -14,9 +14,7 @@ https://youtu.be/Y7_-noa6_FU
 
 [Alternative Video Location](https://aka.ms/40544a-projectile-from-sprite) 
 
-
-
-There are many games that have sprites sending out projectile sprites.  We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile - from sprite||`` as below: 
+There are many games that have sprites sending out projectile sprites. We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile - from sprite||`` as below: 
 
 ```block
 enum SpriteKind {
@@ -39,10 +37,11 @@ ball = sprites.createProjectile(img`
 `, -50, 0, SpriteKind.Ball, mySprite)
 ```
 
+### Example #1: Throw ball
 
-### Example #1: Throw ball 
-
-[Throw ball](https://makecode.com/_hcy4AV871ix1)
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "Throw Ball") 
 
 ```blocks
 enum SpriteKind {
@@ -89,15 +88,13 @@ mySprite = sprites.create(img`
 mySprite.setPosition(145, 60)
 ```
 
-
 ## Student Task #1: Throw a ball at a target
 
-1. Create the example code above 
+1. Start with the code from example #1
 2. Modify the code to make a target sprite on the other side of the screen from the player sprite 
 3. Add a countdown timer
 4. Build an ``||sprites:on overlap||`` event for the ball and the target to add a point and destroy the ball
-5. **Challenge**: Make the target into projectiles that move down the screen and add vertical motion to the player sprite.
-
+5. **Challenge**: Make the target into projectiles that move down the screen and add vertical motion to the player sprite
 
 ## Concept: Projectiles from other Projectile Sprites
 
@@ -110,8 +107,6 @@ We can use the projectiles we have made as the source of animation like projecti
 ## Example #2a: Cloud projectile 
 
 Start with the following cloud moving across the screen:
-
-https://makecode.com/_UfeX3VY6CfgD
 
 ```blocks
 enum SpriteKind {
@@ -143,8 +138,6 @@ There isn't all that much to this code; it spawns a cloud, which slowly moves ac
 ## Example #2b: Cloud projectile that emits projectile rain
 
 Review the code carefully for the use of ``||sprites:ghost on||`` and ``||sprites:projectile -- from sprite||`` for the raindrop projectiles. 
-
-https://makecode.com/_Es5HF0VEuCiL
 
 ```blocks
 enum SpriteKind {
@@ -201,14 +194,12 @@ Try removing the ``||sprites:ghosts||`` block, and see how much the performance 
 
 ## Example #2c: Cloud projectile that widely emits projectile rain
 
-We can change where the rain drops show up, so that they don't all appear in the same location relative to the cloud by applying a random value to the raindrop X value.  
+We can change where the rain drops show up, so that they don't all appear in the same location relative to the cloud by applying a random value to the raindrop X value. 
 
 ```block
 let raindrop: Sprite = null
 raindrop.x += Math.randomRange(1, 14)
 ```
-
-https://makecode.com/_CvEVPuh35bbj
 
 ```blocks
 
@@ -277,8 +268,6 @@ sprites.onDestroyed(SpriteKind.Rain, function (sprite: Sprite) {
 })
 ```
 
-https://makecode.com/_HhcT57KDxR9s
-
 ```blocks
 enum SpriteKind {
     Cloud,
@@ -346,7 +335,7 @@ https://youtu.be/qlijC56n88k
 
 Make a projectile go across the bottom of the screen that will give off different projectiles that "float" to the top of the screen. Use parts of example code above for inspiration to start you project
 
-1. Create a projectile that moves across the bottom of the screen.
+1. Create a projectile that moves across the bottom of the screen
 2. have a new projectile float from the original bottom projectile
 3. Make several of the floating projectiles come from the bottom projectile 
 
@@ -356,10 +345,10 @@ Use a loop and if creating many projectiles use ``||sprite:ghost on||``
 
 ### ~
 
-4. **Challenge**: As the projectiles "float" up from the bottom of the game screen give them a small random X direction so they move at a slight angle left or right.
+4. **Challenge**: As the projectiles "float" up from the bottom of the game screen give them a small random X direction so they move at a slight angle left or right
 
 ## What did we learn?
 
 1. How can we make a sprite that came from a sprite block act like a projectile sprite? Explain the block code to use.
-2. Give examples of using ghost and/or on overlap events in a game to make a projectile: decoration, laser beam, coin (reward).  Explain each.  
+2. Give examples of using ghost and/or on overlap events in a game to make a projectile: decoration, laser beam, coin (reward). Explain each. 
 3. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might make your game run faster than leaving it off.

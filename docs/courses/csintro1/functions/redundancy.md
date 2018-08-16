@@ -12,6 +12,7 @@ In this activity, students will:
 https://youtu.be/NsENrceOCDw 
 
 [Alternative Video Location](https://aka.ms/40544a-function-refactoring)
+
 1. Review the code below 
 2. Create the sample code and run the code
 3. Save the code for the example (name it "moveSprite")
@@ -132,7 +133,7 @@ The function should include 4 blocks that appear in the same order 3 separate ti
 ### ~
 
 4. Reduce the redundancy in the code using your newly created function, without changing the behavior of the game
-5. **Challenge:** Change the behavior of the game by making the projectiles move at twice the vx rate (from -20 to -40), and by making the ``||music:play tone||`` block play a `Middle A`.
+5. **Challenge:** Change the behavior of the game by making the projectiles move at twice the vx rate (from -20 to -40), and by making the ``||music:play tone||`` block play a `Middle A`
 
 ```blocks
 enum SpriteKind {
@@ -211,16 +212,16 @@ game.over()
 ```
 
 ## Student Task #2: Events
+
 https://youtu.be/m4AamaGjDoE 
 
 [Alternative Video Location](https://aka.ms/40544a-function-refactoring-task2a)
-
 
 1. Review the code below 
 2. Create the sample code and run the code
 3. Create a function called "buttonPress" and copy over the behavior from the ``||controller:on A button pressed||`` event
 4. Replace the contents of both the ``||controller:on A button pressed||`` and ``||controller:on B button pressed||`` blocks with a single ``||functions:call function buttonPress||``
-5. **Challenge:** add in both a ``||sprites:set projectile ax to||`` and a ``||sprites:set projectile ay to||`` to ``||functions:function buttonPress||``, and set the newly created projectile to have random accelerations between -50 and 50. 
+5. **Challenge:** add in both a ``||sprites:set projectile ax to||`` and a ``||sprites:set projectile ay to||`` to ``||functions:function buttonPress||``, and set the newly created projectile to have random accelerations between -50 and 50
 
 ```blocks
 enum SpriteKind {
