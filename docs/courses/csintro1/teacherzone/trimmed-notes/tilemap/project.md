@@ -535,6 +535,54 @@ setupPlayer()
 setupFlames()
 ```
 
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Dart,
+    Corgi
+}
+let myCorg: Corgi = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    myDart.throwDart()
+    myCorg.fetch(myDart.sprite)
+})
+sprites.onOverlap(SpriteKind.Corgi, SpriteKind.Dart, function (sprite, otherSprite) {
+    myDart.stopDart()
+    myCorg.bark()
+    otherSprite.setPosition(10, 10)
+})
+let myDart: Dart = null
+myDart = Darts.create(img`
+. . . . . . . . . . . . . . . . 
+. . 1 1 . . . . . . . 1 1 . . . 
+. . 1 d 1 1 1 d 1 1 d d 1 . . . 
+. . . 1 d d d d 1 d d 1 . . . . 
+. . 1 d 1 1 1 1 1 1 d d 1 . . . 
+. . 1 1 . . . . . . . 1 1 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Dart, 10, 10)
+myDart.setTrace()
+myDart.controlWithArrowKeys()
+myDart.sprite.setFlag(SpriteFlag.StayInScreen, true)
+myCorg = corgi.create(SpriteKind.Corgi)
+myCorg.updateSprite()
+```
+
+```package
+corgio=github:jwunderl/pxt-corgio#v0.0.12
+darts=github:jwunderl/pxt-darts#v0.0.14
+```
+
 ## Student Task #1:
 
 ## What did we learn? 
