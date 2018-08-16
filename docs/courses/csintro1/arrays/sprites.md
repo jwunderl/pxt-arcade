@@ -1,6 +1,145 @@
-## TODO: make activity using this and others
+## Activity: Arrays of Sprites
 
-## This requires latest commits (my spritesOfKind implementation); if running, either serve locally or wait for pxt-common-packages bump
+In previous lessons, we have used arrays of fairly simple types of variables - numbers and strings. As mentioned in those lessons, though, arrays can be used with any variable you would like, including sprites.
+
+In this activity, we will walk through a few ways in which we can use arrays of sprites to to create unique behaviors for the characters in our games, as well as introduce the basics of artifial intelligence for non-player characters.
+
+In this activity, students will:
+### TODO
+
+## Concept: Creating Sprite Arrays
+
+Creating arrays of sprites is effectively the same as creating arrays of numbers or strings; this is done by creating a new array of numbers, and then replacing all of the numbers within the array with sprites.
+
+![creating an array of sprites](/static/courses/csintro1/arrays/create-sprite-array.gif)
+
+This can be very useful when implementing the same behavior for multiple sprites at once.
+
+## Example #1: Moving all Asteroids
+
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "Sprite Arrays") 
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Asteroid
+}
+let my_sprite_array: Sprite[] = []
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    for (let value of my_sprite_array) {
+        value.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
+    }
+})
+my_sprite_array = [sprites.create(img`
+. . . . . . . . . c c 8 . . . . 
+. . . . . . 8 c c c f 8 c c . . 
+. . . c c 8 8 f c a f f f c c . 
+. . c c c f f f c a a f f c c c 
+8 c c c f f f f c c a a c 8 c c 
+c c c b f f f 8 a c c a a a c c 
+c a a b b 8 a b c c c c c c c c 
+a f c a a b b a c c c c c f f c 
+a 8 f c a a c c a c a c f f f c 
+c a 8 a a c c c c a a f f f 8 a 
+. a c a a c f f a a b 8 f f c a 
+. . c c b a f f f a b b c c 6 c 
+. . . c b b a f f 6 6 a b 6 c . 
+. . . c c b b b 6 6 a c c c c . 
+. . . . c c a b b c c c . . . . 
+. . . . . c c c c c c . . . . . 
+`, SpriteKind.Asteroid), sprites.create(img`
+. . . . . . . . . c c 8 . . . . 
+. . . . . . 8 c c c f 8 c c . . 
+. . . c c 8 8 f c a f f f c c . 
+. . c c c f f f c a a f f c c c 
+8 c c c f f f f c c a a c 8 c c 
+c c c b f f f 8 a c c a a a c c 
+c a a b b 8 a b c c c c c c c c 
+a f c a a b b a c c c c c f f c 
+a 8 f c a a c c a c a c f f f c 
+c a 8 a a c c c c a a f f f 8 a 
+. a c a a c f f a a b 8 f f c a 
+. . c c b a f f f a b b c c 6 c 
+. . . c b b a f f 6 6 a b 6 c . 
+. . . c c b b b 6 6 a c c c c . 
+. . . . c c a b b c c c . . . . 
+. . . . . c c c c c c . . . . . 
+`, SpriteKind.Asteroid), sprites.create(img`
+. . . . . . . . . c c 8 . . . . 
+. . . . . . 8 c c c f 8 c c . . 
+. . . c c 8 8 f c a f f f c c . 
+. . c c c f f f c a a f f c c c 
+8 c c c f f f f c c a a c 8 c c 
+c c c b f f f 8 a c c a a a c c 
+c a a b b 8 a b c c c c c c c c 
+a f c a a b b a c c c c c f f c 
+a 8 f c a a c c a c a c f f f c 
+c a 8 a a c c c c a a f f f 8 a 
+. a c a a c f f a a b 8 f f c a 
+. . c c b a f f f a b b c c 6 c 
+. . . c b b a f f 6 6 a b 6 c . 
+. . . c c b b b 6 6 a c c c c . 
+. . . . c c a b b c c c . . . . 
+. . . . . c c c c c c . . . . . 
+`, SpriteKind.Asteroid)]
+```
+
+## Student Task #1: Moving a random asteroid
+
+1. Start with the code from example #1
+2. Instead of moving every asteroid, use ``||math:random item from||`` to select a random asteroid from ``||variables:my sprite array||`` and move only that asteroid when the ``||controller:A||`` button is pressed
+3. **Challenge:** choose another random asteroid, and have it ``||sprites:say||`` "woosh" for 300 ms. Are the two randomly chosen asteroids the same? (Can they be the same?)
+
+## Concept: Arrays from functions
+
+Building arrays by adding in values is useful on it's own, but arrays can be even more useful when they are returned by functions. This allows for the return of multiple related values at once.
+
+The ``||sprites:array of sprites of kind||`` block (located in the ``||array:arrays||`` category) is one example of a function like this - it will return an array with all of the sprites currently in the game with the given ``||sprites:kind||``. This makes it easier to implement behaviors like those in example #1, especially as more sprites are created and destroyed.
+
+## Example #2: Using ``||sprites:array of sprites of kind||``
+
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "Sprite of Kind Arrays") 
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Asteroid
+}
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    for (let value of sprites.allOfKind(SpriteKind.Asteroid)) {
+        value.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
+    }
+})
+for (let i = 0; i < 10; i++) {
+    mySprite = sprites.create(img`
+. . . . . . . . . c c 8 . . . . 
+. . . . . . 8 c c c f 8 c c . . 
+. . . c c 8 8 f c a f f f c c . 
+. . c c c f f f c a a f f c c c 
+8 c c c f f f f c c a a c 8 c c 
+c c c b f f f 8 a c c a a a c c 
+c a a b b 8 a b c c c c c c c c 
+a f c a a b b a c c c c c f f c 
+a 8 f c a a c c a c a c f f f c 
+c a 8 a a c c c c a a f f f 8 a 
+. a c a a c f f a a b 8 f f c a 
+. . c c b a f f f a b b c c 6 c 
+. . . c b b a f f 6 6 a b 6 c . 
+. . . c c b b b 6 6 a c c c c . 
+. . . . c c a b b c c c . . . . 
+. . . . . c c c c c c . . . . . 
+`, SpriteKind.Asteroid)
+}
+```
+
+## Student Task #2
 
 ```blocks
 enum SpriteKind {
@@ -113,7 +252,11 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 
 for (let i = 0; i < 100; i++) {
-    let firework: Sprite = sprites.create(img`.`, SpriteKind.Firework)
+    let firework: Sprite = sprites.create(img`
+        1 1 1
+        1 2 1
+        1 1 1
+        `, SpriteKind.Firework)
     firework.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
     firework.setFlag(SpriteFlag.Ghost, true)
 }
@@ -141,7 +284,7 @@ player = sprites.create(img`
 . 1 1 1 . 
 `, SpriteKind.Player)
 controller.controlSprite(player, 100, 100)
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 20; i++) {
     enemy = sprites.create(img`
 2 . . 2 
 . . . . 
