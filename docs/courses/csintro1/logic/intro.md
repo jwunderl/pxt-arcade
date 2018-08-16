@@ -2,13 +2,15 @@
 
 ``||logic:if||`` and ``||logic:else if||`` logic
  
-In our games we will often want to compare values and take an action based on the comparison.  Is my value equal to the test or is it greater or smaller?
+In our games we will often want to compare values and take an action based on the comparison.  
+
+Is my value equal to the test or is it greater or smaller?
 
 We could do a comparison test to see:
 
-* if player score is greater than the enemy score we gain points on overlap
+* if player score is greater than the enemy score, then we gain points on overlap
 * if the player has 0 lives left, then we set to game over
-* if we have the secret key, we can enter the room.
+* if we have the secret key, then we can enter the room.
 
 ``||logic:if||`` and ``||logic:else if||`` statements allow us  to make our programs behave in different ways based on the state of the game.
 
@@ -16,7 +18,7 @@ We could do a comparison test to see:
 
 ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. Some examples are:
 
-* if the score is greater than 10, give additional countdown time
+* if the score is greater than 10, then give additional countdown time
 * if the player has 0 lives left, then game over
 
 These are what are known as comparisons because they compare the value of two things.
