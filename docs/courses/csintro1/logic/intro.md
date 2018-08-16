@@ -26,8 +26,6 @@ These are what are known as comparisons because they compare the value of two th
 
 To use an ``||logic:if||`` statement block we must fill it with a comparison test. If the test is true the code in the block will run.
 
-### Example 1a
-
 ```block
 if (info.highScore() > 5) {
     game.splash("Good luck!")
@@ -40,7 +38,6 @@ When we use an ``||logic:if||`` statement, we have the option to add an ``||logi
 
 To use an ``||logic:else||`` click on the plus sign of an existing ``||logic:if||`` block.
 
-### Example 1b
 
 ```block
 if (info.highScore() > 5) {
@@ -67,7 +64,6 @@ First test if the score is greater than 100 and if not run a second comparison t
   * or else if greater than 50 "you are intermediate"
   * or else, "you are a beginner"
  
-### Example 1c
 
 ```block
 if (info.score() > 100) {
@@ -89,55 +85,56 @@ Make sprite alternate between saying "A" and "B"
 
 # TODO: Video (eric)
 
-### Example a: random alternating message
+### Example 1a: random alternating message
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let mySprite: Sprite = null
-let randomPick = 0
-function generate() {
-    randomPick = Math.randomRange(0, 1)
-    if (randomPick == 0) {
-        mySprite.say("push A")
-    }
-    if (randomPick == 1) {
-        mySprite.say("push B")
-    }
-}
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    generate()
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    generate()
-})
-game.splash("Push A or B as directed")
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . 4 4 4 4 4 4 4 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 . e . . e . 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 4 . 1 1 . 4 4 . . . 
-. . . . . . 4 4 4 4 4 4 . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-info.startCountdown(20)
-generate()
-```
 https://makecode.com/_HXMRAzYY4YkU
 
-### Example 2b: Check if correct button is pressed
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+let randomPick = 0
+function generate() {
+    randomPick = Math.randomRange(0, 1)
+    if (randomPick == 0) {
+        mySprite.say("push A")
+    }
+    if (randomPick == 1) {
+        mySprite.say("push B")
+    }
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    generate()
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    generate()
+})
+game.splash("Push A or B as directed")
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 4 4 4 4 4 4 4 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . e . . e . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 4 . 1 1 . 4 4 . . . 
+. . . . . . 4 4 4 4 4 4 . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+info.startCountdown(20)
+generate()
+```
+
+### Example 1b: Check if correct button is pressed
 
 ```blocks
 enum SpriteKind {
@@ -190,9 +187,10 @@ info.startCountdown(20)
 generate()
 ```
 
-https://makecode.com/_FDoAgwhKdh1X
 
-### Example 2c:  ``|logic:else|`` for random alternating message
+### Example 1c:  ``|logic:else|`` for random alternating message
+
+https://makecode.com/_FDoAgwhKdh1X
 
 ```blocks
 enum SpriteKind {
@@ -244,16 +242,16 @@ info.startCountdown(20)
 generate()
 ```
 
-https://makecode.com/_FDoAgwhKdh1X
 
-## Student Task 1: ``|logic:else|`` for check if correct button is pressed
 
+## Student Task 1a: ``|logic:else|`` for check if correct button is pressed
 
 Now that we have the basic functionality of our game, let’s make it so that the player loses points when they press the wrong button.
 
 
-1. Add else ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
-2. Decrease the players ``||info:score||`` by 1 when they press the wrong button by using the ``||info:change score by||`` block
+1. Start wit the code 1c above 
+2. Add else ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
+3. Decrease the players ``||info:score||`` by 1 when they press the wrong button by using the ``||info:change score by||`` block
 
 ### ~hint
 
@@ -261,7 +259,7 @@ To decrease a value, you change its value by a negative amount
 
 ### ~
 
-## Task #2: End of Game Message
+## Task #1b: End of Game Message
 
 Now let’s congratulate the player at the end of the game, giving them a specific message based on their ``||info:score||``.
 
@@ -291,7 +289,7 @@ This will change the dialog shown on the game over screen.
 ## What did we learn?
 
 1. What's a case in which you use an ``||logic:if||`` but not an ``||logic:else||``?
-2. For example 2c, we changed the ``|logic:if||`` ``|logic:if||`` structure to an ``|logic:if else||`` structure. Why does it make sense to do this?
+2. For example 1c, we changed the ``|logic:if||`` ``|logic:if||`` structure to an ``|logic:if else||`` structure. Why does it make sense to do this?
 3. What is the same and what is different between the following code samples? Which one is easier to read? Explain.
 
 ```blocks
