@@ -6,6 +6,8 @@
 
 ### Standard:
 
+https://makecode.com/_YHH3j1ivcT7J
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -19,6 +21,8 @@ myCorg.verticalMovement()
 ```
 
 ### Challenge:
+
+https://makecode.com/_6bffmgTDy3FT
 
 ```blocks
 enum SpriteKind {
@@ -39,9 +43,11 @@ myCorg.addToScript("jump")
 myCorg.addToScript("sit")
 ```
 
-## Example #1: Corgi with tilemap
+## Example #1: Corgi with tile map
 
 ## Student Task #2: Creating a side scroller
+
+https://makecode.com/_cHm2paXjLcfU
 
 ```blocks
 enum SpriteKind {
