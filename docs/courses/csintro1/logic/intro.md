@@ -10,7 +10,7 @@ We could do a comparison test to see:
 * if the player has 0 lives left, then we set to game over
 * if we have the secret key, we can enter the room.
 
- ``||logic:if||`` and ``||logic:else if||`` statements allow us  to make our programs behave in different ways based on the state of the game.
+``||logic:if||`` and ``||logic:else if||`` statements allow us  to make our programs behave in different ways based on the state of the game.
 
 ## Concept: **if** Statement
 
