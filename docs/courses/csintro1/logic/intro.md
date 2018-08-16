@@ -1,16 +1,20 @@
 # Comparisons 
 
-**if and if else logic**
+``||logic:if||`` and ``||logic:else if||`` logic
  
-In our games we will often want to compare values to see if they match
+In our games we will often want to compare values and take an action based on the comparison.  Is my value equal to the test or is it greater or smaller?
 
-* if player score is greater than opponent score we know our player is winning
+We could do a comparison test to see:
+
+* if player score is greater than the enemy score we gain points on overlap
 * if the player has 0 lives left, then we set to game over
-* if we complete all requirements, we pass the course
+* if we have the secret key, we can enter the room.
 
-A program that is running a game can exist in different states at different times. Variables have different values, sprites may be in different locations, or the player’s score may be different. ``if`` and ``if else`` statements allow us  to make our programs behave in different ways based on the state of the game.
+ ``||logic:if||`` and ``||logic:else if||`` statements allow us  to make our programs behave in different ways based on the state of the game.
 
-``||logic:if||`` statement work performing a test and if the logic test evaluates to true, then it will run code that is given. Some examples are:
+## Concept: **if** Statement
+
+``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. Some examples are:
 
 * if the score is greater than 10, give additional countdown time
 * if the player has 0 lives left, then game over
@@ -18,45 +22,64 @@ A program that is running a game can exist in different states at different time
 These are what are known as comparisons because they compare the value of two things.
 
 
-To use an ``||logic:if||`` statement, simply drag the use an ``||logic:if||`` block and fill it with a comparison test.
+To use an ``||logic:if||`` statement block we must fill it with a comparison test. If the test is true the code in the block will run.
 
 ### Example 1a
 
-```blocks
+```block
 if (info.highScore() > 5) {
     game.splash("Good luck!")
 }
 ```
-When we use an ``||logic:if||`` statement, we also have the option to add an else statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the if block’s code will run, else, the else block’s code will run. 
 
-To use an ``||logic:if else||`` block, either drag it from the logic menu, or click on the plus sign of an existing ``||logic:if||`` block.
+## Concept: **else if** Statement
+
+When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||``  statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
+
+To use an ``||logic:else||`` click on the plus sign of an existing ``||logic:if||`` block.
 
 ### Example 1b
 
-```blocks
+```block
 if (info.highScore() > 5) {
-    game.splash("Good luck!")
+    game.splash("Good Luck!")
 } else {
-    game.splash("You got this!")
+    game.splash("Set High Score!")
 }
 ```
+## Concept: **else if** Statement
 
-Using an ``||logic:if||`` block with an else block allows us to split all possibilities into just two categories and run code that is specific to each category. But what if we needed to split everything into three or four or more categories?
- To do this, we can use the ``||logic:else if||`` block. By clicking the plus sign of an ``||logic:if else||`` block, and an ``||logic:else if||`` block will appear. This requires another logic test and that splits the cases after the original logic test evaluates to false. 
+Using an ``||logic:if||`` block with an ``||logic:else||`` block allows us to split all comparisons into two categories - either the comparison is ``||logic:true||`` or ``||logic:false||`` (not true). 
 
+What if we needed to split a comparison into three or four categories?
+
+We can use the ``||logic:else if||`` block to add additional comparisons. 
+
+By clicking the plus sign of an ``||logic:if else||`` block, and an ``||logic:else if||`` block will appear. This requires another logic test and that splits the cases after the original logic test evaluates to false. 
+
+We can compare the score with 3 possible results. 
+ 
+First test if the score is greater than 100 and if not run a second comparison to see if score is greater than 50.
+
+  * if score greater than 100 "you are an expert"
+  * or else if greater than 50 "you are intermediate"
+  * or else, "you are a beginner"
+ 
 ### Example 1c
 
-```blocks
-if (info.highScore() > 5) {
-    game.splash("Good luck!")
-} else if (info.highScore() < 1) {
-    game.splash("Piece of cake!")
+```block
+if (info.score() > 100) {
+    game.splash("you are an expert!")
+} else if (info.score() > 100) {
+    game.splash("you are intermediate!")
 } else {
-    game.splash("You got this!")
+    game.splash("you are a beginner!")
 }
 ```
-This code will first check if the high score for the game is greater than five. If it is, then it will wish you “Good luck!”. If it is not, then it will check the second logic test to see if the score is less than one. If it is, then it will let the player know that the game should be a “Piece of cake!”. If it is not less than one, then the game will tell the player “You got this!”
 
+This code will first check if the high score for the game is greater than five. If it is, then it will message "expert" and skip the rest of the comparison tests. 
+
+If it is not greater than 100, then the second logic test is run to see if the score is greater than 50. If it is, then it will message "intermediate." If it is not greater than 50 it will run the ``||logic: else||`` and rank the player a "beginner."
 
 ## Button Game
 
@@ -241,7 +264,7 @@ To decrease a value, you change its value by a negative amount
 Now let’s congratulate the player at the end of the game, giving them a specific message based on their ``||info:score||``.
 
 1. Create an event for when the countdown ends by using the ``||info:on countdown end||`` block
-2. Check to see if the player’s ``||info:score||`` is less than `20`. If it is, use a splash block to say “Beginner score of” and then the player’s ``||info:score||``
+2. Check to see if the player’s ``||info:score||`` is less than `20`. If it is, use a splash block to say “Beginner score of ” and then the player’s ``||info:score||``
 
 ### ~hint
 
@@ -249,7 +272,7 @@ You can combine a string and a number to form a string using the ``||text:join||
 
 ### ~
 
-3. Use an ``||logic:else||`` block to do the same for if the player’s ``||info:score||`` was greater than or equal to `20` but say “Pro score of” and then the player’s ``||info:score||``
+3. Use an ``||logic:else||`` block to do the same for if the player’s ``||info:score||`` was greater than or equal to `20` but say “Pro score of ” and then the player’s ``||info:score||``
 4. Use a game over block to let the game know that it is over and that the player won
 
 ### ~hint 
@@ -261,14 +284,13 @@ This will change the dialog shown on the game over screen.
 ### ~
 
 
-## Challenge
-Make the sprite have a shake or bump effect each time it has a say so can see when letter updates even when it is the same.
+5. Challenge: Make the sprite have a shake or bump effect each time it has a say so can see when letter updates even when it is the same as the previous time.
 
 ## What did we learn?
 
 1. What's a case in which you use an ``||logic:if||`` but not an ``||logic:else||``?
 2. For example 2c, we changed the ``|logic:if||`` ``|logic:if||`` structure to an ``|logic:if else||`` structure. Why does it make sense to do this?
-3. What is the same and what is different between the following code samples? Which one is easier to read?
+3. What is the same and what is different between the following code samples? Which one is easier to read? Explain.
 
 ```blocks
 if (info.score() > 10) {
