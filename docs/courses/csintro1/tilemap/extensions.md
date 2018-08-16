@@ -11,9 +11,7 @@ In this activity, students will:
 
 To simplify the design process of the game, we will be using the corgio extension. This extension allows you to create a sprite who can jump, run, and fall with only a few blocks in the ``||loops:on start||``; many of these behaviors will continue to run in the background without further input.
 
-To add the corgio extension to your project, open the extensions tab and search for "corgio" - it should be the first result. Alternatively, you can search using a direct link to the package, as follows: [github.com/jwunderl/pxt-corgio](github.com/jwunderl/pxt-corgio).
-
-### TODO: gif of adding corgio
+To add the corgio extension to your project, open the extensions tab and search for "corgio" - it should be the first result. Alternatively, you can search using a direct link to the package, as follows: `github.com/jwunderl/pxt-corgio`.
 
 After adding corgio to your project, a new tab titled ``||corgio:Corgi||`` will appear in the top of the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgi.
 
@@ -28,7 +26,7 @@ After adding corgio to your project, a new tab titled ``||corgio:Corgi||`` will 
 ## Example #1: Corgi with tilemap
 
 1. Open a new project (name it "myLevel")
-2. Using the extensions menu, search for jwunderl/pxt-corgi. ### TODO change this if darts gets approved to just search by package name
+2. Using the extensions menu, search for "corgio"
 3. Review the example code below, and either recreate it or build something similar
 4. Notice how the corgi rests on top of the the wall tiles, and that the jumps reset as if the corgi were touching the bottom of the screen
 
@@ -89,7 +87,7 @@ Just having a single wall in your game does not make for a particularly challeng
 
 ### ~hint
 
-The tilemap we are using is 64 tiles wide, and 8 tiles tall, with each tile being 16 pixels by 16 pixels
+The tilemap we are using is 64 tiles wide and 8 tiles tall, with each tile being 16 pixels by 16 pixels
 
 ### ~
 
@@ -102,5 +100,5 @@ The tilemap we are using is 64 tiles wide, and 8 tiles tall, with each tile bein
 2. How difficult was it to balance making your level interesting and completable? Where there any portions of the level that you had to change in order to make the game playable?
 
 ```package
-corgio=github:jwunderl/pxt-corgio#master
+corgio=github:jwunderl/pxt-corgio#v0.0.12
 ```
