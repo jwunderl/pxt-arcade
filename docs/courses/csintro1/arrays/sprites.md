@@ -151,13 +151,10 @@ enum SpriteKind {
     Enemy,
     Firework
 }
-let fireworks: number[] = []
-let projectile: Sprite = null
-let origin: Sprite = null
 let firework: Sprite = null
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let i = 0; i < 30; i++) {
-        projectile = sprites.createProjectile(img`
+        let projectile = sprites.createProjectile(img`
 1 
 `, Math.randomRange(-100, 100), Math.randomRange(-100, 100), SpriteKind.Player, firework)
         firework.setFlag(SpriteFlag.Ghost, true)
@@ -197,7 +194,8 @@ Make sure to surround all three blocks in the ``||loops:on start||``, to maintai
 5. Use ``||math:random item from||`` to select a firework from ``||variables:sprite list||`` at random, and store that in the variable ``||variables:origin||``. Replace all references to ``||variables:firework||`` in the event to refer to this new variable
 6. **Challenge:** change the ``||controller:on any button pressed||`` event to only trigger when the ``||controller:A||`` button is pressed, and make a ``||controller:on B button pressed||`` event that will create a new firework. Make sure to use either a ``||functions:function||`` or an ``||sprites:on created sprite of kind||`` event to reduce the redundancy between the new event and the ``||loops:on start||`` block
 
-### TODO: make as clear as possible in blocks, replace ternary
+
+## Example #3: 
 
 ```blocks
 enum SpriteKind {
