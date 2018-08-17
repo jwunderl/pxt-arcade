@@ -99,7 +99,7 @@ Building arrays by adding in values is useful on it's own, but arrays can be eve
 
 The ``||sprites:array of sprites of kind||`` block (located in the ``||array:arrays||`` category) is one example of a function like this - it will return an array with all of the sprites currently in the game with the given ``||sprites:kind||``. This makes it easier to implement behaviors like those in example #1, especially as more sprites are created and destroyed.
 
-## Example #2: Using ``||sprites:array of sprites of kind||``
+## Example #2a: Using ``||sprites:array of sprites of kind||``
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -139,99 +139,11 @@ c a 8 a a c c c c a a f f f 8 a
 }
 ```
 
-## Student Task #2
+## Example #2b: Fireworks
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    WindMill,
-    Fan
-}
-let curve: Image = null
-let fan: Sprite = null
-let curr: Sprite[] = []
-let straight: Image = null
-sprites.onCreated(SpriteKind.WindMill, function (sprite) {
-    fan = sprites.create(straight, SpriteKind.Fan)
-    sprite.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
-    sprite.setImage(img`
-. . . . . e e e e . . . . . . . 
-. . . . e e e e e . . . . . . . 
-. . . . e e e e e e . . . . . . 
-. . . . e e e e e e . . . . . . 
-. . . . e e f f e e . . . . . . 
-. . . . e e e f f e e . . . . . 
-. . . . e e e e e e e . . . . . 
-. . . e e e e e e e e . . . . . 
-. . . e e f e e e e e e . . . . 
-. . . e e f e e e f e e . . . . 
-. . . e e f e e e e e e e . . . 
-. . . e e f e e e e e e e . . . 
-. . e e e f e e e e f e e e . . 
-. . e e e f e e e e f e e e . . 
-. . e e e e e e e e f e e e e . 
-. e e e e e e e e e e e e e e . 
-`)
-    fan.z = 1
-    sprite.z = 0
-    fan.setPosition(sprite.x, sprite.y - sprite.height / 2)
-})
-straight = img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . e 1 1 . . . . . . 
-. . . . . . . e f 1 . . . . . . 
-. . . . . . . e 1 1 . . . . . . 
-. . . . . . . e f 1 . . . . . . 
-. 1 1 1 1 1 . e 1 1 . . . . . . 
-. 1 f 1 f 1 . e . . . . . . . . 
-. e e e e e e e e e e e e e . . 
-. . . . . . . e . 1 f 1 f 1 . . 
-. . . . . 1 1 e . 1 1 1 1 1 . . 
-. . . . . 1 f e . . . . . . . . 
-. . . . . 1 1 e . . . . . . . . 
-. . . . . 1 f e . . . . . . . . 
-. . . . . 1 1 e . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`
-curve = img`
-. 1 1 . . . . . . . . . . . . . 
-. e f 1 . . . . . . . . . e 1 . 
-. . e 1 1 . . . . . . . e f 1 . 
-. . . e f 1 . . . . . e 1 1 . . 
-. . . . e 1 1 . . . e f 1 . . . 
-. . . . . e . . . e 1 1 . . . . 
-. . . . . . e . e . 1 . . . . . 
-. . . . . . . e . . . . . . . . 
-. . . . 1 . e . e . . . . . . . 
-. . . 1 1 e . . . e . . . . . . 
-. . 1 f e . . . 1 1 e . . . . . 
-. 1 1 e . . . . . 1 f e . . . . 
-1 f e . . . . . . . 1 1 e . . . 
-1 e . . . . . . . . . 1 f e . . 
-. . . . . . . . . . . . 1 1 . . 
-. . . . . . . . . . . . . . . . 
-`
-sprites.createEmptySprite(SpriteKind.WindMill)
-sprites.createEmptySprite(SpriteKind.WindMill)
-sprites.createEmptySprite(SpriteKind.WindMill)
-sprites.createEmptySprite(SpriteKind.WindMill)
-forever(function () {
-    curr = sprites.allOfKind(SpriteKind.Fan)
-    for (let value of curr) {
-        value.setImage(curve)
-    }
-    pause(150)
-    for (let value2 of curr) {
-        value2.setImage(straight)
-    }
-    pause(150)
-})
-```
-
-
-### TODO refactor to be easier to understand for blocks (change if (origin) to wrap the entire thing, store sprites.allOfKind(SpriteKind.firework), and check size before pick random))
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "Firework") 
 
 ```blocks
 enum SpriteKind {
@@ -239,28 +151,51 @@ enum SpriteKind {
     Enemy,
     Firework
 }
+let fireworks: number[] = []
+let projectile: Sprite = null
+let origin: Sprite = null
+let firework: Sprite = null
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    let origin: Sprite = Math.pickRandom(sprites.allOfKind(SpriteKind.Firework))
-    if (origin) {
-        for (let i = 0; i < 30; i++) {
-            let projectile: Sprite = sprites.createProjectile(img`1`, Math.randomRange(-100, 100), Math.randomRange(-100, 100), SpriteKind.Player, origin)
-            projectile.setFlag(SpriteFlag.Ghost, true)
-            projectile.image.fill(Math.randomRange(1, 14))
-        }
-        origin.destroy()
+    for (let i = 0; i < 30; i++) {
+        projectile = sprites.createProjectile(img`
+1 
+`, Math.randomRange(-100, 100), Math.randomRange(-100, 100), SpriteKind.Player, firework)
+        firework.setFlag(SpriteFlag.Ghost, true)
+        projectile.image.fill(Math.randomRange(1, 14))
     }
+    firework.destroy()
 })
-
-for (let i = 0; i < 100; i++) {
-    let firework: Sprite = sprites.create(img`
-        1 1 1
-        1 2 1
-        1 1 1
-        `, SpriteKind.Firework)
-    firework.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
-    firework.setFlag(SpriteFlag.Ghost, true)
-}
+firework = sprites.create(img`
+1 1 1 
+1 2 1 
+1 1 1 
+`, SpriteKind.Firework)
+firework.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
+firework.setFlag(SpriteFlag.Ghost, true)
 ```
+
+This creates a firework at a random position on the screen, and then on any button press sets the firework off. The ``||images:fill image with||`` block is used to randomize the color of the projectiles, so that each firework is more magnificent. It has a few problems as written, though:
+
+* The firework can be set off again, creating an explosion from nothing
+* You can only really make one firework - try putting a repeat loop and identify what will cause it to behave incorrectly
+
+Using ``||sprites:array of sprites of kind||``, we can easily address both of these issues.
+
+## Student Task #2: Bigger and Better Fireworks
+
+1. Start with the code from example #2b
+2. Add a ``||loops:repeat||`` loop in the ``||loops:on start||`` that will create 100 fireworks
+
+### ~hint
+
+Make sure to surround all three blocks in the ``||loops:on start||``, to maintain the same behavior for all fireworks
+
+### ~
+
+3. Use ``||sprites:array of sprites of kind||`` block to get an array of all the fireworks in the ``||controller:on any button pressed||`` event, and store it in the variable ``||variables:sprite list||``
+4. Add an ``||logic:if||`` condition around the rest of the ``||controller:on any button pressed||``, so that the rest of the event only occurs if the ``||arrays:length of array sprite list||`` is greater than 0
+5. Use ``||math:random item from||`` to select a firework from ``||variables:sprite list||`` at random, and store that in the variable ``||variables:origin||``. Replace all references to ``||variables:firework||`` in the event to refer to this new variable
+6. **Challenge:** change the ``||controller:on any button pressed||`` event to only trigger when the ``||controller:A||`` button is pressed, and make a ``||controller:on B button pressed||`` event that will create a new firework. Make sure to use either a ``||functions:function||`` or an ``||sprites:on created sprite of kind||`` event to reduce the redundancy between the new event and the ``||loops:on start||`` block
 
 ### TODO: make as clear as possible in blocks, replace ternary
 
