@@ -2,7 +2,9 @@
 
 ## Import the Corgi
 
-TODO: Show how to do this
+1. Navigate to **Advanced > Extensions**
+2. Search for "Corgio"
+3. click to add the extension package
 
 ## Alien Motion
 
