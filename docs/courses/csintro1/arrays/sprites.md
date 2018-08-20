@@ -5,7 +5,8 @@ In previous lessons, we have used arrays of fairly simple types of variables - n
 In this activity, we will walk through a few ways in which we can use arrays of sprites to to create unique behaviors for the characters in our games, as well as introduce the basics of artifial intelligence for non-player characters.
 
 In this activity, students will:
-### TODO
+
+## TODO VIDEO
 
 ## Concept: Creating Sprite Arrays
 

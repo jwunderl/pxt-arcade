@@ -7,6 +7,8 @@ In this activity, students will:
 ## Concept: While loops
 A ``||loops:while||`` loop is a loop that is kind of a combination of a ``||logic:if||`` block and a ``||loops:repeat||`` loop. It takes in a condition and will keep looping through the code provided **while** the condition is true. 
 
+## TODO VIDEO
+
 ## Example 1: Guessing Game
 1. Review the code below
 2. Create the sample code and run the code

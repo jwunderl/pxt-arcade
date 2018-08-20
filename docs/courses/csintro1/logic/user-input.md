@@ -13,6 +13,8 @@ In this activity, students will:
 
 Allowing users to interact with your code is an important step in making an interesting and enjoyable game. Logical expressions play an important part in making your code react to that user input, even with something as simple as a "yes or no" question.
 
+## TODO VIDEO
+
 ## Example #1: Asking a question
 
 1. Review the code below
