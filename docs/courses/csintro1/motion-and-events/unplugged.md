@@ -1,4 +1,4 @@
-In this activity, you will learn about events and how they drive actions
+In this activity, you will learn about events and how they drive actions.
 
 1. Look at the Events Controller as a class.
 
