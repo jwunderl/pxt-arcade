@@ -363,11 +363,9 @@ balloon.x += -50
 
 ### Possible Answers:
 
-1. The X and Y directions move horizonal and vertical.  If we use only Positive values then the motion will always be upward and to the right side.  So only 1/4 of a 360 degree circle or 90 degrees.  Having both X and Y positive and negative give randomness in all 360 degrees of direction.
+1. The X and Y directions move horizontal and vertical.  If we use only Positive values then the motion will always be upward and to the right side.  So only 1/4 of a 360 degree circle or 90 degrees.  Having both X and Y positive and negative give randomness in all 360 degrees of direction.
 2. The values of "first" when change more because they constantly change.  If you have Velocity your position is always changing or if you have acceleration your velocity is always change.  With "second" the changes only happen every second.
 3. "Second" seemed to always win.  "Second" jumped every 1 second and would jump ahead of "first" where as "first" had a more steady change so it would be at rates in between the jump values. For example: in 1c the velocities for "first" were both odd and even numbers but "second" was only even numbers. 
 
 ### ~
 
-
-## TODO RUBRICS
