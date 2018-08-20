@@ -17,7 +17,7 @@ In this example, we'll explore using conditionals inside other conditionals. We'
 
 Each of the questions will represent conditional blocks, and depending on which answer the user gives back, we'll go down one side of the conditional, otherwise we'll go down the other side.
 
-1. Try adding in the left side branch first and ignore the upper right side.  Add an `if / else `block that will splash "job prediction: dragon slayer" in the first branch and "job prediction: dragon rider" in the second branch.  The condition to figure out which branch to go down will be based on the `ask` block. Use "Would you like to fight them?" as the prompt text, and the user will press A or B in repsonse. That response will evaluate to true or false and can be used like any other condition like we've used earlier. Test it out and make sure that works.
+1. Try adding in the left side branch first and ignore the upper right side.  Add an `if / else `block that will splash "job prediction: dragon slayer" in the first branch and "job prediction: dragon rider" in the second branch.  The condition to figure out which branch to go down will be based on the `ask` block. Use "Would you like to fight them?" as the prompt text, and the user will press A or B in response. That response will evaluate to true or false and can be used like any other condition like we've used earlier. Test it out and make sure that works.
 
 2. Next, add in a block to represent the previous question, "Would you like to see dragons?". This block should include the `if / else` block we made from step one. 
 

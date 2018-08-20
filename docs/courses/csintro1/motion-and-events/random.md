@@ -84,7 +84,7 @@ mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 2. Add a ``||controller:on A button pressed||`` block
 3. Make the event code for the `A` button move a sprite to a new random position
 4. Add another sprite and make it move with the `B` button
-5. **Challenge:** make both sprites change position with the `A` button and make the `B` button give one of the sprites a random velocity (use small numbers that can be both postive and negative)
+5. **Challenge:** make both sprites change position with the `A` button and make the `B` button give one of the sprites a random velocity (use small numbers that can be both positive and negative)
 
 ### ~hint
 

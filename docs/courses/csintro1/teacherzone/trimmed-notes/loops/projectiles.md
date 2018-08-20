@@ -263,6 +263,6 @@ Does the game need to check whether a sprite is overlapping another if either is
 ### What did we learn rubric 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 1 question1 fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Addressed challenge question reasonably |
+| Explanation | Answered at least 1 question fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Addressed challenge question reasonably |
 
 ### Score = \_\_\_\_\_\_ /10 
