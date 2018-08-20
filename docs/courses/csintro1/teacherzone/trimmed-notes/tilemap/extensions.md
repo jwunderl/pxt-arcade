@@ -45,7 +45,7 @@ myCorg.addToScript("sit")
 
 ## Example #1: Corgi with tile map
 
-## Student Task #2: Creating a side scroller
+## Student Task #2: Creating a side scroll game
 
 https://makecode.com/_cHm2paXjLcfU
 
@@ -225,7 +225,7 @@ princess.ay = 100
 ## What did we learn?
 
 1. How did using an extension impact the development of this platformer? What took up the largest portion of your time while doing this activity?
-2. How difficult was it to balance making your level interesting and still completable? Where there any portions of the level that you had to change in order to make the game playable?
+2. How difficult was it to balance making your level interesting but still a game the user can complete? Where there any portions of the level that you had to change in order to make the game playable?
 
 ### ~hint
 
