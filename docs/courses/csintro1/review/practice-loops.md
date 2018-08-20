@@ -31,13 +31,27 @@ Note: You may have noticed that this exercise seems awfully familiar in result t
 
 # Practice 3: Drawing multiple sprites with loops
 
-For this exercise we're not going to use loops to chose movement, but rather loops to do multiple drawings.  Overview: make it so that on any button press, we draw 3 of a sprite (flower/star?) in random locations (don't worry about overlapping / duplication, should keep boundaries and grid size in mind though).
+For this exercise we're not going to use loops to chose movement, but rather loops to do multiple drawings.  Overview: make it so that on any button press, we draw 3 of a sprite (flower/star?) in random locations (Don't worry about overlapping / duplication but do keep boundaries and grid size in mind).
 
-1. On any buttom press, make your sprite appear at a random location.
+1. On any button press, make your sprite appear at a random location.
 2. We know that the sprite needs to appear 3 times total, and we just wrote the code for it to appear randomly once. Let's put the previous code we have into a loop that runs 3 times. 
 
-# Practice 4: Drawing a row / column of spirtes with loops
+# Practice 4: Drawing a line of sprites with loops
+create functions to draw sprites in a line for a row (across) and in a column (up and down).
+1. Create a small sprite (8x8)
+2. Create a function using a loop that will create a column of 4 of the sprites
+  * give the first sprite at a **y** coordinate of 25
+  * place each sprite 15 pixels farther down the game screen
+3. Create a function using a loop that will create a row of of 4 of the sprites
+  * give the first sprite at a **x** coordinate of 20
+  * place each sprite 15 pixels farther down the game screen
+4. make the program call both the row and the column functions
 
-TODO flesh out steps / provide solution:
+**Challenge:** Create a grid
+Using row function create a 4x4 grid of sprites
 
-**Challenge:** Draw a grid (rows x columns) of a user requested number of sprites. Choosing some max number that go in each row/column will probably be arbitrary.  TODO talk about nested loops / give hint and small ex.
+### ~hint
+
+To set a row, one on top of another, we need to change the **y** coordinate for each row so each row is created at a distance from the previous row.
+
+### ~
