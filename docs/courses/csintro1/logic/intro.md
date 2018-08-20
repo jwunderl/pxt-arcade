@@ -1,10 +1,22 @@
-# Comparisons 
+# Logic Introduction
+
+Logic in Computer Science is about building code to enforce a set of rules that determines how our program will run.  In this section we will look at how performing a comparison can be used in code.
+
+In these activities students will work with:
+
+* ``||logic:if||`` 
+
+* ``||logic:else||``
+
+* ``||logic:else if||``
+
+## Comparisons 
 
 ``||logic:if||`` and ``||logic:else if||`` logic
  
 In our games we will often want to compare values and take an action based on the comparison.  
 
-Is my value equal to the test or is it greater or smaller?
+>Example:  Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value.
 
 We could do a comparison test to see:
 
@@ -32,7 +44,7 @@ if (info.highScore() > 5) {
 }
 ```
 
-## Concept: **else if** Statement
+## Concept: **else** Statement
 
 When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||``  statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
 
@@ -135,6 +147,8 @@ generate()
 ```
 
 ### Example 1b: Check if correct button is pressed
+
+https://makecode.com/_R3F9jscgFbPH
 
 ```blocks
 enum SpriteKind {
@@ -249,13 +263,13 @@ generate()
 Now that we have the basic functionality of our game, let’s make it so that the player loses points when they press the wrong button.
 
 
-1. Start wit the code 1c above 
+1. Start with the code 1c above 
 2. Add else ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
 3. Decrease the players ``||info:score||`` by 1 when they press the wrong button by using the ``||info:change score by||`` block
 
 ### ~hint
 
-To decrease a value, you change its value by a negative amount
+To decrease a value, change its value by a negative amount
 
 ### ~
 
