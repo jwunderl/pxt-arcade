@@ -156,7 +156,7 @@ for (let i = 0; i < 12; i++) {
 
 Have students examine the JavaScript code to find out what a loops looks like (`for (let i = 0; i < 12; i++)`).  Ask for some analysis from students.  
 
-Can explain that loops have a counting variable (often `i`) and that it has to be created (instantiated) for use in the loop (using `let`). Also, the counter variable gets destroyed when the loop finishes and the counter (i) only exists inside the loop and is not available to use eslewher in the program code.
+Can explain that loops have a counting variable (often `i`) and that it has to be created (instantiated) for use in the loop (using `let`). Also, the counter variable gets destroyed when the loop finishes and the counter (i) only exists inside the loop and is not available to use elsewhere in the program code.
 
 The next part of the loop is checking if the loops is still less than 12 (`i < 12`) - when it is not longer less than 12 the loop is done and stops repeating the code in the loop. This will be covered in the next section on Conditional Logic.
 
