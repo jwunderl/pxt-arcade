@@ -67,6 +67,7 @@
 * [Introduction](/courses/csintro1/teacherzone/trimmed-notes/logic/intro)
 * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
 * [Validating User Input](/courses/csintro1/teacherzone/trimmed-notes/logic/user-input)
+* [Logic in Loops](/courses/csintro1/teacherzone/trimmed-notes/logic/while)
 * [Project](/courses/csintro1/teacherzone/trimmed-notes/logic/project)
 
 ## [Arrays Teacher](/courses/csintro1/teacherzone/trimmed-notes/arrays)

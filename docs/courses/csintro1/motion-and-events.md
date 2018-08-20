@@ -5,6 +5,7 @@
 * [Random](/courses/csintro1/motion-and-events/random)
 * [Overlap Section 2](/courses/csintro1/motion-and-events/overlap2)
 * [Sprite Create and On Create](/courses/csintro1/motion-and-events/create-on-create-sprites)
+* [Unplugged](/courses/csintro1/motion-and-events/unplugged)
 * [Project](/courses/csintro1/motion-and-events/project)
 
 [CS Intro Home](/courses/csintro)

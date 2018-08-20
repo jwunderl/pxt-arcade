@@ -9,12 +9,14 @@
 * [Sprites](/courses/csintro1/orientation/sprites)
 * [Variable Math](/courses/csintro1/orientation/variable-math)
 * [Info Variables](/courses/csintro1/orientation/info)
+* [Unplugged](/courses/csintro1/orientation/unplugged)
 
 ## [Sprites](/courses/csintro1/sprites)
 
 * [Coordinate Walker](/courses/csintro1/sprites/coordinate-walker)
 * [Collage](/courses/csintro1/sprites/collage)
 * [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
+* [Unplugged](/courses/csintro1/sprites/unplugged)
 
 ## [Motion and Events](/courses/csintro1/motion-and-events)
 
@@ -23,6 +25,7 @@
 * [Random](/courses/csintro1/motion-and-events/random)
 * [Overlap Section 2](/courses/csintro1/motion-and-events/overlap2)
 * [Sprite Create and On Create](/courses/csintro1/motion-and-events/create-on-create-sprites)
+* [Unplugged](/courses/csintro1/motion-and-events/unplugged)
 * [Project](/courses/csintro1/motion-and-events/project)
 
 ## [Review and Extensions](/courses/csintro1/review)
@@ -48,6 +51,7 @@
 * [Projectiles](/courses/csintro1/loops/projectiles)
 * [Projectiles from Sprites](/courses/csintro1/loops/projectile-from)
 * [Physics](/courses/csintro1/loops/physics)
+* [Unplugged](/courses/csintro1/loops/unplugged)
 * [Project](/courses/csintro1/loops/project)
 
 ## [Functions](/courses/csintro1/functions)
@@ -69,6 +73,7 @@
 * [Introduction](/courses/csintro1/logic/intro)
 * [Booleans](/courses/csintro1/logic/booleans)
 * [Validating User Input](/courses/csintro1/logic/user-input)
+* [Logic in Loops](/courses/csintro1/logic/while)
 * [Project](/courses/csintro1/logic/project)
 
 ## [Arrays](/courses/csintro1/arrays)
@@ -150,6 +155,7 @@
 * [Introduction](/courses/csintro1/teacherzone/trimmed-notes/logic/intro)
 * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
 * [Validating User Input](/courses/csintro1/teacherzone/trimmed-notes/logic/user-input)
+* [Logic in Loops](/courses/csintro1/teacherzone/trimmed-notes/logic/while)
 * [Project](/courses/csintro1/teacherzone/trimmed-notes/logic/project)
 
 ## [Arrays Teacher](/courses/csintro1/teacherzone/trimmed-notes/arrays)
