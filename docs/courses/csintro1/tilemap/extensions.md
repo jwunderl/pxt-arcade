@@ -1,10 +1,10 @@
 # Activity: Level Design and the Corgio Extension
 
-The design of the area the player is in can make or break a game: if it is too sparse, the game can become boring and uninteresting, whereas if it is overly filled in, the game can screech to an unbearable halt. 
+The design of the area the player is in can make or break a game: if it is too sparse, the game can become boring and uninteresting. If the screen is overly filled with objects, the game can start to run slowly. 
 
-In this activity, students will use the corgio extension (based on the Corgi dog breed) to make several sprite actions easy to implement so we are able to focus on the design and structure of the game play without getting bogged down in complex functionality. 
+In this activity, students will use the corgio extension (based on the Corgi dog breed) to make several sprite actions easy to implement.  Using corgio can enable focus on the design and structure of the game play without getting bogged down in complex functionality that corgio handles for us. 
 
-The corgio extension lets us abstract the details (hide the details) of implementation.  This is like when driving a car, in order to drive a car we don't need build a car and we don't need to know if the engine uses gas or electricity.
+Extensions let us abstract the details (hide the details) of implementation.  Like driving a car, in order to drive a car we don't need build a car, or to know how to build a car, or if the engine uses gas or electricity.  We only need to know how to use the car.
 
 In this activity, students will:
 * Use a new extension
@@ -75,7 +75,7 @@ myCorg.updateSprite()
 myCorg.verticalMovement()
 ```
 
-## Student Task #2: Creating a side scroller
+## Student Task #2: Creating a side scroll game
 
 1. Start with the code from example #1
 2. Add the ``||corgi:make camera follow myCorg left and right||`` block, so that the camera will follow the corgi while it moves across the tile map
@@ -106,7 +106,7 @@ The tile map we are using is 64 tiles wide and 8 tiles tall, with each tile bein
 ## What did we learn?
 
 1. How did using an extension impact the development of this platformer? What took up the most of your time while doing this activity?
-2. How difficult was it to balance making your level interesting and having enough time to complete? Where there any portions of the level that you had to change in order to make the game playable?
+2. How difficult was it to balance making your level interesting but still a game the user can complete? Where there any portions of the level that you had to change in order to make the game playable?
 
 ```package
 corgio=github:jwunderl/pxt-corgio#v0.0.12
