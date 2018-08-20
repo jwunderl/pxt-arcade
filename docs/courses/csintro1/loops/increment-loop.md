@@ -185,7 +185,7 @@ The ``||loops:for index from 0 to 4||`` loop behaves similar to the repeat loop,
 
 In this task we need to use ``||loops:for||`` loop to help in implementing the behavior from task #2.
 
-This ``||loops:for||`` will provide the variable ``||variables:index||`` similar to how we used the ``||variables:increase||`` variable in ttask #2. We need to clean up the task #2 code by switching to use a ``||loops:for||`` block.
+This ``||loops:for||`` will provide the variable ``||variables:index||`` similar to how we used the ``||variables:increase||`` variable in task #2. We need to clean up the task #2 code by switching to use a ``||loops:for||`` block.
 
 1. Add a ``||loops:for||`` to your task #2 solution. Change the end value in the ``||loops:for index from 0 to 4||`` block from `4` to `10`. Your code should now behave like it did before you made any modifications
 2. Replace how we define the ``||variables:increase||`` variable. We won't increment the variable any more but will **set** the value of ``||variables:increase||`` to ``||variables:index||`` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block

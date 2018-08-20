@@ -77,7 +77,7 @@ forever(function () {
 # Practice 3: Drawing multiple sprites with loops
 
 
-1. On any buttom press, make your sprite appear at a random location.
+1. On any button press, make your sprite appear at a random location.
 2. We know that the sprite needs to appear 3 times total, and we just wrote the code for it to appear randomly once.
 
 ```blocks
@@ -110,4 +110,4 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 ```
-# Practice 4: Drawing a row / column of spirtes with loops
+# Practice 4: Drawing a row / column of sprites with loops

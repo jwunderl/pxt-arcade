@@ -2,9 +2,13 @@
 
 In previous lessons, we have used arrays of fairly simple types of variables - numbers and strings. As mentioned in those lessons, though, arrays can be used with any variable you would like, including sprites.
 
-In this activity, we will walk through a few ways in which we can use arrays of sprites to to create unique behaviors for the characters in our games, as well as introduce the basics of artifial intelligence for non-player characters.
+In this activity, we will walk through a few ways in which we can use arrays of sprites to to create unique behaviors for the characters in our games, as well as introduce the basics of artificial intelligence for non-player characters.
 
 In this activity, students will:
+* Create arrays of sprites
+* Interact with multiple sprites using arrays
+* Use ``||sprites:array of sprites of kind||``
+* Implement "following" behavior for enemies
 
 ## TODO VIDEO
 

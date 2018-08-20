@@ -24,7 +24,7 @@ As we saw in the fundamentals lesson on loops, one application of loops is to re
 
 5.  Instead of on button press activate the square movement, let's use another loop.  Use the forever block and put the code we wrote inside there. Now our sprite will endlessly go along our square path!
 
-Note: You may have noticed that this exercise seems awfully familiar in result to some things we've used before: vx and vy! It turns out that vx and vy really are equivalent in concept to what we wrote blocks for in this past exercise.  Try playing with the pause time and how much the x and y position change by each loop iteration. You'll find that a very smooth animation can be acheived with the right values for those two parameters.
+Note: You may have noticed that this exercise seems awfully familiar in result to some things we've used before: vx and vy! It turns out that vx and vy really are equivalent in concept to what we wrote blocks for in this past exercise.  Try playing with the pause time and how much the x and y position change by each loop iteration. You'll find that a very smooth animation can be achieved with the right values for those two parameters.
 
 **Challenge:** Move your sprite in other shapes besides a square (triangles, circles). You could also try to move multiple sprites at once and see how that turns out.
 

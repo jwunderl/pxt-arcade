@@ -64,7 +64,7 @@ locations = [20, 20, 140, 120, 150, 25, 15, 110]
 
 ### ~hint
 **Teacher Note**
-TODO: These notes get removed for students and go to teacher guide so use exact format - think of advice on how the teacher might help un-stick students or reenforce concept.  A question you might pose.  "Ask students: What happens to the old value when we re-assign a new number to the lives? (Answer: it is destroyed and replaced with new assigned value)"  can use markdown lists here.
+TODO: These notes get removed for students and go to teacher guide so use exact format - think of advice on how the teacher might help unstick students or reinforce concept.  A question you might pose.  "Ask students: What happens to the old value when we re-assign a new number to the lives? (Answer: it is destroyed and replaced with new assigned value)"  can use markdown lists here.
 ### ~
 
 ## Task: add [something] to the code 
