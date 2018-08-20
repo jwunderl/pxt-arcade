@@ -55,7 +55,7 @@
 * [Using Extensions](/courses/csintro1/teacherzone/trimmed-notes/functions/extensions)
 * [Project](/courses/csintro1/teacherzone/trimmed-notes/functions/project)
 
-## [Tilemap Teacher](/courses/csintro1/teacherzone/trimmed-notes/tilemap)
+## [Tile map Teacher](/courses/csintro1/teacherzone/trimmed-notes/tilemap)
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/tilemap/intro)
 * [Interactions](/courses/csintro1/teacherzone/trimmed-notes/tilemap/interactions)

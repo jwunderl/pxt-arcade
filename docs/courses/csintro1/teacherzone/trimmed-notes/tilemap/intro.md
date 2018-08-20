@@ -1,14 +1,14 @@
-# Tile Map
+# Intro to Tile Map
 
-## Example #1: Making a tilemap
+## Example #1: Making a tile map
 
-## Student Task #1: Personalized Tilemap
+## Student Task #1: Personalized Tile map
 
 Student creations for this section will vary, but should all closely resemble example #1 with a different drawing on it.
 
-### Example #2: Creating tiles in a tilemap
+### Example #2: Creating tiles in a tile map
 
-## Student Task #2: Add tile to tilemap
+## Student Task #2: Add tile to tile map
 
 Student solution similar to the [student example given](https://makecode.com/_5RhYt8JrqP55)  - Student should have individual modifications.
 
@@ -511,6 +511,6 @@ game.onUpdate(function () {
 Possible Solutions:
 
 1. The default size is 10x8. Because we know that each tile is shown on screen as a 16x16 square, this will result in a total map of size 160x128 - this is slightly taller than the screen size, so it won't be displayed fully on the screen.
-2. The camera does not center on the sprite if the sprite is near the edge of the tilemap - the sprite can move all the way up to the corner of the screen in that case.
+2. The camera does not center on the sprite if the sprite is near the edge of the tile map - the sprite can move all the way up to the corner of the screen in that case.
 
 ### ~

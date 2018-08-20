@@ -1,4 +1,4 @@
-# Tilemap Project
+# Tile map Project
 
 Make games of your choosing!
 

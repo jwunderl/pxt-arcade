@@ -1,4 +1,4 @@
-# Tilemap Project
+# Tile map Project
 
 ## [Find the coins](https://makecode.com/_Mbp1PUHrcgKz)
 

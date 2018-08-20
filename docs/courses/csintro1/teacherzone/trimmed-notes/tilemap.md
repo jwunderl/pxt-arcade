@@ -1,4 +1,4 @@
-## Tilemap Teacher
+## Tile map Teacher
 
 * [Intro](/courses/csintro1/teacherzone/trimmed-notes/tilemap/intro)
 * [Interactions](/courses/csintro1/teacherzone/trimmed-notes/tilemap/interactions)
