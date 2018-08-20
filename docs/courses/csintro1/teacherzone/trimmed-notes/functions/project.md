@@ -140,7 +140,7 @@ levelStart()
 ## What did we learn? 
 
 1. Describe a feature of this game that you would like to expand and ideas for improved implementation.
-2. List the names of the the functions you used. Describe for each function name, why it has a good descriptive name and/or how the function name could be improved.
+2. List the names of the functions you used. Describe for each function name, why it has a good descriptive name and/or how the function name could be improved.
 
 ### ~hint
 

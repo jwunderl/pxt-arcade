@@ -32,7 +32,7 @@ https://makecode.com/_fs4iJ3PFj7ri
 
 ## What did we learn?
 
-1. Does the use of a function to capture repeated code make it easier or harder to maek changes to those repeated sections in the future?
+1. Does the use of a function to capture repeated code make it easier or harder to make changes to those repeated sections in the future?
 2. Are there any possible downsides to moving repeated code into a function?
 
 ### ~hint
@@ -40,7 +40,7 @@ https://makecode.com/_fs4iJ3PFj7ri
 Possible Answers:
 
 1. It makes it easier to modify the code that is repeated if it's all going to be modified the same way. At this point, though, it might also a bit harder if only one is going to change, then you would either need to use a parameter (not available in blocks) or a global variable to make the code behave differently for different calls; either way can be a reasonable response.
-2. Trivial methods to catch minor redundancy can make you have to go back and forth to find out how a method works unnecessarily. If the sections of the code need to change in different ways, then it might be a hastle to deal with it as functions. 
+2. Trivial methods to catch minor redundancy can make you have to go back and forth to find out how a method works unnecessarily. If the sections of the code need to change in different ways, then it might be difficult to deal with it as functions. 
 
 ### ~
 
