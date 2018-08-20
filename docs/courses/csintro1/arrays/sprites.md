@@ -181,21 +181,21 @@ Using ``||sprites:array of sprites of kind||``, we can easily address both of th
 ## Student Task #2: Bigger and Better Fireworks
 
 1. Start with the code from example #2b
-2. Add a ``||loops:repeat||`` loop in the ``||loops:on start||`` that will create 100 fireworks
-
-### ~hint
-
-Make sure to surround all three blocks in the ``||loops:on start||``, to maintain the same behavior for all fireworks
-
-### ~
-
+2. Add a ``||loops:repeat||`` loop in the ``||loops:on start||`` that will create 100 fireworks (hint: make sure to surround all three blocks in the ``||loops:on start||``, to maintain the same behavior for all fireworks)
 3. Use ``||sprites:array of sprites of kind||`` block to get an array of all the fireworks in the ``||controller:on any button pressed||`` event, and store it in the variable ``||variables:sprite list||``
 4. Add an ``||logic:if||`` condition around the rest of the ``||controller:on any button pressed||``, so that the rest of the event only occurs if the ``||arrays:length of array sprite list||`` is greater than 0
 5. Use ``||math:random item from||`` to select a firework from ``||variables:sprite list||`` at random, and store that in the variable ``||variables:origin||``. Replace all references to ``||variables:firework||`` in the event to refer to this new variable
 6. **Challenge:** change the ``||controller:on any button pressed||`` event to only trigger when the ``||controller:A||`` button is pressed, and make a ``||controller:on B button pressed||`` event that will create a new firework. Make sure to use either a ``||functions:function||`` or an ``||sprites:on created sprite of kind||`` event to reduce the redundancy between the new event and the ``||loops:on start||`` block
 
+## Example #3: Tracking with a single sprite
 
-## Example #3: 
+It is fairly common to want sprites to follow other sprites; for example, enemy sprites that want to damage the player, or faithful ally accompanying the player on an adventure.
+
+We can implement this behavior easily using ``||logic:logic||`` blocks in an ``||game:on game update||`` event.
+
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "itsFollowing") 
 
 ```blocks
 enum SpriteKind {
@@ -204,10 +204,6 @@ enum SpriteKind {
 }
 let enemy: Sprite = null
 let player: Sprite = null
-sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.x += Math.randomRange(-2, 2)
-    otherSprite.y += Math.randomRange(-2, 2)
-})
 player = sprites.create(img`
 1 . . . 1 
 1 . . . 1 
@@ -217,21 +213,38 @@ player = sprites.create(img`
 . 1 1 1 . 
 `, SpriteKind.Player)
 controller.controlSprite(player, 100, 100)
-for (let i = 0; i < 20; i++) {
-    enemy = sprites.create(img`
+enemy = sprites.create(img`
 2 . . 2 
 . . . . 
 . 2 2 . 
 2 . . 2 
 `, SpriteKind.Enemy)
-    enemy.x += Math.randomRange(-40, 40)
-    enemy.y += Math.randomRange(-40, 40)
-}
+enemy.x += Math.randomRange(-40, 40)
+enemy.y += Math.randomRange(-40, 40)
 game.onUpdate(function () {
-    for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
-        value.x += player.x > value.x ? .25 : -.25
-        value.y += player.y > value.y ? .25 : -.25
+    if (player.x > enemy.x) {
+        enemy.vx = 2
+    } else {
+        enemy.vx = -2
+    }
+    if (player.y > enemy.y) {
+        enemy.vy = 2
+    } else {
+        enemy.vy = -2
     }
 })
-
 ```
+
+This is also a great occasion to use arrays - that way, we can have more than a single enemy follow the player.
+
+## Student Task #3: Tracking with all sprites of a kind
+
+1. Start with the code from example #3
+2. Add a ``||loops:repeat 20 times||`` loop that creates 20 enemies in random positions on the screen
+3. In the ``||game:on game update||`` event, use ``||sprites:array of sprites of kind Enemy||`` in a loop to make all the enemies follow the player, not just the last one that was created
+4. **Challenge:** add an ``||sprites:on overlap||`` event between two enemies, that moves both enemies between -2 and 2 pixels in both directions, so that the enemies no longer stack on top of each other 
+
+## What did we learn?
+
+1. How could using arrays of sprites influence the way you design games? List at least **two** ways.
+2. How is using ``||sprites:array of sprites of kind||`` easier than keeping track of all the sprites in an array manually?
