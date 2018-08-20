@@ -32,7 +32,7 @@ After adding corgio to your project, a new tab titled ``||corgio:Corgi||`` will 
 1. Open a new project (name it "myLevel")
 2. Using the extensions menu, search for "corgio"
 3. Review the example code below, and either recreate it or build something similar using a 64x8 tile map
-4. Notice how the corgi rests on top of the the wall tiles, and that the jumps reset as if the corgi were touching the bottom of the screen
+4. Notice how the corgi rests on top of the wall tiles, and that the jumps reset as if the corgi were touching the bottom of the screen
 
 ```blocks
 enum SpriteKind {
