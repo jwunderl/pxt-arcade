@@ -10,6 +10,8 @@ In this activity, students will:
 
 One way in which we can use arrays of strings is to form a "script" for our sprites to follow. By keeping the script inside of an array, you are able to keep it all located in one place - so if you need to fix a typo, or add in a new line, all the content remains in a single location for you to see.
 
+## TODO VIDEO
+
 ## Example #1: Princess Dialogue
 
 1. Review the code below

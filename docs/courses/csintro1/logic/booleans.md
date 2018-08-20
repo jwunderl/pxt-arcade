@@ -11,6 +11,8 @@ In these activities students will work with:
 
 Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe variables as "boolean flags" - these often are used to turn on (and off) different behaviors that might be useful. For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen.
 
+## TODO VIDEO
+
 ## Example #1: Are you hungry?
 
 1. Review the code below
