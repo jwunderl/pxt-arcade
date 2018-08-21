@@ -10,7 +10,6 @@ enum SpriteKind {
     Enemy,
     Car
 }
-let projectile: Sprite = null
 let agent: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Car, function (sprite, otherSprite) {
     game.over()

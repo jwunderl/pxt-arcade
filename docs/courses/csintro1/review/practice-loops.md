@@ -16,9 +16,9 @@ As we saw in the fundamentals lesson on loops, one application of loops is to re
 
 1.  Make a sprite of your choice and start it in the upper left corner (setting its x and y to 8 should be about right.)
 
-2.  We have to decide when we want our square movement to happen - for now we'll say this will all happen on-any-button-press, so pull out one of those blocks and we'll begin putting blocks code in there.
+2.  We have to decide when we want our square movement to happen - for now we'll say this will all happen on-any-button-press, so pull out one of those blocks and we'll begin putting blocks of code in there.
 
-3.  Make the sprite gradually move to the right.  We know that gradual movement is just made up of a bunch of smaller movements that are repeated, so we know we're going to use a loop here. Let's arbitrarily make the loop run 10+ times and then change by an x offset that makes the movement look good to you.  To actually see the movement be gradual, be sure to add a pause 100ms (or longer) after you change the position.  Try this out - your sprite should gradually move to the right when you press any key.
+3.  Make the sprite gradually move to the right. We know that gradual movement is just made up of a bunch of smaller movements that are repeated, so we know we're going to use a loop here. Let's arbitrarily make the loop run 10+ times and then change by an x offset that makes the movement look good to you.  To actually see the movement be gradual, be sure to add a pause 100ms (or longer) after you change the position.  Try this out - your sprite should gradually move to the right when you press any key.
 
 4.  Repeat this process so that after the sprite finishes its loop for moving to the right, it immediately begins a loop to move down. Then after that a loop to go left and then finally a loop to go back upwards to the start. (The only difference between these loops should be the choice of changing x/y and the values used to change by.) At this point a button press should take your sprite all the way around its clockwise square path.
 
@@ -42,7 +42,7 @@ create functions to draw sprites in a line for a row (across) and in a column (u
 2. Create a function using a loop that will create a column of 4 of the sprites
   * give the first sprite at a **y** coordinate of 25
   * place each sprite 15 pixels farther down the game screen
-3. Create a function using a loop that will create a row of of 4 of the sprites
+3. Create a function using a loop that will create a row of 4 of the sprites
   * give the first sprite at a **x** coordinate of 20
   * place each sprite 15 pixels farther down the game screen
 4. make the program call both the row and the column functions

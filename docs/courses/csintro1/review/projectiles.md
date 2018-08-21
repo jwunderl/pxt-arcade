@@ -9,9 +9,11 @@
 ## Alien Motion
 
 Make the alien move faster as the score gets higher, and turn around before it hits the edge of the screen. We don't want to let the alien get too fast, so we chose a value to assign to the rate (taking the square root of current score) so that it doesn't become too hard too fast.
-```blocks
+```block
+let alien:Sprite = null
+let dir = 0
 game.onUpdate(function () {
-    rate = Math.sqrt(info.score()) * 3 + 20
+    let rate = Math.sqrt(info.score()) * 3 + 20
     if (alien.x <= 6) {
         dir = 1
     } else if (alien.x >= screen.width - 6) {
@@ -25,10 +27,16 @@ game.onUpdate(function () {
 
 Make the alien drop arrows toward the ground, with an 8 percent chance to create one every 50 milliseconds.
 
-```blocks
+```block
+enum SpriteKind {
+    Player,
+    Enemy,
+    Arrow
+}
+let alien: Sprite = null
 game.onUpdateInterval(50, function () {
     if (Math.percentChance(8)) {
-        projectile = sprites.createProjectile(img`
+       let projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -57,10 +65,17 @@ as fast as the alien currently is going, plus a chance to go a bit faster to mix
 We'll also add in the code to change the score on each update, so that the score (and speed
 of the enemies) goes up as time goes on.
 
-```blocks
+```block
+enum SpriteKind {
+    Player,
+    Enemy,
+    Arrow
+}
+let alien: Sprite = null
+let rate = 0
 game.onUpdateInterval(50, function () {
     if (Math.percentChance(8)) {
-        projectile = sprites.createProjectile(img`
+        let projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -91,10 +106,11 @@ enum SpriteKind {
     Enemy,
     Arrow
 }
-let dir: number = 0
+let myCorg: Corgi = corgi.create(SpriteKind.Player)
 let alien: Sprite = null
+let dir = 0
 let projectile: Sprite = null
-let rate: number = 0
+let rate = 0
 sprites.onOverlap(SpriteKind.Arrow, SpriteKind.Player, function (sprite, otherSprite) {
     game.over()
 })
@@ -122,6 +138,9 @@ alien.setPosition(10, 4)
 alien.vx = 20
 rate = 20
 dir = 1
+myCorg.horizontalMovement()
+myCorg.verticalMovement()
+myCorg.updateSprite(true)
 game.onUpdate(function () {
     rate = Math.sqrt(info.score()) * 3 + 20
     if (alien.x <= 6) {
@@ -131,11 +150,6 @@ game.onUpdate(function () {
     }
     alien.vx = dir * rate
 })
-
-corgi.horizontalMovement()
-corgi.verticalMovement()
-corgi.updateSprite()
-
 game.onUpdateInterval(50, function () {
     if (Math.percentChance(8)) {
         projectile = sprites.createProjectile(img`
@@ -159,4 +173,8 @@ game.onUpdateInterval(50, function () {
     }
     info.changeScoreBy(1)
 })
+```
+
+```package
+corgio=github:jwunderl/pxt-corgio#v0.0.12
 ```

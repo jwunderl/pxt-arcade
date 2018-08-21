@@ -1,5 +1,7 @@
 # Practice #1: Summer Countdown
 
+https://makecode.com/_KpaC5P4dwaEE
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -45,6 +47,9 @@ sprite.x = 8
 ```
 
 # Practice #2: Dream Fictional Job Survey
+
+https://makecode.com/_157gVb04W9hM
+
 ```blocks
 if (game.ask("Would you like to see dragons?")) {
     if (game.ask("Would you like to fight them?")) {

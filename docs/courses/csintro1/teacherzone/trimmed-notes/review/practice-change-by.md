@@ -1,5 +1,7 @@
 # Practice 1: Egg Counter
 
+https://makecode.com/_MTaP8Agc11EY
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -57,24 +59,27 @@ count = 0
 sprite.setPosition(20, 40)
 game.splash("Press A to buy 12 eggs", "Press B to eat 1 egg. Yum")
 game.onUpdateInterval(1000, function () {
-    sprite.say("You have " + count + "eggs", 1000)
+    sprite.say("You have " + count + " eggs", 1000)
 })
 ```
 
 # Practice 2: Not a sprite, but a marathon
+
+https://makecode.com/_4VYR2m8aAEXo
+
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let ycoordinate = 0
-let xcoordinate = 0
+let yCoordinate = 0
+let xCoordinate = 0
 let sprite: Sprite = null
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    xcoordinate += 5
+    xCoordinate += 5
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    ycoordinate += 5
+    yCoordinate += 5
 })
 sprite = sprites.create(img`
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
@@ -110,9 +115,9 @@ sprite = sprites.create(img`
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `, SpriteKind.Player)
-xcoordinate = 32
-ycoordinate = 32
+xCoordinate = 32
+yCoordinate = 32
 game.onUpdate(function () {
-    sprite.setPosition(xcoordinate, ycoordinate)
+    sprite.setPosition(xCoordinate, yCoordinate)
 })
 ```

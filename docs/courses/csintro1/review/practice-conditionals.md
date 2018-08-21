@@ -13,7 +13,8 @@
 
 In this example, we'll explore using conditionals inside other conditionals. We'll be surveying the user by asking yes / no questions to figure out what fictional job suits them. Here's what the logic of our game will look like.
 
-![Job Logic Flowchart](courses/static/fictional-job-survey.png)
+![Job Logic Flowchart](/static/courses/csintro1/review/fictional-job-survey.png)
+
 
 Each of the questions will represent conditional blocks, and depending on which answer the user gives back, we'll go down one side of the conditional, otherwise we'll go down the other side.
 

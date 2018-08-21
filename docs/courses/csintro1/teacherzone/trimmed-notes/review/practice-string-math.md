@@ -1,5 +1,6 @@
 # Practice 1: New Food Idea
 
+https://makecode.com/_Lf1HKPCxuXLe
 
 ```blocks
 let sandwichName = ""
@@ -12,6 +13,9 @@ game.splash("You should try making a ", sandwichName + " sandwich!")
 ```
 
 # Practice 2: Phone Numbers
+
+https://makecode.com/_ch5JFdeUwAci
+
 ```blocks
 let lineNumberSentence = ""
 let officeNumberSentence = ""

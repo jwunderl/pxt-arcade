@@ -1,5 +1,7 @@
 # Practice 1: Life Questionnaire
 
+https://makecode.com/_f2g4wP6RUCga
+
 ```blocks
 let dogsPerDay = 0
 let ageInMonths = 0
@@ -22,12 +24,15 @@ game.splash("You've seen " + dogsPerDay + " dogs per day!")
 ```
 
 # Practice 2: Random Mind Reading
+
+https://makecode.com/_Vx0RWTXAA3UR
+
 ```blocks
 let actual = 0
 let guess = 0
-while (true) {
+forever(function () {
     guess = parseInt(game.askForString("Try to guess the number I'm thinking of. It's between 1 and 3."))
     actual = Math.randomRange(1, 3)
     game.splash("You were " + Math.abs(actual - guess) + " off")
-}
+})
 ```
