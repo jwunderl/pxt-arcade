@@ -1,15 +1,20 @@
 # Activity: Boolean Statements and Expressions
 
-In the previous lesson, we saw how ``||logic:if||`` and ``||else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers. These statements are centered around **boolean logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. These expressions are evaluated to values, and can be stored and used as `boolean` variables, just like Sprites, numbers, and strings.
+In the previous lesson, we saw how ``||logic:if||`` and ``||else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers. 
+
+Comparison statements are centered around **Boolean logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. 
+
+These expressions values, and can be stored and used as `Boolean` variables.  Whenever we see the term Boolean - it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
 
 In these activities students will work with:
-* boolean flags and values
-* ``||logic:and||`` & ``||logic:or||``
+* Boolean flags and values
+* ``||logic:and||`` 
+* ``||logic:or||``
 * ``||logic:not||``
 
 ## Concept: Boolean Flags
 
-Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe variables as "boolean flags" - these often are used to turn on (and off) different behaviors that might be useful. For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen.
+Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe variables as "Boolean flags" - these often are used to turn on (and off) different behaviors that might be useful. For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen when set to ``||logic:true||``.
 
 ## TODO VIDEO
 
@@ -51,7 +56,7 @@ For the challenge: the ``||logic:not||`` block **negates** whatever value is pas
 
 ## Concept: ``||logic:and||`` & ``||logic:or||``
 
-Beyond just using a single boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are very similar to the definition in plain english; for example, the statement
+Beyond just using a single Boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are very similar to the definition in plain english; for example, the statement
 
 > If I have food in the pantry and I am hungry, I will make lunch
 

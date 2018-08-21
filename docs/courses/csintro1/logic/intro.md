@@ -1,18 +1,15 @@
-# Logic Introduction
+# Logic Introduction -  if statement
 
-Logic in Computer Science is about building code to enforce a set of rules that determines how our program will run.  In this section we will look at how performing a comparison can be used in code.
+Logic in Computer Science is about building code to enforce a set of rules that determines how our program will run.  In this section we will look at how performing a comparison can be used in code.  
+
 
 In these activities students will work with:
 
 * ``||logic:if||`` 
 
-* ``||logic:else||``
-
-* ``||logic:else if||``
-
 ## Comparisons 
 
-``||logic:if||`` and ``||logic:else if||`` logic
+``||logic:if||`` logic
  
 In our games we will often want to compare values and take an action based on the comparison.  
 
@@ -24,7 +21,9 @@ We could do a comparison test to see:
 * if the player has 0 lives left, then we set to game over
 * if we have the secret key, then we can enter the room.
 
-``||logic:if||`` and ``||logic:else if||`` statements allow us  to make our programs behave in different ways based on the state of the game.
+We have already seen some of this logic in blocks such as ``||sprites: on overlap||`` where there were statements such as: **if** a type player overlaps with type coin then destroy coin and increase score.
+
+``||logic:if||`` statements allow us  to make our programs behave in different ways based on the state of the game.
 
 ## Concept: **if** Statement
 
@@ -36,294 +35,53 @@ We could do a comparison test to see:
 These are what are known as comparisons because they compare the value of two things.
 
 
-To use an ``||logic:if||`` statement block we must fill it with a comparison test. If the test is true the code in the block will run.
+To use an ``||logic:if||`` statement block we must fill it with a comparison test. If the test is true the code in the block will run. Below is a comparison to see if high score is greater than 5.
 
 ```block
 if (info.highScore() > 5) {
     game.splash("Good luck!")
 }
 ```
+## TODO Video
 
-## Concept: **else** Statement
+## Concept: Comparison Operators
 
-When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||``  statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
-
-To use an ``||logic:else||`` click on the plus sign of an existing ``||logic:if||`` block.
-
-
-```block
-if (info.highScore() > 5) {
-    game.splash("Good Luck!")
-} else {
-    game.splash("Set High Score!")
-}
-```
-## Concept: **else if** Statement
-
-Using an ``||logic:if||`` block with an ``||logic:else||`` block allows us to split all comparisons into two categories - either the comparison is ``||logic:true||`` or ``||logic:false||`` (not true). 
-
-What if we needed to split a comparison into three or four categories?
-
-We can use the ``||logic:else if||`` block to add additional comparisons. 
-
-By clicking the plus sign of an ``||logic:if else||`` block, and an ``||logic:else if||`` block will appear. This requires another logic test and that splits the cases after the original logic test evaluates to false. 
-
-We can compare the score with 3 possible results. 
- 
-First test if the score is greater than 100 and if not run a second comparison to see if score is greater than 50.
-
-  * if score greater than 100 "you are an expert"
-  * or else if greater than 50 "you are intermediate"
-  * or else, "you are a beginner"
- 
-
-```block
-if (info.score() > 100) {
-    game.splash("you are an expert!")
-} else if (info.score() > 100) {
-    game.splash("you are intermediate!")
-} else {
-    game.splash("you are a beginner!")
-}
-```
-
-This code will first check if the high score for the game is greater than five. If it is, then it will message "expert" and skip the rest of the comparison tests. 
-
-If it is not greater than 100, then the second logic test is run to see if the score is greater than 50. If it is, then it will message "intermediate." If it is not greater than 50 it will run the ``||logic: else||`` and rank the player a "beginner."
-
-## Button Game
-
-Make sprite alternate between saying "A" and "B"
-
-# TODO: Video (eric)
-
-### Example 1a: random alternating message
-
-https://makecode.com/_HXMRAzYY4YkU
-
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let mySprite: Sprite = null
-let randomPick = 0
-function generate() {
-    randomPick = Math.randomRange(0, 1)
-    if (randomPick == 0) {
-        mySprite.say("push A")
-    }
-    if (randomPick == 1) {
-        mySprite.say("push B")
-    }
-}
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    generate()
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    generate()
-})
-game.splash("Push A or B as directed")
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . 4 4 4 4 4 4 4 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 . e . . e . 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 4 . 1 1 . 4 4 . . . 
-. . . . . . 4 4 4 4 4 4 . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-info.startCountdown(20)
-generate()
-```
-
-### Example 1b: Check if correct button is pressed
-
-https://makecode.com/_R3F9jscgFbPH
-
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let mySprite: Sprite = null
-let randomPick = 0
-function generate() {
-    randomPick = Math.randomRange(0, 1)
-    if (randomPick == 0) {
-        mySprite.say("push A")
-    }
-    if (randomPick == 1) {
-        mySprite.say("push B")
-    }
-}
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (randomPick == 0) {
-        info.changeScoreBy(1)
-    }
-    generate()
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (randomPick == 1) {
-        info.changeScoreBy(1)
-    }
-    generate()
-})
-game.splash("Push A or B as directed")
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . 4 4 4 4 4 4 4 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 . e . . e . 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 4 . 1 1 . 4 4 . . . 
-. . . . . . 4 4 4 4 4 4 . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-info.startCountdown(20)
-generate()
-```
+TODO - these are the comparison operators write something for the basics >, <, ==
 
 
-### Example 1c:  ``|logic:else|`` for random alternating message
+### Example #1: less than 
 
-https://makecode.com/_FDoAgwhKdh1X
+## Todo for all examples can use items like lives, score, sprite position, sprite velocity
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let mySprite: Sprite = null
-let randomPick = 0
-function generate() {
-    randomPick = Math.randomRange(0, 1)
-    if (randomPick == 0) {
-        mySprite.say("push A")
-    } else {
-        mySprite.say("push B")
-    }
-}
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (randomPick == 0) {
-        info.changeScoreBy(1)
-    }
-    generate()
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (randomPick == 1) {
-        info.changeScoreBy(1)
-    }
-    generate()
-})
-game.splash("Push A or B as directed")
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . 4 4 4 4 4 4 4 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 . e . . e . 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 . . . . . . 4 . . . 
-. . . . . 4 4 . 1 1 . 4 4 . . . 
-. . . . . . 4 4 4 4 4 4 . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-info.startCountdown(20)
-generate()
-```
+## Task 1a: less than 
+
+## Task 1b: less than 
+
+### Example #2: greater than
+
+## Task #2: greater than
+
+### Example #3: equal 
+
+## Task 3: equal 
+
+### Example #4: using multiple if comparisons 
+
+## Task 3a: equal and greater than test
+
+// simple coe that has two different if statements one > one 
+
+Add a challenge 4 statements check for lives score sprite position
 
 
 
-## Student Task 1a: ``|logic:else|`` for check if correct button is pressed
 
-Now that we have the basic functionality of our game, let’s make it so that the player loses points when they press the wrong button.
-
-
-1. Start with the code 1c above 
-2. Add else ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
-3. Decrease the players ``||info:score||`` by 1 when they press the wrong button by using the ``||info:change score by||`` block
-
-### ~hint
-
-To decrease a value, change its value by a negative amount
-
-### ~
-
-## Task #1b: End of Game Message
-
-Now let’s congratulate the player at the end of the game, giving them a specific message based on their ``||info:score||``.
-
-1. Create an event for when the countdown ends by using the ``||info:on countdown end||`` block
-2. Check to see if the player’s ``||info:score||`` is less than `20`. If it is, use a splash block to say “Beginner score of ” and then the player’s ``||info:score||``
-
-### ~hint
-
-You can combine a string and a number to form a string using the ``||text:join||`` block.
-
-### ~
-
-3. Use an ``||logic:else||`` block to do the same for if the player’s ``||info:score||`` was greater than or equal to `20` but say “Pro score of ” and then the player’s ``||info:score||``
-4. Use a game over block to let the game know that it is over and that the player won
-
-### ~hint 
-
-By clicking the plus sign of a game over block, you can let the game know whether or not the player won. 
-
-This will change the dialog shown on the game over screen. 
-
-### ~
-
-
-5. Challenge: Make the sprite have a shake or bump effect each time it has a say so can see when letter updates even when it is the same as the previous time.
 
 ## What did we learn?
 
-1. What's a case in which you use an ``||logic:if||`` but not an ``||logic:else||``?
-2. For example 1c, we changed the ``|logic:if||`` ``|logic:if||`` structure to an ``|logic:if else||`` structure. Why does it make sense to do this?
-3. What is the same and what is different between the following code samples? Which one is easier to read? Explain.
+1. ?
+2. 
 
-```blocks
-if (info.score() > 10) {
-    game.splash("Case 1")
-} else {
-    if (info.score() > 5) {
-        game.splash("Case 2")
-    } else {
-        game.splash("Case 3")
-    }
-}
-```
 
-```blocks
-if (info.score() > 10) {
-    game.splash("Case 1")
-} else if (info.score() > 5) {
-    game.splash("Case 2")
-} else {
-    game.splash("Case 3")
-}
-```
+
+
