@@ -9,9 +9,13 @@ In these activities students will work with:
 
 ## Example #1: Are you hungry?
 
+https://makecode.com/_975A7yazx1dT
+
 ## Student Task #1: Off and on
 
 ### Standard:
+
+https://makecode.com/_UgDa7dFb8Aox
 
 ```blocks
 let isHungry = false
@@ -35,6 +39,8 @@ isHungry = false
 
 ### Challenge:
 
+https://makecode.com/_JUceve65sPLW
+
 ```blocks
 let isHungry = false
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -57,7 +63,9 @@ isHungry = false
 
 ## Example #2b: ``||logic:or||``
 
-## Student Task #2: 
+## Student Task #2a: 
+
+https://makecode.com/_48A0e9R3bTY8
 
 ```blocks
 enum SpriteKind {
