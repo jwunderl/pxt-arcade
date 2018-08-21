@@ -37,17 +37,11 @@ https://youtu.be/iEQa-Wd3MRs
 1. Press the "Home" button in the upper left corner to return to the homepage
 2. Press the "New Project" button 
 3. The screen will start with two blocks by default - we will focus on the ``||loops:on start||`` block for now, so drag the ``||game:on game update||`` block to the side bar to delete it as shown below
-
 ![Deleting Onstart](/static/courses/csintro1/orientation/delete-on-start.gif)
-
 4. Drag out a new sprite and have it ``||sprite:say||`` something as shown below
-
 ![Sprite Say](/static/courses/csintro1/orientation/sprite-say.gif)
-
-5. At the bottom of the screen, select a name to save this game as (e.g. - "first game"), and click "Download" to download it.
-
+5. At the bottom of the screen, select a name to save this game as (e.g. - "first game"), and click "Download" to download it
 ![Downloading the game](/static/courses/csintro1/orientation/download.gif)
-
 6. Students will turn in this file today, so be sure to keep track of it!
 
 ## Student Task #3: Importing your game
