@@ -5,29 +5,25 @@ Logic in Computer Science is about building code to enforce a set of rules that 
 
 In these activities students will work with:
 
-* ``||logic:if||`` 
+* ``||logic:if||`` block
 
 ## Comparisons 
 
-``||logic:if||`` logic
+Comparison logic with the ``||logic:if||`` statement
  
-In our games we will often want to compare values and take an action based on the comparison.  
+In our games we will often want to compare values and take an action when the comparison statement is true.  
 
->Example:  Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value.
+>Example:  Is myValue (3) smaller than a testValue (5)? If it is ``||logic:true||`` that myValue is smaller than the testValue then we will add 1 to myValue.
 
-We could do a comparison test to see:
+We perform comparison tests with ``||logic:if||`` 
 
-* if player score is greater than the enemy score, then we gain points on overlap
-* if the player has 0 lives left, then we set to game over
-* if we have the secret key, then we can enter the room.
+We have already seen similar logic in blocks such as ``||sprites: on overlap||`` where there were statements such as: **if** a type player overlaps with type coin then destroy coin and increase score.
 
-We have already seen some of this logic in blocks such as ``||sprites: on overlap||`` where there were statements such as: **if** a type player overlaps with type coin then destroy coin and increase score.
-
-``||logic:if||`` statements allow us  to make our programs behave in different ways based on the state of the game.
+``||logic:if||`` statements allow us to a programs behavior based on the state of the game.
 
 ## Concept: **if** Statement
 
-``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. Some examples are:
+``||logic:if||`` statements perform a test, and if the logic test evaluates to true, then it will run code that is given. Some further examples are:
 
 * if the score is greater than 10, then give additional countdown time
 * if the player has 0 lives left, then game over
@@ -69,9 +65,7 @@ TODO - these are the comparison operators write something for the basics >, <, =
 
 ## Task 3a: equal and greater than test
 
-// simple coe that has two different if statements one > one 
-
-Add a challenge 4 statements check for lives score sprite position
+### TODO 3a simple code that has two different `if` statements + Add a challenge with 4 statements- can check for lives, score, sprite position x, sprite position y
 
 
 
