@@ -6,6 +6,8 @@
 
 ## Student Task #1: Option for failure!
 
+https://makecode.com/_Pkrf0s4KEK16
+
 ```blocks
 if (game.ask("Do you want to win?")) {
     game.splash("You win!")
@@ -24,6 +26,8 @@ if (game.ask("Do you want to win?")) {
 
 ### Standard Solution:
 
+https://makecode.com/_MjmMHm1DACtY
+
 ```blocks
 let password = ""
 let input = ""
@@ -39,13 +43,15 @@ if (password == "Hunter2") {
 
 ### Challenge Solution:
 
+https://makecode.com/_XkTUTe2u24MR
+
 ```blocks
 let password = ""
 let input = ""
 input = game.askForString("What is your name?")
 game.splash("Hello " + input + "!")
 password = game.askForString("What is your password?")
-if (password == "Hunter2" || password == "*******") {
+if (password == "Penguin33" || password == "*******") {
     game.splash("login successful")
 } else {
     game.splash("login failed")
