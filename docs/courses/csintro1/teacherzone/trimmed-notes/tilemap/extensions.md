@@ -239,5 +239,5 @@ Possible Solutions:
 ## TODO: rubric
 
 ```package
-corgio=github:jwunderl/pxt-corgio#master
+corgio=github:jwunderl/pxt-corgio#v0.0.12
 ```

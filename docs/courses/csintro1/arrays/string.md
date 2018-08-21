@@ -171,7 +171,7 @@ text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
 Review the corgio extension from the Tile Map Extensions lesson; can you guess how the ``||corgio:make myCorg bark!||`` and ``||corgio:teach myCorg the word||`` blocks work?
 
 ```package
-corgio=github:jwunderl/pxt-corgio#master
+corgio=github:jwunderl/pxt-corgio#v0.0.12
 ```
 
 ### ~

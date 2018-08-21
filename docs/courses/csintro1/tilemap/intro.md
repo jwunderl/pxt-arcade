@@ -2,7 +2,7 @@
 
 Maps and levels form the basis of many of the most common types of video games; they allow a canvas for the games story to progress, and for the player to explore. 
 
-In MakeCode Arcade, ``||scene:tile maps||`` provide an easy way to design two dimensional maps.
+In @boardname@, ``||scene:tile maps||`` provide an easy way to design two dimensional maps.
 
 ## Concept: editing a tile map
 

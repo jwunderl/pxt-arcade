@@ -15,9 +15,13 @@ In this activity, students will use:
 
 ## Student Task #1: Throw a ball at a target
 
-### Solution: [Throw ball at target](https://makecode.com/_dF76zsDPsgbe)
+### Solution:
 
-### Solution Challenge : [Throw ball at projectile targets](https://makecode.com/_T5rX5k8ACVJw)
+[Throw ball at target](https://makecode.com/_dF76zsDPsgbe)
+
+### Solution Challenge:
+
+[Throw ball at projectile targets](https://makecode.com/_T5rX5k8ACVJw)
 
 ## Concept: Projectiles from other Projectile Sprites
 
@@ -26,12 +30,12 @@ In this activity, students will use:
 Start with the following cloud moving across the screen: https://makecode.com/_UfeX3VY6CfgD
 
 ## Example #2b: Cloud projectile that emits projectile rain 
+
 https://makecode.com/_Es5HF0VEuCiL
 
 ## Example #2c: Cloud projectile that widely emits projectile rain
 
 https://makecode.com/_CvEVPuh35bbj
-
 
 ## Example #2d: count destroyed raindrops
 
@@ -49,9 +53,11 @@ Use a loop!  Remember if creating many projectiles use ``||sprite:ghost on||`` i
 ### ~
 
 ### Solution: 
+
 https://makecode.com/_J1T3YEJFAdFb
 
 ### Challenge Solution: 
+
 https://makecode.com/_AckKRmR7m7Ja
 
 ## What did we learn?

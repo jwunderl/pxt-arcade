@@ -1,4 +1,4 @@
-# MakeCode Arcade Rubrics
+# @boardname@ Rubrics
 
 ##  Uses 10 Point Scale (or opt for 1-4 pts) 
 

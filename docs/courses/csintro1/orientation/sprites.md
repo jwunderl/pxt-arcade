@@ -1,6 +1,6 @@
 # Activity: Sprites
 
-Games tell a story, and those stories generally require characters. In MakeCode Arcade, those characters are generally represented using sprites. This activity equips students with the skills necessary to create, test and save sprites using the MakeCode development environment. Students will build unique sprites by using the sprite menu and the integrated image editor.
+Games tell a story, and those stories generally require characters. In @boardname@, those characters are generally represented using sprites. This activity equips students with the skills necessary to create, test and save sprites using the MakeCode development environment. Students will build unique sprites by using the sprite menu and the integrated image editor.
 
 In this activity, students are introduced to:
 * Using blocks  

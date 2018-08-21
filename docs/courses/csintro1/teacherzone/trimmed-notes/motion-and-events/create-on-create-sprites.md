@@ -7,7 +7,7 @@
 
 Students can use a local variable within ``||sprites:on created||`` event block since it is used only in the scope of that block of code (not accessible outside that code block of code).  This is variable scope, which is not a main concept for this lesson or for unit 1. 
 
-For now we say the variable is used for a short time in the event and then goes away.  We will address local scope in later Arcade Intro CS units.
+For now we say the variable is used for a short time in the event and then goes away.  We will address local scope in later @boardname@ Intro CS units.
 
 ### ~
 https://makecode.com/_UPTKViRTtR1e

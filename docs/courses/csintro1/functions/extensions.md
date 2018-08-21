@@ -11,7 +11,7 @@ In this activity, students will:
 
 Now that we have experience writing functions, we might notice something different about the blocks you've been using - almost all of them are already functions! These functions are provided to you by default to make your coding experience easier. We call these "built in functions."
 
-We are not stuck with only the functions provided when you first open MakeCode. Extensions, in the advanced menu, allow functions, and other code, to be included and used in our games. 
+We are not stuck with only the functions provided when you first open @boardname@. Extensions, in the advanced menu, allow functions, and other code, to be included and used in our games. 
 
 We can make even make our own packages of code to share or reuse in our games.
 
