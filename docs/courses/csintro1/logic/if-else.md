@@ -27,8 +27,8 @@ We could do a comparison test to see:
 We have seen in the previous lesson ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. 
 
 ```block
-if (info.lives() < 2) {
-    game.splash("careful, 1 life left!")
+if (info.life() > 2) {
+    game.splash("3 or more lives")
 }
 ```
 
