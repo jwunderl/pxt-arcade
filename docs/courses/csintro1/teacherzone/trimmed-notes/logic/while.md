@@ -1,13 +1,16 @@
 # Activity: Logic in Loops
+
 Using ``||logic:if||`` and ``||logic:else||`` are great ways to make your code do something based on the state that it is in, but, they are limited in a way. Imagine the case in which you wanted to check to see if the same condition was met multiple times. 
 
 In this activity, students will: 
 * Use ``||loops:while||`` loops
 
 ## Concept: While loops
+
 A ``||loops:while||`` loop is a loop that is kind of a combination of a ``||logic:if||`` block and a ``||loops:repeat||`` loop. It takes in a condition and will keep looping through the code provided **while** the condition is true. 
 
 ## Example 1: Guessing Game
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Identify why the code runs until the player guesses the correct answer.
@@ -29,9 +32,11 @@ This is a simple game that requires the player to guess a number that the game i
 Another way to think about this task is that we want the code that prompts the player to guess to keep looping **while** they are getting the answer wrong. 
 
 ### ~hint
+
 In English, the difference between "until" *some condition* and "while" *some condition* is simply that they are opposites.
 
 Example: "We want to run this code until the player guesses it correctly" is the same as saying "We want to run this code while the player guesses it incorrectly".
+
 ### ~
 
 
