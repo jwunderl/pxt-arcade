@@ -65,6 +65,7 @@
 ## [Logic Teacher](/courses/csintro1/teacherzone/trimmed-notes/logic)
 
 * [Introduction](/courses/csintro1/teacherzone/trimmed-notes/logic/intro)
+* [If and Else](/courses/csintro1/teacherzone/trimmed-notes/logic/if-else)
 * [Booleans](/courses/csintro1/teacherzone/trimmed-notes/logic/booleans)
 * [Validating User Input](/courses/csintro1/teacherzone/trimmed-notes/logic/user-input)
 * [Logic in Loops](/courses/csintro1/teacherzone/trimmed-notes/logic/while)
