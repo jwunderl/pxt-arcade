@@ -63,7 +63,7 @@ isHungry = false
 
 ## Example #2b: ``||logic:or||``
 
-## Student Task #2a: 
+## Student Task #2: 
 
 https://makecode.com/_48A0e9R3bTY8
 
