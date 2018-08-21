@@ -10,6 +10,12 @@ Variables are used extensively in code. Variables allow code to be written in a 
 
 If we know `Y = 3` we can calculate `X` from our equation. Later on, `Y` can have a different value, like `Y = 7`. We can reuse the equation, `X = 2Y`, for both values of `Y`. This way, the value of `X` will change alongside the value of `Y`.
 
+### ~hint
+
+Variable Definition: a container used to store values in your code.
+
+### ~
+
 In this activity, student are introduced to:
 * Expressing numeric operations with math operators (`+`, `-`, `*`, `/`)
 * Storing the result of an equation in a variable 
