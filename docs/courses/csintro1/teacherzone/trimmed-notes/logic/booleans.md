@@ -1,7 +1,7 @@
 # Activity: Boolean Statements and Expressions
 
 In these activities students will work with:
-* boolean flags and values
+* Boolean flags and values
 * ``||logic:and||`` & ``||logic:or||``
 * ``||logic:not||``
 

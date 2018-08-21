@@ -1,13 +1,13 @@
 # Activity: User Input and String Logic
 
-Logical expressions like ``||logic:if||`` and ``||logic:else||`` can be used with values beyond just comparing numeric values. Any value can be compared and used to change the way the programs we write behave depending on the different conditions.
+Logical expressions like ``||logic:if||`` and ``||logic:else||`` can be used beyond comparing numeric values. Various data type values (such as Strings) can be compared and used to change the way the programs we write behave depending on the different conditions.
 
 One major example of this can be found in some of the earliest computer games - text-based adventure games. These rely heavily on crafting a story, and having the player interact with this story by prompting them with questions and identifying what the user gives back as a response.
 
 In this activity, students will:
 * ``||game:ask||``
 * ``||game:ask for string with text||``
-* Use boolean logic with Strings
+* Use Boolean logic with Strings
 
 ## Concept: User interaction
 
@@ -27,7 +27,7 @@ if (game.ask("Do you want to win?")) {
 }
 ```
 
-This is a fairly simple game - you press ``||controller:A||`` to win, or ``||controller:B||`` to do nothing. However, it does illustrate two important concepts: one, that there are **built in** methods that return boolean values, which allows for the easy implementation of logical tests in the code we write, and two, that those tests can be based off user input - in this case, which button the user pressed.
+This is a fairly simple game - you press ``||controller:A||`` to win, or ``||controller:B||`` to do nothing. However, it does illustrate two important concepts: one, that there are **built in** methods that return Boolean values, which allows for the easy implementation of logical tests in the code we write, and two, that those tests can be based off user input - in this case, which button the user pressed.
 
 ## Student Task #1: Option for failure!
 
