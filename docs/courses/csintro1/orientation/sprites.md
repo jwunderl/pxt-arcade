@@ -97,7 +97,7 @@ https://youtu.be/oupwql9r-80
 
 1. Make a blank **32x32** sprite  
 2. Hover over every color and find color index 0 and add that color on the far left  
-3. Then find and add the other colors as picture of the number in order to the right using color index 1, 2, 3, 4, ..., until you have color index 15
+3. Then find and add the other colors in the shape of their corresponding code index number.  Arrange them inside the Sprite Editor workspace so you have all 15 index colors.
 4. Look at how the sprite image is represented in the JavaScript view to help answer the "What did we learn" questions below
 
 ![sprite rainbow numbers image](/static/courses/csintro1/orientation/rainbow-numbers.png)
