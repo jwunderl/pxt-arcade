@@ -63,9 +63,9 @@ TODO - these are the comparison operators write something for the basics >, <, =
 
 ### Example #4: using multiple if comparisons 
 
-## Task 3a: equal and greater than test
+## Task 4: equal and greater than test
 
-### TODO 3a simple code that has two different `if` statements + Add a challenge with 4 statements- can check for lives, score, sprite position x, sprite position y
+### TODO 4 simple code that has two different `if` statements + Add a challenge with 4 statements- can check for lives, score, sprite position x, sprite position y
 
 
 
