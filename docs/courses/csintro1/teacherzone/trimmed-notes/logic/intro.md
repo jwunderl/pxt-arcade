@@ -1,4 +1,4 @@
-# if and if else logic
+# Activity: if and if else logic
  
 ## Button Game
 

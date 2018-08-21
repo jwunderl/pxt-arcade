@@ -1,4 +1,4 @@
-# Birthday Algorithm
+# Activity: Birthday Algorithm
 This activity requires pencil and paper (no need for a computer). In this lesson students follow a series of steps to complete a math trick.
 
 Students will be introduced to:

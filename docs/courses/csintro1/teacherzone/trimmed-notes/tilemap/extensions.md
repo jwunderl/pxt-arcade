@@ -1,4 +1,4 @@
-# Activity: Using the Corgi Extensions
+# Activity: Using the Corgi Extension
 
 ## Using the corgio package
 

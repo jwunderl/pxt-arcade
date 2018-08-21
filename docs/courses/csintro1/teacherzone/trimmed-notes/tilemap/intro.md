@@ -1,4 +1,4 @@
-# Intro to Tile Map
+# Activity: Intro to Tile Map
 
 ## Example #1: Making a tile map
 

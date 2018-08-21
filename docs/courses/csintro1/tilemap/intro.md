@@ -1,4 +1,4 @@
-# Tile Map
+# Activity: Tile Map
 
 Maps and levels form the basis of many of the most common types of video games; they allow a canvas for the games story to progress, and for the player to explore. 
 

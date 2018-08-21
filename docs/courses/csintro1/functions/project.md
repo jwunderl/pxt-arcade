@@ -1,4 +1,4 @@
-# Functions Project
+# Activity: Functions Project
 
 Make games of your choosing!
 

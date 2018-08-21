@@ -1,4 +1,4 @@
-# Motion Project
+# Activity: Motion Project
 
 Make games of your choosing!
 

@@ -1,4 +1,4 @@
-# Functions Project
+# Activity: Functions Project
 
 Example Projects
 

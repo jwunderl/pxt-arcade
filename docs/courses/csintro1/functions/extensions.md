@@ -1,4 +1,4 @@
-# Making and Using Extensions
+# Activity: Making and Using Extensions
 
 When writing code, software developers often want to avoid spending time recreating code that already exists. Previous sections have shown how a single developer might do this using functions, but not how developers can share code amongst others.
 

@@ -1,4 +1,4 @@
-## Activity: Arrays of Sprites
+# Activity: Arrays of Sprites
 
 In previous lessons, we have used arrays of fairly simple types of variables - numbers and strings. As mentioned in those lessons, though, arrays can be used with any variable you would like, including sprites.
 

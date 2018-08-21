@@ -1,4 +1,4 @@
-# Projectile Project
+# Activity: Projectile Project
 
 Example Projects
 

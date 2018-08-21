@@ -1,4 +1,4 @@
-# if else comparisons
+# Activity: if else comparisons
 
 * ``||logic:if||`` 
 

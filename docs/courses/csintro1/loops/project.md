@@ -1,4 +1,4 @@
-# Projectile Project
+# Activity: Projectile Project
 
 Make games of your choosing!
 

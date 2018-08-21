@@ -1,4 +1,4 @@
-# Projectile Motion
+# Activity: Projectile Motion
 
 ## Import the Corgi
 TODO: Show how to do this

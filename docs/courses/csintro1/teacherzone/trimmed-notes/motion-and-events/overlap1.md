@@ -6,9 +6,7 @@ In this activity the student will work with:
 * Ghost on - Ghost off
 * destroy sprite  
 
-# Overlaps
-
-## Concept: SpriteKind Overlap Event
+## Concept: Overlaps - SpriteKind Overlap Event
 
 ## Example 1: Two Sprite Overlap  
 

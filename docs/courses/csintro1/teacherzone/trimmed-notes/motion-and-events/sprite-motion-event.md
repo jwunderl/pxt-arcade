@@ -124,7 +124,7 @@ mySprite = sprites.create(img`
 
 ## Example 3: motion short dx/dy code method 
 
-# Student Task #3: Create Velocity Motion (short method)
+## Student Task #3: Create Velocity Motion (short method)
 
 https://makecode.com/_TEmAxDimtac8
 

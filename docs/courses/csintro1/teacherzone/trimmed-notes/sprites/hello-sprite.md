@@ -17,7 +17,7 @@ In this lesson students use:
 2. Identify any JavaScript code that doesn't seem to have any blocks. Hypothesize and Explain.  
 
 
-# Example: console.log()  
+### Example: console.log()  
 
 ## Task: Add console.log( ) to "sprite hello"
 

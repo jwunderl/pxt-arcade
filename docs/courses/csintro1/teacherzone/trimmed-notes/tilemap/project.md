@@ -1,4 +1,4 @@
-# Tile map Project
+# Activity: Tile map Project
 
 ## [Find the coins](https://makecode.com/_Mbp1PUHrcgKz)
 

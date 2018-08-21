@@ -1,4 +1,4 @@
-# Birthday Algorithm
+# Activity: Birthday Algorithm
 This Activity requires Pencil and Paper (no need for a computer).
 
 In this lesson students follow a series of steps to complete a math trick. Students are introduced to 
@@ -26,7 +26,7 @@ An Algorithm is series of steps, decisions and/or formulas. Some common examples
     3. `7m - 1`  
     4. `(7m - 1)13 = 91m - 13` 
 
-# Rubrics
+## Rubrics
 
 ### ~hint
 

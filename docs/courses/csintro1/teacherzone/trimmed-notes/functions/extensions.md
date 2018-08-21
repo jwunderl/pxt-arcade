@@ -1,4 +1,4 @@
-# Making and Using Extensions
+# Activity: Making and Using Extensions
 
 ## Using Shared Code
 
