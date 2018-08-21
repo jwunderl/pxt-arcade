@@ -1,4 +1,4 @@
-# Activity: Getting Started with MakeCode Arcade
+# Activity: Getting Started with @boardname@
 
 In this activity student will work with: 
 * opening a game, game controls and playing a game
@@ -16,9 +16,9 @@ In this activity student will work with:
 
 ### ~hint
 
-MakeCode saves a special image (.png) file that embeds the code in the file. The file looks like a typical thumbnail image when opened with an image viewer but when opened in MakeCode it loads game code.
+@boardname@ saves a special image (.png) file that embeds the code in the file. The file looks like a typical thumbnail image when opened with an image viewer but when opened in @boardname@ it loads game code.
 
-Each Browser is different with opening the location of the file download.  Try in the student environment before the exercise.  The key is to have the student save the files in a consistent location such as a named folder.  Later, students will need to navigate to this location to open the file in MakeCode Arcade.
+Each Browser is different with opening the location of the file download.  Try in the student environment before the exercise.  The key is to have the student save the files in a consistent location such as a named folder.  Later, students will need to navigate to this location to open the file in @boardname@.
 
 Common Browser Saving behavior:
 * show download file at the browser bottom border (then click to open or to see save dialog) 

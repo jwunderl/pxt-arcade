@@ -13,7 +13,9 @@ In this activity the student will work with:
 ## Example 1: Two Sprite Overlap  
 
 ## Student Task 1: Add actions to overlap events
+
 https://makecode.com/_1A9gDMVA7Xrk
+
 ```blocks
 enum SpriteKind {
     Player,

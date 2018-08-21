@@ -9,7 +9,7 @@
 - **cloud computing** – Computing done in **a cloud** of remote computers on the internet.
 - **cloud variable** – a variable whose value is stored in **the cloud**. Also see **replicated variable**.
 - **collection** – Also known as an **array** in other programming languages. A group of objects, all of the same **variable type** , that can be referenced as a single variable. Objects in a collection are referred to as **elements** or items. An individual element can be referenced by its **index**.
-- **computer program** – A set of instructions that a computer can follow. Games in MakeCode Arcade are examples of computer programs. 
+- **computer program** – A set of instructions that a computer can follow. Games in @boardname@ are examples of computer programs. 
 - **concatenate** – To put two strings together to form a single string. For example, the concatenation of `"Hello"` and `"world"` is `'Helloworld"`. A common way to concatenate stings in JavaScript is to use the `+` operator (e.g. `msg = "Hello" + "world"` = )
 - **conditional statement** – Also known as an _if/then_ or _if/then/else_ statement. A programming construct used for making decisions within a program. A conditional statement allows for execution of code based on the evaluation of a condition.
 - **custom function** – A function created by the programmer (as opposed to functions associated with objects). A custom function usually has a specific purpose and can be/is used in multiple places within a program.

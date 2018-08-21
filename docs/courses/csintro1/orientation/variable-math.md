@@ -180,4 +180,4 @@ https://youtu.be/BPX2MHXmXJw
 
 1. In JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 30.
 2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
-3. Research and describe 2 other ``||math:Math||`` Operators found in the math menu in MakeCode (hover over values for more information).
+3. Research and describe 2 other ``||math:Math||`` Operators found in the math menu in @boardname@ (hover over values for more information).

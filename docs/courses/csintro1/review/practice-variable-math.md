@@ -2,7 +2,7 @@
 
 This example will get us more experience with math and programming, by getting our computers to play the part of a calculator and a little bit more.
 
-1. Copy and paste the given code into the MakeCode editor. Then try running it!
+1. Copy and paste the given code into the @boardname@ editor. Then try running it!
 
 ```blocks
 let ageInDays = 0

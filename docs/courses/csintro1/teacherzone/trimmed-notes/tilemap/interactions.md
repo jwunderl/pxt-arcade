@@ -657,7 +657,7 @@ scene.cameraFollowSprite(golfBall.sprite)
 ```
 
 ```package
-darts=github:jwunderl/pxt-darts#master
+darts=github:jwunderl/pxt-darts#v0.0.12
 ```
 
 ## What did we Learn
