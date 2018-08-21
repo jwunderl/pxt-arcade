@@ -14,7 +14,9 @@ In these activities students will work with:
 
 ## Concept: Boolean Flags
 
-Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe variables as "Boolean flags" - these often are used to turn on (and off) different behaviors that might be useful. For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen when set to ``||logic:true||``.
+Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe variables as "Boolean flags" - these often are used to turn on and off different behaviors that might be useful. 
+
+For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen when set to ``||logic:true||``.
 
 ## TODO VIDEO
 
@@ -88,6 +90,8 @@ else game.splash("false and false is false")
 1. Review the code below
 2. Create the sample code and run the code
 3. Identify which combinations of true or false evaluate to true, and which evaluate to false
+
+https://makecode.com/_3PWUwFdxC97c
 
 ```blocks
 if (true || true) game.splash("true or true is true")
