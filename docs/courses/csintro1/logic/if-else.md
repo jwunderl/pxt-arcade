@@ -66,7 +66,7 @@ First test if the score is greater than 100 and if not run a second comparison t
 ```block
 if (info.score() > 100) {
     game.splash("you are an expert!")
-} else if (info.score() > 100) {
+} else if (info.score() > 50) {
     game.splash("you are intermediate!")
 } else {
     game.splash("you are a beginner!")
