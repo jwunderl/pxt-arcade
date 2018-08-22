@@ -14,7 +14,7 @@ https://makecode.com/_FDoAgwhKdh1X
 
 ## Student Task 1a: ``|logic:else|`` for Check if correct button is pressed
 
-solution: https://makecode.com/_6heMUmbDWh34J 
+solution: https://makecode.com/_fbsXo7bcX9Kz
 
 
 ## Task #1b: End of Game Message
