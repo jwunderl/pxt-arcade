@@ -1,9 +1,7 @@
 # Activity: if else comparisons
 
 * ``||logic:if||`` 
-
 * ``||logic:else||``
-
 * ``||logic:else if||``
 
 ## Comparisons 
@@ -68,7 +66,7 @@ First test if the score is greater than 100 and if not run a second comparison t
 ```block
 if (info.score() > 100) {
     game.splash("you are an expert!")
-} else if (info.score() > 100) {
+} else if (info.score() > 50) {
     game.splash("you are intermediate!")
 } else {
     game.splash("you are a beginner!")
@@ -136,7 +134,7 @@ generate()
 
 ### Example 1b: Check if correct button is pressed
 
-https://makecode.com/_R3F9jscgFbPH
+https://makecode.com/_LigLWHR00d74
 
 ```blocks
 enum SpriteKind {
