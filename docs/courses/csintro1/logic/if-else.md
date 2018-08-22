@@ -136,7 +136,7 @@ generate()
 
 ### Example 1b: Check if correct button is pressed
 
-https://makecode.com/_R3F9jscgFbPH
+https://makecode.com/_LigLWHR00d74
 
 ```blocks
 enum SpriteKind {
