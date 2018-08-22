@@ -9,7 +9,7 @@
 
 Build an key collecting MVP game using an array of boolean values to keep to keep track of which keys have been collected.
 
-![Key Collecting Game]
+![Key Collecting Game](/static/courses/csintro1/arrays/key-game.gif)
 
 ### ~hint
 
