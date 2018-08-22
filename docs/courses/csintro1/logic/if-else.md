@@ -1,9 +1,7 @@
 # Activity: if else comparisons
 
 * ``||logic:if||`` 
-
 * ``||logic:else||``
-
 * ``||logic:else if||``
 
 ## Comparisons 
