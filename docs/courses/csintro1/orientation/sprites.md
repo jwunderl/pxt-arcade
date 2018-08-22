@@ -2,6 +2,8 @@
 
 Games tell a story, and those stories generally require characters. In @boardname@, those characters are generally represented using sprites. This activity equips students with the skills necessary to create, test and save sprites using the MakeCode development environment. Students will build unique sprites by using the sprite menu and the integrated image editor.
 
+![Image Editor Features](/static/courses/csintro1/orientation/image-editor-features.png)
+
 In this activity, students are introduced to:
 * Using blocks  
 * ``||sprites:Sprites||`` and ``||images:Images||``
