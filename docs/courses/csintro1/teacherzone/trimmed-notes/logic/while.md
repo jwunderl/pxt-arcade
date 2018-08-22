@@ -6,6 +6,8 @@
 
 ## Student Task #1: Checking Math
 
+https://makecode.com/_7xRH8zPMg2xk
+
 ```blocks
 let guess = 0
 let secondValue = 0
@@ -23,6 +25,8 @@ game.over(true)
 ## Example #2: Fireball Game
 
 ## Student Task #2: Creating Fireballs
+
+https://makecode.com/_WyqR4Df8uLig 
 
 ```blocks
 enum SpriteKind {

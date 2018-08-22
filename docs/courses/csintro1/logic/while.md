@@ -120,7 +120,7 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-This is a game in which the object is to keep shooting fireballs for as long as you can. The player's ``||info:score||`` is how many fireballs they have fired. The problem for the player is that they have a limited number of fireballs, which are stored as ``||info:life||``, and need to pickup fuel in order to get more. 
+This is a game in which the object is to keep throwing fireballs for as long as you can. The player's ``||info:score||`` is how many fireballs they have launched. The problem for the player is that they have a limited number of fireballs, which are stored as ``||info:life||``, and need to pickup fuel in order to get more. 
 
 An important part is missing, though: the code that will fire the fireballs when the player says to start!
 
