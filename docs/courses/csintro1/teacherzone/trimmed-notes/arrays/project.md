@@ -1,6 +1,107 @@
 # Activity: Arrays Project
 
 
+## Example #1: Enemy Following
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let enemy: Sprite = null
+let player: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(-1)
+    sprite.say("ow", 100)
+})
+scene.setTileMap(img`
+f f f f f f f f f f 
+f 1 1 1 1 1 1 1 1 f 
+f 1 1 f 1 1 1 f 1 f 
+f 1 1 1 1 1 f 1 1 f 
+f 1 1 1 f 1 1 1 1 f 
+f 1 1 1 1 1 1 1 1 f 
+f 1 1 1 1 1 1 1 1 f 
+f f f f f f f f f f 
+`)
+scene.setTile(15, img`
+e e e e e e e e e e e e e f e e 
+e e e e e e e e e e e e e f e e 
+e e e e e e e e e e e e e f e e 
+e e e e e e e e e e e e e f e e 
+f f f f f f f f f f f f f f f f 
+e e e e f e e e e e e e e e e e 
+e e e e f e e e e e e e e e e e 
+e e e e f e e e e e e e e e e e 
+e e e e f e e e e e e e e e e e 
+e e e e f e e e e e e e e e e e 
+f f f f f f f f f f f f f f f f 
+e e e e e e e e f e e e e e e e 
+e e e e e e e e f e e e e e e e 
+e e e e e e e e f e e e e e e e 
+e e e e e e e e f e e e e e e e 
+f f f f f f f f f f f f f f f f 
+`, true)
+player = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 8 8 8 8 . . . . . 
+. . . . . . . 8 . . 8 . . . . . 
+. . . . . . . 8 . . 8 . . . . . 
+. . . . . . . 8 8 8 8 . . . . . 
+. . . . . . . . . 8 . . . . . . 
+. . . . . . . . . 8 . . . . . . 
+. . . . . . . 8 8 8 8 8 . . . . 
+. . . . . . . . . 8 . . . . . . 
+. . . . . . . . 8 . 8 . . . . . 
+. . . . . . . 8 . . . 8 . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+scene.getTile(1, 1).place(player)
+controller.controlSprite(player, 100, 100)
+for (let i = 0; i < 10; i++) {
+    enemy = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 7 . . . . . 7 . . . . . 
+. . . . . 7 . . . 7 . . . . . . 
+. . . . . . 7 . 7 . . . . . . . 
+. . . . . . . 7 . . . . . . . . 
+. . . . . . 7 . 7 . . . . . . . 
+. . . . . 7 . . . 7 . . . . . . 
+. . . . 7 . . . . . 7 . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+    enemy.setPosition(Math.randomRange(32, 144), Math.randomRange(32, 112))
+}
+info.startCountdown(15)
+game.onUpdate(function () {
+    for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
+        if (player.x < value.x) {
+            value.vx = -3
+        } else {
+            value.vx = 3
+        }
+        if (player.y < value.y) {
+            value.vy = -3
+        } else {
+            value.vy = 3
+        }
+    }
+    info.changeScoreBy(1)
+})
+```
+
+
 ## Challenge: Boolean Arrays
 
 ```
