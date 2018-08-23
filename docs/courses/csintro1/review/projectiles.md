@@ -1,180 +1,65 @@
 # Projectile Motion
 
-## Import the Corgi
 
-1. Navigate to **Advanced > Extensions**
-2. Search for "Corgio"
-3. click to add the extension package
+![Asteroid Shooter](/static/courses/csintro1/review/asteroid-shooter.gif)
 
-## Alien Motion
+Start with this basic game code. We will alter this by adding the basic motion concepts that we learned to make the game above.
 
-Make the alien move faster as the score gets higher, and turn around before it hits the edge of the screen. We don't want to let the alien get too fast, so we chose a value to assign to the rate (taking the square root of current score) so that it doesn't become too hard too fast.
-```block
-let alien:Sprite = null
-let dir = 0
-game.onUpdate(function () {
-    let rate = Math.sqrt(info.score()) * 3 + 20
-    if (alien.x <= 6) {
-        dir = 1
-    } else if (alien.x >= screen.width - 6) {
-        dir = -1
-    }
-    alien.vx = dir * rate
-})
-```
-
-## Create a projectile
-
-Make the alien drop arrows toward the ground, with an 8 percent chance to create one every 50 milliseconds.
-
-```block
-enum SpriteKind {
-    Player,
-    Enemy,
-    Arrow
-}
-let alien: Sprite = null
-game.onUpdateInterval(50, function () {
-    if (Math.percentChance(8)) {
-       let projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . 7 7 7 7 7 7 7 . . . . . 
-. . . 7 5 5 e 7 e 5 5 7 . . . . 
-. . . . 7 e 5 7 5 e 7 . . . . . 
-. . . . . 7 5 7 5 7 . . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 0, 15, SpriteKind.Arrow, alien)
-    }
-})
-```
-
-## Make projectiles faster as game goes on
-
-The changes here make it so the values that when the arrows spawn, they go at least
-as fast as the alien currently is going, plus a chance to go a bit faster to mix it up.
-We'll also add in the code to change the score on each update, so that the score (and speed
-of the enemies) goes up as time goes on.
-
-```block
-enum SpriteKind {
-    Player,
-    Enemy,
-    Arrow
-}
-let alien: Sprite = null
-let rate = 0
-game.onUpdateInterval(50, function () {
-    if (Math.percentChance(8)) {
-        let projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . 7 7 7 7 7 7 7 . . . . . 
-. . . 7 5 5 e 7 e 5 5 7 . . . . 
-. . . . 7 e 5 7 5 e 7 . . . . . 
-. . . . . 7 5 7 5 7 . . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, 0, rate + Math.randomRange(0, 15), SpriteKind.Arrow, alien)
-    }
-    info.changeScoreBy(1)
-})
-```
-
-## Finished Game
+https://makecode.com/_bWTMspA9EeF2
 
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy,
-    Arrow
+    Enemy
 }
-let myCorg: Corgi = corgi.create(SpriteKind.Player)
-let alien: Sprite = null
-let dir = 0
-let projectile: Sprite = null
-let rate = 0
-sprites.onOverlap(SpriteKind.Arrow, SpriteKind.Player, function (sprite, otherSprite) {
-    game.over()
-})
-info.setScore(0)
-scene.setBackgroundColor(11)
-alien = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . f f . . . . . . . 
-. . . . . . f 2 2 f . . . . . . 
-. . . . . f f f f f f . . . . . 
-. . . . f 7 7 7 7 7 7 f . . . . 
-. . . f 7 7 7 f f 7 7 7 f . . . 
-. . . . f f f f f f f f . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-alien.setPosition(10, 4)
-alien.vx = 20
-rate = 20
-dir = 1
-myCorg.horizontalMovement()
-myCorg.verticalMovement()
-myCorg.updateSprite(true)
-game.onUpdate(function () {
-    rate = Math.sqrt(info.score()) * 3 + 20
-    if (alien.x <= 6) {
-        dir = 1
-    } else if (alien.x >= screen.width - 6) {
-        dir = -1
-    }
-    alien.vx = dir * rate
-})
-game.onUpdateInterval(50, function () {
-    if (Math.percentChance(8)) {
-        projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . 7 . . . . . . . . 
 . . . . . . . 7 . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . . . 7 7 7 7 7 7 7 . . . . . 
-. . . 7 5 5 e 7 e 5 5 7 . . . . 
-. . . . 7 e 5 7 5 e 7 . . . . . 
-. . . . . 7 5 7 5 7 . . . . . . 
 . . . . . . 7 7 7 . . . . . . . 
-. . . . . . . 7 . . . . . . . . 
+. . . . . . 7 . 7 . . . . . . . 
+. . . . . 7 7 . 7 7 . . . . . . 
+. . . . . 7 . . . 7 . . . . . . 
+. . . . 7 7 . . . 7 7 . . . . . 
+. . . . 7 . . . . . 7 . . . . . 
+. . . 7 7 . . . . . 7 7 . . . . 
+. . . 7 . . . . . . . 7 . . . . 
+. . 7 7 . . . . . . . 7 7 . . . 
+. . 7 7 7 7 7 7 7 7 7 7 7 . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, rate + Math.randomRange(0, 15), SpriteKind.Arrow, alien)
-    }
-    info.changeScoreBy(1)
-})
+`, SpriteKind.Player)
+controller.controlSprite(mySprite, 50, 50)
+mySprite.setFlag(SpriteFlag.StayInScreen, true)
+info.setLife(3)
 ```
 
-```package
-corgio=github:jwunderl/pxt-corgio#v0.0.12
-```
+## Make the player shoot a laser from their spaceship
+
+1. Make an event for when the player presses the ``||controller:A||`` button
+2. In the event, create a projectile that fires with y-velocity of -100 and x-velocity of 0
+3. Make the projectile's sprite some sort of laser that fires from the spaceship
+4. Make the projectile of kind ``||sprites:Laser||``
+5. Set the projectile to fire from ``||variables:mySprite||``
+
+## Add asteroids for the player to shoot at
+
+1. Inside a ``||loops:forever||`` loop, create a projectile with the asteroid sprite
+2. Give this projectile a random x-velocity between -50 and 50 and a random y-velocity between -50 and 50
+3. Make the projectile of kind ``||sprites:Asteroid||``
+4. ``||loops: pause||`` the game for a time that is based on the score. We want the delay between asteroid creation to decrease as the score increases. A good equation to use is `2000 - (50 * score)` ms
+
+## Give the player a point when they shoot an asteroid
+
+1. Add an event for when a sprite of kind ``||sprites:Laser||`` overlaps with a sprite of kind ``||sprites:Asteroid||``
+2. Increase the player's score by one
+3. Destroy the asteroid sprite
+4. Destroy the laser sprite
+
+## Make the player lose a life when they hit an asteroid
+
+1. Add an event for when a sprite of kind ``||sprites:Player||`` overlaps with a sprite of kind ``||sprites:Asteroid||``
+2. Decrease the player's life by one
+3. Destroy the asteroid sprite
