@@ -4,6 +4,8 @@ Make games of your choosing!
 
 ![Collection Message](/static/courses/csintro1/logic/collection-message.gif)
 
+![Low Life Scoring Bonus](/static/courses/csintro1/logic/scoring-bonus.gif)
+
 From what we learned in the previous lessons we should be able to make some great games.
 
 ## Student Task #1:
