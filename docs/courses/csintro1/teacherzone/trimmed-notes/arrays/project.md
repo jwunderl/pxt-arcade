@@ -1,7 +1,7 @@
 # Activity: Arrays Project
 
 
-## Example #1: Enemy Following
+## [Example #1: Enemy Following](https://makecode.com/_6CpUj0iPbD3H)
 
 ```blocks
 enum SpriteKind {
@@ -102,9 +102,139 @@ game.onUpdate(function () {
 ```
 
 
+## [Example #2: Hazards ](https://makecode.com/_cAPX0q3uUeAL)
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Hazard
+}
+let mySprite: Sprite = null
+let expressionArray: string[] = []
+let spriteArray: Sprite[] = []
+let textToSay = ""
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Hazard, function (sprite, otherSprite) {
+    textToSay = Math.pickRandom(expressionArray)
+    if (otherSprite == spriteArray[0]) {
+        textToSay = "" + textToSay + " That's Hot!"
+    } else if (otherSprite == spriteArray[1]) {
+        textToSay = "" + textToSay + " That's Cold!"
+    } else {
+        textToSay = "" + textToSay + " That's Sharp!"
+    }
+    sprite.say(textToSay, 1000)
+    otherSprite.setFlag(SpriteFlag.Ghost, true)
+    pause(1000)
+    otherSprite.setFlag(SpriteFlag.Ghost, false)
+})
+scene.setTileMap(img`
+f f f f f f f f f f 
+f e e e e e e e e f 
+f e e e e e e e e f 
+f e e e e e e e e f 
+f e e e e e e e e f 
+f e e e e e e e e f 
+f e e e e e e e e f 
+f f f f f f f f f f 
+`)
+scene.setTile(15, img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`, true)
+spriteArray = [sprites.create(img`
+. . . . . . . . 3 . . . . . . . 
+. . . . . . . . 2 3 . . . . . . 
+. . . . . . . 3 2 2 3 . . . . . 
+. . . . . . . 2 4 4 2 3 . . . . 
+. . . 4 . . 2 2 4 4 2 2 . . . . 
+. . 3 4 . 4 2 4 4 4 2 2 . . . . 
+. . . . . 2 2 4 4 4 2 2 . . . . 
+. . 3 3 . 2 4 4 4 4 2 2 3 3 . . 
+. . 2 4 3 2 4 4 5 4 4 2 2 2 . . 
+. . 2 2 2 2 4 5 5 4 4 2 2 2 . . 
+. . 2 2 4 4 4 5 5 4 4 4 2 2 . . 
+. . 2 2 4 4 5 d d 5 5 4 2 2 . . 
+. . . 2 4 5 5 d 1 d 5 4 2 3 . . 
+. . . 2 2 5 d 1 1 d 5 4 4 . . . 
+. . . 3 2 4 5 1 1 5 4 4 . . . . 
+. . . . . 3 5 d d 5 . . . . . . 
+`, SpriteKind.Hazard), sprites.create(img`
+. . . . . d d d d d d d d . . . 
+. . . d d b b b b b b b b b . . 
+. d b 9 9 9 9 9 9 9 1 1 d b 6 d 
+d 9 6 6 6 6 6 b b d d b b 6 9 b 
+b 9 9 6 b 6 6 b b b b 6 6 b 9 b 
+b 9 9 b 6 6 b b 9 b 6 6 b 6 6 d 
+b 9 1 6 6 6 b b d 6 c b 9 6 6 d 
+d 9 9 6 b b b b b 6 6 b 9 6 6 d 
+d 9 6 b 9 d b 1 1 b 6 b 9 6 6 b 
+d 9 6 9 9 6 b 1 1 b 6 6 9 6 9 b 
+b 1 1 9 9 6 9 d 1 6 c 6 9 9 1 b 
+b 1 1 1 9 b b b d 6 6 9 1 1 1 d 
+d 1 1 1 1 d 1 1 1 d 1 9 9 1 b . 
+. d d 1 1 1 1 1 1 9 9 9 b d . . 
+. . . d b d 1 1 1 9 6 b . . . . 
+. . . . . . d d d d d . . . . . 
+`, SpriteKind.Hazard), sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . d . . . . . . . . 
+. . . . . . . d . . . . . . . . 
+. . . . . . f f f . . . . . . . 
+. . . . . f f f f f . . . . . . 
+. . . . f f f f f f f . . . . . 
+. . . f f f f f f f f f . . . . 
+. d d f f f f f f f f f d d . . 
+. . . f f f f f f f f f . . . . 
+. . . . f f f f f f f . . . . . 
+. . . . . f f f f f . . . . . . 
+. . . . . . f f f . . . . . . . 
+. . . . . . . d . . . . . . . . 
+. . . . . . . d . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Hazard)]
+expressionArray = ["Ouch!", "Wow!", "Yikes!"]
+mySprite = sprites.create(img`
+. . . . . . 5 . 5 . . . . . . . 
+. . . . . f 5 5 5 f f . . . . . 
+. . . . f 1 5 2 5 1 6 f . . . . 
+. . . f 1 6 6 6 6 6 1 6 f . . . 
+. . . f 6 6 f f f f 6 1 f . . . 
+. . . f 6 f f d d f f 6 f . . . 
+. . f 6 f d f d d f d f 6 f . . 
+. . f 6 f d 3 d d 3 d f 6 f . . 
+. . f 6 6 f d d d d f 6 6 f . . 
+. f 6 6 f 3 f f f f 3 f 6 6 f . 
+. . f f d 3 5 3 3 5 3 d f f . . 
+. . f d d f 3 5 5 3 f d d f . . 
+. . . f f 3 3 3 3 3 3 f f . . . 
+. . . f 3 3 5 3 3 5 3 3 f . . . 
+. . . f f f f f f f f f f . . . 
+. . . . . f f . . f f . . . . . 
+`, SpriteKind.Player)
+controller.controlSprite(mySprite, 100, 100)
+for (let value of spriteArray) {
+    scene.getTile(Math.randomRange(1, 8), Math.randomRange(1, 6)).place(value)
+}
+```
+
 ## Challenge: Boolean Arrays
 
-```
+```blocks
 enum SpriteKind {
     Player,
     Enemy,

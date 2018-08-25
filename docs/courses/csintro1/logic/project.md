@@ -6,6 +6,8 @@ Make games of your choosing!
 
 ![Low Life Scoring Bonus](/static/courses/csintro1/logic/scoring-bonus.gif)
 
+![AND "Gate"](/static/courses/csintro1/logic/and-gate.gif)
+
 From what we learned in the previous lessons we should be able to make some great games.
 
 ## Student Task #1:

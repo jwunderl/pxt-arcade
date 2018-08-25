@@ -1,8 +1,8 @@
 # Activity: Logic Project
 
-## Example Game #1: Collection Message
+## [Example Game #1: Collection Message](https://makecode.com/_FxzKYsgV4cc0)
 
-```
+```blocks
 enum SpriteKind {
     Player,
     Enemy,
@@ -65,7 +65,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Example game #2: life based scoring, continue playing
+## [Example game #2: life based scoring, continue playing](https://makecode.com/_aos50hDCmhzj)
 
 ```blocks
 enum SpriteKind {
@@ -161,4 +161,192 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . . 
 `, Math.randomRange(-50, 50), Math.randomRange(-50, 50), SpriteKind.Coin)
 })
+```
+
+## [Example #3: AND "Gate"](https://makecode.com/_Va2THxgeRYat)
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Plate
+}
+let plate2: Sprite = null
+let flag2 = 0
+let flag1 = 0
+let plate1: Sprite = null
+let mySprite: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Plate, function (sprite, otherSprite) {
+    if (otherSprite == plate1) {
+        flag1 = 1
+    } else {
+        flag2 = 1
+    }
+    otherSprite.setImage(img`
+f f f f f f f f f f f f f f f f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
+f f f f f f f f f f f f f f f f 
+`)
+    otherSprite.setFlag(SpriteFlag.Ghost, true)
+    checkGate()
+    pause(1000)
+    otherSprite.setImage(img`
+f f f f f f f f f f f f f f f f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f f f f f f f f f f f f f f f f 
+`)
+    if (otherSprite == plate1) {
+        flag1 = 0
+    } else {
+        flag2 = 0
+    }
+    otherSprite.setFlag(SpriteFlag.Ghost, false)
+})
+function setupTilemap() {
+    scene.setTileMap(img`
+1 1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+`)
+    scene.setTile(15, img`
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+1 1 1 d d f f 9 9 f f d d 1 1 1 
+`, true)
+    scene.setTile(13, img`
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+`, true)
+}
+function setupPlayer() {
+    mySprite = sprites.create(img`
+. . . . . . 5 . 5 . . . . . . . 
+. . . . . f 5 5 5 f f . . . . . 
+. . . . f 1 5 2 5 1 6 f . . . . 
+. . . f 1 6 6 6 6 6 1 6 f . . . 
+. . . f 6 6 f f f f 6 1 f . . . 
+. . . f 6 f f d d f f 6 f . . . 
+. . f 6 f d f d d f d f 6 f . . 
+. . f 6 f d 3 d d 3 d f 6 f . . 
+. . f 6 6 f d d d d f 6 6 f . . 
+. f 6 6 f 3 f f f f 3 f 6 6 f . 
+. . f f d 3 5 3 3 5 3 d f f . . 
+. . f d d f 3 5 5 3 f d d f . . 
+. . . f f 3 3 3 3 3 3 f f . . . 
+. . . f 3 3 5 3 3 5 3 3 f . . . 
+. . . f f f f f f f f f f . . . 
+. . . . . f f . . f f . . . . . 
+`, SpriteKind.Player)
+    controller.controlSprite(mySprite, 100, 100)
+    mySprite.setFlag(SpriteFlag.StayInScreen, true)
+}
+function checkGate() {
+    if (flag1 == 1 && flag2 == 1) {
+        scene.setTileAt(scene.getTile(6, 3), 1)
+        scene.setTileAt(scene.getTile(6, 4), 1)
+    }
+}
+function setupPlates() {
+    plate1 = sprites.create(img`
+f f f f f f f f f f f f f f f f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f f f f f f f f f f f f f f f f 
+`, SpriteKind.Plate)
+    plate2 = sprites.create(img`
+f f f f f f f f f f f f f f f f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f d d d d d d d d d d d d d d f 
+f f f f f f f f f f f f f f f f 
+`, SpriteKind.Plate)
+    scene.getTile(5, 2).place(plate1)
+    scene.getTile(5, 5).place(plate2)
+    flag1 = 0
+    flag2 = 0
+}
+setupTilemap()
+setupPlates()
+setupPlayer()
 ```

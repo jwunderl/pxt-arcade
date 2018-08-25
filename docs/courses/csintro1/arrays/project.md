@@ -4,6 +4,8 @@ Make games of your choosing!
 
 ![Enemy Following Player](/static/courses/csintro1/arrays/enemy-follow.gif)
 
+![Hazardous](/static/courses/csintro1/arrays/hazards.gif)
+
 From what we learned in the previous lessons we should be able to make some great games.
 
 ## Student Task #1:
