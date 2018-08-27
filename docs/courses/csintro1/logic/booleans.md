@@ -1,10 +1,10 @@
 # Activity: Boolean Statements and Expressions
 
-In the previous lesson, we saw how ``||logic:if||`` and ``||else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers. 
+In the previous lesson, we saw how ``||logic:if||`` and ``||logic:else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers. 
 
 Comparison statements are centered around **Boolean logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. 
 
-These expressions values, and can be stored and used as `Boolean` variables. Whenever we see the term Boolean - it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
+These expressions values, and can be stored and used as `Boolean` variables.  Whenever we see the term Boolean - it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
 
 In these activities students will work with:
 * Boolean flags and values
@@ -110,3 +110,13 @@ else game.splash("false or false is false")
 2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
 3. In the ``||game:on game update||`` block, add an ``||logic:if||`` statement that makes the sprite ``||sprites:say||`` "hello" for 200 ms. Use ``||logic:and||`` to make this happen when the ``||sprites:sprite x||`` **and** ``||sprites:sprite y||`` values are both less than 30
 4. In the ``||game:on game update||`` block, add another ``||logic:if||`` statement that makes the sprite ``|sprites:say||`` "bye" for 200 ms when the ``||sprites:sprite x||`` **or** the ``||sprites:sprite y||`` is greater than 80
+5. **Challenge**: Create the same behavior while using one or more ``||logic:not||`` blocks
+
+
+## What did we learn?
+
+1. What is a boolean flag? Describe a case in which you might you want to use one?
+2. What is the difference between an ``||logic:and||`` block and an ``||logic:or||`` block?
+    * In what cases will they both evaluate to true?
+    * In what cases will they both evaluate to false?
+    * In what cases will they evaluate differently?
