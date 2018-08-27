@@ -171,12 +171,12 @@ scene.setTile(7, img`
 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
 `, true)
 scene.getTile(5, 0).place(mySprite)
-scene.setTileAt(Math.randomRange(0, 9), 1, 1)
-scene.setTileAt(Math.randomRange(0, 9), 3, 1)
+scene.setTileAt(scene.getTile(Math.randomRange(0, 9), 1), 1)
+scene.setTileAt(scene.getTile(Math.randomRange(0, 9), 3), 1)
 if (Math.percentChance(50)) {
-    scene.setTileAt(3, 7, 1)
+    scene.setTileAt(scene.getTile(3, 7), 1)
 } else {
-    scene.setTileAt(7, 7, 1)
+    scene.setTileAt(scene.getTile(7, 7), 1)
 }
 ```
 
@@ -274,8 +274,8 @@ scene.setTile(7, img`
 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
 `, true)
-scene.setTileAt(Math.randomRange(0, 15), 1, 1)
-scene.setTileAt(Math.randomRange(0, 15), 3, 1)
+scene.setTileAt(scene.getTile(Math.randomRange(0, 15), 1), 1)
+scene.setTileAt(scene.getTile(Math.randomRange(0, 15), 3), 1)
 scene.getTile(5, 0).place(mySprite)
 tile_list = scene.getTilesByType(9)
 for (let value of tile_list) {
