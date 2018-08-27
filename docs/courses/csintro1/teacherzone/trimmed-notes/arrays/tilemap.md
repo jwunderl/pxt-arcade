@@ -16,11 +16,11 @@ https://makecode.com/_PrKK9923v7R3
 
 ### Standard:
 
-https://makecode.com/_Ry345RUrwDD8
+https://makecode.com/_iyrXcADc08EV
 
 ### Challenge:
 
-https://makecode.com/_LRpCKHbt0Esc
+https://makecode.com/_4MHgjeLFiCJ5
 
 ### Concept: Multiple Levels
 
