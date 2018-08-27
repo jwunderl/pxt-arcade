@@ -77,7 +77,7 @@ myCorg.verticalMovement()
 
 ## Student Task #2: Creating a side scroll game
 
-1. Start with the code from example #1
+1. Either start with the code from example #1, or add a tilemap to task #1
 2. Add the ``||corgi:make camera follow myCorg left and right||`` block, so that the camera will follow the corgi while it moves across the tile map
 3. Open the tile map in the image editor, and add a red wall that is 3 tiles tall in the middle of the map. Make sure to set that tile to have a sprite and to be a wall
  
