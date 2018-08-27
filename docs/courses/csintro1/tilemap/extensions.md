@@ -2,9 +2,9 @@
 
 The design of the area the player is in can make or break a game: if it is too sparse, the game can become boring and uninteresting. If the screen is overly filled with objects, the game can start to run slowly. 
 
-In this activity, students will use the corgio extension (based on the Corgi dog breed) to make several sprite actions easy to implement. Using corgio can enable focus on the design and structure of the game play without getting bogged down in complex functionality that corgio handles for us. 
+In this activity, students will use the corgio extension (based on the Corgi dog breed) to make several sprite actions easy to implement. Using Corgio allows us to focus on the desig and structure of the game play without getting bogged down in complex functionality that corgio handles for us. 
 
-Extensions let us abstract the details (hide the details) of implementation. Like driving a car, in order to drive a car we don't need build a car, or to know how to build a car, or if the engine uses gas or electricity. We only need to know how to use the car.
+Extensions let us abstract (hide) the details of implementating different behaviors. Like driving a car, in order to drive a car we don't need build a car, or to know how to build a car, or if the engine uses gas or electricity. We only need to know how to use the car.
 
 In this activity, students will:
 * Use a new extension
