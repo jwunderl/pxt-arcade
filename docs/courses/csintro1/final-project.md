@@ -16,7 +16,7 @@ In prior projects, the games being developed were in the form of a minimum viabl
 
 A significant of software development comes down to learning - about new functions and methods available to you, new concepts that allow you to more easily complete your work, and all sorts of other things.
 
-For this challenge, you will dig into one of two groups of functions that we have largely avoided in this course: ``||music:Music||`` and ``||animation:Animation||`` (animation is found as an extension). To complete this challenge, you should use one of these two groups sections in your example game in a thoughtful way; this means that you will have to read through the functions **on your own**, and identify both how it works, and what it can be used for.
+For this challenge, you will dig into one of two groups of functions that we have largely avoided in this course: ``||music:Music||`` (included by default) and ``||animation:Animation||`` (found as an extension). To complete this challenge, you should use one of these two groups sections in your example game in a thoughtful way; this means that you will have to read through the functions **on your own**, and identify both how it works, and what it can be used for.
 
 
 
