@@ -669,7 +669,7 @@ darts=github:jwunderl/pxt-darts#v0.0.12
 
 ### Possible Answers:
 
-1. A tile in a tile map has the smallest unit of 1 pixel but it represents a 16x16 sprite.  A pixel is a unit of 1x1 in a sprite image.
+1. A tile in a tile map has the smallest unit of 1 pixel but it represents a 16x16 sprite. A pixel is a unit of 1x1 in a sprite image.
 2. to make a sprite bounce we would need to reverse the velocity or position with a "sprite hits wall" event. Reverse vx, vy or move position back for x, y and stop velocity (moving position and stopping would be similar to the on overlap events where we made a "bump" effect).
 
 ### ~

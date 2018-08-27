@@ -5,27 +5,27 @@ In this activity the student will continue to work with:
 * Define multiple SpriteKind overlap events and actions
 
 
-## Concept: SpriteKind Overlap Event "bump" action  
+## Concept: SpriteKind Overlap Event "bump" action
 
-## Example 1: bump action from overlap event  
+## Example 1: bump action from overlap event
 
 ### ~hint
 
-The code to make a bump can be difficult to grasp for students.  Break it down for them step by step.  
+The code to make a bump can be difficult to grasp for students. Break it down for them step by step.
 
-Start with the behavior.  The faster the velocity the farther the bump in the opposite direction. 
+Start with the behavior. The faster the velocity the farther the bump in the opposite direction. 
 * The code uses (velocity)*(-1) to change the position. The value of velocity is number (positive or negative).
 * The number generated above is now the opposite sign (we multiplied by -1)
-* Using the velocity value that is the opposite we can adjust the position.  
+* Using the velocity value that is the opposite we can adjust the position.
 
-### Give an example to students  
+
+### Give an example to students
+
 A car going 10 meters/second bumps -10 centimeters.
 
 Ask: what if going -100 meters/second?  [Answer] bumps +100 centimeters - always note the sign Changes (positive/negative swap)
 
-
-
-### Review the bump code  
+### Review the bump code
 
 This is the code that bumps the helicopter 
 
@@ -42,7 +42,7 @@ This is the code that bumps the helicopter
 
 Ask students for the values of sprite .x and sprite.y if sprite.vx = -25 and sprite .vy = 30
 
-### Review the shake code  
+### Review the shake code
 
 This code shakes the cloud by moving it 1 pixel and then back
 
@@ -56,7 +56,7 @@ It moves the spite 1 pixel, pauses and then moves back.
 
 ### ~
 
-## Student Task #1: Soft Landing  
+## Student Task #1: Soft Landing
 
 ### ~hint
 
@@ -297,9 +297,10 @@ game.onUpdate(function () {
 
 
 ## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
+
 ### ~hint
 
-Continue to reinforce to students that SpriteKind controls overlap events. Any and all sprites with the same SpriteKind designation will behave the same when used in an overlap event.  So for a SpriteKind of "Cloud" - regardless if using an image of a "cloud" or a "shoe" or a single pixel "dot" will result in the same code block being run for an overlap event.  In our example it results in the "bump" simulation code.
+Continue to reinforce to students that SpriteKind controls overlap events. Any and all sprites with the same SpriteKind designation will behave the same when used in an overlap event. So for a SpriteKind of "Cloud" - regardless if using an image of a "cloud" or a "shoe" or a single pixel "dot" will result in the same code block being run for an overlap event. In our example it results in the "bump" simulation code.
 
 ### ~
 
@@ -566,7 +567,7 @@ game.onUpdate(function () {
 
 ## What did we learn?
 
-1. Describe how a SpriteKind can improve code (e.g - makes programming easier, more powerful, more efficient...).    
+1. Describe how a SpriteKind can improve code (e.g - makes programming easier, more powerful, more efficient...). 
 2. Explain why in creating a "bump" effect negative X and Y velocities are used to change the X and Y positions.
 
 ## Rubrics

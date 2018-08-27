@@ -1,6 +1,6 @@
 # Activity: Sprite Motion and Events 
 
-## Change position with controller event  
+## Change position with controller event
 
 https://youtu.be/O27uzdkbgK4
 
@@ -123,7 +123,7 @@ agent = sprites.create(img`
     * Add an `A` button event move the sprite to the center of the game screen
     * Add a `B` button event to stop the sprite (all velocities = 0)
 
-## Motion - short ``||sprites:dx||``/``||sprites:dy||`` code method  
+## Motion - short ``||sprites:dx||``/``||sprites:dy||`` code method
 
 https://youtu.be/TPpg3jp2lx4
 

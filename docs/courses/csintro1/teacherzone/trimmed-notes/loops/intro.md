@@ -97,7 +97,7 @@ pause(50)
 
 ## Student Task 2: Add a second sprite using loops
 
-https://makecode.com/_UXKfMxRAd7hz  
+https://makecode.com/_UXKfMxRAd7hz
 
 ```blocks
 enum SpriteKind {
@@ -154,7 +154,7 @@ for (let i = 0; i < 12; i++) {
 
 ### ~hint
 
-Have students examine the JavaScript code to find out what a loops looks like (`for (let i = 0; i < 12; i++)`).  Ask for some analysis from students.  
+Have students examine the JavaScript code to find out what a loops looks like (`for (let i = 0; i < 12; i++)`). Ask for some analysis from students.
 
 Can explain that loops have a counting variable (often `i`) and that it has to be created (instantiated) for use in the loop (using `let`). Also, the counter variable gets destroyed when the loop finishes and the counter (i) only exists inside the loop and is not available to use elsewhere in the program code.
 
@@ -162,7 +162,7 @@ The next part of the loop is checking if the loops is still less than 12 (`i < 1
 
 The last part (`i++`) is a short way to write increase `i` by 1. 
 
-Overall, this is challenging code to read the first time.  Students should know that they will become competent at reading and writing this type of code if they complete unit 2 of the course.
+Overall, this is challenging code to read the first time. Students should know that they will become competent at reading and writing this type of code if they complete unit 2 of the course.
 
 ### ~
 
@@ -216,7 +216,7 @@ Students can easily extend the Boomerang project.
 
 * Make the boomerang go a random distance using the loop bounds (for example, between 25 and 30 loops)
 * Add a ``||game:splash||`` screen or make the ``||controller:A||`` button "throw" the boomerang
-* Change the ``||sprites:Y||`` position of the boomerang sprite using the controller.  This allows the Boomerang to go up and down and avoid or hit obstacles (see next item)
+* Change the ``||sprites:Y||`` position of the boomerang sprite using the controller. This allows the Boomerang to go up and down and avoid or hit obstacles (see next item)
 * Randomly place some obstacle sprites on the far left side of the screen and give points on an overlap
 * Randomly place some enemy obstacles and take away lives (consider starting with 2 lives or more)
 
@@ -228,18 +228,18 @@ Students can easily extend the Boomerang project.
 
 ### ~hint
 
-### Possible Answers  
+### Possible Answers
 
-1. The repeat loop makes repeated code easy by having a single number determine how many times we will repeat.  Tell the loop to move the sprite 2 times or 2000 times and it does it just as easily as far as writing code is concerned.  Just change the repeat number but leave the body code the same.  
-2. Adding a second sprite is way easier.  The 2 sprites do the same thing just in opposite directions. One moves negative x, y and the other positive x, y.  Easier because there is more code in the loop body to keep track of, so more to write in the old version and it is hard to read long code.  
-3. Answers vary using one or two loops.  Using one loop can be confusing because there is very similar code and sprites and easy to mix up.  Two loops is a little more code but for some people more it seems simpler and more organized.
+1. The repeat loop makes repeated code easy by having a single number determine how many times we will repeat. Tell the loop to move the sprite 2 times or 2000 times and it does it just as easily as far as writing code is concerned. Just change the repeat number but leave the body code the same.  
+2. Adding a second sprite is way easier. The 2 sprites do the same thing just in opposite directions. One moves negative x, y and the other positive x, y. Easier because there is more code in the loop body to keep track of, so more to write in the old version and it is hard to read long code.  
+3. Answers vary using one or two loops. Using one loop can be confusing because there is very similar code and sprites and easy to mix up. Two loops is a little more code but for some people more it seems simpler and more organized.
 
 ### ~
 ## Rubrics
 
 ### ~hint
 
-Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
+Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed. This means that to get the highest score, student must pass all previous rubrics.
 
 ### ~
 

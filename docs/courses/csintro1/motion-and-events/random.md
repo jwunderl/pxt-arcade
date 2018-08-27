@@ -22,7 +22,7 @@ https://youtu.be/PS8clbMInjw
 3. Re-run the code several times to see the values generated
 4. Observe how the range (between two numbers) is set
 
-```blocks  
+```blocks
 let randomNumber = 0
 randomNumber = Math.randomRange(0, 10)
 game.splash("Random Number is " + randomNumber)
@@ -51,7 +51,7 @@ Games often have an element of luck and surprise to keep the player engaged. In 
 3. Save the code for the task (name it "randomLocation")
 4. Examine the use of ``||math:pick random||`` in the sprite location block. The code does not assign the chosen random number to a variable before using it
 
-```blocks  
+```blocks
 enum SpriteKind {
     Player,
     Enemy

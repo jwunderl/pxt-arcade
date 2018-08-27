@@ -63,7 +63,7 @@ https://makecode.com/_AckKRmR7m7Ja
 ## What did we learn?
 
 1. How can we make a sprite that came from a sprite block act like a projectile sprite? Explain the block code to use.
-2. Give examples of using ghost and/or on overlap events in a game to make a projectile: decoration, laser beam, coin (reward).  Explain each.  
+2. Give examples of using ghost and/or on overlap events in a game to make a projectile: decoration, laser beam, coin (reward). Explain each.
 3. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might make your game run faster than leaving it off.
 
 ### ~hint
@@ -77,7 +77,7 @@ Can there be overlapping another if either sprite is a ghost?
 ### Possible Answers:
 
 1. To make a sprite act like a projectile sprite: Sprites can start on the edge of a screen like x=0, have a velocity away from the edge of the screen vx=20, we can destroy the sprite.
-2. a decoration like a bubble or rain is ghost on so no overlap events.  A laser beam would use a on overlap event and destroy the object it overlapped with.  A coin would have an overlap event and would give a score when it overlaps with the player.
-3. Challenge: Sprites use computer resources (memory, processing)- if there are a lot of them they use a lot of resources.  Ghost On uses less resources since not having to check if it overlapping.
+2. a decoration like a bubble or rain is ghost on so no overlap events. A laser beam would use a on overlap event and destroy the object it overlapped with. A coin would have an overlap event and would give a score when it overlaps with the player.
+3. Challenge: Sprites use computer resources (memory, processing)- if there are a lot of them they use a lot of resources. Ghost On uses less resources since not having to check if it overlapping.
 
 ### ~

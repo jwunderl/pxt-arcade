@@ -239,7 +239,7 @@ https://makecode.com/_f334JygXU4Ya
 
 ## What did we learn?
 
-1. Describe two benefits of using projectiles rather than normal sprites.  
+1. Describe two benefits of using projectiles rather than normal sprites.
 2. How did using a loop in this section help reduce the amount of blocks that were used?
 3. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might be make your game run faster than leaving it off.
 

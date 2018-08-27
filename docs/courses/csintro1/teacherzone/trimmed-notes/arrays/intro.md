@@ -11,12 +11,12 @@ In this activity student will work with:
 
 ## Concept: [Concept 1 ]
 
-# TODO: Create Video covering (list items above mostly).  Provide high level script outline.
+# TODO: Create Video covering (list items above mostly). Provide high level script outline.
 
 Start with the following Turtle commands:  
 * Forward *(steps)*  
 * Turn *(degrees)*  
-* Pen Down and Pen Up  
+* Pen Down and Pen Up
 * Set pen color  
 * Set Position *(x,y)*  
 

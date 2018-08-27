@@ -20,15 +20,15 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 
 # Practice 2: Moving Sprites with Loops
 
-1.  Make a sprite of your choice and start it in the upper left corner (setting its x and y to 8 should be about right.)
+1. Make a sprite of your choice and start it in the upper left corner (setting its x and y to 8 should be about right.)
 
-2.  We have to decide when we want our square movement to happen
+2. We have to decide when we want our square movement to happen
 
-3.  Make the sprite gradually move to the right.
+3. Make the sprite gradually move to the right.
 
-4.  Repeat this process so that after the sprite finishes its loop for moving to the right, it immediately begins a loop to move down.
+4. Repeat this process so that after the sprite finishes its loop for moving to the right, it immediately begins a loop to move down.
 
-5.  Instead of on button press activate the square movement, let's use another loop.
+5. Instead of on button press activate the square movement, let's use another loop.
 
 https://makecode.com/_ggYE7tJos3bu
 
@@ -79,7 +79,6 @@ mySprite.setPosition(8, 8)
 
 # Practice 3: Drawing multiple sprites with loops
 
-
 1. On any button press, make your sprite appear at a random location.
 
 https://makecode.com/_E7LHPt42t4TL
@@ -112,6 +111,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
 })
 ```
+
 2. We know that the sprite needs to appear 3 times total, and we just wrote the code for it to appear randomly once.
 
 https://makecode.com/_PcJf577PMdyw
@@ -146,6 +146,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 ```
+
 # Practice 4: Drawing a row / column of sprites with loops
 
 https://makecode.com/_fMV16YKKsVKu
@@ -197,7 +198,7 @@ drawRow()
 ```
 
 **Challenge:** Create a grid
-Using row function create a 4x4 grid of sprites
+Using row function, create a 4x4 grid of sprites
 
 https://makecode.com/_6mcbkoKf0bfD
 

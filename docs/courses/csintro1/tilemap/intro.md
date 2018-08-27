@@ -4,11 +4,16 @@ Maps and levels form the basis of many of the most common types of video games; 
 
 In @boardname@, ``||scene:tile maps||`` provide an easy way to design two dimensional maps.
 
-## Concept: editing a tile map
+In this activity, students will:
+* Edit a tile map
+* Personalize the tiles in the tile map
+* "Decorate" a house
+
+## Concept: Editing a tile map
 
 The tile map uses an image to represent a game space that is often much larger than the visible game screen. 
 
-Each pixel in a tile map image translates to and area of 16x16 pixels on the 150x120 pixel game screen.  
+Each pixel in a tile map image translates to and area of 16x16 pixels on the 160x120 pixel game screen.
 
 A ``|scene:tile map|`` is called a "Map" because it "maps" a tile map color to image that is stored as a tile.
 
@@ -39,7 +44,7 @@ In this example, we have used ``||scene:set tile map to||`` to set the tile map 
 ## Student Task #1: Personalized tile map
 
 1. Start with example #1
-2. **Modify** the image to create a tile map of your creation (name it "intro tile map 1")
+2. Modify the image to create a tile map of your creation (name it "intro tile map 1")
 
 ### Example #2: Creating tiles in a tile map
 
@@ -80,7 +85,6 @@ scene.setTile(5, img`
 5 a a a a a a a a a a a a a a a 
 `)
 ```
-
 
 ## Student Task #2: Add tile to tile map
 

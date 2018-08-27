@@ -2,17 +2,17 @@
 
 In this activity Students are introduced to:
 
-* Using Blocks  
-* Sprites and Images  
-* Using Image Editor  
-* Pixels and Pixel Colors  
-* Viewing JavaScript  
-* Color codes in image editor, Blocks and JavaScript  
+* Using Blocks
+* Sprites and Images
+* Using Image Editor
+* Pixels and Pixel Colors
+* Viewing JavaScript
+* Color codes in image editor, Blocks and JavaScript
 
 ## Concept: Set a Sprite variable to an image using the image editor
 ## Example: Sprite
 
-## Student Task: Create your own sprite  
+## Student Task: Create your own sprite
 
 ```blocks
 /* https://makecode.com/_arj7ewLpXas6 */   
@@ -64,7 +64,7 @@ bigSprite = sprites.create(img`
 
 ### ~hint
 
-Discussion with Students: "The image editor has 16 choices. Why can we only see 15 of the colors at a time.  Who sees only 14 colors?"
+Discussion with Students: "The image editor has 16 choices. Why can we only see 15 of the colors at a time. Who sees only 14 colors?"
 
 Answer: "One of the choices is transparent - which is not a color. The background color displays but the images created in the background color are not visible."
 
@@ -127,17 +127,19 @@ sprite = sprites.create(img`
 1. Make a table showing 
      - Color (use an approximate color name like white, red, pink, ...)  
      - Color index (1-15)  
-     - Color representation in JavaScript  
+     - Color representation in JavaScript
 2. Explain what happens to the color index 0 in JavaScript (form a hypothesis)  
 3. Explain why we see only 14 colors at a time although there are 16 color indexes (0-15) in the image editor?  
 
 ### ~hint
 
-students can create a table for colors  
-Note:  JavaScript color is using Hexadecimal (base 16).  
+students can create a table for colors
+
+Note: JavaScript color is using Hexadecimal (base 16).
+
 Hexadecimal is `0 to 9` for zero to nine, and `a, b, c, d, e, f` for ten through fifteen. 
 
-* **Project consideration** have students research "Hexadecimal" and represent Decimal numbers as Hexadecimal.  
+* **Project consideration** have students research "Hexadecimal" and represent Decimal numbers as Hexadecimal.
 Decimal = Hexadecimal:
   * 10 = a
   * 16 = 10
@@ -149,7 +151,7 @@ Decimal = Hexadecimal:
   * 256 = 100
 *
 
-| color  name | editor color index | JavaScript |
+| color name | editor color index | JavaScript |
 |-------------|--------------------|------------|
 | Transparent | 0                  | .          |
 | White       | 1                  | 1          |
@@ -174,7 +176,7 @@ Decimal = Hexadecimal:
 
 ### ~hint
 
-Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score, student must pass all previous rubrics.
+Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed. This means that to get the highest score, student must pass all previous rubrics.
 
 ### ~
 

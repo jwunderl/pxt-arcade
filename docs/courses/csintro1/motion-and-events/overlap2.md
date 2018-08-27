@@ -10,7 +10,7 @@ In this activity the student will continue to work with:
 * ``||sprites:on overlap event||`` with a ``||sprites:Kind||`` (e.g. - `Cloud`) applied to several identical sprites
 * Define multiple ``||sprites:Kind||`` overlap events and actions
 
-## Concept: ``||sprites:Kind||`` Overlap Event "bump" action  
+## Concept: ``||sprites:Kind||`` Overlap Event "bump" action
 
 https://youtu.be/hAFzGASNgN0
 

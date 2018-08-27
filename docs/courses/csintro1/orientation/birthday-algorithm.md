@@ -6,15 +6,15 @@ Students will be introduced to:
 * Program flow
 * Debugging
 
-## Algorithm  
+## Algorithm
 
 An Algorithm is series of steps, decisions and/or formulas. Some common examples include:  
 
-* Cooking recipes  
-* Map directions to an address  
-* Assembly instructions  
+* Cooking recipes
+* Map directions to an address
+* Assembly instructions
 
-## Birthday Algorithm  
+## Birthday Algorithm
 
 The Birthday Algorithm displays a birthday as `month.day` after following a set of calculations.
 
@@ -55,7 +55,7 @@ Produce a total at the end of each step and use the total in the next step until
 
 ### ~hint
 
-Example: first 4 steps   
+Example: first 4 steps
 
     1. `m`  &nbsp; *(`m` = month)*
     2. `7m`

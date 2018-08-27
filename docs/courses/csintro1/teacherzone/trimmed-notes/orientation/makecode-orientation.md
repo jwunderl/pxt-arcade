@@ -18,7 +18,7 @@ In this activity student will work with:
 
 @boardname@ saves a special image (.png) file that embeds the code in the file. The file looks like a typical thumbnail image when opened with an image viewer but when opened in @boardname@ it loads game code.
 
-Each Browser is different with opening the location of the file download.  Try in the student environment before the exercise.  The key is to have the student save the files in a consistent location such as a named folder.  Later, students will need to navigate to this location to open the file in @boardname@.
+Each Browser is different with opening the location of the file download. Try in the student environment before the exercise. The key is to have the student save the files in a consistent location such as a named folder. Later, students will need to navigate to this location to open the file in @boardname@.
 
 Common Browser Saving behavior:
 * show download file at the browser bottom border (then click to open or to see save dialog) 
@@ -40,7 +40,7 @@ Common Browser Saving behavior:
 
 ### ~hint
 
-Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
+Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed. This means that to get the highest score student must pass all previous rubrics.
 
 ### ~
 

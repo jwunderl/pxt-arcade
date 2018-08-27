@@ -74,7 +74,7 @@ game.showLongText("13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7 = " + answer, DialogLayo
 
 ## Tell students
 
-Look at the JavaScript.  Parenthesis `( )`are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
+Look at the JavaScript. Parenthesis `( )`are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
 ![animation: Parenthesis in math code](/static/courses/csintro1/orientation/parenthesis-math.gif)
 
 ### ~
@@ -95,7 +95,7 @@ answer = firstNumber * secondNumber + thirdNumber
 game.splash("15 * 5 + 3 = " + answer)
 ```
 
-## Student Task 3: multiple operators and variables equation  
+## Student Task 3: multiple operators and variables equation
 
 ```blocks
 // https://makecode.com/_eC9Cwk3uXiCr
@@ -114,7 +114,7 @@ game.splash("15 * 5 + 9 / 6 = " + answer)
 ```
 
 ```blocks
-// Challenge:https://makecode.com/_WyA12wV0K74p  
+// Challenge:https://makecode.com/_WyA12wV0K74p
 
 let answer = 0
 let fifthNum = 0
@@ -180,7 +180,7 @@ game.splash("" + c)
 ## What did we learn? 
 
 1. In MakeCode JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 30.
-2. How is putting operators and numbers into a calculator different than writing in code  (example: 2 + 3 + 4 * 4)?  Explain.
+2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
 3. Research and describe 2 other Math Operators using the math menu in MakeCode (hover over values for more information) and/or use other JavaScript resources.
 
 ## Rubrics

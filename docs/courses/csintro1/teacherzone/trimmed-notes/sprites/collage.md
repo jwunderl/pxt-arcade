@@ -2,8 +2,8 @@
 
 In this activity we will use
 * Sprites
-* Variables to create multiple sprites  
-* Coordinates to arrange our sprites into a scene  
+* Variables to create multiple sprites
+* Coordinates to arrange our sprites into a scene
 * Background - set background
 
 ## Example: Sprite & Background
@@ -297,9 +297,9 @@ sandals.y = 66
 
 ### ~hint
 
-Students skill in creating sprites is one key to engaging games. Consider additional practice with Sprite artistic creation for the next lesson and/or going forward.  Modifying some existing designs found from web searches will help students quick build skills.
+Students skill in creating sprites is one key to engaging games. Consider additional practice with Sprite artistic creation for the next lesson and/or going forward. Modifying some existing designs found from web searches will help students quick build skills.
 
-Updating Sprites is a good activity for the students who finish early as well.  
+Updating Sprites is a good activity for the students who finish early as well. 
 
 **Add-on Lesson Ideas**
 

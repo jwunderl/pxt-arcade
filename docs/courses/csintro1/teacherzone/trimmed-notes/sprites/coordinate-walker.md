@@ -1,10 +1,9 @@
 # Activity: Coordinate Walker
 
 In this Activity students investigate the game screen using
-* Game X, Y Coordinates  
+* Game X, Y Coordinates
 
-
-## Concept: Identify the X, Y coordinates of the Game Screen  
+## Concept: Identify the X, Y coordinates of the Game Screen
 
 ## Student Activity
 
@@ -60,12 +59,10 @@ Students must get use to the coordinates of the game screen and how they change 
 
 ## What did we learn?
 
-Use **X** and/or **Y** in your answers  
+Use **X** and/or **Y** in your answers
 
-1. Describe how coordinates change when moving up versus moving down  
-2. Describe how coordinates change when moving right versus moving left  
-
-
+1. Describe how coordinates change when moving up versus moving down
+2. Describe how coordinates change when moving right versus moving left
 
 ### Map Game Screen
 

@@ -15,7 +15,7 @@
 
 ### ~hint
 
-Remember: moving in opposite directions is done by changing the value from positive to negative (or vice versa) - that means one button should change x by 5, and the other should change x by -5.  When we use the short methods this is handled for us by the blocks.
+Remember: moving in opposite directions is done by changing the value from positive to negative (or vice versa) - that means one button should change x by 5, and the other should change x by -5. When we use the short methods this is handled for us by the blocks.
 
 ### ~
 

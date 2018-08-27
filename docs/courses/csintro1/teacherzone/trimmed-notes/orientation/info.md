@@ -2,7 +2,7 @@
 
 ### ~hint
 
-This section dips slightly into a topic that will be covered at length later in the course - events and event handling. This section uses the  ``||controller:on any button pressed||`` event block. This is simply a small introduction to the topic - if any students get particularly caught up on the subject, it's likely best to table it for now and tell them that it will be returned to later in the course in greater detail.
+This section dips slightly into a topic that will be covered at length later in the course - events and event handling. This section uses the ``||controller:on any button pressed||`` event block. This is simply a small introduction to the topic - if any students get particularly caught up on the subject, it's likely best to table it for now and tell them that it will be returned to later in the course in greater detail.
 
 ### ~
 
@@ -19,6 +19,7 @@ In this activity students will:
 ## Example: Counting button presses
 
 ## Student Task 1: 10 second button smash
+
 ```blocks
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)

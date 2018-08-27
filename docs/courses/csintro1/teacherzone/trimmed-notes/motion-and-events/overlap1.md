@@ -4,11 +4,11 @@ In this activity the student will work with:
 * SpriteKind
 * On Overlap event with SpriteKind
 * Ghost on - Ghost off
-* destroy sprite  
+* destroy sprite
 
 ## Concept: Overlaps - SpriteKind Overlap Event
 
-## Example 1: Two Sprite Overlap  
+## Example 1: Two Sprite Overlap
 
 ## Student Task 1: Add actions to overlap events
 

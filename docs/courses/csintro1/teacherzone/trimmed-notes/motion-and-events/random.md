@@ -12,7 +12,7 @@ In this activity student will work with:
 
 Pick random will generate (pick) a number from the lowest to the highest numbers entered in the block. For the example students should see numbers 0 to 10. This includes 0 and 10.
 
-Have students refresh at least 10 times and track the largest and smallest number generated. Ask students who had a number bigger than 5.  All hands should go up.
+Have students refresh at least 10 times and track the largest and smallest number generated. Ask students who had a number bigger than 5. All hands should go up.
 Then ask for 6, 7, 8, 9, 10
 
 Ask for students who got 11 and no hands should go up.
@@ -126,7 +126,7 @@ widthX = scene.screenWidth()
 heightY = scene.screenHeight()
 ```
 
-if we  want to use this in a random game screen placement with a little bit of buffer around edge of screen we use the following:
+if we want to use this in a random game screen placement with a little bit of buffer around edge of screen we use the following:
 
 ```blocks
 let positionX = 0
@@ -301,7 +301,7 @@ hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 ## What did we learn? 
 
 1. Describe how the ability to generate a random value can make a game more interesting and/or challenging.
-2. What is a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random is needed.  
+2. What is a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random is needed.
 
 ## Rubrics
 

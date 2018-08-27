@@ -16,10 +16,10 @@
 
 ### ~hint
 
-* Splash pauses the game until a key is pressed  
+* Splash pauses the game until a key is pressed
     * show the students how the splash screen pauses the game start 
-* Get students use to modifying the examples by modifying values  
-    * update score increment, update interval and countdown time 
+* Get students use to modifying the examples by modifying values
+    * update score increment, update interval and countdown time
     * making the examples add 2 or 3 to the count on each button press, and identifying how that changes the results.
 
 ### ~
@@ -210,7 +210,7 @@ for (let index = 0; index <= 10; index++) {
 
 ### Possible Answers
 
-1. the for loop is inclusive, and loops for items 0 through 10 or 11 times.  The repeat loops runs just the number of times entered (10).
+1. the for loop is inclusive, and loops for items 0 through 10 or 11 times. The repeat loops runs just the number of times entered (10).
 2. If you don't use the index in the for loop, you can reduce the complexity of your code by using a repeat loop that hides the unnecessary variable.
 
 Is there a difference between how many times ``||loops:repeat 0 times||`` and ``||loops:for index from 0 to 0||`` will run? A ``||loops: for index||`` loop will go from 0 to the parameter, including both the start of 0 and whatever the final value is. This means that ``||loops:for index from 0 to 0||`` will iterate one time, with ``||variables:index||`` having a value of 0.

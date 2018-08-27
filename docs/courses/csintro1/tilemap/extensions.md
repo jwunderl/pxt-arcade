@@ -2,9 +2,9 @@
 
 The design of the area the player is in can make or break a game: if it is too sparse, the game can become boring and uninteresting. If the screen is overly filled with objects, the game can start to run slowly. 
 
-In this activity, students will use the corgio extension (based on the Corgi dog breed) to make several sprite actions easy to implement.  Using corgio can enable focus on the design and structure of the game play without getting bogged down in complex functionality that corgio handles for us. 
+In this activity, students will use the corgio extension (based on the Corgi dog breed) to make several sprite actions easy to implement. Using corgio can enable focus on the design and structure of the game play without getting bogged down in complex functionality that corgio handles for us. 
 
-Extensions let us abstract the details (hide the details) of implementation.  Like driving a car, in order to drive a car we don't need build a car, or to know how to build a car, or if the engine uses gas or electricity.  We only need to know how to use the car.
+Extensions let us abstract the details (hide the details) of implementation. Like driving a car, in order to drive a car we don't need build a car, or to know how to build a car, or if the engine uses gas or electricity. We only need to know how to use the car.
 
 In this activity, students will:
 * Use a new extension
@@ -17,7 +17,7 @@ Corgi allows you to create a sprite who can jump, run, and fall with only a few 
 
 To add the corgio extension to your project, open the extensions tab and search for "corgio" - it should be the first result. Alternatively, you can search using a direct link to the package, as follows: `github.com/jwunderl/pxt-corgio`.
 
-After adding corgio to your project, a new tab titled ``||corgio:Corgi||`` will appear in the top of the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgi.
+After adding corgio to your project, a new tab titled ``||corgio:Corgi||`` will appear in the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgi.
 
 ## TODO VIDEO
 
@@ -92,7 +92,7 @@ Just having a single wall in your game does not make for a particularly challeng
 
 1. Start with the code from task #2
 2. Add red walls to the map, so that they form a harder level to make your way through - try making an area that is only accessible by jumping past a series of tiles
-3. Create a sprite of a new kind, and place it at the end of the level. Add an ``||sprites:overlap||`` event to congratulate the player and end the game (after a small pause) when the player reaches the sprite
+3. Create a sprite of a new kind, and place it at the end of the level. Add an ``||sprites:overlap||`` event to congratulate the player and end the game (after a small pause) when the player reaches the sprite.
 
 ### ~hint
 

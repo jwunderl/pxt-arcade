@@ -8,9 +8,9 @@
 
 ``||logic:if||`` and ``||logic:else if||`` logic
  
-In our games we will often want to compare values and take an action based on the comparison.  
+In our games we will often want to compare values and take an action based on the comparison.
 
->Example:  Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value.
+> Example:  Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value.
 
 We could do a comparison test to see:
 

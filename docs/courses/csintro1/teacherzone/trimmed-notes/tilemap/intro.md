@@ -4,13 +4,13 @@
 
 ## Student Task #1: Personalized Tile map
 
-Student creations for this section will vary, but should all closely resemble example #1 with a different drawing on it.
+Student creations for this section will vary, but should all closely resemble [example #1](https://makecode.com/_hUUX8ee8P0ix) with a different drawing on it.
 
 ### Example #2: Creating tiles in a tile map
 
 ## Student Task #2: Add tile to tile map
 
-Student solution similar to the [student example given](https://makecode.com/_5RhYt8JrqP55)  - Student should have individual modifications.
+Student solution similar to the [student example given](https://makecode.com/_5RhYt8JrqP55) - Student should have individual modifications.
 
 ## Example #3: Words!
 

@@ -44,7 +44,7 @@ https://youtu.be/Dv-5K9bWcps
 
 [Equation variable](https://makecode.com/_RdXJ5jMxubqA)
 
-```blocks  
+```blocks
 let answer = 0
 answer = 3 + 5
 game.splash("3 + 5 = " + answer)
@@ -119,7 +119,7 @@ https://youtu.be/C_UY8V-ufiI
 3. Create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
 4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)
 
-## Student Task #3: multiple operators and variables equation  
+## Student Task #3: multiple operators and variables equation
 1. Start with the code from the previous task
 2. Add a ``||variables:fourthNumber||`` variable
 3. Create an equation using 3 different operators

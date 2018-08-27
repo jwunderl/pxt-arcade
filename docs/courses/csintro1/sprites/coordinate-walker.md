@@ -6,7 +6,7 @@ https://youtu.be/fr036vKEFiI
 
 In this activity, students will investigate the game screen.
 
-## Concept: Identify the X, Y coordinates of the Game Screen  
+## Concept: Identify the X, Y coordinates of the Game Screen 
 
 https://youtu.be/R6NJjzXfejM
 
@@ -63,7 +63,7 @@ game.onUpdate(function () {
     
 ## What did we learn?
 
-Use `X` and/or `Y` in your answers  
+Use `X` and/or `Y` in your answers 
 
 1. Describe how coordinates change when moving up and down. Which direction caused the coordinates to increase?
 2. Describe how coordinates change when moving right and left. Which direction caused the coordinates to increase?

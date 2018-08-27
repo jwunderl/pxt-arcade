@@ -5,12 +5,12 @@ Games tell a story, and those stories generally require characters. In @boardnam
 ![Image Editor Features](/static/courses/csintro1/orientation/image-editor-features.png)
 
 In this activity, students are introduced to:
-* Using blocks  
+* Using blocks
 * ``||sprites:Sprites||`` and ``||images:Images||``
 * Using the Image Editor
 * Pixels and pixel Colors
 * Viewing JavaScript
-* Color codes in the mage editor, blocks and JavaScript  
+* Color codes in the mage editor, blocks and JavaScript
 
 ## Concept: Set a ``||sprites:Sprite||`` variable to an image using the image editor
 
@@ -97,9 +97,9 @@ https://youtu.be/oupwql9r-80
 
 [Alternative Video Location](https://aka.ms/40544a-02_2variablespritetask)
 
-1. Make a blank **32x32** sprite  
-2. Hover over every color and find color index 0 and add that color on the far left  
-3. Then find and add the other colors in the shape of their corresponding code index number.  Arrange them inside the Sprite Editor workspace so you have all 15 index colors.
+1. Make a blank **32x32** sprite
+2. Hover over every color and find color index 0 and add that color on the far left
+3. Then find and add the other colors in the shape of their corresponding code index number. Arrange them inside the Sprite Editor workspace so you have all 15 index colors
 4. Look at how the sprite image is represented in the JavaScript view to help answer the "What did we learn" questions below
 
 ![sprite rainbow numbers image](/static/courses/csintro1/orientation/rainbow-numbers.png)

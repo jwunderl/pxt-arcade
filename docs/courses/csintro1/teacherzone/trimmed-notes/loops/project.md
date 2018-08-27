@@ -191,7 +191,7 @@ game.onUpdateInterval(1500, function () {
 
 Answers **Vary Widely**
 
-1. Projectiles can be made easily.  Projectiles are better with random placement and/or velocity. Say speech bubbles sometimes get in the way of games. Learned 
-2. Didn't have a Projectile emit from a sprite - takes time to make it look good. Didn't use Ghost since I wanted the overlaps. The basic Projectile is very useful in making the game dynamic- especially when used with Random....
+1. Projectiles can be made easily. Projectiles are better with random placement and/or velocity. Say speech bubbles sometimes get in the way of games.
+2. Didn't have a projectile emit from a sprite - takes time to make it look good. Didn't use Ghost since I wanted the overlaps. The basic projectile is very useful in making the game dynamic - especially when used with random....
 
 ### ~

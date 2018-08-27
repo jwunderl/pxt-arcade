@@ -5,9 +5,9 @@
 
 ### ~hint
 
-Students can use a local variable within ``||sprites:on created||`` event block since it is used only in the scope of that block of code (not accessible outside that code block of code).  This is variable scope, which is not a main concept for this lesson or for unit 1. 
+Students can use a local variable within ``||sprites:on created||`` event block since it is used only in the scope of that block of code (not accessible outside that code block of code). This is variable scope, which is not a main concept for this lesson or for unit 1. 
 
-For now we say the variable is used for a short time in the event and then goes away.  We will address local scope in later @boardname@ Intro CS units.
+For now we say the variable is used for a short time in the event and then goes away. We will address local scope in later @boardname@ Intro CS units.
 
 ### ~
 https://makecode.com/_UPTKViRTtR1e
@@ -139,7 +139,7 @@ sprites.createEmptySprite(SpriteKind.Bird)
 ### ~hint
 
 **Additional Projects**
-This is an opportunity to assign a project to students to create a game that will generate lots of sprites in random locations.  Students can use a ``||game:on game update||`` block with ``||Sprite:create empty sprite||`` in a game with using ``||info:countdown||``.  Students could start with a score of 100 and subtract for every overlap. Encourage students to be creative.  Note that the way to cheat is to go off screen so ask students to solve that problem (by keeping onscreen).
+This is an opportunity to assign a project to students to create a game that will generate lots of sprites in random locations. Students can use a ``||game:on game update||`` block with ``||Sprite:create empty sprite||`` in a game with using ``||info:countdown||``. Students could start with a score of 100 and subtract for every overlap. Encourage students to be creative. Note that the way to cheat is to go off screen so ask students to solve that problem (by keeping onscreen).
 
 https://makecode.com/_eUX2P1DmwUb7
 
@@ -195,9 +195,9 @@ game.onUpdateInterval(100, function () {
 
 ```
 
- **Additionally**, students can change the helicopter game to be something totally different.  It could be an animal or people.  The overlaps can have lots of different effects like destroy, change position or velocity or image.  
+**Additionally**, students can change the helicopter game to be something totally different. It could be an animal or people. The overlaps can have lots of different effects like destroy, change position or velocity or image.
  
- More ideas in the projects lesson that follows.
+More ideas in the projects lesson that follows.
 
 ### ~
 

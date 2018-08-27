@@ -53,6 +53,6 @@ if (info.score() > 10) {
 
 ### Possible Solution: Answers vary and can have opposite justifications
 
-1. We could check if a player has a score = 20 and give encouragement with a say block.  The else would be empty if they don't have the score of 20 so we would omit else (not use the else).
+1. We could check if a player has a score = 20 and give encouragement with a say block. The else would be empty if they don't have the score of 20 so we would omit else (not use the else).
 2. With 2 "if" statements we **can** get the same result but with the "else" the 2 checks are connected and we know the first failed if the second one runs. Some tests can both be true like is it bigger than 100,and bigger than 50. Sometimes we only want to check if bigger than 50 after we know it is **not** bigger than 100.
-3. The second is easier to read because the blocks are one after another and not squeezing and "if" inside of an "else."  [Answer may vary]
+3. The second is easier to read because the blocks are one after another and not squeezing and "if" inside of an "else." [Answer may vary]
