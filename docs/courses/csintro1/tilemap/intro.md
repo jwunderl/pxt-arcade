@@ -246,7 +246,7 @@ The ``||scene:set tile to||`` blocks allow us to personalize how the tile shows 
 
 ## Student Task #3: Hello World!
 
-1. Start with the code from example #2
+1. Start with the code from example #3
 2. Change the ``||scene:tile map||`` image so that it displays "Hello World" instead of just "Word"
 3. **Challenge:** Create a new tile with an exclamation mark, and change the tile map so that "Hello World**!**" is displayed
 
@@ -430,7 +430,7 @@ The example tiles that are provided here are the following:
 
 ## Student Task #4: Decorate and move around the house
 
-1. Start with the code from example #3
+1. Start with the code from example #4
 2. Make the camera follow the sprite by adding the ``||scene:camera follow sprite||`` block to the ``||loops:on start||`` block and set it to follow the ``||variables:homeOwner||``
 3. Add home furnishings around the house, by changing some of the white tiles to be some of the other provided tiles
 4. Create another tile with a different image, and place that tile around the house to personalize it
