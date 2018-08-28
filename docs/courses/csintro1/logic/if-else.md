@@ -20,6 +20,11 @@ We could do a comparison test to see:
 
 ``||logic:if||`` and ``||logic:else if||`` statements allow us to make our programs behave in different ways based on the state of the game.
 
+https://youtu.be/sMFHdR6KzPo 
+
+[Alternative Video Location](https://aka.ms/40544a-ifelse-overview)
+
+
 ## Concept: **if** Statement
 
 We have seen in the previous lesson ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. 
@@ -81,9 +86,12 @@ If it is not greater than 100, then the second logic test is run to see if the s
 
 Make sprite alternate between saying "A" and "B"
 
-# TODO: Video (eric)
+https://youtu.be/FuABS3PVnAM 
+
+[Alternative Video Location](https://aka.ms/40544a-ifelse)
 
 ### Example 1a: random alternating message
+
 
 https://makecode.com/_HXMRAzYY4YkU
 
@@ -245,6 +253,10 @@ generate()
 
 
 ## Student Task 1a: ``|logic:else|`` for check if correct button is pressed
+
+https://youtu.be/zW7JyNiJeKI
+
+[Alternative Video Location](https://aka.ms/40544a-ifelse-task)
 
 Now that we have the basic functionality of our game, let’s make it so that the player loses points when they press the wrong button.
 
