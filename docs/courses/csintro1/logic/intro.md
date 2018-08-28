@@ -126,7 +126,7 @@ Notice that when the game creates a new enemy, it checks to see if the player's 
 
 1. Create a new project
 2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
-3. Make it so that when the player presses the ``||controller:A||``button, if the player is on the left half of the screen, the score increases by 1
+3. When the player is on the left half of the screen and the player presses the ``||controller:A||``button, the score increases by 1
 
 ### ~hint
 
