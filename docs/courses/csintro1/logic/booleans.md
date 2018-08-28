@@ -4,7 +4,7 @@ In the previous lesson, we saw how ``||logic:if||`` and ``||logic:else||`` state
 
 Comparison statements are centered around **Boolean logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. 
 
-These expressions values, and can be stored and used as `Boolean` variables.  Whenever we see the term Boolean - it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
+These expressions values, and can be stored and used as `Boolean` variables. Whenever we see the term Boolean - it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
 
 In these activities students will work with:
 * Boolean flags and values
@@ -42,7 +42,7 @@ game.splash("Press A if you are hungry!")
 isHungry = false
 ```
 
-In this example, ``||variables:isHungry||`` is a flag that will change the behavior of the ``||controller:on B button pressed||`` event. When it is off (set tofalse), the game assumes that you are not hungry; when you turn it on (set to true), though, it tells the game that you **are** hungry, and it reacts to this information.
+In this example, ``||variables:isHungry||`` is a flag that will change the behavior of the ``||controller:on B button pressed||`` event. When it is off (set to false), the game assumes that you are not hungry; when you turn it on (set to true), though, it tells the game that you **are** hungry, and it reacts to this information.
 
 ## Student Task #1: Off and on
 
@@ -75,14 +75,14 @@ means that if **either** condition is true, I will go to the store. If I don't n
 3. Identify which combinations of true and false evaluate to true, and which evaluate to false
 
 ```blocks
-if (true && true) game.splash("true and true is true")
-else game.splash("true and true is false")
+if (true && true)   game.splash("true and true is true")
+else                game.splash("true and true is false")
 
-if (true && false) game.splash("true and false is true")
-else game.splash("true and false is false")
+if (true && false)  game.splash("true and false is true")
+else                game.splash("true and false is false")
 
 if (false && false) game.splash("false and false is true")
-else game.splash("false and false is false")
+else                game.splash("false and false is false")
 ```
 
 ## Example #2b: ``||logic:or||``
@@ -94,14 +94,14 @@ else game.splash("false and false is false")
 https://makecode.com/_3PWUwFdxC97c
 
 ```blocks
-if (true || true) game.splash("true or true is true")
-else game.splash("true or true is false")
+if (true || true)   game.splash("true or true is true")
+else                game.splash("true or true is false")
 
-if (true || false) game.splash("true or false is true")
-else game.splash("true or false is false")
+if (true || false)  game.splash("true or false is true")
+else                game.splash("true or false is false")
 
 if (false || false) game.splash("false or false is true")
-else game.splash("false or false is false")
+else                game.splash("false or false is false")
 ```
 
 ## Student Task #2: Using ``||logic:and||`` and ``||logic:or||``
@@ -111,7 +111,6 @@ else game.splash("false or false is false")
 3. In the ``||game:on game update||`` block, add an ``||logic:if||`` statement that makes the sprite ``||sprites:say||`` "hello" for 200 ms. Use ``||logic:and||`` to make this happen when the ``||sprites:sprite x||`` **and** ``||sprites:sprite y||`` values are both less than 30
 4. In the ``||game:on game update||`` block, add another ``||logic:if||`` statement that makes the sprite ``|sprites:say||`` "bye" for 200 ms when the ``||sprites:sprite x||`` **or** the ``||sprites:sprite y||`` is greater than 80
 5. **Challenge**: Create the same behavior while using one or more ``||logic:not||`` blocks
-
 
 ## What did we learn?
 

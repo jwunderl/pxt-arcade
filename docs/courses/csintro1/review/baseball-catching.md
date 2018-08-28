@@ -52,18 +52,18 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-## Student Task 1
+## Student Task #1: Mitt movement
 
-* Make the ``||variables:mitt||`` move based off the direction keys using the ``||controller:control sprite with ...||`` block.
-* Force the ``||variables:mitt||`` to stay in the screen using the ``||set mitt stay in screen on||`` block.
-* Add a ``||info:countdown||`` of 20 seconds, so that the game ends after 20 seconds are up.
+* Make the ``||variables:mitt||`` move based off the direction keys using the ``||controller:control sprite with||`` block
+* Force the ``||variables:mitt||`` to stay in the screen using the ``||set mitt stay in screen on||`` block
+* Add a ``||info:countdown||`` of 20 seconds, so that the game ends after 20 seconds are up
 
-## Student Task 2
+## Student Task #2: Overlaps
 
-* Add an event for the overlap between the ``||variables:mitt||`` and a ``||sprites:Ball||``.
-* Inside that event, destroy the ``||sprites:Ball||``, and increment the score.
+* Add an event for the overlap between the ``||variables:mitt||`` and a ``||sprites:Ball||``
+* Inside that event, destroy the ``||sprites:Ball||``, and increment the score
 
-## Student Task 3
+## Student Task #3: Music
 
-* Inside of the overlap event from Task 2, add a block so that the game plays ``||music:power up||`` each time a ball is caught.
-* Add code to make the mitt "bounce" when it catches the ball. To do this, make the mitt change it's ``||sprites:y||`` value by -5, ``||loops:pause||`` for 150 ms, then change the ``||sprites:y||`` back to it's prior value (by changing it by 5).
+* Inside of the overlap event from Task 2, add a block so that the game plays ``||music:power up||`` each time a ball is caught
+* Add code to make the mitt "bounce" when it catches the ball. To do this, make the mitt change it's ``||sprites:y||`` value by -5, ``||loops:pause||`` for 150 ms, then change the ``||sprites:y||`` back to it's prior value (by changing it by 5)

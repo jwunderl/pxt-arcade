@@ -219,7 +219,7 @@ for (let index = 0; index <= 12; index++) {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . .  
+. . . . . . . . . . . . . . . .
 `, 40, 0, SpriteKind.Player)
     projectile.y = index * 10
     pause(300)

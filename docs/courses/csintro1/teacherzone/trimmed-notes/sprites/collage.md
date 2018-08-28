@@ -274,7 +274,7 @@ sandals.y = 66
 
 ## What did we learn?
 
-1. Describe and Explain observations of sprite images in the JavaScript code. What do periods (**.**) represent?  
+1. Describe and Explain observations of sprite images in the JavaScript code. What do periods (**.**) represent?
 2. What other blocks are available in the Sprite Blocks menu? List several blocks not used in collage and **give a hypothesis** on what one (or more) of these blocks does.
 
 ## Rubrics

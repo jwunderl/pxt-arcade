@@ -18,6 +18,7 @@ In this activity student will:
 ### ~hint
 
 ## Discuss with students
+
 The join block is used to **coerce** a number into a string JavaScript needs to have strings for "splash" or "show long text" so we use join in this case. Then splash knows that we are displaying the string representation of our `answer` variable.
 
 If only displaying a number we use an empty string in the join 
@@ -66,7 +67,7 @@ game.showLongText("13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7 = " + answer, DialogLayo
 
 ### Operators 
 
-## Example:  
+## Example:
 
 ## Student Task 2: basic math operators with variables
 
@@ -74,7 +75,7 @@ game.showLongText("13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7 = " + answer, DialogLayo
 
 ## Tell students
 
-Look at the JavaScript. Parenthesis `( )`are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
+Look at the JavaScript. Parenthesis `( )` are first in order of Operations. With Multiple operators **Blocks often create parenthesis**, always check the JavaScript to see if that is what you intended.
 ![animation: Parenthesis in math code](/static/courses/csintro1/orientation/parenthesis-math.gif)
 
 ### ~
@@ -186,6 +187,7 @@ game.splash("" + c)
 ## Rubrics
 
 ### Code Tasks
+
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
 | Variable Math Tasks | Completed at least 4 coding tasks | Completed all 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
