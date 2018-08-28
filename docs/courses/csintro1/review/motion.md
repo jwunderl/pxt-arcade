@@ -4,7 +4,6 @@
 
 Start with this basic game code. We will alter this by adding the basic motion concepts that we learned to make the game above.
 
-
 https://makecode.com/_aWg55R4fyAog
 
 ```blocks
@@ -75,10 +74,13 @@ We want to be able to see the sprite move up and down on the screen, but the cam
 2. Inside, use the ``||scene: center camera at||`` block to change the location of the camera. 
 
 ### ~hint
+
 Hint: Remember, the camera should follow the x position of the sprite, but the camera's y position should always be halfway between the top and the bottom of the screen.
+
 ### ~
 
 ### Make the sprite bob up and down to simulate motion:
+
 1. Create a ``||loops:forever||`` block
 2. Inside, change the sprites position to be just above itself for a 200 ms, and then change it back
 3. Use a ``||loops:pause||`` block at the end so that the who process takes half a second, or 500 ms
@@ -87,4 +89,3 @@ Hint: Remember, the camera should follow the x position of the sprite, but the c
 
 1. Use the ``||scene: hits wall||`` block to add an event for when the sprite hits a purple wall
 2. Make the sprite move backwards for 250 ms, the stop for 250 ms, then continue on at their normal velocity again
-

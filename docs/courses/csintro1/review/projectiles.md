@@ -1,6 +1,5 @@
 # Projectile Motion
 
-
 ![Asteroid Shooter](/static/courses/csintro1/review/asteroid-shooter.gif)
 
 Start with this basic game code. We will alter this by adding the basic motion concepts that we learned to make the game above.
