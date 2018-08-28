@@ -51,7 +51,7 @@ let input = game.askForString("What is your name?")
 game.splash("Hello " + input + "!")
 ```
 
-This will prompt the user for their name, and then use it in the future. This allows for the game to be a bit more personal; it is the player's story, not some random character named "Jim" or "Link." Personalization is not the only thing that user input can be used for, though; it can also be used to craft puzzles that force them to search for clues to how they must respond to a given question.
+This will prompt the user for their name, and then use it in the future. This allows for the game to be a bit more personal; it is the player's story, not some random character named "Jim" or "Mink." Personalization is not the only thing that user input can be used for, though; it can also be used to craft puzzles that force them to search for clues to how they must respond to a given question.
 
 ## Student Task #2: Making a (secret?) password
 
