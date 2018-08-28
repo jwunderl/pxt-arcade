@@ -119,8 +119,8 @@ Notice that when the game creates a new enemy, it checks to see if the player's 
 ## Task #1a: less than
 
 1. Create a new project
-2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
-3. Make it so that when the player presses the ``||controller:B||`` button, if the player's score is less than 10, the sprite will say something
+2. When the player presses the ``||controller:A||`` button the score increases by 1
+3. Then, when the player presses the ``||controller:B||`` button, if the player's score is less than 10, the sprite will say something
 
 ## Task #1b: less than
 
