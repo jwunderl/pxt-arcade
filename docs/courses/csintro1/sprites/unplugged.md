@@ -1,3 +1,5 @@
+# Unplugged: Sink A Ship
+
 In this activity, you will practice using a coordinate grid.
 
 The game Sink A Ship is perhaps the most fun a student can have practicing using a coordinate grid. The original Sink A Ship game is a 10x10 grid with numbers on one axis and letters on the other.
