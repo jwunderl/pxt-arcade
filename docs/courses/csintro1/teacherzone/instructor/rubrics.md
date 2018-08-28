@@ -9,7 +9,7 @@
 0 points if below 5 point standard
 
 ### Scoring
-Start on the left rubric column (5pts), if the work meets the rubric continue to the right (7pts, 9pts, 10pts). Award the sore of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics measures to the left.
+Start on the left rubric column (5pts), if the work meets the rubric continue to the right (7pts, 9pts, 10pts). Award the sore of the right most rubric that is passed. This means that to get the highest score student must pass all previous rubrics measures to the left.
 
 ## Diary Sample
 

@@ -230,8 +230,8 @@ Students can easily extend the Boomerang project.
 
 ### Possible Answers
 
-1. The repeat loop makes repeated code easy by having a single number determine how many times we will repeat. Tell the loop to move the sprite 2 times or 2000 times and it does it just as easily as far as writing code is concerned. Just change the repeat number but leave the body code the same.  
-2. Adding a second sprite is way easier. The 2 sprites do the same thing just in opposite directions. One moves negative x, y and the other positive x, y. Easier because there is more code in the loop body to keep track of, so more to write in the old version and it is hard to read long code.  
+1. The repeat loop makes repeated code easy by having a single number determine how many times we will repeat. Tell the loop to move the sprite 2 times or 2000 times and it does it just as easily as far as writing code is concerned. Just change the repeat number but leave the body code the same.
+2. Adding a second sprite is way easier. The 2 sprites do the same thing just in opposite directions. One moves negative x, y and the other positive x, y. Easier because there is more code in the loop body to keep track of, so more to write in the old version and it is hard to read long code.
 3. Answers vary using one or two loops. Using one loop can be confusing because there is very similar code and sprites and easy to mix up. Two loops is a little more code but for some people more it seems simpler and more organized.
 
 ### ~

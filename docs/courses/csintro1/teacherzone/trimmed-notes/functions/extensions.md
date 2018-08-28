@@ -4,9 +4,7 @@
 
 ## Example #1: Using a package
 
-
-
-## Student Task #1:  Build an Obstacle Course
+## Student Task #1: Build an Obstacle Course
 
 ### Standard:
 
@@ -312,7 +310,6 @@ game.onUpdateInterval(500, function () {
     projectile.setFlag(SpriteFlag.Ghost, true)
 })
 ```
-
 
 ## What did we learn?
 

@@ -139,7 +139,7 @@ Look at the JavaScript code. For multiple operator equations it is often easier 
 2. Initialize ``||variables:tempC||`` with common Celsius temperature (for example, 22.0)
 3. Create an equation using the formula ``||variables:tempF||`` = ``||variables:tempC||`` × 9/5 + 32 and assign it to a new variable ``||variables:temp||``
 4. Show the ``||variables:temp||`` in a Splash Screen
-4. **Challenge:** create an equation for converting back to Celsius:   
+4. **Challenge:** create an equation for converting back to Celsius:
     * ``||variables:tempC||`` = (``||variables:tempF||`` - 32) × 5/9
     * pay careful attention to the parentheses
 

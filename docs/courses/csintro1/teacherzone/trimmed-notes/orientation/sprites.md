@@ -129,7 +129,7 @@ sprite = sprites.create(img`
      - Color index (1-15)  
      - Color representation in JavaScript
 2. Explain what happens to the color index 0 in JavaScript (form a hypothesis)  
-3. Explain why we see only 14 colors at a time although there are 16 color indexes (0-15) in the image editor?  
+3. Explain why we see only 14 colors at a time although there are 16 color indexes (0-15) in the image editor?
 
 ### ~hint
 

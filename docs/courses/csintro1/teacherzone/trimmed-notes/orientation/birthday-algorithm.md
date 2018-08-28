@@ -8,7 +8,7 @@ In this lesson students follow a series of steps to complete a math trick. Stude
 
 ## Algorithm
 
-An Algorithm is series of steps, decisions and/or formulas. Some common examples include:  
+An Algorithm is series of steps, decisions and/or formulas. Some common examples include:
 
 * cooking recipes
 * map directions to an address

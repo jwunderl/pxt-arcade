@@ -4,7 +4,6 @@ In this activity the student will continue to work with:
 * ``||sprites:on overlap event||`` with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
 * Define multiple SpriteKind overlap events and actions
 
-
 ## Concept: SpriteKind Overlap Event "bump" action
 
 ## Example 1: bump action from overlap event
@@ -23,7 +22,7 @@ Start with the behavior. The faster the velocity the farther the bump in the opp
 
 A car going 10 meters/second bumps -10 centimeters.
 
-Ask: what if going -100 meters/second?  [Answer] bumps +100 centimeters - always note the sign Changes (positive/negative swap)
+Ask: what if going -100 meters/second? [Answer] bumps +100 centimeters - always note the sign Changes (positive/negative swap)
 
 ### Review the bump code
 

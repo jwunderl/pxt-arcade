@@ -1,6 +1,6 @@
 # Logic Introduction -  if statement
 
-Logic in Computer Science is about building code to enforce a set of rules that determines how our program will run.  In this section we will look at how performing a comparison can be used in code.  
+Logic in Computer Science is about building code to enforce a set of rules that determines how our program will run. In this section we will look at how performing a comparison can be used in code.
 
 In these activities students will work with:
 * ``||logic:if||`` block
@@ -9,7 +9,7 @@ In these activities students will work with:
 
 Comparison logic with the ``||logic:if||`` statement
  
-In our games we will often want to compare values and take an action when the comparison statement is true.  
+In our games we will often want to compare values and take an action when the comparison statement is true.
 
 > Example: Is myValue (3) smaller than a testValue (5)? If it is ``||logic:true||`` that myValue is smaller than the testValue then we will add 1 to myValue.
 

@@ -10,7 +10,7 @@
  
 In our games we will often want to compare values and take an action based on the comparison.
 
-> Example:  Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value.
+> Example: Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value.
 
 We could do a comparison test to see:
 
@@ -188,7 +188,7 @@ generate()
 ```
 
 
-### Example 1c:  ``|logic:else|`` for random alternating message
+### Example 1c: ``|logic:else|`` for random alternating message
 
 https://makecode.com/_FDoAgwhKdh1X
 

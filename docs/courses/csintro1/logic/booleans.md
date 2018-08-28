@@ -4,7 +4,7 @@ In the previous lesson, we saw how ``||logic:if||`` and ``||logic:else||`` state
 
 Comparison statements are centered around **Boolean logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. 
 
-These expressions values, and can be stored and used as `Boolean` variables.  Whenever we see the term Boolean - it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
+These expressions values, and can be stored and used as `Boolean` variables. Whenever we see the term Boolean - it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
 
 In these activities students will work with:
 * Boolean flags and values
