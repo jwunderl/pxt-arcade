@@ -1,6 +1,7 @@
 # Logic Introduction -  if statement
 
-## Task 1a: less than
+## Task #1a: less than
+
 1. Create a new project
 2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
 3. Make it so that when the player presses the ``||controller:B||`` button, if the player's score is less than 10, the sprite will say something
@@ -44,12 +45,16 @@ game.onUpdate(function () {
 })
 ```
 
-## Task 1b: less than 
+## Task #1b: less than 
+
 1. Create a new project
 2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
 3. Make it so that when the player presses the ``||controller:A||``button, if the player is on the left half of the screen, the score increases by 1
+
 ### ~hint
+
 The player is on the left half of the screen if their ``||sprites:x position||`` is less than half of the screen width
+
 ### ~
 
 https://makecode.com/_7A9J6pacWXMC
@@ -153,7 +158,7 @@ leader.x = Math.randomRange(100, 140)
 follower.x = 20
 ```
 
-## Task 3: equal 
+## Task #3: equal 
 
 1. Create a new project
 2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
@@ -175,21 +180,24 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Task 4: equal and greater than test
-
+## Task #4: equal and greater than test
 
 1. Create a new project
 2. Add in a simple sprite
 3. Make it so that when the player presses the ``||controller:A||`` button, the score increases by 1
 4. In this event, if the player's score is above 10, make the sprite congratulate the player on their high score
 5. In the same event, if the player's score is an even number, change the background to a random color
-6. **Challenge** Add projectiles that fire from the sprite when the score is increased to a value greater than 5
-7. **Challenge** If the score reaches 20, change the sprites image.
+6. **Challenge:** add projectiles that fire from the sprite when the score is increased to a value greater than 5
+7. **Challenge:** if the score reaches 20, change the sprites image
+
 ### ~hint
+
 The background can be changed to a random color with the following block
+
 ```block
 scene.setBackgroundColor(Math.randomRange(1, 15))
 ```
+
 ### ~
 
 https://makecode.com/_Xa82FdC5p4ki
@@ -250,7 +258,6 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 
 1. What is an ``||logic:if||`` statement? What is a case in which you would use one?
 2. What is a logic comparison? What is a case in which you would use one?
-
 
 ### ~hint
 

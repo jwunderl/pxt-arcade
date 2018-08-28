@@ -1,6 +1,5 @@
 # Activity: Arrays Project
 
-
 ## [Example #1: Enemy Following](https://makecode.com/_6CpUj0iPbD3H)
 
 ```blocks
@@ -101,8 +100,8 @@ game.onUpdate(function () {
 })
 ```
 
-
 ## [Example #2: Hazards ](https://makecode.com/_cAPX0q3uUeAL)
+
 ```blocks
 enum SpriteKind {
     Player,
