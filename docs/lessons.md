@@ -13,14 +13,16 @@
   "imageUrl": "/static/lessons/cherry-pickr.png"
 },
 {
-  "name": "Coordinate Walker",
-  "description": "Learn about screen coordinates",
-  "url": "/lessons/coordinate-walker"
+  "name": "Barrel Dodger",
+  "description": "Use the sprite editor to make player, tile, and enemy images",
+  "url": "/lessons/barrel-dodger",
+  "cardType": "lesson",
+  "imageUrl": "/static/lessons/barrel-dodger.png"
 }
 ]
 ```
 
 ## See Also
 
-[Cherry Pickr](/lessons/cherry-pickr-lesson),
-[Coordinate Walker](/lessons/coordinate-walker)
+[Cherry Pickr](/lessons/cherry-pickr),
+[Barrel Dodger](/lessons/barrel-dodger)
