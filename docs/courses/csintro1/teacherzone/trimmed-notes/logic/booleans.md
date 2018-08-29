@@ -37,8 +37,14 @@ game.splash("Press A if you are hungry!")
 isHungry = false
 ```
 
-### Challenge:
+### Challenge (Optional):
+3. **Challenge:** rather than use an ``||logic:if else||`` block, use the ``||logic:not||`` block to flip ``||isHungry||`` on and off
 
+### ~hint
+
+For the challenge: the ``||logic:not||`` block **negates** whatever value is passed to it - if you pass in ``||variables:value||`` with value set to false, it will become true, and if value is set to true, it will become false.
+
+### ~
 https://makecode.com/_JUceve65sPLW
 
 ```blocks

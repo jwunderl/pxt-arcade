@@ -44,25 +44,18 @@ isHungry = false
 
 In this example, ``||variables:isHungry||`` is a flag that will change the behavior of the ``||controller:on B button pressed||`` event. When it is off (set to false), the game assumes that you are not hungry; when you turn it on (set to true), though, it tells the game that you **are** hungry, and it reacts to this information.
 
-## Student Task #1: Off and on
+## Student Task #1: Off and On
 
 1. Start with the code from example #1
 2. Modify the ``||controller:on A button pressed||`` event so that it **switches** the value of ``||variables:isHungry||`` from ``||logic:true||`` to ``||logic:false||`` or from ``||logic:false||`` to ``||logic:true||``, by using an ``||logic:if else||`` 
-3. **Challenge:** rather than use an ``||logic:if else||`` block, use the ``||logic:not||`` block to flip ``||isHungry||`` on and off
-
-### ~hint
-
-For the challenge: the ``||logic:not||`` block **negates** whatever value is passed to it - if you pass in ``||variables:value||`` with value set to false, it will become true, and if value is set to true, it will become false.
-
-### ~
 
 ## Concept: ``||logic:and||`` & ``||logic:or||``
 
 Beyond just using a single Boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are very similar to the definition in plain english; for example, the statement
 
-> If I have food in the pantry and I am hungry, I will make lunch
+> If I have food and I am hungry, I will make lunch
 
-means that if **both** conditions (there being food in the pantry, and me being hungry) are true, then lunch will be made. If either is false, though, no lunch will be made. Similarly, the statement
+means that if **both** conditions (there being food , and being hungry) are true, then lunch will be made. If either is false, though, no lunch will be made. Similarly, the statement
 
 > If I need to buy milk or I need to buy eggs, I will go to the store
 
