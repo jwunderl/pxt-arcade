@@ -1,13 +1,13 @@
 # Activity: Boolean Statements and Expressions
 
-In the previous lesson, we saw how ``||logic:if||`` and ``||logic:else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers. 
+In the previous lessons, we saw how ``||logic:if||`` and ``||logic:else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers. 
 
 Comparison statements are centered around **Boolean logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. 
 
 These expressions values, and can be stored and used as `Boolean` variables. Whenever we see the term Boolean - it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
 
 In these activities students will work with:
-* Boolean flags and values
+* Boolean flags and values (``||logic:true||`` and ``||logic:false||``)
 * ``||logic:and||`` 
 * ``||logic:or||``
 * ``||logic:not||``
@@ -47,7 +47,7 @@ In this example, ``||variables:isHungry||`` is a flag that will change the behav
 ## Student Task #1: Off and on
 
 1. Start with the code from example #1
-2. Modify the ``||controller:on A button pressed||`` event so that it **switches** the value of ``||variables:isHungry||``, rather than always just setting it to true, by using an ``||logic:if else||`` block
+2. Modify the ``||controller:on A button pressed||`` event so that it **switches** the value of ``||variables:isHungry||`` from ``||logic:true||`` to ``||logic:false||`` or from ``||logic:false||`` to ``||logic:true||``, by using an ``||logic:if else||`` 
 3. **Challenge:** rather than use an ``||logic:if else||`` block, use the ``||logic:not||`` block to flip ``||isHungry||`` on and off
 
 ### ~hint
