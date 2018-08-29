@@ -40,7 +40,7 @@ This is a fairly simple game - you press ``||controller:A||`` to win, or ``||con
 
 ## Concept: Text input
 
-Beyond asking questions with a binary response (e.g. - "yes or no" or "true or false"), we can request input from users and keep track of that to enhance the player's experience. We could ask for a user name and display the name in later in the game, such as in a leader board.
+Beyond asking questions with a binary response (e.g. - "yes or no" or "true or false"), we can request input from users and keep track of that to enhance the player's experience. We could ask for a user name and display the name in later in the game, such as in a leader board or a welcome message as in example #2.
 
 ## Example #2: Taking in a user name
 
@@ -53,17 +53,17 @@ let input = game.askForString("What is your name?")
 game.splash("Hello " + input + "!")
 ```
 
-This will prompt the user for their name, and then use it in the future. This allows for the game to be a bit more personal; it is the player's story, not some random character named "Jim" or "Mink." Personalization is not the only thing that user input can be used for, though; it can also be used to craft puzzles that force them to search for clues to how they must respond to a given question.
+Prompts for names, like above, allows games to be more personal.  The prompts can also enable users to make choices during game play, or make guesses from clues to solve a puzzle, or to use a password.
 
 ## Student Task #2: Making a (secret?) password
 
 1. Start with the code from example #2.
 2. Create a new variable, and ``||game:ask for string||`` with the prompt "What is your password?" to find a word to store in that new variable
 3. Create an ``||logic:if else||`` block
-4. Use the ``||logic:=||`` block to compare the 'password' the user inputted with the string "Hunter2"
+4. Use the ``||logic:=||`` block to compare the 'password' the user inputted with the string "Arcade"
 5. If those two are the same, ``||game:splash||`` "login successful"
 6. Otherwise, ``||game:splash||`` "login failed"
-7. **Challenge:** Use the ``||logic:or||`` block to also compare your stored password with "\*\*\*\*\*\*\*" and accept the password if the user's input is equal to **either** "\*\*\*\*\*\*\*" **or** "Hunter2"
+7. **Challenge:** Use the ``||logic:or||`` block to also compare your stored password with "\*\*\*\*\*\*\*" and accept the password if the user's input is equal to **either** "\*\*\*\*\*\*\*" **or** "Arcade"
 
 ## What did we learn?
 

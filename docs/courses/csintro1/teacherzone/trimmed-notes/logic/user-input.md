@@ -26,7 +26,7 @@ if (game.ask("Do you want to win?")) {
 
 ### Standard Solution:
 
-https://makecode.com/_MjmMHm1DACtY
+https://makecode.com/_RcxFjd30W75D
 
 ```blocks
 let password = ""
@@ -34,7 +34,7 @@ let input = ""
 input = game.askForString("What is your name?")
 game.splash("Hello " + input + "!")
 password = game.askForString("What is your password?")
-if (password == "Hunter2") {
+if (password == "Arcade") {
     game.splash("login successful")
 } else {
     game.splash("login failed")
@@ -43,7 +43,7 @@ if (password == "Hunter2") {
 
 ### Challenge Solution:
 
-https://makecode.com/_XkTUTe2u24MR
+https://makecode.com/_RVdg9Ffkbhkd
 
 ```blocks
 let password = ""
@@ -51,7 +51,7 @@ let input = ""
 input = game.askForString("What is your name?")
 game.splash("Hello " + input + "!")
 password = game.askForString("What is your password?")
-if (password == "Penguin33" || password == "*******") {
+if (password == "Arcade" || password == "*******") {
     game.splash("login successful")
 } else {
     game.splash("login failed")
