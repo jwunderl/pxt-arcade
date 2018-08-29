@@ -2,19 +2,9 @@
 
 ## Task #1a: less than
 
-1. Create a new project
-2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
-3. Make it so that when the player presses the ``||controller:B||`` button, if the player's score is less than 10, the sprite will say something
-
 https://makecode.com/_TH4etH4cjMFK
 
-
-
 ## Task #1b: less than 
-
-1. Create a new project
-2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
-3. Make it so that when the player presses the ``||controller:A||``button, if the player is on the left half of the screen, the score increases by 1
 
 ### ~hint
 
@@ -26,30 +16,13 @@ https://makecode.com/_7A9J6pacWXMC
 
 ## Task #2: greater than
 
-1. Start a new project
-2. Create 2 sprites, a leader and a follower
-3. Set the ``||sprites:x position||`` of the leader at a random value between 100 and 140 and set the ``||sprites:x position||`` of the follower at 20.
-4. Make it so that when the player presses the ``||controller:A||``button, if the leader's ``||sprites:x position||`` is greater than the follower's, then make the follower change their ``||sprites:x position||`` by 10
-
 https://makecode.com/_37mc84Rtxe7z
 
 ## Task #3: equal 
 
-1. Create a new project
-2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
-3. Make it so that after the score is increased, if the score is equal to 10, use the ``||game:game over||`` block to end the game
-
 https://makecode.com/_ftpYRr4dyf79
 
 ## Task #4: equal and greater than test
-
-1. Create a new project
-2. Add in a simple sprite
-3. Make it so that when the player presses the ``||controller:A||`` button, the score increases by 1
-4. In this event, if the player's score is above 10, make the sprite congratulate the player on their high score
-5. In the same event, if the player's score is an even number, change the background to a random color
-6. **Challenge:** add projectiles that fire from the sprite when the score is increased to a value greater than 5
-7. **Challenge:** if the score reaches 20, change the sprites image
 
 ### ~hint
 
