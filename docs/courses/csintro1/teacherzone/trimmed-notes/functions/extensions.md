@@ -23,8 +23,6 @@ let princess2: Sprite = null
 let princess1: Sprite = null
 let net: Sprite = null
 let myDart: Dart = null
-let otherSprite: Sprite = null
-let sprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     myDart.throwDart()
 })
@@ -149,8 +147,6 @@ let princess2: Sprite = null
 let princess1: Sprite = null
 let net: Sprite = null
 let myDart: Dart = null
-let otherSprite: Sprite = null
-let sprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     myDart.throwDart()
 })
@@ -273,11 +269,138 @@ princess2.setPosition(140, 50)
 
 [standard extension code](https://makecode.com/_3Ku5qeiwed0x)
 
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let projectile: Sprite = null
+game.onUpdateInterval(500, function () {
+    projectile = sprites.createProjectile(img`
+. . . . . 1 . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, Math.randomRange(-90, -30), 0, SpriteKind.Player)
+    projectile.y = Math.randomRange(0, scene.screenHeight())
+    projectile.setFlag(SpriteFlag.Ghost, true)
+})
+```
+
 [using standard extension](https://makecode.com/_76t872Ro26yu)
+
+```blocks
+info.startCountdown(10)
+scene.setBackgroundColor(4)
+```
 
 [challenge extension](https://makecode.com/_CvyMEtEsxith)
 
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let meteor: Sprite = null
+let projectile: Sprite = null
+let starGazer: Sprite = null
+starGazer = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . d d d . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . d d d d d . . . . . . . . . . . . . . . . 
+. . . . . . . . . . d d d d d d d . . . . . . . . . . . . . . . 
+. . . . . . . . . . d d d d d d d . . . . . . . . . . . . . . . 
+. . . . . . . . . . d d d d d d d . . . . . . . . . . . . . . . 
+. . . . . . . . . . d d d d d d d . . . . . . . . . . . . . . . 
+. . . . . . . . . d d d d d d d d d . . . . . . . . . . . . . . 
+. . . . . . . d d d d d d d d d d d d d d . . . . . . . . . . . 
+. . . . . . d d d d d d d d d d d d d d d d . . . . . . . . . . 
+. . . . . d d d d d d d d d d d d d d d d d d . . . . . . . . . 
+. . . . . d d d d 1 f 1 d d d d 1 f 1 d d d d d . . . . . . . . 
+. . . . . d d d d 1 e 1 d d d d 1 e 1 d d d d d . . . . . . . . 
+. . . . d d d d d d d d d d d d d d d d d d d d . . . . . . . . 
+. . . . d d d d d d d d d d d d d d d d d d d d d . . . . . . . 
+. . . . d d d d d d d d d d d d d d d d d d d d d . . . . . . . 
+. . . . . d d d d d d d d d d d d d d d d d d d d . . . . . . . 
+. . . . . d d d d d d d d d d d d d d d d d d d . . . . . . . . 
+. . . . . a a a d d d a a a a d a a a a d d d a . . . . . . . . 
+. . . . a a a a a a a a a a a a a a a a a a a a . . . . . . . . 
+. . . . a a a a a a a a a a a a a a a a a a a a . . . . . . . . 
+. . . . . a a a a a a a a a a a a a a a a a a a . . . . . . . . 
+. . . . . a a a a a a a a a a a a a a a a a a . . . . . . . . . 
+. . . . . . a a a a a a a a a a a a a a a a . . . . . . . . . . 
+`, SpriteKind.Player)
+starGazer.setPosition(75, 100)
+game.onUpdateInterval(500, function () {
+    projectile = sprites.createProjectile(img`
+. . . . . 1 . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, Math.randomRange(-90, -30), 0, SpriteKind.Player)
+    projectile.y = Math.randomRange(0, scene.screenHeight())
+    projectile.setFlag(SpriteFlag.Ghost, true)
+})
+game.onUpdateInterval(2000, function () {
+    meteor = sprites.createProjectile(img`
+. . . . . . . . c c c c . . . . 
+. . . . c c c c c c c c c . . . 
+. . . c f c c a a a a c a c . . 
+. . c c f f f f a a a c a a c . 
+. . c c a f f c a a f f f a a c 
+. . c c a a a a b c f f f a a c 
+. c c c c a c c b a f c a a c c 
+c a f f c c c a b b 6 b b b c c 
+c a f f f f c c c 6 b b b a a c 
+c a a c f f c a 6 6 b b b a a c 
+c c b a a a a b 6 b b a b b a . 
+. c c b b b b b b b a c c b a . 
+. . c c c b c c c b a a b c . . 
+. . . . c b a c c b b b c . . . 
+. . . . c b b a a 6 b c . . . . 
+. . . . . . b 6 6 c c . . . . . 
+`, 50, 0, SpriteKind.Player)
+})
+```
+
 [using challenge extension](https://makecode.com/_Frc5AHcmzW3u)
+
+```blocks
+scene.setBackgroundColor(2)
+info.startCountdown(10)
+```
 
 Extension code
 

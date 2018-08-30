@@ -15,9 +15,109 @@ In this activity, student will be introduced to:
 
 Solution: https://makecode.com/_J8ohLR9rVYqR
 
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Human,
+    Cow,
+    Asteroid
+}
+let mySprite: Sprite = null
+function makeSprite() {
+    mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 b b 3 3 3 3 b b 3 3 3 . 
+. 3 3 3 b b 3 3 3 3 b b 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+    controller.controlSprite(mySprite, 100, 100)
+    mySprite.setFlag(SpriteFlag.StayInScreen, true)
+}
+function makeMusic() {
+    music.playTone(262, music.beat(BeatFraction.Half))
+    music.playTone(392, music.beat(BeatFraction.Half))
+    music.playTone(523, music.beat(BeatFraction.Whole))
+}
+function gameSetup() {
+    scene.setBackgroundColor(1)
+    info.setScore(0)
+    info.startCountdown(10)
+}
+makeSprite()
+makeMusic()
+gameSetup()
+```
+
 ## Student Task #1b: Functions in Events
 
 Solution: https://makecode.com/_4brfuqfU9dp9 (Contains Challenge)
+
+```blocks
+enum SpriteKind {
+    Player,
+    Princess,
+    Enemy
+}
+let princess: Sprite = null
+let player: Sprite = null
+function meetPrincess() {
+    player.say("Excuse me!")
+    player.setPosition(80, 60)
+}
+function scorePoints() {
+    info.changeScoreBy(1)
+    music.playSound(music.sounds(Sounds.PowerUp))
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Princess, function (sprite, otherSprite) {
+    meetPrincess()
+    pause(500)
+    conversation()
+})
+function conversation() {
+    player.say("Hello!", 500)
+    pause(500)
+    princess.say("Hello!", 500)
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    conversation()
+    scorePoints()
+})
+player = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 b b 3 3 3 3 b b 3 3 3 . 
+. 3 3 3 b b 3 3 3 3 b b 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+controller.controlSprite(player, 100, 100)
+player.setFlag(SpriteFlag.StayInScreen, true)
+princess = sprites.create(sprites.castle.princessFront0, SpriteKind.Princess)
+princess.setPosition(50, 50)
+```
 
 ## Rubrics
 
