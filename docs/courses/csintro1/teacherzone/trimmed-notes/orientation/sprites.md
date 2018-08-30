@@ -194,3 +194,5 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 | Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Has an exceptional explanation using an original example |
 
 ### Score = \_\_\_\_\_\_ /10 
+
+## Task Solution Appendix
