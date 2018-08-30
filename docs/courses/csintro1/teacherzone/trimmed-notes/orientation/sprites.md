@@ -12,12 +12,12 @@ In this activity Students are introduced to:
 ## Concept: Set a Sprite variable to an image using the image editor
 ## Example: Sprite
 
-## Student Task 1: Create your own sprite
+## Student Task #1: Create your own sprite
 
  https://makecode.com/_arj7ewLpXas6 
 
 
-## Student Task 2: Build a "rainbow numbers" sprite that uses every color in the editor 
+## Student Task #2: Build a "rainbow numbers" sprite that uses every color in the editor 
 
 ### ~hint
 
