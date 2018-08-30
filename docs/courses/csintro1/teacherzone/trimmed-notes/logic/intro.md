@@ -2,13 +2,59 @@
 
 ## Task #1a: less than
 
-1. Create a new project
-2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
-3. Make it so that when the player presses the ``||controller:B||`` button, if the player's score is less than 10, the sprite will say something
-
 https://makecode.com/_TH4etH4cjMFK
 
-```blocks
+## Task #1b: less than 
+
+### ~hint
+
+The player is on the left half of the screen if their ``||sprites:x position||`` is less than half of the screen width
+
+### ~
+
+https://makecode.com/_7A9J6pacWXMC
+
+## Task #2: greater than
+
+https://makecode.com/_37mc84Rtxe7z
+
+## Task #3: equal 
+
+https://makecode.com/_ftpYRr4dyf79
+
+## Task #4: equal and greater than test
+
+### ~hint
+
+The background can be changed to a random color with the following block
+
+```block
+scene.setBackgroundColor(Math.randomRange(1, 15))
+```
+
+### ~
+
+https://makecode.com/_Xa82FdC5p4ki
+
+## What did we learn?
+
+1. What is an ``||logic:if||`` statement? What is a case in which you would use one?
+2. What is a logic comparison? What is a case in which you would use one?
+
+### ~hint
+
+### Possible Solutions: Answers vary
+
+1. An ``||logic:if||`` statement is a block that will run if the given condition is true. This condition is often a specified comparison.
+2. A logic comparison describes the relationship between two values. The given comparison requires a operator and will either be true or false.
+
+### ~
+
+## Task Solution Appendix
+
+### Task #1a
+
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -44,23 +90,9 @@ game.onUpdate(function () {
     
 })
 ```
+### Task #1b
 
-## Task #1b: less than 
-
-1. Create a new project
-2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
-3. Make it so that when the player presses the ``||controller:A||``button, if the player is on the left half of the screen, the score increases by 1
-
-### ~hint
-
-The player is on the left half of the screen if their ``||sprites:x position||`` is less than half of the screen width
-
-### ~
-
-https://makecode.com/_7A9J6pacWXMC
-
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -94,19 +126,9 @@ game.onUpdate(function () {
     
 })
 ```
+### Task #2
 
-
-
-## Task #2: greater than
-
-1. Start a new project
-2. Create 2 sprites, a leader and a follower
-3. Set the ``||sprites:x position||`` of the leader at a random value between 100 and 140 and set the ``||sprites:x position||`` of the follower at 20.
-4. Make it so that when the player presses the ``||controller:A||``button, if the leader's ``||sprites:x position||`` is greater than the follower's, then make the follower change their ``||sprites:x position||`` by 10
-
-https://makecode.com/_37mc84Rtxe7z
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -158,15 +180,9 @@ leader.x = Math.randomRange(100, 140)
 follower.x = 20
 ```
 
-## Task #3: equal 
+### Task #3
 
-1. Create a new project
-2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
-3. Make it so that after the score is increased, if the score is equal to 10, use the ``||game:game over||`` block to end the game
-
-https://makecode.com/_ftpYRr4dyf79
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -178,29 +194,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 ```
-
-
-## Task #4: equal and greater than test
-
-1. Create a new project
-2. Add in a simple sprite
-3. Make it so that when the player presses the ``||controller:A||`` button, the score increases by 1
-4. In this event, if the player's score is above 10, make the sprite congratulate the player on their high score
-5. In the same event, if the player's score is an even number, change the background to a random color
-6. **Challenge:** add projectiles that fire from the sprite when the score is increased to a value greater than 5
-7. **Challenge:** if the score reaches 20, change the sprites image
-
-### ~hint
-
-The background can be changed to a random color with the following block
-
-```block
-scene.setBackgroundColor(Math.randomRange(1, 15))
-```
-
-### ~
-
-https://makecode.com/_Xa82FdC5p4ki
+### Task #4
 
 ```blocks
 enum SpriteKind {
@@ -252,18 +246,3 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 ```
-
-
-## What did we learn?
-
-1. What is an ``||logic:if||`` statement? What is a case in which you would use one?
-2. What is a logic comparison? What is a case in which you would use one?
-
-### ~hint
-
-### Possible Solutions: Answers vary
-
-1. An ``||logic:if||`` statement is a block that will run if the given condition is true. This condition is often a specified comparison.
-2. A logic comparison describes the relationship between two values. The given comparison requires a operator and will either be true or false.
-
-### ~
