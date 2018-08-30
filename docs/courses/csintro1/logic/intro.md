@@ -17,7 +17,7 @@ We perform comparison tests with ``||logic:if||``
 
 We have already seen similar logic in blocks such as ``||sprites: on overlap||`` where there were statements such as: **if** a type player overlaps with type coin then destroy coin and increase score.
 
-``||logic:if||`` statements allow us to a programs behavior based on the state of the game.
+``||logic:if||`` statements allow us to program a behavior based on the state of the game.
 
 ## Concept: **if** Statement
 
