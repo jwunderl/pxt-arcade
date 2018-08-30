@@ -1,141 +1,31 @@
-# Activity: Array
-
-TODO: lots of uses of array use Corgi to have array of strings, array of sounds (???), images (this is how animation works), change background color to only a few select colors that don't interfere with viewing game, coordinates , ...
-
-In this activity student will work with: 
-* [Add ALL Newly introduced blocks/concepts]
-* [Add items used with more depth]
-* ``||Logic: if then||``
-* while true loop 
+# Activity: Arrays Intro
 
 
-## Concept: [Concept 1 ]
+## Student Task #1: Random values from Arrays
 
-# TODO: Create Video covering (list items above mostly). Provide high level script outline.
+1. Start with the code from example #1
+2. Add two more numbers to the array, by pressing the ``||array:+||`` button on the block
+3. Instead of always splashing the value at index 1, change the ``||array:get value at||`` block to choose a random index between 0 and 3 using the ``||math:pick random||`` block
+4. Add one more number to the array. Identify whether this value will ever show up as one of the values being ``||game:splashed||``
+5. The ``||array:length of array||`` block will return the length of the array - that is, the number of values contained within it. Modify the values in the ``||math:pick random||`` so that it will pick a value between 0 and the highest index in the array
 
-Start with the following Turtle commands:  
-* Forward *(steps)*  
-* Turn *(degrees)*  
-* Pen Down and Pen Up
-* Set pen color  
-* Set Position *(x,y)*  
-
-## Example: [Simple example 1]
-1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
-
-```blocks  
-// :solution
-let locations: number[] = []
-let item = 0
-let sprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    item = Math.floor(Math.random() * locations.length)
-    // Check if index is even or odd
-    if (item % 2 == 0) {
-        sprite.setPosition(locations[item], locations[item + 1])
-    } else {
-        sprite.setPosition(locations[item - 1], locations[item])
-    }
-})
-sprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . 5 . . . . . . . . 
-. . . . . 5 5 6 5 5 . . . . . . 
-. . . . 5 6 6 6 6 6 5 . . . . . 
-. . . 5 6 6 6 6 6 6 6 5 . . . . 
-. . 5 6 6 6 6 6 6 6 6 6 5 . . . 
-. . 5 6 6 6 6 6 6 6 6 6 5 . . . 
-. 5 6 6 6 6 6 6 6 6 6 6 6 5 . . 
-. . 5 6 6 6 6 6 6 6 6 6 5 . . . 
-. . 5 6 6 6 6 6 6 6 6 6 5 . . . 
-. . . 5 6 6 6 6 6 6 6 5 . . . . 
-. . . . 5 6 6 6 6 6 5 . . . . . 
-. . . . . 5 5 6 5 5 . . . . . . 
-. . . . . . . 5 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`)
-locations = [20, 20, 140, 120, 150, 25, 15, 110]
-// :end-solution
-```  
-
-### ~hint
-**Teacher Note**
-TODO: These notes get removed for students and go to teacher guide so use exact format - think of advice on how the teacher might help unstick students or reinforce concept.  A question you might pose.  "Ask students: What happens to the old value when we re-assign a new number to the lives? (Answer: it is destroyed and replaced with new assigned value)"  can use markdown lists here.
-### ~
-
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
+https://makecode.com/_W11d0LV2F3xE
 
 ```blocks
-// :solution
-
-/* example of a full solution that the teacher can use
-comments are good!
-we need the solution / end-solution tags so we can remove this for student version
-*/ 
-// :end-solution
+let list: number[] = []
+list = [1, 2, 3, 4, 5]
+game.splash("" + list[Math.randomRange(0, list.length - 1)])
 ```
 
+## What did we learn?
 
-## Concept: [concept 2 -another item form the list]
-
-# TODO: might need a short video here 
-
-[line or two of high level concept]
-
-## Example: simple example 2 
-
-1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it [simple name 1]) 
-4. [specific comment - "look for..."]
-
-```blocks  
-// simple code here
-```  
-
-## Task: add [something] to the code 
-1. starting with the [simple example 1] example 
-2. add [something simple....]
-3. add [something simple....]
-4. Challenge: Try adding [something that they have to infer or that might take a little longer than the simple items above]
+1. What is the difference between creating an array of numbers and storing multiple values as individual variables (as in, `value1 = 1`, `value2 = 2`, `value3 ...`)? What can an array do that storing different variables by themselves cannot?
+2. How does the ``||array:length||`` of an array relate to the position of the final element?
 
 ### ~hint
- // Hint to student
+
+### Possible Solutions: Answers may vary
+1. Using arrays allows you to organize your variables better. Since an array can be any size, in your program, you can use any number of variables. If you were to try to accomplish this otherwise.
+2. The position of an element of an array starts at 0, but when counting the elements of an array, we start at 1. That is an array of size 5 will have elements in positions, 0, 1, 2, 3, and 4. So the ``||array:length||`` of an array will always be 1 greater the position of the final element.
+
 ### ~
-
-```blocks
-// :solution
-
-/* example of a full solution that the teacher can use - good to follow on previous solution but not required
-comments are good!
-we need the solution / end-solution tags so we can remove this for student version
-*/
-
-// :end-solution
-
-
-## What did we learn? [create 2 questions]
-
-1. Describe how a [concept 1] makes programming easier, more powerful, reduced code, or something.... .  
-2. Compare and contrast [something in the real world with coding] grocery store line or ask student to come up with a comparison.  
-3. [Come up with a question of your choice]
-
-
-## Rubrics
-
-
-### TODO Rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Turtle  | Made Squares with a loop & Answered Questions|  Was able to nest More than 3 squares using loops | Answered questions with clear explanations using examples and/or analogies | Completed Challenge Code  |
-
-### Score = \_\_\_\_\_\_ /10 
