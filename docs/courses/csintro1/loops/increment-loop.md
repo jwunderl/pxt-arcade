@@ -43,7 +43,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     count += 1
     info.setScore(count)
 })
-```  
+```
 
 ### Example #1c: Increment with a Countdown
 

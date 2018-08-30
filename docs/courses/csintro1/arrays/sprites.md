@@ -10,7 +10,7 @@ In this activity, students will:
 * Use ``||sprites:array of sprites of kind||``
 * Implement "following" behavior for enemies
 
-## TODO VIDEO
+## Coming Soon: VIDEO
 
 ## Concept: Creating Sprite Arrays
 

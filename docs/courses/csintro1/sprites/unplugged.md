@@ -8,8 +8,8 @@ To help us practice using the correct x and y coordinates instead of letters and
 
 Your grid: Mark where your ships are and keep track of your opponent's hits and misses.
 
-||||||
-| --- | --- | --- | --- | --- |
+|       |       |       |       |       |
+|  ---  |  ---  |  ---  |  ---  |  ---  |
 | (0,0) | (1,0) | (2,0) | (3,0) | (4,0) |
 | (0,1) | (1,1) | (2,1) | (3,1) | (4,1) |
 | (0,2) | (1,2) | (2,2) | (3,2) | (4,2) |
@@ -18,8 +18,8 @@ Your grid: Mark where your ships are and keep track of your opponent's hits and 
 
 Opponent's grid: Keep track of your hits and misses while trying to locate your opponent's ships.
 
-||||||
-| --- | --- | --- | --- | --- |
+|       |       |       |       |       |
+|  ---  |  ---  |  ---  |  ---  |  ---  |
 | (0,0) | (1,0) | (2,0) | (3,0) | (4,0) |
 | (0,1) | (1,1) | (2,1) | (3,1) | (4,1) |
 | (0,2) | (1,2) | (2,2) | (3,2) | (4,2) |

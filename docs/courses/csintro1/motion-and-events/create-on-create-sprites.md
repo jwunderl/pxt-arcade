@@ -18,7 +18,7 @@ Use ``||sprites:on created||`` event to set the sprite image and location after 
 
 1. Review the code below 
 2. Create the sample code and run the code 
-3. Save the code for the task (name it "spawnCloud")  
+3. Save the code for the task (name it "spawnCloud")
 4. Carefully examine the ``||sprites:create empty sprite||`` block and ``||sprites:on created||`` event
 
 ```blocks

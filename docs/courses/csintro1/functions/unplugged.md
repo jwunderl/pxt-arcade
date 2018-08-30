@@ -1,3 +1,5 @@
+# Unplugged: Making a Sandwich
+
 In this activity, you will learn about functions by writing code that makes a peanut butter and jelly sandwich.
 
 Let your teacher (or a partner) be a "robot." Pair up with another student and write pseudocode (written language instructions) for making a peanut butter and jelly sandwich. The idea is that if given to your robot teacher, they will be able to follow it exactly and make a peanut butter and jelly sandwich.

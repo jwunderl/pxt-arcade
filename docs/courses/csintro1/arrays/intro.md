@@ -15,7 +15,7 @@ In this activity, students will:
 * ``||array:add||`` and ``||array:remove||`` values from arrays
 * ``||math:random item from||``
 
-## TODO VIDEO
+## Coming Soon: VIDEO
 
 ## Concept: Creating Arrays
 

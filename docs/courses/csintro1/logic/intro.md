@@ -1,4 +1,4 @@
-# Logic Introduction -  if statement
+# Logic Introduction - if statement
 
 Logic in Computer Science is about building code to enforce a set of rules that determines how our program will run. In this section we will look at how performing a comparison can be used in code.
 
@@ -36,7 +36,7 @@ if (info.highScore() > 5) {
 }
 ```
 
-## TODO Video
+## Coming Soon: Video
 
 ## Concept: Comparison Operators
 
@@ -294,7 +294,7 @@ c a 8 a a c c c c a a f f f 8 a
 ```
 
 Notice how when the player is on their final life, the image of the sprite changes and the sprite say "Last shot".
-    
+
 ## Task #3: equal 
 
 1. Create a new project
@@ -397,8 +397,8 @@ Notice how when the player is on the left half of the screen, the game will fire
 3. Make it so that when the player presses the ``||controller:A||`` button, the score increases by 1
 4. In this event, if the player's score is above 10, make the sprite congratulate the player on their high score
 5. In the same event, if the player's score is an even number, change the background to a random color
-6. **Challenge:** Add projectiles that fire from the sprite when the score is increased to a value greater than 5
-7. **Challenge:** If the score reaches 20, change the sprites image
+6. **Challenge:** add projectiles that fire from the sprite when the score is increased to a value greater than 5
+7. **Challenge:** if the score reaches 20, change the sprites image
 
 ### ~hint
 

@@ -19,7 +19,7 @@ To add the corgio extension to your project, open the extensions tab and search 
 
 After adding corgio to your project, a new tab titled ``||corgio:Corgi||`` will appear in the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgi.
 
-## TODO VIDEO
+## Coming Soon: VIDEO
 
 ## Student Task #1: Making your first corgio
 

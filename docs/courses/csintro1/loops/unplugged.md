@@ -1,3 +1,5 @@
+# Unplugged: Circle a Chair
+
 In this activity, you will give someone specific instructions to do a simple action.
 
 

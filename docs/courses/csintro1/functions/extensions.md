@@ -173,7 +173,7 @@ projectile = sprites.createProjectile(img`
 5. Set the projectile to have a random ``||sprites:y||`` position between 0 and ``||scene:screen height||``, and ``||sprites:set projectile ghost on||``
 6. Share the game and load it into another project (name the project "use starryNight")
 7. In your new project ("use starryNight")
-    * add a new ``||scene:background color||``  
+    * add a new ``||scene:background color||``
     * Add a ``||info:countdown||`` block so the game will eventually end
 7. **Challenge:** Create and add code to "use starryNight" so that a second type of projectile that will spawn a meteor every that moves across the screen
     * Save the updated "starryNight" code and get a share link.

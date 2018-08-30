@@ -24,7 +24,6 @@ https://youtu.be/sMFHdR6KzPo
 
 [Alternative Video Location](https://aka.ms/40544a-ifelse-overview)
 
-
 ## Concept: **if** Statement
 
 We have seen in the previous lesson ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. 
@@ -37,10 +36,9 @@ if (info.life() > 2) {
 
 ## Concept: **else** Statement
 
-When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||``  statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
+When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||`` statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
 
 To use an ``||logic:else||`` click on the plus sign of an existing ``||logic:if||`` block.
-
 
 ```block
 if (info.highScore() > 5) {
@@ -63,10 +61,9 @@ We can compare the score with 3 possible results.
  
 First test if the score is greater than 100 and if not run a second comparison to see if score is greater than 50.
 
-  * if score greater than 100 "you are an expert"
-  * or else if greater than 50 "you are intermediate"
-  * or else, "you are a beginner"
- 
+>* if score greater than 100 "you are an expert"
+>* or else if greater than 50 "you are intermediate"
+>* or else, "you are a beginner"
 
 ```block
 if (info.score() > 100) {
@@ -91,7 +88,6 @@ https://youtu.be/FuABS3PVnAM
 [Alternative Video Location](https://aka.ms/40544a-ifelse)
 
 ### Example 1a: random alternating message
-
 
 https://makecode.com/_HXMRAzYY4YkU
 
@@ -195,7 +191,6 @@ info.startCountdown(20)
 generate()
 ```
 
-
 ### Example 1c: ``|logic:else|`` for random alternating message
 
 https://makecode.com/_FDoAgwhKdh1X
@@ -250,8 +245,6 @@ info.startCountdown(20)
 generate()
 ```
 
-
-
 ## Student Task 1a: ``|logic:else|`` for check if correct button is pressed
 
 https://youtu.be/zW7JyNiJeKI
@@ -259,7 +252,6 @@ https://youtu.be/zW7JyNiJeKI
 [Alternative Video Location](https://aka.ms/40544a-ifelse-task)
 
 Now that we have the basic functionality of our game, let’s make it so that the player loses points when they press the wrong button.
-
 
 1. Start with the code 1c above 
 2. Add else ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
@@ -294,7 +286,6 @@ By clicking the plus sign of a game over block, you can let the game know whethe
 This will change the dialog shown on the game over screen. 
 
 ### ~
-
 
 5. Challenge: Make the sprite have a shake or bump effect each time it has a say so can see when letter updates even when it is the same as the previous time.
 
