@@ -469,8 +469,18 @@ game.onUpdate(function () {
 
 ## What did we learn? 
 
-1. Describe how a SpriteKind label is used to detect overlap
-2. 2 or more sprites can have the same SpriteKind, explain how to reference only a sprite that was involved in the overlap.
+1. Describe how a ``||sprites:Kind||`` is used to detect overlap.
+2. Suppose you have 2 or more sprites that have the same ``||sprites:Kind||``, and one of them triggers an overlap event. Explain how you can reference the sprite that was involved in the overlap event, rather than one of the other sprites of that ``||sprites:Kind||``.
+
+
+### ~hint
+
+### Possible Solutions:
+
+1. The ``||sprites:Kind||`` allows us to distinguish our sprites. We can categorize them and create events for when only specific sprites overlap (e.g. Player and Enemy, Player and Coin, Enemy and Fireball, etc.)
+2. The overlap event will create two variables that specify the sprites involved in the overlap. By using those variables instead of the ones created earlier, you can specify the sprites that are involved in the overlap
+
+### ~
 
 ## Rubrics
 

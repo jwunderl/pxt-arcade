@@ -57,9 +57,9 @@ Produce a total at the end of each step and use the total in the next step until
 
 Example: first 4 steps
 
->1. `m` &nbsp; *(`m` = month)*
->2. `7m`
->3. `7m - 1`
->4. `(7m - 1)13 = 91m - 13`
+>1. `7`
+>2. `7m` &nbsp; *(`m` = month)*
+>3. `7m - 1`  
+>4. `(7m - 1)13 = 91m - 13` 
 
 ### ~

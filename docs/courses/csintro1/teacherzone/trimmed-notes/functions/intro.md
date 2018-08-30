@@ -119,6 +119,21 @@ princess = sprites.create(sprites.castle.princessFront0, SpriteKind.Princess)
 princess.setPosition(50, 50)
 ```
 
+## What did we learn?
+
+1. Describe how the use of functions in code can help make programming easier.
+2. Does putting code into separate functions always make sense? Would it be more or less clear if we took the code from example #2, and made a function that calls the other three, so that our ``||loops:on start||`` block only had a single block inside of it?
+
+
+### ~hint
+
+### Possible Solutions
+
+1. Using functions allows us to make our code cleaner by clearly seperating out sections of code
+2. It usually doesn't make sense to have one block in a function. We want to keep all code that completes a step of the same task to be together. This way we don't have to look around to see each step of what is going on 
+
+###
+
 ## Rubrics
 
 ### task rubric

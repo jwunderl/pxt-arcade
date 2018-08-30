@@ -64,6 +64,15 @@ Use **X** and/or **Y** in your answers
 1. Describe how coordinates change when moving up versus moving down
 2. Describe how coordinates change when moving right versus moving left
 
+### ~hint
+
+### Solutions:
+
+1. The **Y** value changes when moving up and down. It decreases when going up and increases when going down.
+1. The **X** value changes when moving left and right. It decreases when going left and increases when going right.
+
+###
+
 ### Map Game Screen
 
 ### Record Results

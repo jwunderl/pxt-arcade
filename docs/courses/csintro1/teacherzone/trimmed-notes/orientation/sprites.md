@@ -140,6 +140,7 @@ Note: JavaScript color is using Hexadecimal (base 16).
 Hexadecimal is `0 to 9` for zero to nine, and `a, b, c, d, e, f` for ten through fifteen. 
 
 * **Project consideration** have students research "Hexadecimal" and represent Decimal numbers as Hexadecimal.
+
 Decimal = Hexadecimal:
   * 10 = a
   * 16 = 10
@@ -152,23 +153,27 @@ Decimal = Hexadecimal:
 *
 
 | color name | editor color index | JavaScript |
-|-------------|--------------------|------------|
-| Transparent | 0                  | .          |
-| White       | 1                  | 1          |
-| Red         | 2                  | 2          |
-| Pink        | 3                  | 3          |
-| Orange      | 4                  | 4          |
-| Yellow      | 5                  | 5          |
-| Teal        | 6                  | 6          |
-| Green       | 7                  | 7          |
-| Blue        | 8                  | 8          |
-| Light Blue  | 9                  | 9          |
-| Magenta    | 10                 | a         |
-| Grey        | 11                 | b         |
-| Grey-Purple | 12                 | c         |
-| Tan         | 13                 | d         |
-| Brown       | 14                 | e         |
-| Black       | 15                 | f         |
+|-------------|-------------------|------------|
+| Transparent | 0                 | .          |
+| White       | 1                 | 1          |
+| Red         | 2                 | 2          |
+| Pink        | 3                 | 3          |
+| Orange      | 4                 | 4          |
+| Yellow      | 5                 | 5          |
+| Teal        | 6                 | 6          |
+| Green       | 7                 | 7          |
+| Blue        | 8                 | 8          |
+| Light Blue  | 9                 | 9          |
+| Magenta     | 10                | a          |
+| Grey        | 11                | b          |
+| Grey-Purple | 12                | c          |
+| Tan         | 13                | d          |
+| Brown       | 12                | e          |
+| Black       | 15                | f          |
+
+
+2. `0` translates into into `.` Student hypotheses will vary.
+3. You can only see 14 colors because 1 color is transparent and another color is the same as the background color
 
 ### ~
 

@@ -31,10 +31,19 @@ Common Browser Saving behavior:
 ## Student Task 4: Sharing your game
 
 ## What did we learn?
-1. What did the ``||sprite:say||`` block do when you added it to the game in task 2? 
+1. What did the ``||sprites:say||`` block do when you added it to the game in task 2? 
 2. Compare and contrast the two different ways that we saved our game; what are the benefits of each choice? Which do you think you would use if you wanted to email a game you made to your friend, and why would you make that decision?
 3. Include the image created in task 2
 4. Include the link created in task 4 here
+
+### ~hint
+
+### Possible Solutions:
+
+1. It creates a bubble above the sprite that shows the given text.
+2. Using a link allows you to share it easily, but links can be a pain to save. So saving it as a image allows you to easily keep track of many games that you have created. If you were to email a game to a friend, it would probably be easiest to share the link so that your friend can just click the link instead of downloading and then uploading the image
+
+### ~
 
 ## Rubrics
 
@@ -55,6 +64,6 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | Student answered #1 & #2  | Clear explanation of using ``||sprite:say||`` | clear explanation of email game choice (file or link) |  Explanations use an creative example or analogy |
+| Explanation | Student answered #1 & #2  | Clear explanation of using ``||sprites:say||`` | clear explanation of email game choice (file or link) |  Explanations use an creative example or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 

@@ -270,12 +270,22 @@ sandals.x = 125
 sandals.y = 66
 ```
 
-## Challenge
 
 ## What did we learn?
 
-1. Describe and Explain observations of sprite images in the JavaScript code. What do periods (**.**) represent?
-2. What other blocks are available in the Sprite Blocks menu? List several blocks not used in collage and **give a hypothesis** on what one (or more) of these blocks does.
+1. How could the use of multiple sprites in a single game enhance your ability to convey a story in your games?
+2. What other blocks are available in the ``||sprites:Sprites||`` menu? List several blocks not used in collage and make a hypothesis of what one (or more) of these blocks does.
+3. **Challenge:** switch to the JavaScript version of your collage, and take a look at the images you drew in the task above. What do periods (**.**) represent in the images?
+
+### ~hint
+
+### Possible solutions:
+    
+1. Multiple sprites allows you to convey multiple entities. Such as multiple characters, an environment, etc.
+2. Answers will vary by student
+3. The period represents a transparent pixel in the sprite
+
+### ~
 
 ## Rubrics
 

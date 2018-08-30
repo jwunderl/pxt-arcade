@@ -136,6 +136,16 @@ sprites.createEmptySprite(SpriteKind.Bird)
 1. Describe how a ``||sprites:Kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block.
 2. Explain what the ``||sprites:on created||`` block does for you.
 
+
+### ~hint
+
+### Possible Solutions:
+
+1. The ``||sprites:Kind||`` label specifies what type of sprite is being created
+2. The ``||sprites:on created||`` contains the code that will run when a sprite of the kind specified is created
+
+###
+
 ### ~hint
 
 **Additional Projects**
