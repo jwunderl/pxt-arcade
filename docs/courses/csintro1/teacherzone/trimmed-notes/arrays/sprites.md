@@ -118,7 +118,7 @@ c a 8 a a c c c c a a f f f 8 a
 ```
 
 
-## Student Task #2: Bigger and Better Fireworks
+### Student Task #2: Bigger and Better Fireworks
 ```ts
 enum SpriteKind {
     Player,
@@ -154,7 +154,7 @@ for (let i = 0; i < 100; i++) {
 ```
 
 
-## Student Task #3: Tracking with all sprites of a kind
+### Student Task #3: Tracking with all sprites of a kind
 ```ts
 enum SpriteKind {
     Player,
