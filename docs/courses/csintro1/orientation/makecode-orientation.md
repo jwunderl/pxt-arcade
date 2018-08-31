@@ -38,7 +38,7 @@ https://youtu.be/iEQa-Wd3MRs
 2. Press the "New Project" button 
 3. The screen will start with two blocks by default - we will focus on the ``||loops:on start||`` block for now, so drag the ``||game:on game update||`` block to the side bar to delete it as shown below
 ![Deleting Onstart](/static/courses/csintro1/orientation/delete-on-start.gif)
-4. Drag out a new sprite and have it ``||sprite:say||`` something as shown below
+4. Drag out a new sprite and have it ``||sprites:say||`` something as shown below
 ![Sprite Say](/static/courses/csintro1/orientation/sprite-say.gif)
 5. At the bottom of the screen, select a name to save this game as (e.g. - "first game"), and click "Download" to download it
 ![Downloading the game](/static/courses/csintro1/orientation/download.gif)
@@ -66,7 +66,7 @@ There is one other common way that we will keep track of our games: by making li
 
 ## What did we learn?
 
-1. What did the ``||sprite:say||`` block do when you added it to the game in task #2? 
+1. What did the ``||sprites:say||`` block do when you added it to the game in task #2? 
 2. Compare and contrast the two different ways that we saved our game; what are the benefits of each choice? Which do you think you would use if you wanted to email a game you made to your friend, and why would you make that decision?
 3. Include the image created in task #2.
 4. Include the link created in task #4.

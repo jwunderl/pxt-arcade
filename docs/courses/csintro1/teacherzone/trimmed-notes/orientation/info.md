@@ -129,6 +129,15 @@ What would you do if you needed to keep track of the number of coins the player 
 
 ### ~
 
+### ~hint
+
+### Possible Solutions:
+
+1. The value of it is shown on the screen by default. There are built in events for when they reach certain values
+2. May have to add in events to prevent the game from ending when the countdown reaches 0 or lives run out
+
+### ~
+
 ### Task rubrics
 
 | points | 5 | 7 | 9 | 10 |

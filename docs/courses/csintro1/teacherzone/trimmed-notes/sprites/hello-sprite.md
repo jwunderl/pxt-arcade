@@ -16,12 +16,76 @@ In this lesson students use:
 1. Identify and show the JavaScript code that aligns with which each block. 
 2. Identify any JavaScript code that doesn't seem to have any blocks. Hypothesize and Explain. 
 
+### ~hint
+
+### Solutions
+1.
+>```block
+let msg: string = "Hello World!"
+```
+>>```typescript
+let msg: string = "Hello World!"
+```
+
+>```block
+enum SpriteKind {
+    Player
+}
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+. . . . . . . . 
+. . . . . . . . 
+6 6 6 6 6 6 6 6 
+6 f 6 6 6 6 f 6 
+6 6 6 a a 6 6 6 
+6 6 6 6 6 6 6 6 
+6 6 b b b b 6 6 
+6 6 6 6 6 6 6 6 
+`, SpriteKind.Player)
+```
+
+>>```typescript
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+. . . . . . . . 
+. . . . . . . . 
+6 6 6 6 6 6 6 6 
+6 f 6 6 6 6 f 6 
+6 6 6 a a 6 6 6 
+6 6 6 6 6 6 6 6 
+6 6 b b b b 6 6 
+6 6 6 6 6 6 6 6 
+`, SpriteKind.Player)
+```
+
+>```block
+scene.setBackgroundColor(4)
+```
+
+>>```typescript
+scene.setBackgroundColor(4)
+```
+
+>``||sprites:say||``
+
+>>```typescript
+mySprite.say(msg)
+```
+
+2. ```typescript
+enum SpriteKind {
+    Player
+}
+```
+This code sets up all the different ``||sprites:kind||`` of sprites. We specify that our sprite is of ``||sprites:kind||`` player, but we need to specify which ``||sprites:kinds||`` are allowed
+
+### ~
 
 ### Example: console.log()  
 
 ## Task: Add console.log( ) to "sprite hello"
 
-```blocks
+```typescript
 // https://makecode.com/_Wr8PUXPeVUT1
 
 enum SpriteKind {
@@ -221,6 +285,19 @@ bird.say("Tweet", 1000)
 
 3. Discuss the different ways we can display a message in this exercise. List and example.
 4. Come up with a hypothesis and explain why `console.log()` has a large limit on the length of text. Explain.
+
+### ~hint
+
+### Possible Solutions:
+3.
+>``||sprites:say||``
+>```typescript
+console.log("Hello World")
+```
+
+4. Answers may vary. The console doesn't have to display the text under the as big as the ``||sprites:say||`` command does
+
+### ~
 
 ## Rubrics
 

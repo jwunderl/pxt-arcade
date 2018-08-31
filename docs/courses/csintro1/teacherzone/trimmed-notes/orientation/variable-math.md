@@ -86,11 +86,21 @@ https://makecode.com/_dm7i6WUHdKsh
 
 ## What did we learn? 
 
-1. In MakeCode JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 30.
+1. In MakeCode JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 16.
 2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
 3. Research and describe 2 other Math Operators using the math menu in MakeCode (hover over values for more information) and/or use other JavaScript resources.
 
 ## Rubrics
+
+### ~hint
+
+### Possible Solutions:
+
+1. The answer is 11 because JavaScript goes based off of the order of operations (PEMDAS) so it completes the multiplication operation first, which turns the expression into 5 + 6 which evaluates to 11
+2. JavaScript will use the order of operations while standard calculators, not graphing or scientific, will calculate one operation at a time from left to right
+3. Students answers will vary
+
+###
 
 ### Code Tasks
 
@@ -105,7 +115,7 @@ https://makecode.com/_dm7i6WUHdKsh
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanation | Answered at least 2 questions fully, or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations | Explanations are outstanding in detail and/or use creative examples |
-### Score = \_\_\_\_\_\_ /10 
+### Score = \_\_\_\_\_\_ /10
 
 
 
@@ -223,3 +233,38 @@ b = a + 5
 c = a + (2 * b)
 game.splash("" + c)
 ```
+
+## Variables Summary
+
+## What did we learn? 
+
+1. In MakeCode JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 16.
+2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
+3. Research and describe 2 other Math Operators using the math menu in MakeCode (hover over values for more information) and/or use other JavaScript resources.
+
+## Rubrics
+
+### ~hint
+
+### Possible Solutions:
+
+1. The answer is 11 because JavaScript goes based off of the order of operations (PEMDAS) so it completes the multiplication operation first, which turns the expression into 5 + 6 which evaluates to 11
+2. JavaScript will use the order of operations while standard calculators, not graphing or scientific, will calculate one operation at a time from left to right
+3. Students answers will vary
+
+###
+
+### Code Tasks
+
+| points | 5 | 7 | 9 | 10 |
+|:---:|:---:|:---:|:---:|:---:|
+| Variable Math Tasks | Completed at least 4 coding tasks | Completed all 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn Questions
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | Answered at least 2 questions fully, or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations | Explanations are outstanding in detail and/or use creative examples |
+### Score = \_\_\_\_\_\_ /10 

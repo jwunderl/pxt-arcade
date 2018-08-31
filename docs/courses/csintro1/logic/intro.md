@@ -17,7 +17,7 @@ We perform comparison tests with ``||logic:if||``
 
 We have already seen similar logic in blocks such as ``||sprites: on overlap||`` where there were statements such as: **if** a type player overlaps with type coin then destroy coin and increase score.
 
-``||logic:if||`` statements allow us to a programs behavior based on the state of the game.
+``||logic:if||`` statements allow us to program a behavior based on the state of the game.
 
 ## Concept: **if** Statement
 
@@ -36,8 +36,6 @@ if (info.highScore() > 5) {
 }
 ```
 
-## Coming Soon: Video
-
 ## Concept: Comparison Operators
 
 When we make comparisons, we have two numbers, in a specific order, and what is know as a comparison operator. A comparison operator allows us to specify what type of comparison we are doing. Some basic ones are:
@@ -46,6 +44,10 @@ When we make comparisons, we have two numbers, in a specific order, and what is 
 * `=` Equal to: Determines whether the two values given represent the same quantity
 
 ### Example #1: less than 
+
+https://youtu.be/s7sFOn7xXC0 
+
+[Alternative Video Location](https://aka.ms/40544a-ifless)
 
 1. Play the game linked above
 2. Review the code that uses comparisons
@@ -116,6 +118,10 @@ c a 8 a a c c c c a a f f f 8 a
 
 Notice that when the game creates a new enemy, it checks to see if the player's score is less than a certain value. In the case that it is, it means that the player has just started playing the game. Because of this, the game makes it easier for the player by decreases the speed in which the projectiles are hurling at the player. Kind of like a tutorial phase.
 
+https://youtu.be/VYmc4szD5mU 
+
+[Alternative Video Location](https://aka.ms/40544a-ifless-task)
+
 ## Task #1a: less than
 
 1. Create a new project
@@ -135,6 +141,10 @@ The player is on the left half of the screen if their ``||sprites:x position||``
 ### ~
 
 ### Example #2: greater than
+
+https://youtu.be/EhRPChFc1Us 
+
+[Alternative Video Location](https://aka.ms/40544a-ifgreater)
 
 1. Play the game linked above
 2. Review the code that uses comparisons
@@ -210,6 +220,10 @@ Notice how when the player collects a cherry, the game will check if they have c
 4. Make it so that when the player presses the ``||controller:A||``button, if the leader's ``||sprites:x position||`` is greater than the follower's, then make the follower change their ``||sprites:x position||`` by 10
 
 ### Example #3: equal
+
+https://youtu.be/BDCHtIFuEhw 
+
+[Alternative Video Location](https://aka.ms/40544a-ifequal)
 
 1. Play the game linked above
 2. Review the code that uses comparisons
@@ -303,22 +317,28 @@ Notice how when the player is on their final life, the image of the sprite chang
 
 ### Example #4: using multiple if comparisons 
 
+
+[Alternative Video Location]
+
 1. Play the game linked above
 2. Review the code that uses comparisons
-3. Look at how it uses ``||logic:if||`` logic and a equal to comparison and a less than comparison to modify the game
+3. Look at how it uses ``||logic:if||`` logic and multiple comparisons to modify the game
 
-https://makecode.com/_i3YXDcMhj3m3
+https://makecode.com/_FhqaRpe6Riau
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let projectile: Sprite = null
 let mySprite: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeLifeBy(-1)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (mySprite.x < scene.screenWidth() / 2) {
+        info.changeScoreBy(1)
+    }
+    if (mySprite.y < scene.screenHeight() / 2) {
+        info.changeLifeBy(-1)
+    }
 })
 mySprite = sprites.create(img`
 . . . . . . 5 . 5 . . . . . . . 
@@ -339,56 +359,10 @@ mySprite = sprites.create(img`
 . . . . . f f . . f f . . . . . 
 `, SpriteKind.Player)
 controller.controlSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(5)
-game.onUpdateInterval(1000, function () {
-    if (mySprite.x < scene.screenWidth() / 2) {
-        info.changeScoreBy(1)
-        for (let i = 0; i < 4; i++) {
-            projectile = sprites.createProjectile(img`
-4 4 4 . . 4 4 4 4 4 . . . . . . 
-4 5 5 4 4 5 5 5 5 5 4 4 . . . . 
-b 4 5 5 1 5 1 1 1 5 5 5 4 . . . 
-. b 5 5 5 5 1 1 5 5 1 1 5 4 . . 
-. b d 5 5 5 5 5 5 5 5 1 1 5 4 . 
-b 4 5 5 5 5 5 5 5 5 5 5 1 5 4 . 
-c d 5 5 5 5 5 5 5 5 5 5 5 5 5 4 
-c d 4 5 5 5 5 5 5 5 5 5 5 1 5 4 
-c 4 5 5 5 d 5 5 5 5 5 5 5 5 5 4 
-c 4 d 5 4 5 d 5 5 5 5 5 5 5 5 4 
-. c 4 5 5 5 5 d d d 5 5 5 5 5 b 
-. c 4 d 5 4 5 d 4 4 d 5 5 5 4 c 
-. . c 4 4 d 4 4 4 4 4 d d 5 d c 
-. . . c 4 4 4 4 4 4 4 4 5 5 5 4 
-. . . . c c b 4 4 4 b b 4 5 4 4 
-. . . . . . c c c c c c b b 4 . 
-`, -100, Math.randomRange(-100, 100), SpriteKind.Enemy)
-            if (info.score() % 5 == 0) {
-                projectile.setImage(img`
-4 4 4 . . 4 4 4 4 4 . . . . . . 
-4 2 2 4 4 2 2 2 2 2 4 4 . . . . 
-b 4 2 2 1 2 1 1 1 2 2 2 4 . . . 
-. b 2 2 2 2 1 1 2 2 1 1 2 4 . . 
-. b d 2 2 2 2 2 2 2 2 1 1 2 4 . 
-b 4 2 2 2 2 2 2 2 2 2 2 1 2 4 . 
-c d 2 2 2 2 2 2 2 2 2 2 2 2 2 4 
-c d 4 2 2 2 2 2 2 2 2 2 2 1 2 4 
-c 4 2 2 2 d 2 2 2 2 2 2 2 2 2 4 
-c 4 d 2 4 2 d 2 2 2 2 2 2 2 2 4 
-. c 4 2 2 2 2 d d d 2 2 2 2 2 b 
-. c 4 d 2 4 2 d 4 4 d 2 2 2 4 c 
-. . c 4 4 d 4 4 4 4 4 d d 2 d c 
-. . . c 4 4 4 4 4 4 4 4 2 2 2 4 
-. . . . c c b 4 4 4 b b 4 2 4 4 
-. . . . . . c c c c c c b b 4 . 
-`)
-            }
-        }
-    }
-})
 ```
 
-Notice how when the player is on the left half of the screen, the game will fire lemons at the player. The game also commends the player's bravery and increases their score by 1. Every five rounds of lemons, the lemons fired will be red.
+Notice how when the player presses the ``||controller:A||`` button, if they are on the left half of the screen, the score will increase by 1 and if they are on the top half of the screen, their lives will decrease by 1.
 
 ## Task #4: equal and greater than test
 

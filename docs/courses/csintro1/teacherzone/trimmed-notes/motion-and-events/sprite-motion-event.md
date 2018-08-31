@@ -44,9 +44,20 @@ https://makecode.com/_Rhd3AxLzc71c
 
 ## What did we learn? 
 
-1. Describe how an events can be used to run code using an example.
+1. Describe how events can be used to run code using an example.
 2. Describe the difference between changing position and changing velocity.
-3. In using flip, the sprite is **not** flipped. What is flipped? Explain how you know.
+3. **Challenge** In using flip, the sprite is **not** flipped. What is flipped? Explain how you know.
+
+### ~hint
+
+### Possible Solutions:
+
+1. An event will run code when that event happens. Example, the code placed inside the ``||controller:on A button press||`` block will run when the ``||controller:A||`` button is pressed
+2. Changing the position will change the location of the sprite just once. Changing the velocity will cause the sprite to be constantly changing its location
+3. **Challenge** The image is flipped. We can change the sprite's image to something else and that image will not appear to be flipped
+
+###
+
 
 ## Rubrics
 
@@ -290,5 +301,4 @@ game.onUpdate(function () {
     mySprite.x += controller.dx()
     mySprite.y += controller.dy()
 })
-
 ```

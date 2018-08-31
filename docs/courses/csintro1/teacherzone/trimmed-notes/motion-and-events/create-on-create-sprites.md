@@ -175,6 +175,25 @@ sprites.createEmptySprite(SpriteKind.Bird)
 
 ### Additional Projects
 
+## What did we learn? 
+1. Describe how a ``||sprites:Kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block.
+2. Explain what the ``||sprites:on created||`` block does for you.
+
+
+### ~hint
+
+### Possible Solutions:
+
+1. The ``||sprites:Kind||`` label specifies what type of sprite is being created
+2. The ``||sprites:on created||`` contains the code that will run when a sprite of the kind specified is created
+
+###
+
+### ~hint
+
+**Additional Projects**
+This is an opportunity to assign a project to students to create a game that will generate lots of sprites in random locations. Students can use a ``||game:on game update||`` block with ``||Sprite:create empty sprite||`` in a game with using ``||info:countdown||``. Students could start with a score of 100 and subtract for every overlap. Encourage students to be creative. Note that the way to cheat is to go off screen so ask students to solve that problem (by keeping onscreen).
+
 ```ts
 enum SpriteKind {
     Player,

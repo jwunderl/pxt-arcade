@@ -85,8 +85,18 @@ https://makecode.com/_iEHdaHKjmDcU
 
 ## What did we learn?
 
-1. Describe how a SpriteKind can improve code (e.g - makes programming easier, more powerful, more efficient...). 
-2. Explain why in creating a "bump" effect negative X and Y velocities are used to change the X and Y positions.
+1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...). 
+2. Explain why in creating a "bump" effect negative `X` and `Y` velocities are used to change the `X` and `Y` positions. 
+
+### ~hint
+
+### Possible Solutions:
+
+1. It creates more organization of what is going on
+2. We want the sprite to move continually to a position and then continually move back. If we just change the position, the "bump" will look abrupt, almost as if the sprite is teleporting
+
+### ~
+
 
 ## Rubrics
 
@@ -104,7 +114,7 @@ https://makecode.com/_iEHdaHKjmDcU
 |:---:|:---:|:---:|:---:|:---:|
 | Explanation | Answers for both questions | Explanations address all questions fully | All answers have clear explanations with at least 2 examples for question 1 | Used an exceptional explanation (such as a diagram) in question 2 |
 
-### Score = \_\_\_\_\_\_ /10 
+### Score = \_\_\_\_\_\_ /10  
 
 
 
