@@ -1,7 +1,7 @@
 # Functions
 
-* [Intro to TypeScript Functions](/courses/csintro2/functions/intro)
-* [Return Values](/courses/csintro2/functions/returns)
-* [Parameters](/courses/csintro2/functions/parameters)
-* [Optional Parameters](/courses/csintro2/functions/optional)
-* [Namespaces](/courses/csintro2/functions/namespaces)
+* [Intro to TypeScript Functions](/courses/javascript/functions/intro)
+* [Return Values](/courses/javascript/functions/returns)
+* [Parameters](/courses/javascript/functions/parameters)
+* [Optional Parameters](/courses/javascript/functions/optional)
+* [Namespaces](/courses/javascript/functions/namespaces)

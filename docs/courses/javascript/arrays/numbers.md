@@ -1,10 +1,10 @@
 # Arrays of Numbers
 
-At the end of the prior course, arrays were introduced as a way in which to store multiple related values. In TypeScript, they are even easier to create and interact with, allowing for them to be used more regularly in code.
+At the end of the prior course, arrays were introduced as a way in which to store multiple related values. In JavaScript, they are even easier to create and interact with, allowing for them to be used more regularly in code.
 
 ## Structure of Arrays
 
-In typescript, arrays are created using square brackets (`[` and `]`) - an array of numbers can be initialized as follows:
+In JavaScript, arrays are created using square brackets (`[` and `]`) - an array of numbers can be initialized as follows:
 
 ```typescript
 let arr: number[] = [];

@@ -6,7 +6,7 @@ because they are very important, there are multiple options available when writi
 
 ## Structure of Button Press Events
 
-The first button press event to discuss is the event in which any button is pressed. In typescript, this looks like the following
+The first button press event to discuss is the event in which any button is pressed. In JavaScript, this looks like the following
 
 ```typescript
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -14,7 +14,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 });
 ```
 
-![Auto complete for button events](/static/courses/csintro2/events/controller-auto-complete.gif)
+![Auto complete for button events](/static/courses/javascript/events/controller-auto-complete.gif)
 
 Description of parts:
 
