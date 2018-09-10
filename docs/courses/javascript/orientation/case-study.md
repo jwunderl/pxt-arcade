@@ -9,7 +9,7 @@ enum SpriteKind {
     Laser
 }
 
-namespace Asteroids {
+namespace asteroids {
     let asteroidImages: Image[] = [
         sprites.space.spaceAsteroid0,
         sprites.space.spaceAsteroid1,
@@ -43,7 +43,7 @@ namespace Asteroids {
     }
 }
 
-namespace PowerUps {
+namespace powerups {
     export enum PowerUpType {
         Health,
         Score,
@@ -100,7 +100,7 @@ namespace PowerUps {
 
     // make them add this event
     sprites.onDestroyed(SpriteKind.PowerUp, function (sprite: Sprite) {
-        Ship.player.say("missed it :(", 500);
+        ship.player.say("missed it :(", 500);
     })
 
     // eventually have them recognize this is the same as Asteroids.setPosition
@@ -124,7 +124,7 @@ namespace PowerUps {
     })
 }
 
-namespace Ship {
+namespace ship {
     let playerImages: Image[] = [
         img`
             8 8 . . . . . .
@@ -192,7 +192,7 @@ namespace Ship {
     })
 }
 
-namespace OverLaps {
+namespace overlapevents {
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-1); // rm this and make them add it
         info.changeScoreBy(-1); // rm this and make them add it
@@ -205,18 +205,18 @@ namespace OverLaps {
     })
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
-        let powerUp: number = PowerUps.getType(otherSprite);
+        let powerUp: number = powerups.getType(otherSprite);
         otherSprite.destroy();
         // convert to storing a msg, then calling Ship.player.say in one place / less redundant
-        if (powerUp === PowerUps.PowerUpType.Health) {
+        if (powerUp === powerups.PowerUpType.Health) {
             info.changeLifeBy(1);
-            Ship.player.say("health!", 250);
-        } else if (powerUp === PowerUps.PowerUpType.Score) {
+            ship.player.say("health!", 250);
+        } else if (powerUp === powerups.PowerUpType.Score) {
             info.changeScoreBy(15);
-            Ship.player.say("score!", 250);
-        } else if (powerUp === PowerUps.PowerUpType.Attack) {
-            Ship.boostedLasers += 5;
-            Ship.player.say("laser boost!", 250);
+            ship.player.say("score!", 250);
+        } else if (powerUp === powerups.PowerUpType.Attack) {
+            ship.boostedLasers += 5;
+            ship.player.say("laser boost!", 250);
         }
     })
 }
