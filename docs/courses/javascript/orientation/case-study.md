@@ -6,7 +6,8 @@ enum SpriteKind {
     Enemy,
     PowerUp,
     Asteroid,
-    Laser
+    Laser,
+    Star
 }
 
 namespace asteroids {
@@ -33,13 +34,62 @@ namespace asteroids {
     })
 
     function setPosition(asteroid: Sprite): void {
-        asteroid.x = Math.randomRange(10, screen.height - 10); // student fill in these
+        asteroid.x = Math.randomRange(10, screen.width - 10); // student fill in these
         asteroid.y = 0;
     }
 
     function setMotion(asteroid: Sprite) {
         asteroid.vx = Math.randomRange(-8, 8);
         asteroid.vy = Math.randomRange(35, 20);
+    }
+}
+
+namespace stars {
+    let starImages: Image[] = [
+        img`
+        1 1
+        `,
+        img`
+        1
+        `,
+        img`
+        3 . . 1
+        `,
+        img`
+        3 .
+        . .
+        . .
+        . 1`
+    ]
+
+    sprites.onCreated(SpriteKind.Star, function (sprite: Sprite) {
+        sprite.setImage(Math.pickRandom(starImages));
+        setPosition(sprite);
+        setMotion(sprite);
+        sprite.setFlag(SpriteFlag.Ghost, true);
+    })
+
+    // eventually have them recognize this is the same as Asteroids.setPosition
+    function setPosition(star: Sprite): void {
+        star.x = Math.randomRange(0, screen.width); // student fill in these
+        star.y = 0;
+    }
+
+    function setMotion(star: Sprite): void {
+        star.vy = 20;
+    }
+
+    game.onUpdateInterval(50, function () {
+        if (Math.percentChance(33)) {
+            sprites.createEmptySprite(SpriteKind.Star);
+        }
+    })
+
+    for (let row = 0; row < screen.height / 10; row++) {
+        sprites.createEmptySprite(SpriteKind.Star);
+    }
+    for (let star of sprites.allOfKind(SpriteKind.Star)) {
+        star.y = Math.randomRange(0, screen.height);
     }
 }
 
@@ -105,7 +155,7 @@ namespace powerups {
 
     // eventually have them recognize this is the same as Asteroids.setPosition
     function setPosition(powerUp: Sprite): void {
-        powerUp.x = Math.randomRange(10, screen.height - 10); // student fill in these
+        powerUp.x = Math.randomRange(10, screen.width - 10); // student fill in these
         powerUp.y = 0;
     }
 
@@ -158,8 +208,8 @@ namespace ship {
     info.setScore(0);
 
     let laserImage: Image = img`
-        1
-        1
+        4
+        4
     `;
 
     controller.controlSprite(player, 80, 30);
