@@ -108,6 +108,10 @@ namespace powerups {
     }
     let powerUpImages: Image[] = [];
 
+    // Last task: make them add a new powerup
+    // * type: GhostMode
+    // * effect: turns 'ghost' on for ship for 1 second
+
     powerUpImages[powerups.PowerUpType.Health] = img`
         . . . 7 7 7 7 7 . . .
         . . 7 7 7 7 7 7 7 . .
@@ -183,9 +187,9 @@ namespace powerups {
     // Challenge: Trail for powerups
     game.onUpdate(function () {
         for (let powerUp of sprites.allOfKind(SpriteKind.PowerUp)) {
-            if (Math.percentChance(25)) {
+            if (Math.percentChance(60)) {
                 let trail: Sprite = sprites.createProjectile(img`1`, 0, 0, SpriteKind.PowerUpTrail, powerUp);
-                trail.lifespan = 300;
+                trail.lifespan = 300 + Math.randomRange(-150, 150);
                 trail.x += Math.randomRange(-5, 5);
                 trail.setFlag(SpriteFlag.Ghost, true);
                 trail.image.fill(Math.randomRange(1, 14));
@@ -400,4 +404,17 @@ namespace overlapevents {
 
 // Eventually / at end of functions, make them create a misc type namespace 
 // for helper functions / general game state elements
+namespace state {
+    info.onLifeZero(function () {
+        if (game.ask("Continue?")) {
+            info.changeScoreBy(-50);
+            info.changeLifeBy(1);
+            ship.player.setFlag(SpriteFlag.Ghost, true);
+            pause(350);
+            ship.player.setFlag(SpriteFlag.Ghost, false);
+        } else {
+            game.over();
+        }
+    })
+}
 ```
