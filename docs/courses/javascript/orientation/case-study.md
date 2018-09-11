@@ -69,6 +69,7 @@ namespace stars {
         setPosition(sprite);
         setMotion(sprite);
         sprite.setFlag(SpriteFlag.Ghost, true);
+        sprite.z = -1;  // have them set this to teach properties
     })
 
     // eventually have them recognize this is the same as Asteroids.setPosition
