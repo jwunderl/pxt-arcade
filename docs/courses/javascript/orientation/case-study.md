@@ -288,7 +288,14 @@ namespace ship {
     player.y = screen.height - 20;
 
     controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player); // make them create the laser
+        /** Progress bar **/
+        if (state.charge > 0) {
+            sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player); // make them create the laser
+            state.charge--;
+        }
+
+
+        // sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player); // make them create the laser
     })
 
     controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -417,5 +424,54 @@ namespace state {
             game.over();
         }
     })
+
+    /** Progress bar **/
+    export let maxCharge: number = 5;
+    export let charge: number = maxCharge;
+    let chargeBar: Sprite = sprites.create(img`
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+        f f f f f f f
+    `);
+    chargeBar.z = 50;
+    chargeBar.setFlag(SpriteFlag.Ghost, true);
+    chargeBar.right = scene.screenWidth() - 2;
+    chargeBar.bottom = scene.screenHeight() - 2;
+
+    game.onUpdateInterval(1000, function () {
+        charge = Math.min(charge + 1, maxCharge);
+    })
+
+    game.onUpdate(function () {
+        let bar: Image = chargeBar.image;
+        let startFilled = Math.floor(bar.height * charge / maxCharge);
+
+        bar.fill(7);
+        bar.fillRect(0, startFilled, bar.width, bar.height - startFilled, 2);
+    })
+
+    /** End Progress bar **/
 }
 ```
