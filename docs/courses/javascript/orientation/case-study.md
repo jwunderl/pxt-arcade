@@ -7,7 +7,8 @@ enum SpriteKind {
     PowerUp,
     Asteroid,
     Laser,
-    Star
+    Star,
+    EnemyLaser // they add this an 'enemy laser' Kind or something
 }
 
 namespace asteroids {
@@ -174,6 +175,48 @@ namespace powerups {
     })
 }
 
+// They make the enemies outside of any name space to start, then move them into a namespace
+// they make when they move up
+namespace enemy {
+    game.onUpdateInterval(2500, function () {
+        let enemy = sprites.create(img`
+            5 5 . . . . 5 5
+            7 7 7 7 7 7 7 7
+            . 9 9 7 7 9 9 .
+            . 7 7 7 7 7 7 .
+            . . . 9 9 . . .
+        `, SpriteKind.Enemy);
+        setPosition(enemy);
+        enemy.setFlag(SpriteFlag.AutoDestroy, true);
+        enemy.vy = 15;
+    })
+
+    // eventually have them recognize this is the same as Asteroids.setPosition
+    function setPosition(enemy: Sprite): void {
+        enemy.x = Math.randomRange(10, screen.width - 10); // student fill in these
+        enemy.y = 0;
+    }
+
+    game.onUpdate(function () {
+        for (let enemy of sprites.allOfKind(SpriteKind.Enemy)) {
+            let diff: number = enemy.x - ship.player.x;
+            if (diff < -2) {
+                enemy.vx = 8;
+            } else if (diff > 2) {
+                enemy.vx = -8;
+            } else {
+                enemy.vx = 0;
+                if (Math.percentChance(4)) {
+                    sprites.createProjectile(img`
+                        7
+                        7
+                        `, 0, 45, SpriteKind.EnemyLaser, enemy);
+                }
+            }
+        }
+    })
+}
+
 namespace ship {
     let playerImages: Image[] = [
         img`
@@ -196,13 +239,12 @@ namespace ship {
         `
     ];
 
-    export let boostedLasers: number = 0;
+    playerImages.push(playerImages[0].clone()); // guide through doing this
+    playerImages[2].flipX(); // guide through doing this
 
-    playerImages.push(playerImages[0].clone());
-    playerImages[2].flipX();
-
+    export let boostedLasers: number = 0; // they add this variable (handwave the export till namespaces)
     export let player: Sprite = sprites.create(playerImages[1], SpriteKind.Player);
-    player.setFlag(SpriteFlag.StayInScreen, true);
+    player.setFlag(SpriteFlag.StayInScreen, true); // using flags, make em do this
 
     info.setLife(3);
     info.setScore(0);
@@ -232,7 +274,7 @@ namespace ship {
     })
 
     game.onUpdate(function () {
-        if (player.vx < -1) {
+        if (player.vx < -1) { // arrays -> make them switch between the different images instead of having a constant forward facing one
             player.setImage(playerImages[0]);
         } else if (player.vx <= 1) {
             player.setImage(playerImages[1]);
@@ -269,5 +311,10 @@ namespace overlapevents {
             ship.player.say("laser boost!", 250);
         }
     })
+
+    // TODO make enemy related overlap events
 }
+
+// Eventually / at end of functions, make them create a misc type namespace 
+// for helper functions / general game state elements
 ```
