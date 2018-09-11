@@ -406,8 +406,9 @@ namespace overlapevents {
 // for helper functions / general game state elements
 namespace state {
     info.onLifeZero(function () {
-        if (game.ask("Continue?")) {
-            info.changeScoreBy(-50);
+        let deduction: number = Math.min(50, info.score());
+        if (game.ask("Continue?", "Cost: " + deduction + " points")) {
+            info.changeScoreBy(-deduction);
             info.setLife(1);
             ship.player.setFlag(SpriteFlag.Ghost, true);
             pause(350);
