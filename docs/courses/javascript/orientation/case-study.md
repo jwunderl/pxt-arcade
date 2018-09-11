@@ -49,19 +49,20 @@ namespace asteroids {
 namespace stars {
     let starImages: Image[] = [
         img`
-        1 1
+            1 1
         `,
         img`
-        1
+            1
         `,
         img`
-        3 . . 1
+            3 . . 1
         `,
         img`
-        3 .
-        . .
-        . .
-        . 1`
+            3 .
+            . .
+            . .
+            . 1
+        `
     ]
 
     sprites.onCreated(SpriteKind.Star, function (sprite: Sprite) {
@@ -105,44 +106,44 @@ namespace powerups {
     let powerUpImages: Image[] = [];
 
     powerUpImages[powerups.PowerUpType.Health] = img`
-            . . . 7 7 7 7 7 . . .
-            . . 7 7 7 7 7 7 7 . .
-            . 7 7 2 7 7 7 2 7 7 .
-            7 7 7 2 7 7 7 2 7 7 7
-            7 7 7 2 7 7 7 2 7 7 7
-            7 7 7 2 2 2 2 2 7 7 7
-            7 7 7 2 7 7 7 2 7 7 7
-            7 7 7 2 7 7 7 2 7 7 7
-            . 7 7 2 7 7 7 2 7 7 .
-            . . 7 7 7 7 7 7 7 . .
-            . . . 7 7 7 7 7 . . .
-        `;
+        . . . 7 7 7 7 7 . . .
+        . . 7 7 7 7 7 7 7 . .
+        . 7 7 2 7 7 7 2 7 7 .
+        7 7 7 2 7 7 7 2 7 7 7
+        7 7 7 2 7 7 7 2 7 7 7
+        7 7 7 2 2 2 2 2 7 7 7
+        7 7 7 2 7 7 7 2 7 7 7
+        7 7 7 2 7 7 7 2 7 7 7
+        . 7 7 2 7 7 7 2 7 7 .
+        . . 7 7 7 7 7 7 7 . .
+        . . . 7 7 7 7 7 . . .
+    `;
     powerUpImages[powerups.PowerUpType.Score] = img`
-            . . . 5 5 5 5 5 . . .
-            . . 5 5 5 f 5 5 5 . .
-            . 5 5 5 f f f 5 5 5 .
-            5 5 5 f 5 f 5 f 5 5 5
-            5 5 5 5 f 5 5 5 5 5 5
-            5 5 5 5 5 f 5 5 5 5 5
-            5 5 5 5 5 5 f 5 5 5 5
-            5 5 5 f 5 f 5 f 5 5 5
-            . 5 5 5 f f f 5 5 5 .
-            . . 5 5 5 f 5 5 5 . .
-            . . . 5 5 5 5 5 . . .
-        `;
+        . . . 5 5 5 5 5 . . .
+        . . 5 5 5 f 5 5 5 . .
+        . 5 5 5 f f f 5 5 5 .
+        5 5 5 f 5 f 5 f 5 5 5
+        5 5 5 5 f 5 5 5 5 5 5
+        5 5 5 5 5 f 5 5 5 5 5
+        5 5 5 5 5 5 f 5 5 5 5
+        5 5 5 f 5 f 5 f 5 5 5
+        . 5 5 5 f f f 5 5 5 .
+        . . 5 5 5 f 5 5 5 . .
+        . . . 5 5 5 5 5 . . .
+    `;
     powerUpImages[powerups.PowerUpType.Attack] = img`
-            . . . 6 6 6 6 6 . . .
-            . . 6 6 6 6 6 6 6 . .
-            . 6 6 1 6 6 6 1 6 6 .
-            6 6 1 1 1 6 1 1 1 6 6
-            6 1 6 1 6 1 6 1 6 1 6
-            6 6 6 1 6 6 6 1 6 6 6
-            6 6 6 1 6 6 6 1 6 6 6
-            6 6 6 1 6 6 6 1 6 6 6
-            . 6 6 1 6 6 6 1 6 6 .
-            . . 6 6 6 6 6 6 6 . .
-            . . . 6 6 6 6 6 . . .
-        `;
+        . . . 6 6 6 6 6 . . .
+        . . 6 6 6 6 6 6 6 . .
+        . 6 6 1 6 6 6 1 6 6 .
+        6 6 1 1 1 6 1 1 1 6 6
+        6 1 6 1 6 1 6 1 6 1 6
+        6 6 6 1 6 6 6 1 6 6 6
+        6 6 6 1 6 6 6 1 6 6 6
+        6 6 6 1 6 6 6 1 6 6 6
+        . 6 6 1 6 6 6 1 6 6 .
+        . . 6 6 6 6 6 6 6 . .
+        . . . 6 6 6 6 6 . . .
+    `;
 
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
         sprite.setImage(Math.pickRandom(powerUpImages));
@@ -216,9 +217,9 @@ namespace enemy {
             }
             if (Math.percentChance(4)) {
                 sprites.createProjectile(img`
-                        7
-                        7
-                        `, 0, 45, SpriteKind.EnemyLaser, enemy);
+                    7
+                    7
+                `, 0, 45, SpriteKind.EnemyLaser, enemy);
             }
         }
     })
