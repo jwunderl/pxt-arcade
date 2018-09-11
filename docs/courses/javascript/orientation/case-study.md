@@ -22,6 +22,7 @@ namespace asteroids {
 
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
         sprite.setImage(Math.pickRandom(asteroidImages));
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite);
         setMotion(sprite);
         // for setMotion, store variable in namespace for sprite, make them convert to parameters
@@ -71,6 +72,7 @@ namespace stars {
         setPosition(sprite);
         setMotion(sprite);
         sprite.setFlag(SpriteFlag.Ghost, true);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
         sprite.z = -1;  // have them set this to teach properties
     })
 
@@ -148,6 +150,7 @@ namespace powerups {
 
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
         sprite.setImage(Math.pickRandom(powerUpImages));
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite);
         setMotion(sprite);
     })
