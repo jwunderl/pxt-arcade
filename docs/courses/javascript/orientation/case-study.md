@@ -8,7 +8,8 @@ enum SpriteKind {
     Asteroid,
     Laser,
     Star,
-    EnemyLaser // they add this an 'enemy laser' Kind or something
+    EnemyLaser, // they add this
+    BrokenAsteroid // for challenge
 }
 
 namespace asteroids {
@@ -100,9 +101,9 @@ namespace powerups {
         Score,
         Attack
     }
+    let powerUpImages: Image[] = [];
 
-    let powerUpImages: Image[] = [
-        img`
+    powerUpImages[powerups.PowerUpType.Health] = img`
             . . . 7 7 7 7 7 . . .
             . . 7 7 7 7 7 7 7 . .
             . 7 7 2 7 7 7 2 7 7 .
@@ -114,8 +115,8 @@ namespace powerups {
             . 7 7 2 7 7 7 2 7 7 .
             . . 7 7 7 7 7 7 7 . .
             . . . 7 7 7 7 7 . . .
-        `,
-        img`
+        `;
+    powerUpImages[powerups.PowerUpType.Score] = img`
             . . . 5 5 5 5 5 . . .
             . . 5 5 5 f 5 5 5 . .
             . 5 5 5 f f f 5 5 5 .
@@ -127,8 +128,8 @@ namespace powerups {
             . 5 5 5 f f f 5 5 5 .
             . . 5 5 5 f 5 5 5 . .
             . . . 5 5 5 5 5 . . .
-        `,
-        img`
+        `;
+    powerUpImages[powerups.PowerUpType.Attack] = img`
             . . . 6 6 6 6 6 . . .
             . . 6 6 6 6 6 6 6 . .
             . 6 6 1 6 6 6 1 6 6 .
@@ -140,8 +141,7 @@ namespace powerups {
             . 6 6 1 6 6 6 1 6 6 .
             . . 6 6 6 6 6 6 6 . .
             . . . 6 6 6 6 6 . . .
-        `
-    ];
+        `;
 
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
         sprite.setImage(Math.pickRandom(powerUpImages));
@@ -178,17 +178,19 @@ namespace powerups {
 // They make the enemies outside of any name space to start, then move them into a namespace
 // they make when they move up
 namespace enemy {
-    game.onUpdateInterval(2500, function () {
-        let enemy = sprites.create(img`
-            5 5 . . . . 5 5
-            7 7 7 7 7 7 7 7
-            . 9 9 7 7 9 9 .
-            . 7 7 7 7 7 7 .
-            . . . 9 9 . . .
-        `, SpriteKind.Enemy);
-        setPosition(enemy);
-        enemy.setFlag(SpriteFlag.AutoDestroy, true);
-        enemy.vy = 15;
+    game.onUpdateInterval(1500, function () {
+        if (Math.percentChance(40)) {
+            let enemy = sprites.create(img`
+                5 5 . . . . 5 5
+                7 7 7 7 7 7 7 7
+                . 9 9 7 7 9 9 .
+                . 7 7 7 7 7 7 .
+                . . . 9 9 . . .
+            `, SpriteKind.Enemy);
+            setPosition(enemy);
+            enemy.setFlag(SpriteFlag.AutoDestroy, true);
+            enemy.vy = 15;
+        }
     })
 
     // eventually have them recognize this is the same as Asteroids.setPosition
@@ -196,6 +198,10 @@ namespace enemy {
         enemy.x = Math.randomRange(10, screen.width - 10); // student fill in these
         enemy.y = 0;
     }
+
+    sprites.onDestroyed(SpriteKind.Enemy, function (sprite: Sprite) {
+        info.changeScoreBy(3);
+    })
 
     game.onUpdate(function () {
         for (let enemy of sprites.allOfKind(SpriteKind.Enemy)) {
@@ -206,12 +212,12 @@ namespace enemy {
                 enemy.vx = -8;
             } else {
                 enemy.vx = 0;
-                if (Math.percentChance(4)) {
-                    sprites.createProjectile(img`
+            }
+            if (Math.percentChance(4)) {
+                sprites.createProjectile(img`
                         7
                         7
                         `, 0, 45, SpriteKind.EnemyLaser, enemy);
-                }
             }
         }
     })
@@ -285,6 +291,20 @@ namespace ship {
 }
 
 namespace overlapevents {
+    let powerUpStrings: string[] = [];
+    powerUpStrings[powerups.PowerUpType.Health] = "health!";
+    powerUpStrings[powerups.PowerUpType.Score] = "score!";
+    powerUpStrings[powerups.PowerUpType.Attack] = "laser boost!";
+
+    let brokenAsteroids: Image[] = [  // FOR ASTEROID-ENEMYLASER
+        sprites.space.spaceSmallAsteroid0,
+        sprites.space.spaceSmallAsteroid1,
+        sprites.space.spaceSmallAsteroid2,
+        sprites.space.spaceSmallAsteroid3,
+        sprites.space.spaceSmallAsteroid4,
+        sprites.space.spaceSmallAsteroid5
+    ];
+
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-1); // rm this and make them add it
         info.changeScoreBy(-1); // rm this and make them add it
@@ -293,26 +313,66 @@ namespace overlapevents {
 
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
+    })
+
+    sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        otherSprite.destroy();
+    })
+
+    // ADDED IN CHALLENGE
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1); // rm this and make them add it
+        info.changeScoreBy(-1); // rm this and make them add it
+        otherSprite.destroy(); // rm this and make them add it
+    })
+
+    // ADDED IN CHALLENGE
+    sprites.onOverlap(SpriteKind.Laser, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
+        otherSprite.destroy();
         info.changeScoreBy(1); // rm this and make them add it
     })
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
         let powerUp: number = powerups.getType(otherSprite);
         otherSprite.destroy();
-        // convert to storing a msg, then calling Ship.player.say in one place / less redundant
+        // make them convert to storing a msg, then calling Ship.player.say in one place / less redundant (and then to string arrays)
         if (powerUp === powerups.PowerUpType.Health) {
             info.changeLifeBy(1);
-            ship.player.say("health!", 250);
+            // ship.player.say("health!", 500);
         } else if (powerUp === powerups.PowerUpType.Score) {
             info.changeScoreBy(15);
-            ship.player.say("score!", 250);
+            // ship.player.say("score!", 500);
         } else if (powerUp === powerups.PowerUpType.Attack) {
             ship.boostedLasers += 5;
-            ship.player.say("laser boost!", 250);
+            // ship.player.say("laser boost!", 500);
+        }
+        if (powerUp != -1) {
+            ship.player.say(powerUpStrings[powerUp], 500);
         }
     })
 
     // TODO make enemy related overlap events
+
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-2);
+        info.changeScoreBy(-3);
+        otherSprite.destroy();
+    })
+
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+    })
+
+
+    // CHALLENGE: add overlap event for enemy lasers and asteroids, that 'splits' the asteroids
+    // in two moving diagonally downwards from curr asteroid position
+    sprites.onOverlap(SpriteKind.Asteroid, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
+        sprite.setFlag(SpriteFlag.Ghost, true);
+        let left = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(-20, -10), sprite.vy, SpriteKind.BrokenAsteroid, sprite);
+        let right = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(10, 20), sprite.vy, SpriteKind.BrokenAsteroid, sprite);
+        sprite.destroy();
+    })
 }
 
 // Eventually / at end of functions, make them create a misc type namespace 
