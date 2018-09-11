@@ -408,7 +408,7 @@ namespace state {
     info.onLifeZero(function () {
         if (game.ask("Continue?")) {
             info.changeScoreBy(-50);
-            info.changeLifeBy(1);
+            info.setLife(1);
             ship.player.setFlag(SpriteFlag.Ghost, true);
             pause(350);
             ship.player.setFlag(SpriteFlag.Ghost, false);
