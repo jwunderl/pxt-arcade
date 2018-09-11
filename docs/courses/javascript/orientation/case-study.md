@@ -313,10 +313,12 @@ namespace overlapevents {
 
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
+        sprite.destroy();
     })
 
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
+        sprite.destroy();
     })
 
     // ADDED IN CHALLENGE
@@ -369,9 +371,10 @@ namespace overlapevents {
     // in two moving diagonally downwards from curr asteroid position
     sprites.onOverlap(SpriteKind.Asteroid, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
         sprite.setFlag(SpriteFlag.Ghost, true);
-        let left = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(-20, -10), sprite.vy, SpriteKind.BrokenAsteroid, sprite);
-        let right = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(10, 20), sprite.vy, SpriteKind.BrokenAsteroid, sprite);
+        let left = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(-20, -10), sprite.vy * (1 + Math.random()), SpriteKind.BrokenAsteroid, sprite);
+        let right = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(10, 20), sprite.vy * (1 + Math.random()), SpriteKind.BrokenAsteroid, sprite);
         sprite.destroy();
+        otherSprite.destroy();
     })
 }
 
