@@ -9,7 +9,8 @@ enum SpriteKind {
     Laser,
     Star,
     EnemyLaser, // they add this
-    BrokenAsteroid // for challenge
+    BrokenAsteroid, // for enemy laser - asteroids challenge
+    PowerUpTrail // for power up trail challenge
 }
 
 namespace asteroids {
@@ -173,6 +174,20 @@ namespace powerups {
     game.onUpdateInterval(1000, function () {
         if (Math.percentChance(33)) {
             sprites.createEmptySprite(SpriteKind.PowerUp);
+        }
+    })
+
+    // Challenge: Trail for powerups
+    game.onUpdate(function () {
+        for (let powerUp of sprites.allOfKind(SpriteKind.PowerUp)) {
+            if (Math.percentChance(25)) {
+                let trail: Sprite = sprites.createProjectile(img`1`, 0, 0, SpriteKind.PowerUpTrail, powerUp);
+                trail.lifespan = 300;
+                trail.x += Math.randomRange(-5, 5);
+                trail.setFlag(SpriteFlag.Ghost, true);
+                trail.image.fill(Math.randomRange(1, 14));
+                trail.z = -1;
+            }
         }
     })
 }
