@@ -104,13 +104,16 @@ namespace powerups {
     export enum PowerUpType {
         Health,
         Score,
-        Attack
+        Attack,
+        MaxEnergy, // max energy up bonus
+        Ghost  // "ghost" mode
     }
     let powerUpImages: Image[] = [];
 
     // Last task: make them add a new powerup
     // * type: GhostMode
     // * effect: turns 'ghost' on for ship for 1 second
+    // Challenge after last task; add "Max Energy Up"
 
     powerUpImages[powerups.PowerUpType.Health] = img`
         . . . 7 7 7 7 7 . . .
@@ -151,6 +154,34 @@ namespace powerups {
         . . 6 6 6 6 6 6 6 . .
         . . . 6 6 6 6 6 . . .
     `;
+    // max energy challenge
+    powerUpImages[powerups.PowerUpType.MaxEnergy] = img`
+        . . . c c c c c . . . 
+        . . c c c c c c c . . 
+        . c c b b b b b c c . 
+        c c c b c c c c c c c 
+        c c c b c c c c c c c 
+        c c c b b b b c c c c 
+        c c c b c c c c c c c 
+        c c c b c c c c c c c 
+        . c c b b b b b c c . 
+        . . c c c c c c c . . 
+        . . . c c c c c . . . 
+    `;
+    // ghost challenge
+    powerUpImages[powerups.PowerUpType.Ghost] = img`
+        . . . b b b b b . . . 
+        . . b b b b b b b . . 
+        . b b 1 1 1 1 1 b b . 
+        b b b 1 f 1 f 1 b b b 
+        b b b 1 f 1 f 1 b b b 
+        b b b 1 1 1 1 1 b b b 
+        b b b 1 1 1 1 1 b b b 
+        b b 1 1 1 1 1 1 1 b b 
+        . b b b b b b b b b . 
+        . . b b b b b b b . . 
+        . . . b b b b b . . . 
+    `
 
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
         sprite.setImage(Math.pickRandom(powerUpImages));
@@ -326,6 +357,8 @@ namespace overlapevents {
     powerUpStrings[powerups.PowerUpType.Health] = "health!";
     powerUpStrings[powerups.PowerUpType.Score] = "score!";
     powerUpStrings[powerups.PowerUpType.Attack] = "laser boost!";
+    powerUpStrings[powerups.PowerUpType.MaxEnergy] = "more energy!"; // maxEnergy challenge
+    powerUpStrings[powerups.PowerUpType.Ghost] = "ghost mode!"; // ghost challenge
 
     let brokenAsteroids: Image[] = [  // FOR ASTEROID-ENEMYLASER
         sprites.space.spaceSmallAsteroid0,
@@ -369,6 +402,9 @@ namespace overlapevents {
         let powerUp: number = powerups.getType(otherSprite);
         otherSprite.destroy();
         // make them convert to storing a msg, then calling Ship.player.say in one place / less redundant (and then to string arrays)
+        if (powerUp != -1) {
+            ship.player.say(powerUpStrings[powerUp], 500);
+        }
         if (powerUp === powerups.PowerUpType.Health) {
             info.changeLifeBy(1);
             // ship.player.say("health!", 500);
@@ -378,9 +414,13 @@ namespace overlapevents {
         } else if (powerUp === powerups.PowerUpType.Attack) {
             ship.boostedLasers += 5;
             // ship.player.say("laser boost!", 500);
-        }
-        if (powerUp != -1) {
-            ship.player.say(powerUpStrings[powerUp], 500);
+        } else if (powerUp === powerups.PowerUpType.MaxEnergy) { // max energy challenge
+            state.maxCharge++;
+            state.charge++;
+        } else if (powerUp === powerups.PowerUpType.Ghost) { // ghost mode challenge
+            ship.player.setFlag(SpriteFlag.Ghost, true);
+            pause(1000);
+            ship.player.setFlag(SpriteFlag.Ghost, false);
         }
     })
 
@@ -426,9 +466,9 @@ namespace state {
     })
 
     /** Progress bar **/
+
     export let maxCharge: number = 5;
     export let charge: number = maxCharge;
-    image.create(7, 40)
     let chargeBar: Sprite = sprites.create(image.create(7, 30));
 
     chargeBar.z = 50;
