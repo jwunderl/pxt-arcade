@@ -428,33 +428,9 @@ namespace state {
     /** Progress bar **/
     export let maxCharge: number = 5;
     export let charge: number = maxCharge;
-    let chargeBar: Sprite = sprites.create(img`
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-        f f f f f f f
-    `);
+    image.create(7, 40)
+    let chargeBar: Sprite = sprites.create(image.create(7, 30));
+
     chargeBar.z = 50;
     chargeBar.setFlag(SpriteFlag.Ghost, true);
     chargeBar.right = scene.screenWidth() - 2;
