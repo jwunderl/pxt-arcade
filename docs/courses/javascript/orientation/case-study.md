@@ -418,13 +418,9 @@ namespace overlapevents {
             state.maxCharge++;
             state.charge++;
         } else if (powerUp === powerups.PowerUpType.Ghost) { // ghost mode challenge
-            ship.player.setFlag(SpriteFlag.Ghost, true);
-            pause(1000);
-            ship.player.setFlag(SpriteFlag.Ghost, false);
+            misc.tempGhost(ship.player, 1000);
         }
     })
-
-    // TODO make enemy related overlap events
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-2);
@@ -457,9 +453,7 @@ namespace state {
         if (game.ask("Continue?", "Cost: " + deduction + " points")) {
             info.changeScoreBy(-deduction);
             info.setLife(1);
-            ship.player.setFlag(SpriteFlag.Ghost, true);
-            pause(350);
-            ship.player.setFlag(SpriteFlag.Ghost, false);
+            misc.tempGhost(ship.player, 350);
         } else {
             game.over();
         }
@@ -489,5 +483,15 @@ namespace state {
     })
 
     /** End Progress bar **/
+}
+
+namespace misc {
+    export function tempGhost(character: Sprite, time: number) {
+        character.setFlag(SpriteFlag.Ghost, true);
+        pause(time);
+        character.setFlag(SpriteFlag.Ghost, false);
+    }
+
+    // add "randomPlacementOnCeiling" method to minimize redundancy with setPosition methods.
 }
 ```
