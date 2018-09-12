@@ -13,15 +13,165 @@ enum SpriteKind {
     PowerUpTrail // for power up trail challenge
 }
 
-namespace asteroids {
-    let asteroidImages: Image[] = [
+enum PowerUpType {
+    Health,
+    Score,
+    Attack,
+    MaxEnergy, // max energy up bonus
+    Ghost  // "ghost" mode
+}
+
+namespace spritesheet {
+    export let asteroids: Image[] = [
         sprites.space.spaceAsteroid0,
         sprites.space.spaceAsteroid1,
         sprites.space.spaceAsteroid2
     ];
 
+    export let brokenAsteroids: Image[] = [  // FOR ASTEROID-ENEMYLASER
+        sprites.space.spaceSmallAsteroid0,
+        sprites.space.spaceSmallAsteroid1,
+        sprites.space.spaceSmallAsteroid2,
+        sprites.space.spaceSmallAsteroid3,
+        sprites.space.spaceSmallAsteroid4,
+        sprites.space.spaceSmallAsteroid5
+    ];
+
+    export let laser: Image = img`
+        4
+        4
+    `;
+
+    export let player: Image[] = [
+        img`
+            8 8 . . . . . .
+            8 1 8 . . . . .
+            . 8 1 8 2 2 2 2
+            . . 8 8 8 2 2 .
+            . . 2 8 8 8 5 .
+            . . 2 2 8 . . .
+            . . 2 2 5 . . .
+            . . 2 . . . . .
+        `, img`
+            . . . . 8 . . . .
+            . . . 8 8 8 . . .
+            . . . 8 1 8 . . .
+            . . 2 8 1 8 2 . .
+            . 2 2 8 8 8 2 2 .
+            2 2 2 8 8 8 2 2 2
+            . . . 5 . 5 . . .
+        `
+    ];
+
+    player.push(player[0].clone());
+    player[2].flipX();
+
+    export let enemy: Image[] = [img`
+        5 5 . . . . 5 5
+        7 7 7 7 7 7 7 7
+        . 9 9 7 7 9 9 .
+        . 7 7 7 7 7 7 .
+        . . . 9 9 . . .
+    `];
+
+    export let powerUp: Image[] = [];
+    powerUp[PowerUpType.Health] = img`
+        . . . 7 7 7 7 7 . . .
+        . . 7 7 7 7 7 7 7 . .
+        . 7 7 2 7 7 7 2 7 7 .
+        7 7 7 2 7 7 7 2 7 7 7
+        7 7 7 2 7 7 7 2 7 7 7
+        7 7 7 2 2 2 2 2 7 7 7
+        7 7 7 2 7 7 7 2 7 7 7
+        7 7 7 2 7 7 7 2 7 7 7
+        . 7 7 2 7 7 7 2 7 7 .
+        . . 7 7 7 7 7 7 7 . .
+        . . . 7 7 7 7 7 . . .
+    `;
+    powerUp[PowerUpType.Score] = img`
+        . . . 5 5 5 5 5 . . .
+        . . 5 5 5 f 5 5 5 . .
+        . 5 5 5 f f f 5 5 5 .
+        5 5 5 f 5 f 5 f 5 5 5
+        5 5 5 5 f 5 5 5 5 5 5
+        5 5 5 5 5 f 5 5 5 5 5
+        5 5 5 5 5 5 f 5 5 5 5
+        5 5 5 f 5 f 5 f 5 5 5
+        . 5 5 5 f f f 5 5 5 .
+        . . 5 5 5 f 5 5 5 . .
+        . . . 5 5 5 5 5 . . .
+    `;
+    powerUp[PowerUpType.Attack] = img`
+        . . . 6 6 6 6 6 . . .
+        . . 6 6 6 6 6 6 6 . .
+        . 6 6 1 6 6 6 1 6 6 .
+        6 6 1 1 1 6 1 1 1 6 6
+        6 1 6 1 6 1 6 1 6 1 6
+        6 6 6 1 6 6 6 1 6 6 6
+        6 6 6 1 6 6 6 1 6 6 6
+        6 6 6 1 6 6 6 1 6 6 6
+        . 6 6 1 6 6 6 1 6 6 .
+        . . 6 6 6 6 6 6 6 . .
+        . . . 6 6 6 6 6 . . .
+    `;
+    // max energy challenge
+    powerUp[PowerUpType.MaxEnergy] = img`
+        . . . c c c c c . . . 
+        . . c c c c c c c . . 
+        . c c b b b b b c c . 
+        c c c b c c c c c c c 
+        c c c b c c c c c c c 
+        c c c b b b b c c c c 
+        c c c b c c c c c c c 
+        c c c b c c c c c c c 
+        . c c b b b b b c c . 
+        . . c c c c c c c . . 
+        . . . c c c c c . . . 
+    `;
+    // ghost challenge
+    powerUp[PowerUpType.Ghost] = img`
+        . . . b b b b b . . . 
+        . . b b b b b b b . . 
+        . b b 1 1 1 1 1 b b . 
+        b b b 1 f 1 f 1 b b b 
+        b b b 1 f 1 f 1 b b b 
+        b b b 1 1 1 1 1 b b b 
+        b b b 1 1 1 1 1 b b b 
+        b b 1 1 1 1 1 1 1 b b 
+        . b b b b b b b b b . 
+        . . b b b b b b b . . 
+        . . . b b b b b . . . 
+    `
+
+    export let stars: Image[] = [
+        img`
+            1 1
+        `,
+        img`
+            1
+        `,
+        img`
+            3 . . 1
+        `,
+        img`
+            3 .
+            . .
+            . .
+            . 1
+        `
+    ]
+}
+
+namespace asteroids {
+    // let asteroidImages: Image[] = [
+    //     sprites.space.spaceAsteroid0,
+    //     sprites.space.spaceAsteroid1,
+    //     sprites.space.spaceAsteroid2
+    // ];
+
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setImage(Math.pickRandom(asteroidImages));
+        // sprite.setImage(Math.pickRandom(asteroidImages));
+        sprite.setImage(Math.pickRandom(spritesheet.asteroids));
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite);
         setMotion(sprite);
@@ -49,26 +199,27 @@ namespace asteroids {
 }
 
 namespace stars {
-    let starImages: Image[] = [
-        img`
-            1 1
-        `,
-        img`
-            1
-        `,
-        img`
-            3 . . 1
-        `,
-        img`
-            3 .
-            . .
-            . .
-            . 1
-        `
-    ]
+    // let starImages: Image[] = [
+    //     img`
+    //         1 1
+    //     `,
+    //     img`
+    //         1
+    //     `,
+    //     img`
+    //         3 . . 1
+    //     `,
+    //     img`
+    //         3 .
+    //         . .
+    //         . .
+    //         . 1
+    //     `
+    // ]
 
     sprites.onCreated(SpriteKind.Star, function (sprite: Sprite) {
-        sprite.setImage(Math.pickRandom(starImages));
+        // sprite.setImage(Math.pickRandom(starImages));
+        sprite.setImage(Math.pickRandom(spritesheet.stars));
         setPosition(sprite);
         setMotion(sprite);
         sprite.setFlag(SpriteFlag.Ghost, true);
@@ -101,90 +252,83 @@ namespace stars {
 }
 
 namespace powerups {
-    export enum PowerUpType {
-        Health,
-        Score,
-        Attack,
-        MaxEnergy, // max energy up bonus
-        Ghost  // "ghost" mode
-    }
-    let powerUpImages: Image[] = [];
-
     // Last task: make them add a new powerup
     // * type: GhostMode
     // * effect: turns 'ghost' on for ship for 1 second
     // Challenge after last task; add "Max Energy Up"
 
-    powerUpImages[powerups.PowerUpType.Health] = img`
-        . . . 7 7 7 7 7 . . .
-        . . 7 7 7 7 7 7 7 . .
-        . 7 7 2 7 7 7 2 7 7 .
-        7 7 7 2 7 7 7 2 7 7 7
-        7 7 7 2 7 7 7 2 7 7 7
-        7 7 7 2 2 2 2 2 7 7 7
-        7 7 7 2 7 7 7 2 7 7 7
-        7 7 7 2 7 7 7 2 7 7 7
-        . 7 7 2 7 7 7 2 7 7 .
-        . . 7 7 7 7 7 7 7 . .
-        . . . 7 7 7 7 7 . . .
-    `;
-    powerUpImages[powerups.PowerUpType.Score] = img`
-        . . . 5 5 5 5 5 . . .
-        . . 5 5 5 f 5 5 5 . .
-        . 5 5 5 f f f 5 5 5 .
-        5 5 5 f 5 f 5 f 5 5 5
-        5 5 5 5 f 5 5 5 5 5 5
-        5 5 5 5 5 f 5 5 5 5 5
-        5 5 5 5 5 5 f 5 5 5 5
-        5 5 5 f 5 f 5 f 5 5 5
-        . 5 5 5 f f f 5 5 5 .
-        . . 5 5 5 f 5 5 5 . .
-        . . . 5 5 5 5 5 . . .
-    `;
-    powerUpImages[powerups.PowerUpType.Attack] = img`
-        . . . 6 6 6 6 6 . . .
-        . . 6 6 6 6 6 6 6 . .
-        . 6 6 1 6 6 6 1 6 6 .
-        6 6 1 1 1 6 1 1 1 6 6
-        6 1 6 1 6 1 6 1 6 1 6
-        6 6 6 1 6 6 6 1 6 6 6
-        6 6 6 1 6 6 6 1 6 6 6
-        6 6 6 1 6 6 6 1 6 6 6
-        . 6 6 1 6 6 6 1 6 6 .
-        . . 6 6 6 6 6 6 6 . .
-        . . . 6 6 6 6 6 . . .
-    `;
-    // max energy challenge
-    powerUpImages[powerups.PowerUpType.MaxEnergy] = img`
-        . . . c c c c c . . . 
-        . . c c c c c c c . . 
-        . c c b b b b b c c . 
-        c c c b c c c c c c c 
-        c c c b c c c c c c c 
-        c c c b b b b c c c c 
-        c c c b c c c c c c c 
-        c c c b c c c c c c c 
-        . c c b b b b b c c . 
-        . . c c c c c c c . . 
-        . . . c c c c c . . . 
-    `;
-    // ghost challenge
-    powerUpImages[powerups.PowerUpType.Ghost] = img`
-        . . . b b b b b . . . 
-        . . b b b b b b b . . 
-        . b b 1 1 1 1 1 b b . 
-        b b b 1 f 1 f 1 b b b 
-        b b b 1 f 1 f 1 b b b 
-        b b b 1 1 1 1 1 b b b 
-        b b b 1 1 1 1 1 b b b 
-        b b 1 1 1 1 1 1 1 b b 
-        . b b b b b b b b b . 
-        . . b b b b b b b . . 
-        . . . b b b b b . . . 
-    `
+    // let powerUpImages: Image[] = [];
+    // powerUpImages[PowerUpType.Health] = img`
+    //     . . . 7 7 7 7 7 . . .
+    //     . . 7 7 7 7 7 7 7 . .
+    //     . 7 7 2 7 7 7 2 7 7 .
+    //     7 7 7 2 7 7 7 2 7 7 7
+    //     7 7 7 2 7 7 7 2 7 7 7
+    //     7 7 7 2 2 2 2 2 7 7 7
+    //     7 7 7 2 7 7 7 2 7 7 7
+    //     7 7 7 2 7 7 7 2 7 7 7
+    //     . 7 7 2 7 7 7 2 7 7 .
+    //     . . 7 7 7 7 7 7 7 . .
+    //     . . . 7 7 7 7 7 . . .
+    // `;
+    // powerUpImages[PowerUpType.Score] = img`
+    //     . . . 5 5 5 5 5 . . .
+    //     . . 5 5 5 f 5 5 5 . .
+    //     . 5 5 5 f f f 5 5 5 .
+    //     5 5 5 f 5 f 5 f 5 5 5
+    //     5 5 5 5 f 5 5 5 5 5 5
+    //     5 5 5 5 5 f 5 5 5 5 5
+    //     5 5 5 5 5 5 f 5 5 5 5
+    //     5 5 5 f 5 f 5 f 5 5 5
+    //     . 5 5 5 f f f 5 5 5 .
+    //     . . 5 5 5 f 5 5 5 . .
+    //     . . . 5 5 5 5 5 . . .
+    // `;
+    // powerUpImages[PowerUpType.Attack] = img`
+    //     . . . 6 6 6 6 6 . . .
+    //     . . 6 6 6 6 6 6 6 . .
+    //     . 6 6 1 6 6 6 1 6 6 .
+    //     6 6 1 1 1 6 1 1 1 6 6
+    //     6 1 6 1 6 1 6 1 6 1 6
+    //     6 6 6 1 6 6 6 1 6 6 6
+    //     6 6 6 1 6 6 6 1 6 6 6
+    //     6 6 6 1 6 6 6 1 6 6 6
+    //     . 6 6 1 6 6 6 1 6 6 .
+    //     . . 6 6 6 6 6 6 6 . .
+    //     . . . 6 6 6 6 6 . . .
+    // `;
+    // // max energy challenge
+    // powerUpImages[PowerUpType.MaxEnergy] = img`
+    //     . . . c c c c c . . . 
+    //     . . c c c c c c c . . 
+    //     . c c b b b b b c c . 
+    //     c c c b c c c c c c c 
+    //     c c c b c c c c c c c 
+    //     c c c b b b b c c c c 
+    //     c c c b c c c c c c c 
+    //     c c c b c c c c c c c 
+    //     . c c b b b b b c c . 
+    //     . . c c c c c c c . . 
+    //     . . . c c c c c . . . 
+    // `;
+    // // ghost challenge
+    // powerUpImages[PowerUpType.Ghost] = img`
+    //     . . . b b b b b . . . 
+    //     . . b b b b b b b . . 
+    //     . b b 1 1 1 1 1 b b . 
+    //     b b b 1 f 1 f 1 b b b 
+    //     b b b 1 f 1 f 1 b b b 
+    //     b b b 1 1 1 1 1 b b b 
+    //     b b b 1 1 1 1 1 b b b 
+    //     b b 1 1 1 1 1 1 1 b b 
+    //     . b b b b b b b b b . 
+    //     . . b b b b b b b . . 
+    //     . . . b b b b b . . . 
+    // `
 
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
-        sprite.setImage(Math.pickRandom(powerUpImages));
+        // sprite.setImage(Math.pickRandom(powerUpImages));
+        sprite.setImage(Math.pickRandom(spritesheet.powerUp));
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite);
         setMotion(sprite);
@@ -206,7 +350,7 @@ namespace powerups {
     }
 
     export function getType(powerUp: Sprite): number {
-        return powerUpImages.indexOf(powerUp.image);
+        return spritesheet.powerUp.indexOf(powerUp.image);
     }
 
     game.onUpdateInterval(1000, function () {
@@ -235,13 +379,14 @@ namespace powerups {
 namespace enemy {
     game.onUpdateInterval(1500, function () {
         if (Math.percentChance(40)) {
-            let enemy = sprites.create(img`
-                5 5 . . . . 5 5
-                7 7 7 7 7 7 7 7
-                . 9 9 7 7 9 9 .
-                . 7 7 7 7 7 7 .
-                . . . 9 9 . . .
-            `, SpriteKind.Enemy);
+            // let enemy = sprites.create(img`
+            //     5 5 . . . . 5 5
+            //     7 7 7 7 7 7 7 7
+            //     . 9 9 7 7 9 9 .
+            //     . 7 7 7 7 7 7 .
+            //     . . . 9 9 . . .
+            // `, SpriteKind.Enemy);
+            let enemy: Sprite = sprites.create(Math.pickRandom(spritesheet.enemy), SpriteKind.Enemy);
             setPosition(enemy);
             enemy.setFlag(SpriteFlag.AutoDestroy, true);
             enemy.vy = 15;
@@ -279,60 +424,63 @@ namespace enemy {
 }
 
 namespace ship {
-    let playerImages: Image[] = [
-        img`
-            8 8 . . . . . .
-            8 1 8 . . . . .
-            . 8 1 8 2 2 2 2
-            . . 8 8 8 2 2 .
-            . . 2 8 8 8 5 .
-            . . 2 2 8 . . .
-            . . 2 2 5 . . .
-            . . 2 . . . . .
-        `, img`
-            . . . . 8 . . . .
-            . . . 8 8 8 . . .
-            . . . 8 1 8 . . .
-            . . 2 8 1 8 2 . .
-            . 2 2 8 8 8 2 2 .
-            2 2 2 8 8 8 2 2 2
-            . . . 5 . 5 . . .
-        `
-    ];
+    // let playerImages: Image[] = [
+    //     img`
+    //         8 8 . . . . . .
+    //         8 1 8 . . . . .
+    //         . 8 1 8 2 2 2 2
+    //         . . 8 8 8 2 2 .
+    //         . . 2 8 8 8 5 .
+    //         . . 2 2 8 . . .
+    //         . . 2 2 5 . . .
+    //         . . 2 . . . . .
+    //     `, img`
+    //         . . . . 8 . . . .
+    //         . . . 8 8 8 . . .
+    //         . . . 8 1 8 . . .
+    //         . . 2 8 1 8 2 . .
+    //         . 2 2 8 8 8 2 2 .
+    //         2 2 2 8 8 8 2 2 2
+    //         . . . 5 . 5 . . .
+    //     `
+    // ];
 
-    playerImages.push(playerImages[0].clone()); // guide through doing this
-    playerImages[2].flipX(); // guide through doing this
+    // playerImages.push(playerImages[0].clone()); // guide through doing this
+    // playerImages[2].flipX(); // guide through doing this
 
     export let boostedLasers: number = 0; // they add this variable (handwave the export till namespaces)
-    export let player: Sprite = sprites.create(playerImages[1], SpriteKind.Player);
+    // export let player: Sprite = sprites.create(playerImages[1], SpriteKind.Player);
+    export let player: Sprite = sprites.create(spritesheet.player[1], SpriteKind.Player);
     player.setFlag(SpriteFlag.StayInScreen, true); // using flags, make em do this
 
     info.setLife(3);
     info.setScore(0);
 
-    let laserImage: Image = img`
-        4
-        4
-    `;
-
     controller.controlSprite(player, 80, 30);
     player.y = screen.height - 20;
+
+    // let laserImage: Image = img`
+    //     4
+    //     4
+    // `;
 
     controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         /** Progress bar **/
         if (state.charge > 0) {
-            sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player); // make them create the laser
+            sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player); // make them create the laser
+            // sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player);
             state.charge--;
         }
-
 
         // sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player); // make them create the laser
     })
 
     controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         if (boostedLasers > 0) {
-            let left: Sprite = sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player);
-            let right: Sprite = sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player);
+            let left: Sprite = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
+            let right: Sprite = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
+            // let left: Sprite = sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player);
+            // let right: Sprite = sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player);
             left.x -= 2;
             right.x += 2;
             boostedLasers--;
@@ -343,31 +491,34 @@ namespace ship {
 
     game.onUpdate(function () {
         if (player.vx < -1) { // arrays -> make them switch between the different images instead of having a constant forward facing one
-            player.setImage(playerImages[0]);
+            // player.setImage(playerImages[0]);
+            player.setImage(spritesheet.player[0]);
         } else if (player.vx <= 1) {
-            player.setImage(playerImages[1]);
+            // player.setImage(playerImages[1]);
+            player.setImage(spritesheet.player[1]);
         } else {
-            player.setImage(playerImages[2]);
+            // player.setImage(playerImages[2]);
+            player.setImage(spritesheet.player[2]);
         }
     })
 }
 
 namespace overlapevents {
     let powerUpStrings: string[] = [];
-    powerUpStrings[powerups.PowerUpType.Health] = "health!";
-    powerUpStrings[powerups.PowerUpType.Score] = "score!";
-    powerUpStrings[powerups.PowerUpType.Attack] = "laser boost!";
-    powerUpStrings[powerups.PowerUpType.MaxEnergy] = "more energy!"; // maxEnergy challenge
-    powerUpStrings[powerups.PowerUpType.Ghost] = "ghost mode!"; // ghost challenge
+    powerUpStrings[PowerUpType.Health] = "health!";
+    powerUpStrings[PowerUpType.Score] = "score!";
+    powerUpStrings[PowerUpType.Attack] = "laser boost!";
+    powerUpStrings[PowerUpType.MaxEnergy] = "more energy!"; // maxEnergy challenge
+    powerUpStrings[PowerUpType.Ghost] = "ghost mode!"; // ghost challenge
 
-    let brokenAsteroids: Image[] = [  // FOR ASTEROID-ENEMYLASER
-        sprites.space.spaceSmallAsteroid0,
-        sprites.space.spaceSmallAsteroid1,
-        sprites.space.spaceSmallAsteroid2,
-        sprites.space.spaceSmallAsteroid3,
-        sprites.space.spaceSmallAsteroid4,
-        sprites.space.spaceSmallAsteroid5
-    ];
+    // let brokenAsteroids: Image[] = [  // FOR ASTEROID-ENEMYLASER
+    //     sprites.space.spaceSmallAsteroid0,
+    //     sprites.space.spaceSmallAsteroid1,
+    //     sprites.space.spaceSmallAsteroid2,
+    //     sprites.space.spaceSmallAsteroid3,
+    //     sprites.space.spaceSmallAsteroid4,
+    //     sprites.space.spaceSmallAsteroid5
+    // ];
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-1); // rm this and make them add it
@@ -405,19 +556,19 @@ namespace overlapevents {
         if (powerUp != -1) {
             ship.player.say(powerUpStrings[powerUp], 500);
         }
-        if (powerUp === powerups.PowerUpType.Health) {
+        if (powerUp === PowerUpType.Health) {
             info.changeLifeBy(1);
             // ship.player.say("health!", 500);
-        } else if (powerUp === powerups.PowerUpType.Score) {
+        } else if (powerUp === PowerUpType.Score) {
             info.changeScoreBy(15);
             // ship.player.say("score!", 500);
-        } else if (powerUp === powerups.PowerUpType.Attack) {
+        } else if (powerUp === PowerUpType.Attack) {
             ship.boostedLasers += 5;
             // ship.player.say("laser boost!", 500);
-        } else if (powerUp === powerups.PowerUpType.MaxEnergy) { // max energy challenge
+        } else if (powerUp === PowerUpType.MaxEnergy) { // max energy challenge
             state.maxCharge++;
             state.charge++;
-        } else if (powerUp === powerups.PowerUpType.Ghost) { // ghost mode challenge
+        } else if (powerUp === PowerUpType.Ghost) { // ghost mode challenge
             misc.tempGhost(ship.player, 1000);
         }
     })
@@ -438,8 +589,10 @@ namespace overlapevents {
     // in two moving diagonally downwards from curr asteroid position
     sprites.onOverlap(SpriteKind.Asteroid, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
         sprite.setFlag(SpriteFlag.Ghost, true);
-        let left = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(-20, -10), sprite.vy * (1 + Math.random()), SpriteKind.BrokenAsteroid, sprite);
-        let right = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(10, 20), sprite.vy * (1 + Math.random()), SpriteKind.BrokenAsteroid, sprite);
+        let left = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids), Math.randomRange(-20, -10), sprite.vy * (1 + Math.random()), SpriteKind.BrokenAsteroid, sprite);
+        let right = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids), Math.randomRange(10, 20), sprite.vy * (1 + Math.random()), SpriteKind.BrokenAsteroid, sprite);
+        // let left = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(-20, -10), sprite.vy * (1 + Math.random()), SpriteKind.BrokenAsteroid, sprite);
+        // let right = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(10, 20), sprite.vy * (1 + Math.random()), SpriteKind.BrokenAsteroid, sprite);
         sprite.destroy();
         otherSprite.destroy();
     })
@@ -452,7 +605,7 @@ namespace state {
         let deduction: number = Math.min(50, info.score());
         if (game.ask("Continue?", "Cost: " + deduction + " points")) {
             info.changeScoreBy(-deduction);
-            info.setLife(1);
+            info.setLife(2);
             misc.tempGhost(ship.player, 350);
         } else {
             game.over();
@@ -487,11 +640,11 @@ namespace state {
 
 namespace misc {
     export function tempGhost(character: Sprite, time: number) {
-        character.setFlag(SpriteFlag.Ghost, true);
-        pause(time);
-        character.setFlag(SpriteFlag.Ghost, false);
+        control.runInParallel(function () {
+            character.setFlag(SpriteFlag.Ghost, true);
+            pause(time);
+            character.setFlag(SpriteFlag.Ghost, false);
+        })
     }
-
-    // add "randomPlacementOnCeiling" method to minimize redundancy with setPosition methods.
 }
 ```
