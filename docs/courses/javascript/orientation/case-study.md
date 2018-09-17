@@ -725,6 +725,11 @@ namespace spritesheet {
         . . . 9 9 . . .
     `];
 
+    export let enemyLaser = img`
+        7
+        7
+    `
+
     export let powerUp: Image[] = [];
     powerUp[PowerUpType.Health] = img`
         . . . 7 7 7 7 7 . . .
@@ -842,7 +847,13 @@ namespace stars {
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         sprite.z = -1;
     });
-    
+
+    game.onUpdateInterval(50, function () {
+        if (Math.percentChance(33)) {
+            sprites.createEmptySprite(SpriteKind.Star);
+        }
+    });
+
     fillScreen();
 
     function setMotion(star: Sprite) {
@@ -857,12 +868,6 @@ namespace stars {
             star.y = Math.randomRange(0, screen.height);
         }
     }
-
-    game.onUpdateInterval(50, function () {
-        if (Math.percentChance(33)) {
-            sprites.createEmptySprite(SpriteKind.Star);
-        }
-    });
 }
 
 namespace powerups {
@@ -938,10 +943,7 @@ namespace enemy {
                 enemy.vx = 0;
             }
             if (Math.percentChance(4)) {
-                sprites.createProjectile(img`
-                    7
-                    7
-                `, 0, 45, SpriteKind.EnemyLaser, enemy);
+                sprites.createProjectile(spritesheet.enemyLaser, 0, 45, SpriteKind.EnemyLaser, enemy);
             }
         }
     });
@@ -1002,6 +1004,12 @@ namespace overlapevents {
         otherSprite.destroy();
     })
 
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        info.changeScoreBy(-1);
+        otherSprite.destroy();
+    })
+
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
         sprite.destroy();
@@ -1012,15 +1020,9 @@ namespace overlapevents {
         sprite.destroy();
     })
 
-    sprites.onOverlap(SpriteKind.Player, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
-        info.changeLifeBy(-1);
-        info.changeScoreBy(-1);
-        otherSprite.destroy();
-    })
-
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
-        otherSprite.destroy();
         info.changeScoreBy(1);
+        otherSprite.destroy();
     })
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
@@ -1029,16 +1031,16 @@ namespace overlapevents {
         if (powerUp != -1) {
             ship.player.say(powerUpStrings[powerUp], 500);
         }
-        if (powerUp === PowerUpType.Health) {
+        if (powerUp == PowerUpType.Health) {
             info.changeLifeBy(1);
-        } else if (powerUp === PowerUpType.Score) {
+        } else if (powerUp == PowerUpType.Score) {
             info.changeScoreBy(15);
-        } else if (powerUp === PowerUpType.Attack) {
+        } else if (powerUp == PowerUpType.Attack) {
             ship.boostedLasers += 5;
-        } else if (powerUp === PowerUpType.MaxEnergy) {
+        } else if (powerUp == PowerUpType.MaxEnergy) {
             state.maxCharge++;
             state.charge++;
-        } else if (powerUp === PowerUpType.Ghost) {
+        } else if (powerUp == PowerUpType.Ghost) {
             misc.tempGhost(ship.player, 1000);
         }
     })
@@ -1057,15 +1059,15 @@ namespace overlapevents {
     sprites.onOverlap(SpriteKind.Asteroid, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
         sprite.setFlag(SpriteFlag.Ghost, true);
         let left = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids),
-            Math.randomRange(-20, -10),
-            sprite.vy * (1 + Math.random()),
-            SpriteKind.BrokenAsteroid,
-            sprite);
+                                            Math.randomRange(-20, -10),
+                                            sprite.vy * (1 + Math.random()),
+                                            SpriteKind.BrokenAsteroid,
+                                            sprite);
         let right = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids),
-            Math.randomRange(10, 20),
-            sprite.vy * (1 + Math.random()),
-            SpriteKind.BrokenAsteroid,
-            sprite);
+                                            Math.randomRange(10, 20),
+                                            sprite.vy * (1 + Math.random()),
+                                            SpriteKind.BrokenAsteroid,
+                                            sprite);
         sprite.destroy();
         otherSprite.destroy();
     })
