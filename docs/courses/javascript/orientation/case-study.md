@@ -842,16 +842,20 @@ namespace stars {
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         sprite.z = -1;
     });
+    
+    fillScreen();
 
-    function setMotion(star: Sprite): void {
+    function setMotion(star: Sprite) {
         star.vy = 20;
     }
 
-    for (let row = 0; row < screen.height / 10; row++) {
-        sprites.createEmptySprite(SpriteKind.Star);
-    }
-    for (let star of sprites.allOfKind(SpriteKind.Star)) {
-        star.y = Math.randomRange(0, screen.height);
+    function fillScreen() {
+        for (let row = 0; row < screen.height / 10; row++) {
+            sprites.createEmptySprite(SpriteKind.Star);
+        }
+        for (let star of sprites.allOfKind(SpriteKind.Star)) {
+            star.y = Math.randomRange(0, screen.height);
+        }
     }
 
     game.onUpdateInterval(50, function () {
@@ -872,8 +876,8 @@ namespace powerups {
     sprites.onDestroyed(SpriteKind.PowerUp, function (sprite: Sprite) {
         ship.player.say("missed it :(", 500);
     });
-    
-    function setMotion(powerUp: Sprite): void {
+
+    function setMotion(powerUp: Sprite) {
         powerUp.vy = 60;
     }
 
@@ -890,7 +894,7 @@ namespace powerups {
     game.onUpdate(function () {
         for (let powerUp of sprites.allOfKind(SpriteKind.PowerUp)) {
             if (Math.percentChance(60)) {
-                let trail: Sprite = sprites.createProjectile(img`1`, 0, 0, SpriteKind.PowerUpTrail, powerUp);
+                let trail = sprites.createProjectile(img`1`, 0, 0, SpriteKind.PowerUpTrail, powerUp);
                 trail.lifespan = 300 + Math.randomRange(-150, 150);
                 trail.x += Math.randomRange(-5, 5);
                 trail.setFlag(SpriteFlag.Ghost, true);
@@ -909,7 +913,7 @@ namespace enemy {
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
     });
 
-    function setMotion(enemy: Sprite): void {
+    function setMotion(enemy: Sprite) {
         enemy.vy = 15;
     }
 
@@ -945,7 +949,7 @@ namespace enemy {
 
 namespace ship {
     export let boostedLasers: number = 0;
-    export let player: Sprite = sprites.create(spritesheet.player[1], SpriteKind.Player);
+    export let player = sprites.create(spritesheet.player[1], SpriteKind.Player);
     player.setFlag(SpriteFlag.StayInScreen, true);
 
     info.setLife(3);
@@ -963,8 +967,8 @@ namespace ship {
 
     controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         if (boostedLasers > 0) {
-            let left: Sprite = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
-            let right: Sprite = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
+            let left = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
+            let right = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
             left.x -= 2;
             right.x += 2;
             boostedLasers--;
@@ -1053,15 +1057,15 @@ namespace overlapevents {
     sprites.onOverlap(SpriteKind.Asteroid, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
         sprite.setFlag(SpriteFlag.Ghost, true);
         let left = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids),
-                                            Math.randomRange(-20, -10),
-                                            sprite.vy * (1 + Math.random()),
-                                            SpriteKind.BrokenAsteroid,
-                                            sprite);
+            Math.randomRange(-20, -10),
+            sprite.vy * (1 + Math.random()),
+            SpriteKind.BrokenAsteroid,
+            sprite);
         let right = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids),
-                                            Math.randomRange(10, 20),
-                                            sprite.vy * (1 + Math.random()),
-                                            SpriteKind.BrokenAsteroid,
-                                            sprite);
+            Math.randomRange(10, 20),
+            sprite.vy * (1 + Math.random()),
+            SpriteKind.BrokenAsteroid,
+            sprite);
         sprite.destroy();
         otherSprite.destroy();
     })
@@ -1081,7 +1085,7 @@ namespace state {
 
     export let maxCharge: number = 5;
     export let charge: number = maxCharge;
-    let chargeBar: Sprite = sprites.create(image.create(7, 30));
+    let chargeBar = sprites.create(image.create(7, 30));
 
     chargeBar.z = 50;
     chargeBar.setFlag(SpriteFlag.Ghost, true);
@@ -1109,7 +1113,7 @@ namespace misc {
         })
     }
 
-    export function setPosition(star: Sprite, edge?: number): void {
+    export function setPosition(star: Sprite, edge?: number) {
         star.x = Math.randomRange(edge, screen.width - edge);
         star.y = 0;
     }
