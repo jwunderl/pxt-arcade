@@ -950,7 +950,6 @@ namespace enemy {
 }
 
 namespace ship {
-    export let boostedLasers: number = 0;
     export let player = sprites.create(spritesheet.player[1], SpriteKind.Player);
     player.setFlag(SpriteFlag.StayInScreen, true);
 
@@ -968,12 +967,13 @@ namespace ship {
     })
 
     controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-        if (boostedLasers > 0) {
+        // if (boostedLasers > 0) {
+        if (state.boostCharge > 0) {
             let left = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
             let right = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
             left.x -= 2;
             right.x += 2;
-            boostedLasers--;
+            state.boostCharge--;
         } else {
             player.say("no more boost", 500);
         }
@@ -1036,7 +1036,7 @@ namespace overlapevents {
         } else if (powerUp == PowerUpType.Score) {
             info.changeScoreBy(15);
         } else if (powerUp == PowerUpType.Attack) {
-            ship.boostedLasers += 5;
+            state.boostCharge = Math.min(state.boostCharge + 5, 99);
         } else if (powerUp == PowerUpType.MaxEnergy) {
             state.maxCharge++;
             state.charge++;
@@ -1059,15 +1059,15 @@ namespace overlapevents {
     sprites.onOverlap(SpriteKind.Asteroid, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
         sprite.setFlag(SpriteFlag.Ghost, true);
         let left = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids),
-                                            Math.randomRange(-20, -10),
-                                            sprite.vy * (1 + Math.random()),
-                                            SpriteKind.BrokenAsteroid,
-                                            sprite);
+            Math.randomRange(-20, -10),
+            sprite.vy * (1 + Math.random()),
+            SpriteKind.BrokenAsteroid,
+            sprite);
         let right = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids),
-                                            Math.randomRange(10, 20),
-                                            sprite.vy * (1 + Math.random()),
-                                            SpriteKind.BrokenAsteroid,
-                                            sprite);
+            Math.randomRange(10, 20),
+            sprite.vy * (1 + Math.random()),
+            SpriteKind.BrokenAsteroid,
+            sprite);
         sprite.destroy();
         otherSprite.destroy();
     })
@@ -1087,12 +1087,18 @@ namespace state {
 
     export let maxCharge: number = 5;
     export let charge: number = maxCharge;
+    export let boostCharge: number = 0;
+
     let chargeBar = sprites.create(image.create(7, 30));
 
     chargeBar.z = 50;
     chargeBar.setFlag(SpriteFlag.Ghost, true);
     chargeBar.right = scene.screenWidth() - 2;
     chargeBar.bottom = scene.screenHeight() - 2;
+
+    let boostDisplay = sprites.create(image.create(15, 10));
+    boostDisplay.right = chargeBar.left - 2;
+    boostDisplay.bottom = chargeBar.bottom;
 
     game.onUpdateInterval(1000, function () {
         charge = Math.min(charge + 1, maxCharge);
@@ -1103,6 +1109,10 @@ namespace state {
         let startFilled = Math.floor(bar.height * charge / maxCharge);
         bar.fill(7);
         bar.fillRect(0, startFilled, bar.width, bar.height - startFilled, 2);
+
+        let display = boostDisplay.image;
+        display.fill(0);
+        display.print("" + boostCharge, 0, 0);
     })
 }
 
