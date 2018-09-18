@@ -1036,7 +1036,7 @@ namespace overlapevents {
         } else if (powerUp == PowerUpType.Score) {
             info.changeScoreBy(15);
         } else if (powerUp == PowerUpType.Attack) {
-            state.boostCharge = Math.min(state.boostCharge + 5, 99);
+            state.boostCharge = Math.min(state.boostCharge + 5, 20);
         } else if (powerUp == PowerUpType.MaxEnergy) {
             state.maxCharge++;
             state.charge++;
