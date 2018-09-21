@@ -1,5 +1,5 @@
 ### Console.log, method calling syntax
-
+ 
 ```typescript
 console.log("Hello World!")
 ```
