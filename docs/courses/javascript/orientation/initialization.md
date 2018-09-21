@@ -9,7 +9,7 @@ If you are learning to code for the first time, it is suggested that you start w
 If you have experience with other MakeCode editors or programming in general, the following tutorials will be useful in learning the basics of the functionality that is specific to @boardname@:
 
 * [Simple Maze](/#tutorial:tutorials/simple-maze)
-<!-- * [Star Field](/#tutorial:tutorials/star-field) -->
+* [Star Field](/#tutorial:tutorials/star-field)
 <!-- * [Happy Flower](/#tutorial:tutorials/happy-flower) -->
 * [Simple Extensions](/#tutorial:tutorials/simple-extensions)
 <!-- Add more tutorials in future to help bridge the gap more -->
