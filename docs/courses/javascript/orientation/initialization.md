@@ -57,7 +57,7 @@ Variables allow for code that can easily be changed as necessary for your game. 
 let word = "Hello";
 ```
 
-In the above, the variable ``word`` is assigned the string ``Hello``.
+In the code above, the variable ``word`` is assigned the string ``Hello``.
 
 To use the variable, you simply type in the name you assigned the variable - that is,
 
@@ -116,8 +116,8 @@ word = "goodbye"
 This code will
 
 1. Declare the variable ``word``
-2. Assign ``word`` the value "hello"
-3. Reassign ``word`` the value "goodbye"
+2. Assign ``word`` to the value "hello"
+3. Reassign ``word`` to the value "goodbye"
 
 ### ~hint
 
@@ -126,3 +126,10 @@ What happens to the old value ("hello") of ``word`` when it is assigned a new va
 The old value is gone - there is no way to reference it anymore.
 
 ### ~
+
+## Student Task #3: Splash a Variable
+
+1. Start with the (valid) code from example #3
+2. Immediately after the first line, add a new line to ``||game:game.splash()||`` ``word``
+3. Add another ``||game:game.splash()||`` with ``word`` to the end of the code
+4. Verify that the two splash screens display different words
