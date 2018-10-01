@@ -63,7 +63,8 @@ As mentioned above, when using blocks, we needed to use a separate block for eac
 For example, what was 
 
 ```blocks
-let num: number = (1 + (2 + 3))
+let num = 0
+num = 1 + (2 + 3)
 ```
 
 is now
@@ -122,14 +123,14 @@ This will output 2 instead
 
 There are many instances in which you may want to set a variable to an expression that references itself, such as
 
-```typescript
+```
 num = num + 5;
 ```
 When programming, there is actually a way to condense this expression that makes it easier to write.
 
 The above example can also be written as
 
-```typescript
+```
 num += 5;
 ```
 
