@@ -8,53 +8,12 @@ When writing code with blocks, we saw that we needed to have a block for each ma
 
 Here is how we translate each operator from blocks to JavaScript
 
-### Addition (+)
-
-```block
-	let x = 6 + 2
-```
-
-becomes
-
-```typescript
-	let x = 6 + 2;
-```
-
-### Subtraction (-)
-
-```block
-	let x = 6 - 2;
-```
-
-becomes
-
-```typescript
-	let x = 6 - 2;
-```
-
-### Multiplication (&times;)
-
-```block
-	let x = 6 * 2	
-```
-
-becomes
-
-```typescript
-	let x = 6 * 2	
-```
-
-### Division (&divide;)
-
-```block
-	let x = 6 / 2	
-```
-
-becomes
-
-```typescript
-	let x = 6 / 2	
-```
+|Operation 					|Block					|Javascript			|
+|:---						|:---:					|:---				|
+|Addition (+)				|`[let x = (6 + 2)]`	|`let x = (6 + 2);`	|
+|Subtraction (-)			|`[let x = (6 - 2)]`	|`let x = (6 - 2);`	|
+|Multiplication (&times;)	|`[let x = (6 * 2)]`	|`let x = (6 * 2);`	|
+|Division (&divide;)		|`[let x = (6 / 2)]`	|`let x = (6 / 2);`	|
 
 ### Complex Expressions
 
@@ -90,14 +49,14 @@ console.log("" + num);
 
 Think about how these might be ambiguous. What value do these expressions evaluate to? It depends based on which operation you do first. As it turns out, JavaScipt uses a **PEMDAS** structure to determine which operations should be done in what order.
 
-|Order	|Operation 		|Symbol	|
-|:---:	|:---			|:---:	|
-|1st	|Parenthesis	|()		|
-|2nd	|Exponents		|**		|
-|3rd	|Multiplication	|*		|
-|		|Division		|/		|
-|4th	|Addition	 	|+		|
-|		|Subtraction 	|-		|
+|Order	|Operation 		|
+|:---:	|:---			|
+|1st	|Parenthesis	|
+|2nd	|Exponents		|
+|3rd	|Multiplication	|
+|		|Division		|
+|4th	|Addition	 	|
+|		|Subtraction 	|
 
 Operations that are of the same order (e.g. multiplication and division) will be completed left-to-right. That is ```24 / 3 * 4``` evaluates to 32 because 24 is divided by 3 before the multiplication happens.
 
@@ -123,14 +82,14 @@ This will output 2 instead
 
 There are many instances in which you may want to set a variable to an expression that references itself, such as
 
-```
+```typescript
 num = num + 5;
 ```
 When programming, there is actually a way to condense this expression that makes it easier to write.
 
 The above example can also be written as
 
-```
+```typescript
 num += 5;
 ```
 
