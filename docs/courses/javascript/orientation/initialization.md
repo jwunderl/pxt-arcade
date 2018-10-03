@@ -10,9 +10,13 @@ If you have experience with other MakeCode editors or programming in general, th
 
 * [Simple Maze](/#tutorial:tutorials/simple-maze)
 * [Star Field](/#tutorial:tutorials/star-field)
-<!-- * [Happy Flower](/#tutorial:tutorials/happy-flower) -->
+* [Happy Flower](/#tutorial:tutorials/happy-flower)
 * [Simple Extensions](/#tutorial:tutorials/simple-extensions)
-<!-- Add more tutorials in future to help bridge the gap more -->
+
+Additionally, you may find it useful to visit the review material for the previous courses:
+
+* [CS Intro 1 Review](/courses/csintro1/review)
+* [CS Intro 2 Review](/courses/csintro2/review)
 
 ### ~
 
@@ -57,7 +61,7 @@ Variables allow for code that can easily be changed as necessary for your game. 
 let word = "Hello";
 ```
 
-In the code above, the variable ``word`` is assigned the string ``Hello``.
+In the code above, the variable ``||variables:word||`` is assigned the string ``Hello``.
 
 To use the variable, you simply type in the name you assigned the variable - that is,
 
@@ -66,7 +70,7 @@ let word = "Hello";
 game.splash(word);
 ```
 
-Will **declare** a variable named `word`, **assign** that variable the string "Hello", and then **splash** that variable.
+Will **declare** a variable named ``||variables:word||``, **assign** that variable the string "Hello", and then **splash** that variable.
 
 ## Example #2b: String Variable vs. Strings
 
@@ -84,10 +88,10 @@ game.splash("word");
 ## Student Task #2: Creating new Variables
 
 1. Create a new project in @boardname@
-2. **Declare** a new variable named ``dog``, and **assign** it the value "Bark!"
-3. **Declare** another new variable named ``cat``, and **assign** it the value "Meow"
-4. Use ``||game:game.splash||`` to display ``dog`` to the user
-5. Use ``||game:game.splash||`` to display ``cat`` to the user
+2. **Declare** a new variable named ``||variables:dog||``, and **assign** it the value "Bark!"
+3. **Declare** another new variable named ``||variables:cat||``, and **assign** it the value "Meow"
+4. Use ``||game:game.splash||`` to display ``||variables:dog||`` to the user
+5. Use ``||game:game.splash||`` to display ``||variables:cat||`` to the user
 
 ## Example #3: Reassigning variables
 
@@ -115,13 +119,13 @@ word = "goodbye"
 
 This code will
 
-1. Declare the variable ``word``
-2. Assign ``word`` to the value "hello"
-3. Reassign ``word`` to the value "goodbye"
+1. Declare the variable ``||variables:word||``
+2. Assign ``||variables:word||`` to the value "hello"
+3. Reassign ``||variables:word||`` to the value "goodbye"
 
 ### ~hint
 
-What happens to the old value ("hello") of ``word`` when it is assigned a new value in step 3?
+What happens to the old value ("hello") of ``||variables:word||`` when it is assigned a new value in step 3?
 
 The old value is gone - there is no way to reference it anymore.
 
@@ -130,6 +134,11 @@ The old value is gone - there is no way to reference it anymore.
 ## Student Task #3: Splash a Variable
 
 1. Start with the (valid) code from example #3
-2. Immediately after the first line, add a new line to ``||game:game.splash()||`` ``word``
-3. Add another ``||game:game.splash()||`` with ``word`` to the end of the code
+2. Immediately after the first line, add a new line to ``||game:game.splash()||`` ``||variables:word||``
+3. Add another ``||game:game.splash()||`` with ``||variables:word||`` to the end of the code
 4. Verify that the two splash screens display different words
+
+## What did we learn?
+
+1. Explain the difference between **declaring** and **assigning** a value. It might be useful to try to come up with an analogy.
+2. In task #3, the same variable was ``||game:splash||``ed twice, with different results. Explain how the output was changed in the other lines of code.
