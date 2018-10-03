@@ -33,6 +33,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 ### [Orientation](/courses/javascript/orientation)
 
 * [Initialization](/courses/javascript/orientation/initialization)
+* [Types](/courses/javascript/orientation/types)
 * [Math](/courses/javascript/orientation/math)
 * [Logic](/courses/javascript/orientation/logic)
 * [Loops](/courses/javascript/orientation/loops)
