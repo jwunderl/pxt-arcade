@@ -79,7 +79,7 @@ console.log("" + num)
 This will output 2 instead
 
 
-## Student Task 1:
+## Student Task 1: Evaluating an Expression
 
 1. Pick 4 random numbers and write them horizontally on piece of paper
 2. In the 3 spaces between those numbers, place a random operator to put there
@@ -163,7 +163,7 @@ It may be helpful to switch back and forth between blocks and JavaScript to see 
 
 Also, if you type `Math` followed by a `.` in the editor, the auto-complete feature will show all of the Math functions that can be called.
 
-## Student Task 2:
+## Student Task 2: Scaling a value
 
 1. Generate a random number between 1 and 100
 2. Use `console.log` to print out what the value is
