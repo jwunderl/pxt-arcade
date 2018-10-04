@@ -4,7 +4,7 @@ In TypeScript, events are registered using functions that accept other functions
 
 ## Example
 
-![Splash and Dash](/static/courses/javascript/events/splash-and-dash.gif)
+![Splash and Dash](/static/courses/csintro3/events/splash-and-dash.gif)
 
 ```typescript
 enum SpriteKind {

@@ -14,7 +14,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 });
 ```
 
-![Auto complete for button events](/static/courses/javascript/events/controller-auto-complete.gif)
+![Auto complete for button events](/static/courses/csintro3/events/controller-auto-complete.gif)
 
 Description of parts:
 
