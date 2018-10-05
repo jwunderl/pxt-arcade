@@ -1,3 +1,5 @@
+# Activity: Loops
+
 ## what do with for index loops
 
 ### How many times does this run, what is the max value of i, etc
