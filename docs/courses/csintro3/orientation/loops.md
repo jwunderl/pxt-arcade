@@ -62,7 +62,7 @@ Second Iteration:
 3. Modify the ``check`` step to check if ``||variables:i||`` is less than **50**
 4. Create a hypothesis on what the last line of output will say
 5. Run the code to check your hypothesis
-6. **Challenge:** modify the ``update`` step to change ``||variables:i||`` by **2** on each iteration (you will need to use ``||math:+=||``). How has the output changed?
+6. **Challenge:** modify the ``update`` step to change ``||variables:i||`` by **2** on each iteration (you will need to use ``||math:=||`` or ``||math:+=||`` instead of ``||math:++||``). How has the output changed?
 
 ## Example #2: Summation
 
