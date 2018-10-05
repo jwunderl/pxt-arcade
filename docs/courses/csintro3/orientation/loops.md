@@ -1,10 +1,6 @@
 # Activity: Loops
 
-### TODO Intro for loops activity
-
-## Concept: ``||loops:For||`` Loops
-
-A ``||loops:for||`` loop is one of the most common loop structures to use. It allows for a consistent way to iterate a (generally) constant number of times.
+A ``||loops:for||`` loop is one of the most common loop structures. It allows for a consistent way to iterate a (generally) predetermined number of times.
 
 In blocks, this structure was represented in two different ways: the ``||loops:for index||`` loop, as well as the ``||loops:repeat loop||``. The main difference between the two was largely based on whether or not the user needed to use the ``||variables:index||`` in their loop.
 
@@ -109,4 +105,7 @@ phrase += " world";
 
 ### ~
 
-### TODO: while loop section? maybe introduce later on where it is relevant, to make them only have to remember one type of loop to start
+## What did we learn?
+
+1. In your own words, describe the ``initialization``, ``check``, and ``update`` steps of a for loop.
+2. In @boardname@, create a new project and place a ``||loops:repeat||`` and a ``||loops:for index||`` loop in the ``||loops:on start||``. Convert the code to JavaScript: what is different between the two loops?
