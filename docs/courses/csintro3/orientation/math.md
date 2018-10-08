@@ -6,7 +6,7 @@ In Blocks, mathematical calculations and formulas quickly became complex and har
 
 In Blocks, each step of an equation needed it's own block. This can make formulas difficult to properly express, as it can be hard to identify (or change) the order in which they are evaluated.
 
-In JavaScript, the same formulas can be easier to express, as the syntax (structure) is much closer to common mathematical notations.
+In JavaScript, the same formulas can be easier to express, as the syntax (structure) is much closer to what is used when evaluating math by hand or with a scientific calculator.
 
 | Operation         | Block                 | JavaScript            |
 | :---------------- | :-------------------: | :-------------------- |
@@ -18,46 +18,34 @@ In JavaScript, the same formulas can be easier to express, as the syntax (struct
 ## Example #1: Complex Expressions
 
 1. Review the examples below
-2. Identify what is different between the blocks and the JavaScript
+2. Identify what is different between the Blocks and the JavaScript in each pair
 3. Run the examples: identify what the end result will be (it may be useful to add ``game.splash`` or ``console.log`` to display the value)
 
-## Example #1a: Addition
-
-### Blocks
+### Example #1a: Addition and Subtraction
 
 ```blocks
-let num: number = 1 + 2 + 3;
+let num: number = 1 + 2 - 3;
 ```
-
-### JavaScript
 
 ```typescript
-let num: number = 1 + 2 + 3;
+let num: number = 1 + 2 - 3;
 ```
 
-## Example #1b: Addition and Multiplication
-
-### Blocks
+### Example #1b: Addition and Multiplication
 
 ```blocks
 let num: number = 5 + 3 * 2;
 ```
-
-### JavaScript
 
 ```typescript
 let num: number = 5 + 3 * 2;
 ```
 
-## Example #1c: Division and Multiplication
-
-### Blocks
+### Example #1c: Division and Multiplication
 
 ```blocks
 let num: number = 5 + 3 * 2;
 ```
-
-### JavaScript
 
 ```typescript
 let num: number = 24 / 3 * 4;
@@ -65,7 +53,7 @@ let num: number = 24 / 3 * 4;
 
 ## Student Task #1: Creating Blocks
 
-1. Create a new project in @boardname@. Set it to JavaScript
+1. Create a new project in @boardname@. Go to the JavaScript view
 2. Recreate the expression below in **JavaScript**
 3. To confirm the JavaScript expression is correct, switch to Blocks and check that the result is the same
 4. **Challenge:** change the ``+`` to a ``-``, and switch back to JavaScript. What has changed?
@@ -76,7 +64,7 @@ let num: number = 15 + 8 / 3
 
 ## Concept: Order of Operations
 
-Think about how these might be ambiguous. What value do these expressions evaluate to? It depends based on which operation you do first. As it turns out, JavaScipt uses a **PEMDAS** structure to determine which operations should be done in what order.
+JavaScipt uses a **PEMDAS** structure to determine the order in which operations are evaluated. This standards for **P**arentheses, **E**xponents, **M**ultiplication or **D**ivision, **A**ddition or **S**ubtraction.
 
 | Order	| Operation         |
 | :---:	| :---------------- |
@@ -87,132 +75,130 @@ Think about how these might be ambiguous. What value do these expressions evalua
 | 4th	| Addition          |
 |		| Subtraction       |
 
-Operations that are of the same order (e.g. multiplication and division) will be completed left-to-right. That is `24 / 3 * 4` evaluates to 32 because 24 is divided by 3 before the multiplication happens.
+<br />
 
-Any operations that occur within parentheses apply first in the order of operations. This can be used to control the order in which an expression is evaluated.
+Operations of the first order will occur before operations of the second order, operations of the second order will occur before operations of the third order, and operations of the third order will occur before operations of the 4th order.
 
-# Example #2a: Subtraction and Division
+Operations that are of the same order (for example, multiplication and division) will be completed left-to-right. This means that ``24 / 3 * 4`` evaluates to ``32``, because ``24`` is divided by ``3``, then the result is multiplied by ``4``.
+
+Parentheses have the highest order, which means that they are always evaluated first. This can be used to control the order in which an expression is evaluated. For example, ``24 / (3 * 4)`` will evaluate to ``2``, because the parentheses require that ``3 * 4`` is evaluated first, before the division occurs.
+
+## Example #2: Using PEMDAS
+
+1. Review the examples below
+2. In each example, identify how the value of ``num`` is changed using the order of operations
+
+### Example #2a: Subtraction and Division
 
 ```typescript
 let num: number = 10 - 6 / 2;
 console.log("" + num);
 ```
 
-This will print out the number 7 because the division occurs before the subtraction. If we want to change this order and subtract before we divide, we can use parentheses like
+This will print out the number 7, because the division occurs before the subtraction.
+
+If instead the goal is to subtract before dividing, parentheses can be used to change the order
 
 ```typescript
 let num: number = (10 - 6) / 2;
 console.log("" + num);
 ```
 
-Since the order the expression is evaluated changed, it is probable that the value that was outputted was changed. This will now output 2 instead
+This will print out the number 2 instead.
 
-# Example #2b: Division and Multiplication
+### Example #2b: Division and Multiplication
 
 ```typescript
 let num: number = 24 / 3 * 4;
-console.log("" + num)
+console.log("" + num);
 ```
 
-This will print out the number 32 because the division occurs before the multiplication. If we want to change this order and multiply before we divide, we can use parentheses like
+This will print out the number 32, because the division occurs before the multiplication.
+
+If instead the goal is to multiply first, the equation can be changed using parentheses
 
 ```typescript
-let num: number = 24 / (3 * 4)
-console.log("" + num)
+let num: number = 24 / (3 * 4);
+console.log("" + num);
 ```
 
-This will output 2 instead
+This will print out the number 2 instead.
 
+## Student Task #2: Fixing an Expression
 
-## Student Task #2: Evaluating an Expression
+1. Recreate the code below
+2. Run the code and identify what value ``num`` stores
+3. Review the description of the goal of the code in the box below: does the code match the goal?
+4. If the code does not match the expected output, modify the order in which it is evaluated **by adding parentheses**. Do not add or remove any other operators or numbers 
 
-1. Pick 4 random numbers and write them horizontally on piece of paper
-2. In the 3 spaces between those numbers, place a random operator to put there
-3. Evaluate the expression on paper
-4. Type out the expression in JavaScript and compute the result
+### ~hint
 
-## Concept: Assignment Operators
+The goal of the code was to complete the steps in the following order:
 
-Think about how we might implement something like the ``||variables:change by||`` block 
+1. add 6 to 4 = **10**
+2. divide the result by 2 = **5**
+3. subtract 1 from the result = **4**
+4. multiply the result by 18 = **72**
 
-There are many instances in which we may want to set a variable to an expression that references itself, such as
+### ~
+
+```typescript
+let num: number = 18 * 6 + 4 / 2 - 1;
+game.splash("" + num);
+```
+
+## Concept: ``||variables:change by||`` and Assignment Operators
+
+The ``||variables:change by||`` block was very commonly used to modify the value a variable was assigned to when programming in Blocks.
+
+This can be accomplished in JavaScript by using the variable itself in the equation:
 
 ```typescript-ignore
 num = num + 5;
 ```
 
-When programming, there is actually a way to condense this expression that makes it easier to write.
+This works because the equation on theright side of the assignment operator is evaluated first, and the result of that equation is assigned to the variable on the right side.
 
-The above example can also be written as
+For example, if ``num`` stored ``4`` before the code above, the right hand side of the equation would first be evaluated to ``9``, and then num would be reassigned ``9`` as it's new value.
+
+Modifying a value in this way is a very common task, so JavaScript and other languages introduce the ``+=`` operator, which will **add** the value on the right side to the value currently stored on the left side.
+
+Using the ``+=`` operator, the example code above can also be written as
 
 ```typescript-ignore
 num += 5;
 ```
 
 This process of condensing the expression extends to all operators, so
-* `num = num - 5;` is equivalent to `num -= 5;`
-* `num = num * 5;` is equivalent to `num *= 5;`
-* `num = num / 5;` is equivalent to `num /= 5;`
+
+* ``num -= 5;`` is equivalent to ``num = num - 5;``
+* ``num *= 5;`` is equivalent to ``num = num * 5;``
+* ``num /= 5;`` is equivalent to ``num = num / 5;``
+
+These are called **Assignment Operators**, like ``=``.
 
 ### ~hint
 
-### Assignment Operators
+### Increment and Decrement
 
-Another common thing done in JavaScript is to increase or decrease a value by 1. 
+In JavaScript, it is very common to add or subtract one from a value: for example, to count the number of times a button was pressed, or the index in a loop.
 
-We've seen that you can do this by saying either
+In JavaScript, there are two **Assignment Operators** that can do this.
 
-`num = num + 1;` or `num += 1;`
+``num = num + 1;`` and ``num += 1;``
 
-We can also say `num++;`
+However, because this is such a common task, there is another (shorter) way to write it. This is done using the **Increment Operator**, represented by two plus signs: in this case, ``num++;``.
 
-All three of these are valid lines that would increment the value by 1.
+All three of the lines above will result in ``num`` being 1 greater than whatever value it was prior.
 
-It also extends to decreasing a value by 1 in that `num--` will decrement the value of `num` by 1.
+Similarly, the **Decrement Operator** is represented by two minus signs: in this case,
 
-These two increment/decrement operators are very commonly used as they are quicker and easier to read and write
-
-### ~
-
-## Concept: Math Functions
-
-When programming in blocks, there were a few Math related functions that we called. Things such as
-
-```block
-let x = Math.randomRange(0, 10)
-let y = Math.ceil(0.5)
-if (Math.percentChance(50)) {
-
-}
-```
-
-These functions are included in JavaScript as well as many more.
-
-You can use them by typing `Math` followed by a `.` and then followed by the name of the function.
-
-For example, to generate a random number between 0 and 10, we would use the `Math.randomRange` method. As we saw in blocks, this function takes in a minimum value and a maximum value. So our JavaScript code would look something like
-
-```typescript
-let num: number = Math.randomRange(0, 10);
-```
-
-### ~hint
-
-It may be helpful to switch back and forth between blocks and JavaScript to see what each function is called. Similarly, in the JavaScript editor, you can still click under the ``||math:Math||`` section and there it will have the JavaScript versions of each block.
+``num = num - 1;`` is equal to both ``num -= 1;`` and ``num--;``;
 
 ### ~
-
-Also, if you type `Math` followed by a `.` in the editor, the auto-complete feature will show all of the Math functions that can be called.
-
-## Student Task #3: Scaling a Value
-
-1. Generate a random number between 1 and 100
-2. Use `console.log` to print out what the value is
-3. Using the assignment operators discussed above, set the value equal to itself multiplied by 1.5 
-4. Use `console.log` to print out the new value is
 
 ## What did we learn?
 
 1. What is an advantage of writing expressions out in JavaScript as opposed to blocks?
 2. In JavaScript, how can the order in which an expression is evaluated be changed?
-3. **Challenge:** how can `[let x = Math.randomRange(0, 5)]` be written in JavaScript?
+3. **Challenge:** explain why the different assignment operators (as well as the increment and decrement) operators might be useful for adding to or subtracting from a variable. 
