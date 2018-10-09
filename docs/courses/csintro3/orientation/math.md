@@ -1,9 +1,5 @@
 # Activity: Math
 
-In Blocks, mathematical calculations and formulas quickly became complex and hard to follow. In JavaScript, the same formulas can be written in a more compact, easy to read format.
-
-## Concept: Math Operators
-
 In Blocks, each step of an equation needed it's own block. This can make formulas difficult to properly express, as it can be hard to identify (or change) the order in which they are evaluated.
 
 In JavaScript, the same formulas can be easier to express, as the syntax (structure) is much closer to what is used when evaluating math by hand or with a scientific calculator.
@@ -201,4 +197,4 @@ Similarly, the **Decrement Operator** is represented by two minus signs: in this
 
 1. What is an advantage of writing expressions out in JavaScript as opposed to blocks?
 2. In JavaScript, how can the order in which an expression is evaluated be changed?
-3. **Challenge:** explain why the different assignment operators (as well as the increment and decrement) operators might be useful for adding to or subtracting from a variable. 
+3. **Challenge:** explain why the different increment, decrement, and assignment operators are be useful for adding to or subtracting from a variable. 
