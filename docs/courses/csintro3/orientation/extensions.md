@@ -1,8 +1,29 @@
-# Using Corgio in JavaScript
+# Activity: Using Corgio in JavaScript
 
-explain how using extensions in JavaScript is just as easy as in blocks, helpful as a transition point to describing namespaces in a rudamentary fashion; this is fairly necessary in explaining what all the things they are typing in actually do (i.e. why is it Math.floor() instead of just floor, etc)
+In previous lessons, the ``||corgio:Corgio||`` extension handled the intricate parts of making a character for a platformer.
 
-### Making a Corgio
+In JavaScript, extensions remain a useful tool in developing complex programs.
+
+## Concept: Creating a Corgio
+
+Using an extension in JavaScript is very similar to using an extension in Blocks: the first step remains to load the extension.
+
+![Loading Corgio using Extensions menu](/static/courses/csintro3/orientation/loading-extension.gif)
+
+After loading the extension, the contents of the extension can be accessed just like any other code, and a new category in the toolbox will often show up showing some of the newly accessible functions (if the developer of the extension chose to implement that behavior).
+
+## Example #1: Corgio Extension in Blocks and JavaScript
+
+The ``||corgio:Corgio||`` extension remains easy to use in JavaScript. For example, ``corgi.create`` can be used to create a new ``||corgio:Corgi||``, similar to how ``sprites.create`` creates a new ``||sprites:Sprite||``.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+
+let myCorg: Corgi = corgi.create(SpriteKind.Player);
+```
 
 ```typescript
 enum SpriteKind {
@@ -13,9 +34,7 @@ enum SpriteKind {
 let myCorg: Corgi = corgi.create(SpriteKind.Player);
 ```
 
-(Specifically serving as a reminder on enums being a thing)
 
-Interacting with corgio -> using methods
 
 ```typescript
 enum SpriteKind {
