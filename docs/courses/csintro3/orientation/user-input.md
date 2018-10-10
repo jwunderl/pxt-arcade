@@ -113,7 +113,8 @@ let adjective1: string = game.askForString("Give me an Adjective");
 ```typescript-ignore
 let name1: string = game.askForString("Give me a Name");
 let adjective1: string = game.askForString("Give me an Adjective");
-let sentence1: string = "My friend " + name1 + " told me their room was " + adjective1 + ".";
+let sentence1: string = "My friend " + name1
+                        + " told me their room was " + adjective1 + ".";
 ```
 
 ### ~
