@@ -1,19 +1,20 @@
 # Problem Set: Initialization
- This section contains a number of selected problems for the Initialization section.
 
- It is recommended that you review the problems, and complete a few before moving on to the next section.
+This section contains a number of selected problems for the Initialization section.
+
+It is recommended that you review the problems, and complete a few before moving on to the next section.
 
 ## Problem #1: Expressing your opinions
 
 You've gotten your hands on coding and now you want to share with the world how awesome you think it is. ``||game:Splash||`` to the screen the phrase **Coding is cool!**.
 
-## Problem #2: Animals
+## Problem #2: Dogs
 
-Use a string variable named to ``||game:splash||`` your favorite animal to the screen.
+Use a string variable named ``||variables:breed||`` to ``||game:splash||`` your favorite type of dog to the screen.
 
-## Problem #3: Pet noises
+## Problem #3: Animal noises
 
-Use 2 string variables, ``||variables:dog||`` and ``||variables:cat||`` that store the sounds that these animals make (e.g. "Woof" or "Meow"). Uses these variables to ``||game:splash||`` these values to the screen.
+Use 2 string variables, ``||variables:cow||`` and ``||variables:snake||`` that store the sounds that these animals make (e.g. "Moo" or "Hisss"). Uses these variables to ``||game:splash||`` these values to the screen.
 
 ## Problem #4: Ice cream
 
