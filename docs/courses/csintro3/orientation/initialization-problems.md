@@ -3,30 +3,26 @@
 
  It is recommended that you review the problems, and complete a few before moving on to the next section.
 
-## Problem #1:
+## Problem #1: Expressing your opinions
 
-1. ``||game:Splash||`` to the screen the phrase **"Coding is cool!"**
+You've gotten your hands on coding and now you want to share with the world how awesome you think it is. ``||game:Splash||`` to the screen the phrase **Coding is cool!**.
 
-## Problem #2:
+## Problem #2: Animals
 
-1. Create a string variable named ``||variables:animal||`` and assign it to the value of your favorite animal
-2. ``||game:Splash||`` this string variable to the screen
+Use a string variable named to ``||game:splash||`` your favorite animal to the screen.
 
-## Problem #3:
+## Problem #3: Pet noises
 
-1. Create 2 string variables named ``||variables:dog||`` and ``||variables:cat||`` and assign them to the sounds that these animals make (e.g. "Woof" or "Meow")
-2. ``||game:Splash||`` the value stored in ``||variables:dog||``
-3. ``||game:Splash||`` the value stored in ``||variables:cat||``
+Use 2 string variables, ``||variables:dog||`` and ``||variables:cat||`` that store the sounds that these animals make (e.g. "Woof" or "Meow"). Uses these variables to ``||game:splash||`` these values to the screen.
 
-## Problem #4:
+## Problem #4: Ice cream
 
-1. Create a string variable named ``||variables:iceCream||`` and assign it to your favorite flavor of ice cream
-2. ``||game:Splash||`` this string variable to the screen
-3. On the line below, change the value of ``||variables:iceCream||`` to another flavor of ice cream
-4. ``||game:Splash||`` this string variable to the screen again
+Your friend is buying you ice cream and needs to know which flavor to buy. Store your favorite flavor in a variable called ``||variables:iceCream||`` and ``||game:splash||`` it to the screen.
 
-## Problem #5:
+But wait, after you tell them, you change your mind. On the line below, change the value of ``||variables:iceCream||`` to another flavor of ice cream and then ``||game:Splash||`` that to the screen.
 
-1. Create a string variable named ``||variables:color||`` and assign it to your favorite color
-2. Create another string variable named ``||variables:copy||`` and assign it to the value stored in ``||variables:color||``
-3. ``||game:Splash||`` both string variables to the screen 
+## Problem #5: Copycat
+
+You're listening to music and you don't know what songs to play. You remember your friend has great taste in music so you ask them to store the title of their favorite song as a string in a variable called ``||variables:favSong||``. Since you trust their music taste, you want to listen to their favorite song next.
+
+What code would you write to create another string variable called ``||variables:nextSong||`` and set it to the value of your friend's favorite song?
