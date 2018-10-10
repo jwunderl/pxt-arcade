@@ -69,43 +69,63 @@ console.log("Mary had a little " + animal);
 5. After asking for all the words, create a string for each sentence with the words replaced
 6. Use ``console.log`` to print each sentence in order
 
-### ~hint
-
 Here's one example sentence to show each step
 
-Step 1: Making a sentence
+### ~hint
+
+### Step 1: Making a sentence
 
 > My friend Bob told me their room was clean.
 
-Step 2: Choosing words
+### ~
 
-> Bob and clean are both important to the story
+### ~hint
 
-Step 3: Replace the words
+### Step 2: Choosing words
 
-> My friend PROPER-NOUN told me their room was ADJECTIVE.
+> "Bob" and "clean" are both important words to the story
 
-Step 4: Prompting the user
+### ~
+
+### ~hint
+
+### Step 3: Replace the words
+
+> My friend NAME told me their room was ADJECTIVE.
+
+### ~
+
+### ~hint
+
+### Step 4: Prompting the user
 
 ```typescript-ignore
-let properNoun1: string = game.askForString("Give me a Proper Noun");
+let name1: string = game.askForString("Give me a Name");
 let adjective1: string = game.askForString("Give me an Adjective");
 ```
 
-Step 5: Creating a sentence
+### ~
+
+### ~hint
+
+### Step 5: Creating a sentence
 
 ```typescript-ignore
-let properNoun1: string = game.askForString("Give me a Proper Noun");
+let name1: string = game.askForString("Give me a Name");
 let adjective1: string = game.askForString("Give me an Adjective");
-let sentence1: string = "My friend " + properNoun1 + " told me their room was " + adjective1 + ".";
+let sentence1: string = "My friend " + name1 + " told me their room was " + adjective1 + ".";
 ```
 
-Step 6: Output to the Console
+### ~
+
+### ~hint
+
+### Step 6: Output to the Console
 
 ```typescript
-let properNoun1: string = game.askForString("Give me a Proper Noun");
+let name1: string = game.askForString("Give me a Name");
 let adjective1: string = game.askForString("Give me an Adjective");
-let sentence1: string = "My friend " + properNoun1
+let sentence1: string = "My friend " + name1
                         + " told me their room was " + adjective1 + ".";
 
 console.log(sentence1);
