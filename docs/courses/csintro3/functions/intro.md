@@ -1,23 +1,58 @@
-# Functions intro
+# Activity: Intro to JavaScript Functions
 
-defining a function - using game.splash() for a simple method that can be converted to blocks and back with no changes
+In Blocks, ``||functions:functions||`` served as a powerful tool in making complex games easier to read, as well as reducing redundancy within the games.
+
+These benefits remain in JavaScript, along with many more features of functions that were unavailable in Blocks.
+
+## Concept: Functions in JavaScript
+
+``||functions:Functions||`` in JavaScript are a bit more complex to start with than ``||functions:Functions||`` in Blocks.
+
+However, functions in JavaScript are used much more commonly than in blocks, so it won't take long to get used to the new syntax.
+
+```typescript-ignore
+function name() {
+    // function contents
+}
+name();
+```
+
+In this code snippet, focus on the following elements of the function:
+
+* ``function``: indicates the start of a new function (similar to ``let`` indicating a new variable)
+* ``name``: the name for the function you are creating
+* ``{}``: the statements between the opening and closing curly brace are the contents of the function (equivalent to the blocks inside the function); in this case, the function does nothing, as there is only a comment inside of it
+* ``name()``: calls the function ``name``, running the code that is assigned to it
+
+### ~hint
+
+The parentheses (``()``) between the function name and the curly braces will become important in future lessons, but only serve as a necessary part of the syntax for now.
+
+### ~
+
+## Example #1: Say Hello
+
+1. Review the code below
+2. Convert the code to Blocks
+3. Identify which blocks came from which parts of the code
 
 ```typescript
-function hello() {
+function sayHello() {
     game.splash("hello");
 }
 
-hello();
+sayHello();
 ```
 
-## Important parts of the code (for now):
 
->* `function`: start defining a new function 
->* `hello`: the name for the function you are creating
->* `{}`: the statements between the opening and closing curly brace are the contents of the function (equivalent to the blocks inside the functions)
->* `hello()`: calls the function hello, running the code that is assigned to it
+### ~hint
 
-(question for students: have them run the code without the `hello()`, and ask if the code inside the function is run if the method isn't called; "no, because nothing is splashed on the screen")
+Does the function ever run if the code is not called with ``||functions:sayHello()||``? Remove that line from the previous example and check.
+
+### ~
+
+
+## Example #2: My Little Friend
 
 ## Variable scoping / functions different from blocks
 
@@ -33,7 +68,7 @@ makeNumbers();
 
 run the code. Makes variables in function, etc, etc.
 
-```typescript
+```typescript-ignore
 function makeNumbers() {
     let first: number = 5;
     let second: number = 6;
