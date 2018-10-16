@@ -52,6 +52,8 @@ This way is much easier to read and modify.
 
 ## Student Task #1: 
 
+Write a function named `greet` that takes in a string `firstName` and prints to the console a greeting of some sort that uses both parameters. Example: `Hey John!`.
+
 ### ~hint
 
 Functions can also accept multiple parameters as input if you separate parameters with a comma. However, the number of parameters in the function header must match the same number of parameters in the function call.
@@ -78,7 +80,7 @@ This is a function that takes in two choices and will randomly choose one of the
 
 ## Student Task #2: Greeting
 
-Write a function named `greet` that takes in two strings: `firstName` and `lastName`. The function should print to the console a greeting of some sort that uses both parameters. Example: `Hello John Doe`.
+Modify the greet function Task #1 so that it takes in two strings: `firstName` and `lastName`. This time, the function should print to the console a greeting of some sort that uses **both** parameters. Example: `Hello John Doe`.
 
 ## Example #3a: Capslock
 
@@ -117,3 +119,11 @@ function follow(follower: Sprite, leader: Sprite) {
 
 Create a function that takes in two parameters, a ``||sprites:sprite||`` with the name `sprite` and a boolean with the named `left`.
 Make it so that if `left` is true, the sprite will move 10 units to the left, otherwise it will move 10 units to the right.
+
+
+## What did we learn?
+
+1. What is the proper syntax for using a parameter? What about using multiple parameters?
+2. How do you specify the type of a parameter?
+3. What does a function call look like?
+4. What types can be used as parameters?
