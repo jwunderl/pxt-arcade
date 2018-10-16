@@ -47,14 +47,57 @@ sayHello();
 
 ### ~hint
 
-Does the function ever run if the code is not called with ``||functions:sayHello()||``? Remove that line from the previous example and check.
+Does the function ever run if the code is not called with ``||functions:sayHello()||``? Remove that line from the previous example and check. Does "hello" still get ``||game:splash||``ed?
 
 ### ~
+
+## Student Task #1: Make a Log
+
+1. Create a function named ``logMeIn``
+2. In the function, ``||game:splash||`` the phrase "LOGGING!"
+3. After the ``||game:splash||``, use ``console.log`` to log the phrase "I'm Here!" to the console
+4. Call the function **twice** after the closing curly brace
+
+## Concept: Variable Scope
+
+One major difference in functions between Blocks and JavaScript is **variable scope**. This refers to where in the code a variable can be accessed.
+
+This can be seen in a small way with loops: for example, the following snippet will fail to run, because ``i`` is only accessible **within** the loop it is defined in - that is the **scope** of the variable.
+
+```typescript-ignore
+for (let i = 0; i < 5; i++) {
+    console.log("Hello!");
+}
+console.log("I just logged " + i + " times!");
+```
+
+This may seem like a problem at first, but it is actually a helpful behavior as the amount of code in a project grows larger than a few lines. For example, if declaring the variable in the loop made it available across the program, the following code wouldn't work because it would be trying to declare the ``||variables:i||`` twice:
+
+```typescript-ignore
+for (let i = 0; i < 5; i++) {
+    console.log("Hello!");
+}
+for (let i = 0; i < 5; i++) {
+    console.log("goodbye!");
+}
+```
+
+This could quickly become a mess as the come being developed gets to be dozens or hundreds of lines long.
+
+Similarly, variables declared **inside** of a function are only accessible **within** the function.
+
+```typescript
+let a = 0;
+function example() {
+    let b = 1; // 'b' is only accessible within `example`
+    a = 2; // 'a' is accessible outside of `example`
+}
+```
 
 
 ## Example #2: My Little Friend
 
-## Variable scoping / functions different from blocks
+
 
 ```typescript
 function makeNumbers() {
@@ -78,6 +121,7 @@ function makeNumbers() {
 makeNumbers();
 game.splash(first + "");
 ```
+
 
 Why doesn't this work -> variables not defined outside the scope of makeNumbers, so they are only usable in there.
 
