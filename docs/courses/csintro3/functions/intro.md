@@ -44,7 +44,6 @@ function sayHello() {
 sayHello();
 ```
 
-
 ### ~hint
 
 Does the function ever run if the code is not called with ``||functions:sayHello()||``? Remove that line from the previous example and check. Does "hello" still get ``||game:splash||``ed?
@@ -62,7 +61,7 @@ Does the function ever run if the code is not called with ``||functions:sayHello
 
 One major difference in functions between Blocks and JavaScript is **variable scope**. This refers to where in the code a variable can be accessed.
 
-This can be seen in a small way with loops: for example, the following snippet will fail to run, because ``i`` is only accessible **within** the loop it is defined in - that is the **scope** of the variable.
+This can be seen in a small way with loops: for example, the following snippet will fail to run, because ``||variables:i||`` is only accessible **within** the loop it is defined in - that is the **scope** of the variable.
 
 ```typescript-ignore
 for (let i = 0; i < 5; i++) {
@@ -71,7 +70,9 @@ for (let i = 0; i < 5; i++) {
 console.log("I just logged " + i + " times!");
 ```
 
-This may seem like a problem at first, but it is actually a helpful behavior as the amount of code in a project grows larger than a few lines. For example, if declaring the variable in the loop made it available across the program, the following code wouldn't work because it would be trying to declare the ``||variables:i||`` twice:
+This may seem like a problem at first, but it is actually a helpful behavior as the amount of code in a project grows larger than a few lines.
+
+For example, if declaring the variable in the loop made it available throughout the program, the following code would fail because it would be trying to declare the ``||variables:i||`` twice.
 
 ```typescript-ignore
 for (let i = 0; i < 5; i++) {
@@ -82,112 +83,92 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-This could quickly become a mess as the come being developed gets to be dozens or hundreds of lines long.
+This could quickly become a mess as the program being developed gets to be dozens (or hundreds) of lines long.
 
 Similarly, variables declared **inside** of a function are only accessible **within** the function.
 
 ```typescript
 let a = 0;
 function example() {
-    let b = 1; // 'b' is only accessible within `example`
-    a = 2; // 'a' is accessible outside of `example`
+    let b = 1;
+    a = 2;
 }
 ```
 
+In this snippet, ``||variables:b||`` is only accessible within ``example`` where it is declared, whereas ``||variables:a||`` is accessible both inside and outside the function.
 
 ## Example #2: My Little Friend
 
-
-
-```typescript
-function makeNumbers() {
-    let first: number = 5;
-    let second: number = 6;
-    game.splash((first + second) + "");
-}
-
-makeNumbers();
-```
-
-run the code. Makes variables in function, etc, etc.
-
-```typescript-ignore
-function makeNumbers() {
-    let first: number = 5;
-    let second: number = 6;
-    game.splash((first + second) + "");
-}
-
-makeNumbers();
-game.splash(first + "");
-```
-
-
-Why doesn't this work -> variables not defined outside the scope of makeNumbers, so they are only usable in there.
-
-Why this is good:
+1. Review the code below
+2. Identify which of the four commented out calls to ``||game:game.splash||`` are valid
+3. Test each ``||game:game.splash||`` by uncommenting int (removing the ``//`` before the method call)
 
 ```typescript
-function makeNumbers() {
-    let first: number = 5;
-    let second: number = 6;
-    game.splash((first + second) + "");
+let little: number;
+let myWord: string;
+
+function mystery() {
+    let friend: string = "hello";
+    little = 5;
+    myWord = "I'm here!";
+
+    // game.splash(friend);
+    // game.splash("" + little);
 }
 
-function makeOtherNumbers() {
-    let first: number = 5;
-    let second: number = 6;
-    game.splash((first * second) + "");
-}
-
-makeNumbers();
-makeOtherNumbers();
+// game.splash(myWord);
+// game.splash(friend);
 ```
 
-explain how keeping the variables in a small scope allows for the names to be used in multiple different contexts, without the possibility of interfering with one another (e.g. button presses with pauses causing them to happen in the same time period). Also helps minimize the number of values available at any given scope -> if a value is only ever useful within a method, there's no reason to keep track of it outside that method.
+## Student Task #2: Different Numbers
 
-If the other behavior is preferred (for example, a given function modifies a variable), the value can be identified outside any functions and referenced inside - that is
+1. Review the code below
+2. Read the comment next to each ``||game:game.splash||``
+3. Make the game match the expected output by changing where ``||variables:count||`` and ``||variables:log||`` are declared
 
 ```typescript
-let first: number;
-let second: number;
-function makeNumbers() {
-    first = 5;
-    second = 6;
-    game.splash((first + second) + "");
+let count: number = 0;
+let log: string = "";
+
+function splashNumberOne() {
+    count++;
+    log += "number is " + count;
+    game.splash(log); // Should output "number is 1"
 }
 
-function makeOtherNumbers() {
-    first = 5;
-    second = 6;
-    game.splash((first * second) + "");
+function splashNumberTwo() {
+    count += 2;
+    log += "number is " + count;
+    game.splash(log); // Should output "number is 2"
 }
 
-makeNumbers();
-makeOtherNumbers();
+splashNumberOne();
+splashNumberTwo();
+splashNumberOne();
 ```
 
-(maybe note that this can lead to weird bugs like the following
-```typescript-ignore
-let first: number;
-let second: number;
-function makeNumbers() {
-    let first = 5;
-    let second = 6;
-    game.splash((first + second) + "");
-}
+## What did we learn?
 
-function makeOtherNumbers() {
-    first = 5;
-    second = 6;
-    game.splash((first * second) + "");
-}
+1. What do the curly braces (``{}``) do when declaring a new function?
+2. How is code like task #2 handled in Blocks? Copy your solution for task #2 into a new project, and convert it to blocks - what looks different?
 
-makeNumbers();
-game.splash("" + first); // Why is first not defined???!
-makeOtherNumbers();
+### ~hint
+
+Another case where variable scope matters is with **variable shadowing**. This will be discussed in more detail later in the course, but an example of the problem can be found in the following snippet:
+
+```typescript
+let word: string = "Hello!";
+function changeHello() {
+    let word: string = "goodbye!"; // Changing word from hello to goodbye
+}
+changeHello();
+game.splash(word);
 ```
-with local variables in makeNumber shadowing the variables outside, making them **different variables with the same name**
-)
 
-Note that this is the default behavior for converting blocks to JavaScript, as blocks don't have a sense of scope in variables / local variables are JavaScript only
+In this example, the intention was to change ``||variables:word||`` from "hello!" to "goodbye!" when the function was called. It seems like there is a bug in there, though - word is declared twice.
+
+However, because the variable in the function has a different **scope**, the variable declared in the function **shadows** the outer one - there are now two variables with the same name within ``changeHello``, with only the local one (the one that shadows the other) being accessible. The outer variable won't be changed, and will remain "Hello!" when it is ``||game:splash||``ed.
+
+This type of bug is very subtle, and can be hard to catch when looking through long segments of code; in the next few lessons better ways to handle this type of behavior will be shown.
+
+### ~
