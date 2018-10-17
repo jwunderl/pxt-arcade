@@ -23,7 +23,7 @@ printHello(7, false);
 
 cut from section because getting into three levels of nesting is a bit much for now; making them make this function (probably refactored as storing the variable first to reduce the nesting) would be a reasonable second to last task here
 
-## Example #3b: Follow the leader
+## Example #3b: Follow the Leader
 
 Including ``||sprites:sprites||`` work too!
 
@@ -36,4 +36,4 @@ function follow(follower: Sprite, leader: Sprite) {
 }
 ```
 
-This is conceptually too much to just skim over; make this the last task with an explanation of what it's going to do so it's not just some random numbers that make sprites do something they can't see
+This is conceptually too much to just skim over; make this the problem on this page with an explanation of what it's going to do so it's not just some random numbers that make sprites do something they can't see (as thre is no indication to run the code
