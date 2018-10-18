@@ -79,14 +79,14 @@ Hints for Challenge:
 
 ## Concept: Parameters
 
-To comment on a parameter, start the line with ``@param``, followed by the parameter's name, and then a short description of what the method will do.
+To comment on a parameter, start the line with ``@param``, followed by the parameter's name, and then a short description of what the function will do.
 
 For example, a section of a comment describing a parameter ``count`` of type ``number`` that determines how many times a value will be printed could be commented on as
 
 ```typescript-ignore
 /**
- * Omitted function description
- * @param count the number of times to print the value
+ * Prints "Hello!" to the console a given number of times
+ * @param count the number of times to print the phrase
  */
 ```
 
