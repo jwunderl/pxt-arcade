@@ -1,9 +1,5 @@
-# Comments for Functions
+# Activity: Function Comments
 
-give description of standard function commenting
+In this section, ``||functions:functions||`` have been shown to have a wide variety of uses, with many different features.
 
-/**
- * DESCRIPTION OF METHOD VALUE
- * param pname: what it do
- * returns: what it returns
- */
+For those reasons, we will maintain a particular syntax for ``||functions:function||`` comments. This way, anyone who wants to learn about what the function do will have a consistent and easy way in which to identify these features. Additionally, 
