@@ -77,17 +77,25 @@ Hints for Challenge:
 
 ### ~
 
-## Concept: Parameter Comments
+## Concept: Parameters
 
-To comment on a parameter, start the line with "@param", followed by the parameter's name, and then a short description of what the method will do
+To comment on a parameter, start the line with ``@param``, followed by the parameter's name, and then a short description of what the method will do.
 
+For example, a section of a comment describing a parameter ``count`` of type ``number`` that determines how many times a value will be printed could be commented on as
+
+```typescript-ignore
+/**
+ * Omitted function description
+ * @param count the number of times to print the value
+ */
+```
 
 ## Example #2: Commenting on ``||functions:printMessage||``
 
 1. Review the code below
-2. Identify what the method will do
-3. Read the comment for the method: identify how it describes the method's behavior
-4. Hover over the function call and the parameter that is passed to the function call, to see how the editor uses method comments
+2. Identify what the function will do
+3. Read the comment for the function: identify how it describes the function's behavior
+4. Hover over the function call and the parameter that is passed to the function call to see how the editor displays function 
 
 ```typescript
 /**
@@ -103,3 +111,103 @@ printMessage("World");
 ```
 
 ![Function Highlighting](/static/courses/csintro3/functions/function-highlighting.gif)
+
+## Student Task #2: Commenting on Parameters
+
+1. Review the code below
+2. Fill in the comment for the ``||functions:printMyValue||`` function
+3. Fill in the comment for the ``||functions:goodbye||`` function
+
+```typescript
+/**
+ * 
+ */
+function printMyValue(value: number) {
+    console.log("" + value);
+}
+
+/**
+ * 
+ */
+function moveMySprite(mySprite: Sprite) {
+    mySprite.x += 20;
+}
+```
+
+## Concept: Return Values
+
+Return values are incredibly important; if they are not documented properly, then oftentimes the behavior of the function will be entirely unpredictable.
+
+To document return values, start the comment with ``@returns``, and then give a short description of what the value returned represents. Generally, we will put the ``@returns`` annotation after any parameters for the functions we describe.
+
+## Example #3a: Describing Return Values
+
+1. Review the code below
+2. Identify what the function will do
+3. Read the comment for the function: identify how it describes the function's behavior
+
+```typescript
+/*
+ * Prints out 5
+ * @returns the number requested
+ */
+function highFive(): number {
+    console.log("5");
+    return 5;
+}
+```
+
+## Example #3b: Describing Only Return Values
+
+If the function's only purpose is to return a value, and nothing else that will affect the person calling it is done, then you can omit the short description of the function itself and include only the ``@returns``.
+
+1. Review the code below
+2. Identify what the function will do
+3. Read the comment for the function: identify how it describes the function's behavior
+
+```typescript
+/*
+ * @returns the number requested
+ */
+function lowFive(): number {
+    return 5;
+}
+```
+
+## Student Task #3: What does this Return?
+
+1. Review the code below
+2. Fill in the comment for the ``||functions:coinFlip||`` function
+3. Fill in the comment for the ``||functions:greetAndBill||`` function
+4. **Challenge:** fill in the comment for the ``||functions:sayMyName||`` function
+
+```typescript
+
+/**
+ * 
+ */
+function coinFlip(): boolean {
+    return Math.percentChance(50);
+}
+
+/**
+ *
+ */
+function greetAndBill(): string {
+    game.splash("Have a good day!");
+    return "Bill";
+}
+
+/**
+ * 
+ */
+function sayMyName(name: string): string {
+    game.splash("Your name is " + name);
+    return "my" + name;
+}
+```
+
+## What did we learn?
+
+1. In your own words, describe why comments for functions are helpful.
+2. Why is it important to keep a consistent structure for how comments are written?
