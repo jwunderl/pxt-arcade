@@ -89,3 +89,46 @@ splashOutput.printTwoNums(12, 123);
 
 * multiple namespaces in one file
 * differentiate between two different behaviors in a consistent way / with a consistent pattern
+
+
+## Concept: Commenting Your Own Code
+
+Sharing code in @boardname@ allows for the code you write to be used in other projects - whether those projects are your own, your friends, or anyone else you give the link to.
+
+There are still some important topics to cover before the code we write can be written in a way that is easy to use without causing issues. One of those issues is making the code easy to understand, so that others can use it without having to ask questions about every detail of the code.
+
+Comments allow developers to leave **documentation** for those reading their code: whether that be someone else who's never seen it before, or themselves in a year or two.
+
+In JavaScript, there are two different formats for comments:
+
+```typescript
+// Single line comments, like this
+
+game.splash("//hello!//") // Another single line comments
+
+/**
+ * And multiline comments,
+ * like this
+ */
+
+/* Also works with a single line */
+```
+
+When a line contains two slashes in a row (``//``) that are not in a string, that signifies that the line is finished, and anything else on that line is simply a comment - something for humans to read, that the computer will otherwise ignore.
+
+Similarly, multiline comments (which start with ``/*`` and end with ``*/``) allow for sections of text that the computer will ignore. Anything between the start and end will not be run by the program, and only intended as an annotation for the user.
+
+In this course, multiline comments will use the style shown below, so that it is easier to identify where the comments start and end.
+
+```typescript
+/**
+ * The course uses this style of comment;
+ * the asterisks that start these lines are not required,
+ * but do make it easier to follow what exactly the comment includes
+ */
+```
+
+## What did we learn?
+
+1. Why is the ``export`` keyword used within namespaces?
+2. What do comments add as code starts to get complex?
