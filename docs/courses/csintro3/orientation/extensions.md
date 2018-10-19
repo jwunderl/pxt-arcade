@@ -14,7 +14,7 @@ After loading the extension, the contents of the extension can be accessed just 
 
 ## Example #1: ``||corgi:Corgio||`` Extension in Blocks and JavaScript
 
-The ``||corgi:Corgio||`` extension remains easy to use in JavaScript. For example, ``corgi.create`` can be used to create a new ``||corgi:Corgi||``.
+The ``||corgi:Corgio||`` extension remains easy to use in JavaScript. For example, ``||corgi:corgi.create||`` can be used to create a new ``||corgi:Corgi||``.
 
 ```blocks
 enum SpriteKind {
