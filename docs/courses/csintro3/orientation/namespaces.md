@@ -1,95 +1,8 @@
-# Namespaces
+# Activity: Comments and Namespaces
 
-Intro to namespaces; fairly light, transitions nicely into functions (as basically an intro to explaining scope)
+As the code we write starts to get to be dozens of lines long (or more), it is important to be able to make sure that the code remains easy to follow and understand.
 
-Intro -> use Math.max to explain (max is a fairly common word, so transitioning to making a function called max will lkely seem reasonable)
-
-```typescript
-let a = 5;
-let b = 6;
-let num: number = Math.max(a, b);
-
-game.splash(num + "")
-```
-
-easy, good, etc
-
-```typescript
-function max() {
-    return "Maximilian";
-}
-
-let a = 5;
-let b = 6;
-let num: number = Math.max(a, b);
-
-game.splash(max() + num)
-```
-
-These two functions have the same name - max() - oh wow how does that work, how do you make them choose different things
-
-## Using namespaces
-
-```typescript
-namespace names {
-    export function max() {
-        return "Maximilian";
-    }
-
-    export function min() {
-        return "Minnie";
-    }
-
-    function bob() {
-        return "Robert";
-    }
-}
-
-let a = 5;
-let b = 6;
-let num: number = Math.max(a, b);
-
-game.splash(names.max() + num)
-```
-
-* the title (names) identifies namespace, describes what the methods in it do, shows how they belong together
-* explain the export function - making the function available __outside__ this context
-* ask them which functions in the names namespace __can__ be accessed outside (max and min) and which are only available inside the namespace (bob)
-* ask for if they can think of a reason why that would be useful (push poll them towards helper methods for their other stuff that aren't relevant outside the namespace)
-* explain why using namespaces is helpful - in this case, capable of using to functions (names.max() and Math.max(a, b)) with the same name, without having to name them in a less descriptive manner (max1, max2, etc), add a heirarchy to the program
-
-## multiple namespaces
-
-```typescript
-namespace consoleOutput {
-    export function printNum(value: number) {
-        console.log(value + "");
-    }
-
-    export function printTwoNums(a: number, b: number) {
-        console.log(a + " : " + b);
-    }
-}
-
-namespace splashOutput {
-    export function printNum(value: number) {
-        game.splash(value + "");
-    }
-
-    export function printTwoNums(a: number, b: number) {
-        game.splash(a + " : " + b);
-    }
-}
-
-consoleOutput.printNum(0);
-consoleOutput.printTwoNums(1, 2);
-splashOutput.printNum(234);
-splashOutput.printTwoNums(12, 123);
-```
-
-* multiple namespaces in one file
-* differentiate between two different behaviors in a consistent way / with a consistent pattern
-
+In this lesson, two ways to approach this issue will be introduced: namespaces, which allow code to be separated into discrete sections, and comments, which allow for code to be documented for anyone who will read it in the future.
 
 ## Concept: Commenting Your Own Code
 
@@ -128,7 +41,83 @@ In this course, multiline comments will use the style shown below, so that it is
  */
 ```
 
+## Concept: Namespaces
+
+Namespaces are used to break up code into distinct topics.
+
+Breaking up the code into smaller sections (namespaces) allow for several issues to be solved:
+
+1. It can be easier to identify where a particular feature is implemented, as the code related to that feature can be kept in a single location
+2. The different features can work in their own area, with their own variables that are not needed elsewhere in the code
+3. If multiple people are writing code for the same project, the code can be separated into the different tasks they are working on, without having to worry about variable names conflicting
+
+Creating a namespace is fairly simple: the ``names`` namespace is created with the following snippet
+
+```typescript
+namespace names {
+    // Content in the `names` namespace goes here
+}
+```
+
+## Example #1: Creating Names
+
+1. Review the code below
+2. Identify the **namespace** the code is in
+3. Run the code; is anything different from if the namespace was removed?
+
+```typescript
+namespace names {
+    let bill: string = "Billy";
+    let amy: string = "Amelia";
+
+    game.splash("Hello " + bill);
+    game.splash("Hello " + amy);
+}
+```
+
+The behavior in this case is no different from if the values were placed outside the namespace; however, the variables ``||variables:bill||`` and ``||variables:amy||`` are not accessible outside the ``names`` namespace
+
+## Student Task #1: Name Length
+
+1. Start with the code from example #1
+2. Add another namespace, ``namelength``
+3. In the ``namelength`` namespace, assign ``||variables:bill||`` the number 5, and ``||variables:amy||`` the value 6 (these numbers represent the length of their full names)
+4. Log to the console both values
+5. Run the code, and verify that it runs without any problem (even though there are now two variables in each namespace with the same name)
+
+## Concept: Export
+
+By default, any variables declared inside of a namespace are only accessible within that namespace. This is helpful because it allows for variables to be "hidden" in the namespace if they are only needed there - this way, only the values that are useful outside of the namespace are accessible.
+
+The ``export`` keyword can be used to make the variables accessible outside of the namespace.
+
+After ``export``ing the variable, it can be referenced outside of the namespace by adding the namespace and a dot ``.`` before the variable name; that is, ``namespaceName.variableName``.
+
+## Example #2: Exporting Names
+
+1. Review the code below
+2. Identify how the variables are made accessible outside of the namespace
+3. Identify how the variables referenced outside of the namespace
+
+```typescript
+namespace names {
+    export let bill: string = "Billy";
+    export let amy: string = "Amelia";
+}
+
+game.splash("Hello " + names.bill);
+game.splash("Hello " + names.amy);
+```
+
+## Student Task #2: Export Names Length
+
+1. Start with the code from task #1, and add in the changes from example #2
+2. Export both variables in ``nameslength``
+3. Change the ``||game:game.splash||``es so that they will splash the variables for each name from both the ``names`` and ``namelength`` namespaces in the following messages:
+    * "Billy has 5 letters"
+    * "Amelia has 6 letters"
+
 ## What did we learn?
 
 1. Why is the ``export`` keyword used within namespaces?
-2. What do comments add as code starts to get complex?
+2. Why are comments useful as code starts to get complex?
