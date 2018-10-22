@@ -1,10 +1,12 @@
 # Activity: Optional and Default Parameters
 
-There can be some cases in which a function call may need to be more specific or contain more parameters than other cases. This ability can be achieved with **Optional Parameters** and **Default Parameters**.
+In the [Function Parameters lesson](/courses/csintro3/functions/parameters), each function specified exactly the parameters it required.
+
+However, there can be some cases in which a function call may need only a few parameters, but have other options that the developer wants to remain accessible. This behavior can be achieved with **Optional Parameters** and **Default Parameters**.
 
 ## Concept: Optional Parameters
 
-Optional Parameters, as its name would suggest, are parameters in a function that are not required, but can be specified if needed. 
+Optional Parameters are parameters in a function that are not required, but can be specified if needed. 
 
 A good example of this functionality is ``||game:game.splash||``. 
 
@@ -16,6 +18,7 @@ A good example of this functionality is ``||game:game.splash||``.
 This function allows for using either 2 string variables or just 1.
 
 The syntax for these parameters is to place a question mark, `?`, between the name of the parameter and the colon that specifies type. They also must be placed to the right of all required parameters. Like as follows:
+
 ```typescript-ignore
 function someFunction(requiredParam: someType, optionalParam?: someType) {
 
