@@ -115,13 +115,12 @@ The ``||game:on game update||`` event is perfect for handling this behavior, as 
 enum SpriteKind {
     Asteroid
 }
-let mySprite: Sprite = null
-mySprite = sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid)
+let mySprite: Sprite = sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
 mySprite.vx = 50;
 
 game.onUpdate(function () {
     if (mySprite.x < 0) {
-        mySprite.x = 0
+        mySprite.x = 0;
         mySprite.vx = -mySprite.vx;
     } else if (mySprite.x > scene.screenWidth()) {
         mySprite.x = scene.screenWidth();
