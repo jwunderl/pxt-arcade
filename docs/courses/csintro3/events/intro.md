@@ -137,7 +137,7 @@ game.onUpdate(function () {
 3. In the ``||game:game.onUpdate||`` event, add an additional ``||logic:if ... else if||`` section after the first one
 4. In this ``||logic:if ... else if||`` section, 
     * if ``mySprite.y < 0``, set the ``||sprites:Sprite||``'s ``||sprites:y||`` position to 0 and reverse it's ``||sprites:vy||``
-    * if ``mySprite.y > scene.screenWidth()``, set the ``||sprites:Sprite||``'s ``||sprites:y||`` position to ``||scene:screenWidth()`` and reverse it's ``||sprites:vy||``
+    * if ``mySprite.y > scene.screenWidth()``, set the ``||sprites:Sprite||``'s ``||sprites:y||`` position to ``||scene:screenWidth()||`` and reverse it's ``||sprites:vy||``
 
 ## What did we learn?
 
