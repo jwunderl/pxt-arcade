@@ -22,7 +22,7 @@ When adding code to run in the event, it should be added in between the open and
 
 ### ~hint
 
-The syntax for this will likely seem a bit weird to start. In the next lesson, this will be explored in much more detail.
+The syntax for this will likely seem a bit weird to start. More details on why the function call is written in the way it is can be found in the [Anonymous Functions Appendix](/courses/csintro3/appendix/anonymous).
 
 ### ~
 
