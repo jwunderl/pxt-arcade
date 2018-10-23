@@ -1,8 +1,8 @@
 # Activity: Function Documentation
 
-In this section, ``||functions:functions||`` have been shown to have a wide variety of uses, with many different features.
+In previous lessons, ``||functions:functions||`` have been shown to have a wide variety of uses, with many different features.
 
-For those reasons, we will maintain a particular syntax for ``||functions:function||`` comments. This way, anyone who wants to learn about what the function do will have a consistent and easy way in which to identify these features.
+For those reasons, we will maintain a particular syntax for ``||functions:function||`` comments. This way, anyone who wants to learn about the function will have a consistent and easy way in which to identify these features.
 
 ## Concept: Commenting Simple Functions
 
@@ -47,7 +47,7 @@ sayHello();
 ## Student Task #1: Writing a Comment
 
 1. Review the code below
-2. Fill in the comment for the ``||functions:helloWorld||`` function
+2. Fill in the comment for the ``||functions:introduction||`` function
 3. Fill in the comment for the ``||functions:goodbye||`` function
 4. **Challenge:** should a description of ``||variables:word||`` show up in the comment for ``||functions:goodbye||``?
 
@@ -55,8 +55,8 @@ sayHello();
 /**
  * 
  */
-function helloWorld() {
-    game.splash("Hello World!");
+function introduction() {
+    game.splash("Hi, my name is Bob!");
 }
 
 /**
@@ -79,7 +79,7 @@ Hints for Challenge:
 
 ## Concept: Parameters
 
-To comment on a parameter, start the line with ``@param``, followed by the parameter's name, and then a short description of what the method will do.
+To comment on a parameter, start the line with ``@param``, followed by the parameter's name, and then a short description of what the function will do.
 
 For example, a section of a comment describing a parameter ``count`` of type ``number`` that determines how many times a value will be printed could be commented on as
 
