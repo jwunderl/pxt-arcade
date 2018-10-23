@@ -85,8 +85,8 @@ For example, a section of a comment describing a parameter ``count`` of type ``n
 
 ```typescript-ignore
 /**
- * Omitted function description
- * @param count the number of times to print the value
+ * Prints "Hello!" to the console a given number of times
+ * @param count the number of times to print the phrase
  */
 ```
 
