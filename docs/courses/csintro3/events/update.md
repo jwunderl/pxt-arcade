@@ -82,7 +82,7 @@ game.onUpdateInterval(250, function () {
 
 ## Why not ``||loops:pause||`` in ``||game:on game update||``?
 
-This behavior might seem like an easy thing to address without an extra type of event: why not just ``||loops:pause||`` before the end of the event? This approach could be used to limit the rate at which stars are created like the snippet below.
+The behavior of the ``||game:on game update interval||`` event might seem like an easy thing to address without making an extra type of event: why not just ``||loops:pause||`` right before the end of the event handler? This approach could be used to limit the rate at which stars are created, like in the snippet below.
 
 ```typescript
 enum SpriteKind {
