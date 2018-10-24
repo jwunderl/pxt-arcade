@@ -4,13 +4,14 @@ This section contains a number of selected problems for the Logic section.
 
 It is recommended that you review the problems, and complete a few before moving on to the next section.
 
-## Problem #1: This or that
+## Problem #1: This or That
 
-Determine what the following code will output
+Identify the output of the following snippet when ``||variables:bool||`` is
+
+* ``||logic:true||``
+* ``||logic:false||``
 
 ```typescript-ignore
-let bool: boolean = true;
-
 if (bool) {
     console.log("This");
 } else {
@@ -20,63 +21,65 @@ if (bool) {
 
 ## Problem #2: Boolean logic
 
-Determine whether or not the following evaluates to true or to false
+Determine whether the following expressions evaluate to ``||logic:true||`` or ``||logic:false||``
 
-|   |                               |
-|:-:|     ---                       |
-|(a)|`true ` &vert;&vert; `false`   |
-|(b)|`true ` &vert;&vert; `true`    |
-|(c)|`false` && `true`              |
-|(d)|`false` && `false`             |
-|(e)|`true` && `!true`              |
-|(f)|`!false ` &vert;&vert; `!true` |
-|(g)|`!false ` &vert;&vert; `true`  |
+| Problem   | Expression                        | Result    |
+| :-------: | :-------------------------------: |           |
+| **(a)**   | ``true`` &vert;&vert; ``false``   |           |
+| **(b)**   | ``true`` &vert;&vert; ``true``    |           |
+| **(c)**   | ``false`` && ``true``             |           |
+| **(d)**   | ``false`` && ``false``            |           |
+| **(e)**   | ``true`` && ``!true``             |           |
+| **(f)**   | ``!false`` &vert;&vert; ``!true`` |           |
+| **(g)**   | ``!false`` &vert;&vert; ``true``  | &nbsp;    |
 
 ## Problem #3: The tables have turned
 
-Make a table for the output of the following code based on values of `bool1` and `bool2`. A cell may contain more than one output.
+Fill in the table below for the output of the following code based on the initial values of ``||variables:bool1||`` and ``||variables:bool2||``. If multiple values are logged, use a slash ``/`` to separate the different lines. The case where ``||variables:bool1||`` and ``||variables:bool2||`` are both ``||logic:true||`` is filled in as an example
 
-|                       |`bool1 == true`|`bool1 == false`|
-|---                    |---            |---             |
-|**`bool2 == true`**    |               |                |
-|**`bool2 == false`**   |               |                |   |
-
+|                           | ``bool1 == true`` | ``bool1 == false``    |
+| :-----------------------: | :---------------: | --------------------- |
+| **``bool2 == true``**     | **``2 / 3``**     |                       |
+| **``bool2 == false``**    |                   | &nbsp;                |
 
 ```typescript-ignore
 if (bool1 && 10 > 4) {
     if (!bool2) {
-        console.log("Option 1");
+        console.log("1");
     } else {
-        console.log("Option 2");
+        console.log("2");
     }
-    console.log("Option 3");
+    console.log("3");
 } else {
     if (6 > 8) {
-        console.log("Option 4");
+        console.log("4");
     } else {
-        console.log("Option 5");
+        console.log("5");
     }
 }
 ```
 
-## Problem #4: Rain or shine
+## Problem #4: Rain or Shine
 
-Translate the following into a program that outputs a clothing choice. Use a number variable `temp` for the tempature and a boolean variable `isRaining` for whether or not it is raining.
+Translate the following statements into a program that ``||game:splashes||`` a clothing choice. Use a number variable ``||variables:temp||`` for the temperature and a boolean variable ``||variables:isRaining||`` for whether or not it is raining.
 
-When it is raining, I wear my rain jacket. However, regardless of the rain, if it is less than 30 degrees, then I wear my winter coat. In all other cases, I'll just wear a sweatshirt.
-
+If the temperature is less than 30 degrees, then I wear my winter coat. Otherwise, if it is raining, I wear my rain jacket.  In all other cases, I'll just wear a sweatshirt.
 
 ## Problem #5: Implication
 
-Write a boolean expression that has the following truth table
+Create a boolean expression that generates the following results given boolean variables ``||variables:a||`` and ``||variables:b||``
 
-|`a` value  |`b` value  | ???   |
-|-------    |-------    |-------|
-|`true`     |`true`     |`true` |
-|`true`     |`false`    |`false`|
-|`false`    |`true`     |`true` |
-|`false`    |`false`    |`true` |
+| ``a``     | ``b``     | Result    |
+| --------- | --------- | --------- |
+| ``true``  | ``true``  | ``true``  |
+| ``true``  | ``false`` | ``false`` |
+| ``false`` | ``true``  | ``true``  |
+| ``false`` | ``false`` | ``true``  |
 
 <br />
 
-This expression is know as an *implication*. That is `a` *implies* `b`. So when this expression is true, if `a` is true, then `b` must also be true.
+### ~hint
+
+This expression is know as an *implication*. This means that ``||variables:a||`` *implies* ``||variables:b||``. When this expression evaluates to ``||logic:true||``, if ``||variables:a||`` is true, then ``||variables:b||`` must also be true.
+
+### ~
