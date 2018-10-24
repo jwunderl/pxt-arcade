@@ -1,6 +1,8 @@
+# Appendix: Anonymous and Named Functions
+
 ## Example
 
-![Splash and Dash](/static/courses/csintro3/events/splash-and-dash.gif)
+![Splash and Dash](/static/courses/csintro3/appendix/splash-and-dash.gif)
 
 ```typescript
 enum SpriteKind {
