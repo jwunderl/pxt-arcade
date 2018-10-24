@@ -21,7 +21,7 @@ if (bool) {
 
 ## Problem #2: Boolean logic
 
-Determine whether the following expressions evaluate to ``||logic:true||`` or ``||logic:false||``
+Determine whether the following expressions evaluate to ``||logic:true||`` or ``||logic:false||``.
 
 | Problem   | Expression                        | Result    |
 | :-------: | :-------------------------------: |           |
@@ -35,7 +35,7 @@ Determine whether the following expressions evaluate to ``||logic:true||`` or ``
 
 ## Problem #3: Mysterious Logging
 
-Fill in the table below for the output of the following code based on the initial values of ``||variables:bool1||`` and ``||variables:bool2||``. If multiple values are logged, use a slash ``/`` to separate the different lines. The case where ``||variables:bool1||`` and ``||variables:bool2||`` are both ``||logic:true||`` is filled in as an example
+Fill in the table below for the output of the following code based on the initial values of ``||variables:bool1||`` and ``||variables:bool2||``. If multiple values are logged, use a slash ``/`` to separate the different lines. The case where ``||variables:bool1||`` and ``||variables:bool2||`` are both ``||logic:true||`` is filled in as an example.
 
 |                           | ``bool1 == true`` | ``bool1 == false``    |
 | :-----------------------: | :---------------: | --------------------- |
@@ -67,7 +67,7 @@ If the temperature is less than 30 degrees, then I wear my winter coat. Otherwis
 
 ## Problem #5: Implication
 
-Create a boolean expression that generates the following results given boolean variables ``||variables:a||`` and ``||variables:b||``
+Create a boolean expression that generates the following results given boolean variables ``||variables:a||`` and ``||variables:b||``.
 
 | ``a``     | ``b``     | Result    |
 | --------- | --------- | --------- |
