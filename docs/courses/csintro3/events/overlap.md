@@ -92,14 +92,57 @@ enemy.setFlag(SpriteFlag.Ghost, true);
 3. Set the new ``||sprites:Enemy||`` to be a ``||sprites:Ghost||``
 4. Move ``||variables:mySprite||`` so that it overlaps both enemies. Verify that only one will trigger the ``||sprites:overlap||`` event
 
+## Example #3: Bounce!
 
-==================================================================================================================================================================================================================
+1. Review the code below
+2. Identify the code related to the ``||variables:paddle||``: in particular, the sections that will
+    * create the ``||variables:paddle||`` ``||sprites:Sprite||``
+    * move the ``||variables:paddle||`` towards the bottom of the screen
+    * allow the ``||variables:paddle||`` to be controlled using the left and right buttons
+3. Identify the code related to the ``||variables:ball||``: in particular, the sections that will
+    * create the ``||variables:ball||`` ``||sprites:Sprite||`` every second
+    * give the ``||variables:ball||`` an initial position
 
-specifically note the first two parameters (the sprite kinds) being used to specificy when the event ought to occur.
+```typescript
+enum SpriteKind {
+    Paddle,
+    Ball
+}
 
-Tasks should just be making their own overlap events (there's not really much that will be a significant departure from the example, as the focus is on the overlap event - it will basically just be repetition )
+let paddle: Sprite = sprites.create(img`
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+`, SpriteKind.Paddle);
+paddle.y += 50;
+controller.controlSprite(paddle, 100, 0)
 
-## wrap up
+game.onUpdateInterval(1000, function () {
+    let ball: Sprite = sprites.createProjectile(img`
+. . 1 1 . .
+. 1 1 1 1 .
+1 1 d d 1 1
+1 1 d d 1 1
+. 1 1 1 1 .
+. . 1 1 . . 
+`, Math.randomRange(-40, 40), 30, SpriteKind.Ball);
+    ball.x = scene.screenWidth() / 2;
+    ball.y = scene.screenHeight() / 2;
+})
+```
 
-add a few on overlap events - probably one for scoring points on getting coins, and another for losing life on touching enemies
+## Student Task #3: Bounce on the Paddle
 
+1. Start with the code from example #3
+2. Add an ``||sprites:overlap||`` event between ``||sprites:sprites||`` of kind ``||sprites:Paddle||`` and ``||sprites:Ball||``
+3. In the event, reverse the ``||sprites:Ball||``'s ``||sprites:vy||``. This can be done by assigning it to the 0 minus the current ``||sprites:vy||``
+4. In the event, set the ``||sprites:Ball||`` to be a ``||sprites:Ghost||``, so that it will only overlap with the paddle a single time
+
+## What did we learn?
+
+1. In your own words, explain why the **event handler** for the overlap event has two parameters.
+2. Why is the ``||sprites:Sprite||`` ``||sprites:Ghost||`` flag commonly used in ``||sprites:overlap||`` events?
