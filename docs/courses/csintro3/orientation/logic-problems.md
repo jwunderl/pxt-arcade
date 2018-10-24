@@ -33,7 +33,7 @@ Determine whether the following expressions evaluate to ``||logic:true||`` or ``
 | **(f)**   | ``!false`` &vert;&vert; ``!true`` |           |
 | **(g)**   | ``!false`` &vert;&vert; ``true``  | &nbsp;    |
 
-## Problem #3: The tables have turned
+## Problem #3: Mysterious Logging
 
 Fill in the table below for the output of the following code based on the initial values of ``||variables:bool1||`` and ``||variables:bool2||``. If multiple values are logged, use a slash ``/`` to separate the different lines. The case where ``||variables:bool1||`` and ``||variables:bool2||`` are both ``||logic:true||`` is filled in as an example
 
