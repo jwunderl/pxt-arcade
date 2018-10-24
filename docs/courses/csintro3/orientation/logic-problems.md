@@ -76,8 +76,6 @@ Create a boolean expression that generates the following results given boolean v
 | ``false`` | ``true``  | ``true``  |
 | ``false`` | ``false`` | ``true``  |
 
-<br />
-
 ### ~hint
 
 This expression is know as an *implication*. This means that ``||variables:a||`` *implies* ``||variables:b||``. When this expression evaluates to ``||logic:true||``, if ``||variables:a||`` is true, then ``||variables:b||`` must also be true.
