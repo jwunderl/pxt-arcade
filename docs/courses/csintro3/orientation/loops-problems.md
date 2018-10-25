@@ -31,8 +31,7 @@ Then, use a ``||loops:for||`` loop to append `100` `o`'s to ``||variables:output
 
 Once the string is built, make a ``||sprites:sprite||`` ``||sprites:say||`` ``||variables:output||``.
 
-
-## Problem #3: Start from non zero
+## Problem #3: Start From (non) Zero
 
 Fill in the code to achieve the following output.
 
@@ -72,16 +71,19 @@ for (           ;           ;           ) {
 
 Games can become more suspenseful when there's a time limit involved. Create a ``||sprites:sprite||``. Then use a ``||loops:for||`` loop to make the sprite count backwards from `10`. Remember to use ``||loops:loops.pause()||`` to make it so that there is actually a pause between each number.
 
-
 ## Problem #6: Pizza Party
 
 Make a ``||loops:for||`` loop that repeats `10` times. Each time it repeats, create a pizza ``||sprites:sprite||`` that is placed randomly about the screen. 
 After the loop runs, there should be 10 pizzas on the screen.
 
 ## Problem #7: User Input
+
 This problem is an extension of the problem seen in [User Input](/courses/csintro3/orientation/user-input-problems).
 
 You and a friend want to keep a log of your conversation. Create a program that will do this for you.
+
 The program should first ask for your name, followed by your friend's name.
-The program should then take `10` turns ``||game:ask||``ing first what you said, and then ask what your friend said.
+
+The program should then take 10 turns ``||game:ask||``ing first what you said, and then ask what your friend said.
+
 For each turn, the computer should ``console.log`` a transcript of the conversation for that turn (for example, "James: What's your favorite color?", "Julia: My favorite color is green."). 
