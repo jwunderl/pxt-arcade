@@ -37,7 +37,7 @@ Set a new background image using ``||scene:scene.backgroundImage||``.
 
 Finally, use the ``||corgi:follow||`` function to make the camera follow the ``||corgi:Corgi||``.
 
-## Problem #4: Multiplayer
+## Problem #4: Multiplayer Mayhem
 
 Games are better when you play with others.
 
@@ -45,7 +45,7 @@ Import the ``||controller:local-multiplayer||`` extension.
 
 Use the ``||controller:controller.setPlayerSprite||`` and ``||controller:controller.controlPlayer||`` functions to make a game that allows two players to move sprites around the screen.
 
-## Problem #5: Darts
+## Problem #5: Time Your Throw
 
 Import the ``||darts:darts||`` extension.
 
