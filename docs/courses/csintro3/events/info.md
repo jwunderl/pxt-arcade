@@ -1,6 +1,12 @@
-# Event category events
+# Activity: Info
 
-a bit content heavy so far, so this allows for a pretty easy review section. Teach the events in the info category (onCountdownEnd and onLifeZero) leveraging examples from prior sections, so that there can be an inherent review built into this lesson
+The ``||info:Info||`` category has three values that it can keep track of by default: a player's ``||info:score||`` and ``||info:health||``, as well as a ``||info:countdown||`` for the game.
+
+In addition to keeping track of those values, it also allows for a few interesting events: ``||info:on life zero||`` and ``||info:on countdown end||``. These events allow you to control the behaviors of these functions
+
+
+====================================================================================================================================
+init contents
 
 ```typescript
 enum SpriteKind {
@@ -8,13 +14,16 @@ enum SpriteKind {
     Enemy
 }
 
-let mySprite = sprites.create(img`1 1 1`, SpriteKind.Player);
+let mySprite = sprites.create(img`
+1 1 1
+`, SpriteKind.Player);
 controller.controlSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
 5 2 5
 2 5 2
-5 2 5`, SpriteKind.Enemy);
+5 2 5
+`, SpriteKind.Enemy);
 enemy.x += 50;
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, eventForOverlap)
@@ -34,13 +43,16 @@ enum SpriteKind {
     Enemy
 }
 
-let mySprite = sprites.create(img`1 1 1`, SpriteKind.Player);
+let mySprite = sprites.create(img`
+1 1 1
+`, SpriteKind.Player);
 controller.controlSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
 5 2 5
 2 5 2
-5 2 5`, SpriteKind.Enemy);
+5 2 5
+`, SpriteKind.Enemy);
 enemy.x += 50;
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, eventForOverlap)
