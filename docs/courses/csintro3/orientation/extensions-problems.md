@@ -49,7 +49,7 @@ Use the ``||controller:controller.setPlayerSprite||`` and ``||controller:control
 
 Import the ``||darts:darts||`` extension.
 
-Use the extension to ``||darts:darts.create||`` a dart called ``||variables:myDart||``.
+Use to ``||darts:darts.create||`` a dart called ``||variables:myDart||``.
 
 Use the ``||darts:myDart.setTrace||`` and ``||darts:myDart.controlWithArrowKeys||`` functions to allow the player to control the ``||darts:dart||``.
 
