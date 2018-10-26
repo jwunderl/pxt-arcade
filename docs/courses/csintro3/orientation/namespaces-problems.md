@@ -10,7 +10,7 @@ The following code snippet prints out numbers from 10 down to 1, but this can be
 
 Add a comment above the ``||loops:for||`` loop that specifies that this is what the loop does.
 
-```typescript
+```typescript-ignore
 for (let i = 0; i < 10; i++) {
     console.log("" + (10 - i));
 }
@@ -65,7 +65,7 @@ Make sure to include the following information:
 
 <br />
 
-From outside of the ``barry`` namespace, ``console.log`` a description of Barry.
+From outside of the ``barry`` namespace, ``console.log`` a description of Barry using the variables in the ``barry`` namespace.
 
 ## Problem #4: Using Values
 
