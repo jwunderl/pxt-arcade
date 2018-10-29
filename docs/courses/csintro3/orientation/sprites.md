@@ -31,62 +31,104 @@ In the example above, the sprite is created using ``||sprites:sprites.create||``
 4. Change the ``||sprites.vy||`` in ``||controller:controller.controlSprite||`` to 150
 5. Play the game, and identify how it has changed in this task
 
+### ~hint
+
+There are a lot of different images for ``||sprites:sprites||`` available by default. In this lesson (and many to come), many sprites will be used from the following groups of images for demonstration purposes.
+
+* ``||sprites:sprites.castle||``
+* ``||sprites:sprites.duck||``
+* ``||sprites:sprites.food||``
+* ``||sprites:sprites.space||``
+* ``||sprites:sprites.vehicle||``
+
+These can be found in the ``Gallery`` of the sprite editor, or by looking through the groups with the autocomplete feature. It is always fun to design your own personal sprite, though!
+
+### ~
+
 ## Concept: Personalizing Sprites
+
+When making your own game, you will likely need to spend some time personalizing your own ``||sprites:sprites||``. This will change the way they look, as well as the way they behave.
+
+To start personalizing your own ``||sprites:sprites||``, we will need to learn about two different things: the image editor, and sprite ``||sprites:kinds||``.
+
+## Example #2a: Your Own Sprite
+
+1. Review the code below
+2. Identify the parts that are similar to example #1, and the portions that are different
 
 ```typescript
 enum SpriteKind {
-    Player,
-    Enemy
+    Player
 }
 
 let player = sprites.create(img`
-1 1 1 
-1 1 1 
-1 1 1 
+. . . . . . b . b . . . . . . . 
+. . . . . f b b b f f . . . . . 
+. . . . f 1 b 7 b 1 c f . . . . 
+. . . f 1 c c c c c 1 c f . . . 
+. . . f c c f f f f c 1 f . . . 
+. . . f c f f e e f f c f . . . 
+. . f c f e f e e f e f c f . . 
+. . f c f e a e e a e f c f . . 
+. . f c c f e e e e f c c f . . 
+. f c c f a f f f f a f c c f . 
+. . f f e a b a a b a e f f . . 
+. . f e e f a b b a f e e f . . 
+. . . f f a a a a a a f f . . . 
+. . . f a a b a a b a a f . . . 
+. . . f f f f f f f f f f . . . 
+. . . . . f f . . f f . . . . . 
 `, SpriteKind.Player);
 controller.controlSprite(player, 100, 100);
 ```
 
-* Really have to explain enums, as otherwise things get messy too quickly with regards to sprite overlaps / etc
-    * Enums allow for defining a group of named constants
-    * Allow developers to more clearly convey what values mean - SpriteKind.Player is easier to identify / read than 0, and SpriteKind.Enemy is easier to identify than 1, etc
-* Also introducing template strings here
+This code will need some explanation. It includes two features of JavaScript - called ``enums`` and ``tagged templates`` - that are a bit advanced, and out of the scope of this course to cover in detail. For our purposes, we can use the following simplified descriptions:
 
-## Example using / adding a new kind
+### ~hint
+
+An ``enum`` is a set of named constant values. In this snippet, the ``||sprites:SpriteKind||`` enum is used to list out different kinds of sprites, so that the different ``||sprites:Kind||``s of ``||sprites:Sprites||`` can be identified.
+
+In the first example, you might have noticed that the ``||sprites:Kind||`` used was a number. The values in the ``||sprites:SpriteKind||`` enum are all actually just numbers that are given special names to make the code more readable.
+
+### ~
+
+### ~hint
+
+A ``tagged template`` is a special kind of function, that can take a ``template string`` - the portion in between the backticks (\`).
+
+In this course, ``img`` is the only ``tagged template`` we will discuss. ``img`` takes a string and converts it into an image. Each character in the tagged template (the numbers 1-9, letters a-f, and period ``.``) is converted to a color, and made into a single pixel in the image.
+
+If you zoom out, you might be able to see an outline of the princess sprite from the ``img`` ``template string`` in the ``||sprites:sprites.create||`` above.
+
+The image editor can be used to easily create these ``tagged templates``.
+
+### ~
+
+## Example #2b: Adding a New ``||sprites:Kind||``
+
+1. Review the code below
+2. Compare the ``||sprites:SpriteKind||`` in this snippet to the one in example #2a. How is it different?
 
 ```typescript
 enum SpriteKind {
     Player,
-    Enemy,
     Square
 }
 
-let player = sprites.create(img`
+let square = sprites.create(img`
 1 1 1 
 1 1 1 
 1 1 1 
 `, SpriteKind.Square);
-controller.controlSprite(player, 100, 100);
+controller.controlSprite(square, 100, 100);
 ```
 
-## Task make them add 2 new kinds
+## Student Task #2: Adding Sprites
 
-```typescript
-enum SpriteKind {
-    Player,
-    Enemy,
-    Square,
-    Circle,
-    Diamond
-}
-
-let player = sprites.create(img`
-1 1 1 
-1 1 1 
-1 1 1 
-`, SpriteKind.Player);
-controller.controlSprite(player, 100, 100);
-```
+1. Start with the code from example #2b
+2. Add **two** new ``||sprites:kind||``s to the ``||sprites:SpriteKind||`` enum: ``||sprites:Circle||`` and ``||sprites:Diamond||``
+3. Create **two** new sprites - one that is a ``||sprites:Circle||``, and one that is a ``||sprites:Diamond||``. Use the image editor to draw images for these sprites
+4. **Challenge:** add an animal (for example, ``||sprites:Dog||``) to the ``||sprites:SpriteKind||`` enum, and create a ``||sprites:Sprite||`` for that animal
 
 ## Sprite Properties and Methods
 
@@ -139,10 +181,3 @@ for (let i = 0; i < 5; i++) {
     player.x += 20
 }
 ```
-
-Last important thing to show: pre def'd sprite images (help make the example code more reasonable from now on)
-    * sprites.castle
-    * sprites.duck
-    * sprites.food
-    * sprites.space
-    * sprites.vehicle
