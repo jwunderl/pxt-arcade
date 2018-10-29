@@ -150,7 +150,7 @@ function addAndSplash(input: number[]) {
 let arr: number[] = [1, 2, 3, 4];
 
 game.splash(arr[0] + "");
-addAndSplash(a);
+addAndSplash(arr);
 game.splash(arr[0] + "");
 ```
 
