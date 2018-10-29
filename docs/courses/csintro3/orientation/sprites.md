@@ -1,25 +1,37 @@
-# Sprites and stuff
+# Activity: Sprites
 
-## Creating and controlling sprite in JavaScript
+Sprites are commonly used to represent the characters of games in @boardname@. The characters can be controlled by the person playing the game, or the computer itself.
+
+## Concept: Simple Sprite Motion
+
+Creating and controlling ``||sprites:Sprites||`` are two of the most important steps in developing your own game. The ``||sprites:Sprite||`` a player controls provide a way for the player to interact with the game.
+
+## Example #1: Starter Sprites
+
+1. Review the code below
+2. Identify how the ``||sprites:Sprite||`` is created
+3. Identify how the player can move the ``||sprites:Sprite||`` in the game
 
 ```typescript
-let player: Sprite = sprites.create(img`
-1 1 1
-1 1 1
-1 1 1
-`, 0);
+let player: Sprite = sprites.create(sprites.castle.princessFront0, 0);
 controller.controlSprite(player, 100, 100);
 ```
 
-### Explain the different parts of above code: including
+In the example above, the sprite is created using ``||sprites:sprites.create||``. There is a lot to take in, though:
 
-* type of a sprite is "Sprite"
-* calling a method to return a sprite, like Math.round() returns a number
-* template string images (... think on how to explain this nicely a bit)
-* controller.controlSprite -> a method call that takes in the sprite, and makes it move
-* the 0 being the kind
+* Notice the type of ``||variables:player||``: it is a ``||sprites:Sprite||``
+* The function that creates the ``||sprites:Sprite||`` takes in two things: an image (``||sprites:sprites.castle.princessFront0||`` is one of the provided images to start with), and a ``||sprites:kind||`` of 0
+* ``||controller:controller.controlSprite||`` is a function that takes a ``||sprites:Sprite||`` and allows it to to move around the screen as using the direction keys. Besides the ``||sprites:Sprite||``, it also needs two numbers: one for the horizontal velocity, and one for the vertical velocity
 
-## Using kinds
+## Student Task #1: Slow the New Sprite
+
+1. Start with the code from example #1
+2. Change the image of the ``||sprites:Sprite||`` from ``||sprites:princessFront0||`` to ``||sprites:princess2Front||`` (the ``||sprites:sprites.castle.||`` part should remain in front)
+3. Change the ``||sprites:vx||`` in ``||controller:controller.controlSprite||`` to 50
+4. Change the ``||sprites.vy||`` in ``||controller:controller.controlSprite||`` to 150
+5. Play the game, and identify how it has changed in this task
+
+## Concept: Personalizing Sprites
 
 ```typescript
 enum SpriteKind {
@@ -38,6 +50,7 @@ controller.controlSprite(player, 100, 100);
 * Really have to explain enums, as otherwise things get messy too quickly with regards to sprite overlaps / etc
     * Enums allow for defining a group of named constants
     * Allow developers to more clearly convey what values mean - SpriteKind.Player is easier to identify / read than 0, and SpriteKind.Enemy is easier to identify than 1, etc
+* Also introducing template strings here
 
 ## Example using / adding a new kind
 
@@ -126,3 +139,10 @@ for (let i = 0; i < 5; i++) {
     player.x += 20
 }
 ```
+
+Last important thing to show: pre def'd sprite images (help make the example code more reasonable from now on)
+    * sprites.castle
+    * sprites.duck
+    * sprites.food
+    * sprites.space
+    * sprites.vehicle
