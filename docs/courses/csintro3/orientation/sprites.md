@@ -130,22 +130,22 @@ controller.controlSprite(square, 100, 100);
 3. Create **two** new sprites - one that is a ``||sprites:Circle||``, and one that is a ``||sprites:Diamond||``. Use the image editor to draw images for these sprites
 4. **Challenge:** add an animal (for example, ``||sprites:Dog||``) to the ``||sprites:SpriteKind||`` enum, and create a ``||sprites:Sprite||`` for that animal
 
-## Sprite Properties and Methods
+## Concept: Sprite Properties and Functions
 
-Explain that properites are basically variables contained within the sprite object
+Sprites have properties and functions that keep track of the different values related to the sprite. These are the same properties that were used in Blocks - ``||sprites:x||``, ``||sprites:vx||``, ``||sprites:left||``, and so on.
 
-Auto complete gif here to show how they can identify all the public properties by typing the name of the variable and a dot
+These properties and functions can be easily browsed using the autocomplete feature.
 
 ![Auto Complete](/static/courses/csintro3/orientation/auto-complete.gif)
 
-### Using a property
+## Example #3: Using a Property
 
-changing x to move, also showing `pause()` to make the movement visible
+1. Review the code below
+2. Identify which ``||sprites:sprite property||`` is modified
+3. Notice the use of ``||loops:pause||`` to make the modification occur after 1 second
 
 ```typescript
 enum SpriteKind {
-    Player,
-    Enemy,
     Square
 }
 
@@ -155,29 +155,18 @@ let player = sprites.create(img`
 1 1 1 
 `, SpriteKind.Square);
 
-pause(500)
-player.x += 20
+pause(1000);
+player.x += 20;
 ```
 
-pauses half a second, then bumps player over 20. Show it being equivalent to change by block -> making them convert back and forth to see
+## Student Task #3: Repetitive Motion
 
-more practice with properties; use in a loop, move in a square, etc, etc; for example,
+1. Start with the code from example #3
+2. Use a ``||loops:for||`` loop to make the ``||loops:pause||`` and the modification of the ``||sprites:sprite property||`` occur **5 times**
+3. In the ``||loops:loop||``, add another line to change the ``||variables:player||``'s ``||sprites:y||`` position by -10 on each iteration
+4. Before the loop, set ``||variables:player||``'s ``||sprites:vx||`` to -10
 
-```typescript
-enum SpriteKind {
-    Player,
-    Enemy,
-    Square
-}
+## What did we learn?
 
-let player = sprites.create(img`
-1 1 1 
-1 1 1 
-1 1 1 
-`, SpriteKind.Square);
-
-for (let i = 0; i < 5; i++) {
-    pause(500)
-    player.x += 20
-}
-```
+1. In your own words, explain why drawing your own ``||sprites:Sprites||`` can be important when creating new games.
+2. How do ``||sprites:Sprite Properties||`` allow you to interact with ``||sprites:Sprites||``?
