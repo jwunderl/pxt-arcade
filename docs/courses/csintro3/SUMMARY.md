@@ -2,6 +2,7 @@
 
 * [CS Intro 3](/courses/csintro3)
     * [Introduction](/courses/csintro3/intro)
+        * [Case Study](/courses/csintro3/intro/case-study)
         * [Initialization](/courses/csintro3/intro/initialization)
         * [Types](/courses/csintro3/intro/types)
         * [User Input](/courses/csintro3/intro/user-input)

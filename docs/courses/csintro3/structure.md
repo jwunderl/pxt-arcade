@@ -5,4 +5,3 @@
 * [Sprites](/courses/csintro3/structure/sprites)
 * [Corgio Extension](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
-* [Case Study](/courses/csintro3/structure/case-study)
