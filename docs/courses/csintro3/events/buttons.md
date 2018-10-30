@@ -114,7 +114,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Released, function () {
 2. When the ``||controller:A||`` button is ``||controller:Pressed||``, create a ``||sprites:projectile||`` that starts at the ``||variables:bottomSprite||`` and flies upwards
 3. When the ``||controller:B||`` button is ``||controller:Released||``, create a ``||sprites:projectile||`` that starts at the ``||variables:topSprite||`` and flies downwards
 
-### What did we learn?
+## What did we learn?
 
 1. How are button events different than other events?
 2. How is the specific button specified when creating a button event?
