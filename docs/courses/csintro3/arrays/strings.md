@@ -6,9 +6,9 @@ To make interactions with arrays easier, a variety of functions are available th
 
 ## Concept: Push and Pop
 
-A common use for arrays is to treat them as a stack: adding elements to the **top**"** of the stack, and removing the last element that was added to it.
+A common use for arrays is to treat them as a stack: adding elements to the **top** of the stack, and removing the last element that was added to it.
 
-This behavior could be thought of as the same as a stack of plates: the most recently cleaned one will be placed on top of eachother, and the last plate that was stacked will be the first one to be taken off and used.
+This behavior could be thought of as the same as a stack of plates: the most recently cleaned plate will be placed on top of the stack, and the last plate that was stacked will be the first one to be taken off and used when dinner is made.
 
 In JavaScript, an array can be treated like a stack by using ``||arrays:array.push||`` and ``||arrays:array.pop||``.
 
@@ -105,3 +105,5 @@ while (script.length > 0) {
 1. Start with the code from task #1
 2. Change the first loop to a ``||loops:while||`` loop. Make the condition for this a ``||game:game.ask||`` with the prompt "Do you have more to say?"
 3. Change the second loop to a ``||loops:while||`` loop, that will repeat every word that was previously entered
+
+## Concept: Random Selection
