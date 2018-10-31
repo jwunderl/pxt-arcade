@@ -1,6 +1,6 @@
-# Arrays of Sprites
+# Activity: Arrays of Sprites
 
-Just like in blocks, arrays can be created to store variables of any type. This allows for an easy way to handle complex behaviors. In this activity, we will use arrays of sprites to introduce some of the more advanced uses of arrays.
+As games get more complex, the number of sprites used will often grow. 
 
 ## Example -> sprite v array of sprite
 
@@ -12,8 +12,8 @@ enum SpriteKind {
 let player: Sprite = sprites.create(img`1`, SpriteKind.Player);
 let enemies: Sprite[] = [sprites.create(img`5`, SpriteKind.Enemy),
                         sprites.create(img`7`, SpriteKind.Enemy)];
-player.x -= 40;
-enemies[0].x += 40;
+enemies[0].x -= 40;
+enemies[1].x += 40;
 ```
 
 note for students the difference between player and [player]
@@ -28,8 +28,8 @@ enum SpriteKind {
 let player: Sprite = sprites.create(img`1`, SpriteKind.Player);
 let enemies: Sprite[] = [sprites.create(img`5`, SpriteKind.Enemy),
                         sprites.create(img`7`, SpriteKind.Enemy)];
-player.x -= 40;
-enemies[0].x += 40;
+enemies[0].x -= 40;
+enemies[1].x += 40;
 Math.pickRandom(enemies).say("I have been chosen!", 500);
 ``` 
 
