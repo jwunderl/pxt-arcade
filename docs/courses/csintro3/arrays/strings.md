@@ -107,3 +107,46 @@ while (script.length > 0) {
 3. Change the second loop to a ``||loops:while||`` loop, that will repeat every word that was previously entered
 
 ## Concept: Random Selection
+
+In games, it is common to use an array of strings to represent the "script" for a given character - that is, a group of words and phrases they can say. So far, this has been handled sequentially: reading through each value in the array one by one, either forwards or backwards.
+
+The ``||math:Math.pickRandom||`` function can be used to pick a random element out of an array. This allows the "script" to be used to respond to the player in a way that is different for every run of the game.
+
+## Example #3: Random ``||game:Splashing||``
+
+1. Review the code below
+2. Identify how ``||math:Math.pickRandom||`` is used to generate a random word
+3. Run the code multiple times. Are the values that are splashed the same?
+
+```typescript
+let script: string[] = ["potato", "corgi", "software", "elevator", "map"];
+
+for (let i = 0; i < 5; i++) {
+    game.splash(Math.pickRandom(script));
+}
+```
+
+## Student Task #3: Random Responses
+
+1. Create two sprites: a ``||sprites:Player||``, that is controlled using ``||controller:controller.controlSprite||``, and a ``||sprites:Friend||``. Set the ``||sprites:Friend||`` ``||sprites:x||`` position to 130
+2. Create an ``||sprites:on overlap||`` event between the ``||sprites:Player||`` and the ``||sprites:Friend||``
+3. Store an array of strings in the variable ``||variables:greetings||``. Include at least 4 short greetings (for example, "hello friend!")
+4. In the ``||sprites:on overlap||`` event, make the ``||sprites:Friend||`` ``||sprites:say||`` a ``||math:random||`` string from ``||variables:greetings||`` for 500 ms
+5. Use the ``||sprites:Ghost||`` ``||sprites:SpriteFlag||`` to prevent the ``||sprites:overlap||`` event from triggerring for 1000 ms
+
+### ~hint
+
+The implementation of ``||math:Math.pickRandom||`` is fairly simple; besides some typing and error handling, you can reimplement it in a single line! For a given array ``||variables:list||``, choosing a random element can be handled using the following snippet:
+
+```typescript-ignore
+list[Math.randomRange[0, list.length - 1]];
+```
+
+``||math:Math.pickRandom||`` is typically a **lot** easier to read, though.
+
+### ~
+
+## What did we learn?
+
+1. How do ``||arrays:push||`` and ``||arrays:pop||`` allow for easy array manipulation?
+2. How can random behavior improve games?
