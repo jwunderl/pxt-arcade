@@ -24,7 +24,7 @@ The ``||arrays:array.push||`` function is used to add a new value to the **end**
 let script: string[] = ["hello", "goodbye", "arcade"];
 script.push("new!");
 
-game.splash(script[arr.length - 1]);
+game.splash(script[script.length - 1]);
 ```
 
 ## Example #1b: Pop
