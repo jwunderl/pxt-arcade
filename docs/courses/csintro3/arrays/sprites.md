@@ -23,7 +23,7 @@ enum SpriteKind {
 let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
 let enemy1: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
 let enemy2: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
-let enemy3: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy)];
+let enemy3: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
 enemy1.x = Math.randomRange(10, scene.screenWidth() - 10);
 enemy2.x = Math.randomRange(10, scene.screenWidth() - 10);
 enemy3.x = Math.randomRange(10, scene.screenWidth() - 10);
