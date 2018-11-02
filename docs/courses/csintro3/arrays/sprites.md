@@ -177,7 +177,7 @@ If you have time, it could be a good idea to practice your skill with logical co
 2. Create at least **5** enemies in a loop. Set each to have random ``||sprites:x||`` and ``||sprites:y||`` positions
 3. In the ``||game:game.onUpdateInterval||`` event, store an array of ``||sprites:sprites.allOfKind||`` ``||sprites:Enemy||`` to get **all** of the ``||sprites:Enemy||``s
 4. Use a ``||loops:for||`` loop to make each enemy "follow" the player
-5. **Challenge:** try to make the ``||sprites:Enemy``s follow at a more consistent speed. You'll likely want to have more conditionals to check
+5. **Challenge:** try to make the ``||sprites:Enemy||``s follow at a more consistent speed. You'll likely want to have more conditionals to check
 
 ### ~hint
 
