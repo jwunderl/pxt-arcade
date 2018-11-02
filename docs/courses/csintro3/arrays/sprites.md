@@ -82,11 +82,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Press the ``||controller:A||`` button to fill the screen with pizza (around 20 times). Now, click the ``||controller:B||`` button to destroy all of the pizza.
 
-It should work fine at first, but eventually you will like click the ``||controller:B||`` button and end up with nothing being destroyed. This happens because the ``||variables:characters||`` array **still contains** the ``||sprites:sprites||`` that were ``||sprites:destroy||``ed when ``||controller:B||`` was pressed.
+It should work fine at first, but eventually you will likely click the ``||controller:B||`` button and nothing will be destroyed. This happens because the ``||variables:characters||`` array **still contains** the ``||sprites:sprites||`` that were ``||sprites:destroy||``ed when ``||controller:B||`` was pressed.
 
-There are several approaches to fix this. One approach would be to use ``||math:Math.randomRange||`` to select an index for the sprite, use ``||arrays:characters.removeAt||`` to remove the sprite at that index, and then ``||sprites:destroy||`` the sprite returned by ``||arrays:characters.removeAt||``.
+There are several approaches to fix this. One approach would be to use ``||math:Math.randomRange||`` to select an index for the sprite, use ``||arrays:characters.removeAt||`` (which takes in an index, and removes the value at the given index from the array) to remove the sprite at that index, and then ``||sprites:destroy||`` the sprite returned by ``||arrays:characters.removeAt||``.
 
-Another approach would be to use ``||arrays:characters.removeElement||`` to remove the ``||sprites:sprite||``.
+Another approach would be to use ``||arrays:characters.removeElement||`` (which accepts an element, searches the array for that element, and removes it) to remove the ``||sprites:sprite||``.
 
 However, both of these approaches will have a similar problem: they have to be done **everywhere** a sprite is ``||sprites:destroy||``ed. Instead, the ``||arrays:sprites.allOfKind||`` function can be called to return an array that contains all ``||sprites:sprites||`` of a given ``||sprites:SpriteKind||`` as needed, rather than keeping track of it on your own.
 
