@@ -32,7 +32,7 @@ By default, the image will be shown on the screen, with each pixel corresponding
 Using the ``||scene:setTile||`` function, this behavior can be changed to instead display an image in place of the color.
 
 ```sig
-scene.setTile(null, false);
+scene.setTile(0, null, false);
 ```
 
 ```typescript
