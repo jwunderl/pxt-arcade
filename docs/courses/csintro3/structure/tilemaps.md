@@ -211,4 +211,4 @@ Note that the ``||scene:cameraFollowSprite||`` function was used to make the cam
 ## What did we learn?
 
 1. What is the behavior of a tile if no ``||images:image||`` is set to that color?
-2. How do ``||scene:tile maps||` help make a level feel more personalized and custom?
+2. How do ``||scene:tile maps||`` help make a level feel more personalized?
