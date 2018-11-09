@@ -170,7 +170,7 @@ enum SpriteKind {
 }
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 scene.cameraFollowSprite(mySprite);
-controller.controlSprite(mySprite);
+controller.controlSprite(mySprite, 100, 100);
 scene.setBackgroundColor(7);
 scene.setTileMap(img`
 f f f f f f f f f f f f f f f f 
