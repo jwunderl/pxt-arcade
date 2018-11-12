@@ -27,7 +27,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let duck = sprites.create(sprites.duck.duck1, SpriteKind.Player)
+let duck: Sprite = sprites.create(sprites.duck.duck1, SpriteKind.Player)
 for (let i = 0; i < 10; i++) {
     duck.setImage(sprites.duck.duck1)
     pause(150)
@@ -49,34 +49,61 @@ Fill out the animation with more calls to ``||sprites:setImage||`` and ``||loops
 
 ![Gif of Duck images 1-6](/static/courses/csintro3/structure/duck-animation.gif)
 
-## Problem #4: What Kind of Sprite Are You
+## Problem #4: To the Left
 
-You're finding it difficult distinguishing between ``||sprites:sprites||`` when writing code. This is where different ``||sprites:SpriteKinds||`` can be helpful. Make two identical ``||sprites:sprites||`` except that they have different ``||sprites:SpriteKinds||``
+In games, ``||sprites:Enemy||`` ``||sprites:sprites||`` will often need to move on their own to make the game harder for the player.
 
-## Problem #5: To the Left
+Create a ``||sprites:projectile||`` with the ``||sprites:kind||`` ``||sprites:Enemy||``, and set it's ``||sprites:vx||`` to be 100.
 
-There are some ``||sprites:sprites||`` such as enemies or obstacles that should move on their own instead of with the ``||controller:controller||``.
+Create another ``||sprites:projectile||`` with the ``||sprites:kind||`` ``||sprites:Enemy||``, and set it's ``||sprites:vx||`` to be -100.
 
-Create a ``||sprites:sprite||`` with the ``||sprites:kind||`` ``||sprites:Enemy||`` and set its ``||sprites:vx||`` to be -100
+Create a unique image for each ``||sprites:sprite||``, and pay attention to where they start and how they move.
 
-## Problem #6: Positioning
+## Problem #5: Picky Positioning
 
-You don't want your ``||sprites:sprite||`` to move, but you don't want it in the center of the screen either.
+Review the code in the snippet below.
 
-Create a ``||sprites:sprite||`` and set its x to be 20 and its y to be 30
+```typescript
+enum SpriteKind {
+    Player,
+    Enemy
+}
 
-## Problem #7: TENemy 
+let hero: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 
-Use a ``||loops:loop||`` that creates 10 ``||sprites:sprites||`` that all look like an enemy. Set each enemy ``||sprites:sprite||`` to be moving to the left. ``||loops:Pause||`` for 100 ms between enemies so they don't all appear at once.
+pause (1000)
 
-## Problem #8: Enemy Swarm
+if (hero.x < 40) {
+    hero.say("That's not right!", 1000);
+} else if (hero.x >= 50) {
+    hero.say("That's too right!", 1000);
+} else {
+    hero.say("That is good!", 1000);
+}
 
-Use a ``||loops:loop||`` that creates 5 enemies, but each with a different ``||sprites:x||`` position. They should all have the ``||sprites:y||`` position 0 and a ``||sprites:y||`` velocity of 100, but their ``||sprites:x||`` position should based on the following table
+pause(2000);
 
-|Enemy Number| x position | y position | y velocity |
-|------------|------------|------------|------------|
-|0th enemy   |0           |0           |100         |
-|1st enemy   |40          |0           |100         |
-|2nd enemy   |80          |0           |100         |
-|3rd enemy   |120         |0           |100         |
-|4th enemy   |160         |0           |100         |
+if (hero.y < 100) {
+    hero.say("Too high!", 1000);
+}
+
+if (hero.x >= 40) {
+    hero.say("I don't want to be here.", 1000);
+}
+
+pause(2000);
+
+if (hero.x >= 40 && hero.y > 100) {
+    hero.say("Perfect!");
+}
+```
+
+The ``||variables:hero||`` is a bit picky about where they want to be. Change the ``||sprites:x||`` and ``||sprites:y||`` position of the ``||variables:hero||`` after each ``||loops:pause||`` to make them only say "That is good!" and "Perfect!"
+
+## Problem #6: Ten of Me
+
+Use a ``||loops:for||`` loop to create **twelve** ``||sprites:sprites||`` with an image of your choice.
+
+Give each ``||sprites:sprite||`` a velocity to make it move to the left. Set their ``||sprites:y||`` position to 10 times the loop variable (``||variables:i||``), and their ``||sprites:x||`` position to ``||scene:screenWidth()||``.
+
+``||loops:Pause||`` for 500 ms between enemies so they do not all appear at once.
