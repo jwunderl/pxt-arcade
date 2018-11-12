@@ -1,11 +1,10 @@
 # Activity: Tiles
 
+Tile maps 
 
 ## Concept: On Hit Tile Events
 
-The ``scene.onHitTile`` event is a helpful event that runs code when a sprite of a specific ``||sprites:SpriteKind||`` (e.g. Player, Enemy, etc.) collides with a wall of a specific color. 
-
-![On Hit Tile Event](/static/courses/csintro3/arrays/tile-maps/on-tile-hit-event.gif)
+The ``scene.onHitTile`` event is a helpful event that runs code when a sprite of a specific ``||sprites:SpriteKind||`` (e.g. Player, Enemy, etc.) collides with a wall of a specific color.
 
 ## Example #2: Cold Water
 
