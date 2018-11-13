@@ -1,100 +1,59 @@
 # Activity: Tiles
 
-Tile maps 
+``||scene:Tile maps||`` allow for an easy way to design and structure maps that the player can explore.
+
+``||scene:Wall collision||`` events and ``||scene:Tiles||`` allow for further control over how developers can interact with the individual ``||scene:tiles||`` that make up the ``||scene:tile map||``.
 
 ## Concept: On Hit Tile Events
 
-The ``scene.onHitTile`` event is a helpful event that runs code when a sprite of a specific ``||sprites:SpriteKind||`` (e.g. Player, Enemy, etc.) collides with a wall of a specific color.
+The ``||scene:scene.onHitTile||`` event occurs when a sprite of the given ``||sprites:Kind||`` collides with a given ``||scene:Tile||`` that is a ``||scene:Wall||``.
 
-## Example #2: Cold Water
+```sig
+scene.onHitTile(0, 0, null);
+```
 
-1. Observe the example below
-2. Identify how it uses a ``scene.onTileHit`` event to make the sprite interact with the scene
+## Example #1: Rock Collector
+
+1. Review the example below
+2. Identify how the ``||scene:scene.onTileHit||`` event is used to make the sprite interact with the scene
+3. How does the ``||variables:tile||`` parameter in the ``||scene:on hit tile||`` event correspond to the type of tile that is used?
 
 ```typescript
 enum SpriteKind {
     Player,
     Enemy
 }
-let mySprite: Sprite = null
-mySprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
-scene.setTileMap(img`
-5 5 5 5 5 5 5 5 5 d 
-5 5 5 5 5 5 5 5 d 8 
-5 5 5 5 5 5 5 d 8 8 
-5 5 5 5 5 5 d 8 8 8 
-5 5 5 5 5 d 8 8 8 8 
-5 5 5 5 d 8 8 8 8 8 
-5 5 5 d 8 8 8 8 8 8 
-5 5 d 8 8 8 8 8 8 8 
-`)
-scene.setTile(5, img`
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 f 5 5 5 5 5 5 5 5 5 f 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 f 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 5 
-5 5 5 f 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-`)
-scene.setTile(13, img`
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 f 5 5 5 5 5 5 5 5 5 f 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 8 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 8 
-5 f 5 5 5 5 5 5 5 5 5 5 5 5 8 8 
-5 5 5 5 5 5 5 5 5 5 5 5 8 8 8 8 
-5 5 5 5 5 5 5 5 5 5 8 8 8 8 8 9 
-5 5 5 8 8 8 5 5 5 8 8 8 8 9 9 9 
-5 5 8 8 8 8 8 8 8 8 8 9 9 9 6 6 
-5 8 8 8 8 8 8 8 8 9 9 9 6 6 8 8 
-5 8 8 8 8 8 8 9 9 9 6 6 8 8 8 8 
-8 8 8 8 9 9 9 9 6 6 6 8 8 8 8 8 
-8 8 8 9 9 6 8 6 6 8 8 8 8 8 8 8 
-8 8 8 9 6 6 8 8 8 8 8 8 8 8 8 8 
-8 8 9 9 8 8 8 8 8 8 8 8 8 8 8 8 
-`)
-scene.setTile(8, img`
-8 8 8 8 8 9 9 9 8 8 8 8 8 8 8 8 
-8 8 8 8 9 9 6 6 8 8 8 8 8 8 8 8 
-8 8 8 9 9 6 8 8 8 8 8 8 8 8 8 8 
-8 8 8 9 6 8 8 8 8 8 8 8 8 8 8 8 
-8 8 9 6 6 8 8 8 9 8 8 8 8 8 8 8 
-9 9 9 6 8 8 8 9 9 9 8 8 8 8 8 8 
-9 6 6 8 8 8 9 9 6 8 8 8 8 8 8 8 
-6 8 8 8 8 8 9 9 6 8 8 8 8 8 8 8 
-8 8 8 8 8 9 9 6 8 8 8 8 8 8 8 8 
-8 8 8 8 9 9 6 8 8 8 8 8 9 9 6 8 
-8 8 8 9 9 6 8 8 8 8 8 8 9 6 8 8 
-8 8 8 9 6 8 8 8 8 8 8 9 6 8 8 8 
-8 8 9 6 8 8 8 8 8 8 9 9 6 8 8 8 
-8 8 6 8 8 8 8 8 8 8 9 6 8 8 8 8 
-8 8 8 8 8 8 8 8 8 8 6 8 8 8 8 8 
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-`, true)
 
-scene.onHitTile(SpriteKind.Player, 8, function (sprite: Sprite) {
-    sprite.say("Ooh! Too Cold!", 1000);
-})
+let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
+controller.controlSprite(mySprite, 100, 100);
+
+scene.setTileMap(img`
+7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 
+7 7 f 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 f 7 
+7 7 7 f 7 7 7 f 7 7 
+7 7 7 7 7 7 7 f 7 7 
+7 7 7 7 7 7 7 7 7 7 
+`);
+
+scene.setBackgroundColor(6);
+scene.setTile(7, sprites.castle.tileDarkGrass1);
+scene.setTile(15, sprites.castle.rock0, true);
+
+scene.onHitTile(SpriteKind.Player, 15, function (sprite: Sprite) {
+    sprite.say("Ooh! A rock!", 1000);
+});
 ```
 
-## Student Task #2: Scene Interaction
+## Student Task #1: Collect More
 
-1. Create a quick game with that allows you to control a sprite and move around the screen
-2. Add in a tile map with at least **2** different colors
-3. Have at least **1** color set to be a wall
-4. Add an ``scene.onHitTile`` event that makes the sprite say something when they hit the wall
+1. Start with the code from example #1
+2. Create at least **one** more tile that is **not** a wall, and add it to the ``||scene:tile map||``
+3. Create at least **one** more type of ``||scene:wall||``, and add it to the ``||scene:tile map||``. Make the image be of something that looks like a "portal"
+4. Add an ``||scene:on hit tile||`` event that occurs when ``||variables:mySprite||`` hits the new type of ``||scene:wall||``
+5. In the new event, set ``||variables:mySprite||`` to a random new ``||sprites:x||`` and ``||sprites:y||`` position
 
 ## Concept: Tiles
 
@@ -102,7 +61,6 @@ A tile map is made up of several individual tiles of type ``tiles.Tile``. This i
 
 Some of the helpful functions for getting a tile and setting a tile are:
 ``scene.getTile`` and ``scene.setTileAt``. The first returns the tile at the specified position and the latter takes a tile and a color index as parameters and set that tile to that color.
-
 
 ## Example #3: Swipe Down
 
