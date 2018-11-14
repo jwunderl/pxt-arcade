@@ -59,8 +59,15 @@ scene.onHitTile(SpriteKind.Player, 15, function (sprite: Sprite) {
 
 A ``||scene:tile map||`` is made up of tiles of type ``||scene:tiles.Tile||``. This type is defined in the ``||scene:tiles||`` namespace.
 
-Some of the helpful functions for getting a tile and setting a tile are:
-``scene.getTile`` and ``scene.setTileAt``. The first returns the tile at the specified position and the latter takes a tile and a color index as parameters and set that tile to that color.
+The ``||scene:scene.getTile||`` and ``||scene:scene.setTileAt||`` functions can be used to get and modify the individual ``||scene:Tiles||`` in the ``||scene:tile map||``.
+
+```sig
+scene.getTile(0, 0);
+```
+
+```sig
+scene.setTileAt(null, 0);
+```
 
 ## Example #2: Draw a Red Line
 
