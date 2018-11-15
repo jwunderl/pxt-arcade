@@ -10,9 +10,24 @@ Additionally, the ``||arrays:array||`` might be created and intended to be used 
 
 ## Concept: For Each loop syntax
 
+In JavaScript, a ``||loops:for each||`` loop is generally represented using the ``||loops:for ... of||`` statement, shown in the snippet below.
 
+```typescript
+let words: string[] = ["hello", "world"];
+for (let element of words) {
+    game.splash(element);
+}
+```
+
+In this snippet, ``||variables:element||`` is the loop variable (like ``||variables:i||`` in a normal ``||loops:for||`` loop), and is changed to a different element from the array ``||variables:words||`` on each iteration of the ``||loops:loop||``.
+
+This is done in order from the first element (index 0) to the last element in the array.
 
 ## Example #1: ``||loops:For Each||`` ``||sprites:Enemy||``
+
+1. Review the code below
+2. Identify how the ``||loops:for ... of||`` loop is used to iterate over all ``||sprites:Enemy||``s
+3. Identify what is done to each ``||sprites:Enemy||``
 
 ```typescript
 enum SpriteKind {
