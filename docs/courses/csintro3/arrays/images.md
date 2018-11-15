@@ -14,13 +14,14 @@ Using ``||arrays:arrays||``, these ``||images:images||`` can be stored in a sing
 
 1. Review the code below
 2. Identify how the ``||images:Image||`` array is created
-3. Identify how the ``||loops:for||`` loop is used to iterate through the different ``||images:images||`` of the  ``||sprites:ducks||``
+3. Identify how the ``||loops:for||`` loop is used to iterate through the different ``||images:images||`` of the ``||sprites:ducks||``
 
 ```typescript
 enum SpriteKind {
     Player,
     Enemy
 }
+
 let characterImages: Image[] = [
     sprites.duck.duck1,
     sprites.duck.duck2,
@@ -30,7 +31,7 @@ let characterImages: Image[] = [
     sprites.duck.duck6
 ];
 
-let duck: Sprite = sprites.create(characterImages[0], SpriteKind.Player)
+let duck: Sprite = sprites.create(characterImages[0], SpriteKind.Player);
 for (let index = 0; index < characterImages.length; index++) {
     pause(150);
     duck.setImage(characterImages[index]);
@@ -53,3 +54,78 @@ The ``||images:images||`` of a hero walking can be referenced using the followin
 * ``||sprites:sprites.castle.heroWalkFront4||``
 
 ### ~
+
+## Concept: Remainder Operator
+
+Creating an animation using arrays is useful, but does lead to some issues. For example, what if the intention is to run it in the background, forever?
+
+One approach would be to use the ``||game:on update interval||`` event. Using this with the previous example might look like the snippet below.
+
+```typescript-ignore
+let count = 0;
+game.onUpdateInterval(150, function () {
+    duck.setImage(characterImages[count]);
+    count++;
+});
+```
+
+However, this won't quite work; after the last index in the array, the code will crash, because you will be trying to refer to an ``||images:image||`` that **doesn't exist**.
+
+This could be handled using ``||logic:logic||`` to reset the value when it gets too high.
+
+```typescript-ignore
+let count = 0;
+game.onUpdateInterval(150, function () {
+    duck.setImage(characterImages[count]);
+    count++;
+    if (count == characterImages.length) {
+        count = 0;
+    }
+});
+```
+
+The **remainder** operator, ``%``, can be used to handle this case more appropriately. This operator is used to signify the **remainder** of integer division between two numbers: that is, ``5 % 3`` is equal to 2, because 5 goes into 3 one time, with **two remaining**.
+
+### ~hint
+
+The remainder operator is often referred to as the ``mod`` operator, short for modulo or modulus.
+
+### ~
+
+## Example #2: Continually Flapping Duck
+
+1. Review the code below
+2. Identify how ``||variables:count||`` is used
+3. Identify how the remainder (``%``) operator is used to refer to a value within the ``||images:image||`` ``||arrays:array||``
+
+```typescript
+enum SpriteKind {
+    Player,
+    Enemy
+}
+
+let characterImages: Image[] = [
+    sprites.duck.duck1,
+    sprites.duck.duck2,
+    sprites.duck.duck3,
+    sprites.duck.duck4,
+    sprites.duck.duck5,
+    sprites.duck.duck6
+];
+
+let duck: Sprite = sprites.create(characterImages[0], SpriteKind.Player);
+let count: number = 0;
+
+game.onUpdateInterval(150, function () {
+    duck.setImage(characterImages[index % characterImages.length]);
+});
+```
+
+## Student Task #2: Continuous Walking Animation
+
+1. Start with the code from task #1
+2. Replace the ``||loops:for||`` loops with the ``||game:on update interval||`` event with a ``||variables:counter||`` as shown in example #2 to make the animation run indefinitely
+3. Make the hero move with the arrow keys
+
+## Concept: Random Images
+
