@@ -117,7 +117,7 @@ let duck: Sprite = sprites.create(characterImages[0], SpriteKind.Player);
 let count: number = 0;
 
 game.onUpdateInterval(150, function () {
-    duck.setImage(characterImages[index % characterImages.length]);
+    duck.setImage(characterImages[count % characterImages.length]);
 });
 ```
 
@@ -129,3 +129,68 @@ game.onUpdateInterval(150, function () {
 
 ## Concept: Random Images
 
+In games, ``||sprites:sprites||`` will often need to be created a large number of times, to represent ``||sprites:enemies||``, ``||sprites:collectible items||``, or anything else.
+
+To make the games more visually appealing, these ``||sprites:Sprites||`` can be given different ``||images:images||`` to make sure they do not all look the same.
+
+The ``||sprites:sprites.createEmptySprite||`` event and ``||sprites.onCreated||`` function are helping for handling this type of behavior.
+
+```sig
+sprites.createEmptySprite(0);
+```
+
+```sig
+sprites.onCreated(0, null);
+```
+
+## Example #3: Asteroids!
+
+1. Review the code below
+2. Identify how the different images for ``||sprites:Asteroid||``s are defined
+3. Identify what occurs when an ``||sprites:Asteroid||`` is ``||sprites:created||``
+4. Identify how ``||math:Math.pickRandom||`` is used to pick a ``||math:random||`` ``||images:image||``
+
+```typescript
+enum SpriteKind {
+    Player,
+    Enemy,
+    Asteroid
+}
+
+let asteroids: Image[] = [
+    sprites.space.spaceAsteroid0,
+    sprites.space.spaceAsteroid1
+];
+
+game.onUpdateInterval(1000, function () {
+    sprites.createEmptySprite(SpriteKind.Asteroid);
+});
+
+sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+    sprite.setImage(Math.pickRandom(asteroids));
+    sprite.y = Math.randomRange(0, screen.height);
+    sprite.x = Math.randomRange(0, screen.width);
+});
+```
+
+## Student Task #3: Falling Asteroids
+
+1. Start with the code from example #3
+2. In the ``||sprites:on created||`` event, set the ``||variables:sprite||`` ``||sprites:y||`` position to be 0, so it starts at the top of the screen
+3. After setting the ``||sprites:y||`` position, set the ``||sprites:vy||`` to a ``||math:random value between||`` 30 and 50
+4. Set the ``||sprites:Ghost||`` flag for every ``||sprites:Asteroid||`` to true
+
+### ~hint
+
+The other ``||sprites:Asteroid||`` ``||images:images||`` can be referenced using the following ``||variables:variables||``:
+
+* ``||sprites:sprites.space.spaceAsteroid2||``
+* ``||sprites:sprites.space.spaceAsteroid3||``
+* ``||sprites:sprites.space.spaceAsteroid4||``
+
+### ~
+
+## What did we learn?
+
+1. How does using multiple ``||images:images||`` allow for games that are more visually appealing?
+2. How is the **remainder** operator used to make sure the code never accesses an invalid index in the ``||arrays:array||``?
