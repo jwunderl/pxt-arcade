@@ -132,7 +132,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 ## What did we learn?
 
 1. In your own words, explain how ``||loops:for ... of||`` loops can be easier to use than ``||loops:for||`` loops.
-2. How do ``||arrays:filter||`` and ``||arrays:forEach||`` allow ``||arrays:arrays||`` to be used more easily
+2. How do ``||arrays:filter||`` and ``||arrays:forEach||`` allow ``||arrays:arrays||`` to be used more easily?
 
 ### ~hint
 
@@ -166,7 +166,7 @@ Arrow Functions can also be created that are more than a single line using curly
 
 Additionally, if an arrow function requires more than a single parameter (or no parameters), parentheses need to be used to group the parameters:
 
-* No parameters: ``() => game.splash("I'm here!")`` will splash "I'm here!" when it is called
-* Two parameters: ``(a, b) => a + b`` will return the sum of ``||variables:a||`` and ``||variables:b||``
+1. No parameters: ``() => game.splash("I'm here!")`` will splash "I'm here!" when it is called
+2. Two parameters: ``(a, b) => a + b`` will return the sum of ``||variables:a||`` and ``||variables:b||``
 
 ### ~
