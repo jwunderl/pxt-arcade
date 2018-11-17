@@ -134,4 +134,5 @@ The benefit of nested functions is more apparent when the functions are signific
 
 ## What did we learn?
 
-1. How do nested functions help break down large functions?t
+1. How do nested functions help break down large functions?
+2. How does knowing the scope of the variables within the outer function help when writing inner functions?
