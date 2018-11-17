@@ -137,6 +137,6 @@ The old value is gone - there is no way to reference it anymore.
 
 ### ~hint
 
-Before moving on to the next lesson, check out the [selected problems](/courses/csintro3/intro/initialization-problems) for this section to review the material and see some different problems.
+Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/initialization-problems) for this section to review the material and practice the concepts introduced in this section.
 
 ### ~
