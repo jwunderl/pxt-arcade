@@ -16,3 +16,10 @@ Create an **8 x 8** garden like the example below.
 
 Set at least **three** of the different color ``||scene:tiles||`` to have a custom image - either a flower that you drew yourself, or one of the types of flowers or grass included in the gallery.
 
+## Problem #3: Build a Road
+
+Create a **16 x 16** with a ``||scene:tile map||`` of a race track for cars.
+
+Create a ``||sprites:Sprite||`` with an ``||images:image||`` of a car. Make it move with the ``||controller:controller||``, and make the ``||scene:camera follow||`` the ``||sprites:sprite||``.
+
+The ``||images:images||`` of a race track can be found at under ``||sprites:sprites.vehicle||``, and all start with ``||sprites:road||``; for example, ``||sprites:sprites.vehicle.roadIntersection1||``.
