@@ -68,7 +68,7 @@ let characters: Sprite[] = [];
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let newCharacter: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Player);
-    newCharacter.x = Math.randomRange(0, screen.width;
+    newCharacter.x = Math.randomRange(0, screen.width);
     newCharacter.y = Math.randomRange(0, screen.height);
     characters.push(newCharacter);
 });
@@ -103,8 +103,8 @@ enum SpriteKind {
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let newCharacter: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Player);
-    newCharacter.x = Math.randomRange(0, screen.width;
-    newCharacter.y = Math.randomRange(0, screen.height;
+    newCharacter.x = Math.randomRange(0, screen.width);
+    newCharacter.y = Math.randomRange(0, screen.height);
 })
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
