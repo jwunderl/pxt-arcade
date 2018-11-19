@@ -33,5 +33,3 @@ Create a **16 x 16** maze using the ``||scene:tile map||`` like the example belo
 Create a ``||sprites:Sprite||`` for the player, that moves with the ``||controller:controller||``. Make the ``||scene:camera follow||`` the ``||sprites:Sprite||``. Set the player to spawn in the **top left** corner of the screen.
 
 Set the tile for the walls in your maze (in the example above, the black tiles) to be ``||scene:Walls||`` so that the players cannot cross them.
-
-## Problem #5
