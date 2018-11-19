@@ -46,26 +46,41 @@ countFruit();
 
 ## Problem #4: Pizza Place
 
-The following function will randomly place a pizza sprite on the screen.
+The ``||functions:function||`` in the code snippet below places a pizza ``||sprites:Sprite||`` in a ``||math:random||`` location on the screen, after taking one second to make the pizza.
 
 ```typescript
+enum SpriteKind {
+    Pizza
+}
+
 function makePizza() {
-    let pizza: Sprite = sprites.create(sprites.food.smallPizza);
-    pizza.x = Math.randomRange(0, scene.screenWidth());
-    pizza.y = Math.randomRange(0, scene.screenHeight());
-    loops.pause(200);
+    pause(1000);
+    let pizza: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Pizza);
+    pizza.x = Math.randomRange(0, screen.width);
+    pizza.y = Math.randomRange(0, screen.height);
 }
 ```
 
-Copy this function into your code. 
+Recreate this code snippet in a new project. In this project, the player will be the owner of a Pizza Parlor.
 
-You're running your own pizza place and have received the following orders from customers:
+The player will have the following orders for pizza:
+
 * An order of 3 pizzas
 * An order of 5 pizzas
 * An order of 2 pizzas
 
-Write code that for each order, will ``||game:game.splash||`` how many pizzas have been ordered and then use a ``||loops:for||`` loop to make that many pizzas.
+Create **three** new ``||functions:Functions||`` to handle the orders. Each ``||functions:function||`` should ``||game:splash||`` how many pizzas are in the given order,  and then use a ``||loops:for||`` loop to make that many pizzas.
 
-## Problem #5: A Beautiful Day in This Neighborhood
+## Problem #5: Asteroid Storm Maker
 
-Write 2 functions. The first function should be called ``buildHouse`` and should ``console.log`` the phrase ``Building a house``. The second function should be called ``buildNeighborhood`` and should use the ``buildHouse`` function to build 12 houses
+Create a ``||functions:function||`` called ``||functions:fireAsteroid||``.
+
+In the function, create a new ``||sprites:projectile||`` representing an ``||sprites:Asteroid||``. 
+
+Set the ``||sprites:Asteroid||``'s ``||sprites:x||`` position to be a random position between 0 and ``||sprites:screen.width||``. Set the ``||sprites:y||`` position to 0.
+
+Set the ``||sprites:Asteroid||``'s ``||sprites:vy||`` to 50, and the ``||sprites:vx||`` to a ``||math:random||`` value between -10 and 10.
+
+Create another ``||functions:function||`` called ``||function:asteroidStorm||``. In it, create **ten** ``||sprites:Asteroids||`` using ``||functions:fireAsteroid||``, with a **250 ms** ``||loops:pause||`` between each asteroid.
+
+Call ``||functions:asteroidStorm||`` at least once to test your code.
