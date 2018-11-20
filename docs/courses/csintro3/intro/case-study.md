@@ -141,7 +141,7 @@ namespace spritesheet {
         . b b b b b b b b b . 
         . . b b b b b b b . . 
         . . . b b b b b . . . 
-    `
+    `;
 
     export let stars: Image[] = [
         img`
@@ -159,7 +159,7 @@ namespace spritesheet {
             . .
             . 1
         `
-    ]
+    ];
 }
 
 namespace asteroids {
@@ -176,26 +176,26 @@ namespace asteroids {
         setPosition(sprite);
         setMotion(sprite);
         // for setMotion, store variable in namespace for sprite, make them convert to parameters
-    })
+    });
 
     sprites.onDestroyed(SpriteKind.Asteroid, function (sprite: Sprite) {
         info.changeScoreBy(1);
         // Make them do this
-    })
+    });
 
     game.onUpdateInterval(1500, function () {
         sprites.createEmptySprite(SpriteKind.Asteroid);
-    })
+    });
 
     function setPosition(asteroid: Sprite): void {
         asteroid.x = Math.randomRange(10, screen.width - 10); // student fill in these
         asteroid.y = 0;
-    }
+    };
 
     function setMotion(asteroid: Sprite) {
         asteroid.vx = Math.randomRange(-8, 8);
         asteroid.vy = Math.randomRange(35, 20);
-    }
+    };
 }
 
 namespace stars {
@@ -225,7 +225,7 @@ namespace stars {
         sprite.setFlag(SpriteFlag.Ghost, true);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         sprite.z = -1;  // have them set this to teach properties
-    })
+    });
 
     // eventually have them recognize this is the same as Asteroids.setPosition
     function setPosition(star: Sprite): void {
@@ -241,11 +241,12 @@ namespace stars {
         if (Math.percentChance(33)) {
             sprites.createEmptySprite(SpriteKind.Star);
         }
-    })
+    });
 
     for (let row = 0; row < screen.height / 10; row++) {
         sprites.createEmptySprite(SpriteKind.Star);
     }
+
     for (let star of sprites.allOfKind(SpriteKind.Star)) {
         star.y = Math.randomRange(0, screen.height);
     }
@@ -332,12 +333,12 @@ namespace powerups {
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite);
         setMotion(sprite);
-    })
+    });
 
     // make them add this event
     sprites.onDestroyed(SpriteKind.PowerUp, function (sprite: Sprite) {
         ship.player.say("missed it :(", 500);
-    })
+    });
 
     // eventually have them recognize this is the same as Asteroids.setPosition
     function setPosition(powerUp: Sprite): void {
@@ -357,7 +358,7 @@ namespace powerups {
         if (Math.percentChance(33)) {
             sprites.createEmptySprite(SpriteKind.PowerUp);
         }
-    })
+    });
 
     // Challenge: Trail for powerups
     game.onUpdate(function () {
@@ -371,7 +372,7 @@ namespace powerups {
                 trail.z = -1;
             }
         }
-    })
+    });
 }
 
 // They make the enemies outside of any name space to start, then move them into a namespace
@@ -391,7 +392,7 @@ namespace enemy {
             enemy.setFlag(SpriteFlag.AutoDestroy, true);
             enemy.vy = 15;
         }
-    })
+    });
 
     // eventually have them recognize this is the same as Asteroids.setPosition
     function setPosition(enemy: Sprite): void {
@@ -401,7 +402,7 @@ namespace enemy {
 
     sprites.onDestroyed(SpriteKind.Enemy, function (sprite: Sprite) {
         info.changeScoreBy(3);
-    })
+    });
 
     game.onUpdate(function () {
         for (let enemy of sprites.allOfKind(SpriteKind.Enemy)) {
@@ -420,7 +421,7 @@ namespace enemy {
                 `, 0, 45, SpriteKind.EnemyLaser, enemy);
             }
         }
-    })
+    });
 }
 
 namespace ship {
@@ -473,7 +474,7 @@ namespace ship {
         }
 
         // sprites.createProjectile(laserImage, controller.dx() * 4, -40, SpriteKind.Laser, player); // make them create the laser
-    })
+    });
 
     controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         if (boostedLasers > 0) {
@@ -487,7 +488,7 @@ namespace ship {
         } else {
             player.say("no more boost", 500);
         }
-    })
+    });
 
     game.onUpdate(function () {
         if (player.vx < -1) { // arrays -> make them switch between the different images instead of having a constant forward facing one
@@ -500,7 +501,7 @@ namespace ship {
             // player.setImage(playerImages[2]);
             player.setImage(spritesheet.player[2]);
         }
-    })
+    });
 }
 
 namespace overlapevents {
@@ -524,30 +525,30 @@ namespace overlapevents {
         info.changeLifeBy(-1); // rm this and make them add it
         info.changeScoreBy(-1); // rm this and make them add it
         otherSprite.destroy(); // rm this and make them add it
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
         sprite.destroy();
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
         sprite.destroy();
-    })
+    });
 
     // ADDED IN CHALLENGE
     sprites.onOverlap(SpriteKind.Player, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-1); // rm this and make them add it
         info.changeScoreBy(-1); // rm this and make them add it
         otherSprite.destroy(); // rm this and make them add it
-    })
+    });
 
     // ADDED IN CHALLENGE
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
         info.changeScoreBy(1); // rm this and make them add it
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
         let powerUp: number = powerups.getType(otherSprite);
@@ -571,19 +572,18 @@ namespace overlapevents {
         } else if (powerUp === PowerUpType.Ghost) { // ghost mode challenge
             misc.tempGhost(ship.player, 1000);
         }
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-2);
         info.changeScoreBy(-3);
         otherSprite.destroy();
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-1);
         otherSprite.destroy();
-    })
-
+    });
 
     // CHALLENGE: add overlap event for enemy lasers and asteroids, that 'splits' the asteroids
     // in two moving diagonally downwards from curr asteroid position
@@ -595,7 +595,7 @@ namespace overlapevents {
         // let right = sprites.createProjectile(Math.pickRandom(brokenAsteroids), Math.randomRange(10, 20), sprite.vy * (1 + Math.random()), SpriteKind.BrokenAsteroid, sprite);
         sprite.destroy();
         otherSprite.destroy();
-    })
+    });
 }
 
 // Eventually / at end of functions, make them create a misc type namespace 
@@ -610,7 +610,7 @@ namespace state {
         } else {
             game.over();
         }
-    })
+    });
 
     /** Progress bar **/
 
@@ -625,7 +625,7 @@ namespace state {
 
     game.onUpdateInterval(1000, function () {
         charge = Math.min(charge + 1, maxCharge);
-    })
+    });
 
     game.onUpdate(function () {
         let bar: Image = chargeBar.image;
@@ -633,7 +633,7 @@ namespace state {
 
         bar.fill(7);
         bar.fillRect(0, startFilled, bar.width, bar.height - startFilled, 2);
-    })
+    });
 
     /** End Progress bar **/
 }
@@ -644,7 +644,7 @@ namespace misc {
             character.setFlag(SpriteFlag.Ghost, true);
             pause(time);
             character.setFlag(SpriteFlag.Ghost, false);
-        })
+        });
     }
 }
 ```
@@ -728,7 +728,7 @@ namespace spritesheet {
     export let enemyLaser = img`
         7
         7
-    `
+    `;
 
     export let powerUp: Image[] = [];
     powerUp[PowerUpType.Health] = img`
@@ -864,6 +864,7 @@ namespace stars {
         for (let row = 0; row < screen.height / 10; row++) {
             sprites.createEmptySprite(SpriteKind.Star);
         }
+
         for (let star of sprites.allOfKind(SpriteKind.Star)) {
             star.y = Math.randomRange(0, screen.height);
         }
@@ -964,7 +965,7 @@ namespace ship {
             sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
             state.charge--;
         }
-    })
+    });
 
     controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         if (state.boostCharge > 0) {
@@ -976,7 +977,7 @@ namespace ship {
         } else {
             player.say("no more boost", 500);
         }
-    })
+    });
 
     game.onUpdate(function () {
         if (player.vx < -1) {
@@ -986,7 +987,7 @@ namespace ship {
         } else {
             player.setImage(spritesheet.player[2]);
         }
-    })
+    });
 }
 
 namespace overlapevents {
@@ -1001,28 +1002,28 @@ namespace overlapevents {
         info.changeLifeBy(-1);
         info.changeScoreBy(-1);
         otherSprite.destroy();
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-1);
         info.changeScoreBy(-1);
         otherSprite.destroy();
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
         sprite.destroy();
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
         sprite.destroy();
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeScoreBy(1);
         otherSprite.destroy();
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
         let powerUp: number = powerups.getType(otherSprite);
@@ -1042,18 +1043,18 @@ namespace overlapevents {
         } else if (powerUp == PowerUpType.Ghost) {
             misc.tempGhost(ship.player, 1000);
         }
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-2);
         info.changeScoreBy(-3);
         otherSprite.destroy();
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-1);
         otherSprite.destroy();
-    })
+    });
 
     sprites.onOverlap(SpriteKind.Asteroid, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
         sprite.setFlag(SpriteFlag.Ghost, true);
@@ -1069,7 +1070,7 @@ namespace overlapevents {
             sprite);
         sprite.destroy();
         otherSprite.destroy();
-    })
+    });
 }
 
 namespace state {
@@ -1082,7 +1083,7 @@ namespace state {
         } else {
             game.over();
         }
-    })
+    });
 
     export let maxCharge: number = 5;
     export let charge: number = maxCharge;
@@ -1101,7 +1102,7 @@ namespace state {
 
     game.onUpdateInterval(1000, function () {
         charge = Math.min(charge + 1, maxCharge);
-    })
+    });
 
     game.onUpdate(function () {
         let bar: Image = chargeBar.image;
@@ -1112,7 +1113,7 @@ namespace state {
         let display = boostDisplay.image;
         display.fill(0);
         display.print("" + boostCharge, 0, 0);
-    })
+    });
 }
 
 namespace misc {
@@ -1121,7 +1122,7 @@ namespace misc {
             character.setFlag(SpriteFlag.Ghost, true);
             pause(time);
             character.setFlag(SpriteFlag.Ghost, false);
-        })
+        });
     }
 
     export function setPosition(star: Sprite, edge?: number) {
