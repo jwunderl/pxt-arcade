@@ -126,8 +126,8 @@ The old value is gone - there is no way to reference it anymore.
 ## Student Task #3: Splash a Variable
 
 1. Start with the (valid) code from example #3
-2. Immediately after the first line, add a new line to ``||game:game.splash()||`` ``||variables:word||``
-3. Add another ``||game:game.splash()||`` with ``||variables:word||`` to the end of the code
+2. Immediately after the first line, add a new line to ``||game:game.splash||`` ``||variables:word||``
+3. Add another ``||game:game.splash||`` with ``||variables:word||`` to the end of the code
 4. Verify that the two splash screens display different words
 
 ## What did we learn?
@@ -138,5 +138,28 @@ The old value is gone - there is no way to reference it anymore.
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/initialization-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### Setting a Value
+
+``||variables:Variables||`` can be used to store different values that are useful in your code. In your game, add **two** new variables on new lines after the rest of the code (including the curly braces ``{}``!). Make the first variable, ``||variables:x||``, store the value 80. Make the second variable, ``||variables:y||``, store the value 100.
+
+### Splash an Intro
+
+The ``||game.splash||`` function is commonly used to give introductions to games. Use it to ``||game:splash||`` a short introduction to the game: "Hello! This is my Space Game!"
+
+### Solution
+
+```typescript-ignore
+let x = 80;
+let y = 100;
+
+game.splash("Hello! This is my Space Game!");
+```
 
 ### ~

@@ -1,6 +1,49 @@
-# Case Study
+# Introduction: Case Study
 
-## Beginning
+This course is about learning to program through making games using JavaScript.
+
+The lessons are typically based on very short pieces of code, to teach the concepts in bite-sized snippets. These short snippets allow us to focus on the new behaviors, but it will not always be obvious how the different snippets can be integrated into a final product.
+
+To make sure this goal stays in sight throughout the course, most lessons include a **Case Study** section at the end.
+
+Following these sections throughout the course will give experience turning a rough concept - of a game with asteroids flying across the screen at random - into a complete, full featured game.
+
+The first snippets below show the beginning and end of this process. The initial code is what you will start with, and add to each lesson.
+
+Below that snippet is an example of the final product, including many of the "Challenge" features. If you get stuck when implementing any of the sections, take a peek back here to try and find out how the example implements the behavior. The point of the case study is to learn how the code works together while building up a larger game, not as a challenge for each individual topic
+
+## Initial Code
+
+```typescript
+enum SpriteKind {
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+```
+
+## First few additions:
 
 ```typescript
 enum SpriteKind {
@@ -46,16 +89,9 @@ player.setFlag(SpriteFlag.StayInScreen, true);
 
 controller.moveSprite(player, 80, 30);
 player.y = screen.height - 20;
-
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.createProjectile(img`
-        4
-        4
-    `, controller.dx() * 4, -40, SpriteKind.Laser, player);
-});
 ```
 
-## Final:
+## Final Result
 
 ```typescript
 enum SpriteKind {
