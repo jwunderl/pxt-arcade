@@ -149,3 +149,31 @@ console.log(x);
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/types-problems) for this section to review the material and practice the concepts introduced in this section.
 
 ### ~
+
+### ~hint
+
+## Case Study
+
+### Using Types
+
+In your game, add a type to the variable you created in the previous lesson's ``Splash the Intro`` example.
+
+### Setting a Value
+
+``||variables:Variables||`` can be used to store different values that are useful in your code. In your game, add **two** new variables on new lines after the rest of the code (including the curly braces ``{}``!).
+
+Make the first variable, ``||variables:x||``, store the value 80. Make the second variable, ``||variables:y||``, store the value 100.
+
+Make sure to give each of these values the proper type.
+
+### Solution
+
+```typescript-ignore
+let intro: string = "Hello! This is my Space Game!"
+game.splash(intro);
+
+let x: number = 80;
+let y: number = 100;
+```
+
+### ~

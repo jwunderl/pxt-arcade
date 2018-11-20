@@ -145,21 +145,19 @@ Before moving on to the next lesson, it is recommended that you check out the [s
 
 ## Case Study
 
-### Setting a Value
+### Create an Intro
 
-``||variables:Variables||`` can be used to store different values that are useful in your code. In your game, add **two** new variables on new lines after the rest of the code (including the curly braces ``{}``!). Make the first variable, ``||variables:x||``, store the value 80. Make the second variable, ``||variables:y||``, store the value 100.
+At the end of your game, create a variable ``||variables:intro||``. This should store a short introduction to your game; for example, "Hello! This is my Space Game!"
 
-### Splash an Intro
+### Splash the Intro
 
-The ``||game.splash||`` function is commonly used to give introductions to games. Use it to ``||game:splash||`` a short introduction to the game: "Hello! This is my Space Game!"
+The ``||game.splash||`` function is commonly used to give introductions to games. Use it to ``||game:splash||`` the introduction you just created.
 
 ### Solution
 
 ```typescript-ignore
-let x = 80;
-let y = 100;
-
-game.splash("Hello! This is my Space Game!");
+let intro = "Hello! This is my Space Game!"
+game.splash(intro);
 ```
 
 ### ~
