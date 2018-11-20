@@ -10,7 +10,9 @@ Following these sections throughout the course will give experience turning a ro
 
 The first snippets below show the beginning and end of this process. The initial code is what you will start with, and add to each lesson.
 
-Below that snippet is an example of the final product, including many of the "Challenge" features. If you get stuck when implementing any of the sections, take a peek back here to try and find out how the example implements the behavior. The point of the case study is to learn how the code works together while building up a larger game, not as a challenge for each individual topic
+Below that snippet is an example of the final product, including many of the "Challenge" features. If you get stuck when implementing any of the sections, feel free to take a peek at the solution below the problem, or return here and look at the final goal.
+
+The point of the case study is to learn how the code works together while building up a larger game, not as a challenge for each individual topic.
 
 ## Initial Code
 
