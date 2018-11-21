@@ -4,13 +4,11 @@ In blocks, the types of variables that were being used was generally invisible: 
 
 When types came up, they were generally due to small errors: trying to ``||game:splash||`` a number required that the number be ``||text:join||``ed to a string, trying to store a string in a variable that's already been designated to be a string, and other small things.
 
-### Rethink how to introduce this; it's really misleading as it's ascribing to javascript something that is unique to typescript. For now, instead of JavaScript using $Script$ for ease of conversion
-
-In $Script$, variables can be explicitly given a type for the computer to treat it as; some common examples in @boardname@ are ``string``, ``number``, and ``sprite``.
+In MakeCode JavaScript, variables can be explicitly given a type for the computer to treat it as; some common examples in @boardname@ are ``string``, ``number``, and ``sprite``.
 
 ## Concept: Implicit Typing to Explicit Typing
 
-In $Script$, variables can be assigned a type at declaration by using ``: type`` after the name of the variable.
+In MakeCode JavaScript, variables can be assigned a type at declaration by using ``: type`` after the name of the variable.
 
 ```typescript
 let x: number = 5;
