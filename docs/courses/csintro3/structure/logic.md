@@ -48,11 +48,11 @@ In blocks, there were many ways to compare two numbers. In JavaScript, these sam
 
 | Name                      | Symbol    | JavaScript            |
 | :------------------------ | :-------: | :-------------------:	|
-| Equal To                  | =	        | ``value1 == value2``  |
+| Equal To                  | =         | ``value1 == value2``  |
 | Not Equal To              | &ne;      | ``value1 != value2``  |
-| Less Than                 | <	        | ``value1 < value2``   |
+| Less Than                 | <         | ``value1 < value2``   |
 | Less Than or Equal To     | &le;      | ``value1 <= value2``  |
-| Greater Than              | >	        | ``value1 > value2``   |
+| Greater Than              | >         | ``value1 > value2``   |
 | Greater Than or Equal To  | &ge;      | ``value1 >= value2``  |  
 
 ## Example #1: Numeric Comparisons
@@ -125,7 +125,7 @@ if (num > 5) {
 Boolean operators allow boolean values to be manipulated.
 
 | Name  | Order	| JavaScript                        |
-| :---- | :---:	| :-------------------------------: |
+| :---- | :---: | :-------------------------------: |
 | Not   | 1st   | ``!bool1``                        |
 | And   | 2nd   | ``bool1 && bool2``                |
 | Or    | 3rd   | ``bool1`` &vert;&vert; ``bool2``  |
