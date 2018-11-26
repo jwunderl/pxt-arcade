@@ -4,7 +4,7 @@ This course is about learning to program through making games using JavaScript.
 
 The lessons are typically based on very short pieces of code, to teach the concepts in bite-sized snippets. These short snippets allow us to focus on the new behaviors, but it will not always be obvious how the different snippets can be integrated into a final product.
 
-To make sure this goal stays in sight throughout the course, most lessons include a **Case Study** section at the end.
+To make sure this goal stays in sight throughout the course, most lessons include a **Case Study** section at the end, with small tasks that will be incorporated into the game.
 
 Following these sections throughout the course will give experience turning a rough concept - of a game with asteroids flying across the screen at random - into a complete, full featured game.
 
