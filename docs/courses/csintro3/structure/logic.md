@@ -124,7 +124,7 @@ if (num > 5) {
 
 Boolean operators allow boolean values to be manipulated.
 
-| Name  | Order	| JavaScript                        |
+| Name  | Order | JavaScript                        |
 | :---- | :---: | :-------------------------------: |
 | Not   | 1st   | ``!bool1``                        |
 | And   | 2nd   | ``bool1 && bool2``                |

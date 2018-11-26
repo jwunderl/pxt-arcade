@@ -199,8 +199,8 @@ Earlier on in the case study, the variables ``||variables:x||`` and ``||variable
 
 ```typescript
 enum SpriteKind {
-    Asteroid,
-    Player
+    Player,
+    Asteroid
 }
 
 namespace asteroids {
