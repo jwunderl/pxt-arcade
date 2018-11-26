@@ -4,7 +4,11 @@ At this point, you have the knowledge necessary to deal with a larger pieces of 
 
 To get a head start on future topics, there are a few more namespaces that we will add in to make the game a bit more interesting, and give a framework for future tasks to build upon.
 
-Below are two snippets of code: the first is the current state of the example case study, prior to this section, and the second is the version that will be referenced going forward. Duplicate these changes into your game, and play around for a bit to identify what has been added.
+Below are two snippets of code.
+
+The first is the current state of the example game, with a few minor changes; in particular, removing the ``||game:splash||`` screen and ``||game:prompt||`` for user input, as well as the initial blast of ``||sprites:Asteroids||``. These can be left in your game if you'd like, but have been removed to make sure the game starts immediately.
+
+The second is the version that will be referenced going forward. This includes a number of new namespaces that will make the game a bit more interesting. Play the game and see what has changed, and duplicate the changes from this page into your own game.
 
 ### ~hint
 
@@ -17,7 +21,83 @@ This will help focus on the sections of the code that are relevant to each task,
 ## Current Game
 
 ```typescript
-// TODO insert example up to this point (solution from namespaces lesson)
+enum SpriteKind {
+    Player,
+    Enemy,
+    Asteroid
+}
+
+/**
+ * Contains the images used in the game
+ */
+namespace spritesheet {
+    export let player: Image = img`
+        . . . . 8 . . . .
+        . . . 8 8 8 . . .
+        . . . 8 1 8 . . .
+        . . 2 8 1 8 2 . .
+        . 2 2 8 8 8 2 2 .
+        2 2 2 8 8 8 2 2 2
+        . . . 5 . 5 . . .
+    `;
+
+    export let enemy: Image = img`
+        5 5 . . . . 5 5
+        7 7 7 7 7 7 7 7
+        . 9 9 7 7 9 9 .
+        . 7 7 7 7 7 7 .
+        . . . 9 9 . . .
+    `;
+
+    export let asteroid: Image = sprites.space.spaceAsteroid0;
+}
+
+/**
+ * Creates and controls the asteroids within the game
+ */
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(spritesheet.asteroid);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+/**
+ * Creates and controls the player's ship
+ */
+namespace ship {
+    export let player = sprites.create(spritesheet.player, SpriteKind.Player);
+
+    controller.moveSprite(player, 80, 30);
+    player.x = screen.width / 2;
+    player.y = screen.height - 20;
+}
+
+/**
+ * Creates and controls the enemies in the game
+ */
+namespace enemy {
+    let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
+    enemy.x = ship.player.x;
+    enemy.y = 20;
+    enemy.vy = 10;
+}
 ```
 
 ## New Version
