@@ -24,6 +24,88 @@ This will help focus on the sections of the code that are relevant to each task,
 enum SpriteKind {
     Player,
     Enemy,
+    Asteroid
+}
+
+/**
+ * Contains the images used in the game
+ */
+namespace spritesheet {
+    export let player: Image = img`
+        . . . . 8 . . . .
+        . . . 8 8 8 . . .
+        . . . 8 1 8 . . .
+        . . 2 8 1 8 2 . .
+        . 2 2 8 8 8 2 2 .
+        2 2 2 8 8 8 2 2 2
+        . . . 5 . 5 . . .
+    `;
+
+    export let enemy: Image = img`
+        5 5 . . . . 5 5
+        7 7 7 7 7 7 7 7
+        . 9 9 7 7 9 9 .
+        . 7 7 7 7 7 7 .
+        . . . 9 9 . . .
+    `;
+
+    export let asteroid: Image = sprites.space.spaceAsteroid0;
+}
+
+/**
+ * Creates and controls the asteroids within the game
+ */
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(spritesheet.asteroid);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+/**
+ * Creates and controls the player's ship
+ */
+namespace ship {
+    export let player = sprites.create(spritesheet.player, SpriteKind.Player);
+
+    controller.moveSprite(player, 80, 30);
+    player.x = screen.width / 2;
+    player.y = screen.height - 20;
+}
+
+/**
+ * Creates and controls the enemies in the game
+ */
+namespace enemy {
+    let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
+    enemy.x = ship.player.x;
+    enemy.y = 20;
+    enemy.vy = 10;
+}
+```
+
+## New Version
+
+```typescript
+enum SpriteKind {
+    Player,
+    Enemy,
     Asteroid,
     PowerUp,
     Laser
@@ -144,11 +226,29 @@ namespace powerups {
         setMotion(sprite);
     });
 
+    /**
+     * Place the given sprite at a random location at the top of the screen
+     * @param sprite the sprite to place at the top of the screen
+     * @param edge how many pixels between either edge of the screen to set
+     */
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+
+    /**
+     * Set the initial velocities for the given sprite
+     * @param powerUp the powerUp to set the initial velocities of
+     */
     function setMotion(powerUp: Sprite) {
         powerUp.vy = 60;
     }
 
-    export function getType(powerUp: Sprite): number {
+    /**
+     * @param powerUp sprite to get type of
+     * @returns the type of the given powerUp
+     */
+    export function getType(powerUp: Sprite): PowerUpType {
         return powerUp.data;
     }
 
@@ -157,11 +257,6 @@ namespace powerups {
             sprites.createEmptySprite(SpriteKind.PowerUp);
         }
     });
-
-    function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
-        sprite.y = 0;
-    }
 }
 
 /**
