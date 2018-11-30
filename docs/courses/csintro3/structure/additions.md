@@ -102,6 +102,15 @@ namespace enemy {
 
 ## New Version
 
+### Change List:
+
+* [ ] Added two more SpriteKinds: PowerUp, and Laser
+* [ ] Added another enum, PowerUpType
+* [ ] Added images in spritesheet for PowerUp and Laser
+* [ ] Added powerups namespace, which creates and handles powerups
+* [ ] Added overlapevents namespace, which contains events to handle overlaps between different sprites
+* [ ] Added status namespace, which will contain things related to the state of the game
+
 ```typescript
 enum SpriteKind {
     Player,
@@ -196,6 +205,7 @@ namespace ship {
     player.x = screen.width / 2;
     player.y = screen.height - 20;
 
+    // When the player presses A, fire a laser from the spaceship
     controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
     });
