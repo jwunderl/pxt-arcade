@@ -172,3 +172,11 @@ However, because the variable in the function has a different **scope**, the var
 This type of bug is very subtle, and can be hard to catch when looking through long segments of code; in the next few lessons better ways to handle this type of behavior will be shown.
 
 ### ~
+
+### ~hint
+
+## Case Study
+
+## Solution
+
+### ~
