@@ -48,17 +48,18 @@ function randomizeParticleColor(particle: Sprite) {
 }
 ```
 
-Add a ``||controller:on B button pressed||`` event that will explode a firework. It should:
+Add an ``||controller:on B button pressed||`` event that will explode a firework. It should:
 
 * Obtain an ``||arrays:Array||`` of all fireworks
 * ``||logic:if||`` there are not any fireworks on the screen, do nothing
 * Otherwise, ``||math:pick a Firework at random||``
 * Create thirty ``||sprites:Particle||``s, with random ``||sprites:x||`` and ``||sprites:y||`` velocities. Set these ``||sprites:Particle||``s to all start at the chosen ``||sprites:Firework||``
 * Use a 1 pixel image (``||images:img`1`||``) as the image for these particles, and ``||functions:randomizeParticleColor||`` to set the particle to be a random color
+* Set each ``||sprites:Particle||`` to have ``||sprites:AutoDestroy||`` turned on, so that they get destroyed when they leave the screen
 * After creating all thirty particles, ``||sprites:destroy||`` the chosen ``||sprites:Firework||``
 
 ### ~hint
 
-If the game starts to move slowly after you create and explode multiple fireworks, you can use ``||sprites:Sprite.setFlag(SpriteFlag.Ghost, true);||`` for each of the particles; this will make it so the game knows to ignore collisions, and allow the code to run faster.
+If the game starts to move slowly after you create and explode multiple fireworks, you can set each ``||sprites:Particle||`` to be a ``||sprites:Ghost||``; this will make it so the game knows to ignore collisions, and allow the code to run faster.
 
 ### ~
