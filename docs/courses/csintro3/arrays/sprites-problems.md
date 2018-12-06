@@ -51,7 +51,7 @@ function randomizeParticleColor(particle: Sprite) {
 Add an ``||controller:on B button pressed||`` event that will explode a firework. It should:
 
 * Obtain an ``||arrays:Array||`` of all fireworks
-* ``||logic:if||`` there are not any fireworks on the screen, do nothing
+* ``||logic:If||`` there are not any fireworks on the screen, do nothing
 * Otherwise, ``||math:pick a Firework at random||``
 * Create thirty ``||sprites:Particle||``s, with random ``||sprites:x||`` and ``||sprites:y||`` velocities. Set these ``||sprites:Particle||``s to all start at the chosen ``||sprites:Firework||``
 * Use a 1 pixel image (``||images:img`1`||``) as the image for these particles, and ``||functions:randomizeParticleColor||`` to set the particle to be a random color
