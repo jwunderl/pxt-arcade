@@ -51,7 +51,7 @@ enemies[2].x = Math.randomRange(10, screen.width - 10);
 2. The code is a bit redundant when setting the ``||sprites:x||`` position for each ``||sprites:Enemy||``: modify the code to use a ``||loops:for||`` loop instead
 3. Set each ``||sprites:Enemy||`` to have a random ``||sprites:y||`` position between ``10`` and ``||scene:screen.height - 10||``
 4. Use ``||math:Math.pickRandom||`` to select a random ``||sprites:Enemy||``. Make the selected ``||sprites:Enemy||`` ``||sprites:say||`` "I've been chosen!" for 1000 ms
-5. **Challenge:** can steps 2 through 4 of this task be completed using the code from example #1a to start with? Which version is easier to work with?
+5. **Challenge:** can steps 2 through 4 of this task be completed starting with the code from example #1a? Which version is easier to work with?
 
 ## Concept: Getting All the Sprites
 

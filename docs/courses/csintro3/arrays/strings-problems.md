@@ -41,7 +41,9 @@ Extra spaces are trimmed when printing to the console in @boardname@, so you don
 
 ## Problem #2: While You Don't Say That
 
-You have somehow grown a distaste for the word "that". Write a small game that will continue to ``||game:ask||`` the user for a string, until the user has inputted the word "that", ``||game:splash||`` "I don't like that!" and end the game.
+You have somehow grown a distaste for the word "that".
+
+Write a small game that will continue to ``||game:ask||`` the user for a string until the user has inputted the word "that". When that happens, ``||game:splash||`` "I don't like that!" and end the game.
 
 ## Problem #3: Pretty Printing
 
