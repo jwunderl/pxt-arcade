@@ -45,7 +45,7 @@ let returnedValue: number = giveMeFive();
 2. Add a return value to ``||functions:aName||``, which returns "Bill"
 3. After calling the function, store the returned value in the variable ``||variables:theName||``
 4. Use ``||game:game.splash||`` to display ``||variables:theName||``
-5. **Challenge:** give ``||functions:aName||`` a parameter ``name`` of type ``string``. Modify the return value to return ``name`` instead
+5. **Challenge:** give ``||functions:aName||`` a parameter ``name`` of type ``||text:string||``. Modify the return value to return ``name`` instead
 
 ## Concept: Different Return Values
 
