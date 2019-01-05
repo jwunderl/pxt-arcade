@@ -23,7 +23,7 @@ https://youtu.be/ZPMexvC1BfY
 ```blocks
 enum SpriteKind {
     Player,
-    Projectile
+    Projectile,
     Enemy,
     GolfBall,
     Hole
