@@ -32,6 +32,7 @@
         "libs/screen---linux",
         "libs/game",
         "libs/game---hw",
+        "libs/menu",
         "libs/buttons",
         "libs/mixer",
         "libs/mixer---stm32",
