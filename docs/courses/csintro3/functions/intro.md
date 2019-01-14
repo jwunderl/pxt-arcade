@@ -172,3 +172,33 @@ However, because the variable in the function has a different **scope**, the var
 This type of bug is very subtle, and can be hard to catch when looking through long segments of code; in the next few lessons better ways to handle this type of behavior will be shown.
 
 ### ~
+
+### ~hint
+
+## Case Study
+
+### Initialization
+
+Add a function named ``initialize`` to the ``state`` namespace, which sets the initialize values for ``life`` to 4 and ``score`` to 0.
+
+### And Initialize
+
+Use the function ``initialize`` in the ``state`` namespace, and remove the ``info.setLife`` and ``info.setScore`` that are currently in the namespace.
+
+### Solution
+
+```typescript-ignore
+/**
+ * Set up the state of the game
+ */
+namespace status {
+    initialize();
+
+    function initialize() {
+        info.setLife(4);
+        info.setScore(0);
+    }
+}
+```
+
+### ~
