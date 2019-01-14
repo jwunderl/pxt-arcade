@@ -24,7 +24,7 @@ RefCollection *programList() {
             continue;
         ent->d_name[len - 4] = 0; // chop extension
         //DMESG("add: '%s'", ent->d_name);
-        res->push((TValue)mkString(ent->d_name, -1));
+        res->head.push((TValue)mkString(ent->d_name, -1));
     }
     closedir(d);
     return res;
@@ -34,7 +34,7 @@ RefCollection *programList() {
 //%
 void runProgram(String prog) {
     char *p;
-    asprintf(&p, "%s/%s.elf", PROGDIR, prog->data);
+    asprintf(&p, "%s/%s.elf", PROGDIR, prog->getUTF8Data());
     initialArgv = new char*[3];
     initialArgv[0] = p;
     initialArgv[1] = (char*)"--run";

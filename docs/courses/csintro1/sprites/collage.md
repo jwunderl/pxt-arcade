@@ -7,6 +7,7 @@ https://youtu.be/kKeuxhqnZ4U
 **Visual Design** is an important part of Game Development. This activity builds skills needed to create multiple sprites placed on a game screen by building a "Personal Interest Collage". The student will create sprites with custom variable names, and arrange the sprites on a game screen using sprite properties to set the coordinates.
 
 In this activity, students will be introduced to:
+
 * Designing their own images
 * Use variables to create multiple sprites
 * Using coordinates on the screen to arrange our sprites into a scene
@@ -23,6 +24,7 @@ https://youtu.be/TY0kSXUaPkg
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let hotSauce: Sprite = null
@@ -80,6 +82,7 @@ If the sprites are not moving to where you expect them to when you set their coo
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let hotSauce: Sprite = null

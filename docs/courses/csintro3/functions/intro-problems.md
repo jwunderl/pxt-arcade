@@ -1,6 +1,6 @@
-# Problem Set: Intro
+# Problem Set: Intro to Functions
 
-This section contains a number of selected problems for the Intro section.
+This section contains a number of selected problems for the Intro to JavaScript Functions section.
 
 It is recommended that you review the problems, and complete a few before moving on to the next section.
 
@@ -50,7 +50,8 @@ The ``||functions:function||`` in the code snippet below places a pizza ``||spri
 
 ```typescript
 enum SpriteKind {
-    Pizza
+    Pizza,
+    Projectile
 }
 
 function makePizza() {

@@ -1,10 +1,11 @@
 # Activity: Sprite Overlap & Events - Part 1
 
-Once the sprites are moving, the next step is to detect when sprites interact with other objects. Overlap is the primary way in which we can make sprites interact with each other.
+Once the sprites are moving, the next step is to detect when they interact with other objects. Overlap is the primary way in which we can make sprites interact with each other.
 
 We can assign events to overlaps between sprites of different (or even the same) ``||sprites:kind||``, adding behaviors such as scoring points, destroying an object, starting an animation, and much more.
 
 In this activity, students will be introduced to:
+
 * ``||sprites:Sprite Kind||``
 * ``||sprites:on overlap||`` event with different ``||sprites:kind||``
 * ``||sprites:ghost on||`` and ``||sprites:ghost off||``
@@ -20,9 +21,9 @@ We use ``||sprites:kind||`` to classify our sprites. We can have sprites in our 
 
 Creating labels (``||sprites:kind||``s) for different groups of sprites helps us assign them each unique behaviors. For example, you might want to have the player in your game be able to eat 5 different food sprites, so combining them into a single ``||sprites:kind||`` allows you to write the code for a single section. 
 
-Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (for example, the ``||sprites:Player||``), and other times there will be many sprites (for example, ``||sprites:Cloud||``s in the sky). Once we have ``||sprites:kind||``s for different sprites, we can check if two different sprites are overlapping one another using the ``sprites:on overlap||`` event.
+Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (for example, the ``||sprites:Player||``), and other times there will be many sprites (for example, ``||sprites:Cloud||``s in the sky). Once we have ``||sprites:kind||``s for different sprites, we can check if two different sprites are overlapping one another using the ``||sprites:on overlap||`` event.
 
-## Example #1: Two Sprites overlap
+## Example #1: Two Sprites overlap #example-1
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -34,6 +35,7 @@ Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (fo
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let head: Sprite = null
@@ -100,15 +102,15 @@ game.onUpdate(function () {
 })
 ```
 
-## Student Task #1: Add actions to overlap events
+## Student Task #1: Add actions to overlap events #task-1
 
-1. Starting with example #1, or your own similar code
+1. Start with [example #1](#example-1), or your own similar code
 2. Add additional code to the overlap event that has the person saying something (for example, "Good!")
 3. **Challenge:** add another action to the overlap event that uses the other sprite
 
 ### ~hint
 
-Use ``||loops:pause||`` before using sprite destroy, as otherwise the sprite will be destroyed before we see what it was saying.
+Use ``||loops:pause||`` before using sprite destroy, otherwise the sprite will be destroyed before we see what it was saying.
 
 ### ~
 
@@ -118,9 +120,9 @@ https://youtu.be/rN1UyX6YkQE
 
 [Alternative Video Location](https://aka.ms/40544a-overlap1spritekindtask)
 
-The ``||sprites:ghost on||`` setting for sprites makes the sprite ignore ``||sprites:on overlap||`` events while it is turned on. By default, the setting is off.
+The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the sprite ignore ``||sprites:on overlap||`` events. By default, the setting is off.
 
-## Example #2: Sprite Overlap and ghost on
+## Example #2: Sprite Overlap and ghost on #example-2
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -131,6 +133,7 @@ The ``||sprites:ghost on||`` setting for sprites makes the sprite ignore ``||spr
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let head: Sprite = null
@@ -198,17 +201,17 @@ game.onUpdate(function () {
 })
 ```
 
-## Student Task #2: Ghost Off and On
+## Student Task #2: Ghost Off and On #task-2
 
 https://youtu.be/FwDty0LxzSM
 
 [Alternative Video Location](https://aka.ms/40544a-overlap1ghostntask)
 
-1. Start with example #2 or task #1
-2. Create 3 sprites in different locations across
+1. Start with [example #2](#example-2) or [task #1](#task-1)
+2. Create 3 sprites in different locations across the screen
 3. Make the newly created sprites all be of the same ``||sprites:kind||``. 
 4. Set at least one sprite to have ``||sprites:ghost off||`` and one to have ``||sprites:ghost on||``. Make sure both of these are stationary (don't move)
-5. Add an event for ``||sprites:on overlap||`` of the stationary sprite ``||sprites:kind||``s with the ``||sprites:kind||`` for the movable sprite (for example, in the event have an action of sprite destroy and/or sprite say)
+5. Add an event for ``||sprites:on overlap||`` of the stationary sprite ``||sprites:kind||``s with the ``||sprites:kind||`` for the movable sprite (for example, in the event have an action of sprite ``||sprites:destroy||`` and/or sprite ``||sprites:say||``)
 6. Add 2 additional stationary sprites, with one more new ``||sprites:kind||`` and overlap events for all the different ``||sprites:kind||``s (for example, Player, Enemy, Food, ...)
 
 ## Student Task #3: Multiple ``||sprites:kind||``s
@@ -217,9 +220,9 @@ https://youtu.be/Nasu00HvaYE
 
 [Alternative Video Location](https://aka.ms/40544a-overlap1task3)
 
-1. Start with task #2 or your own similar code
-2. Enable sprite to move anywhere on screen along x and y axis
-3. **Challenge:** using a total of 6 or more sprites and have an overlap involving each SpriteKind. Make one of the overlap events play a sound, pause and then stop all sounds
+1. Start with [task #2](#task-2) or your own similar code
+2. Enable the sprite to move anywhere on screen along x and y axis
+3. **Challenge:** using a total of 6 or more sprites, have an overlap involving each SpriteKind. Make one of the overlap events play a sound, pause and then stop all sounds
 
 ### ~hint
 

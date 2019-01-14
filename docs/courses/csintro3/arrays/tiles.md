@@ -21,6 +21,7 @@ scene.onHitTile(0, 0, null);
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -113,6 +114,7 @@ The ``||scene:place||`` function can be used to set a ``||sprites:sprite||`` to 
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Flower
 }
 scene.setTileMap(img`
@@ -159,11 +161,13 @@ scene.getTilesByType(0);
 
 1. Review the code below
 2. Identify how it is different from example #3
-3. Identify how the 
+3. Identify how the ``||scene:Tile||`` ``||arrays:array||`` is created
+4. Identify how the ``||scene:Tile||`` ``||arrays:array||`` is used
 
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Flower
 }
 

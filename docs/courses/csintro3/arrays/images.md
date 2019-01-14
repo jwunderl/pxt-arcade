@@ -1,4 +1,4 @@
-# Activity: Images in Arrays
+# Activity: Arrays of Images
 
 ``||images:Images||`` are used to represent many things on screen in @boardname@ - ``||scene:backgrounds||``, ``||sprites:Sprites||``, many other elements of the games.
 
@@ -19,6 +19,7 @@ Using ``||arrays:arrays||``, these ``||images:images||`` can be stored in a sing
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -101,6 +102,7 @@ The remainder operator is often referred to as the ``mod`` operator, short for m
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -125,7 +127,7 @@ game.onUpdateInterval(150, function () {
 
 1. Start with the code from task #1
 2. Replace the ``||loops:for||`` loops with the ``||game:on update interval||`` event with a ``||variables:counter||`` as shown in example #2 to make the animation run indefinitely
-3. Make the hero move with the arrow keys
+3. Make the hero ``||controller:move||`` with the directional buttons
 
 ## Concept: Random Images
 
@@ -133,11 +135,7 @@ In games, ``||sprites:sprites||`` will often need to be created a large number o
 
 To make the games more visually appealing, these ``||sprites:Sprites||`` can be given different ``||images:images||`` to make sure they do not all look the same.
 
-The ``||sprites:sprites.createEmptySprite||`` event and ``||sprites.onCreated||`` function are helping for handling this type of behavior.
-
-```sig
-sprites.createEmptySprite(0);
-```
+The ``||sprites.onCreated||`` event is helpful for handling this type of behavior.
 
 ```sig
 sprites.onCreated(0, null);
@@ -146,13 +144,14 @@ sprites.onCreated(0, null);
 ## Example #3: Asteroids!
 
 1. Review the code below
-2. Identify how the different images for ``||sprites:Asteroid||``s are defined
+2. Identify how the different images for ``||sprites:Asteroid||``s are defined, and what happens to the image originally set for the ``||sprites:Sprite||``
 3. Identify what occurs when an ``||sprites:Asteroid||`` is ``||sprites:created||``
 4. Identify how ``||math:Math.pickRandom||`` is used to pick a ``||math:random||`` ``||images:image||``
 
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }
@@ -163,7 +162,7 @@ let asteroids: Image[] = [
 ];
 
 game.onUpdateInterval(1000, function () {
-    sprites.createEmptySprite(SpriteKind.Asteroid);
+    sprites.create(img`1`, SpriteKind.Asteroid);
 });
 
 sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
@@ -178,7 +177,7 @@ sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
 1. Start with the code from example #3
 2. In the ``||sprites:on created||`` event, set the ``||variables:sprite||`` ``||sprites:y||`` position to be 0, so it starts at the top of the screen
 3. After setting the ``||sprites:y||`` position, set the ``||sprites:vy||`` to a ``||math:random value between||`` 30 and 50
-4. Set the ``||sprites:Ghost||`` flag for every ``||sprites:Asteroid||`` to true
+4. Set the ``||sprites:Ghost||`` flag for every ``||sprites:Asteroid||`` to ``||logic:true||``
 
 ### ~hint
 

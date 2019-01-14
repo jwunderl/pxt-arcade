@@ -22,7 +22,7 @@ Saving user input in variables is useful, as it allows the values the user input
 let userInput: string = game.askForString("Give me data!");
 ```
 
-The ``||game:game.askForString||`` function prompts the user to input a string with the phrase "Give me data!", and then the response the user gives is stored in the variable ``||variables:userInput||`` as a **string**.
+The ``||game:game.askForString||`` function prompts the user to input a string with the phrase "Give me data!", and then the response the user gives is stored in the variable ``||variables:userInput||`` as a ``||text:string||``.
 
 ## Student Task #1: Say my Name
 
@@ -157,19 +157,19 @@ Ask the user for their name with ``||game:game.askForString||``, so that the gam
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setImage(sprites.space.spaceAsteroid0);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
     });
 
     game.onUpdateInterval(1500, function () {
-        sprites.createEmptySprite(SpriteKind.Asteroid);
+        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     });
 
     function setMotion(asteroid: Sprite) {

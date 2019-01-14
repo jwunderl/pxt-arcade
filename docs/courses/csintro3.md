@@ -29,13 +29,15 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ### [About](/courses/csintro3/about)
 
+* [Where to Start](/courses/csintro3/about/start)
+* [Style](/courses/csintro3/about/style)
 * [Programming Language](/courses/csintro3/about/script)
 * [For Teachers](/courses/csintro3/about/teachers)
 * [Authors](/courses/csintro3/about/authors)
 
 ### [Intro](/courses/csintro3/intro)
 
-* [Case Study](/courses/csintro3/structure/case-study)
+* [Case Study](/courses/csintro3/intro/case-study)
 * [Initialization](/courses/csintro3/intro/initialization)
 * [Types](/courses/csintro3/intro/types)
 * [User Input](/courses/csintro3/intro/user-input)
@@ -54,16 +56,14 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ### [Functions](/courses/csintro3/functions)
 
-* [Intro to TypeScript Functions](/courses/csintro3/functions/intro)
-* [Return Values](/courses/csintro3/functions/returns)
+* [Intro to Functions](/courses/csintro3/functions/intro)
 * [Parameters](/courses/csintro3/functions/parameters)
-* [Optional Parameters](/courses/csintro3/functions/optional)
-* [Namespaces](/courses/csintro3/functions/namespaces)
+* [Return Values](/courses/csintro3/functions/returns)
 * [Commenting Functions](/courses/csintro3/functions/comments)
 
 ### [Events](/courses/csintro3/events)
 
-* [Intro to Events](/courses/csintro3/events/intro)
+* [On Game Update Event](/courses/csintro3/events/intro)
 * [On Update Interval](/courses/csintro3/events/update)
 * [Sprite Overlap Events](/courses/csintro3/events/overlap)
 * [Info Events](/courses/csintro3/events/info)

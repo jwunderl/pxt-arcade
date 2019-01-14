@@ -2,11 +2,12 @@
 
 Motion is the change in position. To get sprites moving, we will change their position using a game pad event. The game pad has ``||controller:controller events||`` for the ``||controller:up||``, ``||controller:down||``, ``||controller:left||`` and ``||controller:right||`` buttons. 
 
-We can use those events to change sprite location, and to make the sprite move. We will also see how to give a sprite a velocity. Velocity is the rate of change of our position - in real life, this is often measured as kilometers per hour or miles per hour. 
+We can use those events to change sprite location, and to make the sprite move. We will also see how to give a sprite a speed of motion, or velocity. Velocity is the rate of change of our position - in real life, this is often measured as kilometers per hour or miles per hour. 
 
 When the velocities of a sprite are not zero, then the sprite will be in motion.
 
 In these activities, the student will use:
+
 * Controller events
 * Incrementing ``||sprites:x||`` and ``||sprites:y||`` coordinates
 * Setting ``||sprites:vx||`` and ``||sprites:vy||`` velocity
@@ -20,7 +21,7 @@ https://youtu.be/O27uzdkbgK4
 
 [Alternative Video Location](https://aka.ms/40544a-spritemoevent1)
 
-## Example #1: Increment position left and right
+## Example #1: Increment position left and right #example-1
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -29,6 +30,7 @@ https://youtu.be/O27uzdkbgK4
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let agent: Sprite = null
@@ -60,7 +62,7 @@ agent = sprites.create(img`
 
 ## Student Task #1: Increment position Y-axis (up and down)
 
-1. Start with example 1 (motionLR, or your own similar code)
+1. Start with [example #1](#example-1) (motionLR, or your own similar code)
 2. Add additional code to control the up and down (`Y` direction) motions using the controller 
 3. **Challenges:**
     * Add an ``||controller:A||`` button event to move the sprite to the center of the game screen
@@ -76,7 +78,7 @@ Velocity is speed in a particular direction. In our games we typically track mov
 
 If we have a positive `X` velocity, for example, then our sprite will continue to increase in `X`, making it move to the right across the screen.
 
-## Example #2: Increment Velocity Left and Right
+## Example #2: Increment Velocity Left and Right #example-2
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -85,6 +87,7 @@ If we have a positive `X` velocity, for example, then our sprite will continue t
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let agent: Sprite = null
@@ -116,7 +119,7 @@ agent = sprites.create(img`
 
 ## Student Task #2: Increment Velocity Up and Down 
 
-1. Start with example #2 ("velocityLR") or your own similar code
+1. Start with [example #2](#example-2) ("velocityLR") or your own similar code
 2. Add additional code to control the up and down (`Y` direction) velocities using the controller 
 3. **Challenges:**
     * Add an ``||controller:A||`` button event move the sprite to the center of the game screen
@@ -135,11 +138,13 @@ We have created motion by capturing the key pad events and incrementing (or decr
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "motionShortMethod")
-4. Note the blocks in ``||game:on game update||``
+4. Note the ``||game:on game update||``; this is used to assign code to run whenever the game updates
+5. Note the blocks in ``||game:on game update||``
 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let ball: Sprite = null
@@ -188,9 +193,9 @@ https://youtu.be/1tae8OZpt4w
 
 [Alternative Video Location](https://aka.ms/40544a-spritemoevent4flip)
 
-By making a mirror flip of a sprite we can simulate walking by making each leg appear differently 
+By making a mirror flip of a sprite we can simulate walking by making each leg appear differently. 
 
-## Example #4: Image Flip with button press event
+## Example #4: Image Flip with button press event #example-4
 
 Flipping an image creates a mirror image when we use ``||images:flip horizontal||`` block. This can be useful in creating a simple 2 frame walking animation.
 
@@ -203,13 +208,14 @@ Flipping an image creates a mirror image when we use ``||images:flip horizontal|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 function flipHorizontal() {
     mySprite.image.flipX()
     pause(200)
 }
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     flipHorizontal()
 })
 scene.setBackgroundColor(6)
@@ -251,7 +257,7 @@ let mySprite: Sprite = sprites.create(img`
 
 ## Student Task #4: Image Flip with motion
 
-1. Start with example #4 above or your own similar code
+1. Start with [example #4](#example-4) above or your own similar code
 2. Make your own image move using the ``||controller:up||``, ``||controller:down||``, ``||controller:left||``, ``||controller:right||`` buttons on the controller
 3. Use ``||controller:A||`` button to ``||images:flip vertically||`` to flip the image upside down.
 

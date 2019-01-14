@@ -113,7 +113,7 @@ This allows for strings to be "built" by adding pieces to them as necessary.
 ## Example #3: Food Order
 
 1. Review the code written below
-2. Identify how the ``||math:+=||`` operator is used to to build up an ``||variables:order||`` string
+2. Identify how the ``||math:+=||`` operator is used to build up an ``||variables:order||`` string
 
 ```typescript
 let order: string = "I would like to eat ";
@@ -162,19 +162,19 @@ We've decided to make the game into a space adventure, so the player should have
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setImage(sprites.space.spaceAsteroid0);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
     });
 
     game.onUpdateInterval(1500, function () {
-        sprites.createEmptySprite(SpriteKind.Asteroid);
+        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     });
 
     function setMotion(asteroid: Sprite) {

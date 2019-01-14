@@ -5,6 +5,7 @@ We have previously worked with variables we created. A lot of the time, software
 The ``||info:info||`` category in blocks contains a few variables (data properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these as variables in our code.
 
 In this activity, students are introduced to:
+
 * Using the ``||info:score||`` and ``||info:life||`` properties
 * Combining numeric values with math operators (\*)
 * The benefits of using ``||info:score||`` and ``||info:life||`` over other options
@@ -13,7 +14,7 @@ In this activity, students are introduced to:
 
 ## Concept: Using ``||info:score||`` to keep track of button presses
 
-The first example will be a simple one - simply counting the number of buttons pressed and keeping track of them as a score. We will discuss ``||controller:on any button pressed||`` block in more detail later, but for we just need to know that whatever is inside of the block will happen each time a button (``||controller:A||``, ``||controller:up||``, and so on) is pressed.
+The first example will be a simple one - simply counting the number of buttons pressed and keeping track of them as a score. We will discuss ``||controller:on any button pressed||`` block in more detail later, but for now we just need to know that whatever is inside of the block will happen each time a button (``||controller:A||``, ``||controller:up||``, and so on) is pressed.
 
 ## Example #1: Counting button presses
 
@@ -26,14 +27,14 @@ https://youtu.be/7JkbbfBJCdI
 3. Save the code for the task (name it "button count")
 
 ```blocks
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
 ```
 
 Notice that the score pops up in the top right corner as soon as it is used for the first time - that is one benefit of using the ``||info:score||`` variable to keep track of the points the player has earned. Next, we will add in code to in order to create a timer, to see some of the other benefits of the ``||info:info||`` blocks.
 
-## Student Task #1: 10 second button smash
+## Student Task #1: 10 second button smash #task-1
 
 1. Start with the code saved as "button count" in the prior example
 2. Create an ``||loops:on start||`` block
@@ -46,7 +47,7 @@ Notice that the score pops up in the top right corner as soon as it is used for 
 
 3. Add in a ``||info:start countdown 10 (s)||`` block into the ``||loops:on start||`` block
 
-Run the code you created in task #1 a few times, and try to get different scores. Notice the benefits of using both the ``||info:countdown||`` and the ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you which is shown in the top right corner. When the game is over, the ``||info:score||`` maintains a ``||info:high score||`` automatically through multiple runs of the game.
+Run the code you created in [task #1](#task-1) a few times, and try to get different scores. Notice the benefits of using both the ``||info:countdown||`` and the ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you which is shown in the top right corner. When the game is over, the ``||info:score||`` maintains a ``||info:high score||`` automatically through multiple runs of the game.
 
 ## Concept: Using ``||info:life||``
 
@@ -63,7 +64,7 @@ https://youtu.be/YiZ-yl5CbYM
 3. Save the code for the task (name it "do not touch the buttons")
 
 ```blocks
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeLifeBy(-1)
 })
 info.setLife(1)
@@ -82,7 +83,7 @@ This simple game gives the user a simple task - to not touch a button. If they d
 
 ### Overview
 
-When a nurse needs to take a patient's heart rate with their other vital signs, they do not want to (or have time to) sit around for a full minute to count how many beats there are. Instead, they can use another, quicker approach to estimate the patient's heart rate - count how many heart beats there are over 15 seconds, and then multiply that value by 4 to get an estimate for the full minute. In this task, we will use the score to do the same thing, only with button presses. The ``||loops:pause||`` block is new in this example, and pauses the code at that point for however many milliseconds it is provided - in this case, we pass 6000 ms so that it pauses for 6 seconds, and then multiply by 10 to get an estimate for the full 60 seconds (one minute).
+When a nurse needs to take a patient's heart rate with their other vital signs, they do not want to (or have time to) sit around for a full minute to count how many beats there are. Instead, they can use another, quicker approach to estimate the patient's heart rate - count how many heart beats there are over 15 seconds, and then multiply that value by 4 to get an estimate for the full minute. In this task, we will use the score to do the same thing, only with button presses. The ``||loops:pause||`` block is new in this example, and pauses the code at that point for however many milliseconds it is asked to wait - in this case, we pass 6000 ms so that it pauses for 6 seconds, and then multiply by 10 to get an estimate for the full 60 seconds (one minute).
 
 ### Coding
 
@@ -104,9 +105,10 @@ When a nurse needs to take a patient's heart rate with their other vital signs, 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
 let mySprite: Sprite = sprites.create(img`
@@ -144,6 +146,7 @@ To join more than just two strings and numbers, press the **+** to add more loca
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

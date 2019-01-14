@@ -21,7 +21,7 @@ In the example above, the sprite is created using ``||sprites:sprites.create||``
 
 * Notice the type of ``||variables:player||``: it is a ``||sprites:Sprite||``
 * The function that creates the ``||sprites:Sprite||`` takes in two things: an image (``||sprites:sprites.castle.princessFront0||`` is one of the provided images to start with), and a ``||sprites:kind||`` of 0
-* ``||controller:controller.moveSprite||`` is a function that takes a ``||sprites:Sprite||`` and allows it to to move around the screen as using the direction keys. Besides the ``||sprites:Sprite||``, it also needs two numbers: one for the horizontal velocity, and one for the vertical velocity
+* ``||controller:controller.moveSprite||`` is a function that takes a ``||sprites:Sprite||`` and allows it to move around the screen as using the direction keys. Besides the ``||sprites:Sprite||``, it also needs two numbers: one for the horizontal velocity, and one for the vertical velocity
 
 ## Student Task #1: Slow the New Sprite
 
@@ -58,7 +58,8 @@ To start personalizing your own ``||sprites:sprites||``, we will need to learn a
 
 ```typescript
 enum SpriteKind {
-    Player
+    Player,
+    Projectile
 }
 
 let player = sprites.create(img`
@@ -112,6 +113,7 @@ The image editor can be used to easily create these ``tagged templates``.
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Square
 }
 
@@ -146,7 +148,8 @@ These properties and functions can be easily browsed using the autocomplete feat
 
 ```typescript
 enum SpriteKind {
-    Square
+    Square,
+    Projectile
 }
 
 let player = sprites.create(img`
@@ -200,19 +203,19 @@ Earlier on in the case study, the variables ``||variables:x||`` and ``||variable
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Asteroid
 }
 
 namespace asteroids {
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setImage(sprites.space.spaceAsteroid0);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
     });
 
     game.onUpdateInterval(1500, function () {
-        sprites.createEmptySprite(SpriteKind.Asteroid);
+        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     });
 
     function setMotion(asteroid: Sprite) {
@@ -241,7 +244,7 @@ intro += "! This is my Space Game!";
 game.splash(intro);
 
 for (let i = 0; i < 10; i++) {
-    sprites.createEmptySprite(SpriteKind.Asteroid);
+    sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     pause(250);
 }
 

@@ -23,6 +23,7 @@ This will help focus on the sections of the code that are relevant to each task,
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }
@@ -64,7 +65,7 @@ namespace asteroids {
     });
 
     game.onUpdateInterval(1500, function () {
-        sprites.createEmptySprite(SpriteKind.Asteroid);
+        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     });
 
     function setMotion(asteroid: Sprite) {
@@ -114,6 +115,7 @@ namespace enemy {
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid,
     PowerUp,
@@ -174,14 +176,13 @@ namespace spritesheet {
  */
 namespace asteroids {
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setImage(spritesheet.asteroid);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
     });
 
     game.onUpdateInterval(1500, function () {
-        sprites.createEmptySprite(SpriteKind.Asteroid);
+        sprites.create(spritesheet.asteroid, SpriteKind.Asteroid);
     });
 
     function setMotion(asteroid: Sprite) {
@@ -226,7 +227,6 @@ namespace enemy {
  */
 namespace powerups {
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
-        sprite.setImage(spritesheet.powerUp);
         sprite.data = Math.pickRandom([
             PowerUpType.Health,
             PowerUpType.Score
@@ -264,7 +264,7 @@ namespace powerups {
 
     game.onUpdateInterval(1000, function () {
         if (Math.percentChance(33)) {
-            sprites.createEmptySprite(SpriteKind.PowerUp);
+            sprites.create(spritesheet.powerUp, SpriteKind.PowerUp);
         }
     });
 }

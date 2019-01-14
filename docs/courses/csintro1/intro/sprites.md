@@ -5,6 +5,7 @@ Games tell a story, and those stories require characters. In @boardname@, those 
 ![Image Editor Features](/static/courses/csintro1/intro/image-editor-features.png)
 
 In this activity, students are introduced to:
+
 * Using blocks
 * ``||sprites:Sprites||`` and ``||images:Images||``
 * Using the Image Editor
@@ -25,6 +26,7 @@ The blocks needed to create sprites are found in the ``||sprites:Sprites||`` men
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -60,6 +62,7 @@ Look at the blocks, and note that a name for the sprite (``||variables:mySprite|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

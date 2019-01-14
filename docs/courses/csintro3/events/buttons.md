@@ -68,6 +68,7 @@ In previous lessons, ``||controller:controller.moveSprite||`` was introduced to 
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
@@ -92,6 +93,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let topSprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
@@ -118,4 +120,4 @@ controller.anyButton.onEvent(ControllerButtonEvent.Released, function () {
 
 1. How are button events different than other events?
 2. How is the specific button specified when creating a button event?
-3. What is the difference between the ``||controller:ControllerButtonEvent||``s||controller: ``||controller:Pressed||`` and ``||controller:Released||``?
+3. What is the difference between the three types of ``||controller:ControllerButtonEvent||``s, ``||controller:Pressed||``, ``||controller:Released||``, and ``||controller:Repeated||``?

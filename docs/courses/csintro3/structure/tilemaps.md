@@ -49,18 +49,19 @@ scene.setTileMap(img`
 scene.setTile(1, sprites.castle.tileGrass1);
 ```
 
-This function accepts an ``index`` of a color, and a **16 x 16** ``||image:Image||`` to replace the color in the ``||scene:tile map||``.
+This function accepts an ``index`` of a color, and a **16 x 16** ``||images:Image||`` to replace the color in the ``||scene:tile map||``.
 
 ## Example 1: Beach Day
 
 1. Review the code below
 2. Identify where the ``||scene:tile map||`` is defined
-3. Identify where the different colors of the ``||scene:tile map||`` are assigned a different ``||image:Image||``
+3. Identify where the different colors of the ``||scene:tile map||`` are assigned a different ``||images:Image||``
 4. Move the character around the screen; notice that the player cannot leave the ``||scene:tile map||``
 
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
@@ -166,6 +167,7 @@ If you do not want a sprite to be confined to the ``||scene:tile map||`` or bloc
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
@@ -196,7 +198,7 @@ scene.setTile(7, sprites.castle.tileGrass1);
 
 ### ~hint
 
-Note that the ``||scene:cameraFollowSprite||`` function was used to make the camera camera follow ``||variables:mySprite||``; if you have a large ``||scene:tile map||``, you will have to modify the camera to see different parts of it.
+Note that the ``||scene:cameraFollowSprite||`` function was used to make the camera follow ``||variables:mySprite||``; if you have a large ``||scene:tile map||``, you will have to modify the camera to see different parts of it.
 
 ### ~
 
@@ -236,20 +238,20 @@ Set the ``||variables:enemy||`` to have a ``||sprites:vy||`` of 10, so that it m
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }
 
 namespace asteroids {
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setImage(sprites.space.spaceAsteroid0);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
     });
 
     game.onUpdateInterval(1500, function () {
-        sprites.createEmptySprite(SpriteKind.Asteroid);
+        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     });
 
     function setMotion(asteroid: Sprite) {
@@ -278,7 +280,7 @@ intro += "! This is my Space Game!";
 game.splash(intro);
 
 for (let i = 0; i < 10; i++) {
-    sprites.createEmptySprite(SpriteKind.Asteroid);
+    sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     pause(250);
 }
 
