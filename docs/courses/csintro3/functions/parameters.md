@@ -133,3 +133,31 @@ changeByFive(15, false);
 
 1. How do parameters allow for more flexible code?
 2. Review the functions you have learned, like ``||game:game.splash||`` and ``console.log``, and identify which ones have parameters.
+
+### ~hint
+
+## Case Study
+
+### Set Up Values
+
+Modify the ``initialize`` function in the ``status`` namespace to accept **two** parameters: one for the initial ``life`` value, and one for the initial ``score`` value. Update the **call** to that function so that the behavior remains the same.
+
+### 
+
+### Solution
+
+```typescript-ignore
+/**
+ * Set up the state of the game
+ */
+namespace status {
+    initialize(4, 0);
+
+    function initialize(life: number, score: number) {
+        info.setLife(life);
+        info.setScore(score);
+    }
+}
+```
+
+### ~
