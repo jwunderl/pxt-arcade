@@ -253,6 +253,8 @@ After doing this, modify the declaration of ``||variables:player||`` in ``ship``
 
 ### Solution
 
+Notice that the name of the sprite created in ``ship.initialize`` was changed from ``||variables:player||`` to ``||variables:sprite||`` in the example solution below; this isn't required to complete this task, but it does make it a bit more clear that the value is not the same as the one that is outside the function.
+
 ```typescript-ignore
 /**
  * Creates and controls the enemies in the game
@@ -267,11 +269,6 @@ namespace enemy {
         return enemy;
     }
 
-    /**
-     * Place the given sprite at a random location at the top of the screen
-     * @param sprite the sprite to place at the top of the screen
-     * @param edge how many pixels between either edge of the screen to set
-     */
     function setPosition(sprite: Sprite, edge: number) {
         sprite.x = Math.randomRange(edge, screen.width - edge);
         sprite.y = 0;

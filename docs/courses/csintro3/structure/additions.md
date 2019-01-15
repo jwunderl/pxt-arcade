@@ -185,11 +185,20 @@ namespace asteroids {
         sprites.create(spritesheet.asteroid, SpriteKind.Asteroid);
     });
 
+    /**
+     * Set the initial velocities for the given sprite
+     * @param asteroid the asteroid to set the initial velocities of
+     */
     function setMotion(asteroid: Sprite) {
         asteroid.vx = Math.randomRange(-8, 8);
         asteroid.vy = Math.randomRange(35, 20);
     }
 
+    /**
+     * Place the given sprite at a random location at the top of the screen
+     * @param sprite the sprite to place at the top of the screen
+     * @param edge how many pixels between either edge of the screen to set
+     */
     function setPosition(sprite: Sprite, edge: number) {
         sprite.x = Math.randomRange(edge, screen.width - edge);
         sprite.y = 0;
