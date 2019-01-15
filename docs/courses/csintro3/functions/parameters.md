@@ -169,6 +169,8 @@ namespace status {
  * Creates and controls the enemies in the game
  */
 namespace enemy {
+    createEnemy();
+
     function createEnemy() {
         let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
         setPosition(enemy, 10);
