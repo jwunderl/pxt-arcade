@@ -160,13 +160,13 @@ Review the code snippet below.
 
 ```typescript
 let arr: number[] = [];
-arr[5] = 100000;
+arr[3] = 100000;
 game.splash(arr.length + "");
 ```
 
-The result may seem surprising. Why is the length of ``||variables:arr||`` 6, even though there is only one value in it?
+The result may seem surprising. Why is the length of ``||variables:arr||`` 4, even though there is only one value in it?
 
-The ``||arrays:length||`` of an array is determined by the index of the last element, not an exact count of the number of indices assigned a value.
+The ``||arrays:length||`` of an array is determined by the index of the last element, not an exact count of the number of indices assigned a value. In this case, index ``3`` has been assigned a value, so the values considered to be 'within' the array are indices ``0``, ``1``, ``2``, and ``3``, a total of 4 elements.
 
 ### ~
 
@@ -176,7 +176,19 @@ The ``||arrays:length||`` of an array is determined by the index of the last ele
 2. Given an array of numbers ``||variables:arr||`` and a ``||loops:for||`` loop declared like the one below, what is the difference between ``||variables:i||`` and ``||variables:arr[i]||``?
 
 ```typescript-ignore
-for (let i = 0; i <= arr.length; i++) {
+for (let i = 0; i < arr.length; i++) {
 
 }
 ```
+
+### ~hint
+
+## Case Study
+
+### Solution
+
+```typescript
+
+```
+
+### ~
