@@ -10,8 +10,7 @@ enum SpriteKind {
     Asteroid,
     PowerUp,
     Laser,
-    EnemyLaser,
-    Star
+    EnemyLaser
 }
 
 enum PowerUpType {
@@ -188,20 +187,6 @@ namespace enemy {
 }
 
 /**
- * Creates and controls the stars in the game
- */
-namespace star {
-    game.onUpdateInterval(200, function () {
-        if (Math.percentChance(50)) {
-            let star = sprites.createProjectile(img`1`, 0, 50, SpriteKind.Star);
-            star.x = Math.randomRange(0, screen.width);
-            star.setFlag(SpriteFlag.Ghost, true);
-            star.z = -1;
-        }
-    });
-}
-
-/**
  * Generates powerups for the player to collect
  */
 namespace powerups {
@@ -210,6 +195,11 @@ namespace powerups {
         PowerUpType.Score,
         PowerUpType.EnergyUp
     ];
+
+    export let responses: string[] = [];
+    responses[PowerUpType.Health] = "Got health!";
+    responses[PowerUpType.Score] = "Score!";
+    responses[PowerUpType.EnergyUp] = "More Energy!";
 
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
         sprite.data = Math.pickRandom(availablePowerUps);
@@ -292,14 +282,12 @@ namespace overlapevents {
     sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
         let powerUp: number = powerups.getType(otherSprite);
         otherSprite.destroy();
+        sprite.say(powerups.responses[powerUp], 500);
         if (powerUp == PowerUpType.Health) {
-            sprite.say("Got health!", 500);
             info.changeLifeBy(1);
         } else if (powerUp == PowerUpType.Score) {
-            sprite.say("Score!", 500);
             info.changeScoreBy(15);
         } else if (powerUp == PowerUpType.EnergyUp) {
-            sprite.say("More Energy!", 500);
             ship.maxCharge++;
         }
     });
@@ -310,6 +298,7 @@ namespace overlapevents {
  */
 namespace status {
     initialize(4, 0);
+    effects.starField.startScreenEffect();
 
     /**
      * Sets up the initial state of the game
