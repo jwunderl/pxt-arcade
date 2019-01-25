@@ -16,7 +16,8 @@ enum SpriteKind {
 
 enum PowerUpType {
     Health,
-    Score
+    Score,
+    EnergyUp
 }
 
 /**
@@ -204,11 +205,14 @@ namespace star {
  * Generates powerups for the player to collect
  */
 namespace powerups {
+    let availablePowerUps = [
+        PowerUpType.Health,
+        PowerUpType.Score,
+        PowerUpType.EnergyUp
+    ];
+
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
-        sprite.data = Math.pickRandom([
-            PowerUpType.Health,
-            PowerUpType.Score
-        ]);
+        sprite.data = Math.pickRandom(availablePowerUps);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
@@ -294,6 +298,9 @@ namespace overlapevents {
         } else if (powerUp == PowerUpType.Score) {
             sprite.say("Score!", 500);
             info.changeScoreBy(15);
+        } else if (powerUp == PowerUpType.EnergyUp) {
+            sprite.say("More Energy!", 500);
+            ship.maxCharge++;
         }
     });
 }
@@ -322,6 +329,21 @@ namespace status {
         } else {
             game.over();
         }
+    });
+
+    game.onPaint(function () {
+        let x = 1;
+        let y = screen.height - image.font5.charHeight - 1;
+        let color = 0x3;
+
+        if (ship.currentCharge == ship.maxCharge) {
+            color = 0x7;
+        } else if (ship.currentCharge == 0) {
+            color = 0x2;
+        }
+
+        let energyState = "energy: " + ship.currentCharge + "/" + ship.maxCharge;
+        screen.print(energyState, x, y, color, image.font5);
     });
 }
 ```
