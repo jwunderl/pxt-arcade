@@ -149,8 +149,6 @@ namespace ship {
  * Creates and controls the enemies in the game
  */
 namespace enemy {
-    let myEnemy = createEnemy();
-
     /**
      * @returns an enemy sprite that is positioned at the top of the screen
      */
@@ -172,16 +170,23 @@ namespace enemy {
     }
 
     game.onUpdateInterval(200, function () {
-        // Create a laser 10% of the time
-        if (Math.percentChance(10)) {
-            sprites.createProjectile(img`3`, 0, 70, SpriteKind.EnemyLaser, myEnemy);
+        if (Math.percentChance(5)) {
+            createEnemy();
         }
 
-        // follow the player
-        if (myEnemy.x < ship.player.x) {
-            myEnemy.vx = 15;
-        } else {
-            myEnemy.vx = -15;
+        let allEnemies = sprites.allOfKind(SpriteKind.Enemy);
+        for (let i = 0; i < allEnemies.length; i++) {
+            // Create a laser 4% of the time
+            if (Math.percentChance(4)) {
+                sprites.createProjectile(img`3`, 0, 70, SpriteKind.EnemyLaser, allEnemies[i]);
+            }
+
+            // follow the player
+            if (allEnemies[i].x < ship.player.x) {
+                allEnemies[i].vx = 15;
+            } else {
+                allEnemies[i].vx = -15;
+            }
         }
     });
 }
@@ -234,9 +239,12 @@ namespace powerups {
         return powerUp.data;
     }
 
-    game.onUpdateInterval(1000, function () {
-        if (Math.percentChance(33)) {
-            sprites.create(spritesheet.powerUp, SpriteKind.PowerUp);
+    game.onUpdateInterval(600, function () {
+        if (Math.percentChance(50)) {
+            let currentPowerUps = sprites.allOfKind(SpriteKind.PowerUp);
+            if (currentPowerUps.length() < 2) {
+                sprites.create(spritesheet.powerUp, SpriteKind.PowerUp);
+            }
         }
     });
 }
