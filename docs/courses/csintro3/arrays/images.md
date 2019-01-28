@@ -200,9 +200,9 @@ The other ``||sprites:Asteroid||`` ``||images:images||`` can be referenced using
 
 ### Power Up Images
 
-In the ``spritesheet`` namespace, change the ``powerUp`` ``||images:image||`` to an ``||arrays:array||`` of ``||images:images||``, and rename it to ``powerUps``. Create a custom ``||images:image||`` for each type of ``PowerUp``, and store them at the index for the given type (similar to ``||variables:powerups.responses||``).
+In the ``spritesheet`` namespace, change the ``||variables:powerUp||`` ``||images:image||`` to an ``||arrays:array||`` of ``||images:images||``, and rename it to ``||variables:powerUps||``. Create a custom ``||images:image||`` for each type of ``PowerUp``, and store them at the index for the given type (similar to ``||variables:powerups.responses||``).
 
-In order to use these images, when creating a ``||sprites:sprite||`` set the ``||images:image||`` to some default value (a single pixel ``||images:image||``, or one of the ``PowerUp`` images), and then set the ``||images:image||`` appropriately for the chosen type in the ``||sprites:on created||`` event. Because the type will be stored in both the ``data`` and as the index for the ``||images:image||``, you should store the result of ``Math.pickRandom(availablePowerUps);`` so that it can be referenced in both parts where it is necessary.
+In order to use these images, when creating a ``||sprites:sprite||`` set the ``||images:image||`` to some default value (a single pixel ``||images:image||``, or one of the ``PowerUp`` images), and then set the ``||images:image||`` appropriately for the chosen type in the ``||sprites:on created||`` event. Because the type will be stored in both the ``data`` and as the index for the ``||images:image||``, you should store the result of ``||math:Math.pickRandom(availablePowerUps)||`` so that it can be referenced in both parts where it is necessary.
 
 ### Asteroids!
 

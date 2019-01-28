@@ -223,7 +223,7 @@ First, create two new variables in the ``ship`` namespace: ``||variables:recharg
 
 In the ``||game:on game update||`` event, get the current time, and check if the time that has passed since the ``||variables:lastRecharge||`` is greater than or equal to the ``||variables:rechargeDelay||``. If it is, update ``||variables:lastRecharge||`` to the current time, and increment ``||variables:currentCharge||`` if it is less than ``||variables:maxCharge||``.
 
-Finally, add the new ``RechargeRateUp`` ``PowerUp`` to the game. In the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``, decrement the ``ship.rechargeDelay`` by **20** if the ``PowerUp`` is of type ``RechargeRateUp``. Set the ``response`` for this ``PowerUp`` to "Faster Charge!".
+Finally, add the new ``RechargeRateUp`` ``PowerUp`` to the game. In the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``, decrement the ``||variables:ship.rechargeDelay||`` by **20** if the ``PowerUp`` is of type ``RechargeRateUp``. Set the ``response`` for this ``PowerUp`` to "Faster Charge!".
 
 ### Solution
 

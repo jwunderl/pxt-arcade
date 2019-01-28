@@ -193,7 +193,7 @@ One way to address this is to add a way for the player to grow more powerful as 
 
 To do this, you will need to add the new power up to the ``PowerUpType`` enum, and update the ``||arrays:availablePowerUps||`` array in the ``powerups`` namespace to include the new possible powerup.
 
-Finally, in the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``, add another ``||logic:else if||`` for when the ``PowerUp`` is the new power up, which should say "More Energy!" and increase ``ship.maxCharge``.
+Finally, in the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``, add another ``||logic:else if||`` for when the ``PowerUp`` is the new power up, which should say "More Energy!" and increase ``||variables:ship.maxCharge||``.
 
 ### Draw My Energy
 

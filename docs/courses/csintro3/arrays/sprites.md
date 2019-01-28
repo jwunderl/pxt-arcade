@@ -208,7 +208,7 @@ To start, remove the following line of code from the ``enemies`` namespace:
 let myEnemy = createEnemy();
 ```
 
-This will cause some errors, which will identify the places that you need to update. In the ``||game:on update interval||`` event in the ``enemies`` namespace, call ``||sprites:sprites.allOfKind(SpriteKind.Enemy)||`` to obtain an ``||arrays:array||`` of all ``Enemy`` ``||sprites:Sprites||``. Use a loop to iterate through all the ``||sprites:sprites||`` in this ``||arrays:array||``, and apply the current updates to each of them (that is, adjust their ``||sprites:vx||`` and possibly create a ``EnemyLaser``). You may want to lower the chances of ``Laser``s being created to account for having more than a single ``Enemy``.
+This will cause some errors, which will identify the places that you need to update. In the ``||game:on update interval||`` event in the ``enemies`` namespace, call ``||sprites:sprites.allOfKind(SpriteKind.Enemy)||`` to obtain an ``||arrays:array||`` of all ``Enemy`` ``||sprites:Sprites||``. Use a loop to iterate through all the ``||sprites:sprites||`` in this ``||arrays:array||``, and apply the updates to each of them (that is, adjust their ``||sprites:vx||`` and possibly create an ``EnemyLaser`` ``||sprites:projectile||``). You may want to lower the chances of ``Laser``s being created to account for having more than a single ``Enemy``.
 
 After this is done, you'll likely notice something is wrong: the game works, but no enemies are created! This can be fixed by adding a call to ``createEnemy`` to the ``||game:on update interval||`` event, before the ``Enemy`` ``||sprites:sprites||`` are updated. Start off creating an ``Enemy`` about 5 percent of the time, and adjust it to your liking.
 
