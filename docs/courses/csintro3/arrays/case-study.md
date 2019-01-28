@@ -44,7 +44,23 @@ namespace spritesheet {
 
     export let asteroid: Image = sprites.space.spaceAsteroid0;
 
-    export let powerUp: Image = img`
+    export let powerUps: Image[] = [];
+
+    powerUps[PowerUpType.Health] = img`
+        . . . 1 1 1 1 1 . . .
+        . . 1 1 1 1 1 1 1 . .
+        . 1 1 1 1 1 1 1 1 1 .
+        1 1 1 2 2 1 2 2 1 1 1
+        1 1 2 2 2 2 2 3 2 1 1
+        1 1 f 2 2 2 3 2 2 1 1
+        1 1 f 2 2 2 2 2 2 1 1
+        1 1 1 f 2 2 2 2 1 1 1
+        . 1 1 1 f 2 2 1 1 1 .
+        . . 1 1 1 f 1 1 1 . .
+        . . . 1 1 1 1 1 . . .
+    `;
+
+    powerUps[PowerUpType.Score] = img`
         . . . 5 5 5 5 5 . . .
         . . 5 5 5 f 5 5 5 . .
         . 5 5 5 f f f 5 5 5 .
@@ -56,6 +72,34 @@ namespace spritesheet {
         . 5 5 5 f f f 5 5 5 .
         . . 5 5 5 f 5 5 5 . .
         . . . 5 5 5 5 5 . . .
+    `;
+
+    powerUps[PowerUpType.EnergyUp] = img`
+        . . . 8 8 8 8 8 . . .
+        . . 8 8 8 f 8 8 8 . .
+        . 8 8 f f f f f 8 8 .
+        8 8 8 f 8 d 8 f 8 8 8
+        8 8 8 f d d d f 8 8 8
+        8 8 8 f 8 d 8 f 8 8 8
+        8 8 8 f 8 8 8 f 8 8 8
+        8 8 8 f d d d f 8 8 8
+        . 8 8 f 8 8 8 f 8 8 .
+        . . 8 f f f f f 8 . .
+        . . . 8 8 8 8 8 . . .
+    `;
+
+    powerUps[PowerUpType.RechargeRateUp] = img`
+        . . . e e e e e . . .
+        . . e e e 5 4 e e . .
+        . e e e 5 5 e e e e .
+        e e e 5 5 4 4 4 e e e
+        e e 5 5 5 5 5 5 5 5 e
+        e e e e e 5 5 5 4 e e
+        e e e e 5 5 5 4 e e e
+        e e e 5 5 5 4 e e e e
+        . e e 5 5 4 e e e e .
+        . . e e 5 4 e e e . .
+        . . . e e e e e . . .
     `;
 
     export let laser: Image = img`
@@ -217,6 +261,7 @@ namespace powerups {
 
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
         sprite.data = Math.pickRandom(availablePowerUps);
+        sprite.setImage(spritesheet.powerUps[getType(sprite)]);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
@@ -252,7 +297,7 @@ namespace powerups {
         if (Math.percentChance(50)) {
             let currentPowerUps = sprites.allOfKind(SpriteKind.PowerUp);
             if (currentPowerUps.length() < 2) {
-                sprites.create(spritesheet.powerUp, SpriteKind.PowerUp);
+                sprites.create(img`1`, SpriteKind.PowerUp);
             }
         }
     });

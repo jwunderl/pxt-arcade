@@ -192,4 +192,97 @@ The other ``||sprites:Asteroid||`` ``||images:images||`` can be referenced using
 ## What did we learn?
 
 1. How does using multiple ``||images:images||`` allow for games that are more visually appealing?
-2. How is the **remainder** operator used to make sure the code never accesses an invalid index in the ``||arrays:array||``?
+2. How is the **remainder** ``%`` operator used to make sure the code never accesses an invalid index in the ``||arrays:array||``?
+
+### ~hint
+
+## Case Study
+
+### Power Up Images
+
+In the ``spritesheet`` namespace, change the ``powerUp`` ``||images:image||`` to an ``||arrays:array||`` of ``||images:images||``, and rename it to ``powerUps``. Create a custom ``||images:image||`` for each type of ``PowerUp``, and store them at the index for the given type (similar to ``||variables:powerups.responses||``).
+
+### Solution
+
+```typescript-ignore
+namespace spritesheet {
+        export let powerUps: Image[] = [];
+
+    powerUps[PowerUpType.Health] = img`
+        . . . 1 1 1 1 1 . . .
+        . . 1 1 1 1 1 1 1 . .
+        . 1 1 1 1 1 1 1 1 1 .
+        1 1 1 2 2 1 2 2 1 1 1
+        1 1 2 2 2 2 2 3 2 1 1
+        1 1 f 2 2 2 3 2 2 1 1
+        1 1 f 2 2 2 2 2 2 1 1
+        1 1 1 f 2 2 2 2 1 1 1
+        . 1 1 1 f 2 2 1 1 1 .
+        . . 1 1 1 f 1 1 1 . .
+        . . . 1 1 1 1 1 . . .
+    `;
+
+    powerUps[PowerUpType.Score] = img`
+        . . . 5 5 5 5 5 . . .
+        . . 5 5 5 f 5 5 5 . .
+        . 5 5 5 f f f 5 5 5 .
+        5 5 5 f 5 f 5 f 5 5 5
+        5 5 5 5 f 5 5 5 5 5 5
+        5 5 5 5 5 f 5 5 5 5 5
+        5 5 5 5 5 5 f 5 5 5 5
+        5 5 5 f 5 f 5 f 5 5 5
+        . 5 5 5 f f f 5 5 5 .
+        . . 5 5 5 f 5 5 5 . .
+        . . . 5 5 5 5 5 . . .
+    `;
+
+    powerUps[PowerUpType.EnergyUp] = img`
+        . . . 8 8 8 8 8 . . .
+        . . 8 8 8 f 8 8 8 . .
+        . 8 8 f f f f f 8 8 .
+        8 8 8 f 8 d 8 f 8 8 8
+        8 8 8 f d d d f 8 8 8
+        8 8 8 f 8 d 8 f 8 8 8
+        8 8 8 f 8 8 8 f 8 8 8
+        8 8 8 f d d d f 8 8 8
+        . 8 8 f 8 8 8 f 8 8 .
+        . . 8 f f f f f 8 . .
+        . . . 8 8 8 8 8 . . .
+    `;
+
+    powerUps[PowerUpType.RechargeRateUp] = img`
+        . . . e e e e e . . .
+        . . e e e 5 4 e e . .
+        . e e e 5 5 e e e e .
+        e e e 5 5 4 4 4 e e e
+        e e 5 5 5 5 5 5 5 5 e
+        e e e e e 5 5 5 4 e e
+        e e e e 5 5 5 4 e e e
+        e e e 5 5 5 4 e e e e
+        . e e 5 5 4 e e e e .
+        . . e e 5 4 e e e . .
+        . . . e e e e e . . .
+    `;
+}
+
+namespace powerups {
+    sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
+        sprite.data = Math.pickRandom(availablePowerUps);
+        sprite.setImage(spritesheet.powerUps[getType(sprite)]);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(600, function () {
+        if (Math.percentChance(50)) {
+            let currentPowerUps = sprites.allOfKind(SpriteKind.PowerUp);
+            if (currentPowerUps.length() < 2) {
+                sprites.create(img`1`, SpriteKind.PowerUp);
+            }
+        }
+    });
+}
+```
+
+### ~
