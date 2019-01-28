@@ -42,7 +42,13 @@ namespace spritesheet {
         . . . 9 9 . . .
     `;
 
-    export let asteroid: Image = sprites.space.spaceAsteroid0;
+    export let asteroids: Image[] = [
+        sprites.space.spaceAsteroid0,
+        sprites.space.spaceAsteroid1,
+        sprites.space.spaceAsteroid2,
+        sprites.space.spaceAsteroid3,
+        sprites.space.spaceAsteroid4
+    ];
 
     export let powerUps: Image[] = [];
 
@@ -119,7 +125,7 @@ namespace asteroids {
     });
 
     game.onUpdateInterval(1500, function () {
-        sprites.create(spritesheet.asteroid, SpriteKind.Asteroid);
+        sprites.create(Math.pickRandom(spritesheet.asteroids), SpriteKind.Asteroid);
     });
 
     /**
@@ -260,8 +266,9 @@ namespace powerups {
     responses[PowerUpType.RechargeRateUp] = "Faster Charge!";
 
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
-        sprite.data = Math.pickRandom(availablePowerUps);
-        sprite.setImage(spritesheet.powerUps[getType(sprite)]);
+        let typeOfPowerUp = Math.pickRandom(availablePowerUps);
+        sprite.data = typeOfPowerUp;
+        sprite.setImage(spritesheet.powerUps[typeOfPowerUp]);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
