@@ -16,7 +16,8 @@ enum SpriteKind {
 enum PowerUpType {
     Health,
     Score,
-    EnergyUp
+    EnergyUp,
+    RechargeRateUp
 }
 
 /**
@@ -104,6 +105,8 @@ namespace ship {
     export let player: Sprite = initialize();
     export let maxCharge = 3;
     export let currentCharge = maxCharge;
+    export let rechargeDelay = 750;
+    let lastRecharge = 0;
 
     /**
      * @returns a player sprite that moves with the directional buttons
@@ -138,9 +141,13 @@ namespace ship {
         }
     }
 
-    game.onUpdateInterval(750, function () {
-        if (currentCharge < maxCharge) {
-            currentCharge++;
+    game.onUpdate(function () {
+        let currentTime = game.runtime();
+        if (currentTime - lastRecharge >= rechargeDelay) {
+            lastRecharge = currentTime;
+            if (currentCharge < maxCharge) {
+                currentCharge++;
+            }
         }
     });
 }
@@ -198,13 +205,15 @@ namespace powerups {
     let availablePowerUps = [
         PowerUpType.Health,
         PowerUpType.Score,
-        PowerUpType.EnergyUp
+        PowerUpType.EnergyUp,
+        PowerUpType.RechargeRateUp
     ];
 
     export let responses: string[] = [];
     responses[PowerUpType.Health] = "Got health!";
     responses[PowerUpType.Score] = "Score!";
     responses[PowerUpType.EnergyUp] = "More Energy!";
+    responses[PowerUpType.RechargeRateUp] = "Faster Charge!";
 
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
         sprite.data = Math.pickRandom(availablePowerUps);
@@ -297,6 +306,8 @@ namespace overlapevents {
             info.changeScoreBy(15);
         } else if (powerUp == PowerUpType.EnergyUp) {
             ship.maxCharge++;
+        } else if (powerUp == PowerUpType.RechargeRateUp) {
+            ship.rechargeDelay -= 20;
         }
     });
 }

@@ -218,7 +218,7 @@ Power ups should feel like special bonuses, but they show up randomly - in some 
 
 To address this, we can limit the number of PowerUps that are on the screen at once. In the ``powerups`` namespace, when a ``PowerUp`` ``||sprites:Sprite||`` would be created, instead get an ``||arrays:array||`` of all existing ``||sprites:sprites||`` of ``||sprites:kind||`` ``PowerUp``. ``||logic:If||`` the ``||arrays:length||`` of that ``||arrays:array||`` is less than 2, create a ``PowerUp`` like normal. Otherwise, do not create a ``PowerUp`` ``||sprites:Sprite||``.
 
-With this, you will avoid creating new ``PowerUp``s when there are too many on the screen. This brings up an extra option for customizing your game, as well - you can increase the rate at which they are created without making the game too easy, which provides a way for the person playing to benefit from gathering ``PowerUp``s as quickly as possible - the faster they are gathered, the faster more will come.
+With this, you will avoid creating new ``PowerUp``s when there are too many on the screen. This brings up an extra option for customizing your game, as well - you can increase the rate at which ``PowerUp``s are created without making the game too easy, which provides a benefit for gathering ``PowerUp``s as quickly as possible - the faster they are gathered, the faster more will come.
 
 ### Solution
 
