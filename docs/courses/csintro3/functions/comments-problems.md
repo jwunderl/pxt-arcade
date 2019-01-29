@@ -41,7 +41,7 @@ function createSkeleton() {
 
 ## Problem #2: Create Your Own 
 
-Implement the function ``placeSkeleton`` as described in the comment below
+Implement the function ``placeSkeleton`` as described in the comment below.
 
 ```typescript
 /**
