@@ -64,7 +64,13 @@ function party(sprite: Sprite) {
 
 ## Problem #4: Mean Comment
 
-Implement the function ``average`` as described in the comment below
+Implement the function ``average`` as described in the comment below.
+
+### ~hint
+
+The average of two numbers can be founding by adding them together and then dividing by two.
+
+### ~
 
 ```typescript
 /**
@@ -73,4 +79,22 @@ Implement the function ``average`` as described in the comment below
  * @param y the second number to be averaged
  * @returns the average of `x` and `y`
  */
+```
+
+## Problem #5: Move Me!
+
+Write a descriptive comment for the following function.
+
+```typescript
+function moveMe(sprite: Sprite, distance: number) {
+    let totalDistance = 0;
+
+    for (let i = 0; i < 5; i++) {
+        totalDistance += distance;
+        sprite.x += distance;
+        pause(500);
+    }
+
+    return totalDistance;
+}
 ```
