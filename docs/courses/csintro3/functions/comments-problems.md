@@ -4,24 +4,11 @@ This section contains a number of selected problems for the Comments section.
 
 It is recommended that you review the problems, and complete a few before moving on to the next section.
 
-## Problem #1: Comments are Cool
-
-Write a function called ``splashPhrase`` that the following comment would describe
-
-```typescript
-/**
- * Splashes to the screen the phrase "Comments are cool!"
- */
-```
-
-## Problem #2: Create a Skelly
+## Problem #1: Create a Skelly
 
 Write a descriptive comment for the following function.
 
 ```typescript
-/**
- * 
- */
 function createSkeleton() {
     sprites.create(img`
         . . . . . . . . . . . . . . . . . . . . . . . .
@@ -52,55 +39,38 @@ function createSkeleton() {
 }
 ```
 
-## Problem #3: Place a Skelly
+## Problem #2: Create Your Own 
 
-Write a function called ``placeSkeleton`` that the following comment would describe
+Implement the function ``placeSkeleton`` as described in the comment below
 
 ```typescript
 /**
- * Places a skeleton sprite at the given location
+ * Creates a skeleton sprite at the given location
  * @param x the x coordinate of the skeleton
  * @param y the y coordinate of the skeleton
  */
 ```
 
-## Problem #4: Color the Hero
+## Problem #3: Party Time
 
-Write a descriptive comment for what the following function does
+Write a descriptive comment for the following function.
 
 ```typescript
-/**
- *
- */
-function createHero(color: number) {
-    let hero: Sprite = sprites.create(sprites.castle.heroWalkFront1);
-    hero.image.replace(2, color);
+function party(sprite: Sprite) {
+    effects.confetti.startScreenEffect();
+    sprite.startEffect(effects.smiles);
 }
 ```
 
-## Problem #5: Mean Comments
+## Problem #4: Mean Comment
 
-Write a function called ``average`` that the following comment would describe
+Implement the function ``average`` as described in the comment below
 
 ```typescript
 /**
- * Computes the sum of two numbers
+ * Computes the average of two numbers
  * @param x the first number to be averaged
  * @param y the second number to be averaged
- * @returns the average of the the two numbers
+ * @returns the average of `x` and `y`
  */
-
-```
-
-## Problem #6: Speedy Sprite
-
-Write a descriptive comment for what the following function does
-
-```typescript
-/**
- * 
- */
-function getSpeed(mySprite: Sprite): number {
-    return Math.sqrt(mySprite.vx ** 2 + mySprite.vy ** 2);
-}
 ```
