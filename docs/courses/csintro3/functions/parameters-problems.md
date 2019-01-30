@@ -16,30 +16,50 @@ The `Caps Lock` key on a keyboard is used to modify whether the letters you type
 
 Implement a ``||functions:function||`` called ``||functions:printHello||`` that accepts a ``||logic:boolean||`` value called ``||variables:capsLock||``.
 
-``||logic:If||`` ``||variables:capsLock||`` is true, the ``||functions:function||`` should print ``HELLO WORLD`` to the console; otherwise, it should print ``hello world``.
+``||logic:If||`` ``||variables:capsLock||`` is ``||logic:true||``, the ``||functions:function||`` should print ``HELLO WORLD`` to the console; otherwise, it should print ``hello world``.
 
 ## Problem #3: Pizza Place
 
-The following ``||functions:function||`` will randomly place a pizza sprite on the screen.
+You've decided to build a Pizzeria, and need a computer to help finish the orders.
+
+The ``||functions:function||`` ``||functions:makeOnePizza||`` below will place a pizza in a random location on the screen. Feel free to customize the pizza ``||sprites:Sprite||`` to use your families secret recipe.
 
 ```typescript
-function makePizza() {
-    let pizza: Sprite = sprites.create(sprites.food.smallPizza);
-    pizza.x = Math.randomRange(0, scene.screenWidth());
-    pizza.y = Math.randomRange(0, scene.screenHeight());
-    loops.pause(200);
+function makeOnePizza() {
+    pause(200);
+    let pizza: Sprite = sprites.create(img`
+        . . . . . . b b b b . . . . . .
+        . . . . . . b 4 4 4 b . . . . .
+        . . . . . . b b 4 4 4 b . . . .
+        . . . . . b 4 b b b 4 4 b . . .
+        . . . . b d 5 5 5 4 b 4 4 b . .
+        . . . . b 3 2 3 5 5 4 e 4 4 b .
+        . . . b d 2 2 2 5 7 5 4 e 4 4 e
+        . . . b 5 3 2 3 5 5 5 5 e e e e
+        . . b d 7 5 5 5 3 2 3 5 5 e e e
+        . . b 5 5 5 5 5 2 2 2 5 5 d e e
+        . b 3 2 3 5 7 5 3 2 3 5 d d e 4
+        . b 2 2 2 5 5 5 5 5 5 d d e 4 .
+        b d 3 2 d 5 5 5 d d d 4 4 . . .
+        b 5 5 5 5 d d 4 4 4 4 . . . . .
+        4 d d d 4 4 4 . . . . . . . . .
+        4 4 4 4 . . . . . . . . . . . .
+    `);
+    pizza.startEffect(effects.fire, 500);
+    pizza.x = Math.randomRange(0, screen.width);
+    pizza.y = Math.randomRange(0, screen.height);
 }
 ```
 
-Copy this ``||functions:function||`` into your code. 
+Create a new project, and copy over ``||functions:makeOnePizza||``. Implement another ``||functions:function||`` called ``||functions:makeOrder||`` that takes in a number ``||variables:orderCount||`` as a parameter.
 
-You're running your own pizza place and have received the following orders from customers:
+The ``||functions:makeOrder||`` ``||functions:function||`` should ``||game:game.splash||`` how many pizzas have been ordered, and then make that many pizzas using ``||functions:makeOnePizza||`` in a ``||loops:loop||``, ``||loops:pause||`` for 2 seconds
+
+To test this, create the following orders:
 
 * An order of 3 pizzas
 * An order of 5 pizzas
 * An order of 2 pizzas
-
-Write a ``||functions:function||`` called ``||functions:makeOrder||`` that takes in a number``||variables:numOfOrders||`` as a parameter. The ``||functions:function||`` should ``||game:game.splash||`` how many pizzas have been ordered and then use a ``||loops:for||`` loop to make that many pizzas.
 
 ## Problem #4: Sprite Factory
 
