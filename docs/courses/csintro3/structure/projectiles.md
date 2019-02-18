@@ -1,18 +1,99 @@
 # Activity: Projectiles
 
+``||sprites:Sprites||`` form the basis of most games in MakeCode @boardname@.
+There are a variety of options available when creating and using ``||sprites:sprites||``,
+to make them flexible and easy to use.
 
+In the blocks based courses,
+``||sprites:projectiles||`` and ``||sprites:sprite flags||`` were
+used to easily provide complex behaviors to characters in games.
+In JavaScript, these same functions are available to enhance the projects you create.
 
+## Concept: Projectiles in JavaScript
 
+In blocks, there were two types of ``||sprites:projectiles||`` used to represent
+``||sprites:sprites||`` that move across the screen:
+``||sprites:projectiles from side||``,
+which move across the screen from the side,
 
+```sig
+sprites.createProjectileFromSide(null, 0, 0);
+```
 
+and ``||sprites:projectile from sprite||``,
+which start at the same position as the provided ``||sprites:sprite||``.
 
+```sig
+sprites.createProjectileFromSprite(null, null, 0, 0);
+```
 
+These can be used in the same way as ``||sprites:sprites.create||``,
+to create a character on the screen for the player to see and interact with.
 
+## Example #1: Speedy Taxi
 
+1. Review the code below
+2. Identify how ``||sprites:projectile from side||`` is used to create
+a car moving across the screen
+3. Identify how ``||sprites:projectile from sprite||`` is used to create
+customers that leave the car
 
+```typescript
+let taxi: Sprite = sprites.createProjectileFromSide(sprites.vehicle.carBlueRight, 50, 0);
 
+for (let i = 0; i < 4; i++) {
+    pause(1000);
+    let customer: Sprite = sprites.createProjectileFromSprite(sprites.castle.princessFront0, taxi, 0, 30);
+}
+```
 
+## Student Task #1: Super Speedy Taxi
 
+1. Start with the code from example #1
+2. Create a second ``||sprites:projectile from sprite||`` on each iteration of the loop,
+that starts in the same spot as ``||variables:customer||`` but moves in the opposite direction
+3. Make the ``||variables:taxi||`` temporarily **stop** to let out customers:
+before creating the ``||variables:customer||`` ``||sprites:projectile||``,
+set the ``||variables:customer||`` ``||sprites:vx||`` to 0,
+and then ``||loops:pause||`` for half a second
+4. After the customers are let out of the taxi,
+reset the ``||variables:taxi||``'s ``||sprites:vx||`` to 50
+
+### ~hint
+
+You might have noticed that the ``||sprites:projectiles||`` shown in this section
+do not allow for the ``SpriteKind`` to be set when they are created.
+These are defined to have the ``SpriteKind`` ``1``,
+which will typically correspond to the **second** ``SpriteKind`` in the project.
+
+With the default ``SpriteKind`` in blocks,
+this corresponds to ``SpriteKind.Projectile``.
+
+```typescript-ignore
+enum SpriteKind {
+    Player,
+    Projectile,
+    Food,
+    Enemy
+}
+```
+
+If you need to use another ``SpriteKind``,
+the ``||sprites:sprites.createProjectile||`` function can be used.
+
+```sig
+sprites.createProjectile(null, 0, 0, 0, null);
+```
+
+This function behaves like ``||sprites:createProjectileFromSide||`` normally,
+but switches to behave like ``||sprites:createProjectileFromSprite||`` when
+a ``||sprites:sprite||`` is passed as the final parameter.
+This allows you to specify the ``SpriteKind`` like you can with
+a normal ``||sprites:sprite||``.
+
+### ~
+
+## Concept: Sprite Flags
 
 
 
