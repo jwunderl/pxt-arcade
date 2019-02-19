@@ -152,12 +152,99 @@ turn the ``||sprites:BounceOnWall||`` flag **off**
 
 ## Concept: Particle Effects
 
+Particle effects are **visual** effects that can be applied in your game.
+They typically will not impact the game,
+and are intended to add a visual flair to the games that you create.
 
+These effects can be used in many different ways.
+One common use is to start the effect **on** a ``||sprites:Sprite||``,
+with ``||sprites:mySprite.startEffect||``.
 
+```sig
+sprites.create(null).startEffect(null, 0);
+```
 
+Another common way to use an effect is with an effect that can be applied
+to the entire screen, with ``||scene:myEffect.startScreenEffect||``.
 
+```sig
+effects.confetti.startScreenEffect();
+```
+
+### ~hint
+
+There are a number of different effects available,
+but not all are particle effects.
+
+It can be helpful to use the Blocks editor to see which effects are available
+for any given type of effect,
+as only the effects that are valid for that type of function will be listed in
+the drop down on the block.
+
+Effects are implemented as objects which control how they appear on the screen;
+this course is not focused on Object Oriented Programming,
+so the exact behaviors and implementations may not fully make sense right away.
+You can find more details and examples of effects in the documentation for
+[startEffect](/reference/sprites/sprite/start-effect) and
+[startScreenEffect](/reference/scene/start-screen-effect).
+
+### ~
+
+## Example #3: Fire in a Snowstorm
+
+1. Review the code below
+2. Identify how ``effects.fire`` is used to set the logs on fire
+3. Identify how ``effects.blizzard`` is used to create a 'snowstorm' background
+
+```typescript
+enum SpriteKind {
+    Player,
+    Projectile,
+    Food,
+    Enemy
+}
+
+let myLogs = sprites.create(img`
+    e e e e . . . . . e e . . . . .
+    . e e e e e . e e e d e e . . .
+    . . . e e e e e e e d e e . . .
+    . . . e e e e e e e d e . . . .
+    . . . . e d d d e e d e . . . .
+    . . . . e e e d e e d e e e . .
+    . . . e e e d e e e e d e e e .
+    . . e e e d e e e e e e d e e e
+    . e e d d e e . . e e e e d e e
+    . e e d e e e . . . . e e d e e
+    . e e d e e . . . . . . e e . .
+    . e e e e e . . . . . . . . . .
+    . . e e . . . . . . . . . . . .
+`, SpriteKind.Player);
+
+myLogs.startEffect(effects.fire);
+effects.blizzard.startScreenEffect();
+```
+
+## Student Task #3: Stop and Start
+
+1. Start with the code from example #3
+2. Give both effects in the game a 2 second duration:
+    * Add 2000 as an extra parameter to ``||sprites:startEffect||``
+    * Add 2000 as a parameter to ``||scene:startScreenEffect||``
+3. ``||loops:Pause||`` for 4 seconds after the current code
+4. After the ``||loops:pause||``, start two more effects:
+    * Start ``effects.warmRadial`` on ``||variables:myLogs||``
+    with ``||sprites:startEffect||``
+    * Start ``effects.starField`` with a ``||scene:startScreenEffect||``
 
 ## What did we learn?
+
+1. How are ``||sprites:projectile||`` ``||sprites:Sprites||`` different
+from ``||sprites:sprites||`` created with ``||sprites:sprites.create||``?
+2. Create a hypothesis on how ``||sprites:SpriteFlag.StayInScreen||`` will
+change the behavior of a ``||sprites:Sprite||``.
+Test this hypotheses by creating a game that uses it.
+3. How do particle effects impact your game?
+When would particle effects not be useful?
 
 ### ~hint
 
