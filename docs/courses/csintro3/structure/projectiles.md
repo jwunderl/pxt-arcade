@@ -95,9 +95,62 @@ a normal ``||sprites:sprite||``.
 
 ## Concept: Sprite Flags
 
+``||sprites:Sprite Flags||`` can be used to provide ``||sprites:sprites||``
+with common behaviors.
+The ``||sprites:mySprite.setFlag||`` function can be used to turn flags
+on and off.
 
+```sig
+sprites.create(null).setFlag(0, false);
+```
 
+By default, ``||sprites:Projectile||`` ``||sprites:sprites||``,
+have two ``||sprites:sprite flags||`` turned on:
+``||sprites:SpriteFlag.DestroyOnWall||``,
+which will ``||sprites:destroy||`` the ``||sprites:sprite||``
+when it collides with a ``||scene:Wall||``,
+and ``||sprites:SpriteFlag.AutoDestroy||``,
+which will destroy the ``||sprites:sprite||`` when it moves off the screen.
 
+## Example #2: Bouncy Ball
+
+1. Review the code below
+2. Identify how ``||sprites:set flag||`` and ``||sprites:BounceOnWall||``
+``||sprites:flags||`` are used to make the ``||sprites:bounce||`` around the screen
+3. Identify how the ``||sprites:sprite||`` moves around the screen
+
+```typescript
+let mySprite: Sprite = sprites.create(img`
+    . . . . d d d d d d d . . . .
+    . . d d d d d d d d d d d . .
+    . d d d d d d d d d d d d d .
+    . d d d d d d d d d d d d d .
+    d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d
+    . d d d d d d d d d d d d d .
+    . d d d d d d d d d d d d d .
+    . . d d d d d d d d d d d . .
+    . . . . d d d d d d d . . . .
+`)
+mySprite.setFlag(SpriteFlag.BounceOnWall, true);
+mySprite.vx = 50;
+```
+
+## Student Task #2: More Bouncing!
+
+1. Start with the code from example #2
+2. Add a ``||sprites:y acceleration||`` of 40 to the ball
+3. ``||loops:Pause||`` for 10 seconds after setting the acceleration
+4. After the ``||loops:pause||``,
+turn the ``||sprites:BounceOnWall||`` flag **off**
+(``||sprites:set||`` it to ``||logic:false||``)
+
+## Concept: Particle Effects
 
 
 
