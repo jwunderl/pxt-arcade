@@ -5,7 +5,7 @@ This section contains a number of selected problems for the Projectiles section.
 It is recommended that you review the problems, and complete a few before moving
 on to the next section.
 
-## Problem #1: To the Left
+## Problem #1: Enemy Movement
 
 In games, ``||sprites:Enemy||`` ``||sprites:sprites||`` will often need to
 move on their own to make the game harder for the player.
@@ -58,7 +58,7 @@ start the ``effects.warmRadial`` effect on the ``||sprites:sprite||``
 and then ``||loops:pause||`` for one second.
 
 After the three effects have been created,
-they should all be moving around the same location in a spiral.
+they should all be moving around the single pixel ``||sprites:sprite||`` in a spiral.
 
 ![Warm radial swirly spiral animation](/static/courses/csintro3/structure/warm-radial-spiral.gif)
 
