@@ -21,15 +21,17 @@ and pay attention to where they start and how they move.
 
 ## Problem #2: Ten of Me
 
-Use a ``||loops:for||`` loop to create **twelve** ``||sprites:sprites||``
-with an image of your choice.
+Use a ``||loops:for||`` loop to create **ten** ``||sprites:projectile||``
+``||sprites:sprites||`` with an image of your choice.
 
-Give each ``||sprites:sprite||`` a velocity to make it move to the left.
-Set their ``||sprites:y||`` position to 10 times the loop variable
-(``||variables:i||``), and their ``||sprites:x||`` position to
-``||scene:screen.width||``.
+Give each ``||sprites:sprite||`` a velocity to make it move to the right.
+Set their ``||sprites:y||`` position to **16** times the loop variable
+``||variables:i||``,
+and make sure the ``||sprites:sprites||`` start on the
+left side of the screen.
 
-``||loops:Pause||`` for 500 ms between enemies so they do not all appear at once.
+``||loops:Pause||`` for one second between each iteration of the loop
+so the ``||sprites:sprites||`` do not all appear at once.
 
 ## Problem #3: ShowPhysics
 
@@ -59,3 +61,72 @@ After the three effects have been created,
 they should all be moving around the same location in a spiral.
 
 ![Warm radial swirly spiral animation](/static/courses/csintro3/structure/warm-radial-spiral.gif)
+
+## Problem #5: Sparkle Ducks
+
+Create a game in which twelve ducks move across the screen,
+leaving a trail of sparkles.
+
+![Animation of sprites with a trail effect](/static/courses/csintro3/structure/sparkle-ducks.gif)
+
+Use a ``||loops:for||`` loop to create **twelve** duck
+``||sprites:projectiles||`` that move to the **left** across the screen.
+Set each ``||sprites:duck||`` to have a ``||sprites:y position||`` that is
+**10** times the loop variable ``||variables:i||``.
+
+At the end of each iteration of the loop,
+``||loops:pause||`` for 500ms so the ducks do not all show up at the same time.
+
+### ~hint
+
+You may notice that this problem has some similarities to problem #2;
+feel free to start with a solution to that if you have one already!
+
+### ~
+
+In the loop, start the ``effects.trail`` effect after
+creating the duck ``||sprites:sprites||`` (and before ``||loops:pausing||``).
+This effect will add a rainbow trail on top of the ``||sprites:sprite||`` as it moves
+around the screen.
+
+### ~hint
+
+By default, the ``duck`` ``||sprites:sprites||`` in the game will
+face to the right.
+However, in this example, the ducks move to the left,
+which would make them move backwards.
+
+If you would prefer that the duck would be facing the correct direction,
+the following snippet can be used to create a **copy** of the
+``||sprites:sprites.duck.duck3||`` image that will be **flipped**.
+
+```typescript
+let oppositeDuck: Image = sprites.duck.duck3.clone();
+oppositeDuck.flipX();
+let mySprite: Sprite = sprites.create(oppositeDuck);
+```
+
+If you want to use a different ``||images:image||``,
+you can replace ``||sprites:sprites.duck.duck3||`` with any image you like.
+
+### ~
+
+### Challenge: Bouncing Duck
+
+After completing this task,
+you can make an alternate form where the ducks bounce around the screen.
+
+![Animation of ducks bouncing with a trail](/static/courses/csintro3/structure/bouncing-duck.gif)
+
+When bouncing around the screen,
+it will quickly get to cluttered with the current amount of ``||sprites:sprites||``.
+Modify your game to create only **five** ducks,
+and set each duck to have a ``||sprites:y position||`` that is
+**30** times the loop variable ``||variables:i||`` instead of **10** times.
+
+In the loop,
+set the ``||sprites:BounceOnWall||`` ``||sprites:SpriteFlag||`` to ``||logic:true||``,
+so that the ducks will move back and forther across the screen.
+
+To make the ducks bounce (rather than just move back and forth),
+give each duck a ``||sprites:y acceleration||`` of **50**.
